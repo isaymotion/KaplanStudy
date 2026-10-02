@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kaplan &amp; Sadock Study Companion</title>
+  <meta name="description" content="Chapter-by-chapter study guides, high-yield reviews and flashcards for psychiatry residents, built from Kaplan & Sadock's Synopsis of Psychiatry, 12th edition.">
+  <meta name="theme-color" content="#1E2463">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    try { var t = localStorage.getItem('ks:v1:theme'); if (t) document.documentElement.setAttribute('data-theme', JSON.parse(t)); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#/" aria-label="Kaplan &amp; Sadock Study Companion, home">
+        <img src="icons/icon-192.png" alt="" width="34" height="34">
+        <span class="brand__name">Kaplan &amp; Sadock <span class="brand__sub">Study Companion</span></span>
+      </a>
+      <div class="search" role="search">
+        <label class="sr-only" for="q">Search every chapter</label>
+        <svg class="search__icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search guides, high yield and cards" aria-controls="suggest" aria-expanded="false" aria-autocomplete="list">
+        <kbd class="search__kbd" aria-hidden="true">/</kbd>
+        <div id="suggest" class="suggest" role="listbox" hidden></div>
+      </div>
+      <button class="theme-btn" id="theme" type="button" aria-label="Switch color theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="loading wrap">Loading chapters…</div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap site-foot__inner">
+      <p class="attribution">App created by Isabella Navarro, MD. Latest version October 2026. <a href="mailto:isaymotion@gmail.com">isaymotion@gmail.com</a></p>
+      <p class="disclaimer">An independent study aid for psychiatry residents built from Kaplan &amp; Sadock's Synopsis of Psychiatry, 12th edition. Not affiliated with or endorsed by the publisher. Always confirm doses and prescribing details against current product labeling.</p>
+    </div>
+  </footer>
+
+  <script src="data/chapters.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
