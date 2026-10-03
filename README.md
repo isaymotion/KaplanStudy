@@ -6,8 +6,20 @@ Each chapter has:
 
 - **Study guide**: the full chapter reorganized for learning, with comparison tables, duration timelines, chapter case summaries, clinical pearls and exam tips.
 - **High yield**: the facts most likely to appear on exams and boards. Switch on *Hide key facts* to turn every bold fact into a blank for self-testing.
-- **Flashcards** in four decks: **Diagnosis**, **Clinical cases** (single-best-answer vignettes with explanations), **Pharmacology**, and **Foundations** (epidemiology, neurobiology, etiology and psychosocial care). Mark cards *Got it* or *Still learning*, shuffle, and filter to the cards you are still learning. Progress is saved in the browser on each device.
-- **Search** across every chapter, guide, high-yield list and flashcard. Press `/` anywhere to jump to the search box.
+- **Flashcards** in four decks: **Diagnosis**, **Clinical cases** (single-best-answer vignettes with explanations), **Pharmacology**, and **Foundations** (epidemiology, neurobiology, etiology and psychosocial care). Rate each card *Again*, *Hard*, *Good* or *Easy* and a spaced-repetition schedule brings it back just before you are likely to forget it.
+- **Search** across every chapter, guide, high-yield list, flashcard and glossary term. Press `/` anywhere to jump to the search box.
+
+Across all chapters:
+
+- **Daily review**: one queue of every card due today from every chapter, followed by new cards up to a daily limit (10, 20, 40 or 80). The home page shows what is due, per chapter.
+- **Board-style exam**: a timed (90 seconds per question) or untimed exam of clinical cases drawn at random from the chapters you pick, with shuffled answer choices, flags and a question navigator. Results show the score by topic (weakest first) and by chapter, with a *Review what I missed* walkthrough. The last 20 exams are kept.
+- **Mistakes**: every clinical case answered wrong, in a deck, the daily review or an exam, is collected automatically. Answer it correctly to clear it.
+- **Glossary**: the book's glossary of signs and symptoms (431 terms, definitions written in the app's own words) plus terms defined within the chapters. Glossary terms are underlined with a dotted line throughout the app; tap one to see its definition. This can be switched off on the glossary page.
+- **Diagnostic helpers**: step-by-step decision aids that end with the likely diagnosis, the reasoning trail, chapter points and a link to the guide section.
+  - *Which psychotic disorder?* (Chapter 5): cause, culture, shared delusions, mood involvement, symptoms and duration.
+  - *Which bipolar disorder?* (Chapter 6): medical or substance cause, antidepressant-associated episodes, psychosis outside mood episodes, the most severe elevated period, distinct episodes versus personality lability, major depressive episodes, a 2-year subthreshold course, and rapid cycling. Reaches bipolar I, bipolar II (each with or without rapid cycling), cyclothymia, or the main look-alikes.
+
+Progress (review schedule, mistakes, exam history, settings) is saved in the browser on each device.
 
 Also included: light and dark themes, keyboard shortcuts, offline support after the first visit, and installability as an app on phones and desktops.
 
@@ -16,6 +28,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | Chapter | Title | Guide sections | High-yield points | Flashcards |
 |---|---|---|---|---|
 | 5 | Schizophrenia Spectrum and Other Psychotic Disorders | 33 | 157 | 267 |
+| 6 | Bipolar Disorders | 24 | 102 | 208 |
 
 ## Publish on GitHub Pages
 
@@ -31,9 +44,12 @@ There is no build step and no dependencies. To preview locally, open `index.html
 ```
 index.html              App shell
 css/app.css             Styles (light and dark themes)
-js/app.js               Router, study guide, high yield, flashcards, search
-data/chapters.js        Chapter registry
-data/ch05/              Chapter 5 content
+js/app.js               Router, study guide, high yield, flashcards and spaced repetition,
+                        daily review, exam, mistakes, glossary, diagnostic helpers, search
+data/chapters.js        Chapter registry and list of shared data files
+data/glossary/          Glossary (g1–g4: book glossary; g5: chapter-defined terms and aliases)
+data/helpers.js         Diagnostic helper decision trees
+data/ch05/, data/ch06/  Chapter content
   guide.js              Study guide
   highyield.js          High-yield topics
   cards-diagnosis.js    Diagnosis deck
@@ -51,13 +67,16 @@ sw.js                   Offline cache
 2. Add an entry to `KS.manifest` in `data/chapters.js` (id, number, title, short title, one-sentence summary, file list).
 3. Change `VERSION` in `sw.js` so returning users get the new content.
 
-Search, the home page and the chapter navigation pick up the new chapter automatically.
+Search, the home page, daily review, exam mode and the chapter navigation pick up the new chapter automatically.
+
+To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to `data/glossary/g5-chapter-terms.js`. To add a diagnostic helper, append a decision tree to `KS.helpers` in `data/helpers.js` (nodes with options that point to another node or to `r:<result>`); the helpers page lists it automatically.
 
 ### Content conventions
 
 - `**bold**` and `*italic*` are supported in all text. In high-yield items, bold marks the fact that becomes a blank in self-test mode, so bold the answer, not the topic.
 - Study guide block types: `p`, `h`, `list`, `defs`, `table`, `callout` (`pearl`, `exam`, `caution`), `case`, `timeline`, `steps`.
-- Clinical case cards use `choices` and a zero-based `answer` index, plus `why`.
+- Clinical case cards use `choices` and a zero-based `answer` index, plus `why`. Case cards feed exam mode and the mistakes pile, and their `tag` is the topic used in exam scoring.
+- Card `id`s are the key for each card's review schedule, so keep them stable when editing content.
 
 ## Attribution
 

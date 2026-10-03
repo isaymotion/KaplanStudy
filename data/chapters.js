@@ -18,5 +18,23 @@ KS.manifest = [
     short: 'Schizophrenia spectrum',
     summary: 'Schizophrenia, schizoaffective, schizophreniform, brief psychotic and delusional disorders: how they present, how to tell them apart, and how to treat them.',
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch06',
+    number: 6,
+    title: 'Bipolar Disorders',
+    short: 'Bipolar disorders',
+    summary: 'Bipolar I, bipolar II and cyclothymia: recognizing mania and bipolar depression, the specifiers, the differential, and acute and maintenance treatment.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
   }
+];
+
+/* Shared data loaded with the chapters: glossary and diagnostic helpers. */
+KS.extraFiles = [
+  'data/glossary/g1.js',
+  'data/glossary/g2.js',
+  'data/glossary/g3.js',
+  'data/glossary/g4.js',
+  'data/glossary/g5-chapter-terms.js',
+  'data/helpers.js'
 ];

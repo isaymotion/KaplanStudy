@@ -26,10 +26,17 @@
         <img src="icons/icon-192.png" alt="" width="34" height="34">
         <span class="brand__name">Kaplan &amp; Sadock <span class="brand__sub">Study Companion</span></span>
       </a>
+      <nav class="sitenav" aria-label="Study tools">
+        <a href="#/review" data-nav="review">Review <span class="badge" data-badge="review" hidden></span></a>
+        <a href="#/exam" data-nav="exam">Exam</a>
+        <a href="#/mistakes" data-nav="mistakes">Mistakes <span class="badge badge--warn" data-badge="mistakes" hidden></span></a>
+        <a href="#/glossary" data-nav="glossary">Glossary</a>
+        <a href="#/helpers" data-nav="helpers"><span class="nav-long">Diagnostic </span>helper</a>
+      </nav>
       <div class="search" role="search">
         <label class="sr-only" for="q">Search every chapter</label>
         <svg class="search__icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search guides, high yield and cards" aria-controls="suggest" aria-expanded="false" aria-autocomplete="list">
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the whole app" aria-controls="suggest" aria-expanded="false" aria-autocomplete="list">
         <kbd class="search__kbd" aria-hidden="true">/</kbd>
         <div id="suggest" class="suggest" role="listbox" hidden></div>
       </div>
