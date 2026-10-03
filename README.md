@@ -19,6 +19,7 @@ Across all chapters:
   - *Which psychotic disorder?* (Chapter 5): cause, culture, shared delusions, mood involvement, symptoms and duration.
   - *Which bipolar disorder?* (Chapter 6): medical or substance cause, antidepressant-associated episodes, psychosis outside mood episodes, the most severe elevated period, distinct episodes versus personality lability, major depressive episodes, a 2-year subthreshold course, and rapid cycling. Reaches bipolar I, bipolar II (each with or without rapid cycling), cyclothymia, or the main look-alikes.
   - *Which depressive disorder?* (Chapter 7): medical or substance cause, history of mania or hypomania, predictors of bipolarity, bereavement, a chronic versus episodic course, the persistent depressive disorder course specifiers, episode severity and duration, psychotic features and the main specifiers. Reaches major depressive disorder with its specifiers, persistent depressive disorder, double depression, recurrent brief and minor depression, normal grief, or a medical or bipolar cause.
+  - *Which anxiety disorder?* (Chapter 8): medical or substance cause, culturally specific syndromes, anxiety within another psychiatric disorder, then what the person fears (the attacks themselves, places without escape, a specific object or situation, scrutiny, or everyday matters) and for how long. Reaches panic disorder with or without agoraphobia, isolated panic attacks, agoraphobia, specific phobia, social anxiety disorder (including performance only), generalized anxiety disorder, subthreshold or normal anxiety, or a medical, cultural or psychiatric explanation.
 
 Progress (review schedule, mistakes, exam history, settings) is saved in the browser on each device.
 
@@ -37,6 +38,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 5 | Schizophrenia Spectrum and Other Psychotic Disorders | 33 | 157 | 267 |
 | 6 | Bipolar Disorders | 24 | 102 | 208 |
 | 7 | Depressive Disorders | 32 | 123 | 214 |
+| 8 | Anxiety Disorders | 24 | 92 | 195 |
 
 ## Publish on GitHub Pages
 
@@ -58,7 +60,7 @@ data/chapters.js        Chapter registry and list of shared data files
 data/glossary/          Glossary (g1–g4: book glossary; g5: chapter-defined terms and aliases)
 data/helpers.js         Diagnostic helper decision trees
 data/changelog.js       What's new entries
-data/ch05/, data/ch06/  Chapter content
+data/ch05/ … data/ch08/ Chapter content
   guide.js              Study guide
   highyield.js          High-yield topics
   cards-diagnosis.js    Diagnosis deck

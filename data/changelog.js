@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 6,
+    date: "2026-10-03",
+    title: "Chapter 8: Anxiety Disorders",
+    items: [
+      { type: "chapter", ch: "ch08", text: "**Chapter 8: Anxiety Disorders**: study guide, high-yield list, 195 flashcards and a printable handout.", href: "#/c/ch08/guide", link: "Start Chapter 8" },
+      { type: "feature", ch: "ch08", text: "**Which anxiety disorder?** diagnostic helper: medical, cultural and psychiatric explanations first, then what the person fears and for how long, ending at one of 13 outcomes.", href: "#/helpers/anxiety", link: "Try it" },
+      { type: "update", text: "Eight Chapter 8 terms, such as anticipatory anxiety and systematic desensitization, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
     id: 5,
     date: "2026-10-03",
     title: "Chapter 7: Depressive Disorders",

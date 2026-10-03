@@ -34,6 +34,14 @@ KS.manifest = [
     short: 'Depressive disorders',
     summary: 'Major depressive disorder, dysthymia and the briefer forms: recognizing depression, the specifiers and a wide differential, and choosing, dosing and changing treatment.',
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch08',
+    number: 8,
+    title: 'Anxiety Disorders',
+    short: 'Anxiety disorders',
+    summary: 'Panic disorder, agoraphobia, specific phobia, social anxiety disorder and generalized anxiety disorder: what each fears, how to tell them apart, and evidence-based drug and psychological treatment.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
   }
 ];
 

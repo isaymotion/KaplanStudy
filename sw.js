@@ -1,5 +1,5 @@
 /* Offline support: network first, cached copy when offline. Bump VERSION when you publish a new chapter. */
-const VERSION = 'ks-companion-2026-10-ch07';
+const VERSION = 'ks-companion-2026-10-ch08';
 const CORE = [
   './', './index.html', './css/app.css', './js/app.js', './data/chapters.js',
   './manifest.webmanifest', './icons/favicon.svg', './icons/icon-192.png', './icons/icon-512.png'

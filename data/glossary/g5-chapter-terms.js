@@ -21,7 +21,15 @@ KS.glossary = (KS.glossary || []).concat([
   ["learned helplessness", "Passivity after exposure to uncontrollable events, first shown in animals given inescapable shocks; proposed as a model of depression.", "Ch 7"],
   ["arbitrary inference", "A cognitive distortion: drawing a specific conclusion without sufficient evidence.", "Ch 7"],
   ["overgeneralization", "A cognitive distortion: forming conclusions from too little and too narrow experience.", "Ch 7"],
-  ["anxious distress", "A specifier requiring at least two of: feeling tense, restlessness, trouble concentrating from worry, fear without cause, fear of losing control.", "Ch 6"]
+  ["anxious distress", "A specifier requiring at least two of: feeling tense, restlessness, trouble concentrating from worry, fear without cause, fear of losing control.", "Ch 6"],
+  ["anticipatory anxiety", "Fear of having another panic attack, felt between attacks; with avoidance, one of the features that turns panic attacks into panic disorder.", "Ch 8"],
+  ["situationally predisposed panic attack", "A panic attack that is neither clearly unexpected nor clearly triggered: it may or may not occur with a cue, either immediately or after a delay.", "Ch 8"],
+  ["performance anxiety", "Fear limited to public speaking or performing; the DSM-5 performance-only specifier of social anxiety disorder.", "Ch 8"],
+  ["ataque de nervios", "An attack of nerves: a culturally specific anxiety syndrome described in Puerto Rican and Dominican patients.", "Ch 8"],
+  ["systematic desensitization", "A behavioral technique pairing gradually increasing exposure to a feared stimulus with relaxation until each step is mastered.", "Ch 8"],
+  ["extinction", "Loss of a conditioned fear response when the conditioned stimulus repeatedly occurs without the aversive one; it forms a competing memory rather than erasing the original.", "Ch 8"],
+  ["trait anxiety", "Anxiety that is characteristic of a person, independent of the situation; contrasted with state (situational) anxiety.", "Ch 8"],
+  ["fight-or-flight reaction", "The stress response produced by neurotransmitters and neuropeptides when danger is perceived; adaptive in context, but its overgeneralization underlies many anxiety disorders.", "Ch 8"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

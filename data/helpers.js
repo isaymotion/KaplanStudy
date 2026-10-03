@@ -797,4 +797,267 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+  ,
+  {
+    id: "anxiety",
+    chapter: "ch08",
+    title: "Which anxiety disorder?",
+    summary: "Rule out medical, cultural and other psychiatric explanations, then ask what the person is actually afraid of and for how long, to reach panic disorder, agoraphobia, specific phobia, social anxiety disorder or generalized anxiety disorder.",
+    caution: "A teaching aid built from Chapter 8, not a substitute for a full evaluation. Anxious patients rarely volunteer suicidal thoughts but are at increased risk, so ask directly.",
+    start: "cause",
+    nodes: {
+      cause: {
+        q: "Could a medical condition or a substance explain the anxiety?",
+        help: "Panic-like states occur with thyroid disease, hyperparathyroidism, pheochromocytoma, insulinoma (episodic hypoglycemia), seizures, vestibular dysfunction, neoplasms, arrhythmias, COPD, asthma and prescribed or illicit drugs. Clues: ataxia, altered consciousness or bladder dyscontrol during attacks, onset late in life, and physical signs of illness.",
+        options: [
+          { label: "Yes, or it has not been ruled out yet", to: "r:secondary", note: "A medical or substance cause is possible or not yet excluded." },
+          { label: "No, the history, examination and workup are reassuring", to: "culture", note: "Medical and substance causes have been reasonably excluded." }
+        ]
+      },
+      culture: {
+        q: "Is this a culturally specific anxiety syndrome?",
+        help: "Examples in the chapter: anxiety syndromes related to fear of “wind attacks” in Cambodian patients, and ataque de nervios (attack of nerves) in Puerto Rican and Dominican patients. Symptoms are usually the same as elsewhere, with emphasis on those that fit beliefs about the cause.",
+        options: [
+          { label: "Yes, the patient frames it in culturally specific terms", to: "r:culture", note: "The presentation is framed as a culturally specific syndrome." },
+          { label: "No", to: "otherdx", note: "No culturally specific framing." }
+        ]
+      },
+      otherdx: {
+        q: "Does the anxiety occur only as part of another psychiatric disorder?",
+        help: "Anxiety and panic attacks are common in major depression, schizophrenia, PTSD (panic on trauma reminders), substance use, and paranoid, avoidant and dependent personality disorders.",
+        options: [
+          { label: "Yes, it occurs only within another disorder", to: "r:other-psych", note: "The anxiety is confined to the course of another psychiatric disorder." },
+          { label: "No, the anxiety stands on its own", to: "core", note: "The anxiety is not explained by another psychiatric disorder." }
+        ]
+      },
+      core: {
+        q: "What is the person mainly afraid of?",
+        help: "This is the question that separates the anxiety disorders. Ask what they fear will happen, not only where the anxiety occurs.",
+        options: [
+          { label: "The panic attacks themselves: sudden surges of intense fear with physical symptoms", to: "panicnature", note: "The fear centers on panic attacks." },
+          { label: "Places where escape or help would be hard: transport, open or closed spaces, crowds, being out alone", to: "agora", note: "The fear centers on places where escape or help would be difficult." },
+          { label: "A specific object or situation: an animal, heights, storms, blood or needles, driving, flying", to: "specific", note: "The fear centers on a specific object or situation." },
+          { label: "Being watched, judged or embarrassed in social or performance situations", to: "socialwhy", note: "The fear centers on social or performance situations." },
+          { label: "Many everyday matters, most of the time: work, money, health, family", to: "gad", note: "The worry spreads across many everyday matters." }
+        ]
+      },
+      panicnature: {
+        q: "What is the pattern of the attacks?",
+        help: "A panic attack needs 4 or more symptoms: shortness of breath, palpitations, chest discomfort, nausea, sweating, chills or flushing, trembling, dizziness, numbness or tingling, derealization or depersonalization, fear of losing control, fear of dying. Panic disorder needs recurrent, unexpected attacks.",
+        options: [
+          { label: "Recurrent, unexpected attacks, then at least 1 month of worry about more attacks or avoidance", to: "panicagora", note: "Recurrent, unexpected attacks with at least a month of anticipatory anxiety or avoidance." },
+          { label: "Attacks come only with a particular feared trigger", to: "trigger", note: "The attacks are expected, tied to a particular trigger." },
+          { label: "A single attack, or attacks without lasting worry or avoidance", to: "r:panic-attack", note: "Attacks have not led to a month of worry or avoidance." }
+        ]
+      },
+      trigger: {
+        q: "What sets the attacks off?",
+        help: "Expected attacks point to the fear behind them, which decides the diagnosis.",
+        options: [
+          { label: "A specific object or situation", to: "specific", note: "The attacks are triggered by a specific object or situation." },
+          { label: "Social scrutiny or performing", to: "socialscope", note: "The attacks are triggered by social scrutiny." },
+          { label: "Being somewhere escape or help would be hard", to: "agora", note: "The attacks are triggered by places where escape would be hard." }
+        ]
+      },
+      panicagora: {
+        q: "Does the person also avoid places where escape or help would be difficult?",
+        help: "Agoraphobia is the most common comorbidity of panic disorder: avoiding public transport, crowds, open or enclosed spaces, or going out alone, often needing a companion.",
+        options: [
+          { label: "Yes", to: "r:panic-agora", note: "There is agoraphobic avoidance as well." },
+          { label: "No", to: "r:panic", note: "There is no agoraphobic avoidance." }
+        ]
+      },
+      agora: {
+        q: "How long has the fear and avoidance lasted, and is there panic disorder?",
+        help: "DSM-5 agoraphobia needs fear of at least 1 of 5 situations for 6 months or more, out of proportion and impairing. Panic disorder is its most common cause.",
+        options: [
+          { label: "6 months or more, with recurrent unexpected panic attacks", to: "r:panic-agora", note: "At least 6 months of agoraphobic fear, with panic disorder." },
+          { label: "6 months or more, without panic disorder", to: "r:agoraphobia", note: "At least 6 months of agoraphobic fear, without panic disorder." },
+          { label: "Less than 6 months, or not impairing", to: "r:subthreshold", note: "The fear is too brief or too mild for the diagnosis." }
+        ]
+      },
+      specific: {
+        q: "Does exposure bring immediate fear, out of proportion, with avoidance or painful endurance for 6 months or more?",
+        help: "Specific phobia types: animal, natural environment, blood–injection–injury, situational, other. Lasting avoidance after even a single panic attack in one setting can meet criteria.",
+        options: [
+          { label: "Yes", to: "r:specific", note: "Immediate, disproportionate fear on exposure, with avoidance or endurance, for at least 6 months." },
+          { label: "No, it is briefer or not impairing", to: "r:subthreshold", note: "The fear is too brief or too mild for the diagnosis." }
+        ]
+      },
+      socialwhy: {
+        q: "In those situations, what does the person fear will happen?",
+        help: "In social anxiety disorder the fear is of embarrassment or negative evaluation, not of the situation itself. Someone who avoids speaking only because they might have a panic attack does not have social anxiety disorder.",
+        options: [
+          { label: "Being embarrassed, judged or rejected, or that others will notice the anxiety", to: "socialscope", note: "The fear is of negative evaluation." },
+          { label: "Having a panic attack there", to: "panicnature", note: "The fear is of having a panic attack, not of being judged." },
+          { label: "Being unable to escape or get help", to: "agora", note: "The fear is of being unable to escape." }
+        ]
+      },
+      socialscope: {
+        q: "How far does the fear reach, and has it lasted 6 months with real impairment?",
+        help: "Some anxiety about public speaking or a party of strangers is nearly universal. The disorder requires disabling fear under scrutiny. DSM-5 has a performance-only specifier.",
+        options: [
+          { label: "Many social situations, 6 months or more, impairing", to: "r:social", note: "Fear of negative evaluation across social situations, for at least 6 months, with impairment." },
+          { label: "Only public speaking or performing, 6 months or more, impairing", to: "r:social-performance", note: "Fear limited to performance, for at least 6 months, with impairment." },
+          { label: "Ordinary nervousness that does not impair", to: "r:subthreshold", note: "The nervousness does not cause clinically significant distress or impairment." }
+        ]
+      },
+      gad: {
+        q: "Is the worry excessive and hard to control, most of the time for 6 months, with physical symptoms?",
+        help: "DSM-5 needs 3 or more of: restlessness, fatigue, poor concentration, irritability, muscle tension, insomnia. A key feature is being unable to prioritize worries or set them aside.",
+        options: [
+          { label: "Yes, with 3 or more of the symptoms", to: "r:gad", note: "Excessive, uncontrollable worry for at least 6 months, with 3 or more symptoms." },
+          { label: "Excessive, but under 6 months or with fewer symptoms", to: "r:subthreshold", note: "The worry falls short of the duration or symptom count." },
+          { label: "Proportionate and controllable", to: "r:normal", note: "The worry is proportionate, controllable and not impairing." }
+        ]
+      }
+    },
+    results: {
+      "secondary": {
+        label: "Before anything else",
+        dx: "Rule out a medical or substance cause",
+        line: "Many medical disorders and drugs cause anxiety or panic-like symptoms.",
+        points: [
+          "Endocrine: hypo- and hyperthyroidism, hyperparathyroidism, pheochromocytoma, insulinoma with episodic hypoglycemia.",
+          "Neurologic: seizure disorders, vestibular dysfunction, neoplasms, and the CNS effects of prescribed and illicit drugs.",
+          "Cardiopulmonary: arrhythmias, COPD and asthma can produce crescendo anxiety hard to tell from panic.",
+          "Ataxia, altered consciousness or bladder dyscontrol during attacks, or a first onset late in life, call for a medical workup; hospitalization is reasonable when one is needed."
+        ],
+        link: { ch: "ch08", sec: "s8-ddx", label: "Differential diagnosis" }
+      },
+      "culture": {
+        label: "Consider",
+        dx: "A culturally specific anxiety syndrome",
+        line: "Some groups have anxiety syndromes that reflect culturally specific understandings of the body.",
+        points: [
+          "Examples: fear of “wind attacks” in Cambodian patients; ataque de nervios in Puerto Rican and Dominican patients.",
+          "The symptoms themselves usually match those seen elsewhere; the emphasis follows beliefs about the cause.",
+          "Take a full history and examination, and consider a cultural consultation.",
+          "Once understood, the presentation may still meet criteria for one of the anxiety disorders; continue the assessment."
+        ],
+        link: { ch: "ch08", sec: "s8-special", label: "Special populations and culture" }
+      },
+      "other-psych": {
+        label: "Consider",
+        dx: "Anxiety as part of another psychiatric disorder",
+        line: "Anxiety and panic attacks are common features of many disorders and may not need a separate diagnosis.",
+        points: [
+          "Panic attacks occur especially in the phobias and PTSD; a panic attack is a symptom, not a diagnosis.",
+          "Agoraphobic avoidance can arise in major depression, schizophrenia, and paranoid, avoidant and dependent personality disorders.",
+          "Depression complicates panic disorder in 40–80 percent of patients, and substance use in 20–40 percent; a separate anxiety disorder may still coexist.",
+          "Treat the primary disorder, and reassess whether anxiety persists independently."
+        ],
+        link: { ch: "ch08", sec: "s8-ddx", label: "Differential diagnosis" }
+      },
+      "panic": {
+        dx: "Panic disorder",
+        line: "Recurrent, unexpected panic attacks followed by at least 1 month of anticipatory anxiety or avoidance.",
+        points: [
+          "First line: an SSRI or venlafaxine; a short-term benzodiazepine can bridge the first weeks. TCAs and MAOIs work but are less preferred.",
+          "Cognitive therapy: correct the misreading of bodily sensations and teach that attacks are time-limited and not life-threatening.",
+          "Maintenance antidepressants prevent relapse for 1 to 3 years; taper very slowly. Advise cutting back caffeine and nicotine.",
+          "Screen for depression (40–80 percent), substance use (20–40 percent) and suicide risk."
+        ],
+        link: { ch: "ch08", sec: "s8-panic", label: "Panic disorder" }
+      },
+      "panic-agora": {
+        dx: "Panic disorder with agoraphobia",
+        line: "Panic disorder plus avoidance of places where escape or help would be difficult.",
+        points: [
+          "Panic disorder is the most common cause of agoraphobia; DSM-5 records agoraphobia as a comorbid condition.",
+          "Medication mainly targets the panic attacks: an SSRI or venlafaxine first line.",
+          "Improving the panic often improves the agoraphobia; behavior therapy (graded exposure) gives rapid, complete reduction.",
+          "Agoraphobia can be the most disabling phobia; virtual-reality exposure can help with hard-to-recreate settings."
+        ],
+        link: { ch: "ch08", sec: "s8-agoraphobia", label: "Agoraphobia" }
+      },
+      "panic-attack": {
+        label: "Conclusion",
+        dx: "Panic attacks without panic disorder",
+        line: "Isolated attacks, or attacks without a month of worry or avoidance, do not meet criteria for panic disorder.",
+        points: [
+          "DSM-5 provides a panic attack specifier for discrete attacks without the full disorder.",
+          "After the first one or two attacks many people are unconcerned; repeated attacks can bring anticipatory anxiety, so follow up.",
+          "If avoidance of one specific setting develops after an attack, consider specific phobia."
+        ],
+        link: { ch: "ch08", sec: "s8-panic", label: "Panic disorder" }
+      },
+      "agoraphobia": {
+        dx: "Agoraphobia",
+        line: "At least 6 months of fear and avoidance of places where escape or help would be difficult, without panic disorder.",
+        points: [
+          "Feared situations: public transportation, open spaces, enclosed spaces, lines or crowds, being alone outside the home.",
+          "Without panic disorder it is often incapacitating and chronic, complicated by depression and alcohol use disorder.",
+          "Behavior therapy with graded or virtual exposure; early studies did not support medication for pure agoraphobia.",
+          "Rule out depression, schizophrenia, and paranoid, avoidant and dependent personality disorders."
+        ],
+        link: { ch: "ch08", sec: "s8-agoraphobia", label: "Agoraphobia" }
+      },
+      "specific": {
+        dx: "Specific phobia",
+        line: "Immediate, disproportionate fear of a specific object or situation, with avoidance or painful endurance, for at least 6 months.",
+        points: [
+          "Specify the type: animal, natural environment, blood–injection–injury, situational or other.",
+          "Treatment of choice: in vivo exposure, usually graded with relaxation; virtual reality helps for situations like flying.",
+          "SSRIs may help but are little studied.",
+          "Phobias are the most stable anxiety disorders over time and have the highest heritability, perhaps 60 percent."
+        ],
+        link: { ch: "ch08", sec: "s8-specific", label: "Specific phobia" }
+      },
+      "social": {
+        dx: "Social anxiety disorder",
+        line: "At least 6 months of disabling fear of scrutiny and negative evaluation across social situations.",
+        points: [
+          "First line: SSRIs or SNRIs; pregabalin and clonazepam also have strong evidence; phenelzine works but is rarely used.",
+          "Not recommended: TCAs, buspirone and quetiapine. β-Blockers do not help generalized social anxiety.",
+          "Individual CBT is first line in some guidelines; group CBT and social skills training also help.",
+          "The sex ratio is roughly equal, unlike most anxiety disorders."
+        ],
+        link: { ch: "ch08", sec: "s8-social", label: "Social anxiety disorder" }
+      },
+      "social-performance": {
+        dx: "Social anxiety disorder, performance only",
+        line: "Disabling fear limited to public speaking or performance, for at least 6 months.",
+        points: [
+          "β-Blockers such as propranolol may help performance anxiety, though evidence is thin and side effects can impair performance.",
+          "Their benefit does not generalize to other social anxiety.",
+          "CBT and exposure are useful; SSRIs and SNRIs remain first line if broader treatment is needed."
+        ],
+        link: { ch: "ch08", sec: "s8-social", label: "Social anxiety disorder" }
+      },
+      "gad": {
+        dx: "Generalized anxiety disorder",
+        line: "Excessive, hard-to-control worry about many matters most of the time for at least 6 months, with 3 or more physical or cognitive symptoms.",
+        points: [
+          "First line: SSRIs or SNRIs. Alternatives: agomelatine, pregabalin, buspirone (three divided doses, slow onset) or quetiapine.",
+          "Allow 8–12 weeks at an optimal dose; maintain at least 6 months.",
+          "CBT has substantial effects in GAD.",
+          "Relapses can come long after the first episode; keep monitoring, including for suicide risk."
+        ],
+        link: { ch: "ch08", sec: "s8-gad", label: "Generalized anxiety disorder" }
+      },
+      "subthreshold": {
+        label: "Conclusion",
+        dx: "Anxiety that does not yet meet criteria",
+        line: "The fear or worry is too brief, too mild or not impairing enough for a specific anxiety disorder.",
+        points: [
+          "The anxiety disorders require clinically significant distress or impairment, and most require 6 months.",
+          "A rating scale such as the GAD-7 or Beck Anxiety Inventory can track symptoms over time.",
+          "Reassess if symptoms persist or spread; brief symptoms with good premorbid functioning carry a favorable outlook."
+        ],
+        link: { ch: "ch08", sec: "s8-map", label: "The anxiety disorders at a glance" }
+      },
+      "normal": {
+        label: "Conclusion",
+        dx: "Normal anxiety",
+        line: "Anxiety that is proportionate, controllable and not impairing is an adaptive response, not a disorder.",
+        points: [
+          "Fear and anxiety prepare us for danger through fight, flight or freezing.",
+          "In the right dose, anxiety sharpens attention and alertness.",
+          "It becomes a disorder only when inappropriately triggered and maladaptive."
+        ],
+        link: { ch: "ch08", sec: "s8-overview", label: "Normal and pathologic anxiety" }
+      }
+    }
+  }
 ]);
