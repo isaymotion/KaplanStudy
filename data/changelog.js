@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 5,
+    date: "2026-10-03",
+    title: "Chapter 7: Depressive Disorders",
+    items: [
+      { type: "chapter", ch: "ch07", text: "**Chapter 7: Depressive Disorders**: study guide, high-yield list, 214 flashcards and a printable handout.", href: "#/c/ch07/guide", link: "Start Chapter 7" },
+      { type: "feature", ch: "ch07", text: "**Which depressive disorder?** diagnostic helper: cause, bipolarity, bereavement, chronicity, episode severity and specifiers, ending at one of 18 outcomes.", href: "#/helpers/depression", link: "Try it" },
+      { type: "update", text: "Ten Chapter 7 terms, such as double depression and paradoxical suicide, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
     id: 4,
     date: "2026-10-03",
     title: "Tools for educators",

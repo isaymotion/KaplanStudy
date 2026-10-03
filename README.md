@@ -18,6 +18,7 @@ Across all chapters:
 - **Diagnostic helpers**: step-by-step decision aids that end with the likely diagnosis, the reasoning trail, chapter points and a link to the guide section.
   - *Which psychotic disorder?* (Chapter 5): cause, culture, shared delusions, mood involvement, symptoms and duration.
   - *Which bipolar disorder?* (Chapter 6): medical or substance cause, antidepressant-associated episodes, psychosis outside mood episodes, the most severe elevated period, distinct episodes versus personality lability, major depressive episodes, a 2-year subthreshold course, and rapid cycling. Reaches bipolar I, bipolar II (each with or without rapid cycling), cyclothymia, or the main look-alikes.
+  - *Which depressive disorder?* (Chapter 7): medical or substance cause, history of mania or hypomania, predictors of bipolarity, bereavement, a chronic versus episodic course, the persistent depressive disorder course specifiers, episode severity and duration, psychotic features and the main specifiers. Reaches major depressive disorder with its specifiers, persistent depressive disorder, double depression, recurrent brief and minor depression, normal grief, or a medical or bipolar cause.
 
 Progress (review schedule, mistakes, exam history, settings) is saved in the browser on each device.
 
@@ -35,6 +36,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 |---|---|---|---|---|
 | 5 | Schizophrenia Spectrum and Other Psychotic Disorders | 33 | 157 | 267 |
 | 6 | Bipolar Disorders | 24 | 102 | 208 |
+| 7 | Depressive Disorders | 32 | 123 | 214 |
 
 ## Publish on GitHub Pages
 

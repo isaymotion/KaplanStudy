@@ -26,6 +26,14 @@ KS.manifest = [
     short: 'Bipolar disorders',
     summary: 'Bipolar I, bipolar II and cyclothymia: recognizing mania and bipolar depression, the specifiers, the differential, and acute and maintenance treatment.',
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch07',
+    number: 7,
+    title: 'Depressive Disorders',
+    short: 'Depressive disorders',
+    summary: 'Major depressive disorder, dysthymia and the briefer forms: recognizing depression, the specifiers and a wide differential, and choosing, dosing and changing treatment.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
   }
 ];
 

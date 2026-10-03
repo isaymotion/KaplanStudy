@@ -506,4 +506,295 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+  ,
+  {
+    id: "depression",
+    chapter: "ch07",
+    title: "Which depressive disorder?",
+    summary: "Work through cause, bipolarity, bereavement, chronicity, episode severity and features to reach major depressive disorder with its specifiers, persistent depressive disorder, double depression or the briefer and milder forms.",
+    caution: "A teaching aid built from Chapter 7, not a substitute for a full evaluation. Assess suicide risk in every depressed patient, and confirm the history with another source when you can: depressed patients often minimize what has helped.",
+    start: "cause",
+    nodes: {
+      cause: {
+        q: "Could a medical condition, a medication or a substance explain the depression?",
+        help: "Table 7-4 lists drugs (reserpine, methyldopa, steroidal contraceptives, interferon, stimulant or alcohol withdrawal and more) and endocrine, infectious, collagen, nutritional, neurologic and neoplastic diseases. Rule of thumb: any drug a depressed patient takes is a potential cause.",
+        options: [
+          { label: "Yes, or it has not been ruled out yet", to: "r:secondary", note: "A medical, medication or substance cause is possible or not yet excluded." },
+          { label: "No, the workup is reassuring", to: "bipolar", note: "Medical, medication and substance causes have been reasonably excluded." }
+        ]
+      },
+      bipolar: {
+        q: "Has there ever been a manic or hypomanic episode?",
+        help: "Ask directly, and ask family. A depressive episode of bipolar disorder can be identical to a unipolar one.",
+        options: [
+          { label: "Yes", to: "r:bipolar", note: "There is a history of mania or hypomania." },
+          { label: "No", to: "predictors", note: "There has never been a manic or hypomanic episode." }
+        ]
+      },
+      predictors: {
+        q: "Are there features that predict bipolar disorder (Table 7-5)?",
+        help: "Early onset; psychotic depression before 25; postpartum (especially psychotic) depression; short episodes with rapid onset and offset; more than five episodes; marked retardation; atypical features; seasonality; bipolar family history; cyclothymic or hyperthymic temperament; antidepressant-associated hypomania; repeated loss of antidepressant efficacy; depressive mixed state.",
+        options: [
+          { label: "Yes, one or more", to: "grief", note: "Features that predict bipolarity are present: keep asking about hypomania and watch for switching on antidepressants." },
+          { label: "No", to: "grief", note: "No features that predict bipolarity." }
+        ]
+      },
+      grief: {
+        q: "Did the symptoms follow the death of someone close?",
+        help: "About one third of bereaved spouses meet criteria for major depression for a time. Normal grief keeps emotional reactivity, involves guilt of omission and rarely includes active suicidal ideation.",
+        options: [
+          { label: "Yes, and it looks like normal grief", to: "r:grief", note: "Symptoms follow a death and fit normal grief: reactive mood, guilt of omission, no active suicidal ideation." },
+          { label: "Yes, with signs of a depressive disorder", to: "chronic", note: "Grief shows Table 7-8 warning signs: feeling ill, marked retardation, guilt of commission, worthlessness or psychosis, active suicidal ideation, mummification or severe anniversary reactions." },
+          { label: "No", to: "chronic", note: "The depression is not a response to bereavement." }
+        ]
+      },
+      chronic: {
+        q: "What is the pattern over time?",
+        help: "Persistent depressive disorder needs depressed mood most days for 2 years (1 year in children), never symptom-free for more than 2 months.",
+        options: [
+          { label: "Depressed most days for 2 years or more, never well for more than 2 months", to: "pddmde", note: "Chronic depressed mood for at least 2 years with no symptom-free period longer than 2 months." },
+          { label: "Discrete episodes, with clear periods in between", to: "episode", note: "The depression comes in discrete episodes." }
+        ]
+      },
+      pddmde: {
+        q: "Have full major depressive episodes occurred during these 2 years?",
+        help: "These are the DSM-5 course specifiers for persistent depressive disorder (Table 7-3).",
+        options: [
+          { label: "No full episode in the past 2 years", to: "r:pdd-pure", note: "No major depressive episode in the past 2 years." },
+          { label: "Yes, throughout the entire 2 years", to: "r:pdd-persistent", note: "Full major depressive criteria have been met for the whole 2 years." },
+          { label: "Yes, on and off, and one is happening now", to: "r:double", note: "Intermittent major depressive episodes on top of chronic low mood, with a current episode." },
+          { label: "Yes, on and off, but not right now", to: "r:pdd-intermittent", note: "Intermittent major depressive episodes in the past 2 years, none current." }
+        ]
+      },
+      episode: {
+        q: "What are the episodes like?",
+        help: "Major depression needs 5 symptoms for 2 weeks, one being depressed mood or anhedonia, with distress or impairment.",
+        options: [
+          { label: "5 or more symptoms, including low mood or anhedonia, for 2 weeks or more, with distress or impairment", to: "psychotic", note: "Episodes meet major depressive criteria: 5 or more symptoms for at least 2 weeks with distress or impairment." },
+          { label: "Full-severity symptoms, but each episode lasts less than 2 weeks", to: "r:rbd", note: "Episodes are severe enough for major depression but last under 2 weeks." },
+          { label: "Fewer, milder symptoms, with normal mood between episodes", to: "r:minor", note: "Episodes are milder than major depression, with euthymia in between." }
+        ]
+      },
+      psychotic: {
+        q: "Are there delusions or hallucinations?",
+        help: "Mood-congruent themes: guilt, sin, worthlessness, poverty, failure, persecution, terminal illness. Mood-incongruent: for example, grandiose power, knowledge or worth.",
+        options: [
+          { label: "Yes, mood-congruent", to: "r:mdd-psychotic", note: "Psychotic features with mood-congruent content." },
+          { label: "Yes, mood-incongruent", to: "r:mdd-incongruent", note: "Psychotic features with mood-incongruent content." },
+          { label: "No", to: "features", note: "No psychotic features." }
+        ]
+      },
+      features: {
+        q: "Which description fits the episode best?",
+        help: "Choose the most prominent pattern. Several specifiers can apply at once; the result lists the others to check.",
+        options: [
+          { label: "Melancholic: no pleasure or reactivity, worse in the morning, early waking, weight loss, excessive guilt", to: "r:mdd-melancholic", note: "Melancholic features: loss of pleasure or reactivity plus morning worsening, early waking, weight loss or excessive guilt." },
+          { label: "Atypical: mood still brightens, plus overeating, oversleeping, leaden paralysis or rejection sensitivity", to: "r:mdd-atypical", note: "Atypical features: mood reactivity with reversed vegetative signs, leaden paralysis or rejection sensitivity." },
+          { label: "Three or more manic or hypomanic symptoms within the episode", to: "r:mdd-mixed", note: "Mixed features: at least three manic or hypomanic symptoms within the depressive episode." },
+          { label: "Catatonic: stupor, extreme withdrawal, negativism, marked retardation for most of the episode", to: "r:mdd-catatonic", note: "Catatonic features for most of the episode." },
+          { label: "Began within 4 weeks after delivery", to: "r:mdd-postpartum", note: "Onset within 4 weeks postpartum." },
+          { label: "Recurs in the same season, usually winter", to: "r:mdd-seasonal", note: "A seasonal pattern, usually winter." },
+          { label: "None of these stands out", to: "r:mdd", note: "No distinctive specifier pattern." }
+        ]
+      }
+    },
+    results: {
+      "secondary": {
+        label: "Before anything else",
+        dx: "Rule out a medical or substance cause",
+        line: "Many medical and neurologic disorders and drugs produce depression; most are found with a careful history, examination and routine tests.",
+        points: [
+          "Do a full history, physical and neurologic examination, and routine blood and urine tests, including thyroid and adrenal function.",
+          "Targeted tests: mononucleosis in adolescents; adrenal and thyroid function if markedly over- or underweight; HIV with risk factors; viral pneumonia and other illness in older patients.",
+          "Neurologic causes to consider: Parkinson disease, dementia, epilepsy (especially a right temporal focus), stroke (especially anterior, within 2 years) and diencephalic or temporal tumors.",
+          "With substance use, establish the link by history or several weeks of abstinence; depression that persists despite abstinence is an independent mood disorder."
+        ],
+        link: { ch: "ch07", sec: "s7-ddx-medical", label: "Medical and pharmacologic causes" }
+      },
+      "bipolar": {
+        label: "Conclusion",
+        dx: "A bipolar disorder, not a depressive disorder",
+        line: "Any history of mania or hypomania excludes major depressive disorder in DSM-5.",
+        points: [
+          "The depressive episode of bipolar disorder can be identical to a unipolar episode.",
+          "Unipolar and bipolar disorders need different treatment, so the diagnosis changes the plan.",
+          "The bipolar disorders helper (Chapter 6) works through bipolar I, bipolar II and cyclothymia."
+        ],
+        link: { ch: "ch07", sec: "s7-ddx-bipolar", label: "Is it bipolar?" },
+        also: { href: "#/helpers/bipolar", label: "Open the bipolar disorders helper" }
+      },
+      "grief": {
+        label: "Conclusion",
+        dx: "Uncomplicated bereavement",
+        line: "Normal grief is not a mental disorder, even when it temporarily meets symptom criteria.",
+        points: [
+          "About one third of bereaved spouses meet criteria for major depression for a time.",
+          "Diagnose a depressive disorder only if the grief does not resolve; severity and course are the key differences.",
+          "Watch for Table 7-8 signs: feeling ill, marked retardation, guilt of commission, worthlessness or psychosis, active suicidal ideation, mummification, severe anniversary reactions.",
+          "In severe bereavement, some argue it is unwise to withhold antidepressants, whatever the diagnosis."
+        ],
+        link: { ch: "ch07", sec: "s7-bereavement", label: "Bereavement" }
+      },
+      "pdd-pure": {
+        dx: "Persistent depressive disorder (dysthymia), with pure dysthymic syndrome",
+        line: "Chronic depressed mood for at least 2 years without a major depressive episode in that time.",
+        points: [
+          "Usually begins in childhood or adolescence; patients say they have always been depressed and often wait a decade before seeking help.",
+          "Over time about 20 percent progress to major depression, 15 percent to bipolar II and under 5 percent to bipolar I.",
+          "Treat much as for major depression: antidepressants and cognitive or behavior therapy. The prognosis is good with treatment.",
+          "Screen for substance use, a common way of coping with chronic low mood."
+        ],
+        link: { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" }
+      },
+      "pdd-persistent": {
+        dx: "Persistent depressive disorder, with persistent major depressive episode",
+        line: "Full major depressive criteria have been met throughout the 2 years.",
+        points: [
+          "Treat as for major depression, aiming for remission rather than partial response.",
+          "In chronically depressed outpatients, medication plus psychotherapy gives higher response and remission than either alone.",
+          "Chronic depression is a candidate for maintenance treatment, which appears safe and effective."
+        ],
+        link: { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" }
+      },
+      "double": {
+        dx: "Double depression",
+        line: "A major depressive episode on top of persistent depressive disorder (DSM-5: with intermittent major depressive episodes, with current episode).",
+        points: [
+          "Found in about 40 percent of patients with major depressive disorder.",
+          "Poorer prognosis than major depression alone; comorbid dysthymia is a negative indicator in Table 7-9.",
+          "Treat both: resolving the major episode alone still leaves significant impairment.",
+          "Assess suicide risk; chronic hopelessness can coexist with acute risk."
+        ],
+        link: { ch: "ch07", sec: "s7-other", label: "Double depression" }
+      },
+      "pdd-intermittent": {
+        dx: "Persistent depressive disorder, with intermittent major depressive episodes, without current episode",
+        line: "Chronic low mood with at least one major depressive episode in the past 2 years, none at present.",
+        points: [
+          "Keep treating the chronic depression; residual symptoms raise the risk of recurrence.",
+          "Recurrent or chronic depression is a candidate for maintenance treatment.",
+          "Watch for a new episode, which would make this double depression."
+        ],
+        link: { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" }
+      },
+      "rbd": {
+        dx: "Recurrent brief depressive disorder",
+        line: "Full-severity depressive episodes lasting less than 2 weeks. DSM-5 codes it as other specified depressive disorder; ICD-10 as other recurrent mood disorder.",
+        points: [
+          "It differs from dysthymia by being episodic and more severe.",
+          "Rapid onset and offset of short depressive episodes is one of the Table 7-5 predictors of bipolar disorder: ask carefully about hypomania.",
+          "Track episodes over time with a rating scale such as the HAM-D or Zung."
+        ],
+        link: { ch: "ch07", sec: "s7-other", label: "Recurrent brief depression" }
+      },
+      "minor": {
+        dx: "Minor depressive disorder",
+        line: "Episodes milder than major depression, with normal mood in between. DSM-5 codes it as other specified depressive disorder; ICD-10 as a mild depressive episode.",
+        points: [
+          "It differs from dysthymia mainly by being episodic; dysthymia has virtually no euthymic periods.",
+          "If low mood becomes near-continuous for 2 years, reconsider persistent depressive disorder.",
+          "If an episode reaches 5 symptoms for 2 weeks, it becomes major depression."
+        ],
+        link: { ch: "ch07", sec: "s7-other", label: "Minor depressive disorder" }
+      },
+      "mdd": {
+        dx: "Major depressive disorder",
+        line: "At least one major depressive episode, with no history of mania or hypomania.",
+        points: [
+          "Specify severity (mild, moderate, severe) and whether the episode is single or recurrent; check for anxious distress (2 or more anxiety symptoms).",
+          "Assess suicide risk and the indications for hospitalization: suicide or homicide risk, inability to obtain food or shelter, need for diagnostic procedures.",
+          "SSRIs are the most common first choice; give an adequate dose for 4–5 weeks, aim for remission, and continue at least 6 months.",
+          "Cognitive, interpersonal and behavior therapy all have strong evidence; combined treatment is the chapter's general recommendation."
+        ],
+        link: { ch: "ch07", sec: "s7-mdd", label: "Major depressive disorder" }
+      },
+      "mdd-psychotic": {
+        dx: "Major depressive disorder, with mood-congruent psychotic features",
+        line: "A major depressive episode with delusions or hallucinations in keeping with the depressed mood.",
+        points: [
+          "Psychotic features reflect severe disease and predict a poorer prognosis.",
+          "Treat with an antidepressant plus an atypical antipsychotic; ECT is useful and perhaps more effective than medication.",
+          "Assess suicide and homicide risk; delusions occasionally lead to thoughts of harming others.",
+          "Psychotic depression before age 25 predicts bipolar disorder (Table 7-5)."
+        ],
+        link: { ch: "ch07", sec: "s7-specifiers", label: "Specifiers" }
+      },
+      "mdd-incongruent": {
+        dx: "Major depressive disorder, with mood-incongruent psychotic features",
+        line: "A major depressive episode with psychotic content that does not fit the depressed mood, such as grandiosity.",
+        points: [
+          "Mood-incongruent features raise the chance of a comorbid primary psychotic disorder, such as schizoaffective disorder or schizophrenia.",
+          "Guard against the reverse error too: Table 7-6 lists how mood disorders get misdiagnosed as schizophrenia. Take a longitudinal view.",
+          "Treat with an antidepressant plus an atypical antipsychotic, or ECT.",
+          "The psychotic disorders helper (Chapter 5) covers the psychotic differential."
+        ],
+        link: { ch: "ch07", sec: "s7-ddx-psych", label: "Psychotic and other disorders" },
+        also: { href: "#/helpers/psychosis", label: "Open the psychotic disorders helper" }
+      },
+      "mdd-melancholic": {
+        dx: "Major depressive disorder, with melancholic features",
+        line: "Loss of pleasure or reactivity plus at least three of: severe despair, morning worsening, early waking, psychomotor change, weight loss, excessive guilt.",
+        points: [
+          "Sometimes called endogenous depression; linked to autonomic and endocrine changes.",
+          "Suicidal ideation is common: assess risk carefully.",
+          "Dual-action (serotonergic and noradrenergic) antidepressants may work better.",
+          "Also check for anxious distress and catatonia."
+        ],
+        link: { ch: "ch07", sec: "s7-specifiers", label: "Specifiers" }
+      },
+      "mdd-atypical": {
+        dx: "Major depressive disorder, with atypical features",
+        line: "Mood reactivity plus at least two of: increased appetite or weight, increased sleep, leaden paralysis, rejection sensitivity.",
+        points: [
+          "Strongest evidence for MAOIs; SSRIs and bupropion also help.",
+          "Younger onset and more anxiety, substance use and somatic symptom comorbidity; easily misdiagnosed as an anxiety disorder.",
+          "Associated with a long course, a seasonal pattern and bipolar I disorder: watch for switching, as in the chapter's case of Kevin.",
+          "Atypical features are a Table 7-5 predictor of bipolarity."
+        ],
+        link: { ch: "ch07", sec: "s7-specifiers", label: "Specifiers" }
+      },
+      "mdd-mixed": {
+        dx: "Major depressive disorder, with mixed features",
+        line: "At least three manic or hypomanic symptoms within the depressive episode, never as separate episodes.",
+        points: [
+          "If the manic or hypomanic symptoms ever occur as independent episodes, the diagnosis is bipolar disorder.",
+          "A depressive mixed state (psychomotor excitement, irritable hostility, racing thoughts, sexual arousal) predicts bipolarity in Table 7-5.",
+          "Accurate diagnosis matters because unipolar and bipolar disorders need different treatment."
+        ],
+        link: { ch: "ch07", sec: "s7-specifiers", label: "Specifiers" },
+        also: { href: "#/helpers/bipolar", label: "Open the bipolar disorders helper" }
+      },
+      "mdd-catatonic": {
+        dx: "Major depressive disorder, with catatonia",
+        line: "Catatonic features (stupor, blunted affect, extreme withdrawal, negativism, marked retardation) present for most of the episode.",
+        points: [
+          "Catatonic features in mood disorders may carry prognostic and treatment significance.",
+          "Severe retardation can make catatonia hard to distinguish from depression itself.",
+          "Check whether the patient can obtain food and care for themselves; inability is an indication for hospitalization.",
+          "Catatonia also occurs in schizophrenia; review the longitudinal history."
+        ],
+        link: { ch: "ch07", sec: "s7-specifiers", label: "Specifiers" }
+      },
+      "mdd-postpartum": {
+        dx: "Major depressive disorder, with peripartum (postpartum) onset",
+        line: "A major depressive episode beginning within 4 weeks after delivery.",
+        points: [
+          "Postpartum disorders commonly include psychotic symptoms: ask specifically.",
+          "Brexanolone (IV allopregnanolone, approved 2019) treats postpartum depression, acting within 24 hours; it is given over 60 hours in a restricted program.",
+          "Postpartum depression, especially with psychosis, is a Table 7-5 predictor of bipolar disorder."
+        ],
+        link: { ch: "ch07", sec: "s7-novel", label: "Novel agents" }
+      },
+      "mdd-seasonal": {
+        dx: "Major depressive disorder, with seasonal pattern",
+        line: "Depressive episodes that recur in a particular season, most often winter.",
+        points: [
+          "Patients may respond preferentially to light therapy: 1,500–10,000 lux, about 1–2 hours before dawn.",
+          "At least 75 percent are women; mean age at presentation is 40, and presentation after 55 is rare.",
+          "Light therapy can rarely switch patients into mania or hypomania, and seasonality predicts bipolarity (Table 7-5)."
+        ],
+        link: { ch: "ch07", sec: "s7-neurostim", label: "Light therapy" }
+      }
+    }
+  }
 ]);
