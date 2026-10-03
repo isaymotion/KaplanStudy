@@ -21,6 +21,12 @@ Across all chapters:
 
 Progress (review schedule, mistakes, exam history, settings) is saved in the browser on each device.
 
+For educators:
+
+- **Printable handouts** (`#/c/ch06/handout`, or the *Printable handout* button on any high-yield page): the high-yield list laid out as a print-ready sheet for A4 or Letter, as an answer key or as a fill-in worksheet with every key fact blanked. The type size is fitted automatically. Topics can be unticked to focus a session. If a chapter is too long for one page at a readable size, the page offers two pages (front and back), and printing is blocked whenever content would be cut off. Use *Print or save as PDF*; the browser's print dialog can save a PDF.
+- **Teaching mode** (`#/teach`, or *Present in teaching mode* on any clinical case deck): full-screen presentation of board-style questions or the chapter cases, one at a time, for group discussion. Mark the group's answer with a click or A to E, reveal with Space, move with the arrow keys, F toggles full screen, Esc closes. Teaching mode never affects review schedules or mistakes.
+- **What's new** (`#/whats-new`, linked in the footer): new chapters, features and corrections. Residents see a notice on the home page and an *Updated* tag on affected chapters until they open the page.
+
 Also included: light and dark themes, keyboard shortcuts, offline support after the first visit, and installability as an app on phones and desktops.
 
 ## Chapters
@@ -49,6 +55,7 @@ js/app.js               Router, study guide, high yield, flashcards and spaced r
 data/chapters.js        Chapter registry and list of shared data files
 data/glossary/          Glossary (g1–g4: book glossary; g5: chapter-defined terms and aliases)
 data/helpers.js         Diagnostic helper decision trees
+data/changelog.js       What's new entries
 data/ch05/, data/ch06/  Chapter content
   guide.js              Study guide
   highyield.js          High-yield topics
@@ -68,6 +75,8 @@ sw.js                   Offline cache
 3. Change `VERSION` in `sw.js` so returning users get the new content.
 
 Search, the home page, daily review, exam mode and the chapter navigation pick up the new chapter automatically.
+
+Add an entry to the top of `data/changelog.js` for every release, with the next `id` number. Give items a `ch` field to tag the chapter as updated, and an `href` to link to what changed. Use `type: "correction"` for corrections so residents can go straight to the corrected content.
 
 To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to `data/glossary/g5-chapter-terms.js`. To add a diagnostic helper, append a decision tree to `KS.helpers` in `data/helpers.js` (nodes with options that point to another node or to `r:<result>`); the helpers page lists it automatically.
 

@@ -1,0 +1,54 @@
+/*
+ * What's new. Add a new entry at the top for every release, with the next id number.
+ * Residents see entries with a higher id than their last visit marked "New", and chapters
+ * named in an item's `ch` field show an "Updated" tag on the home page.
+ *
+ * Item types: "chapter", "feature", "correction", "update".
+ * Optional: `ch` (chapter id), `href` (link into the app, e.g. "#/c/ch05/guide/s-brief"),
+ * `link` (link text, defaults to "Open").
+ *
+ * Example correction:
+ *   { type: "correction", ch: "ch05", text: "Fixed the duration of brief psychotic disorder in the timeline.",
+ *     href: "#/c/ch05/guide/s-map", link: "See the corrected section" }
+ */
+KS.changelog = [
+  {
+    id: 4,
+    date: "2026-10-03",
+    title: "Tools for educators",
+    items: [
+      { type: "feature", text: "**Printable handouts**: a one-page high-yield sheet for each chapter, sized automatically to fit A4 or Letter, as an answer key or a fill-in worksheet.", href: "#/c/ch06/handout", link: "Open the Chapter 6 handout" },
+      { type: "feature", text: "**Teaching mode**: present board-style questions or the chapter cases full screen for group discussion, with the answer revealed on click.", href: "#/teach", link: "Open teaching mode" },
+      { type: "feature", text: "**What’s new**: this page, listing new chapters, features and corrections." }
+    ]
+  },
+  {
+    id: 3,
+    date: "2026-10-03",
+    title: "Diagnostic helper for bipolar disorders",
+    items: [
+      { type: "feature", ch: "ch06", text: "**Which bipolar disorder?** walks through cause, psychosis, the most severe elevated period, depressive episodes and course to bipolar I, bipolar II, cyclothymia or the main look-alikes.", href: "#/helpers/bipolar", link: "Try it" }
+    ]
+  },
+  {
+    id: 2,
+    date: "2026-10-02",
+    title: "Chapter 6 and new ways to study",
+    items: [
+      { type: "chapter", ch: "ch06", text: "**Chapter 6: Bipolar Disorders**: study guide, high-yield list and 208 flashcards.", href: "#/c/ch06/guide", link: "Start Chapter 6" },
+      { type: "feature", text: "**Spaced repetition** replaces the Got it and Still learning marks. Existing marks were carried over. A daily review queue now pulls due cards from every chapter.", href: "#/review", link: "Open daily review" },
+      { type: "feature", text: "**Board-style exam**: timed clinical cases across chapters, scored by topic, with a review of what you missed.", href: "#/exam", link: "Take an exam" },
+      { type: "feature", text: "**Mistakes**: every case answered wrong is collected automatically for another try.", href: "#/mistakes", link: "Open mistakes" },
+      { type: "feature", text: "**Glossary** of signs and symptoms from the book, with tap-to-define for dotted terms throughout the app.", href: "#/glossary", link: "Open the glossary" },
+      { type: "update", ch: "ch05", text: "**Which psychotic disorder?** diagnostic helper added for Chapter 5, and glossary terms in the Chapter 5 guide can now be tapped for definitions.", href: "#/helpers/psychosis", link: "Try the helper" }
+    ]
+  },
+  {
+    id: 1,
+    date: "2026-10-02",
+    title: "The app launches with Chapter 5",
+    items: [
+      { type: "chapter", ch: "ch05", text: "**Chapter 5: Schizophrenia Spectrum and Other Psychotic Disorders**: study guide, high-yield list and 267 flashcards.", href: "#/c/ch05/guide", link: "Open Chapter 5" }
+    ]
+  }
+];

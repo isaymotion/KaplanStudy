@@ -36,5 +36,6 @@ KS.extraFiles = [
   'data/glossary/g3.js',
   'data/glossary/g4.js',
   'data/glossary/g5-chapter-terms.js',
-  'data/helpers.js'
+  'data/helpers.js',
+  'data/changelog.js'
 ];

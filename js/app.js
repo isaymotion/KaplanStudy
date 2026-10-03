@@ -214,10 +214,13 @@
         return renderExamSetup();
       case 'glossary': return renderGlossary(p[1]);
       case 'helpers': return p[1] ? renderHelper(p[1]) : renderHelpers();
+      case 'teach': return p[1] === 'run' ? renderTeachRun() : renderTeachSetup();
+      case 'whats-new': return renderNews();
       case 'c':
         var ch = chapter(p[1]);
         if (!ch) return renderMissing();
         var mode = p[2] || 'guide';
+        if (mode === 'handout') return renderHandout(ch);
         store.set('last', { hash: location.hash, ch: ch.id, mode: mode === 'cards' ? (p[3] || 'diagnosis') : mode });
         if (mode === 'guide') return renderGuide(ch, p[3]);
         if (mode === 'high-yield') return renderHY(ch, p[3]);
@@ -243,6 +246,8 @@
   function updateNavBadges() {
     var b = document.querySelector('[data-badge="review"]');
     if (b && CARD_LIST.length) { var s = dueSummary('all'); var n = s.due + s.newToday; b.textContent = n; b.hidden = !n; }
+    var nw = document.querySelector('[data-badge="news"]');
+    if (nw && KS.changelog) { var u = unseenNews().length; nw.textContent = u; nw.hidden = !u; }
     var m = document.querySelector('[data-badge="mistakes"]');
     if (m) { var k = mistakeKeys().length; m.textContent = k; m.hidden = !k; }
   }
@@ -311,6 +316,10 @@
         '</div>' +
       '</section>';
 
+    var unseen = unseenNews(), upd = updatedChapters();
+    var newsStrip = unseen.length
+      ? '<div class="wrap news-strip-wrap"><a class="news-strip" href="#/whats-new"><span class="news-strip__tag">New</span><span class="news-strip__text">' + esc(unseen[0].title) + (unseen.length > 1 ? ' and ' + plural(unseen.length - 1, 'more update') : '') + '</span><span class="news-strip__go">See what changed</span></a></div>'
+      : '';
     var rows = chs.slice().reverse().map(function (ch) {
       var keys = [];
       DECKS.forEach(function (d) { keys = keys.concat(deckKeys(ch, d.key)); });
@@ -318,7 +327,7 @@
       var started = t.total - t.fresh;
       return '<li><a class="chapter-row" href="#/c/' + ch.id + '/guide">' +
         '<span class="chapter-row__num" aria-hidden="true">' + ch.number + '</span>' +
-        '<div><h3><span class="sr-only">Chapter ' + ch.number + ': </span>' + esc(ch.title) + '</h3><p>' + esc(ch.summary) + '</p>' +
+        '<div><h3><span class="sr-only">Chapter ' + ch.number + ': </span>' + esc(ch.title) + (upd[ch.id] ? ' <span class="upd">Updated</span>' : '') + '</h3><p>' + esc(ch.summary) + '</p>' +
         '<div class="chapter-row__stats"><span><b>' + sectionCount(ch) + '</b> guide sections</span><span><b>' + hyCount(ch) + '</b> high-yield points</span><span><b>' + t.total + '</b> flashcards</span></div></div>' +
         '<div class="meter"><div class="meter__label">' + t.mastered + ' mastered, ' + started + ' started</div><div class="meter__bar"><span style="width:' + pct(t.mastered, t.total) + '%"></span><span class="meter__learn" style="width:' + pct(t.learning, t.total) + '%"></span></div></div>' +
         '</a></li>';
@@ -334,8 +343,14 @@
           prismSVG() + raysSVG() + '<ul class="spectrum">' + spectrum + '</ul>' +
         '</nav>' +
       '</div></section>' +
-      todayPanel +
+      newsStrip + todayPanel +
       '<section class="wrap home-section"><h2>Chapters in the app</h2><ul class="chapter-list">' + rows + '</ul></section>' +
+      '<section class="wrap home-section"><h2>For educators</h2><div class="tools tools--3">' +
+        '<a class="tool" href="#/teach"><span class="tool__name">Teaching mode</span><span class="tool__meta">Present a case full screen for group discussion; reveal the answer on click.</span></a>' +
+        '<div class="tool"><span class="tool__name">Printable handouts</span><span class="tool__meta">A one-page high-yield sheet per chapter, as an answer key or a fill-in worksheet.</span><span class="tool__links">' +
+          chs.map(function (ch) { return '<a href="#/c/' + ch.id + '/handout">Chapter ' + ch.number + '</a>'; }).join('') + '</span></div>' +
+        '<a class="tool" href="#/whats-new"><span class="tool__name">What’s new</span><span class="tool__meta">New chapters, features and corrections, so residents know what to revisit.</span></a>' +
+      '</div></section>' +
       '<section class="wrap home-section"><h2>How to study a chapter</h2><div class="howto">' +
         '<div><h3>Read the study guide</h3><p>Work through it once, end to end. Tap any dotted term for its definition from the book’s glossary.</p></div>' +
         '<div><h3>Test yourself on high yield</h3><p>Switch on \u201cHide key facts\u201d and recall each blank before you tap it. Revisit the night before an exam.</p></div>' +
@@ -503,7 +518,8 @@
     var html = chapterHead(ch, 'high-yield') +
       '<div class="wrap hy-page' + (quiz ? ' quiz-on' : '') + '">' +
         '<div class="hy-tools"><label class="switch"><input type="checkbox" id="hy-quiz"' + (quiz ? ' checked' : '') + '> Hide key facts</label>' +
-        '<p>With key facts hidden, each bold fact becomes a blank. Say the answer, then tap the blank to check.</p></div>' +
+        '<p>With key facts hidden, each bold fact becomes a blank. Say the answer, then tap the blank to check.</p>' +
+        '<a class="btn hy-tools__print" href="#/c/' + ch.id + '/handout">Printable handout</a></div>' +
         '<div class="hy-grid">' + topics + '</div>' +
       '</div>';
     setView(key, html, focusTarget);
@@ -735,7 +751,7 @@
             '<option value="order"' + (S.mode === 'order' ? ' selected' : '') + '>All cards in order</option>' +
             '<option value="shuffle"' + (S.mode === 'shuffle' ? ' selected' : '') + '>All cards, shuffled</option>' +
           '</select></label>' +
-        '</div><button class="link-btn" type="button" id="opt-reset">Reset this deck</button></div>' +
+        '</div><div class="deck-bar__right">' + (deck.key === 'cases' ? '<a class="btn btn--small" href="#/teach" id="opt-teach">Present in teaching mode</a>' : '') + '<button class="link-btn" type="button" id="opt-reset">Reset this deck</button></div></div>' +
         '<div class="tally" id="tally"></div>' +
         '<div id="card-area" aria-live="polite"></div>' + kbdHelp(deck.key === 'cases') +
       '</div>';
@@ -763,6 +779,8 @@
     main.querySelector('#opt-mode').addEventListener('change', function (e) {
       S.mode = e.target.value; store.set('deckPrefs', { mode: S.mode }); build(); start();
     });
+    var tl = main.querySelector('#opt-teach');
+    if (tl) tl.addEventListener('click', function () { var tp = teachPrefs(); tp.scope = ch.id; tp.kind = 'mcq'; store.set('teachPrefs', tp); });
     main.querySelector('#opt-reset').addEventListener('click', function () {
       if (!window.confirm('Clear the review schedule for every card in this deck? They will all become new cards again.')) return;
       keys.forEach(function (k) { delete SRS[k]; }); saveSRS(); updateNavBadges(); build(); start();
@@ -1318,6 +1336,355 @@
       var rs = area.querySelector('#hp-reset'); if (rs) rs.addEventListener('click', function () { path = []; draw(); });
     }
     draw();
+  }
+
+  /* ---------- printable handout ----------
+     One sheet per chapter built from the high-yield list. The font size is fitted automatically
+     so the chosen topics fill exactly one page; "Fill-in worksheet" turns every bold fact into a blank. */
+  var PAPER = { a4: { label: 'A4', w: '210mm', h: '296.5mm', page: 'A4' }, letter: { label: 'Letter', w: '8.5in', h: '10.97in', page: 'letter' } };
+  var ATTRIBUTION = 'App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com';
+
+  function renderHandout(ch) {
+    if (!(ch.highYield || []).length) return renderMissing();
+    var prefs = store.get('handoutPrefs', { paper: 'a4', mode: 'key', pages: 1 });
+    if (!PAPER[prefs.paper]) prefs.paper = 'a4';
+    if (prefs.pages !== 2) prefs.pages = 1;
+    var MIN_PT = 6.5, autoTwo = false;
+    var on = {};
+    ch.highYield.forEach(function (t) { on[t.id] = true; });
+    function seg(name, opts, cur) {
+      return '<div class="seg" role="radiogroup">' + opts.map(function (o) {
+        return '<label><input type="radio" name="' + name + '" value="' + o[0] + '"' + (String(o[0]) === String(cur) ? ' checked' : '') + '><span>' + o[1] + '</span></label>';
+      }).join('') + '</div>';
+    }
+    var html = '<div class="wrap page handout-page">' +
+      '<header class="page__head no-print"><p class="crumb"><a href="#/c/' + ch.id + '/high-yield">Chapter ' + ch.number + ' high yield</a></p><h1>Printable handout</h1>' +
+        '<p>A one-page sheet from the Chapter ' + ch.number + ' high-yield list. The type size adjusts automatically to fill the page; untick topics to make room or to focus a session.</p></header>' +
+      '<div class="handout-tools no-print">' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Paper</span>' + seg('paper', [['a4', 'A4'], ['letter', 'Letter']], prefs.paper) + '</div>' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Version</span>' + seg('mode', [['key', 'Answer key'], ['blank', 'Fill-in worksheet']], prefs.mode) + '</div>' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Length</span>' + seg('pages', [[1, 'One page'], [2, 'Two pages (front and back)']], prefs.pages) + '</div>' +
+        '<details class="handout-topics"><summary id="ho-sum"></summary><div class="handout-topics__list">' + ch.highYield.map(function (t) {
+          return '<label class="check"><input type="checkbox" data-topic="' + t.id + '" checked> ' + esc(t.topic) + ' <span class="muted">(' + t.items.length + ')</span></label>';
+        }).join('') + '</div></details>' +
+        '<div class="handout-tools__go"><button class="btn btn--solid" type="button" id="ho-print">Print or save as PDF</button><p class="handout-fit" id="ho-fit" aria-live="polite"></p></div>' +
+      '</div>' +
+      '<div class="sheet-frame" id="ho-frame"><div class="sheets" id="ho-sheets"></div></div>' +
+      '</div>';
+    setView('handout:' + ch.id, html);
+    document.title = 'Ch ' + ch.number + ' handout — K&S Study Companion';
+    document.body.classList.add('print-handout');
+    var pageStyle = document.createElement('style');
+    pageStyle.id = 'page-size';
+    document.head.appendChild(pageStyle);
+    var frame = main.querySelector('#ho-frame'), wrap = main.querySelector('#ho-sheets'), fitMsg = main.querySelector('#ho-fit'), printBtn = main.querySelector('#ho-print');
+
+    function weight(t) { var n = 0; t.items.forEach(function (it) { n += plain(it).length + 40; }); return n + 60; }
+    function split(topics) {
+      // keep topic order; break where the first sheet holds about half the text
+      var total = 0; topics.forEach(function (t) { total += weight(t); });
+      var acc = 0, cut = topics.length;
+      for (var i = 0; i < topics.length; i++) { if (acc + weight(topics[i]) / 2 > total / 2) { cut = i; break; } acc += weight(topics[i]); }
+      cut = Math.max(1, Math.min(cut, topics.length - 1));
+      return [topics.slice(0, cut), topics.slice(cut)];
+    }
+    function sheetHTML(topics, idx, count) {
+      var paper = PAPER[prefs.paper], blank = prefs.mode === 'blank';
+      return '<div class="sheet' + (blank ? ' sheet--blank' : '') + '" style="width:' + paper.w + ';height:' + paper.h + '">' +
+        '<header class="sheet__head"><div><p class="sheet__kicker">High-yield ' + (blank ? 'worksheet' : 'handout') + (count > 1 ? ', page ' + (idx + 1) + ' of ' + count : '') + '</p><h1>Chapter ' + ch.number + ': ' + esc(ch.title) + '</h1></div>' +
+          '<p class="sheet__src">Kaplan &amp; Sadock\u2019s Synopsis of Psychiatry, 12th ed.' + (blank && idx === 0 ? '<br>Name ____________________ Date __________' : '') + '</p></header>' +
+        '<div class="sheet__body">' + (topics.length ? topics.map(function (t) {
+          return '<section class="sheet__topic"><h2>' + esc(t.topic) + '</h2><ul>' + t.items.map(function (it) { return '<li>' + fmt(it) + '</li>'; }).join('') + '</ul></section>';
+        }).join('') : '<p class="sheet__none">Choose at least one topic.</p>') + '</div>' +
+        '<footer class="sheet__foot">' + esc(ATTRIBUTION) + '</footer></div>';
+    }
+    function build() {
+      var paper = PAPER[prefs.paper];
+      pageStyle.textContent = '@media print { @page { size: ' + paper.page + '; margin: 0; } }';
+      var topics = ch.highYield.filter(function (t) { return on[t.id]; });
+      var pages = prefs.pages === 2 && topics.length > 1 ? 2 : 1;
+      var groups = pages === 2 ? split(topics) : [topics];
+      wrap.innerHTML = groups.map(function (g, i) { return sheetHTML(g, i, groups.length); }).join('');
+      main.querySelector('#ho-sum').textContent = 'Topics: ' + topics.length + ' of ' + ch.highYield.length + ' included';
+      fit(topics.length, pages);
+      scale();
+    }
+    function overflows(body) { return body.scrollWidth > body.clientWidth + 1 || body.scrollHeight > body.clientHeight + 1; }
+    function fitOne(body) {
+      var lo = 4.5, hi = 11, best = lo;
+      body.style.fontSize = hi + 'pt';
+      if (!overflows(body)) return hi;
+      for (var k = 0; k < 14; k++) {
+        var mid = (lo + hi) / 2;
+        body.style.fontSize = mid + 'pt';
+        if (overflows(body)) hi = mid; else { best = mid; lo = mid; }
+      }
+      return best;
+    }
+    function fit(n, pages) {
+      var bodies = wrap.querySelectorAll('.sheet__body');
+      if (!n) { fitMsg.textContent = ''; printBtn.disabled = true; return; }
+      var best = 11;
+      bodies.forEach(function (b) { best = Math.min(best, fitOne(b)); });
+      var size = Math.floor(best * 0.97 * 10) / 10;   // a little slack for printer rendering
+      var bad = false;
+      bodies.forEach(function (b) { b.style.fontSize = size + 'pt'; if (overflows(b)) bad = true; });
+      var tooSmall = bad || size < MIN_PT;
+      printBtn.disabled = tooSmall;
+      fitMsg.className = 'handout-fit' + (tooSmall ? ' is-warn' : '');
+      fitMsg.textContent = tooSmall
+        ? 'Too long for ' + (pages === 2 ? 'two pages' : 'one page') + ' at a readable size. ' + (pages === 1 ? 'Switch to two pages, or untick a topic or two.' : 'Untick a topic or two.')
+        : (autoTwo && pages === 2 ? 'This chapter is too long for one page at a readable size, so two pages are selected. ' : '') +
+          'Fits on ' + (pages === 2 ? 'two pages' : 'one page') + ' at ' + size + ' pt.' + (autoTwo && pages === 2 ? ' Untick topics to get back to one page.' : '');
+    }
+    function scale() {
+      var sheets = wrap.querySelectorAll('.sheet');
+      var avail = frame.clientWidth;
+      if (!sheets.length) return;
+      var w = sheets[0].offsetWidth, h = sheets[0].offsetHeight, gap = 24;
+      var s = Math.min(1, avail / w);
+      wrap.style.transform = s < 1 ? 'scale(' + s + ')' : '';
+      frame.style.height = ((h + gap) * sheets.length - gap) * s + 'px';
+    }
+    main.querySelectorAll('input[name=paper], input[name=mode], input[name=pages]').forEach(function (i) {
+      i.addEventListener('change', function () { if (i.name === 'pages') autoTwo = false; prefs[i.name] = i.name === 'pages' ? parseInt(i.value, 10) : i.value; store.set('handoutPrefs', prefs); build(); });
+    });
+    main.querySelectorAll('[data-topic]').forEach(function (i) {
+      i.addEventListener('change', function () { on[i.getAttribute('data-topic')] = i.checked; build(); });
+    });
+    printBtn.addEventListener('click', function () { if (!printBtn.disabled) window.print(); });
+    var onResize = function () { scale(); };
+    window.addEventListener('resize', onResize);
+    function initial() {
+      build();
+      if (printBtn.disabled && prefs.pages === 1 && ch.highYield.length > 1) {
+        prefs.pages = 2; autoTwo = true;
+        var r = main.querySelector('input[name=pages][value="2"]'); if (r) r.checked = true;
+        build();
+      }
+    }
+    initial();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (main.contains(wrap)) build(); });
+    view.cleanup = function () {
+      window.removeEventListener('resize', onResize);
+      document.body.classList.remove('print-handout');
+      if (pageStyle.parentNode) pageStyle.parentNode.removeChild(pageStyle);
+    };
+  }
+
+  /* ---------- teaching mode ----------
+     A full-screen presentation of one case at a time for group discussion. Nothing here touches
+     the review schedule or the mistakes pile. */
+  function teachItems(scope, kind) {
+    var out = [];
+    allChapters().forEach(function (ch) {
+      if (scope !== 'all' && ch.id !== scope) return;
+      if (kind === 'mcq') {
+        (ch.cases || []).forEach(function (c) { out.push({ id: ch.id + '/' + c.id, ch: ch, c: c }); });
+      } else if (ch.guide) {
+        ch.guide.parts.forEach(function (pt) {
+          pt.sections.forEach(function (s) {
+            s.blocks.forEach(function (b, i) {
+              if (b.type === 'case') out.push({ id: ch.id + '/' + s.id + '--' + i, ch: ch, sec: s, title: String(b.title || 'Case').replace(/^Chapter case:\s*/i, ''), text: b.text, point: b.point });
+            });
+          });
+        });
+      }
+    });
+    return out;
+  }
+  function teachPrefs() { return store.get('teachPrefs', { scope: 'all', kind: 'mcq', order: 'order' }); }
+
+  function renderTeachSetup() {
+    var prefs = teachPrefs();
+    if (prefs.scope !== 'all' && !chapter(prefs.scope)) prefs.scope = 'all';
+    var html = '<div class="wrap page teach-setup">' +
+      '<header class="page__head"><h1>Teaching mode</h1><p>Present one case at a time, full screen, for ward rounds, journal club or a group session. Choices can be marked as the group votes; the answer stays hidden until you reveal it. Nothing here affects anyone’s review schedule or mistakes.</p></header>' +
+      '<div class="exam-form">' +
+        '<fieldset><legend>Chapter</legend><label class="select"><select id="t-scope"><option value="all"' + (prefs.scope === 'all' ? ' selected' : '') + '>All chapters</option>' +
+          allChapters().map(function (ch) { return '<option value="' + ch.id + '"' + (prefs.scope === ch.id ? ' selected' : '') + '>Chapter ' + ch.number + ': ' + esc(ch.short || ch.title) + '</option>'; }).join('') + '</select></label></fieldset>' +
+        '<fieldset><legend>Cases</legend><div class="seg">' +
+          '<label><input type="radio" name="kind" value="mcq"' + (prefs.kind === 'mcq' ? ' checked' : '') + '><span>Board-style questions</span></label>' +
+          '<label><input type="radio" name="kind" value="chapter"' + (prefs.kind === 'chapter' ? ' checked' : '') + '><span>Chapter cases</span></label></div>' +
+          '<p class="muted teach-setup__hint" id="t-hint"></p></fieldset>' +
+        '<fieldset><legend>Order</legend><div class="seg">' +
+          '<label><input type="radio" name="order" value="order"' + (prefs.order === 'order' ? ' checked' : '') + '><span>In order</span></label>' +
+          '<label><input type="radio" name="order" value="shuffle"' + (prefs.order === 'shuffle' ? ' checked' : '') + '><span>Shuffled</span></label></div></fieldset>' +
+        '<button class="btn btn--solid" type="button" id="t-start">Start presenting</button>' +
+      '</div>' +
+      '<section class="teach-list"><h2 id="t-count"></h2><ol id="t-list"></ol></section></div>';
+    setView('teach', html);
+    document.title = 'Teaching mode — K&S Study Companion';
+    function read() {
+      prefs.scope = main.querySelector('#t-scope').value;
+      prefs.kind = main.querySelector('input[name=kind]:checked').value;
+      prefs.order = main.querySelector('input[name=order]:checked').value;
+      store.set('teachPrefs', prefs);
+    }
+    function list() {
+      read();
+      var items = teachItems(prefs.scope, prefs.kind);
+      main.querySelector('#t-hint').textContent = prefs.kind === 'mcq'
+        ? 'Single-best-answer vignettes. Reveal shows the answer and its explanation.'
+        : 'The textbook cases summarized in each study guide. Reveal shows the teaching point.';
+      main.querySelector('#t-count').textContent = plural(items.length, prefs.kind === 'mcq' ? 'question' : 'chapter case');
+      main.querySelector('#t-list').innerHTML = items.map(function (it, i) {
+        var label = prefs.kind === 'mcq' ? plain(it.c.q) : it.title;
+        var meta = 'Ch ' + it.ch.number + ', ' + (prefs.kind === 'mcq' ? (it.c.tag || 'Case') : it.sec.title);
+        return '<li><button type="button" class="teach-item" data-start="' + i + '"><span class="teach-item__meta">' + esc(meta) + '</span><span class="teach-item__q">' + esc(label.length > 170 ? label.slice(0, 170) + '\u2026' : label) + '</span></button></li>';
+      }).join('');
+      main.querySelectorAll('[data-start]').forEach(function (b) { b.addEventListener('click', function () { start(parseInt(b.getAttribute('data-start'), 10)); }); });
+    }
+    function start(from) {
+      read();
+      var ids = teachItems(prefs.scope, prefs.kind).map(function (it) { return it.id; });
+      if (!ids.length) return;
+      var first = typeof from === 'number' ? ids[from] : null;
+      if (prefs.order === 'shuffle') { shuffle(ids); if (first) { ids.splice(ids.indexOf(first), 1); ids.unshift(first); } }
+      store.set('teach', { scope: prefs.scope, kind: prefs.kind, order: ids, pos: prefs.order === 'shuffle' || first === null ? 0 : from });
+      enterFullscreen();
+      location.hash = '#/teach/run';
+    }
+    main.querySelector('#t-scope').addEventListener('change', list);
+    main.querySelectorAll('input[name=kind], input[name=order]').forEach(function (i) { i.addEventListener('change', list); });
+    main.querySelector('#t-start').addEventListener('click', function () { start(null); });
+    list();
+  }
+
+  function isFullscreen() { return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+  function enterFullscreen() {
+    var el = document.documentElement;
+    try { var r = (el.requestFullscreen || el.webkitRequestFullscreen).call(el); if (r && r.catch) r.catch(function () {}); } catch (e) { /* not supported */ }
+  }
+  function exitFullscreen() {
+    try { if (isFullscreen()) { var r = (document.exitFullscreen || document.webkitExitFullscreen).call(document); if (r && r.catch) r.catch(function () {}); } } catch (e) {}
+  }
+
+  function renderTeachRun() {
+    var S = store.get('teach', null);
+    if (!S) { location.hash = '#/teach'; return; }
+    var byId = {};
+    teachItems(S.scope, S.kind).forEach(function (it) { byId[it.id] = it; });
+    S.order = S.order.filter(function (id) { return byId[id]; });
+    if (!S.order.length) { location.hash = '#/teach'; return; }
+    S.pos = Math.max(0, Math.min(S.pos || 0, S.order.length - 1));
+    var st = { revealed: false, picked: null };
+    setView('teach-run', '<div class="teach" id="teach" role="region" aria-label="Teaching mode"></div>');
+    document.title = 'Teaching mode — K&S Study Companion';
+    document.body.classList.add('is-teaching');
+    var box = main.querySelector('#teach');
+
+    function draw() {
+      var it = byId[S.order[S.pos]];
+      var mcq = S.kind === 'mcq';
+      var meta = 'Chapter ' + it.ch.number + ', ' + (mcq ? (it.c.tag || 'Case') : it.sec.title);
+      var body;
+      if (mcq) {
+        var c = it.c;
+        body = '<p class="teach__stem">' + fmt(c.q) + '</p><ul class="teach__choices">' + c.choices.map(function (ch2, i) {
+          var cls = st.revealed ? (i === c.answer ? ' is-correct' : (i === st.picked ? ' is-wrong' : ' is-dim')) : (i === st.picked ? ' is-picked' : '');
+          return '<li><button type="button" class="tchoice' + cls + '" data-pick="' + i + '"' + (st.revealed ? ' disabled' : '') + ' aria-pressed="' + (i === st.picked) + '"><span class="tchoice__key">' + LETTERS[i] + '</span><span>' + fmt(ch2) + '</span></button></li>';
+        }).join('') + '</ul>' +
+        (st.revealed ? '<div class="teach__answer"><p class="teach__label">Answer: ' + LETTERS[c.answer] + (st.picked == null ? '' : st.picked === c.answer ? ', the group got it' : ', the group chose ' + LETTERS[st.picked]) + '</p><p>' + fmt(c.why) + '</p></div>' : '');
+      } else {
+        body = '<h2 class="teach__title">' + esc(it.title) + '</h2><p class="teach__stem">' + fmt(it.text) + '</p>' +
+          (st.revealed ? '<div class="teach__answer"><p class="teach__label">Teaching point</p><p>' + fmt(it.point || '') + '</p></div>' : '<p class="teach__prompt">What is the diagnosis, and what does this case teach?</p>');
+      }
+      box.innerHTML =
+        '<div class="teach__bar"><span class="teach__meta">' + esc(meta) + '</span><span class="teach__pos">' + (mcq ? 'Question ' : 'Case ') + (S.pos + 1) + ' of ' + S.order.length + '</span>' +
+          '<span class="teach__spacer"></span><button class="tbtn" type="button" id="t-fs">' + (isFullscreen() ? 'Exit full screen' : 'Full screen') + '</button><button class="tbtn" type="button" id="t-exit">Close</button></div>' +
+        '<div class="teach__stage"><div class="teach__inner' + (st.revealed ? ' is-revealed' : '') + '">' + body + '</div></div>' +
+        '<div class="teach__nav"><button class="tbtn" type="button" id="t-prev"' + (S.pos ? '' : ' disabled') + '>Previous</button>' +
+          '<button class="tbtn tbtn--solid" type="button" id="t-reveal">' + (st.revealed ? 'Hide answer' : mcq ? 'Reveal answer' : 'Reveal teaching point') + '</button>' +
+          '<button class="tbtn" type="button" id="t-next"' + (S.pos < S.order.length - 1 ? '' : ' disabled') + '>Next</button></div>' +
+        '<p class="teach__keys" aria-hidden="true">Space reveal \u00b7 \u2190 \u2192 move \u00b7 ' + (mcq ? 'A\u2013E mark the group\u2019s answer \u00b7 ' : '') + 'F full screen \u00b7 Esc close</p>';
+      linkTerms(box.querySelector('.teach__inner'), { skip: '.tchoice__key, .teach__label' });
+      box.querySelectorAll('[data-pick]').forEach(function (b) {
+        b.addEventListener('click', function () { var i = parseInt(b.getAttribute('data-pick'), 10); st.picked = st.picked === i ? null : i; draw(); });
+      });
+      box.querySelector('#t-reveal').addEventListener('click', toggle);
+      box.querySelector('#t-prev').addEventListener('click', function () { go(-1); });
+      box.querySelector('#t-next').addEventListener('click', function () { go(1); });
+      box.querySelector('#t-exit').addEventListener('click', close);
+      box.querySelector('#t-fs').addEventListener('click', function () { if (isFullscreen()) exitFullscreen(); else enterFullscreen(); });
+      box.querySelector('.teach__stage').scrollTop = 0;
+    }
+    function toggle() { st.revealed = !st.revealed; draw(); var a = box.querySelector('.teach__answer'); if (a) a.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' }); }
+    function go(d) {
+      var np = S.pos + d; if (np < 0 || np >= S.order.length) return;
+      S.pos = np; store.set('teach', S); st = { revealed: false, picked: null }; draw();
+    }
+    function close() { exitFullscreen(); location.hash = '#/teach'; }
+    function onKey(e) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.target.closest && e.target.closest('.glpop')) return;
+      var onBtn = e.target.closest && e.target.closest('button, a, .gl');
+      if ((e.key === ' ' || e.key === 'Enter') && !onBtn) { e.preventDefault(); toggle(); }
+      else if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(1); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+      else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); if (isFullscreen()) exitFullscreen(); else enterFullscreen(); }
+      else if (e.key === 'Escape' && !isFullscreen() && !(glPop && !glPop.hidden)) { e.preventDefault(); close(); }
+      else if (S.kind === 'mcq' && !st.revealed && /^[a-e]$/i.test(e.key)) {
+        var i = 'abcde'.indexOf(e.key.toLowerCase()), c = byId[S.order[S.pos]].c;
+        if (i < c.choices.length) { e.preventDefault(); st.picked = st.picked === i ? null : i; draw(); }
+      }
+    }
+    function onFs() { var b = box.querySelector('#t-fs'); if (b) b.textContent = isFullscreen() ? 'Exit full screen' : 'Full screen'; }
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('fullscreenchange', onFs);
+    document.addEventListener('webkitfullscreenchange', onFs);
+    draw();
+    view.cleanup = function () {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('fullscreenchange', onFs);
+      document.removeEventListener('webkitfullscreenchange', onFs);
+      document.body.classList.remove('is-teaching');
+    };
+  }
+
+  /* ---------- what's new ---------- */
+  var NEWS_TYPES = { chapter: 'New chapter', feature: 'New feature', correction: 'Correction', update: 'Update' };
+  function newsList() { return (KS.changelog || []).slice().sort(function (a, b) { return b.id - a.id; }); }
+  function latestNewsId() { var l = newsList(); return l.length ? l[0].id : 0; }
+  function seenNewsId() {
+    var s = store.get('seenNews', null);
+    if (s != null) return s;
+    // First visit with this feature: returning residents (who already have progress) see everything
+    // after the original release as new; brand-new visitors start fully up to date.
+    var returning = store.get('last', null) || Object.keys(SRS).length;
+    s = returning ? 1 : latestNewsId();
+    store.set('seenNews', s);
+    return s;
+  }
+  function unseenNews() { var seen = seenNewsId(); return newsList().filter(function (e) { return e.id > seen; }); }
+  function updatedChapters() {
+    var out = {};
+    unseenNews().forEach(function (e) { e.items.forEach(function (it) { if (it.ch) out[it.ch] = true; }); });
+    return out;
+  }
+  function fmtNewsDate(d) {
+    try { var p = d.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }); } catch (e) { return d; }
+  }
+  function renderNews() {
+    var seen = seenNewsId();
+    var list = newsList();
+    var html = '<div class="wrap page news">' +
+      '<header class="page__head"><h1>What’s new</h1><p>New chapters, features and corrections, newest first. Entries marked <span class="news__new">New</span> were added since your last visit; corrections link straight to the changed content so you know what to revisit.</p></header>' +
+      list.map(function (e) {
+        return '<article class="news__entry' + (e.id > seen ? ' is-new' : '') + '"><div class="news__date"><time datetime="' + esc(e.date) + '">' + fmtNewsDate(e.date) + '</time>' + (e.id > seen ? '<span class="news__new">New</span>' : '') + '</div>' +
+          '<div class="news__body"><h2>' + esc(e.title) + '</h2>' + (e.summary ? '<p>' + fmt(e.summary) + '</p>' : '') +
+          '<ul>' + e.items.map(function (it) {
+            var ch = it.ch && chapter(it.ch);
+            return '<li><span class="news__type news__type--' + esc(it.type) + '">' + esc(NEWS_TYPES[it.type] || 'Update') + '</span>' +
+              '<span class="news__text">' + fmt(it.text) + (ch && plain(it.text).indexOf('Chapter ' + ch.number) < 0 ? ' <span class="muted">(Chapter ' + ch.number + ')</span>' : '') + (it.href ? ' <a href="' + esc(it.href) + '">' + esc(it.link || 'Open') + '</a>' : '') + '</span></li>';
+          }).join('') + '</ul></div></article>';
+      }).join('') +
+      (list.some(function (e) { return e.items.some(function (it) { return it.type === 'correction'; }); }) ? '' : '<p class="news__note">No corrections have been needed so far. If one is made, it will be listed here with a link to the corrected content.</p>') +
+      '</div>';
+    setView('news', html);
+    document.title = 'What’s new — K&S Study Companion';
+    store.set('seenNews', latestNewsId());
+    updateNavBadges();
   }
 
   /* ---------- search ---------- */
