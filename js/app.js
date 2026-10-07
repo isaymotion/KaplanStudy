@@ -312,7 +312,7 @@
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
-          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Psychotic, mood and anxiety disorders, step by step</span></a>' +
+          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and psychotic, mood, anxiety and OCD-related disorders, step by step</span></a>' +
         '</div>' +
       '</section>';
 
@@ -320,7 +320,7 @@
     var newsStrip = unseen.length
       ? '<div class="wrap news-strip-wrap"><a class="news-strip" href="#/whats-new"><span class="news-strip__tag">New</span><span class="news-strip__text">' + esc(unseen[0].title) + (unseen.length > 1 ? ' and ' + plural(unseen.length - 1, 'more update') : '') + '</span><span class="news-strip__go">See what changed</span></a></div>'
       : '';
-    var rows = chs.slice().reverse().map(function (ch) {
+    var rows = chs.slice().sort(function (a, b) { return a.number - b.number; }).map(function (ch) {
       var keys = [];
       DECKS.forEach(function (d) { keys = keys.concat(deckKeys(ch, d.key)); });
       var t = tallyKeys(keys);
@@ -347,7 +347,7 @@
       '<section class="wrap home-section"><h2>Chapters in the app</h2><ul class="chapter-list">' + rows + '</ul></section>' +
       '<section class="wrap home-section"><h2>For educators</h2><div class="tools tools--3">' +
         '<a class="tool" href="#/teach"><span class="tool__name">Teaching mode</span><span class="tool__meta">Present a case full screen for group discussion; reveal the answer on click.</span></a>' +
-        '<div class="tool"><span class="tool__name">Printable handouts</span><span class="tool__meta">A one-page high-yield sheet per chapter, as an answer key or a fill-in worksheet.</span><span class="tool__links">' +
+        '<div class="tool"><span class="tool__name">Printable handouts</span><span class="tool__meta">A print-ready high-yield sheet per chapter, as an answer key or a fill-in worksheet.</span><span class="tool__links">' +
           chs.map(function (ch) { return '<a href="#/c/' + ch.id + '/handout">Chapter ' + ch.number + '</a>'; }).join('') + '</span></div>' +
         '<a class="tool" href="#/whats-new"><span class="tool__name">What’s new</span><span class="tool__meta">New chapters, features and corrections, so residents know what to revisit.</span></a>' +
       '</div></section>' +
@@ -1277,8 +1277,11 @@
   /* ---------- diagnostic helpers ---------- */
   function helperBy(id) { var h = KS.helpers || []; for (var i = 0; i < h.length; i++) if (h[i].id === id) return h[i]; return null; }
   function renderHelpers() {
-    var hs = KS.helpers || [];
-    var html = '<div class="wrap page"><header class="page__head"><h1>Diagnostic helpers</h1><p>Step-by-step decision aids built from the chapters. Each one asks a few questions and shows the reasoning behind the likely diagnosis.</p></header>' +
+    var hs = (KS.helpers || []).slice().sort(function (x, y) {
+      var a = chapter(x.chapter), b = chapter(y.chapter);
+      return (a ? a.number : 99) - (b ? b.number : 99);
+    });
+    var html = '<div class="wrap page"><header class="page__head"><h1>Diagnostic helpers</h1><p>Step-by-step decision aids built from the chapters. Each one asks a few questions and shows the reasoning behind the likely diagnosis or workup.</p></header>' +
       '<ul class="helper-list">' + hs.map(function (h) {
         var ch = chapter(h.chapter);
         return '<li><a class="tool" href="#/helpers/' + h.id + '"><span class="tool__name">' + esc(h.title) + '</span><span class="tool__meta">' + esc(h.summary) + '</span>' + (ch ? '<span class="tool__ch">Chapter ' + ch.number + '</span>' : '') + '</a></li>';
@@ -1348,8 +1351,12 @@
     if (!(ch.highYield || []).length) return renderMissing();
     var prefs = store.get('handoutPrefs', { paper: 'a4', mode: 'key', pages: 1 });
     if (!PAPER[prefs.paper]) prefs.paper = 'a4';
-    if (prefs.pages !== 2) prefs.pages = 1;
+    var hyCount = 0; ch.highYield.forEach(function (t) { hyCount += t.items.length; });
+    var MAX_PAGES = Math.min(ch.highYield.length, hyCount > 150 ? 4 : 2);
+    if (!(prefs.pages >= 1 && prefs.pages <= MAX_PAGES)) prefs.pages = 1;
+    prefs.pages = Math.round(prefs.pages);
     var MIN_PT = 6.5, autoTwo = false;
+    var PAGE_WORDS = ['', 'one page', 'two pages', 'three pages', 'four pages'];
     var on = {};
     ch.highYield.forEach(function (t) { on[t.id] = true; });
     function seg(name, opts, cur) {
@@ -1359,11 +1366,11 @@
     }
     var html = '<div class="wrap page handout-page">' +
       '<header class="page__head no-print"><p class="crumb"><a href="#/c/' + ch.id + '/high-yield">Chapter ' + ch.number + ' high yield</a></p><h1>Printable handout</h1>' +
-        '<p>A one-page sheet from the Chapter ' + ch.number + ' high-yield list. The type size adjusts automatically to fill the page; untick topics to make room or to focus a session.</p></header>' +
+        '<p>A print-ready sheet from the Chapter ' + ch.number + ' high-yield list. The type size adjusts automatically to fill the page; untick topics to make room or to focus a session.</p></header>' +
       '<div class="handout-tools no-print">' +
         '<div class="handout-tools__row"><span class="handout-tools__label">Paper</span>' + seg('paper', [['a4', 'A4'], ['letter', 'Letter']], prefs.paper) + '</div>' +
         '<div class="handout-tools__row"><span class="handout-tools__label">Version</span>' + seg('mode', [['key', 'Answer key'], ['blank', 'Fill-in worksheet']], prefs.mode) + '</div>' +
-        '<div class="handout-tools__row"><span class="handout-tools__label">Length</span>' + seg('pages', [[1, 'One page'], [2, 'Two pages (front and back)']], prefs.pages) + '</div>' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Length</span>' + seg('pages', [[1, 'One page'], [2, MAX_PAGES > 2 ? 'Two pages' : 'Two pages (front and back)'], [3, 'Three pages'], [4, 'Four pages']].slice(0, MAX_PAGES), prefs.pages) + '</div>' +
         '<details class="handout-topics"><summary id="ho-sum"></summary><div class="handout-topics__list">' + ch.highYield.map(function (t) {
           return '<label class="check"><input type="checkbox" data-topic="' + t.id + '" checked> ' + esc(t.topic) + ' <span class="muted">(' + t.items.length + ')</span></label>';
         }).join('') + '</div></details>' +
@@ -1380,13 +1387,22 @@
     var frame = main.querySelector('#ho-frame'), wrap = main.querySelector('#ho-sheets'), fitMsg = main.querySelector('#ho-fit'), printBtn = main.querySelector('#ho-print');
 
     function weight(t) { var n = 0; t.items.forEach(function (it) { n += plain(it).length + 40; }); return n + 60; }
-    function split(topics) {
-      // keep topic order; break where the first sheet holds about half the text
+    function split(topics, k) {
+      // keep topic order; start a new sheet once the running total passes each equal share of the text
+      k = Math.min(k, topics.length);
+      if (k <= 1) return [topics];
       var total = 0; topics.forEach(function (t) { total += weight(t); });
-      var acc = 0, cut = topics.length;
-      for (var i = 0; i < topics.length; i++) { if (acc + weight(topics[i]) / 2 > total / 2) { cut = i; break; } acc += weight(topics[i]); }
-      cut = Math.max(1, Math.min(cut, topics.length - 1));
-      return [topics.slice(0, cut), topics.slice(cut)];
+      var groups = [[]], acc = 0;
+      topics.forEach(function (t, i) {
+        var w = weight(t), g = groups.length;
+        var left = topics.length - i;           // topics still to place, including this one
+        var need = k - g;                       // sheets still to open after the current one
+        var cur = groups[g - 1];
+        if (cur.length && g < k && (acc + w / 2 > total * g / k || left <= need)) { groups.push([t]); }
+        else cur.push(t);
+        acc += w;
+      });
+      return groups;
     }
     function sheetHTML(topics, idx, count) {
       var paper = PAPER[prefs.paper], blank = prefs.mode === 'blank';
@@ -1402,8 +1418,8 @@
       var paper = PAPER[prefs.paper];
       pageStyle.textContent = '@media print { @page { size: ' + paper.page + '; margin: 0; } }';
       var topics = ch.highYield.filter(function (t) { return on[t.id]; });
-      var pages = prefs.pages === 2 && topics.length > 1 ? 2 : 1;
-      var groups = pages === 2 ? split(topics) : [topics];
+      var pages = Math.max(1, Math.min(prefs.pages, topics.length || 1));
+      var groups = split(topics, pages);
       wrap.innerHTML = groups.map(function (g, i) { return sheetHTML(g, i, groups.length); }).join('');
       main.querySelector('#ho-sum').textContent = 'Topics: ' + topics.length + ' of ' + ch.highYield.length + ' included';
       fit(topics.length, pages);
@@ -1433,9 +1449,9 @@
       printBtn.disabled = tooSmall;
       fitMsg.className = 'handout-fit' + (tooSmall ? ' is-warn' : '');
       fitMsg.textContent = tooSmall
-        ? 'Too long for ' + (pages === 2 ? 'two pages' : 'one page') + ' at a readable size. ' + (pages === 1 ? 'Switch to two pages, or untick a topic or two.' : 'Untick a topic or two.')
-        : (autoTwo && pages === 2 ? 'This chapter is too long for one page at a readable size, so two pages are selected. ' : '') +
-          'Fits on ' + (pages === 2 ? 'two pages' : 'one page') + ' at ' + size + ' pt.' + (autoTwo && pages === 2 ? ' Untick topics to get back to one page.' : '');
+        ? 'Too long for ' + PAGE_WORDS[pages] + ' at a readable size. ' + (pages < MAX_PAGES ? 'Choose more pages, or untick a topic or two.' : 'Untick a topic or two.')
+        : (autoTwo && pages > 1 ? 'This chapter is too long for one page at a readable size, so ' + PAGE_WORDS[pages] + ' are selected. ' : '') +
+          'Fits on ' + PAGE_WORDS[pages] + ' at ' + size + ' pt.' + (autoTwo && pages > 1 ? ' Untick topics to use fewer pages.' : '');
     }
     function scale() {
       var sheets = wrap.querySelectorAll('.sheet');
@@ -1457,9 +1473,9 @@
     window.addEventListener('resize', onResize);
     function initial() {
       build();
-      if (printBtn.disabled && prefs.pages === 1 && ch.highYield.length > 1) {
-        prefs.pages = 2; autoTwo = true;
-        var r = main.querySelector('input[name=pages][value="2"]'); if (r) r.checked = true;
+      while (printBtn.disabled && prefs.pages < MAX_PAGES) {
+        prefs.pages += 1; autoTwo = true;
+        var r = main.querySelector('input[name=pages][value="' + prefs.pages + '"]'); if (r) r.checked = true;
         build();
       }
     }
@@ -1883,7 +1899,41 @@
   function setTopVar() { document.documentElement.style.setProperty('--top', headerH() + 'px'); }
   window.addEventListener('resize', setTopVar);
   setTopVar();
-  window.addEventListener('hashchange', route);
+  /* ---------- back and forward buttons ----------
+     Each history entry the app visits is stamped with its position (history.state.ksIdx), so the
+     buttons know whether there is an in-app page behind or ahead of the current one. */
+  var HIST_KEY = 'ks:v1:hist';
+  var hist = (function () { try { return JSON.parse(sessionStorage.getItem(HIST_KEY)) || { cur: 0, max: 0 }; } catch (e) { return { cur: 0, max: 0 }; } })();
+  function saveHist() { try { sessionStorage.setItem(HIST_KEY, JSON.stringify(hist)); } catch (e) {} }
+  function stamp(i) { try { history.replaceState({ ksIdx: i }, ''); } catch (e) {} }
+  function syncHist() {
+    var st = history.state;
+    if (st && typeof st.ksIdx === 'number') {
+      hist.cur = st.ksIdx;
+      if (hist.cur > hist.max) hist.max = hist.cur;
+    } else {
+      hist.cur = hist.cur + 1;     // a new page: anything that was ahead is discarded
+      hist.max = hist.cur;
+      stamp(hist.cur);
+    }
+    saveHist(); paintHist();
+  }
+  function paintHist() {
+    var b = document.getElementById('nav-back'), f = document.getElementById('nav-fwd');
+    if (b) b.disabled = hist.cur <= 0;
+    if (f) f.disabled = hist.cur >= hist.max;
+  }
+  (function initHist() {
+    var st = history.state;
+    if (st && typeof st.ksIdx === 'number') { hist.cur = st.ksIdx; if (hist.max < hist.cur) hist.max = hist.cur; }
+    else { hist = { cur: 0, max: 0 }; stamp(0); }
+    saveHist(); paintHist();
+    var b = document.getElementById('nav-back'), f = document.getElementById('nav-fwd');
+    if (b) b.addEventListener('click', function () { if (!b.disabled) history.back(); });
+    if (f) f.addEventListener('click', function () { if (!f.disabled) history.forward(); });
+  })();
+
+  window.addEventListener('hashchange', function () { syncHist(); route(); });
   loadAll().then(function () {
     indexCards();
     updateNavBadges();

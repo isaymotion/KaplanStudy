@@ -1,6 +1,6 @@
 /*
  * Chapter registry.
- * To add a chapter: create data/chNN/ with the same six files used by ch05,
+ * To add a chapter: create data/chNN/ with the same six files used by the other chapters,
  * then add one entry below. The app loads every listed file at startup so the
  * search covers the whole app.
  */
@@ -11,6 +11,22 @@ KS.add = function (id, key, value) {
 };
 
 KS.manifest = [
+  {
+    id: 'ch01',
+    number: 1,
+    title: 'Examination and Diagnosis of the Psychiatric Patient',
+    short: 'Examination and diagnosis',
+    summary: 'The interview, history and mental status examination; formulation and the record; laboratory tests, drug levels and neuroimaging; rating scales and psychological testing; and how the evaluation changes for children and older adults.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch02',
+    number: 2,
+    title: 'Neurodevelopmental Disorders and Other Childhood Disorders',
+    short: 'Childhood disorders',
+    summary: 'Intellectual disability, communication disorders, autism, ADHD, learning and motor disorders, and the childhood forms of trauma, mood, disruptive, anxiety, OCD, psychotic and substance use disorders: recognition, differential and evidence-based treatment.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
   {
     id: 'ch05',
     number: 5,
@@ -41,6 +57,14 @@ KS.manifest = [
     title: 'Anxiety Disorders',
     short: 'Anxiety disorders',
     summary: 'Panic disorder, agoraphobia, specific phobia, social anxiety disorder and generalized anxiety disorder: what each fears, how to tell them apart, and evidence-based drug and psychological treatment.',
+    files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch09',
+    number: 9,
+    title: 'Obsessive-Compulsive and Related Disorders',
+    short: 'Obsessive-compulsive and related',
+    summary: 'OCD, body dysmorphic disorder, hoarding, hair pulling and skin picking: the symptom patterns, the role of insight, a wide differential, and high-dose SRIs, ERP and disorder-specific therapies.',
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
   }
 ];

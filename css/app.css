@@ -164,6 +164,16 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .suggest__all { font-weight: 600; color: var(--m-pharm); }
 .suggest__empty { padding: 14px 12px; color: var(--ink-3); font-size: .92rem; }
 
+.histnav { display: flex; gap: 4px; flex-shrink: 0; }
+.hist-btn {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; padding: 0;
+  border: 1px solid rgba(255,255,255,.16); background: transparent; color: var(--night-ink); cursor: pointer;
+  display: grid; place-items: center;
+}
+.hist-btn svg { width: 18px; height: 18px; }
+.hist-btn:hover:not(:disabled) { background: rgba(255,255,255,.1); }
+.hist-btn:disabled { opacity: .32; cursor: default; }
+.hist-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .theme-btn {
   width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
   border: 1px solid rgba(255,255,255,.16); background: transparent; color: var(--night-ink); cursor: pointer;
@@ -522,6 +532,9 @@ tbody th { font-weight: 700; }
   .search { order: 3; flex-basis: 100%; max-width: none; margin-left: 0; }
   .theme-btn { margin-left: auto; }
   .search__kbd { display: none; }
+  .histnav { gap: 2px; }
+  .hist-btn { width: 34px; height: 34px; }
+  .brand img { width: 30px; height: 30px; }
   .refract { grid-template-columns: minmax(0, 1fr); }
   .refract__prism, .refract__raybox { display: none; }
   .chapter-row { grid-template-columns: auto minmax(0, 1fr); padding: 18px; gap: 16px; }
@@ -777,7 +790,7 @@ tbody th { font-weight: 700; }
   .mk { grid-template-columns: minmax(0, 1fr); }
 }
 @media print {
-  .sitenav, .glpop { display: none !important; }
+  .histnav, .sitenav, .glpop { display: none !important; }
   .gl { text-decoration: none; }
 }
 
@@ -952,3 +965,7 @@ body.is-teaching { overflow: hidden; }
   .teach__inner.is-revealed .teach__answer { padding: 12px 20px; }
   .teach__inner.is-revealed .teach__answer p { font-size: clamp(1rem, 1.5vw, 1.3rem); }
 }
+.teach-setup .exam-form fieldset { min-width: 0; }
+.teach-setup .exam-form .select { max-width: 100%; }
+.teach-setup .exam-form .select select { min-width: 0; width: 100%; text-overflow: ellipsis; }
+@media (min-width: 721px) { .teach-setup .exam-form .select select { min-width: 260px; width: auto; } }

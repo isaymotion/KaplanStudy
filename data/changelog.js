@@ -13,6 +13,38 @@
  */
 KS.changelog = [
   {
+    id: 9,
+    date: "2026-10-07",
+    title: "Chapter 2: Neurodevelopmental Disorders and Other Childhood Disorders",
+    items: [
+      { type: "chapter", ch: "ch02", text: "**Chapter 2: Neurodevelopmental Disorders and Other Childhood Disorders**: intellectual disability, communication disorders, autism, ADHD, learning and motor disorders, early feeding disorders, attachment and trauma, depression and suicide, bipolar disorder and DMDD, disruptive behavior, anxiety and selective mutism, OCD, early-onset schizophrenia and adolescent substance use. Study guide, high-yield list, 584 flashcards and a printable handout.", href: "#/c/ch02/guide", link: "Start Chapter 2" },
+      { type: "feature", ch: "ch02", text: "**Which developmental disorder?** helper: start from the main concern about a child (global delay, speech and language, social relating, learning, coordination, movements or attention) and reach one of 27 outcomes.", href: "#/helpers/development", link: "Try it" },
+      { type: "update", text: "24 Chapter 2 terms, such as theory of mind, premonitory urge, behavioral inhibition and Werther syndrome, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
+    id: 8,
+    date: "2026-10-07",
+    title: "Chapter 1: Examination and Diagnosis of the Psychiatric Patient",
+    items: [
+      { type: "chapter", ch: "ch01", text: "**Chapter 1: Examination and Diagnosis of the Psychiatric Patient**: the interview, history and mental status examination, the medical workup and laboratory tests, neuroimaging, rating scales and psychological testing, and the child, adolescent and geriatric evaluation. Study guide, high-yield list, 404 flashcards and a printable handout.", href: "#/c/ch01/guide", link: "Start Chapter 1" },
+      { type: "feature", ch: "ch01", text: "**Which medical workup?** helper: pick the situation (acute confusion, cognitive decline, new psychosis, substances, drug monitoring, eating disorder or overdose) to see the tests the chapter points to, across 28 outcomes.", href: "#/helpers/workup", link: "Try it" },
+      { type: "feature", text: "**Back and forward buttons** in the top bar (or Alt+Left and Alt+Right) step through the pages you have visited." },
+      { type: "update", text: "Printable handouts for long chapters can now run to three or four pages; the page count is chosen automatically to keep the type readable.", href: "#/c/ch01/handout", link: "Open the Chapter 1 handout" },
+      { type: "update", text: "36 Chapter 1 terms, such as transference, reliability, witzelsucht and neuroleptic malignant syndrome, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
+    id: 7,
+    date: "2026-10-03",
+    title: "Chapter 9: Obsessive-Compulsive and Related Disorders",
+    items: [
+      { type: "chapter", ch: "ch09", text: "**Chapter 9: Obsessive-Compulsive and Related Disorders**: study guide, high-yield list, 189 flashcards and a printable handout.", href: "#/c/ch09/guide", link: "Start Chapter 9" },
+      { type: "feature", ch: "ch09", text: "**Which obsessive-compulsive or related disorder?** diagnostic helper: medical causes and look-alikes first, then the focus of the thoughts or behavior, ending at one of 22 outcomes with insight and other specifiers.", href: "#/helpers/ocd", link: "Try it" },
+      { type: "update", text: "Nine Chapter 9 terms, such as exposure and response prevention, PANDAS and trichophagy, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
     id: 6,
     date: "2026-10-03",
     title: "Chapter 8: Anxiety Disorders",
