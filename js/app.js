@@ -253,16 +253,8 @@
   }
 
   /* ---------- home ---------- */
-  function prismSVG() {
-    return '<svg class="refract__prism" viewBox="0 0 112 160" aria-hidden="true">' +
-      '<defs><linearGradient id="hb" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".95"/></linearGradient>' +
-      '<linearGradient id="hf" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset="1" stop-color="#c9d2ff" stop-opacity=".1"/></linearGradient></defs>' +
-      '<polygon points="-40,58 -40,66 38,84 40,78" fill="url(#hb)"/>' +
-      '<polygon points="58,22 74,14 112,80 98,92" fill="#9aa8ff" fill-opacity=".38"/>' +
-      '<polygon points="58,22 16,128 98,128" fill="url(#hf)"/>' +
-      '<polygon points="39,81 40,77 112,80 112,80" fill="#fff" fill-opacity=".45"/>' +
-      '<g fill="none" stroke="#fff" stroke-linejoin="round"><polyline points="16,128 58,22 98,128 16,128" stroke-width="2.4" stroke-opacity=".9"/><polyline points="58,22 74,14 112,80 98,128" stroke-width="2" stroke-opacity=".7"/></g>' +
-      '<circle cx="58" cy="22" r="3.2" fill="#fff"/></svg>';
+  function heroArt() {
+    return '<img class="refract__art" src="icons/home-brain.png" width="160" height="160" alt="" decoding="async">';
   }
   function raysSVG() {
     var cols = ['#FF5A63', '#FF8C42', '#FFD23F', '#4FD17A', '#3FA2FF', '#9A73FF'];
@@ -312,7 +304,7 @@
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
-          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and psychotic, mood, anxiety and OCD-related disorders, step by step</span></a>' +
+          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, psychotic, mood, anxiety and OCD-related disorders, step by step</span></a>' +
         '</div>' +
       '</section>';
 
@@ -340,7 +332,7 @@
         '<div class="hero__actions">' + cont + '<a class="btn" href="#/exam">Take a practice exam</a></div></div>' +
         '<nav class="refract" aria-label="Study modes for Chapter ' + focus.number + '">' +
           '<p class="refract__for">Chapter ' + focus.number + ': <a href="#/c/' + focus.id + '/guide">' + esc(focus.short || focus.title) + '</a></p>' +
-          prismSVG() + raysSVG() + '<ul class="spectrum">' + spectrum + '</ul>' +
+          heroArt() + raysSVG() + '<ul class="spectrum">' + spectrum + '</ul>' +
         '</nav>' +
       '</div></section>' +
       newsStrip + todayPanel +

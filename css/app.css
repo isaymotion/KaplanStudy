@@ -1,5 +1,5 @@
 /* Kaplan & Sadock Study Companion
-   Palette: indigo night from the prism icon, cool paper, and six spectral
+   Palette: indigo night, cool paper, and six spectral
    colors. Each color always means the same study mode. */
 
 :root {
@@ -228,9 +228,9 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .hero .btn:hover { border-color: rgba(255,255,255,.7); }
 .hero .btn--solid { background: var(--night-ink); color: var(--night-deep); border-color: var(--night-ink); }
 
-.refract { display: grid; grid-template-columns: 112px minmax(40px, 1fr) minmax(220px, 1.5fr); align-items: stretch; }
-.refract__prism { align-self: center; width: 112px; height: auto; overflow: visible; }
-.refract__raybox { position: relative; min-height: 100%; }
+.refract { display: grid; grid-template-columns: 150px minmax(40px, 1fr) minmax(220px, 1.5fr); align-items: stretch; }
+.refract__art { align-self: center; width: 150px; height: auto; position: relative; z-index: 1; filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)); }
+.refract__raybox { position: relative; min-height: 100%; margin-left: -34px; }
 .refract__rays { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .refract__for { grid-column: 1 / -1; font: 500 .9rem/1.3 var(--sans); color: var(--night-ink-2); margin: 0 0 12px; }
 .refract__for a { color: var(--night-ink); }
@@ -536,7 +536,8 @@ tbody th { font-weight: 700; }
   .hist-btn { width: 34px; height: 34px; }
   .brand img { width: 30px; height: 30px; }
   .refract { grid-template-columns: minmax(0, 1fr); }
-  .refract__prism, .refract__raybox { display: none; }
+  .refract__raybox { display: none; }
+  .refract__art { justify-self: center; width: 112px; margin: 0 0 16px; order: -1; }
   .chapter-row { grid-template-columns: auto minmax(0, 1fr); padding: 18px; gap: 16px; }
   .chapter-row .meter { grid-column: 1 / -1; width: 100%; }
   .meter__label { text-align: left; }

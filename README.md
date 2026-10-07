@@ -18,6 +18,7 @@ Across all chapters:
 - **Diagnostic helpers**: step-by-step decision aids that end with the likely diagnosis (or workup), the reasoning trail, chapter points and a link to the guide section.
   - *Which medical workup?* (Chapter 1): acute mental status change, cognitive decline, new-onset psychosis, substance or toxin exposure, drug monitoring and ECT, eating disorders and overdose. Reaches the laboratory tests, ECG, EEG and imaging the chapter points to, from the delirium and dementia workups to NMS, Wilson disease, porphyria, lupus, alcohol, injection drug use, lithium, valproate, carbamazepine, clozapine, QTc and tricyclic monitoring.
   - *Which developmental disorder?* (Chapter 2): global delay, speech and language (after hearing is checked), social relating and repetitive behavior, specific learning problems, coordination, tics and stereotypies, and attention. Reaches intellectual disability, the language, speech sound and fluency disorders, selective mutism, autism spectrum disorder, social (pragmatic) communication disorder, attachment disorders, the learning disorder specifiers, developmental coordination disorder, the tic disorders, stereotypic movement disorder or ADHD, and flags regression, sensory loss, deprivation, absence seizures and mood episodes.
+  - *Which cognitive disorder?* (Chapter 3): acute and fluctuating, gradual, memory-only, rapidly progressive or mild decline, and depression with cognitive complaints. Reaches delirium (anticholinergic, withdrawal, beclouded dementia, seizure-related), the Alzheimer, frontotemporal, Lewy body, vascular, Parkinson, Huntington, HIV and trauma-related neurocognitive disorders, reversible causes (subdural hematoma, hypothyroidism, B12 deficiency, neurosyphilis), Korsakoff syndrome, transient global amnesia and other amnestic syndromes, prion disease, encephalitis, mild cognitive impairment, normal aging or depression-related cognitive dysfunction.
   - *Which psychotic disorder?* (Chapter 5): cause, culture, shared delusions, mood involvement, symptoms and duration.
   - *Which bipolar disorder?* (Chapter 6): medical or substance cause, antidepressant-associated episodes, psychosis outside mood episodes, the most severe elevated period, distinct episodes versus personality lability, major depressive episodes, a 2-year subthreshold course, and rapid cycling. Reaches bipolar I, bipolar II (each with or without rapid cycling), cyclothymia, or the main look-alikes.
   - *Which depressive disorder?* (Chapter 7): medical or substance cause, history of mania or hypomania, predictors of bipolarity, bereavement, a chronic versus episodic course, the persistent depressive disorder course specifiers, episode severity and duration, psychotic features and the main specifiers. Reaches major depressive disorder with its specifiers, persistent depressive disorder, double depression, recurrent brief and minor depression, normal grief, or a medical or bipolar cause.
@@ -42,6 +43,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 |---|---|---|---|---|
 | 1 | Examination and Diagnosis of the Psychiatric Patient | 46 | 249 | 404 |
 | 2 | Neurodevelopmental Disorders and Other Childhood Disorders | 57 | 248 | 584 |
+| 3 | Neurocognitive Disorders | 37 | 171 | 401 |
 | 5 | Schizophrenia Spectrum and Other Psychotic Disorders | 33 | 157 | 267 |
 | 6 | Bipolar Disorders | 24 | 102 | 208 |
 | 7 | Depressive Disorders | 32 | 123 | 214 |
@@ -75,7 +77,7 @@ data/ch01/ … data/ch09/ Chapter content
   cards-cases.js        Clinical case deck
   cards-pharm.js        Pharmacology deck
   cards-foundations.js  Foundations deck
-icons/                  App icons (SVG sources and PNG exports)
+icons/                  App icons (PNG sizes, maskable versions, favicon) and the home page image
 manifest.webmanifest    Install metadata
 sw.js                   Offline cache
 ```

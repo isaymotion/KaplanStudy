@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 10,
+    date: "2026-10-07",
+    title: "Chapter 3: Neurocognitive Disorders, and a new app icon",
+    items: [
+      { type: "chapter", ch: "ch03", text: "**Chapter 3: Neurocognitive Disorders**: evaluating cognition, delirium, dementia and its causes (Alzheimer, vascular, frontotemporal, Lewy body, subcortical and prion), amnestic disorders, psychiatric syndromes due to medical conditions (epilepsy, tumors, head trauma, MS, infections, HIV, lupus, endocrine, metabolic, nutritional and toxic) and mild cognitive impairment. Study guide, high-yield list, 401 flashcards and a printable handout.", href: "#/c/ch03/guide", link: "Start Chapter 3" },
+      { type: "feature", ch: "ch03", text: "**Which cognitive disorder?** helper: start from how the change began (acute, gradual, memory only, rapidly progressive or mild) and reach one of 31 outcomes, from delirium and dementia types to amnestic syndromes, reversible medical causes and MCI.", href: "#/helpers/cognitive", link: "Try it" },
+      { type: "update", text: "A new app icon, the brain rising over the waves, now appears on your home screen, browser tab and the home page." },
+      { type: "update", text: "49 Chapter 3 terms, such as beclouded dementia, Korsakoff syndrome, transient global amnesia and Argyll Robertson pupils, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
     id: 9,
     date: "2026-10-07",
     title: "Chapter 2: Neurodevelopmental Disorders and Other Childhood Disorders",

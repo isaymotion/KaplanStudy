@@ -28,6 +28,11 @@ KS.manifest = [
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
   },
   {
+    id: 'ch03', number: 3, title: 'Neurocognitive Disorders', short: 'Neurocognitive disorders',
+    summary: 'Cognitive evaluation, delirium, dementia and its causes, amnestic disorders, psychiatric syndromes due to medical conditions, and mild cognitive impairment.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
     id: 'ch05',
     number: 5,
     title: 'Schizophrenia Spectrum and Other Psychotic Disorders',
