@@ -1447,8 +1447,8 @@
   /* Sheets are sized to the area inside the page margins, with spare height, because some browsers
      (Safari on iPhone and iPad) ignore @page margins and add their own, plus a URL and date line. */
   var PAPER = {
-    a4: { label: 'A4', w: '186mm', h: '262mm', page: 'A4', margin: '12mm' },
-    letter: { label: 'Letter', w: '7.5in', h: '9.55in', page: 'letter', margin: '0.5in' }
+    a4: { label: 'A4', w: '186mm', h: '268mm', page: 'A4', margin: '12mm' },
+    letter: { label: 'Letter', w: '7.5in', h: '9.8in', page: 'letter', margin: '0.5in' }
   };
   var ATTRIBUTION = 'App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com';
 
@@ -1532,7 +1532,7 @@
     /* Lay the topics out into three explicit columns. This is done by hand rather than with CSS
        multi-column, which Safari's print engine collapses into a single long column. */
     function colFull(col) { return col.scrollHeight > col.clientHeight + 1 || col.scrollWidth > col.clientWidth + 1; }
-    var PRINT_SLACK = 0.9;   // fill only 90% of the column height: printed text can run taller than on screen (iPhone Safari)
+    var PRINT_SLACK = 0.96;  // leave 4% of the column height spare in case printed text runs slightly taller than on screen
     function flow(body, size) {
       body.style.fontSize = size + 'pt';
       var cols = body.querySelectorAll('.sheet__col');
