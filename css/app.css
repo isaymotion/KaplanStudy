@@ -1096,3 +1096,14 @@ body.is-presenter .topbar, body.is-presenter .site-foot { display: none; }
   #t-presenter { display: none; }
   .teach__notes { top: 56px; right: 8px; left: 8px; width: auto; }
 }
+
+/* teaching mode: recall rating rows and fill-in-the-blank */
+.teach__choices--rate { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.teach__choices--rate .tchoice { min-height: 64px; }
+.teach__stem--hy { line-height: 1.7; }
+.hyblank { display: inline-block; height: 1.1em; vertical-align: -0.15em; margin: 0 .1em; border-bottom: 3px solid #FFD23F; background: rgba(255,210,63,.14); border-radius: 3px 3px 0 0; }
+.hyfill { background: rgba(76,203,138,.28); color: #fff; padding: 0 .2em; border-radius: 4px; font-weight: 600; }
+.teach__why { margin-top: .6em !important; color: #D3D7F5 !important; font-size: .92em !important; }
+.pres__ans { color: var(--ink-2); }
+.pn .hyfill, .presenter .hyfill, .ts-miss .hyfill { background: #CFEFDD; color: #0E4A2A; }
+@media (max-width: 720px) { .teach__choices--rate { grid-template-columns: minmax(0, 1fr); } }

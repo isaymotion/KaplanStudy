@@ -576,7 +576,7 @@
       '<div class="wrap hy-page' + (quiz ? ' quiz-on' : '') + '">' +
         '<div class="hy-tools"><label class="switch"><input type="checkbox" id="hy-quiz"' + (quiz ? ' checked' : '') + '> Hide key facts</label>' +
         '<p>With key facts hidden, each bold fact becomes a blank. Say the answer, then tap the blank to check.</p>' +
-        '<a class="btn hy-tools__print" href="#/c/' + ch.id + '/handout">Printable handout</a></div>' +
+        '<a class="btn hy-tools__print" href="#/c/' + ch.id + '/handout">Printable handout</a><a class="btn" href="#/teach" id="hy-teach">Present as fill-in-the-blank</a></div>' +
         '<div class="hy-grid">' + topics + '</div>' +
       '</div>';
     setView(key, html, focusTarget);
@@ -584,6 +584,8 @@
     main.querySelectorAll('.hy-topic').forEach(function (t) { linkTerms(t, { skip: 'strong' }); });
     var page = main.querySelector('.hy-page');
     var toggle = main.querySelector('#hy-quiz');
+    var hyt = main.querySelector('#hy-teach');
+    if (hyt) hyt.addEventListener('click', function () { var tp = teachPrefs(); tp.scope = ch.id; tp.kind = 'hy'; store.set('teachPrefs', tp); });
     function applyQuiz(on) {
       page.classList.toggle('quiz-on', on);
       page.querySelectorAll('.hy-topic strong').forEach(function (s) {
@@ -808,7 +810,7 @@
             '<option value="order"' + (S.mode === 'order' ? ' selected' : '') + '>All cards in order</option>' +
             '<option value="shuffle"' + (S.mode === 'shuffle' ? ' selected' : '') + '>All cards, shuffled</option>' +
           '</select></label>' +
-        '</div><div class="deck-bar__right">' + (deck.key === 'cases' ? '<a class="btn btn--small" href="#/teach" id="opt-teach">Present in teaching mode</a>' : '') + '<button class="link-btn" type="button" id="opt-reset">Reset this deck</button></div></div>' +
+        '</div><div class="deck-bar__right">' + '<a class="btn btn--small" href="#/teach" id="opt-teach">Present in teaching mode</a>' + '<button class="link-btn" type="button" id="opt-reset">Reset this deck</button></div></div>' +
         '<div class="tally" id="tally"></div>' +
         '<div id="card-area" aria-live="polite"></div>' + kbdHelp(deck.key === 'cases') +
       '</div>';
@@ -837,7 +839,7 @@
       S.mode = e.target.value; store.set('deckPrefs', { mode: S.mode }); build(); start();
     });
     var tl = main.querySelector('#opt-teach');
-    if (tl) tl.addEventListener('click', function () { var tp = teachPrefs(); tp.scope = ch.id; tp.kind = 'mcq'; store.set('teachPrefs', tp); });
+    if (tl) tl.addEventListener('click', function () { var tp = teachPrefs(); tp.scope = ch.id; tp.kind = ({ cases: 'mcq', diagnosis: 'dx', pharm: 'pharm', foundations: 'found' })[deck.key] || 'mcq'; store.set('teachPrefs', tp); });
     main.querySelector('#opt-reset').addEventListener('click', function () {
       if (!window.confirm('Clear the review schedule for every card in this deck? They will all become new cards again.')) return;
       keys.forEach(function (k) { delete SRS[k]; }); saveSRS(); updateNavBadges(); build(); start();
@@ -1640,12 +1642,24 @@
      - Facilitator notes: discussion prompts for the presenter, in a side panel or a separate presenter window.
      - Session summary: score by topic and chapter, the questions to revisit, printable.
      Nothing here touches the review schedule or the mistakes pile. */
+  var DECK_OF = { dx: ['diagnosis'], pharm: ['pharm'], found: ['foundations'], recall: ['diagnosis', 'pharm', 'foundations'] };
+  var DECK_LABEL = { diagnosis: 'Diagnosis', pharm: 'Pharmacology', foundations: 'Foundations' };
   function teachItems(scope, kind) {
     var out = [];
     allChapters().forEach(function (ch) {
       if (scope !== 'all' && ch.id !== scope) return;
       if (kind === 'mcq') {
         (ch.cases || []).forEach(function (c) { out.push({ id: ch.id + '/' + c.id, ch: ch, c: c, notes: c.notes }); });
+      } else if (DECK_OF[kind]) {
+        DECK_OF[kind].forEach(function (dk) {
+          (ch[dk] || []).forEach(function (c) { out.push({ id: ch.id + '/' + dk + '/' + c.id, ch: ch, rc: c, deck: dk, notes: c.notes }); });
+        });
+      } else if (kind === 'hy') {
+        (ch.highYield || []).forEach(function (t) {
+          (t.items || []).forEach(function (txt, i) {
+            if (/\*\*.+?\*\*/.test(txt)) out.push({ id: ch.id + '/hy/' + t.id + '--' + i, ch: ch, topic: t.topic, text: txt, hy: true });
+          });
+        });
       } else if (ch.guide) {
         ch.guide.parts.forEach(function (pt) {
           pt.sections.forEach(function (s) {
@@ -1658,6 +1672,46 @@
     });
     return out;
   }
+  /* Kinds that are voted on: board-style questions (vote before the reveal) and the recall kinds
+     (flashcards, high-yield blanks), where the room self-rates after the reveal. */
+  function isRecall(kind) { return kind === 'dx' || kind === 'pharm' || kind === 'found' || kind === 'recall' || kind === 'hy'; }
+  function isVoting(kind) { return kind === 'mcq' || isRecall(kind); }
+  var BUCKETS = ['Knew it', 'Partly', 'Missed it'];
+  function nBuckets(it, kind) { return kind === 'mcq' ? it.c.choices.length : isRecall(kind) ? 3 : 0; }
+  function itemTag(it, kind) {
+    if (kind === 'mcq') return it.c.tag || 'Case';
+    if (kind === 'hy') return it.topic;
+    if (isRecall(kind)) return (DECK_LABEL[it.deck] || '') + ' \u00b7 ' + (it.rc.tag || 'General');
+    return it.sec.title;
+  }
+  function itemLabel(it, kind) {
+    if (kind === 'mcq') return plain(it.c.q);
+    if (kind === 'hy') return plain(it.text).replace(/\s+/g, ' ');
+    if (isRecall(kind)) return plain(it.rc.q);
+    return it.title;
+  }
+  /* Blank out the bold facts of a high-yield line; filled in on reveal. No answer text is in the page until then. */
+  function blankify(text, reveal) {
+    return fmt(text).replace(/<strong>(.+?)<\/strong>/g, function (m, g) {
+      if (reveal) return '<mark class="hyfill">' + g + '</mark>';
+      var w = Math.max(4, Math.min(24, plain(g).length));
+      return '<span class="hyblank" role="img" aria-label="blank" style="min-width:' + w + 'ch"></span>';
+    });
+  }
+  var KIND_NOUN = { mcq: 'question', dx: 'card', pharm: 'card', found: 'card', recall: 'card', hy: 'fact', chapter: 'chapter case' };
+  var KIND_OPTS = [
+    ['mcq', 'Board-style questions'], ['chapter', 'Chapter cases'], ['dx', 'Diagnosis flashcards (recall)'], ['pharm', 'Pharmacology flashcards (recall)'],
+    ['found', 'Foundations flashcards (recall)'], ['recall', 'All three flashcard decks mixed (recall)'], ['hy', 'High-yield fill-in-the-blank']
+  ];
+  var KIND_HINT = {
+    mcq: 'Single-best-answer vignettes. Count the room\u2019s votes, then reveal the answer and its explanation.',
+    chapter: 'The textbook cases summarized in each study guide. Reveal shows the teaching point.',
+    dx: 'Ask the question, discuss, reveal the answer, then count who knew it, who partly did and who missed it.',
+    pharm: 'Ask the question, discuss, reveal the answer, then count who knew it, who partly did and who missed it.',
+    found: 'Ask the question, discuss, reveal the answer, then count who knew it, who partly did and who missed it.',
+    recall: 'Diagnosis, pharmacology and foundations cards together. Reveal the answer, then count who knew it.',
+    hy: 'One high-yield fact at a time with its key terms blanked. Reveal fills the blanks, then count who knew it.'
+  };
   function teachPrefs() {
     var p = store.get('teachPrefs', {}) || {};
     return { scope: p.scope || 'all', kind: p.kind || 'mcq', order: p.order || 'order', counts: p.counts || 'hide' };
@@ -1676,7 +1730,14 @@
     if (e) e.v.forEach(function (n, i) { if (i !== c.answer && n > topN) { topN = n; top = i; } });
     return { total: total, ok: ok, pct: pct(ok, total), topWrong: top, topWrongN: topN };
   }
+  /* Per-item stats for any voting kind. For recall kinds the "correct" bucket is "Knew it". */
+  function tItemStats(it, kind, e) {
+    if (kind === 'mcq') return tStats(it.c, e);
+    var total = tSum(e), ok = (e && e.v[0]) || 0;
+    return { total: total, ok: ok, pct: pct(ok, total), partly: (e && e.v[1]) || 0, missed: (e && e.v[2]) || 0, topWrong: -1, topWrongN: 0 };
+  }
   function tVerdict(p) { return p >= 70 ? 'The room mostly had it.' : p >= 40 ? 'The room was split.' : 'Most of the room missed this one.'; }
+  function tVerdictRecall(p) { return p >= 70 ? 'Most of the room knew this.' : p >= 40 ? 'The room was split on this.' : 'Most of the room did not know this.'; }
   var REVISIT_BELOW = 60;
 
   /* --- facilitator notes. Built from what the app already knows about the case; a case may carry its
@@ -1700,6 +1761,7 @@
   }
   function teachNotesHtml(it, kind, e) {
     var a = it.notes || {}, h = '', asks = [], extend = [];
+    if (isRecall(kind)) return recallNotesHtml(it, kind, e);
     function list(arr) { return '<ul>' + arr.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'; }
     if (kind === 'mcq') {
       var c = it.c, s = tStats(c, e);
@@ -1711,7 +1773,7 @@
       h += '<h3>Probe the other choices</h3><p class="pn__hint">For each, ask what would have to change in the vignette for it to be right.</p><ul class="pn__wrong">' + wrongChoiceRows(c, e) + '</ul>';
       extend = (a.extend || []).concat(['Ask one resident to state the take-home in a single sentence.']);
       h += '<h3>Extend</h3>' + list(extend);
-      h += '<p class="pn__links"><a href="#/c/' + it.ch.id + '/high-yield" target="_blank" rel="noopener">High-yield list</a> <a href="#/c/' + it.ch.id + '/guide" target="_blank" rel="noopener">Study guide</a> <a href="#/c/' + it.ch.id + '/cards/' + 'cases' + '" target="_blank" rel="noopener">Case deck</a></p>';
+      h += '<p class="pn__links"><a href="#/c/' + it.ch.id + '/high-yield" target="_blank" rel="noopener">High-yield list</a> <a href="#/c/' + it.ch.id + '/guide" target="_blank" rel="noopener">Study guide</a> <a href="#/c/' + it.ch.id + '/cards/' + (c.tag ? 'cases' : 'cases') + '" target="_blank" rel="noopener">Case deck</a></p>';
     } else {
       asks = (a.ask || []).concat(['Before the reveal: name the diagnosis and two features that support it.', 'What single detail, if changed, would change the diagnosis?', 'What is the next step in management, and why that one?']);
       h += '<h3>Ask the room</h3>' + list(asks);
@@ -1724,6 +1786,31 @@
     return h;
   }
 
+  function recallNotesHtml(it, kind, e) {
+    var a = it.notes || {}, h = '', s = tItemStats(it, kind, e);
+    function list(arr) { return '<ul>' + arr.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'; }
+    var asks, extend;
+    if (kind === 'hy') {
+      asks = (a.ask || []).concat(['Read the line aloud and have someone fill each blank before you reveal.', 'Why does this fact matter at the bedside or on the exam?']);
+      h += '<h3>Ask the room</h3>' + list(asks);
+      h += '<h3>Anchor</h3><p>' + blankify(it.text, true) + '</p>';
+      extend = ['Which other fact in \u201c' + esc(it.topic) + '\u201d is easy to confuse with this one?'];
+    } else {
+      var rc = it.rc, dk = it.deck;
+      var deckAsk = dk === 'pharm' ? ['Which drug or class is this, and what would you monitor or counsel?'] : dk === 'foundations' ? ['Where would a resident be tested on this, and what clinical decision does it change?'] : ['What would you ask or look for to confirm this at the bedside?'];
+      asks = (a.ask || []).concat(['Have two residents answer in their own words before you reveal.'], deckAsk);
+      h += '<h3>Ask the room</h3>' + list(asks);
+      h += '<h3>Anchor</h3><p>' + fmt(rc.a) + '</p>' + (rc.why ? '<p>' + fmt(rc.why) + '</p>' : '');
+      extend = (a.extend || []).concat(['Ask one resident to state the take-home in a single sentence.']);
+    }
+    if (a.watch) h += '<p class="pn__watch"><b>Watch for:</b> ' + fmt(a.watch) + '</p>';
+    if (s.total) h += '<p class="pn__live"><b>Live tally:</b> ' + s.ok + ' of ' + s.total + ' knew it (' + s.pct + '%), ' + s.partly + ' partly, ' + s.missed + ' missed. ' + tVerdictRecall(s.pct) + '</p>';
+    h += '<h3>Extend</h3>' + list(extend);
+    var deckHref = kind === 'hy' ? 'high-yield' : 'cards/' + it.deck;
+    h += '<p class="pn__links"><a href="#/c/' + it.ch.id + '/' + deckHref + '" target="_blank" rel="noopener">' + (kind === 'hy' ? 'High-yield list' : 'This deck') + '</a> <a href="#/c/' + it.ch.id + '/guide" target="_blank" rel="noopener">Study guide</a></p>';
+    return h;
+  }
+
   function saveTeachSession(S) {
     var list = store.get('teachSessions', []) || [];
     list = list.filter(function (r) { return r.id !== S.started; });
@@ -1732,19 +1819,19 @@
   }
   /* Totals for a finished (or in-progress) MCQ session. */
   function summarize(rec) {
-    var byId = {};
-    teachItems(rec.scope, rec.kind).forEach(function (it) { byId[it.id] = it; });
-    var out = { rows: [], polled: 0, presented: 0, votes: 0, ok: 0, byTopic: {}, byCh: {}, revisit: [], gotIt: 0, covered: [], skipped: [] };
+    var byId = {}, kind = rec.kind, voting = isVoting(kind);
+    teachItems(rec.scope, kind).forEach(function (it) { byId[it.id] = it; });
+    var out = { polled: 0, presented: 0, votes: 0, ok: 0, byTopic: {}, byCh: {}, revisit: [], gotIt: 0, covered: [], skipped: [] };
     rec.order.forEach(function (id) {
       var it = byId[id], e = rec.log && rec.log[id];
       if (!it || !e) return;
       out.presented++;
-      if (rec.kind !== 'mcq') { (e.r ? out.covered : out.skipped).push(it); return; }
-      var s = tStats(it.c, e);
+      if (!voting) { (e.r ? out.covered : out.skipped).push(it); return; }
+      var s = tItemStats(it, kind, e);
       if (!s.total) return;
       out.polled++; out.votes += s.total; out.ok += s.ok;
       if (s.pct >= REVISIT_BELOW) out.gotIt++;
-      var t = 'Ch ' + it.ch.number + ', ' + (it.c.tag || 'General');
+      var t = 'Ch ' + it.ch.number + ', ' + itemTag(it, kind);
       var tb = out.byTopic[t] || (out.byTopic[t] = { n: 0, ok: 0, q: 0 }); tb.n += s.total; tb.ok += s.ok; tb.q++;
       var ck = 'Chapter ' + it.ch.number + ': ' + (it.ch.short || it.ch.title);
       var cb = out.byCh[ck] || (out.byCh[ck] = { n: 0, ok: 0, q: 0 }); cb.n += s.total; cb.ok += s.ok; cb.q++;
@@ -1754,6 +1841,7 @@
     return out;
   }
 
+  var LIST_CAP = 300;
   function renderTeachSetup() {
     var prefs = teachPrefs();
     if (prefs.scope !== 'all' && !chapter(prefs.scope)) prefs.scope = 'all';
@@ -1761,8 +1849,8 @@
     var pastHtml = '';
     if (past.length) {
       pastHtml = '<section class="teach-past"><h2>Recent sessions</h2><ul>' + past.slice(0, 5).map(function (r) {
-        var sm = summarize(r), line = r.kind === 'mcq'
-          ? plural(sm.polled, 'question') + ' polled' + (sm.votes ? ', ' + pct(sm.ok, sm.votes) + '% correct' : '')
+        var sm = summarize(r), line = isVoting(r.kind)
+          ? plural(sm.polled, KIND_NOUN[r.kind] || 'item') + ' polled' + (sm.votes ? ', ' + pct(sm.ok, sm.votes) + '% ' + (r.kind === 'mcq' ? 'correct' : 'knew it') : '')
           : plural(sm.covered.length, 'chapter case') + ' discussed';
         return '<li><a href="#/teach/summary/' + r.id + '"><b>' + fmtDate(r.at) + '</b> <span class="muted">' + esc(line) + '</span></a></li>';
       }).join('') + '</ul></section>';
@@ -1772,9 +1860,8 @@
       '<div class="exam-form">' +
         '<fieldset><legend>Chapter</legend><label class="select"><select id="t-scope"><option value="all"' + (prefs.scope === 'all' ? ' selected' : '') + '>All chapters</option>' +
           allChapters().map(function (ch) { return '<option value="' + ch.id + '"' + (prefs.scope === ch.id ? ' selected' : '') + '>Chapter ' + ch.number + ': ' + esc(ch.short || ch.title) + '</option>'; }).join('') + '</select></label></fieldset>' +
-        '<fieldset><legend>Cases</legend><div class="seg">' +
-          '<label><input type="radio" name="kind" value="mcq"' + (prefs.kind === 'mcq' ? ' checked' : '') + '><span>Board-style questions</span></label>' +
-          '<label><input type="radio" name="kind" value="chapter"' + (prefs.kind === 'chapter' ? ' checked' : '') + '><span>Chapter cases</span></label></div>' +
+        '<fieldset><legend>What to present</legend><label class="select"><select id="t-kind">' +
+          KIND_OPTS.map(function (o) { return '<option value="' + o[0] + '"' + (prefs.kind === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></label>' +
           '<p class="muted teach-setup__hint" id="t-hint"></p></fieldset>' +
         '<fieldset><legend>Order</legend><div class="seg">' +
           '<label><input type="radio" name="order" value="order"' + (prefs.order === 'order' ? ' checked' : '') + '><span>In order</span></label>' +
@@ -1790,7 +1877,7 @@
     document.title = 'Teaching mode — K&S Study Companion';
     function read() {
       prefs.scope = main.querySelector('#t-scope').value;
-      prefs.kind = main.querySelector('input[name=kind]:checked').value;
+      prefs.kind = main.querySelector('#t-kind').value;
       prefs.order = main.querySelector('input[name=order]:checked').value;
       prefs.counts = main.querySelector('input[name=counts]:checked').value;
       store.set('teachPrefs', prefs);
@@ -1799,13 +1886,11 @@
       read();
       var items = teachItems(prefs.scope, prefs.kind);
       main.querySelector('#t-counts-set').hidden = prefs.kind !== 'mcq';
-      main.querySelector('#t-hint').textContent = prefs.kind === 'mcq'
-        ? 'Single-best-answer vignettes. Count the room’s votes, then reveal the answer and its explanation.'
-        : 'The textbook cases summarized in each study guide. Reveal shows the teaching point.';
-      main.querySelector('#t-count').textContent = plural(items.length, prefs.kind === 'mcq' ? 'question' : 'chapter case');
-      main.querySelector('#t-list').innerHTML = items.map(function (it, i) {
-        var label = prefs.kind === 'mcq' ? plain(it.c.q) : it.title;
-        var meta = 'Ch ' + it.ch.number + ', ' + (prefs.kind === 'mcq' ? (it.c.tag || 'Case') : it.sec.title);
+      main.querySelector('#t-hint').textContent = KIND_HINT[prefs.kind] || '';
+      main.querySelector('#t-count').textContent = plural(items.length, KIND_NOUN[prefs.kind] || 'item') + (items.length > LIST_CAP ? ' (listing the first ' + LIST_CAP + '; Start presenting runs all of them)' : '');
+      main.querySelector('#t-list').innerHTML = items.slice(0, LIST_CAP).map(function (it, i) {
+        var label = itemLabel(it, prefs.kind);
+        var meta = 'Ch ' + it.ch.number + ', ' + itemTag(it, prefs.kind);
         return '<li><button type="button" class="teach-item" data-start="' + i + '"><span class="teach-item__meta">' + esc(meta) + '</span><span class="teach-item__q">' + esc(label.length > 170 ? label.slice(0, 170) + '…' : label) + '</span></button></li>';
       }).join('');
       main.querySelectorAll('[data-start]').forEach(function (b) { b.addEventListener('click', function () { start(parseInt(b.getAttribute('data-start'), 10)); }); });
@@ -1821,7 +1906,8 @@
       location.hash = '#/teach/run';
     }
     main.querySelector('#t-scope').addEventListener('change', list);
-    main.querySelectorAll('input[name=kind], input[name=order], input[name=counts]').forEach(function (i) { i.addEventListener('change', list); });
+    main.querySelector('#t-kind').addEventListener('change', list);
+    main.querySelectorAll('input[name=order], input[name=counts]').forEach(function (i) { i.addEventListener('change', list); });
     main.querySelector('#t-start').addEventListener('click', function () { start(null); });
     list();
   }
@@ -1845,8 +1931,10 @@
     S.pos = Math.max(0, Math.min(S.pos || 0, S.order.length - 1));
     S.log = S.log || {};
     if (!S.started) S.started = Date.now();
-    var mcq = S.kind === 'mcq';
+    var kind = S.kind, mcq = kind === 'mcq', recall = isRecall(kind), voting = mcq || recall;
     var st = { revealed: false, undo: [] }, buf = '', notesOpen = false;
+    /* Questions are voted on before the reveal; recall items are rated after it. */
+    function votable() { return voting && (mcq ? !st.revealed : st.revealed); }
     setView('teach-run', '<div class="teach" id="teach" role="region" aria-label="Teaching mode"></div>');
     document.title = 'Teaching mode — K&S Study Companion';
     document.body.classList.add('is-teaching');
@@ -1861,42 +1949,57 @@
 
     function draw() {
       var it = cur(), e = S.log[curId()] || null;
-      var meta = 'Chapter ' + it.ch.number + ', ' + (mcq ? (it.c.tag || 'Case') : it.sec.title);
+      var meta = 'Chapter ' + it.ch.number + ', ' + itemTag(it, kind);
       var body, total = 0;
-      if (mcq) {
-        var c = it.c, s = tStats(c, e), show = S.counts === 'show';
-        total = s.total;
-        body = '<p class="teach__stem">' + fmt(c.q) + '</p><ul class="teach__choices">' + c.choices.map(function (ch2, i) {
+      function rows(labels, s, correct) {
+        var show = recall || S.counts === 'show';
+        return '<ul class="teach__choices' + (recall ? ' teach__choices--rate' : '') + '">' + labels.map(function (lab, i) {
           var n = e ? (e.v[i] || 0) : 0, share = s.total ? Math.round(n / s.total * 100) : 0, cls = '';
-          if (st.revealed) cls = i === c.answer ? ' is-correct' : (i === s.topWrong ? ' is-wrong' : ' is-dim');
+          if (mcq && st.revealed) cls = i === correct ? ' is-correct' : (i === s.topWrong ? ' is-wrong' : ' is-dim');
+          else if (recall) cls = i === 0 && n ? ' is-correct' : '';
           else if (n) cls = ' is-picked';
-          var badge = (st.revealed || show) && s.total ? '<span class="tchoice__n">' + n + (st.revealed ? ' · ' + share + '%' : '') + '</span>' : '';
-          var bar = st.revealed && s.total ? '<span class="tchoice__bar" style="width:' + share + '%"></span>' : '';
-          return '<li class="tc-row"><button type="button" class="tchoice' + cls + '" data-pick="' + i + '"' + (st.revealed ? ' disabled' : '') + '>' + bar + '<span class="tchoice__key">' + LETTERS[i] + '</span><span class="tchoice__txt">' + fmt(ch2) + '</span>' + badge + '</button>' +
-            (st.revealed ? '' : '<button type="button" class="tminus" data-minus="' + i + '" aria-label="Remove one vote for ' + LETTERS[i] + '" title="Remove one vote">−</button>') + '</li>';
-        }).join('') + '</ul>' +
+          var reveal = mcq ? st.revealed : true;
+          var badge = (reveal || show) && s.total ? '<span class="tchoice__n">' + n + (reveal ? ' · ' + share + '%' : '') + '</span>' : '';
+          var bar = reveal && s.total ? '<span class="tchoice__bar" style="width:' + share + '%"></span>' : '';
+          var can = votable();
+          return '<li class="tc-row"><button type="button" class="tchoice' + cls + '" data-pick="' + i + '"' + (can ? '' : ' disabled') + '>' + bar + '<span class="tchoice__key">' + LETTERS[i] + '</span><span class="tchoice__txt">' + fmt(lab) + '</span>' + badge + '</button>' +
+            (can ? '<button type="button" class="tminus" data-minus="' + i + '" aria-label="Remove one vote for ' + LETTERS[i] + '" title="Remove one vote">−</button>' : '') + '</li>';
+        }).join('') + '</ul>';
+      }
+      if (mcq) {
+        var c = it.c, s = tStats(c, e);
+        total = s.total;
+        body = '<p class="teach__stem">' + fmt(c.q) + '</p>' + rows(c.choices, s, c.answer) +
         (st.revealed ? '<div class="teach__answer"><p class="teach__label">Answer: ' + LETTERS[c.answer] + (s.total ? ' · ' + s.ok + ' of ' + s.total + ' (' + s.pct + '%) chose it' : '') + '</p>' +
           (s.total ? '<p class="teach__verdict">' + tVerdict(s.pct) + (s.topWrong > -1 ? ' Most chosen wrong answer: ' + LETTERS[s.topWrong] + ' (' + s.topWrongN + ').' : '') + '</p>' : '') +
           '<p>' + fmt(c.why) + '</p></div>' : '');
+      } else if (recall) {
+        var rs = tItemStats(it, kind, e), rc = it.rc;
+        total = rs.total;
+        var stem = kind === 'hy' ? '<p class="teach__stem teach__stem--hy">' + blankify(it.text, st.revealed) + '</p>' + (st.revealed ? '' : '<p class="teach__prompt">Fill in the blanks.</p>') : '<p class="teach__stem">' + fmt(rc.q) + '</p>';
+        var ans = '';
+        if (st.revealed && kind !== 'hy') ans = '<div class="teach__answer"><p class="teach__label">Answer</p><p>' + fmt(rc.a) + '</p>' + (rc.why ? '<p class="teach__why">' + fmt(rc.why) + '</p>' : '') + '</div>';
+        var rate = st.revealed ? '<p class="teach__prompt">' + (rs.total ? rs.ok + ' of ' + rs.total + ' knew it. ' + tVerdictRecall(rs.pct) : 'Who knew it? Count the room.') + '</p>' + rows(BUCKETS, rs, 0) : '';
+        body = stem + ans + rate;
       } else {
         body = '<h2 class="teach__title">' + esc(it.title) + '</h2><p class="teach__stem">' + fmt(it.text) + '</p>' +
           (st.revealed ? '<div class="teach__answer"><p class="teach__label">Teaching point</p><p>' + fmt(it.point || '') + '</p></div>' : '<p class="teach__prompt">What is the diagnosis, and what does this case teach?</p>');
       }
       var last = S.pos >= S.order.length - 1;
       box.innerHTML =
-        '<div class="teach__bar"><span class="teach__meta">' + esc(meta) + '</span><span class="teach__pos">' + (mcq ? 'Question ' : 'Case ') + (S.pos + 1) + ' of ' + S.order.length + '</span>' +
-          (mcq ? '<span class="teach__votes" aria-live="polite">' + plural(total, 'vote') + (buf ? ' · adding ' + esc(buf) : '') + '</span>' : '') +
+        '<div class="teach__bar"><span class="teach__meta">' + esc(meta) + '</span><span class="teach__pos">' + (mcq ? 'Question ' : recall ? (kind === 'hy' ? 'Fact ' : 'Card ') : 'Case ') + (S.pos + 1) + ' of ' + S.order.length + '</span>' +
+          (voting ? '<span class="teach__votes" aria-live="polite">' + plural(total, mcq ? 'vote' : 'rating') + (buf ? ' · adding ' + esc(buf) : '') + '</span>' : '') +
           '<span class="teach__spacer"></span>' +
           '<button class="tbtn" type="button" id="t-notes" aria-expanded="' + notesOpen + '">Notes</button>' +
-          '<button class="tbtn" type="button" id="t-presenter" title="Open the presenter view in its own window">Presenter window</button>' +
+          '<button class="tbtn" type="button" id="t-presenter" title="Open the presenter view in its own window (P)">Presenter</button>' +
           '<button class="tbtn" type="button" id="t-fs">' + (isFullscreen() ? 'Exit full screen' : 'Full screen') + '</button>' +
           '<button class="tbtn" type="button" id="t-end">End session</button><button class="tbtn" type="button" id="t-exit">Close</button></div>' +
         '<div class="teach__stage"><div class="teach__inner' + (st.revealed ? ' is-revealed' : '') + '">' + body + '</div></div>' +
         '<div class="teach__nav"><button class="tbtn" type="button" id="t-prev"' + (S.pos ? '' : ' disabled') + '>Previous</button>' +
-          (mcq && !st.revealed ? '<button class="tbtn" type="button" id="t-undo"' + (st.undo.length ? '' : ' disabled') + '>Undo vote</button>' : '') +
-          '<button class="tbtn tbtn--solid" type="button" id="t-reveal">' + (st.revealed ? 'Hide answer' : mcq ? 'Reveal answer' : 'Reveal teaching point') + '</button>' +
+          (votable() ? '<button class="tbtn" type="button" id="t-undo"' + (st.undo.length ? '' : ' disabled') + '>Undo vote</button>' : '') +
+          '<button class="tbtn tbtn--solid" type="button" id="t-reveal">' + (st.revealed ? 'Hide answer' : kind === 'chapter' ? 'Reveal teaching point' : 'Reveal answer') + '</button>' +
           (last ? '<button class="tbtn" type="button" id="t-next">Finish</button>' : '<button class="tbtn" type="button" id="t-next">Next</button>') + '</div>' +
-        '<p class="teach__keys" aria-hidden="true">' + (mcq ? 'Click or A–E add a vote · Shift+letter or − removes one · type 12 then B adds 12 · U undo · ' : '') + 'Space reveal · ← → move · N notes · P presenter window · F full screen · Esc close</p>' +
+        '<p class="teach__keys" aria-hidden="true">' + (recall ? 'After the reveal: A knew it, B partly, C missed \u00b7 type 5 then A adds 5 \u00b7 U undo \u00b7 ' : mcq ? 'Click or A–E add a vote · Shift+letter or − removes one · type 12 then B adds 12 · U undo · ' : '') + 'Space reveal · ← → move · N notes · P presenter window · F full screen · Esc close</p>' +
         (notesOpen ? '<aside class="teach__notes pn" aria-label="Facilitator notes"><div class="pn__head"><b>Facilitator notes</b><button class="pn__x" type="button" id="t-notes-x" aria-label="Close notes">×</button></div><p class="pn__warn">Visible to everyone while you share this screen. Use the presenter window to keep notes private.</p>' + teachNotesHtml(it, S.kind, e) + '</aside>' : '');
       linkTerms(box.querySelector('.teach__inner'), { skip: '.tchoice__key, .teach__label' });
       box.querySelectorAll('[data-pick]').forEach(function (b) {
@@ -1925,9 +2028,9 @@
       if (!w) { notesOpen = true; draw(); }
     }
     function addVote(i, d, n) {
-      if (!mcq || st.revealed) return;
-      var it = cur(), e = tEnsure(S, curId(), it.c.choices.length);
-      if (i < 0 || i >= it.c.choices.length) return;
+      if (!votable()) return;
+      var it = cur(), nb = nBuckets(it, kind), e = tEnsure(S, curId(), nb);
+      if (i < 0 || i >= nb) return;
       var amt = n || (buf ? parseInt(buf, 10) : 1) || 1;
       if (d < 0) amt = Math.min(amt, e.v[i]);
       buf = '';
@@ -1937,14 +2040,14 @@
       draw();
     }
     function undo() {
-      if (!mcq || st.revealed || !st.undo.length) return;
-      var op = st.undo.pop(), e = tEnsure(S, curId(), cur().c.choices.length);
+      if (!votable() || !st.undo.length) return;
+      var op = st.undo.pop(), e = tEnsure(S, curId(), nBuckets(cur(), kind));
       e.v[op.i] = Math.max(0, e.v[op.i] - op.d * op.n);
       draw();
     }
     function toggle() {
       st.revealed = !st.revealed; buf = '';
-      if (st.revealed) tEnsure(S, curId(), mcq ? cur().c.choices.length : 0).r = 1;
+      if (st.revealed) tEnsure(S, curId(), nBuckets(cur(), kind)).r = 1;
       draw();
       var a = box.querySelector('.teach__answer'); if (a) a.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' });
     }
@@ -1967,11 +2070,11 @@
       else if (e.key === 'Escape' && buf) { e.preventDefault(); buf = ''; draw(); }
       else if (e.key === 'Escape' && notesOpen) { e.preventDefault(); toggleNotes(); }
       else if (e.key === 'Escape' && !isFullscreen() && !(glPop && !glPop.hidden)) { e.preventDefault(); close(); }
-      else if (mcq && !st.revealed && /^[0-9]$/.test(e.key)) { e.preventDefault(); if (buf.length < 3) { buf += e.key; draw(); } }
-      else if (mcq && !st.revealed && (e.key === 'u' || e.key === 'U' || e.key === 'Backspace')) { e.preventDefault(); if (buf) { buf = buf.slice(0, -1); draw(); } else undo(); }
-      else if (mcq && !st.revealed && /^[a-e]$/i.test(e.key)) {
+      else if (votable() && /^[0-9]$/.test(e.key)) { e.preventDefault(); if (buf.length < 3) { buf += e.key; draw(); } }
+      else if (votable() && (e.key === 'u' || e.key === 'U' || e.key === 'Backspace')) { e.preventDefault(); if (buf) { buf = buf.slice(0, -1); draw(); } else undo(); }
+      else if (votable() && /^[a-e]$/i.test(e.key)) {
         var i = 'abcde'.indexOf(e.key.toLowerCase());
-        if (i < cur().c.choices.length) { e.preventDefault(); addVote(i, e.shiftKey ? -1 : 1); }
+        if (i < nBuckets(cur(), kind)) { e.preventDefault(); addVote(i, e.shiftKey ? -1 : 1); }
       }
     }
     /* Commands from the presenter window arrive through localStorage. */
@@ -2020,20 +2123,28 @@
       teachItems(S.scope, S.kind).forEach(function (it) { byId[it.id] = it; });
       var it = byId[live.id];
       if (!it) { box.innerHTML = '<p>That session has ended.</p>'; return; }
-      var mcq = S.kind === 'mcq', e = (S.log || {})[live.id] || null, pos = S.order.indexOf(live.id);
-      var h = '<p class="pres__meta"><b>Presenter view</b> · ' + (mcq ? 'Question ' : 'Case ') + (pos + 1) + ' of ' + S.order.length + ' · Chapter ' + it.ch.number + ', ' + esc(mcq ? (it.c.tag || 'Case') : it.sec.title) + '</p>';
+      var kind = S.kind, mcq = kind === 'mcq', recall = isRecall(kind), e = (S.log || {})[live.id] || null, pos = S.order.indexOf(live.id);
+      var can = mcq ? !live.revealed : recall ? live.revealed : false;
+      var h = '<p class="pres__meta"><b>Presenter view</b> · ' + (mcq ? 'Question ' : recall ? (kind === 'hy' ? 'Fact ' : 'Card ') : 'Case ') + (pos + 1) + ' of ' + S.order.length + ' · Chapter ' + it.ch.number + ', ' + esc(itemTag(it, kind)) + '</p>';
+      function ctl(labels, correct) {
+        return '<ul class="pres__choices">' + labels.map(function (t, i) {
+          var n = e ? (e.v[i] || 0) : 0;
+          return '<li class="' + (i === correct ? 'is-answer' : '') + '"><span class="pres__key">' + LETTERS[i] + '</span><span class="pres__txt">' + fmt(t) + (i === correct && mcq ? ' <span class="pn__tag is-ok">correct</span>' : '') + '</span>' +
+            '<span class="pres__ctl"><button type="button" data-v="' + i + '" data-d="-1" aria-label="Remove one vote for ' + LETTERS[i] + '"' + (can ? '' : ' disabled') + '>−</button><b class="pres__n">' + n + '</b><button type="button" data-v="' + i + '" data-d="1" aria-label="Add one vote for ' + LETTERS[i] + '"' + (can ? '' : ' disabled') + '>+</button></span></li>';
+        }).join('') + '</ul>';
+      }
       if (mcq) {
         var c = it.c, s = tStats(c, e);
-        h += '<p class="pres__stem">' + fmt(c.q) + '</p><ul class="pres__choices">' + c.choices.map(function (t, i) {
-          var n = e ? (e.v[i] || 0) : 0;
-          return '<li class="' + (i === c.answer ? 'is-answer' : '') + '"><span class="pres__key">' + LETTERS[i] + '</span><span class="pres__txt">' + fmt(t) + (i === c.answer ? ' <span class="pn__tag is-ok">correct</span>' : '') + '</span>' +
-            '<span class="pres__ctl"><button type="button" data-v="' + i + '" data-d="-1" aria-label="Remove one vote for ' + LETTERS[i] + '"' + (live.revealed ? ' disabled' : '') + '>−</button><b class="pres__n">' + n + '</b><button type="button" data-v="' + i + '" data-d="1" aria-label="Add one vote for ' + LETTERS[i] + '"' + (live.revealed ? ' disabled' : '') + '>+</button></span></li>';
-        }).join('') + '</ul><p class="pres__tot">' + plural(s.total, 'vote') + (s.total ? ' · ' + s.pct + '% on the correct answer' : '') + (live.revealed ? ' · answer is showing on the main screen' : '') + '</p>';
+        h += '<p class="pres__stem">' + fmt(c.q) + '</p>' + ctl(c.choices, c.answer) + '<p class="pres__tot">' + plural(s.total, 'vote') + (s.total ? ' · ' + s.pct + '% on the correct answer' : '') + (live.revealed ? ' · answer is showing on the main screen' : '') + '</p>';
+      } else if (recall) {
+        var rs = tItemStats(it, kind, e);
+        h += (kind === 'hy' ? '<p class="pres__stem">' + blankify(it.text, true) + '</p>' : '<p class="pres__stem">' + fmt(it.rc.q) + '</p><p class="pres__stem pres__ans"><b>Answer:</b> ' + fmt(it.rc.a) + '</p>') +
+          ctl(BUCKETS, 0) + '<p class="pres__tot">' + (live.revealed ? plural(rs.total, 'rating') + (rs.total ? ' · ' + rs.pct + '% knew it' : '') : 'Reveal the answer on the main screen, then count the room here.') + '</p>';
       } else {
         h += '<h2>' + esc(it.title) + '</h2><p class="pres__stem">' + fmt(it.text) + '</p>';
       }
       h += '<div class="pres__nav"><button class="btn" type="button" data-c="prev"' + (pos ? '' : ' disabled') + '>Previous</button>' +
-        (mcq && !live.revealed ? '<button class="btn" type="button" data-c="undo">Undo vote</button>' : '') +
+        (can ? '<button class="btn" type="button" data-c="undo">Undo vote</button>' : '') +
         '<button class="btn btn--solid" type="button" data-c="reveal">' + (live.revealed ? 'Hide answer' : 'Reveal on main screen') + '</button>' +
         '<button class="btn" type="button" data-c="next">' + (pos >= S.order.length - 1 ? 'Finish' : 'Next') + '</button></div>' +
         '<section class="pn">' + teachNotesHtml(it, S.kind, e) + '</section>';
@@ -2057,48 +2168,54 @@
       document.title = 'Session summary — K&S Study Companion';
       return;
     }
-    var sm = summarize(rec), mcq = rec.kind === 'mcq';
+    var kind = rec.kind, sm = summarize(rec), voting = isVoting(kind), mcq = kind === 'mcq', noun = KIND_NOUN[kind] || 'item', okWord = mcq ? 'on the correct answer' : 'knew it';
     function rows(obj, sortWeak) {
       var ks = Object.keys(obj);
       if (sortWeak) ks.sort(function (a, b) { return obj[a].ok / obj[a].n - obj[b].ok / obj[b].n || obj[b].n - obj[a].n; });
       return ks.map(function (k) {
         var v = obj[k], p = pct(v.ok, v.n);
-        return '<tr><th scope="row">' + esc(k) + '</th><td>' + plural(v.q, 'question') + '</td><td>' + v.ok + ' of ' + plural(v.n, 'vote') + '</td><td class="bar-cell"><span class="score-bar"><span style="width:' + p + '%" class="' + (p >= 70 ? 'is-good' : p >= 50 ? 'is-mid' : 'is-low') + '"></span></span><span class="score-pct">' + p + '%</span></td></tr>';
+        return '<tr><th scope="row">' + esc(k) + '</th><td>' + plural(v.q, noun) + '</td><td>' + v.ok + ' of ' + plural(v.n, mcq ? 'vote' : 'rating') + '</td><td class="bar-cell"><span class="score-bar"><span style="width:' + p + '%" class="' + (p >= 70 ? 'is-good' : p >= 50 ? 'is-mid' : 'is-low') + '"></span></span><span class="score-pct">' + p + '%</span></td></tr>';
       }).join('');
     }
     function table(title, note, obj, weak) {
-      return '<section class="results-sec"><h2>' + title + '</h2><p class="muted">' + note + '</p><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">' + (weak ? 'Topic' : 'Chapter') + '</th><th scope="col">Questions</th><th scope="col">Correct</th><th scope="col">Score</th></tr></thead><tbody>' + rows(obj, weak) + '</tbody></table></div></section>';
+      return '<section class="results-sec"><h2>' + title + '</h2><p class="muted">' + note + '</p><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">' + (weak ? 'Topic' : 'Chapter') + '</th><th scope="col">' + (mcq ? 'Questions' : 'Items') + '</th><th scope="col">Correct</th><th scope="col">Score</th></tr></thead><tbody>' + rows(obj, weak) + '</tbody></table></div></section>';
     }
     var p = pct(sm.ok, sm.votes), live = store.get('teach', null), canResume = live && live.started === rec.id;
     var html = '<div class="wrap page exam-results teach-summary">' +
-      '<header class="page__head"><p class="crumb"><a href="#/teach">Teaching mode</a></p><h1>Session summary</h1><p>' + fmtDate(rec.at) + '. ' + (rec.scope === 'all' ? 'All chapters' : 'Chapter ' + (chapter(rec.scope) || {}).number) + ', ' + (mcq ? 'board-style questions' : 'chapter cases') + '.</p></header>';
-    if (mcq) {
+      '<header class="page__head"><p class="crumb"><a href="#/teach">Teaching mode</a></p><h1>Session summary</h1><p>' + fmtDate(rec.at) + '. ' + (rec.scope === 'all' ? 'All chapters' : 'Chapter ' + (chapter(rec.scope) || {}).number) + ', ' + ((KIND_OPTS.filter(function (o) { return o[0] === kind; })[0] || ['', 'cases'])[1].toLowerCase()) + '.</p></header>';
+    if (voting) {
       html += (sm.votes
-        ? '<div class="score"><p class="score__big">' + p + '<span>%</span></p><div><p class="score__line"><b>' + sm.ok + ' of ' + plural(sm.votes, 'vote') + '</b> on the correct answer</p><p class="score__line">' + plural(sm.polled, 'question') + ' polled' + (sm.presented > sm.polled ? ', ' + (sm.presented - sm.polled) + ' shown without a vote' : '') + '. The room got ' + sm.gotIt + ' of ' + sm.polled + ' (' + REVISIT_BELOW + '% or better).</p></div></div>'
-        : '<p class="muted">No votes were counted in this session, so there is no score. Votes are counted by clicking a choice or pressing A–E while presenting.</p>');
+        ? '<div class="score"><p class="score__big">' + p + '<span>%</span></p><div><p class="score__line"><b>' + sm.ok + ' of ' + plural(sm.votes, mcq ? 'vote' : 'rating') + '</b> ' + okWord + '</p><p class="score__line">' + plural(sm.polled, noun) + ' polled' + (sm.presented > sm.polled ? ', ' + (sm.presented - sm.polled) + ' shown without a ' + (mcq ? 'vote' : 'rating') : '') + '. The room got ' + sm.gotIt + ' of ' + sm.polled + ' (' + REVISIT_BELOW + '% or better).</p></div></div>'
+        : '<p class="muted">No ' + (mcq ? 'votes were' : 'ratings were') + ' counted in this session, so there is no score. ' + (mcq ? 'Votes are counted by clicking a choice or pressing A\u2013E while presenting.' : 'After revealing an item, click Knew it, Partly or Missed it, or press A, B or C.') + '</p>');
     } else {
       html += '<div class="score"><p class="score__big">' + sm.covered.length + '</p><div><p class="score__line"><b>chapter cases discussed</b> and revealed</p>' + (sm.skipped.length ? '<p class="score__line">' + sm.skipped.length + ' opened but not revealed.</p>' : '') + '</div></div>';
     }
     html += '<div class="empty__actions results-actions no-print">' +
-      (mcq && sm.revisit.length ? '<button class="btn btn--solid" type="button" id="ts-again">Present the ' + sm.revisit.length + ' to revisit</button>' : '') +
-      '<button class="btn' + (mcq && sm.revisit.length ? '' : ' btn--solid') + '" type="button" id="ts-print">Print or save as PDF</button>' +
+      (voting && sm.revisit.length ? '<button class="btn btn--solid" type="button" id="ts-again">Present the ' + sm.revisit.length + ' to revisit</button>' : '') +
+      '<button class="btn' + (voting && sm.revisit.length ? '' : ' btn--solid') + '" type="button" id="ts-print">Print or save as PDF</button>' +
       '<button class="btn" type="button" id="ts-copy">Copy as text</button>' +
       (canResume ? '<a class="btn" href="#/teach/run">Back to the session</a>' : '') +
       '<a class="btn" href="#/teach">New session</a></div><p class="muted no-print" id="ts-msg" role="status"></p>';
-    if (mcq && sm.votes) {
-      html += table('Score by topic', 'Weakest first. Votes are pooled across the questions in each topic.', sm.byTopic, true) + table('Score by chapter', '', sm.byCh, false);
+    if (voting && sm.votes) {
+      html += table('Score by topic', 'Weakest first. ' + (mcq ? 'Votes' : 'Ratings') + ' are pooled across the items in each topic.', sm.byTopic, true) + table('Score by chapter', '', sm.byCh, false);
       html += '<section class="results-sec"><h2>Questions to revisit</h2>';
       if (!sm.revisit.length) html += '<p class="muted">The room scored ' + REVISIT_BELOW + '% or better on every question it was polled on.</p>';
       else {
-        html += '<p class="muted">Under ' + REVISIT_BELOW + '% on the correct answer, lowest first.</p><ol class="ts-miss">' + sm.revisit.map(function (r) {
-          var c = r.it.c;
-          return '<li><p class="ts-miss__meta">Chapter ' + r.it.ch.number + ', ' + esc(c.tag || 'Case') + ' · ' + r.s.pct + '% correct (' + r.s.ok + ' of ' + r.s.total + ')</p><p class="ts-miss__q">' + fmt(c.q) + '</p>' +
-            '<p class="ts-miss__dist">' + c.choices.map(function (t, i) { return '<span class="' + (i === c.answer ? 'is-ok' : '') + '">' + LETTERS[i] + ' ' + (r.e.v[i] || 0) + '</span>'; }).join('') + '</p>' +
-            '<p><b>Answer ' + LETTERS[c.answer] + ':</b> ' + fmt(c.choices[c.answer]) + '</p><p class="ts-miss__why">' + fmt(c.why) + '</p></li>';
+        html += '<p class="muted">Under ' + REVISIT_BELOW + '% ' + (mcq ? 'on the correct answer' : 'knew it') + ', lowest first.</p><ol class="ts-miss">' + sm.revisit.map(function (r) {
+          var it = r.it, c = it.c, lines;
+          if (mcq) {
+            lines = '<p class="ts-miss__q">' + fmt(c.q) + '</p><p class="ts-miss__dist">' + c.choices.map(function (t, i) { return '<span class="' + (i === c.answer ? 'is-ok' : '') + '">' + LETTERS[i] + ' ' + (r.e.v[i] || 0) + '</span>'; }).join('') + '</p>' +
+              '<p><b>Answer ' + LETTERS[c.answer] + ':</b> ' + fmt(c.choices[c.answer]) + '</p><p class="ts-miss__why">' + fmt(c.why) + '</p>';
+          } else {
+            lines = (kind === 'hy' ? '<p class="ts-miss__q">' + blankify(it.text, true) + '</p>' : '<p class="ts-miss__q">' + fmt(it.rc.q) + '</p>') +
+              '<p class="ts-miss__dist">' + BUCKETS.map(function (t, i) { return '<span class="' + (i === 0 ? 'is-ok' : '') + '">' + t + ' ' + (r.e.v[i] || 0) + '</span>'; }).join('') + '</p>' +
+              (kind === 'hy' ? '' : '<p><b>Answer:</b> ' + fmt(it.rc.a) + '</p>' + (it.rc.why ? '<p class="ts-miss__why">' + fmt(it.rc.why) + '</p>' : ''));
+          }
+          return '<li><p class="ts-miss__meta">Chapter ' + it.ch.number + ', ' + esc(itemTag(it, kind)) + ' · ' + r.s.pct + '% ' + (mcq ? 'correct' : 'knew it') + ' (' + r.s.ok + ' of ' + r.s.total + ')</p>' + lines + '</li>';
         }).join('') + '</ol>';
       }
       html += '</section>';
-    } else if (!mcq && sm.covered.length) {
+    } else if (!voting && sm.covered.length) {
       html += '<section class="results-sec"><h2>Cases discussed</h2><ol class="ts-miss">' + sm.covered.map(function (it) {
         return '<li><p class="ts-miss__meta">Chapter ' + it.ch.number + ', ' + esc(it.sec.title) + '</p><p class="ts-miss__q"><b>' + esc(it.title) + '</b></p><p class="ts-miss__why">' + fmt(it.point || '') + '</p><p class="no-print"><a href="#/c/' + it.ch.id + '/guide/' + it.sec.id + '">Open in the study guide</a></p></li>';
       }).join('') + '</ol></section>';
@@ -2116,10 +2233,10 @@
     main.querySelector('#ts-print').addEventListener('click', function () { try { window.print(); } catch (x) {} });
     main.querySelector('#ts-copy').addEventListener('click', function () {
       var t = 'Teaching session ' + fmtDate(rec.at) + '\n';
-      if (mcq) {
-        t += sm.votes ? p + '% correct (' + sm.ok + ' of ' + sm.votes + ' votes, ' + plural(sm.polled, 'question') + ')\n\nBy topic (weakest first):\n' : 'No votes counted.\n';
+      if (voting) {
+        t += sm.votes ? p + '% ' + (mcq ? 'correct' : 'knew it') + ' (' + sm.ok + ' of ' + sm.votes + (mcq ? ' votes, ' : ' ratings, ') + plural(sm.polled, noun) + ')\n\nBy topic (weakest first):\n' : 'No votes counted.\n';
         Object.keys(sm.byTopic).sort(function (a, b) { return sm.byTopic[a].ok / sm.byTopic[a].n - sm.byTopic[b].ok / sm.byTopic[b].n; }).forEach(function (k) { t += '- ' + k + ': ' + pct(sm.byTopic[k].ok, sm.byTopic[k].n) + '%\n'; });
-        if (sm.revisit.length) { t += '\nTo revisit:\n'; sm.revisit.forEach(function (r) { t += '- Ch ' + r.it.ch.number + ', ' + (r.it.c.tag || 'Case') + ' (' + r.s.pct + '%): ' + plain(r.it.c.q) + ' Answer ' + LETTERS[r.it.c.answer] + ': ' + plain(r.it.c.choices[r.it.c.answer]) + '\n'; }); }
+        if (sm.revisit.length) { t += '\nTo revisit:\n'; sm.revisit.forEach(function (r) { t += '- Ch ' + r.it.ch.number + ', ' + itemTag(r.it, kind) + ' (' + r.s.pct + '%): ' + itemLabel(r.it, kind) + (mcq ? ' Answer ' + LETTERS[r.it.c.answer] + ': ' + plain(r.it.c.choices[r.it.c.answer]) : kind === 'hy' ? ' => ' + plain(r.it.text) : ' Answer: ' + plain(r.it.rc.a)) + '\n'; }); }
       } else {
         t += plural(sm.covered.length, 'chapter case') + ' discussed:\n';
         sm.covered.forEach(function (it) { t += '- Ch ' + it.ch.number + ': ' + it.title + '\n'; });

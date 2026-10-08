@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 17,
+    date: "2026-10-08",
+    title: "Teaching mode for flashcards and high-yield facts",
+    items: [
+      { type: "feature", text: "**Recall mode**: present the Diagnosis, Pharmacology or Foundations flashcards (or all three mixed), reveal the answer, and count who knew it, who partly did and who missed it. Works with the presenter window and the session summary.", href: "#/teach", link: "Open teaching mode" },
+      { type: "feature", text: "**High-yield fill-in-the-blank**: present one high-yield fact at a time with its key terms blanked, then reveal and count the room.", href: "#/c/ch05/high-yield", link: "Try it on Chapter 5" },
+      { type: "update", text: "Every flashcard deck now has a *Present in teaching mode* button, and high-yield pages have *Present as fill-in-the-blank*." }
+    ]
+  },
+  {
     id: 16,
     date: "2026-10-08",
     title: "Teaching mode: group tally, facilitator notes and session summary",
