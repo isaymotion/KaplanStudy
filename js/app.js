@@ -1447,8 +1447,8 @@
   /* Sheets are sized to the area inside the page margins, with spare height, because some browsers
      (Safari on iPhone and iPad) ignore @page margins and add their own, plus a URL and date line. */
   var PAPER = {
-    a4: { label: 'A4', w: '186mm', h: '268mm', page: 'A4', margin: '12mm' },
-    letter: { label: 'Letter', w: '7.5in', h: '9.8in', page: 'letter', margin: '0.5in' }
+    a4: { label: 'A4', w: '186mm', h: '262mm', page: 'A4', margin: '12mm' },
+    letter: { label: 'Letter', w: '7.5in', h: '9.55in', page: 'letter', margin: '0.5in' }
   };
   var ATTRIBUTION = 'App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com';
 
