@@ -269,6 +269,7 @@
         if (p[1] === 'summary') return renderTeachSummary(p[2]);
         if (p[1] === 'presenter') return renderTeachPresenter();
         return renderTeachSetup();
+      case 'progress': return renderProgress();
       case 'whats-new': return renderNews();
       case 'c':
         var ch = chapter(p[1]);
@@ -390,7 +391,7 @@
           heroArt() + raysSVG() + '<ul class="spectrum">' + spectrum + '</ul>' +
         '</nav>' +
       '</div></section>' +
-      newsStrip + todayPanel +
+      newsStrip + backupNudge() + todayPanel +
       '<section class="wrap home-section"><h2>Chapters in the app</h2><ul class="chapter-list">' + rows + '</ul></section>' +
       '<section class="wrap home-section"><h2>For educators</h2><div class="tools tools--3">' +
         '<a class="tool" href="#/teach"><span class="tool__name">Teaching mode</span><span class="tool__meta">Present a case full screen for group discussion; reveal the answer on click.</span></a>' +
@@ -405,6 +406,15 @@
       '</div></section>';
     setView('home', html);
     document.title = 'Kaplan & Sadock Study Companion';
+    var bl = main.querySelector('#backup-later');
+    if (bl) bl.addEventListener('click', function () { store.set('backupNudge', Date.now()); var n = main.querySelector('#backup-nudge'); if (n) n.remove(); });
+  }
+
+  /* A quiet reminder, shown only to people with real progress who have not backed it up in a month. */
+  function backupNudge() {
+    var reviewed = Object.keys(SRS).length, last = store.get('lastExport', 0) || 0, dismissed = store.get('backupNudge', 0) || 0, now = Date.now(), DAY = 86400000;
+    if (reviewed < 30 || now - last < 30 * DAY || now - dismissed < 14 * DAY) return '';
+    return '<div class="wrap news-strip-wrap" id="backup-nudge"><div class="news-strip"><span class="news-strip__text">Your progress is saved only in this browser. <a href="#/progress">Back it up</a> so a cleared cache or a new phone does not lose it.</span><button class="link-btn" type="button" id="backup-later">Not now</button></div></div>';
   }
 
   /* ---------- chapter header ---------- */
@@ -2245,6 +2255,136 @@
       function done(ok) { msg.textContent = ok ? 'Copied to the clipboard.' : 'Could not copy. Select the page text instead.'; }
       try { navigator.clipboard.writeText(t).then(function () { done(true); }, function () { done(false); }); } catch (x) { done(false); }
     });
+  }
+
+  /* ---------- back up and restore progress ----------
+     All progress lives in this browser's storage. Export writes it to a JSON file; import merges a file into
+     this device (keeping the more advanced record of each card) or replaces everything, and a snapshot taken
+     just before makes the last import undoable. */
+  var BACKUP_FORMAT = 'ks-study-companion-progress';
+  var BACKUP_TYPES = { srs: 'o', mistakes: 'o', bookmarks: 'o', examHistory: 'a', teachSessions: 'a', newToday: 'o', seenNews: 'n', hyQuiz: 'b', reviewPrefs: 'o', examPrefs: 'o', deckPrefs: 'o', teachPrefs: 'o', handoutPrefs: 'o', glLinks: 'b', theme: 's' };
+  var BACKUP_KEYS = Object.keys(BACKUP_TYPES);
+  function typeOk(v, t) {
+    if (t === 'o') return v && typeof v === 'object' && !Array.isArray(v);
+    if (t === 'a') return Array.isArray(v);
+    if (t === 'n') return typeof v === 'number' && isFinite(v);
+    if (t === 'b') return typeof v === 'boolean';
+    return typeof v === 'string';
+  }
+  function makeBackup() {
+    var data = {};
+    BACKUP_KEYS.forEach(function (k) { var v = store.get(k, undefined); if (v !== undefined && typeOk(v, BACKUP_TYPES[k])) data[k] = v; });
+    return { format: BACKUP_FORMAT, version: 1, exported: new Date().toISOString(), data: data };
+  }
+  /* Returns { data, skipped } or null when the file is not a progress backup. */
+  function readBackup(text) {
+    var obj;
+    try { obj = JSON.parse(text); } catch (e) { return null; }
+    if (!obj || obj.format !== BACKUP_FORMAT || !obj.data || typeof obj.data !== 'object') return null;
+    var data = {}, skipped = 0;
+    Object.keys(obj.data).forEach(function (k) {
+      if (BACKUP_TYPES[k] && typeOk(obj.data[k], BACKUP_TYPES[k])) data[k] = obj.data[k]; else skipped++;
+    });
+    var srs = data.srs;
+    if (srs) Object.keys(srs).forEach(function (k) {
+      var c = srs[k];
+      if (!c || typeof c.d !== 'number' || typeof c.i !== 'number' || typeof c.e !== 'number') { delete srs[k]; skipped++; }
+    });
+    return { data: data, skipped: skipped, exported: obj.exported || '' };
+  }
+  function backupCounts(d) {
+    return { cards: Object.keys(d.srs || {}).length, mistakes: Object.keys(d.mistakes || {}).length, bookmarks: Object.keys(d.bookmarks || {}).length, exams: (d.examHistory || []).length, sessions: (d.teachSessions || []).length };
+  }
+  function mergeInto(cur, inc) {
+    var out = {};
+    BACKUP_KEYS.forEach(function (k) { if (cur[k] !== undefined) out[k] = cur[k]; });
+    var s = {}, a = cur.srs || {}, b = inc.srs || {};
+    Object.keys(a).forEach(function (k) { s[k] = a[k]; });
+    Object.keys(b).forEach(function (k) {
+      var x = s[k], y = b[k];
+      if (!x) { s[k] = y; return; }
+      var hx = (x.r || 0) + (x.l || 0), hy = (y.r || 0) + (y.l || 0);
+      if (hy > hx || (hy === hx && y.d > x.d)) s[k] = y;
+    });
+    if (Object.keys(s).length) out.srs = s;
+    var m = {}, ma = cur.mistakes || {}, mb = inc.mistakes || {};
+    Object.keys(ma).forEach(function (k) { m[k] = ma[k]; });
+    Object.keys(mb).forEach(function (k) { if (!m[k] || (mb[k].t || 0) > (m[k].t || 0)) m[k] = mb[k]; });
+    if (Object.keys(m).length) out.mistakes = m;
+    var bk = {}, ba = cur.bookmarks || {}, bb = inc.bookmarks || {};
+    Object.keys(bb).forEach(function (k) { bk[k] = bb[k]; });
+    Object.keys(ba).forEach(function (k) { bk[k] = ba[k]; });
+    if (Object.keys(bk).length) out.bookmarks = bk;
+    function union(key, idKey, cap) {
+      var seen = {}, all = (cur[key] || []).concat(inc[key] || []).filter(function (r) { if (!r || seen[r[idKey]]) return false; seen[r[idKey]] = 1; return true; });
+      all.sort(function (p, q) { return (q.at || 0) - (p.at || 0); });
+      if (all.length) out[key] = all.slice(0, cap);
+    }
+    union('examHistory', 'id', 20); union('teachSessions', 'id', 10);
+    if (cur.seenNews !== undefined || inc.seenNews !== undefined) out.seenNews = Math.max(cur.seenNews || 0, inc.seenNews || 0);
+    var nt = cur.newToday || inc.newToday; if (nt) out.newToday = nt;
+    ['hyQuiz', 'reviewPrefs', 'examPrefs', 'deckPrefs', 'teachPrefs', 'handoutPrefs', 'glLinks', 'theme'].forEach(function (k) { if (out[k] === undefined && inc[k] !== undefined) out[k] = inc[k]; });
+    return out;
+  }
+  function applyData(data) {
+    BACKUP_KEYS.forEach(function (k) { if (data[k] !== undefined) store.set(k, data[k]); else store.del(k); });
+    ['teach', 'teachLive', 'teachCmd', 'exam'].forEach(function (k) { store.del(k); });
+  }
+
+  function renderProgress() {
+    var cur = makeBackup().data, c = backupCounts(cur);
+    var lastExp = store.get('lastExport', null), pre = store.get('preImport', null);
+    var html = '<div class="wrap page progress-page">' +
+      '<header class="page__head"><h1>Back up your progress</h1><p>Your review schedule, mistakes, bookmarks, exam results, teaching sessions and settings are saved in this browser only. Export them to a file to keep a copy or to move to a new phone or computer, then import the file there.</p></header>' +
+      '<section class="results-sec"><h2>On this device</h2><div class="table-wrap"><table class="score-table"><tbody>' +
+        '<tr><th scope="row">Flashcards reviewed</th><td>' + c.cards + '</td></tr><tr><th scope="row">Mistakes to revisit</th><td>' + c.mistakes + '</td></tr>' +
+        '<tr><th scope="row">Bookmarked sections</th><td>' + c.bookmarks + '</td></tr><tr><th scope="row">Exams kept</th><td>' + c.exams + '</td></tr>' +
+        '<tr><th scope="row">Teaching sessions kept</th><td>' + c.sessions + '</td></tr></tbody></table></div></section>' +
+      '<section class="results-sec"><h2>Export</h2><p class="muted">' + (lastExp ? 'Last backup: ' + fmtDate(lastExp) + '.' : 'You have not backed up on this device yet.') + '</p>' +
+        '<div class="empty__actions"><button class="btn btn--solid" type="button" id="pg-export">Download backup file</button></div></section>' +
+      '<section class="results-sec"><h2>Import</h2><p class="muted">Choose a backup file made by this app. Nothing changes until you pick Merge or Replace.</p>' +
+        '<input type="file" id="pg-file" accept=".json,application/json" class="pg-file"><div id="pg-preview" role="status" aria-live="polite"></div></section>' +
+      (pre ? '<section class="results-sec"><h2>Undo</h2><p class="muted">The last import was on ' + fmtDate(pre.at) + '. This puts this device back the way it was just before.</p><div class="empty__actions"><button class="btn" type="button" id="pg-undo">Undo last import</button></div></section>' : '') +
+      '</div>';
+    setView('progress', html);
+    document.title = 'Back up progress — K&S Study Companion';
+    var prev = main.querySelector('#pg-preview');
+    main.querySelector('#pg-export').addEventListener('click', function () {
+      var b = makeBackup(), name = 'ks-progress-' + new Date().toISOString().slice(0, 10) + '.json';
+      try {
+        var url = URL.createObjectURL(new Blob([JSON.stringify(b)], { type: 'application/json' }));
+        var a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click();
+        setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 500);
+        store.set('lastExport', Date.now());
+        toast('Backup saved as ' + esc(name) + '.');
+      } catch (e) { toast('Could not create the backup file in this browser.'); }
+    });
+    function finish(msg) { toast(msg); setTimeout(function () { location.hash = '#/'; location.reload(); }, 900); }
+    main.querySelector('#pg-file').addEventListener('change', function (ev) {
+      var f = ev.target.files && ev.target.files[0];
+      if (!f) return;
+      if (f.size > 8 * 1024 * 1024) { prev.innerHTML = '<p class="pg-bad">That file is too large to be a progress backup.</p>'; return; }
+      var rd = new FileReader();
+      rd.onload = function () {
+        var res = readBackup(String(rd.result || ''));
+        if (!res || !Object.keys(res.data).length) { prev.innerHTML = '<p class="pg-bad">That file is not a progress backup from this app, so nothing was changed.</p>'; return; }
+        var n = backupCounts(res.data), when = res.exported ? fmtDate(res.exported) : 'an unknown date';
+        prev.innerHTML = '<p>Backup from <b>' + esc(when) + '</b>: ' + plural(n.cards, 'reviewed card') + ', ' + plural(n.mistakes, 'mistake') + ', ' + plural(n.bookmarks, 'bookmark') + ', ' + plural(n.exams, 'exam') + ', ' + plural(n.sessions, 'teaching session') + '.' + (res.skipped ? ' ' + plural(res.skipped, 'unreadable entry', 'unreadable entries') + ' skipped.' : '') + '</p>' +
+          '<div class="empty__actions"><button class="btn btn--solid" type="button" id="pg-merge">Merge into this device</button><button class="btn" type="button" id="pg-replace">Replace this device’s progress</button></div>' +
+          '<p class="muted">Merge keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions. Replace discards what is on this device first.</p>';
+        function snapshot() { store.set('preImport', { at: Date.now(), data: makeBackup().data }); }
+        prev.querySelector('#pg-merge').addEventListener('click', function () { snapshot(); applyData(mergeInto(makeBackup().data, res.data)); finish('Merged. Reloading.'); });
+        var rb = prev.querySelector('#pg-replace');
+        rb.addEventListener('click', function () {
+          if (!rb.getAttribute('data-sure')) { rb.setAttribute('data-sure', '1'); rb.textContent = 'Tap again to replace everything'; return; }
+          snapshot(); applyData(res.data); finish('Replaced. Reloading.');
+        });
+      };
+      rd.onerror = function () { prev.innerHTML = '<p class="pg-bad">That file could not be read.</p>'; };
+      rd.readAsText(f);
+    });
+    var ub = main.querySelector('#pg-undo');
+    if (ub) ub.addEventListener('click', function () { var p = store.get('preImport', null); if (!p) return; applyData(p.data); store.del('preImport'); finish('Restored. Reloading.'); });
   }
 
   /* ---------- what's new ---------- */

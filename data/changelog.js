@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 18,
+    date: "2026-10-08",
+    title: "Back up and move your progress",
+    items: [
+      { type: "feature", text: "**Back up progress**: export your review schedule, mistakes, bookmarks, exams and teaching sessions to a file, then merge or restore it on another phone or computer. The last import can be undone.", href: "#/progress", link: "Open backup" }
+    ]
+  },
+  {
     id: 17,
     date: "2026-10-08",
     title: "Teaching mode for flashcards and high-yield facts",

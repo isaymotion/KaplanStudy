@@ -32,7 +32,7 @@ Across all chapters:
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
-Progress (review schedule, mistakes, bookmarks, exam history, settings) is saved in the browser on each device.
+Progress (review schedule, mistakes, bookmarks, exam history, teaching sessions, settings) is saved in the browser on each device. **Back up progress** (`#/progress`, linked in the footer) exports it to a file and imports it on another device: *Merge* keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions, *Replace* swaps everything, and *Undo last import* restores the device to just before. The home page reminds people with 30 or more reviewed cards to back up once a month.
 
 For educators:
 

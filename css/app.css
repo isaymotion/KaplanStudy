@@ -1107,3 +1107,9 @@ body.is-presenter .topbar, body.is-presenter .site-foot { display: none; }
 .pres__ans { color: var(--ink-2); }
 .pn .hyfill, .presenter .hyfill, .ts-miss .hyfill { background: #CFEFDD; color: #0E4A2A; }
 @media (max-width: 720px) { .teach__choices--rate { grid-template-columns: minmax(0, 1fr); } }
+
+/* back up and restore */
+.progress-page .score-table { max-width: 520px; }
+.pg-file { display: block; margin: 8px 0 14px; max-width: 100%; }
+.pg-bad { color: #B3261E; font-weight: 600; }
+#backup-nudge .news-strip { border-left-color: #E0A100; }
