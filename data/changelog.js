@@ -13,6 +13,47 @@
  */
 KS.changelog = [
   {
+    id: 14,
+    date: "2026-10-08",
+    title: "Chapter 12 and study-guide bookmarks",
+    items: [
+      { type: "feature", text: "**Bookmarks**: tap the ribbon beside any study-guide section to save it. Bookmarked sections are flagged in the chapter contents and collected on a new Bookmarks page, in book order with a short preview.", href: "#/bookmarks", link: "Open bookmarks" },
+      { type: "chapter", ch: "ch12", text: "**Chapter 12: Somatic Symptom and Related Disorders**: somatic symptom disorder, illness anxiety disorder, conversion disorder with its examination signs, psychological factors affecting other medical conditions, and factitious disorder imposed on self or another, with clues, laboratory detection, differential, course and management. Study guide, high-yield list, 130 flashcards and a printable handout.", href: "#/c/ch12/guide", link: "Start Chapter 12" },
+      { type: "feature", ch: "ch12", text: "**Which somatic symptom or related disorder?** helper: start with whether symptoms are deliberately produced, then follow the picture to one of 22 outcomes, from malingering and factitious disorder to conversion, illness anxiety and somatic symptom disorder by severity.", href: "#/helpers/somatic", link: "Try it" },
+      { type: "update", text: "24 Chapter 12 terms, such as primary and secondary gain, Hoover test, sick role and somatosensory amplification, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
+    id: 13,
+    date: "2026-10-08",
+    title: "Chapter 11: Dissociative Disorders",
+    items: [
+      { type: "chapter", ch: "ch11", text: "**Chapter 11: Dissociative Disorders**: dissociative amnesia and fugue, depersonalization/derealization disorder, dissociative identity disorder, trance, coercive persuasion and Ganser syndrome, with their differential diagnosis, course, phase-oriented treatment, epidemiology and etiology. Study guide, high-yield list, 86 flashcards and a printable handout.", href: "#/c/ch11/guide", link: "Start Chapter 11" },
+      { type: "feature", ch: "ch11", text: "**Which dissociative disorder?** helper: start from lost memory, feeling unreal, separate identities, trance or approximate answers, rule out medical, substance and psychiatric look-alikes, and reach one of 29 outcomes, from the amnesia types to DID and Ganser syndrome.", href: "#/helpers/dissociative", link: "Try it" },
+      { type: "update", text: "23 Chapter 11 terms, such as passive influence, possession trance, approximate answers and phase-oriented treatment, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
+    id: 12,
+    date: "2026-10-08",
+    title: "Chapter 10: Trauma- and Stressor-Related Disorders",
+    items: [
+      { type: "chapter", ch: "ch10", text: "**Chapter 10: Trauma- and Stressor-Related Disorders**: PTSD, acute stress disorder and adjustment disorders, with their criteria, differential diagnosis, comorbidity, course, treatment, epidemiology and risk factors. Study guide, high-yield list, 74 flashcards and a printable handout.", href: "#/c/ch10/guide", link: "Start Chapter 10" },
+      { type: "feature", ch: "ch10", text: "**Which trauma or stressor disorder?** helper: start from the kind of stressor, then follow timing and symptom counts to PTSD (with its specifiers), acute stress disorder, an adjustment disorder subtype or a look-alike, across 18 outcomes.", href: "#/helpers/trauma", link: "Try it" },
+      { type: "update", text: "18 Chapter 10 terms, such as prolonged exposure, cognitive processing therapy, delayed expression and peritraumatic dissociation, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
+    id: 11,
+    date: "2026-10-08",
+    title: "Chapter 4: Substance Use and Addictive Disorders",
+    items: [
+      { type: "chapter", ch: "ch04", text: "**Chapter 4: Substance Use and Addictive Disorders**: the general features of substance disorders, then alcohol, cannabis, opioids, sedatives, stimulants, tobacco, caffeine, hallucinogens including PCP and ketamine, inhalants and anabolic steroids, plus gambling disorder and internet gaming. Study guide, high-yield list, 393 flashcards and a printable handout.", href: "#/c/ch04/guide", link: "Start Chapter 4" },
+      { type: "feature", ch: "ch04", text: "**Which substance syndrome?** helper: start from intoxication or overdose, withdrawal, substance-induced symptoms, flashbacks or gambling, and reach one of 27 outcomes with danger points and first steps (naloxone, alcohol withdrawal staging, PCP, Wernicke encephalopathy and more).", href: "#/helpers/substance", link: "Try it" },
+      { type: "update", text: "43 Chapter 4 terms, such as precipitated withdrawal, Mellanby effect, chasing losses and hallucinogen-persisting perception disorder, added to the glossary.", href: "#/glossary", link: "Open the glossary" }
+    ]
+  },
+  {
     id: 10,
     date: "2026-10-07",
     title: "Chapter 3: Neurocognitive Disorders, and a new app icon",

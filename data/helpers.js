@@ -2117,5 +2117,490 @@ KS.helpers = (KS.helpers || []).concat([
       aging: { label: "Likely", dx: "Normal age-related forgetfulness", line: "Benign senescent forgetfulness or age-associated memory impairment without significant social or occupational impact.", points: ["Reassess if complaints grow, an informant reports decline, or function falls.", "Neuropsychological testing separates MCI from normal aging."], link: { ch: "ch03", sec: "s3-mci-course", label: "MCI differential" } },
       depcog: { label: "Consider", dx: "Depression-related cognitive dysfunction (pseudodementia)", line: "Prominent depression with detailed complaints of memory loss, 'don't know' answers, a datable onset and often prior episodes.", points: ["Compare with dementia: demented patients conceal deficits, give near-miss answers and worsen at night.", "Memory usually improves with antidepressant treatment.", "Depression and dementia can coexist; reassess cognition after treatment."], link: { ch: "ch03", sec: "s3-dem-ddx", label: "Dementia differential diagnosis" } }
     }
+  },
+  {
+    id: "substance",
+    chapter: "ch04",
+    title: "Which substance syndrome?",
+    summary: "Start from what you see (intoxication or overdose, withdrawal, symptoms that may be substance-induced, persisting perceptions, or a behavioral addiction) and follow the chapter's signs to the likely substance, its danger points and first steps.",
+    caution: "A teaching aid built from Chapter 4, not a substitute for examination, toxicology and medical care. Polysubstance use is common, so one picture can hide another; check glucose, vital signs and other causes of altered mental status.",
+    start: "state",
+    nodes: {
+      state: {
+        q: "What best describes the presentation?",
+        help: "Intoxication follows recent use; withdrawal follows stopping or cutting down heavy, prolonged use. Substance-induced disorders arise during or soon after intoxication or withdrawal.",
+        options: [
+          { label: "Signs of recent use: intoxication or overdose", to: "intox", note: "The picture suggests recent use or overdose." },
+          { label: "Symptoms after stopping or cutting down", to: "withdraw", note: "Symptoms began after stopping or reducing use." },
+          { label: "Depression, anxiety or psychosis in someone using heavily", to: "induced", note: "Psychiatric symptoms occur in the context of heavy use." },
+          { label: "Visual disturbances returning long after hallucinogen use", to: "r:hppd", note: "Perceptual symptoms recur long after hallucinogen use." },
+          { label: "Compulsive gambling without a substance", to: "r:gambling", note: "The addictive behavior is gambling." }
+        ]
+      },
+      intox: {
+        q: "Which picture fits best?",
+        help: "Pupils, vital signs, nystagmus, breath and skin clues sort most intoxications.",
+        options: [
+          { label: "Coma, pinpoint pupils and slow breathing", to: "r:opioidod", note: "There is the triad of coma, miosis and respiratory depression." },
+          { label: "Slurred speech, ataxia, nystagmus, alcohol on the breath", to: "r:alcintox", note: "Sedation with alcohol on the breath." },
+          { label: "Slurred speech, ataxia, nystagmus, drowsiness without alcohol (pills found)", to: "r:sedintox", note: "Sedation without alcohol, with pills involved." },
+          { label: "Agitation, tachycardia, hypertension, dilated pupils, paranoia", to: "r:stimintox", note: "There is sympathomimetic arousal with mydriasis." },
+          { label: "Red eyes, mild tachycardia, appetite, slowed sense of time, anxiety", to: "r:cannabis", note: "Conjunctival injection with slowed time and anxiety." },
+          { label: "Vivid visual distortions, synesthesia, dilated pupils, fear of going insane", to: "r:hallucinogen", note: "Perceptual distortion dominates with dilated pupils." },
+          { label: "Violence, vertical or rotatory nystagmus, hypertension, hyperthermia", to: "r:pcp", note: "There is multidirectional nystagmus with violence and hypertension." },
+          { label: "Rash around the nose and mouth, solvent odor or paint residue", to: "r:inhalant", note: "There are signs of sniffing or huffing." },
+          { label: "Restless, flushed, talkative, sweating after coffee, pills or energy drinks", to: "r:caffeine", note: "Restless arousal follows heavy caffeine intake." },
+          { label: "Irritable, hypomanic aggression in a bodybuilder", to: "r:aas", note: "Hypomanic aggression occurs with steroid use for muscle." }
+        ]
+      },
+      withdraw: {
+        q: "What was stopped, or what does the withdrawal look like?",
+        help: "Alcohol and sedative withdrawal can kill; opioid withdrawal rarely does; stimulant withdrawal is mainly a mood crash.",
+        options: [
+          { label: "Alcohol", to: "alc", note: "The person stopped or cut down heavy drinking." },
+          { label: "Yawning, tearing, runny nose, gooseflesh, dilated pupils, diarrhea, bone aches", to: "r:opioidwd", note: "The signs are those of opioid withdrawal." },
+          { label: "Benzodiazepines or barbiturates", to: "r:sedwd", note: "A sedative-hypnotic was stopped." },
+          { label: "A crash: sleeping a lot, ravenous, dysphoric, after stimulants", to: "r:stimwd", note: "There is a stimulant crash." },
+          { label: "Irritable, can't concentrate, hungry, slower heart rate, after stopping smoking", to: "r:tobwd", note: "The picture is tobacco withdrawal." },
+          { label: "Headache and fatigue 12–24 hours after skipping caffeine", to: "r:cafwd", note: "Headache and fatigue followed stopping caffeine." },
+          { label: "Irritable, insomnia, vivid dreams, poor appetite, 1–2 weeks after daily cannabis", to: "r:canwd", note: "The picture is cannabis withdrawal." }
+        ]
+      },
+      alc: {
+        q: "Which picture, and how long since the last drink?",
+        help: "Usual sequence: tremor at 6–8 hours, perceptual changes at 8–12, seizures at 12–24, delirium tremens within 72 hours (stages can be skipped).",
+        options: [
+          { label: "Tremor, sweating, anxiety, startle; alert and oriented", to: "r:alcwd", note: "There is uncomplicated withdrawal with tremor in an alert patient." },
+          { label: "Threatening voices or other hallucinations with a clear sensorium", to: "r:hallucinosis", note: "Hallucinations occur with a clear sensorium." },
+          { label: "A generalized seizure", to: "r:alcseizure", note: "A generalized seizure occurred." },
+          { label: "Delirium with tremor, fever, tachycardia, sweating, often hospital day 3", to: "r:dts", note: "There is delirium with autonomic hyperactivity." },
+          { label: "Confusion, gait ataxia and nystagmus or gaze palsy", to: "r:wernicke", note: "There is confusion with ataxia and eye signs." }
+        ]
+      },
+      induced: {
+        q: "Which description fits?",
+        help: "Substance-induced syndromes usually clear with abstinence; an independent disorder predates use or persists well into abstinence.",
+        options: [
+          { label: "Depression in a heavy drinker, with no depression during past sober periods", to: "r:alcmood", note: "Depression appears only in the context of heavy drinking." },
+          { label: "New panic attacks or social fears during heavy drinking or early abstinence", to: "r:alcanx", note: "Anxiety is tied to drinking or withdrawal." },
+          { label: "Paranoid delusions and hallucinations in clear consciousness after stimulants", to: "r:stimpsych", note: "Paranoid psychosis follows stimulant use." },
+          { label: "Symptoms began before the substance use or persist after weeks of abstinence", to: "r:independent", note: "Symptoms predate use or persist in abstinence." }
+        ]
+      }
+    },
+    results: {
+      opioidod: { label: "Emergency", dx: "Opioid overdose", line: "Coma, pinpoint pupils and respiratory depression; death is from respiratory arrest.", points: ["Secure the airway and ventilate.", "Naloxone slowly IV, about 0.8 mg per 70 kg; repeat every few minutes; no response after 4–5 mg suggests a nonopioid cause.", "Naloxone is short-acting; re-sedation can follow with methadone or other long-acting opioids.", "Look for needle tracks; excess naloxone precipitates withdrawal."], link: { ch: "ch04", sec: "s4-opi-overdose", label: "Opioid overdose" } },
+      alcintox: { label: "Most likely", dx: "Alcohol intoxication", line: "Recent drinking with maladaptive behavior and at least one physiologic sign.", points: ["Legal intoxication is 80–100 mg/dL; at 200–300 mg/dL nystagmus, slurring and blackouts; over 300 mg/dL vital signs are impaired.", "No impairment at about 150 mg/dL implies tolerance.", "Check glucose (hypoglycemia), head injury and other drugs; give thiamine."], link: { ch: "ch04", sec: "s4-alc-intox", label: "Alcohol intoxication" } },
+      sedintox: { label: "Most likely", dx: "Sedative, hypnotic or anxiolytic intoxication", line: "Incoordination, dysarthria, nystagmus, memory and gait problems; confirm with blood toxicology.", points: ["Benzodiazepines alone are rarely lethal (about 200:1 ratio) but deadly with alcohol; flumazenil reverses them.", "Barbiturates are lethal at about ten times the usual dose (respiratory depression).", "Assess for suicidal intent and coingestants."], link: { ch: "ch04", sec: "s4-sed-overdose", label: "Sedative overdose and intoxication" } },
+      stimintox: { label: "Most likely", dx: "Stimulant intoxication (cocaine or amphetamine)", line: "Euphoria or agitation with tachycardia, hypertension and mydriasis; paranoia at high doses.", points: ["Watch for chest pain, arrhythmias, stroke, aortic dissection and seizures.", "Delirium can follow high doses with sleep deprivation.", "Psychosis responds to short-term antipsychotics such as haloperidol."], link: { ch: "ch04", sec: "s4-stim-dx", label: "Stimulant intoxication" } },
+      cannabis: { label: "Most likely", dx: "Cannabis intoxication", line: "Euphoria or anxiety with red eyes, mild tachycardia, dry mouth, increased appetite and slowed time.", points: ["Anxiety and panic are the commonest adverse effects, especially in inexperienced users; reassure, and give a benzodiazepine if needed.", "Oral cannabis acts later and is harder to dose.", "Motor impairment lasts 8–12 hours: no driving."], link: { ch: "ch04", sec: "s4-can-clinical", label: "Cannabis intoxication" } },
+      hallucinogen: { label: "Most likely", dx: "Hallucinogen intoxication", line: "Perceptual changes, synesthesia and depersonalization with dilated pupils, tachycardia, sweating and tremor.", points: ["Talk the patient down in a quiet room: the effects are drug-induced and will pass.", "Diazepam 20 mg orally for severe anxiety; avoid antipsychotics if possible.", "Differential: anticholinergic or amphetamine intoxication, alcohol withdrawal."], link: { ch: "ch04", sec: "s4-hal-treat", label: "Treating hallucinogen intoxication" } },
+      pcp: { label: "Emergency", dx: "Phencyclidine (PCP) intoxication", line: "Horizontal, vertical and rotatory nystagmus with hypertension, hyperthermia, agitation or violence.", points: ["Minimize stimulation in a quiet room; benzodiazepines or antipsychotics for sedation; avoid anticholinergic drugs.", "Activated charcoal; no urinary acidification (rhabdomyolysis and renal failure).", "Observe for many hours: levels fluctuate; psychosis can last up to 2 weeks."], link: { ch: "ch04", sec: "s4-pcp", label: "PCP and ketamine" } },
+      inhalant: { label: "Most likely", dx: "Inhalant intoxication", line: "Euphoria and disinhibition with nystagmus, diplopia, ataxia and slurred speech; rash and odor around the face.", points: ["Supportive care; watch for arrhythmias, bronchospasm and coma.", "Avoid benzodiazepines and other sedatives; cautious haloperidol for severe agitation.", "Draw blood early (detectable 4–10 hours); screen for conduct disorder and maltreatment."], link: { ch: "ch04", sec: "s4-inh-treat", label: "Inhalant treatment" } },
+      caffeine: { label: "Most likely", dx: "Caffeine intoxication", line: "Usually above 250 mg: restlessness, nervousness, flushing, diuresis, GI upset, twitching, insomnia, rambling speech.", points: ["Over 1 g: arrhythmias, tinnitus, agitation; over 10 g: seizures and death.", "Exclude hyperthyroidism, pheochromocytoma and other stimulants.", "Taper intake about 10% every few days using a diary."], link: { ch: "ch04", sec: "s4-caf-clinical", label: "Caffeine disorders" } },
+      aas: { label: "Most likely", dx: "Anabolic steroid-induced mood disorder", line: "Euphoria, irritability, aggression and hypomanic or manic symptoms during AAS cycles.", points: ["Assess for violence and other drug use (stimulants, nalbuphine, opioids).", "Expect depression with suicide risk when the cycle ends.", "Look for muscle dysmorphia; consider CBT or SSRIs."], link: { ch: "ch04", sec: "s4-aas", label: "Anabolic-androgenic steroids" } },
+      alcwd: { label: "Most likely", dx: "Alcohol withdrawal", line: "Tremulousness, sweating, anxiety, mydriasis, tachycardia and startle in an alert patient, usually 6–8 hours after the last drink.", points: ["Examine fully; give rest, nutrition and thiamine.", "Benzodiazepine on day 1, then taper about 20% a day (e.g., chlordiazepoxide); carbamazepine 800 mg/day is an alternative.", "Never IM diazepam or chlordiazepoxide; beta-blockers and clonidine do not prevent seizures or DTs."], link: { ch: "ch04", sec: "s4-alc-detox", label: "Alcohol detoxification" } },
+      hallucinosis: { label: "Most likely", dx: "Alcohol-induced psychotic disorder (alcoholic hallucinosis)", line: "Usually threatening voices during heavy drinking or withdrawal, with a clear sensorium.", points: ["Treat like withdrawal: benzodiazepines, nutrition, fluids; add an antipsychotic if it persists.", "Usually clears within a week; if it lingers, consider another psychotic disorder.", "With intact reality testing, code withdrawal with perceptual disturbances."], link: { ch: "ch04", sec: "s4-alc-induced", label: "Alcohol-induced disorders" } },
+      alcseizure: { label: "Most likely", dx: "Alcohol withdrawal seizure", line: "Generalized tonic–clonic seizures 12–24 hours after drinking stops, often a second one 3–6 hours later.", points: ["Rule out head injury, CNS infection, tumor, stroke and low glucose, sodium or magnesium.", "Benzodiazepines are the treatment of choice; anticonvulsants add no benefit.", "Watch closely for progression to delirium tremens."], link: { ch: "ch04", sec: "s4-alc-withdrawal", label: "Withdrawal seizures" } },
+      dts: { label: "Emergency", dx: "Alcohol withdrawal delirium (delirium tremens)", line: "Delirium within a week of stopping with tactile hallucinations, fever, tachycardia, hypertension and sweating; 20% mortality untreated.", points: ["Search for the medical illness behind it (pneumonia, liver, renal or heart disease).", "Chlordiazepoxide 50–100 mg every 4 hours orally or IV lorazepam; fluids, high-calorie diet, vitamins and thiamine.", "Prefer seclusion to restraints; haloperidol for severe agitation can lower the seizure threshold."], link: { ch: "ch04", sec: "s4-alc-detox", label: "Severe withdrawal" } },
+      wernicke: { label: "Emergency", dx: "Wernicke encephalopathy", line: "Acute confusion, gait ataxia and eye signs (nystagmus, lateral rectus or gaze palsy) from thiamine deficiency.", points: ["Large doses of parenteral thiamine; it is reversible and prevents Korsakoff syndrome.", "Add 100 mg thiamine to each liter of IV glucose.", "If no response to thiamine, consider alcoholic pellagra (niacin)."], link: { ch: "ch04", sec: "s4-alc-related-tx", label: "Treating alcohol-related disorders" } },
+      opioidwd: { label: "Most likely", dx: "Opioid withdrawal", line: "Yawning, lacrimation, rhinorrhea, piloerection, mydriasis, diarrhea, cramps and bone aches; rarely fatal.", points: ["Heroin: starts 6–8 hours, peaks day 2–3; methadone: starts 1–3 days, lasts 10–14 days.", "Methadone (20–30 mg start) or buprenorphine (2 mg doses once withdrawal is at least moderate) for supervised withdrawal or maintenance.", "Clonidine for autonomic symptoms; loperamide, NSAIDs and hypnotics for the rest."], link: { ch: "ch04", sec: "s4-opi-detox", label: "Medically supervised withdrawal" } },
+      sedwd: { label: "Warning", dx: "Sedative, hypnotic or anxiolytic withdrawal", line: "Anxiety, insomnia, tremor, sensory hypersensitivity, and seizures or delirium, especially with barbiturates.", points: ["Benzodiazepine onset 2–3 days (5–6 for diazepam); barbiturate seizures on day 2–3, always before delirium.", "Stabilize, then taper (benzodiazepines: 30% then 10–25% every few days; barbiturates: pentobarbital test dose, phenobarbital substitution).", "Hospitalize for high doses, medical or psychiatric problems, or polysubstance use."], link: { ch: "ch04", sec: "s4-sed-treat", label: "Sedative withdrawal treatment" } },
+      stimwd: { label: "Most likely", dx: "Stimulant withdrawal", line: "The crash: dysphoria, fatigue, hypersomnia with nightmares, insatiable hunger; peaks in 2–4 days, resolves in about a week.", points: ["Assess suicide risk: depression is the most serious symptom.", "An outpatient trial is usually reasonable; no drug reliably helps.", "Frequent unscheduled urine tests and relapse prevention therapy."], link: { ch: "ch04", sec: "s4-stim-dx", label: "Stimulant withdrawal" } },
+      tobwd: { label: "Most likely", dx: "Tobacco withdrawal", line: "Craving, irritability, poor concentration, insomnia, slower heart rate, increased appetite and weight gain; peaks at 24–48 hours.", points: ["Nicotine replacement doubles quit rates; bupropion or varenicline are alternatives.", "Follow up 2–3 days after the quit date.", "Combine medication with behavior therapy."], link: { ch: "ch04", sec: "s4-tob-dx", label: "Tobacco withdrawal" } },
+      cafwd: { label: "Most likely", dx: "Caffeine withdrawal", line: "Headache and fatigue (also irritability, mild depression, nausea, craving) beginning 12–24 hours after the last dose.", points: ["Analgesics such as aspirin for headache.", "Taper over 7–14 days before procedures or when stopping.", "Ask about weekday-only intake and hidden sources."], link: { ch: "ch04", sec: "s4-caf-clinical", label: "Caffeine withdrawal" } },
+      canwd: { label: "Most likely", dx: "Cannabis withdrawal", line: "Irritability, craving, anxiety, insomnia, vivid dreams, low appetite and weight loss within 1–2 weeks of stopping daily use.", points: ["Short-term anxiolytic may help some patients.", "Support abstinence with education, therapy and urine monitoring (detectable up to 4 weeks).", "Treat an underlying depression if present."], link: { ch: "ch04", sec: "s4-can-treat", label: "Cannabis treatment" } },
+      alcmood: { label: "Most likely", dx: "Alcohol-induced depressive disorder", line: "Heavy drinking mimics major depression, but sadness improves within days to a month of abstinence.", points: ["Only 10–15% of alcoholic persons have had major depression when not drinking heavily.", "Educate and use CBT; wait 2–4 weeks of abstinence before antidepressants.", "Assess suicide risk: alcohol use disorder carries a high suicide rate."], link: { ch: "ch04", sec: "s4-alc-induced", label: "Alcohol-induced disorders" } },
+      alcanx: { label: "Most likely", dx: "Alcohol-induced anxiety disorder", line: "Panic attacks during withdrawal (almost 80% report them) and social avoidance in early abstinence that fade over weeks.", points: ["Check state markers (GGT, CDT) and collateral history when panic starts at an unusual age.", "Treat withdrawal and support abstinence; symptoms usually disappear.", "Diagnose an anxiety disorder only if it predates drinking or persists in abstinence."], link: { ch: "ch04", sec: "s4-alc-induced", label: "Alcohol-induced disorders" } },
+      stimpsych: { label: "Most likely", dx: "Stimulant-induced psychotic disorder", line: "Paranoid delusions and hallucinations (up to 50% of misusers), formication with cocaine, in clear consciousness.", points: ["Short-term haloperidol and sleep; symptoms usually resolve within days of abstinence.", "More common with IV use and crack and in men.", "Persisting psychosis after abstinence needs reassessment."], link: { ch: "ch04", sec: "s4-stim-induced", label: "Stimulant-induced disorders" } },
+      independent: { label: "Consider", dx: "An independent psychiatric disorder with comorbid substance use", line: "Symptoms that predate use or persist well into abstinence suggest a co-occurring disorder, which is common.", points: ["Up to 50% of people with addictions have another psychiatric disorder; antisocial personality disorder in 35–60%.", "Treat both, preferably with integrated care by the same team.", "Stabilize the psychiatric disorder before rehabilitation."], link: { ch: "ch04", sec: "s4-gen-comorbid", label: "Comorbidity" } },
+      hppd: { label: "Most likely", dx: "Hallucinogen-persisting perception disorder", line: "Flashbacks of intoxication perceptions (trails, halos, afterimages, geometric images), usually with insight.", points: ["Rule out migraine, seizures, PTSD and visual disorders.", "Clonazepam or other long-acting benzodiazepines; antipsychotics may worsen it.", "Avoid cannabis (even passive), caffeine, alcohol and stress; watch for panic and depression."], link: { ch: "ch04", sec: "s4-hal-dx", label: "Hallucinogen diagnoses" } },
+      gambling: { label: "Consider", dx: "Gambling disorder", line: "Four or more of nine criteria in 12 months (chasing losses, higher stakes, lying, failed attempts to stop), not better explained by mania.", points: ["Screen for depression, bipolar disorder, substance use and suicidality.", "Gamblers Anonymous, family therapy, CBT; insight therapy after 3 months away from gambling.", "Ask about dopamine agonists in Parkinson disease."], link: { ch: "ch04", sec: "s4-gamble", label: "Gambling disorder" } }
+    }
+  },
+  {
+    id: "trauma",
+    chapter: "ch10",
+    title: "Which trauma or stressor disorder?",
+    summary: "Start from the kind of stressor (an extreme trauma, an everyday stressor or a loss) and follow the timing and symptom counts to PTSD, acute stress disorder, an adjustment disorder subtype or a look-alike.",
+    caution: "A teaching aid built from Chapter 10, not a substitute for a full assessment. Check for head injury, substances and suicide risk in every patient after trauma or a major stressor.",
+    start: "stressor",
+    nodes: {
+      stressor: {
+        q: "What kind of stressor came before the symptoms?",
+        help: "PTSD and acute stress disorder need exposure to actual or threatened death, serious injury or sexual violence: experienced, witnessed in person, learned of in someone close, or repeated exposure to details. Media exposure does not count.",
+        options: [
+          { label: "An extreme trauma: death, serious injury or sexual violence, experienced, witnessed or learned of in someone close", to: "timing", note: "There was a qualifying traumatic exposure." },
+          { label: "Distressing images seen only through television, the internet or photos", to: "r:media", note: "Exposure was only through media." },
+          { label: "An everyday stressor: job loss, divorce, illness, money or relationship problems", to: "adjfit", note: "The stressor is not a qualifying trauma." },
+          { label: "The death of a loved one, with grief", to: "r:bereavement", note: "The stressor is a bereavement." }
+        ]
+      },
+      timing: {
+        q: "How long have symptoms lasted since the trauma?",
+        help: "Acute stress disorder spans 3 days to 1 month; PTSD needs more than a month.",
+        options: [
+          { label: "Less than 3 days", to: "r:early", note: "Symptoms have lasted under 3 days." },
+          { label: "3 days to 1 month", to: "asd", note: "Symptoms have lasted between 3 days and 1 month." },
+          { label: "More than 1 month", to: "ptsd", note: "Symptoms have lasted more than a month." }
+        ]
+      },
+      asd: {
+        q: "How many symptoms are present across intrusion, negative mood, dissociation, avoidance and arousal?",
+        help: "Acute stress disorder needs nine or more symptoms from any of the five categories; not every category is required.",
+        options: [
+          { label: "Nine or more", to: "r:asd", note: "Nine or more symptoms are present." },
+          { label: "Fewer than nine, but distressing and impairing", to: "r:subthreshold", note: "Symptoms fall below the acute stress disorder threshold." }
+        ]
+      },
+      ptsd: {
+        q: "Which description fits?",
+        help: "PTSD needs at least one intrusion, one avoidance, two negative mood or cognition and two arousal symptoms, with distress or impairment, not due to a substance or medical condition.",
+        options: [
+          { label: "All four clusters met, beginning within 6 months of the trauma", to: "dissoc", note: "Full PTSD criteria are met." },
+          { label: "All four clusters met, but full criteria first reached 6 months or more after the trauma", to: "r:delayed", note: "Full criteria were reached only after 6 months." },
+          { label: "A head injury, seizures, or alcohol or drug use may explain or worsen the symptoms", to: "r:medical", note: "A medical or substance contributor is possible." },
+          { label: "Anxiety and arousal without trauma-linked intrusions or avoidance", to: "r:anxiety", note: "There are no intrusions or avoidance tied to the trauma." },
+          { label: "Distressing symptoms that fall short of full PTSD criteria", to: "r:subthreshold", note: "Criteria for PTSD are not fully met." }
+        ]
+      },
+      dissoc: {
+        q: "Are there persistent depersonalization or derealization experiences?",
+        help: "The specifier 'with dissociative symptoms' covers feeling outside one's body or that surroundings are unreal.",
+        options: [
+          { label: "Yes", to: "r:ptsd_dissoc", note: "There are dissociative symptoms." },
+          { label: "No", to: "r:ptsd", note: "There are no prominent dissociative symptoms." }
+        ]
+      },
+      adjfit: {
+        q: "How do the symptoms relate to the stressor?",
+        help: "Adjustment disorder begins within 3 months of the stressor, causes distress out of proportion to it or marked impairment, and resolves within 6 months after the stressor ends.",
+        options: [
+          { label: "Began within 3 months; distress out of proportion or impairing", to: "adjtype", note: "Symptoms began within 3 months and are excessive or impairing." },
+          { label: "Meet criteria for major depression or another specific disorder", to: "r:other", note: "Criteria for another specific disorder are met." },
+          { label: "Proportionate to the stressor, with no real impairment", to: "r:normal", note: "The reaction is within expectable bounds." }
+        ]
+      },
+      adjtype: {
+        q: "What dominates the picture?",
+        help: "Name the subtype by the main symptoms.",
+        options: [
+          { label: "Low mood, tearfulness, hopelessness", to: "r:adj_dep", note: "Depressed mood dominates." },
+          { label: "Worry, nervousness, restlessness", to: "r:adj_anx", note: "Anxiety dominates." },
+          { label: "Both anxiety and low mood", to: "r:adj_mixed", note: "Anxiety and depressed mood are both present." },
+          { label: "Fighting, rule-breaking, impulsive or violent acts", to: "r:adj_conduct", note: "Conduct disturbance dominates." },
+          { label: "Both emotional symptoms and conduct problems", to: "r:adj_both", note: "Emotional and conduct symptoms are mixed." },
+          { label: "Massive denial or refusing treatment after a medical diagnosis", to: "r:adj_unspec", note: "The reaction is atypical (denial or noncompliance)." }
+        ]
+      }
+    },
+    results: {
+      ptsd: { label: "Most likely", dx: "Posttraumatic stress disorder", line: "Intrusion, avoidance, negative mood or cognition and hyperarousal lasting more than a month after a qualifying trauma.", points: ["Screen for comorbid depression, substance use and suicide risk; two-thirds have at least two other disorders.", "First-line medication: SSRIs (sertraline, paroxetine); prazosin for nightmares; avoid benzodiazepines.", "Trauma-focused CBT (prolonged exposure), cognitive processing therapy or EMDR; group and family therapy."], link: { ch: "ch10", sec: "s10-ptsd-dx", label: "Diagnosing PTSD" } },
+      ptsd_dissoc: { label: "Most likely", dx: "PTSD with dissociative symptoms", line: "Full PTSD with persistent depersonalization or derealization.", points: ["Peritraumatic dissociation is a risk factor for PTSD.", "Distinguish from dissociative disorders, which usually show less avoidance and arousal.", "Treat as PTSD, pacing trauma work so reexperiencing does not overwhelm."], link: { ch: "ch10", sec: "s10-ptsd-dx", label: "PTSD specifiers" } },
+      delayed: { label: "Most likely", dx: "PTSD with delayed expression", line: "Full criteria first met 6 months or more after the trauma.", points: ["Ask about earlier partial symptoms and recent stress that intensified them.", "Treatment is the same as for PTSD.", "Check for new comorbid depression or substance use."], link: { ch: "ch10", sec: "s10-ptsd-dx", label: "PTSD specifiers" } },
+      asd: { label: "Most likely", dx: "Acute stress disorder", line: "Nine or more symptoms of intrusion, negative mood, dissociation, avoidance or arousal between 3 days and 1 month after trauma.", points: ["Watch for self-medication with alcohol and for suicidal ideation.", "Reassess after a month: persisting symptoms may become PTSD.", "Exclude substances, medical causes and brief psychotic disorder."], link: { ch: "ch10", sec: "s10-ptsd-dx", label: "Acute stress disorder" } },
+      early: { label: "For now", dx: "An immediate stress reaction", line: "Shock, nightmares and intrusive thoughts are common right after trauma; acute stress disorder cannot be diagnosed before 3 days.", points: ["ICD-10's acute stress reaction (daze, narrowed attention, panic-like signs) usually resolves within hours or days.", "Offer support, check for injuries (especially head injury) and substance use.", "Reassess if symptoms continue beyond 3 days."], link: { ch: "ch10", sec: "s10-comorbid-course", label: "Course and prognosis" } },
+      subthreshold: { label: "Consider", dx: "Adjustment disorder or other specified trauma- or stressor-related disorder", line: "When the response to an extreme stressor does not meet acute stress disorder or PTSD thresholds, adjustment disorder is appropriate; other specified states why criteria are not met.", points: ["Treat with psychotherapy; use medication briefly for insomnia or anxiety.", "Monitor for progression to full PTSD.", "Assess suicide risk."], link: { ch: "ch10", sec: "s10-ddx", label: "Differential diagnosis" } },
+      medical: { label: "Investigate", dx: "A medical or substance contributor", line: "Traumatic brain injury, epilepsy, alcohol and other substance use, intoxication and withdrawal can cause or worsen posttraumatic symptoms.", points: ["Take a careful history and examination, especially for head injury during the trauma.", "Reassess after intoxication or withdrawal effects wear off.", "PTSD can coexist; treat both."], link: { ch: "ch10", sec: "s10-ddx", label: "Differential diagnosis" } },
+      anxiety: { label: "Consider", dx: "Panic disorder or generalized anxiety disorder", line: "Prominent anxiety and arousal without intrusions or avoidance tied to the trauma point away from PTSD.", points: ["Review the time course relative to the trauma.", "Also consider major depression, borderline personality disorder, dissociative and factitious disorders."], link: { ch: "ch10", sec: "s10-ddx", label: "Differential diagnosis" } },
+      media: { label: "Not PTSD", dx: "Exposure does not meet the trauma criterion", line: "Exposure through media, electronics, movies or photos does not qualify for PTSD or acute stress disorder.", points: ["Consider adjustment disorder or an anxiety or depressive disorder if symptoms are impairing.", "Ask about any direct or close-person exposure that may have been missed."], link: { ch: "ch10", sec: "s10-ptsd-dx", label: "PTSD criteria" } },
+      bereavement: { label: "Usually", dx: "Uncomplicated bereavement", line: "Grief can impair function temporarily but stays within expectable bounds, so it is not adjustment disorder.", points: ["Consider major depression if criteria are met.", "If the death was violent or sudden and witnessed, consider PTSD criteria."], link: { ch: "ch10", sec: "s10-ddx", label: "Adjustment disorder differential" } },
+      other: { label: "Diagnose instead", dx: "Another specific disorder", line: "If major depression, an anxiety disorder, brief psychotic disorder, somatic symptom disorder, a substance or conduct disorder explains the response, diagnose that instead.", points: ["Adjustment disorder excludes exacerbation of an existing mental disorder.", "A personality disorder may coexist with adjustment disorder."], link: { ch: "ch10", sec: "s10-ddx", label: "Differential diagnosis" } },
+      normal: { label: "No disorder", dx: "An expectable reaction to stress", line: "Distress proportionate to the stressor without significant impairment is not a disorder.", points: ["Offer support and follow-up.", "Reassess if symptoms escalate or function declines."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorders" } },
+      adj_dep: { label: "Most likely", dx: "Adjustment disorder with depressed mood", line: "Low mood, tearfulness, hopelessness, poor sleep or low self-esteem after a stressor, short of major depression.", points: ["Assess suicide risk: past attempts and recent suicidality are common.", "Psychotherapy is the treatment of choice; SSRIs may help subthreshold depression.", "Distinguish from major depression and uncomplicated bereavement."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } },
+      adj_anx: { label: "Most likely", dx: "Adjustment disorder with anxiety", line: "Generalized or situational anxiety and restlessness after a stressor.", points: ["Distinguish from anxiety disorders.", "Psychotherapy first; short-term medication for severe anxiety or insomnia."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } },
+      adj_mixed: { label: "Most likely", dx: "Adjustment disorder with mixed anxiety and depressed mood", line: "Features of both, without meeting criteria for an anxiety or depressive disorder.", points: ["Assess suicide risk.", "Psychotherapy and crisis intervention; brief medication for specific symptoms."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } },
+      adj_conduct: { label: "Most likely", dx: "Adjustment disorder with disturbance of conduct", line: "Impulsivity, lack of insight and violent behavior after a stressor.", points: ["Distinguish from conduct disorder and antisocial personality disorder by the prior pattern.", "Adolescents recover more slowly and may later develop mood or substance disorders."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } },
+      adj_both: { label: "Most likely", dx: "Adjustment disorder with mixed disturbance of emotions and conduct", line: "Emotional symptoms with conduct problems such as heavy drinking, hostility or fraud.", points: ["Try to choose one subtype for clarity when possible.", "Check substance use, homicidal and suicidal ideation."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } },
+      adj_unspec: { label: "Most likely", dx: "Adjustment disorder, unspecified", line: "Atypical maladaptive reactions such as massive denial, severe noncompliance or withdrawal after a medical diagnosis, without marked mood or anxiety.", points: ["Make sure the symptoms are not part of the illness or its treatment.", "Supportive and problem-solving psychotherapy; involve the medical team."], link: { ch: "ch10", sec: "s10-adj-clinical", label: "Adjustment disorder subtypes" } }
+    }
+  },
+  {
+    id: "dissociative",
+    chapter: "ch11",
+    title: "Which dissociative disorder?",
+    summary: "Start from the leading complaint (lost memory, feeling unreal, separate identities, trance or odd answers), rule out medical, substance and other psychiatric causes, and follow the pattern to a dissociative diagnosis or a look-alike.",
+    caution: "A teaching aid built from Chapter 11, not a substitute for a full assessment. Every dissociative presentation needs a medical and neurologic workup (labs, drug screen, EEG when indicated) and a check for suicide risk and ongoing abuse.",
+    start: "core",
+    nodes: {
+      core: {
+        q: "What is the leading problem?",
+        help: "Dissociation is a disruption of the normally integrated functions of memory, identity, perception and consciousness. Pick the feature that dominates the presentation.",
+        options: [
+          { label: "Gaps in memory for important personal information", to: "amn_cause", note: "Memory loss is the main complaint." },
+          { label: "Feeling detached from oneself or that the surroundings are unreal", to: "dp_cause", note: "Depersonalization or derealization." },
+          { label: "Separate identities or parts that take control, with lost time, voices or unexplained behavior", to: "did_check", note: "Possible alternate identities." },
+          { label: "An altered state of consciousness or a sense of being taken over by a spirit or another being", to: "trance_culture", note: "Trance or possession." },
+          { label: "Answers that just miss the mark (2 + 2 = 5) with clouded consciousness", to: "r:ganser", note: "Approximate answers." },
+          { label: "Drastic change in identity, values and beliefs after captivity, a cult or prolonged coercion", to: "r:brainwash", note: "Coercive persuasion." }
+        ]
+      },
+      amn_cause: {
+        q: "Is there a medical, neurologic or substance explanation for the memory loss?",
+        help: "Dissociative amnesia is diagnosed only when the loss is not due to a substance or a neurologic or other medical condition and is too extensive for ordinary forgetfulness.",
+        options: [
+          { label: "Clear head injury with unconsciousness or objective signs of brain injury", to: "r:headinjury" },
+          { label: "Sudden loss of new learning with retrograde gaps, identity preserved, anxious repeated questions; older patient with vascular risk factors", to: "r:tga" },
+          { label: "Clear ictal events, or wandering with confusion, perseveration and repetitive movements", to: "r:seizure" },
+          { label: "Intoxication or a medication (alcohol, sedative-hypnotics, PCP, anticholinergics, steroids, β-blockers and others)", to: "r:amn_substance" },
+          { label: "Memory loss is part of wider problems with cognition, language and attention", to: "r:neurocog" },
+          { label: "Gaps limited to the period around ECT", to: "r:ect" },
+          { label: "None of these: the workup is unrevealing", to: "amn_context" }
+        ]
+      },
+      amn_context: {
+        q: "What is the context of the amnesia?",
+        help: "No test reliably separates genuine from feigned amnesia, so the circumstances matter. Dissociative identity disorder shows multiple complex amnesias rather than a single gap.",
+        options: [
+          { label: "Amnesia that helps escape legal, financial, personal or military trouble, or covers only bad behavior", to: "r:malinger" },
+          { label: "The chief complaint is 'recovering repressed memories'", to: "r:recovered" },
+          { label: "Recurrent blackouts, possessions not remembered being acquired, fluctuating skills and habits", to: "did_check" },
+          { label: "Amnesia only as part of the immediate reaction to a trauma, with intrusions, avoidance and arousal", to: "r:ptsd" },
+          { label: "A stress-related loss of personal memory that stands on its own", to: "amn_travel" }
+        ]
+      },
+      amn_travel: {
+        q: "Was there sudden, unexpected travel away from home or work?",
+        help: "Fugue is a subtype of dissociative amnesia in DSM-5: purposeful travel or bewildered wandering with confusion about identity or a new identity.",
+        options: [
+          { label: "Yes, with confusion about identity or a new identity", to: "r:fugue" },
+          { label: "No travel", to: "amn_type" }
+        ]
+      },
+      amn_type: {
+        q: "What pattern does the memory loss follow?",
+        help: "The pattern names the type of dissociative amnesia.",
+        options: [
+          { label: "Everything during a circumscribed period", to: "r:localized" },
+          { label: "Some but not all events of a circumscribed period", to: "r:selective" },
+          { label: "The person's entire life", to: "r:generalized" },
+          { label: "Each new event as it happens", to: "r:continuous" },
+          { label: "A category of information, such as everything about the family or one person", to: "r:systematized" }
+        ]
+      },
+      dp_cause: {
+        q: "Is there a medical, neurologic or substance cause?",
+        help: "Depersonalization is common with intoxication, withdrawal and neurologic disease. Organic depersonalization tends to be mainly sensory, without elaborate personal meanings.",
+        options: [
+          { label: "Intoxication, withdrawal or a medication (persistent cases can follow marijuana, cocaine and other stimulants)", to: "r:dp_substance" },
+          { label: "Seizures, brain tumor, postconcussion syndrome, migraine, vertigo, Ménière disease or a metabolic problem", to: "r:dp_neuro" },
+          { label: "None found after medical and neurologic evaluation", to: "dp_psych" }
+        ]
+      },
+      dp_psych: {
+        q: "Does another mental disorder account for the symptoms?",
+        help: "Depersonalization occurs with panic attacks, phobias, PTSD, acute stress disorder, depression, schizophrenia, illness anxiety disorder and other dissociative disorders.",
+        options: [
+          { label: "Reality testing is lost: delusions or hallucinations", to: "r:dp_psychosis" },
+          { label: "It occurs only during panic attacks, depressive episodes or a posttraumatic reaction", to: "r:dp_other" },
+          { label: "It comes with separate identities, lost time or switching", to: "did_check" },
+          { label: "Persistent or recurrent on its own, reality testing intact, with distress or impairment", to: "r:dpdr" }
+        ]
+      },
+      did_check: {
+        q: "Could the identity experiences be normal for the setting?",
+        help: "DSM-5 excludes identity changes that are part of accepted cultural or religious practice, and imaginary playmates or fantasy play in children.",
+        options: [
+          { label: "Part of an accepted cultural or religious practice", to: "r:cultural" },
+          { label: "A young child's imaginary companion or daydream that does not take control of behavior", to: "r:imaginary" },
+          { label: "Neither", to: "did_genuine" }
+        ]
+      },
+      did_genuine: {
+        q: "How does the patient relate to the symptoms?",
+        help: "Patients with genuine DID are usually confused, conflicted and ashamed. Imitated or malingered cases show little dysphoria and convenient amnesia.",
+        options: [
+          { label: "Ashamed and distressed; amnesia across many areas of life; collateral information supports it", to: "did_full" },
+          { label: "Little distress; amnesia only for bad behavior; symptoms amplified when observed; refuses collateral contacts", to: "r:did_feigned" }
+        ]
+      },
+      did_full: {
+        q: "Are there two or more distinct personality states with recurrent memory gaps?",
+        help: "DID requires disrupted identity with two or more personality states, each with its own sense of self and agency, plus gaps in recall of everyday events, personal information or trauma.",
+        options: [
+          { label: "Yes: distinct states with their own sense of self, and recurrent memory lapses", to: "r:did" },
+          { label: "Identity disturbance and dissociative symptoms that fall short of full criteria", to: "r:osdd" }
+        ]
+      },
+      trance_culture: {
+        q: "Is the state part of an accepted cultural or religious practice?",
+        help: "Trance and possession states are a normal part of many cultural and religious practices and are diagnosed only when they are not.",
+        options: [
+          { label: "Yes, accepted in the person's culture or religion", to: "r:cultural" },
+          { label: "No, and it causes distress or impairment", to: "trance_type" }
+        ]
+      },
+      trance_type: {
+        q: "Is the usual identity replaced by another?",
+        help: "Both forms need partial or full amnesia and must not occur only during a psychotic episode or from a substance or medical illness.",
+        options: [
+          { label: "Replaced by a spirit, deity or another person, with stereotyped behavior or a sense of being controlled", to: "r:possession" },
+          { label: "Consciousness or the sense of identity is altered, without a replacement identity", to: "r:trance" }
+        ]
+      }
+    },
+    results: {
+      localized: { label: "Most likely", dx: "Dissociative amnesia, localized", line: "Loss of all memory for events during a circumscribed period, usually around a trauma.", points: ["Exclude intoxication and medical causes; ask about lost time and blackouts.", "Phase-oriented treatment; cognitive therapy and hypnosis can open the way to recall."], link: { ch: "ch11", sec: "s11-amnesia", label: "Dissociative amnesia" } },
+      selective: { label: "Most likely", dx: "Dissociative amnesia, selective", line: "Some but not all events of a circumscribed period are lost.", points: ["Often tied to a specific trauma; check for PTSD.", "Hypnosis allows controlled, titrated recall."], link: { ch: "ch11", sec: "s11-amnesia", label: "Dissociative amnesia" } },
+      generalized: { label: "Most likely", dx: "Dissociative amnesia, generalized", line: "Loss of memory for the person's entire life.", points: ["Classic, dramatic presentation after extreme trauma; risk of depression and suicidal ideation.", "Educate and suggest memory will return as tolerated; hypnosis or a drug-facilitated interview if needed."], link: { ch: "ch11", sec: "s11-tx-amnesia", label: "Treating dissociative amnesia" } },
+      continuous: { label: "Most likely", dx: "Dissociative amnesia, continuous", line: "Each new event is forgotten as it occurs.", points: ["Make sure there is no neurologic cause of anterograde amnesia.", "Exclude transient global amnesia and substances."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      systematized: { label: "Most likely", dx: "Dissociative amnesia, systematized", line: "Loss of a category of information, such as everything about one's family or one person.", points: ["Explore the meaning of the lost category and related trauma.", "Cognitive therapy can correct distortions about the trauma's meaning."], link: { ch: "ch11", sec: "s11-amnesia", label: "Dissociative amnesia" } },
+      fugue: { label: "Most likely", dx: "Dissociative amnesia with dissociative fugue", line: "Sudden travel away from home or work with inability to recall the past and confusion about identity or a new identity.", points: ["Lasts minutes to months; in children fugues are brief and close to home.", "Watch for intense suicidal ideation as the dissociation lifts.", "Cases with an alternate identity may be better classified as DID; consider malingering in forensic settings."], link: { ch: "ch11", sec: "s11-fugue", label: "Dissociative fugue" } },
+      headinjury: { label: "Consider instead", dx: "Posttraumatic amnesia from head injury", line: "Clear physical head trauma, unconsciousness or amnesia, and objective signs of brain injury.", points: ["Neurologic assessment and imaging.", "Dissociative amnesia is diagnosed only when a neurologic cause is excluded."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      tga: { label: "Consider instead", dx: "Transient global amnesia", line: "Sudden complete anterograde amnesia with retrograde gaps, but personal identity is preserved.", points: ["Anxious repetitive questioning, otherwise normal behavior, rapid recovery.", "Usually over 50 with vascular risk factors; also linked to epilepsy and migraine."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      seizure: { label: "Consider instead", dx: "Seizure-related amnesia or epileptic fugue", line: "Epileptic fugue shows confusion, perseveration and abnormal or repetitive movements.", points: ["Telemetry or ambulatory EEG may be needed.", "Psychogenic seizures can coexist with dissociation."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      amn_substance: { label: "Consider instead", dx: "Substance- or medication-induced amnesia", line: "Memory loss explained by intoxication or a drug.", points: ["Culprits include alcohol, sedative-hypnotics, anticholinergics, steroids, marijuana, opioids, psychedelics, PCP, β-blockers and lithium.", "Drug screen; reassess once the substance has cleared."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      neurocog: { label: "Consider instead", dx: "Dementia, delirium or an amnestic disorder", line: "Memory loss sits within wider cognitive, language and attention problems.", points: ["Loss of personal identity is unusual without broad cognitive disturbance.", "Causes include Korsakoff psychosis, stroke and postoperative, postinfectious or anoxic amnesia."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      ect: { label: "Consider instead", dx: "Memory loss after ECT", line: "Temporary, sometimes persistent, gaps for events around the treatments, unrelated to trauma.", points: ["Not a dissociative disorder.", "Document the timing relative to the treatment course."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      malinger: { label: "Consider", dx: "Malingered or factitious amnesia", line: "Amnesia that serves to escape trouble or excuse behavior.", points: ["No test reliably distinguishes genuine from feigned amnesia; some keep up the deception under hypnosis or barbiturates.", "Always consider malingering when fugue is claimed in a forensic setting."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      recovered: { label: "Consider", dx: "Factitious disorder or suggestion", line: "A chief complaint of recovering repressed memories most likely reflects a factitious disorder or suggestion.", points: ["Avoid leading questions.", "Memory work aims at integration, not exhuming memories."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      ptsd: { label: "Consider", dx: "Acute stress disorder or PTSD with dissociative amnesia", line: "Amnesia is a common part of the reaction to trauma.", points: ["Add dissociative amnesia only if it persists beyond the immediate trauma.", "Treat the posttraumatic disorder."], link: { ch: "ch11", sec: "s11-amnesia-ddx", label: "Differential of dissociative amnesia" } },
+      dpdr: { label: "Most likely", dx: "Depersonalization/derealization disorder", line: "Persistent or recurrent detachment from oneself or the surroundings with intact reality testing.", points: ["Often triggered by anxiety and linked to early stress; patients may look undistressed.", "Often treatment-resistant: benzodiazepines, SRIs or stimulants help some; naltrexone for individual patients.", "Avoid antipsychotics: no evidence, and they may deepen emotional deadness."], link: { ch: "ch11", sec: "s11-dpdr", label: "Depersonalization/derealization disorder" } },
+      dp_substance: { label: "Consider instead", dx: "Substance- or medication-related depersonalization", line: "Usually transient, but persistent depersonalization can follow marijuana, cocaine and other stimulants.", points: ["Drug screen and medication review.", "The disorder is diagnosed only when substances do not explain the symptoms."], link: { ch: "ch11", sec: "s11-dpdr-ddx", label: "Differential of depersonalization" } },
+      dp_neuro: { label: "Consider instead", dx: "Depersonalization due to a neurologic or medical condition", line: "Organic depersonalization tends to be mainly sensory.", points: ["Standard labs, EEG and neurologic evaluation.", "Causes include seizures, brain tumors, postconcussion syndrome, migraine, vertigo and Ménière disease."], link: { ch: "ch11", sec: "s11-dpdr-ddx", label: "Differential of depersonalization" } },
+      dp_psychosis: { label: "Consider instead", dx: "A psychotic disorder", line: "Reality testing is lost, unlike depersonalization/derealization disorder.", points: ["Depersonalization can occur in schizophrenia.", "Treat the psychotic disorder."], link: { ch: "ch11", sec: "s11-dpdr", label: "Depersonalization/derealization disorder" } },
+      dp_other: { label: "Consider instead", dx: "Depersonalization as part of another disorder", line: "Symptoms limited to panic attacks, depression, PTSD or acute stress disorder belong to that disorder.", points: ["Diagnose and treat the primary disorder.", "Reassess if depersonalization persists between episodes."], link: { ch: "ch11", sec: "s11-dpdr-ddx", label: "Differential of depersonalization" } },
+      cultural: { label: "Not a disorder", dx: "Accepted cultural or religious experience", line: "Trance, possession or identity experiences that are part of accepted practice are excluded.", points: ["Diagnose only if the state falls outside accepted practice and causes distress or impairment.", "Ask about the person's cultural and religious context."], link: { ch: "ch11", sec: "s11-other", label: "Trance and possession" } },
+      imaginary: { label: "Not a disorder", dx: "Normal imaginary companion or fantasy play", line: "Imaginary companions and daydreams are normal in children.", points: ["Concern arises when companions become autonomous and take control through passive influence or commanding pseudohallucinations.", "Teachers and relatives help document discontinuities."], link: { ch: "ch11", sec: "s11-did", label: "Dissociative identity disorder" } },
+      did: { label: "Most likely", dx: "Dissociative identity disorder", line: "Two or more distinct personality states with recurrent gaps in memory.", points: ["Often misdiagnosed as schizophrenia or borderline personality disorder; typically follows severe childhood abuse.", "Phase-oriented treatment: safety and stabilization, optional trauma work, then integration or resolution.", "Medication targets specific symptoms; prazosin for nightmares and intrusions."], link: { ch: "ch11", sec: "s11-tx-did", label: "Treating DID" } },
+      osdd: { label: "Most likely", dx: "Other specified dissociative disorder", line: "Chronic and recurrent mixed dissociative syndromes that do not meet full criteria for DID.", points: ["Includes identity disturbance after coercive persuasion, acute dissociative reactions and dissociative trance.", "Treat as for complex trauma with phase-oriented care."], link: { ch: "ch11", sec: "s11-other", label: "Other specified dissociative disorders" } },
+      did_feigned: { label: "Consider", dx: "Factitious, imitative or malingered DID", line: "Little dysphoria, amnesia only for bad behavior, symptoms amplified when observed.", points: ["Look for lies, legal problems, refusal of collateral contacts and pseudologia fantastica.", "Genuine patients are usually ashamed and distressed by their symptoms."], link: { ch: "ch11", sec: "s11-did-ddx", label: "Differential of DID" } },
+      possession: { label: "Most likely", dx: "Dissociative trance with possession", line: "The usual identity is replaced by one attributed to a spirit, deity or another person.", points: ["Needs amnesia, distress or impairment, and no psychosis, substance or medical cause.", "Hypnotizability testing can reproduce the state and increase control over it."], link: { ch: "ch11", sec: "s11-other", label: "Trance and possession" } },
+      trance: { label: "Most likely", dx: "Dissociative trance", line: "A temporary marked alteration of consciousness or loss of the usual sense of identity without a replacement identity.", points: ["Help the patient relate trance to ordinary daydreaming and recognize autohypnotic states.", "Chronic cases: supportive-expressive therapy as for conversion disorder."], link: { ch: "ch11", sec: "s11-tx-other", label: "Treating trance" } },
+      ganser: { label: "Most likely", dx: "Ganser syndrome", line: "Approximate answers (vorbeigehen) with clouded consciousness; about half have hallucinations.", points: ["Thorough medical and neurologic workup: head trauma, seizures and psychosis are common.", "Do not confront the answers; protective, supportive hospitalization; recovery usually within days, with amnesia for the episode.", "Differentiate from dementia, depressive pseudodementia and Korsakoff confabulation."], link: { ch: "ch11", sec: "s11-other", label: "Ganser syndrome" } },
+      brainwash: { label: "Most likely", dx: "Identity disturbance due to prolonged coercive persuasion", line: "Brainwashing in captivity, cults or political reform produces a dissociative pseudoidentity.", points: ["Look for idealization of captors, identification with the aggressor and traumatic infantilism.", "Phased trauma treatment as for torture victims, with family and social interventions."], link: { ch: "ch11", sec: "s11-tx-other", label: "Treating brainwashing" } }
+    }
+  },
+  {
+    id: "somatic",
+    chapter: "ch12",
+    title: "Which somatic symptom or related disorder?",
+    summary: "Start by asking whether symptoms are deliberately produced, then whether a medical illness is being worsened, and follow what dominates the picture to somatic symptom disorder, illness anxiety, conversion, factitious disorder, malingering or a look-alike.",
+    caution: "A teaching aid built from Chapter 12, not a substitute for a full assessment. Every patient needs a thorough physical and neurologic examination: a quarter to half of patients first labeled with conversion later receive a medical or neurologic diagnosis. Where a child may be harmed, safety comes first.",
+    start: "intent",
+    nodes: {
+      intent: {
+        q: "Is there evidence that symptoms are being deliberately produced or feigned?",
+        help: "In somatic symptom, illness anxiety and conversion disorders the symptoms are experienced, not simulated. Clues to deliberate production include lab results that contradict the history, self-induced findings and resistance to outside information.",
+        options: [
+          { label: "Yes, and there is an obvious external goal (money, avoiding work, charges or the police, a bed for the night)", to: "r:malinger" },
+          { label: "Yes, with no external reward beyond being a patient", to: "r:fact_self" },
+          { label: "A caregiver appears to be producing or faking illness in a child or dependent", to: "r:fdia" },
+          { label: "No evidence of deliberate production", to: "med" }
+        ]
+      },
+      med: {
+        q: "Is a medical condition present that psychological or behavioral factors are clearly worsening?",
+        help: "Psychological factors affecting other medical conditions needs a medical illness and an unambiguous, documentable psychological effect on its course. A psychological reaction to being ill is an adjustment disorder instead.",
+        options: [
+          { label: "Yes: denial, refusing or manipulating treatment, or stress clearly worsening the illness", to: "r:pfamc" },
+          { label: "The problem is distress in reaction to having the illness", to: "r:adjustment" },
+          { label: "No, or this is not the main issue", to: "kind" }
+        ]
+      },
+      kind: {
+        q: "What dominates the picture?",
+        help: "Pick the feature that best describes the presentation.",
+        options: [
+          { label: "Neurologic-looking motor or sensory symptoms: weakness, abnormal movements, attacks, blindness, numbness, gait problems", to: "conv_exam" },
+          { label: "One or more distressing somatic symptoms with excessive thoughts, worry or time devoted to them", to: "ssd_other" },
+          { label: "Fear of having or getting a serious illness, with few or no symptoms", to: "iad_other" },
+          { label: "Concern that a part of the body looks defective", to: "r:bdd" },
+          { label: "A bizarre bodily belief of delusional intensity, with other psychotic symptoms", to: "r:psychosis" }
+        ]
+      },
+      conv_exam: {
+        q: "Do the examination and workup show findings incompatible with neurologic disease?",
+        help: "Conversion requires inconsistency with recognized neurologic or medical conditions. Examples: Hoover sign, midline splitting, give-way weakness, no afferent pupillary defect in 'blindness', retained reflexes and normal prolactin after an attack.",
+        options: [
+          { label: "Yes: clear signs of incompatibility and a negative workup", to: "conv_course" },
+          { label: "Findings could fit a neurologic disease, or the workup is incomplete", to: "r:conv_workup" }
+        ]
+      },
+      conv_course: {
+        q: "How long have the symptoms lasted?",
+        help: "DSM-5 specifies an acute episode (under 6 months) or persistent course (6 months or more), with or without a psychological stressor.",
+        options: [
+          { label: "Under 6 months", to: "r:conv_acute" },
+          { label: "6 months or more", to: "r:conv_persist" }
+        ]
+      },
+      ssd_other: {
+        q: "Does another disorder better explain the somatic focus?",
+        help: "Somatic preoccupation also occurs in panic, depressive and anxiety disorders. A patient fearing heart disease may turn out to have classic panic attacks.",
+        options: [
+          { label: "Discrete attacks of pounding heart, sweating and fear that peak within minutes", to: "r:panic" },
+          { label: "The concerns appear only during a depressive or anxiety disorder", to: "r:mood_anx" },
+          { label: "No", to: "ssd_dur" }
+        ]
+      },
+      ssd_dur: {
+        q: "How long has the pattern lasted?",
+        help: "Somatic symptom disorder requires at least 6 months. Shorter reactions to a major stress or a frightening illness are coded as other specified somatic symptom and related disorder.",
+        options: [
+          { label: "6 months or more", to: "ssd_sev" },
+          { label: "Under 6 months, after a stress or a resolved illness", to: "r:ssd_brief" }
+        ]
+      },
+      ssd_sev: {
+        q: "Which best describes the symptoms?",
+        help: "Severity is graded by the number of symptoms; 'with predominant pain' is a specifier that can apply at any severity.",
+        options: [
+          { label: "Pain is the main symptom", to: "r:ssd_pain" },
+          { label: "One symptom", to: "r:ssd_mild" },
+          { label: "Two or more symptoms", to: "r:ssd_mod" },
+          { label: "Two or more with multiple complaints, or one very severe symptom", to: "r:ssd_severe" }
+        ]
+      },
+      iad_other: {
+        q: "Does another disorder account for the fear of illness?",
+        help: "Fear of illness also occurs in depressive and anxiety disorders. If full criteria for both illness anxiety and another disorder are met, diagnose both.",
+        options: [
+          { label: "Repeated compulsions and several unrelated obsessions", to: "r:ocd" },
+          { label: "Full criteria for major depression, GAD or panic disorder are also met", to: "r:iad_both" },
+          { label: "No", to: "iad_dur" }
+        ]
+      },
+      iad_dur: {
+        q: "How long has the preoccupation lasted?",
+        help: "Illness anxiety disorder requires at least 6 months.",
+        options: [
+          { label: "6 months or more", to: "iad_type" },
+          { label: "Under 6 months", to: "r:iad_brief" }
+        ]
+      },
+      iad_type: {
+        q: "How does the patient respond to the fear?",
+        help: "DSM-5 specifies care-seeking or care-avoidant type.",
+        options: [
+          { label: "Seeks repeated tests, visits and reassurance", to: "r:iad_seek" },
+          { label: "Avoids doctors and appointments", to: "r:iad_avoid" }
+        ]
+      }
+    },
+    results: {
+      malinger: { label: "Consider", dx: "Malingering", line: "Deliberate production of symptoms for a recognizable external goal.", points: ["Malingerers can usually stop when the symptoms stop being useful or become too risky.", "Their history tends to be more inconsistent and contradictory than in conversion disorder."], link: { ch: "ch12", sec: "s12-ddx-fact", label: "Differential of factitious disorder" } },
+      fact_self: { label: "Most likely", dx: "Factitious disorder imposed on self", line: "Feigning or inducing illness to take on the sick role, without external reward.", points: ["Look for many hospitals, health care work, worsening before discharge, requests for surgery and opposition to psychiatric assessment.", "Confirm with collateral sources and targeted tests (e.g., high insulin with low C-peptide).", "Manage, not cure: early recognition, minimize harm, one gatekeeper, a face-saving, nonconfrontational approach."], link: { ch: "ch12", sec: "s12-fact-clues", label: "Clues and detection" } },
+      fdia: { label: "Act now", dx: "Factitious disorder imposed on another", line: "A caregiver deliberately produces or fakes illness in someone in their care; the perpetrator receives the diagnosis.", points: ["Ensure the child's current and future safety; inform child protective services when a child is harmed.", "A pediatrician acts as gatekeeper; consider monitored admission.", "Clues: symptoms only with one caregiver, no relief at good news, a sibling's unexplained illness or death."], link: { ch: "ch12", sec: "s12-fdia", label: "Imposed on another" } },
+      pfamc: { label: "Most likely", dx: "Psychological factors affecting other medical conditions", line: "Psychological or behavioral factors clearly and measurably worsen a medical illness.", points: ["Examples: denial of a heart attack, anxiety worsening asthma, manipulating insulin to lose weight.", "Work with the medical team and family; psychoeducation; treat any psychiatric disorder."], link: { ch: "ch12", sec: "s12-pfamc", label: "Psychological factors" } },
+      adjustment: { label: "Consider instead", dx: "Adjustment disorder", line: "Psychological consequences of having a medical condition are better classified as an adjustment disorder.", points: ["Reserve psychological factors affecting other medical conditions for psychological effects on the illness itself.", "Somatic symptom disorder applies if distress about the illness is excessive and persistent."], link: { ch: "ch12", sec: "s12-pfamc", label: "Psychological factors" } },
+      bdd: { label: "Consider instead", dx: "Body dysmorphic disorder", line: "Wants to look normal and believes others notice a defect, rather than seeking care for a presumed disease.", points: ["Covered with the obsessive-compulsive and related disorders.", "ICD-10 includes it as a subtype of hypochondriacal disorder."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of somatic symptom disorder" } },
+      psychosis: { label: "Consider instead", dx: "A psychotic disorder with somatic delusions", line: "Delusional intensity, other psychotic symptoms and bizarre, culturally out-of-place content.", points: ["Example: 'my guts are rotting away' despite a full workup.", "Treat the psychotic disorder."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of somatic symptom disorder" } },
+      conv_workup: { label: "Investigate", dx: "Complete the medical and neurologic workup", line: "Conversion requires findings incompatible with neurologic disease; many patients are later found to have a medical cause.", points: ["Consider multiple sclerosis, myasthenia gravis, myopathies, optic neuritis, Guillain–Barré, periodic paralysis, tumors and early neurologic AIDS.", "Routine labs, EEG and imaging such as MRI; video EEG for attacks.", "Resolution with suggestion (hypnosis, amobarbital or lorazepam) supports conversion."], link: { ch: "ch12", sec: "s12-ddx-conv", label: "Differential of conversion disorder" } },
+      conv_acute: { label: "Most likely", dx: "Conversion disorder (functional neurologic symptom disorder), acute episode", line: "Neurologic-looking symptoms incompatible with neurologic disease, present under 6 months.", points: ["About 95% of acute cases remit, usually within 2 weeks in hospital.", "Reassure that key tests are normal and recovery is expected; never imply malingering.", "Specify the symptom type and whether a psychological stressor is present."], link: { ch: "ch12", sec: "s12-tx-conv", label: "Treating conversion disorder" } },
+      conv_persist: { label: "Most likely", dx: "Conversion disorder (functional neurologic symptom disorder), persistent", line: "Symptoms present 6 months or more; the chance of resolution is under 50% and falls with time.", points: ["Multimodal treatment: psychotherapy, behavioral techniques, hypnosis, physical therapy, biofeedback and medication for comorbid disorders.", "Tremor and seizures carry a poorer prognosis; recurrence is common."], link: { ch: "ch12", sec: "s12-tx-conv", label: "Treating conversion disorder" } },
+      panic: { label: "Consider instead", dx: "Panic disorder", line: "Careful history in a patient fearing heart disease often uncovers classic panic attacks.", points: ["Treat the panic disorder.", "Reassess for somatic symptom disorder if preoccupation persists between attacks."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of somatic symptom disorder" } },
+      mood_anx: { label: "Consider", dx: "Somatic focus within a depressive or anxiety disorder", line: "Somatic preoccupation commonly occurs with depressive and anxiety disorders.", points: ["Treat the primary disorder.", "Somatic symptom disorder can co-occur when its own criteria are met."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of somatic symptom disorder" } },
+      ssd_brief: { label: "Most likely", dx: "Other specified somatic symptom and related disorder", line: "A transient somatic symptom reaction lasting under 6 months after a stress or a frightening illness.", points: ["Usually remits as the stress resolves.", "Can become chronic if friends or clinicians reinforce the concerns."], link: { ch: "ch12", sec: "s12-ssd", label: "Somatic symptom disorder" } },
+      ssd_pain: { label: "Most likely", dx: "Somatic symptom disorder, with predominant pain", line: "Pain is the main somatic symptom, with excessive thoughts, worry or time devoted to it.", points: ["Antidepressants help painful syndromes, with data favoring tricyclics over SSRIs.", "CBT, one primary care physician and regular brief visits."], link: { ch: "ch12", sec: "s12-tx-ssd", label: "Treating somatic symptom disorder" } },
+      ssd_mild: { label: "Most likely", dx: "Somatic symptom disorder, mild", line: "One distressing somatic symptom with excessive response for at least 6 months.", points: ["Regular scheduled visits with a brief examination; avoid unnecessary tests.", "CBT has the strongest evidence."], link: { ch: "ch12", sec: "s12-tx-ssd", label: "Treating somatic symptom disorder" } },
+      ssd_mod: { label: "Most likely", dx: "Somatic symptom disorder, moderate", line: "Two or more distressing symptoms with excessive response for at least 6 months.", points: ["Modest goals: fewer visits, one primary care physician, limited specialist referrals.", "A consultation letter to primary care reduces health care use."], link: { ch: "ch12", sec: "s12-tx-ssd", label: "Treating somatic symptom disorder" } },
+      ssd_severe: { label: "Most likely", dx: "Somatic symptom disorder, severe", line: "Two or more symptoms with multiple complaints, or one very severe symptom.", points: ["Aim for rapport and prevention of iatrogenic harm; prepare for long-term care.", "Avoid medication except for clear anxiety, depression or psychosis.", "Specify persistent if severe symptoms and impairment last over 6 months."], link: { ch: "ch12", sec: "s12-ssd", label: "Somatic symptom disorder" } },
+      ocd: { label: "Consider instead", dx: "Obsessive-compulsive disorder", line: "Illness anxiety involves a single belief without compulsive behavior.", points: ["Treat OCD if obsessions and compulsions extend beyond health fears.", "The fear in illness anxiety may still have an obsessive quality."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of illness anxiety" } },
+      iad_both: { label: "Diagnose both", dx: "Illness anxiety disorder with a co-occurring depressive or anxiety disorder", line: "When full criteria for both are met, both diagnoses are given.", points: ["Comorbidity with GAD and panic disorder is common.", "CBT first line; SSRIs such as fluoxetine have trial support."], link: { ch: "ch12", sec: "s12-ddx-ssd", label: "Differential of illness anxiety" } },
+      iad_brief: { label: "Most likely", dx: "Other specified somatic symptom and related disorder (brief illness anxiety disorder)", line: "Illness anxiety that does not yet meet the 6-month duration criterion.", points: ["Reassess over time.", "Examine the patient properly rather than dismissing the concerns."], link: { ch: "ch12", sec: "s12-other", label: "Other specified disorders" } },
+      iad_seek: { label: "Most likely", dx: "Illness anxiety disorder, care-seeking type", line: "Preoccupation with serious illness, few symptoms, and repeated tests, visits and reassurance-seeking.", points: ["CBT is first line; mindfulness, exposure and ACT also help.", "SSRIs, especially fluoxetine, have trial support."], link: { ch: "ch12", sec: "s12-iad", label: "Illness anxiety disorder" } },
+      iad_avoid: { label: "Most likely", dx: "Illness anxiety disorder, care-avoidant type", line: "Preoccupation with serious illness, few symptoms, and avoidance of medical care.", points: ["Build trust gently and keep a careful medical examination.", "CBT is first line."], link: { ch: "ch12", sec: "s12-iad", label: "Illness anxiety disorder" } }
+    }
   }
 ]);

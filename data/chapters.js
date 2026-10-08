@@ -33,6 +33,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   },
   {
+    id: 'ch04', number: 4, title: 'Substance Use and Addictive Disorders', short: 'Substance use and addiction',
+    summary: 'General features of substance disorders, then alcohol, cannabis, opioids, sedatives, stimulants, tobacco, caffeine, hallucinogens, inhalants and anabolic steroids, plus gambling disorder.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
     id: 'ch05',
     number: 5,
     title: 'Schizophrenia Spectrum and Other Psychotic Disorders',
@@ -71,6 +76,21 @@ KS.manifest = [
     short: 'Obsessive-compulsive and related',
     summary: 'OCD, body dysmorphic disorder, hoarding, hair pulling and skin picking: the symptom patterns, the role of insight, a wide differential, and high-dose SRIs, ERP and disorder-specific therapies.',
     files: ['guide', 'highyield', 'cards-diagnosis', 'cards-cases', 'cards-pharm', 'cards-foundations']
+  },
+  {
+    id: 'ch10', number: 10, title: 'Trauma- and Stressor-Related Disorders', short: 'Trauma and stressor-related',
+    summary: 'Posttraumatic stress disorder, acute stress disorder and adjustment disorders: diagnosis, differential, course, treatment and risk factors.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch11', number: 11, title: 'Dissociative Disorders', short: 'Dissociative disorders',
+    summary: 'Dissociative amnesia and fugue, depersonalization/derealization disorder, dissociative identity disorder, trance and Ganser syndrome: diagnosis, differential, treatment and the role of trauma.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch12', number: 12, title: 'Somatic Symptom and Related Disorders', short: 'Somatic symptom and related',
+    summary: 'Somatic symptom disorder, illness anxiety disorder, conversion disorder, psychological factors affecting medical conditions and factitious disorder: diagnosis, examination signs, detection, differential and management.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 

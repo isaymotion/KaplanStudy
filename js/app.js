@@ -179,6 +179,55 @@
   function clearMistake(key) { if (MISTAKES[key]) { delete MISTAKES[key]; saveMistakes(); } }
   function mistakeKeys() { return Object.keys(MISTAKES).filter(function (k) { return CARDS[k]; }).sort(function (a, b) { return MISTAKES[b].t - MISTAKES[a].t; }); }
 
+  /* ---------- bookmarks ---------- */
+  var BOOKMARKS = store.get('bookmarks', {});
+  var RIBBON = '<svg viewBox="0 0 20 28" aria-hidden="true" focusable="false"><path d="M3.5 1.5h13v24.2l-6.5-5.4-6.5 5.4z"/></svg>';
+  function saveBookmarks() { store.set('bookmarks', BOOKMARKS); }
+  function isBookmarked(chId, secId) { return !!BOOKMARKS[chId + ':' + secId]; }
+  function toggleBookmark(chId, secId) {
+    var k = chId + ':' + secId;
+    if (BOOKMARKS[k]) delete BOOKMARKS[k]; else BOOKMARKS[k] = { t: Date.now() };
+    saveBookmarks();
+    return !!BOOKMARKS[k];
+  }
+  /* Section lookup for one chapter: id -> { s, n, part, pi } */
+  function sectionIndex(ch) {
+    var map = {}, n = 0;
+    (ch.guide && ch.guide.parts || []).forEach(function (pt, pi) {
+      pt.sections.forEach(function (s) { n++; map[s.id] = { s: s, n: n, part: pt.title, pi: pi }; });
+    });
+    return map;
+  }
+  /* Saved bookmarks that still point at a real section, in book order. */
+  function bookmarkList() {
+    var out = [], idx = {};
+    Object.keys(BOOKMARKS).forEach(function (k) {
+      var i = k.indexOf(':'), ch = chapter(k.slice(0, i));
+      if (!ch) return;
+      var m = idx[ch.id] || (idx[ch.id] = sectionIndex(ch)), hit = m[k.slice(i + 1)];
+      if (hit) out.push({ key: k, ch: ch, sec: hit.s, n: hit.n, part: hit.part, pi: hit.pi, t: BOOKMARKS[k].t });
+    });
+    return out.sort(function (a, b) { return a.ch.number - b.ch.number || a.n - b.n; });
+  }
+  function ribbonBtn(chId, s) {
+    var on = isBookmarked(chId, s.id);
+    return '<button class="ribbon' + (on ? ' is-on' : '') + '" type="button" data-bm="' + s.id + '" aria-pressed="' + on + '" aria-label="Bookmark this section: ' + esc(s.title) + '" title="' + (on ? 'Remove bookmark' : 'Bookmark this section') + '">' + RIBBON + '</button>';
+  }
+  function setRibbon(btn, on) {
+    btn.classList.toggle('is-on', on);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.title = on ? 'Remove bookmark' : 'Bookmark this section';
+  }
+  var toastTimer = null;
+  function toast(html) {
+    var t = document.getElementById('toast');
+    if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.innerHTML = html;
+    t.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('is-on'); }, 2600);
+  }
+
   /* ---------- router ---------- */
   var view = { key: null, focus: null, cleanup: null };
 
@@ -207,6 +256,7 @@
       case 'search': var q = p.slice(1).join('/'); qInput.value = q; return renderSearch(q);
       case 'review': return renderReview(p[1]);
       case 'mistakes': return renderMistakes();
+      case 'bookmarks': return renderBookmarks();
       case 'exam':
         if (p[1] === 'run') return renderExamRun();
         if (p[1] === 'results') return renderExamResults(p[2]);
@@ -304,7 +354,8 @@
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
-          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, psychotic, mood, anxiety and OCD-related disorders, step by step</span></a>' +
+          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, substance, psychotic, mood, anxiety, OCD-related, trauma-related, dissociative and somatic symptom disorders, step by step</span></a>' +
+          '<a class="tool tool--wide" href="#/bookmarks"><span class="tool__name">Bookmarks</span><span class="tool__meta">' + (bookmarkList().length ? plural(bookmarkList().length, 'saved section') + ' across the study guides' : 'Tap the ribbon on any study-guide section to save it here') + '</span></a>' +
         '</div>' +
       '</section>';
 
@@ -430,9 +481,9 @@
     return ch.guide.parts.map(function (pt) {
       return '<p class="toc__part">' + esc(pt.title) + '</p><ol>' + pt.sections.map(function (s) {
         n++;
-        return '<li><a href="#/c/' + ch.id + '/guide/' + s.id + '" data-sec="' + s.id + '"><span class="toc__n">' + ch.number + '.' + n + '</span><span>' + esc(s.title) + '</span></a></li>';
+        return '<li><a href="#/c/' + ch.id + '/guide/' + s.id + '" data-sec="' + s.id + '"' + (isBookmarked(ch.id, s.id) ? ' class="is-bm"' : '') + '><span class="toc__n">' + ch.number + '.' + n + '</span><span>' + esc(s.title) + '</span></a></li>';
       }).join('') + '</ol>';
-    }).join('');
+    }).join('') + '<a class="toc__bookmarks" href="#/bookmarks">' + RIBBON + 'All bookmarks</a>';
   }
 
   function renderGuide(ch, target) {
@@ -440,10 +491,10 @@
     if (view.key === key) { focusTarget(target); return; }
     var n = 0;
     var body = ch.guide.parts.map(function (pt, pi) {
-      return '<div class="g-part"><p>Part ' + (pi + 1) + '</p><h2>' + esc(pt.title) + '</h2></div>' +
+      return '<div class="g-part"><p>Part ' + (pi + 1) + '</p><h2>' + esc(pt.title).replace(/\//g, '/<wbr>') + '</h2></div>' +
         pt.sections.map(function (s) {
           n++;
-          return '<section class="g-sec" id="' + s.id + '" aria-labelledby="' + s.id + '-h"><h3 id="' + s.id + '-h"><span class="g-n">' + ch.number + '.' + n + '</span><span>' + esc(s.title) + '</span></h3>' +
+          return '<section class="g-sec" id="' + s.id + '" aria-labelledby="' + s.id + '-h"><div class="g-sec__head"><h3 id="' + s.id + '-h"><span class="g-n">' + ch.number + '.' + n + '</span><span>' + esc(s.title).replace(/\//g, '/<wbr>') + '</span></h3>' + ribbonBtn(ch.id, s) + '</div>' +
             s.blocks.map(function (b, i) { return blockHTML(b, s.id + '--' + i); }).join('') + '</section>';
         }).join('');
     }).join('');
@@ -461,6 +512,16 @@
     setView(key, html, focusTarget);
     document.title = 'Ch ' + ch.number + ' study guide — K&S Study Companion';
     main.querySelectorAll('.reading__intro, .objectives, .g-sec').forEach(function (s) { linkTerms(s); });
+
+    // bookmark ribbons
+    main.querySelector('.reading').addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-bm]');
+      if (!btn) return;
+      var id = btn.getAttribute('data-bm'), on = toggleBookmark(ch.id, id);
+      setRibbon(btn, on);
+      main.querySelectorAll('.toc a[data-sec="' + id + '"]').forEach(function (a) { a.classList.toggle('is-bm', on); });
+      toast(on ? 'Section bookmarked. <a href="#/bookmarks">See all bookmarks</a>' : 'Bookmark removed.');
+    });
 
     // close the mobile TOC after choosing a section
     main.querySelectorAll('.toc-mobile a').forEach(function (a) {
@@ -838,6 +899,53 @@
   }
 
   /* ---------- mistakes ---------- */
+  function renderBookmarks() {
+    var list = bookmarkList(), groups = [], cur = null;
+    list.forEach(function (b) {
+      if (!cur || cur.ch !== b.ch) { cur = { ch: b.ch, items: [] }; groups.push(cur); }
+      cur.items.push(b);
+    });
+    var date = function (t) { try { return new Date(t).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return ''; } };
+    var body = groups.map(function (g) {
+      return '<section class="bm-group"><h2><a href="#/c/' + g.ch.id + '/guide">Chapter ' + g.ch.number + ': ' + esc(g.ch.title) + '</a></h2><ul>' +
+        g.items.map(function (b) {
+          var first = '';
+          for (var i = 0; i < b.sec.blocks.length && first.length < 40; i++) first += ' ' + blockText(b.sec.blocks[i]);
+          first = first.trim();
+          if (first.length > 170) first = first.slice(0, 170).replace(/\s+\S*$/, '') + '…';
+          return '<li class="bm" data-key="' + esc(b.key) + '">' +
+            '<a class="bm__link" href="#/c/' + b.ch.id + '/guide/' + b.sec.id + '">' +
+              '<span class="bm__meta"><span class="bm__n">' + b.ch.number + '.' + b.n + '</span><span>Part ' + (b.pi + 1) + ': ' + esc(b.part) + '</span>' + (b.t ? '<span>Saved ' + esc(date(b.t)) + '</span>' : '') + '</span>' +
+              '<span class="bm__title">' + esc(b.sec.title).replace(/\//g, '/<wbr>') + '</span>' +
+              (first ? '<span class="bm__snip">' + esc(first) + '</span>' : '') +
+            '</a>' +
+            '<button class="ribbon is-on" type="button" data-unbm="' + esc(b.key) + '" aria-pressed="true" aria-label="Remove bookmark: ' + esc(b.sec.title) + '" title="Remove bookmark">' + RIBBON + '</button>' +
+          '</li>';
+        }).join('') + '</ul></section>';
+    }).join('');
+    var last = store.get('last', null);
+    var html = '<div class="wrap page bm-page">' +
+      '<header class="page__head"><h1>Bookmarks</h1><p>Study-guide sections you marked with the ribbon, in book order. Bookmarks stay on this device.</p></header>' +
+      (list.length
+        ? '<div class="deck-bar"><span class="deck-bar__count">' + plural(list.length, 'bookmarked section') + '</span><button class="link-btn" type="button" id="bm-clear">Remove all bookmarks</button></div>' + body
+        : '<div class="empty"><span class="empty__ribbon">' + RIBBON + '</span><h2>No bookmarks yet</h2><p>Tap the ribbon beside any section title in a study guide to save it here.</p><div class="empty__actions"><a class="btn btn--solid" href="' + (last && last.ch ? '#/c/' + last.ch + '/guide' : '#/c/' + KS.manifest[0].id + '/guide') + '">Open a study guide</a></div></div>') +
+      '</div>';
+    setView('bookmarks', html, null, { keepScroll: view.key === 'bookmarks' });
+    document.title = 'Bookmarks — K&S Study Companion';
+    main.querySelectorAll('[data-unbm]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        delete BOOKMARKS[b.getAttribute('data-unbm')]; saveBookmarks();
+        view.key = null; renderBookmarks();
+        toast('Bookmark removed.');
+      });
+    });
+    var clr = main.querySelector('#bm-clear');
+    if (clr) clr.addEventListener('click', function () {
+      if (!window.confirm('Remove every bookmark?')) return;
+      BOOKMARKS = {}; saveBookmarks(); renderBookmarks();
+    });
+  }
+
   function renderMistakes() {
     var keys = mistakeKeys();
     var list = keys.map(function (k) {
