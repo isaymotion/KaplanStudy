@@ -13,31 +13,11 @@
  */
 KS.changelog = [
   {
-    id: 18,
-    date: "2026-10-08",
-    title: "Back up and move your progress",
-    items: [
-      { type: "feature", text: "**Back up progress**: export your review schedule, mistakes, bookmarks, exams and teaching sessions to a file, then merge or restore it on another phone or computer. The last import can be undone.", href: "#/progress", link: "Open backup" }
-    ]
-  },
-  {
-    id: 17,
-    date: "2026-10-08",
-    title: "Teaching mode for flashcards and high-yield facts",
-    items: [
-      { type: "feature", text: "**Recall mode**: present the Diagnosis, Pharmacology or Foundations flashcards (or all three mixed), reveal the answer, and count who knew it, who partly did and who missed it. Works with the presenter window and the session summary.", href: "#/teach", link: "Open teaching mode" },
-      { type: "feature", text: "**High-yield fill-in-the-blank**: present one high-yield fact at a time with its key terms blanked, then reveal and count the room.", href: "#/c/ch05/high-yield", link: "Try it on Chapter 5" },
-      { type: "update", text: "Every flashcard deck now has a *Present in teaching mode* button, and high-yield pages have *Present as fill-in-the-blank*." }
-    ]
-  },
-  {
     id: 16,
     date: "2026-10-08",
-    title: "Teaching mode: group tally, facilitator notes and session summary",
+    title: "Download handouts as a PDF",
     items: [
-      { type: "feature", text: "**Group tally**: count the room's votes for each choice, then reveal the spread, the percent correct and the most chosen wrong answer.", href: "#/teach", link: "Open teaching mode" },
-      { type: "feature", text: "**Facilitator notes**: discussion prompts in a side panel or a separate presenter window with live counts and remote controls, so the shared screen stays clean." },
-      { type: "feature", text: "**Session summary**: score by topic and chapter, the questions to revisit (which you can present again), and a printable or copyable report." }
+      { type: "feature", text: "**Printable handouts** now have a **Download PDF** button. The app builds the page itself at exact Letter or A4 size, with no browser margins, headers or footers, so the type fills the page. On iPhone and iPad it opens the share sheet (Save to Files, Print, AirDrop). The text stays selectable. *Print instead* is still there.", href: "#/c/ch06/handout", link: "Try it" }
     ]
   },
   {
