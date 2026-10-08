@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 15,
+    date: "2026-10-08",
+    title: "Handouts print cleanly on iPhone and iPad",
+    items: [
+      { type: "update", text: "**Printable handouts** now fit inside standard page margins, so the last lines no longer spill onto an extra page when printing from Safari on iPhone or iPad, or with browser margins switched on. Long chapters now add a page rather than shrink the type below 7 pt.", href: "#/c/ch12/handout", link: "Open a handout" }
+    ]
+  },
+  {
     id: 14,
     date: "2026-10-08",
     title: "Chapter 12 and study-guide bookmarks",

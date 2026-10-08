@@ -1444,7 +1444,12 @@
   /* ---------- printable handout ----------
      One sheet per chapter built from the high-yield list. The font size is fitted automatically
      so the chosen topics fill exactly one page; "Fill-in worksheet" turns every bold fact into a blank. */
-  var PAPER = { a4: { label: 'A4', w: '210mm', h: '296.5mm', page: 'A4' }, letter: { label: 'Letter', w: '8.5in', h: '10.97in', page: 'letter' } };
+  /* Sheets are sized to the area inside the page margins, with spare height, because some browsers
+     (Safari on iPhone and iPad) ignore @page margins and add their own, plus a URL and date line. */
+  var PAPER = {
+    a4: { label: 'A4', w: '186mm', h: '262mm', page: 'A4', margin: '12mm' },
+    letter: { label: 'Letter', w: '7.5in', h: '9.55in', page: 'letter', margin: '0.5in' }
+  };
   var ATTRIBUTION = 'App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com';
 
   function renderHandout(ch) {
@@ -1455,7 +1460,7 @@
     var MAX_PAGES = Math.min(ch.highYield.length, hyCount > 150 ? 4 : 2);
     if (!(prefs.pages >= 1 && prefs.pages <= MAX_PAGES)) prefs.pages = 1;
     prefs.pages = Math.round(prefs.pages);
-    var MIN_PT = 6.5, autoTwo = false;
+    var MIN_PT = 6.5, COMFORT_PT = 7, autoTwo = false, lastSize = 0;
     var PAGE_WORDS = ['', 'one page', 'two pages', 'three pages', 'four pages'];
     var on = {};
     ch.highYield.forEach(function (t) { on[t.id] = true; });
@@ -1516,7 +1521,7 @@
     }
     function build() {
       var paper = PAPER[prefs.paper];
-      pageStyle.textContent = '@media print { @page { size: ' + paper.page + '; margin: 0; } }';
+      pageStyle.textContent = '@media print { @page { size: ' + paper.page + '; margin: ' + paper.margin + '; } }';
       var topics = ch.highYield.filter(function (t) { return on[t.id]; });
       var pages = Math.max(1, Math.min(prefs.pages, topics.length || 1));
       var groups = split(topics, pages);
@@ -1543,6 +1548,7 @@
       var best = 11;
       bodies.forEach(function (b) { best = Math.min(best, fitOne(b)); });
       var size = Math.floor(best * 0.97 * 10) / 10;   // a little slack for printer rendering
+      lastSize = size;
       var bad = false;
       bodies.forEach(function (b) { b.style.fontSize = size + 'pt'; if (overflows(b)) bad = true; });
       var tooSmall = bad || size < MIN_PT;
@@ -1573,7 +1579,8 @@
     window.addEventListener('resize', onResize);
     function initial() {
       build();
-      while (printBtn.disabled && prefs.pages < MAX_PAGES) {
+      // add pages automatically when the type would otherwise be too small to read comfortably
+      while ((printBtn.disabled || lastSize < COMFORT_PT) && prefs.pages < MAX_PAGES) {
         prefs.pages += 1; autoTwo = true;
         var r = main.querySelector('input[name=pages][value="' + prefs.pages + '"]'); if (r) r.checked = true;
         build();
