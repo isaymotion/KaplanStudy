@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 16,
+    date: "2026-10-08",
+    title: "Teaching mode: group tally, facilitator notes and session summary",
+    items: [
+      { type: "feature", text: "**Group tally**: count the room's votes for each choice, then reveal the spread, the percent correct and the most chosen wrong answer.", href: "#/teach", link: "Open teaching mode" },
+      { type: "feature", text: "**Facilitator notes**: discussion prompts in a side panel or a separate presenter window with live counts and remote controls, so the shared screen stays clean." },
+      { type: "feature", text: "**Session summary**: score by topic and chapter, the questions to revisit (which you can present again), and a printable or copyable report." }
+    ]
+  },
+  {
     id: 15,
     date: "2026-10-08",
     title: "Handouts print cleanly on iPhone and iPad",

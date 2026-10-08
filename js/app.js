@@ -264,7 +264,11 @@
         return renderExamSetup();
       case 'glossary': return renderGlossary(p[1]);
       case 'helpers': return p[1] ? renderHelper(p[1]) : renderHelpers();
-      case 'teach': return p[1] === 'run' ? renderTeachRun() : renderTeachSetup();
+      case 'teach':
+        if (p[1] === 'run') return renderTeachRun();
+        if (p[1] === 'summary') return renderTeachSummary(p[2]);
+        if (p[1] === 'presenter') return renderTeachPresenter();
+        return renderTeachSetup();
       case 'whats-new': return renderNews();
       case 'c':
         var ch = chapter(p[1]);
@@ -1631,19 +1635,22 @@
   }
 
   /* ---------- teaching mode ----------
-     A full-screen presentation of one case at a time for group discussion. Nothing here touches
-     the review schedule or the mistakes pile. */
+     A full-screen presentation of one case at a time for group discussion.
+     - Group tally: the presenter counts the room's votes per answer choice; reveal shows the spread.
+     - Facilitator notes: discussion prompts for the presenter, in a side panel or a separate presenter window.
+     - Session summary: score by topic and chapter, the questions to revisit, printable.
+     Nothing here touches the review schedule or the mistakes pile. */
   function teachItems(scope, kind) {
     var out = [];
     allChapters().forEach(function (ch) {
       if (scope !== 'all' && ch.id !== scope) return;
       if (kind === 'mcq') {
-        (ch.cases || []).forEach(function (c) { out.push({ id: ch.id + '/' + c.id, ch: ch, c: c }); });
+        (ch.cases || []).forEach(function (c) { out.push({ id: ch.id + '/' + c.id, ch: ch, c: c, notes: c.notes }); });
       } else if (ch.guide) {
         ch.guide.parts.forEach(function (pt) {
           pt.sections.forEach(function (s) {
             s.blocks.forEach(function (b, i) {
-              if (b.type === 'case') out.push({ id: ch.id + '/' + s.id + '--' + i, ch: ch, sec: s, title: String(b.title || 'Case').replace(/^Chapter case:\s*/i, ''), text: b.text, point: b.point });
+              if (b.type === 'case') out.push({ id: ch.id + '/' + s.id + '--' + i, ch: ch, sec: s, title: String(b.title || 'Case').replace(/^Chapter case:\s*/i, ''), text: b.text, point: b.point, notes: b.notes });
             });
           });
         });
@@ -1651,13 +1658,117 @@
     });
     return out;
   }
-  function teachPrefs() { return store.get('teachPrefs', { scope: 'all', kind: 'mcq', order: 'order' }); }
+  function teachPrefs() {
+    var p = store.get('teachPrefs', {}) || {};
+    return { scope: p.scope || 'all', kind: p.kind || 'mcq', order: p.order || 'order', counts: p.counts || 'hide' };
+  }
+
+  /* --- tally helpers. A session log maps item id -> { v: [votes per choice], r: 1 once revealed }. --- */
+  function tEnsure(S, id, n) {
+    S.log = S.log || {};
+    var e = S.log[id] || (S.log[id] = { v: [], r: 0 });
+    while (e.v.length < n) e.v.push(0);
+    return e;
+  }
+  function tSum(e) { var s = 0; if (e) for (var i = 0; i < e.v.length; i++) s += e.v[i]; return s; }
+  function tStats(c, e) {
+    var total = tSum(e), ok = (e && e.v[c.answer]) || 0, top = -1, topN = 0;
+    if (e) e.v.forEach(function (n, i) { if (i !== c.answer && n > topN) { topN = n; top = i; } });
+    return { total: total, ok: ok, pct: pct(ok, total), topWrong: top, topWrongN: topN };
+  }
+  function tVerdict(p) { return p >= 70 ? 'The room mostly had it.' : p >= 40 ? 'The room was split.' : 'Most of the room missed this one.'; }
+  var REVISIT_BELOW = 60;
+
+  /* --- facilitator notes. Built from what the app already knows about the case; a case may carry its
+         own `notes: { ask: [], watch: "", extend: [] }` (markdown-style bold allowed), which comes first. --- */
+  function tagPrompts(tag) {
+    var t = String(tag || '').toLowerCase();
+    if (/suicid|safety/.test(t)) return ['What would you ask, and how would you word it? What protective and risk factors change the disposition?', 'What would make you admit rather than follow up in clinic?'];
+    if (/side effect|monitor|clozapine|tardive|lai/.test(t)) return ['What would you monitor, how often, and what result would make you change course?', 'What do you tell the patient up front so they do not stop the drug on their own?'];
+    if (/drug details|novel|neurostim/.test(t)) return ['What distinguishes this treatment from its closest neighbor?', 'Who is it for, and who should not get it?'];
+    if (/medical|workup|neurolog|mimic/.test(t)) return ['What would you rule out before accepting a psychiatric explanation, and with which test?', 'Which finding in the stem should have raised the medical question?'];
+    if (/treat|psychotherapy|maintenance|response|agitation|special|older|bereave/.test(t)) return ['What is the goal right now: acute control, relapse prevention or tolerability?', 'What would you check before starting, and when would you expect to judge response?'];
+    if (/epidemiolog|genetic|neurobio|comorbid|prognos|course/.test(t)) return ['Which number or mechanism does the room remember, and where did they learn it?', 'How would this fact change what you tell a patient or family?'];
+    return ['Which features in the stem point to the answer? Which argue against the runner-up?', 'What single detail, if changed, would make a different choice correct?'];
+  }
+  function wrongChoiceRows(c, e) {
+    var s = tStats(c, e);
+    return c.choices.map(function (txt, i) { return { i: i, txt: txt }; }).filter(function (r) { return r.i !== c.answer; }).map(function (r) {
+      var n = e ? (e.v[r.i] || 0) : 0;
+      return '<li><b>' + LETTERS[r.i] + '.</b> ' + fmt(r.txt) + (n ? ' <span class="pn__tag' + (r.i === s.topWrong ? ' is-top' : '') + '">' + plural(n, 'vote') + (r.i === s.topWrong ? ', most chosen wrong answer: start here' : '') + '</span>' : '') + '</li>';
+    }).join('');
+  }
+  function teachNotesHtml(it, kind, e) {
+    var a = it.notes || {}, h = '', asks = [], extend = [];
+    function list(arr) { return '<ul>' + arr.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'; }
+    if (kind === 'mcq') {
+      var c = it.c, s = tStats(c, e);
+      asks = (a.ask || []).concat(['Before anyone votes: is this asking for a diagnosis, a next step or a mechanism?'], tagPrompts(c.tag));
+      h += '<h3>Ask the room</h3>' + list(asks);
+      h += '<h3>Anchor</h3><p><b>Answer ' + LETTERS[c.answer] + '.</b> ' + fmt(c.choices[c.answer]) + '</p><p>' + fmt(c.why) + '</p>';
+      if (a.watch) h += '<p class="pn__watch"><b>Watch for:</b> ' + fmt(a.watch) + '</p>';
+      if (s.total) h += '<p class="pn__live"><b>Live tally:</b> ' + s.ok + ' of ' + s.total + ' on the correct answer (' + s.pct + '%). ' + tVerdict(s.pct) + '</p>';
+      h += '<h3>Probe the other choices</h3><p class="pn__hint">For each, ask what would have to change in the vignette for it to be right.</p><ul class="pn__wrong">' + wrongChoiceRows(c, e) + '</ul>';
+      extend = (a.extend || []).concat(['Ask one resident to state the take-home in a single sentence.']);
+      h += '<h3>Extend</h3>' + list(extend);
+      h += '<p class="pn__links"><a href="#/c/' + it.ch.id + '/high-yield" target="_blank" rel="noopener">High-yield list</a> <a href="#/c/' + it.ch.id + '/guide" target="_blank" rel="noopener">Study guide</a> <a href="#/c/' + it.ch.id + '/cards/' + 'cases' + '" target="_blank" rel="noopener">Case deck</a></p>';
+    } else {
+      asks = (a.ask || []).concat(['Before the reveal: name the diagnosis and two features that support it.', 'What single detail, if changed, would change the diagnosis?', 'What is the next step in management, and why that one?']);
+      h += '<h3>Ask the room</h3>' + list(asks);
+      h += '<h3>Anchor</h3><p>' + fmt(it.point || '') + '</p>';
+      if (a.watch) h += '<p class="pn__watch"><b>Watch for:</b> ' + fmt(a.watch) + '</p>';
+      extend = (a.extend || []).concat(['Which other disorder in this chapter does this case most resemble, and what separates them?']);
+      h += '<h3>Extend</h3>' + list(extend);
+      h += '<p class="pn__links"><a href="#/c/' + it.ch.id + '/guide/' + it.sec.id + '" target="_blank" rel="noopener">Open this study-guide section</a> <a href="#/c/' + it.ch.id + '/high-yield" target="_blank" rel="noopener">High-yield list</a></p>';
+    }
+    return h;
+  }
+
+  function saveTeachSession(S) {
+    var list = store.get('teachSessions', []) || [];
+    list = list.filter(function (r) { return r.id !== S.started; });
+    list.unshift({ id: S.started, at: Date.now(), scope: S.scope, kind: S.kind, order: S.order, log: S.log || {} });
+    store.set('teachSessions', list.slice(0, 10));
+  }
+  /* Totals for a finished (or in-progress) MCQ session. */
+  function summarize(rec) {
+    var byId = {};
+    teachItems(rec.scope, rec.kind).forEach(function (it) { byId[it.id] = it; });
+    var out = { rows: [], polled: 0, presented: 0, votes: 0, ok: 0, byTopic: {}, byCh: {}, revisit: [], gotIt: 0, covered: [], skipped: [] };
+    rec.order.forEach(function (id) {
+      var it = byId[id], e = rec.log && rec.log[id];
+      if (!it || !e) return;
+      out.presented++;
+      if (rec.kind !== 'mcq') { (e.r ? out.covered : out.skipped).push(it); return; }
+      var s = tStats(it.c, e);
+      if (!s.total) return;
+      out.polled++; out.votes += s.total; out.ok += s.ok;
+      if (s.pct >= REVISIT_BELOW) out.gotIt++;
+      var t = 'Ch ' + it.ch.number + ', ' + (it.c.tag || 'General');
+      var tb = out.byTopic[t] || (out.byTopic[t] = { n: 0, ok: 0, q: 0 }); tb.n += s.total; tb.ok += s.ok; tb.q++;
+      var ck = 'Chapter ' + it.ch.number + ': ' + (it.ch.short || it.ch.title);
+      var cb = out.byCh[ck] || (out.byCh[ck] = { n: 0, ok: 0, q: 0 }); cb.n += s.total; cb.ok += s.ok; cb.q++;
+      if (s.pct < REVISIT_BELOW) out.revisit.push({ it: it, e: e, s: s });
+    });
+    out.revisit.sort(function (a, b) { return a.s.pct - b.s.pct || b.s.total - a.s.total; });
+    return out;
+  }
 
   function renderTeachSetup() {
     var prefs = teachPrefs();
     if (prefs.scope !== 'all' && !chapter(prefs.scope)) prefs.scope = 'all';
+    var past = store.get('teachSessions', []) || [];
+    var pastHtml = '';
+    if (past.length) {
+      pastHtml = '<section class="teach-past"><h2>Recent sessions</h2><ul>' + past.slice(0, 5).map(function (r) {
+        var sm = summarize(r), line = r.kind === 'mcq'
+          ? plural(sm.polled, 'question') + ' polled' + (sm.votes ? ', ' + pct(sm.ok, sm.votes) + '% correct' : '')
+          : plural(sm.covered.length, 'chapter case') + ' discussed';
+        return '<li><a href="#/teach/summary/' + r.id + '"><b>' + fmtDate(r.at) + '</b> <span class="muted">' + esc(line) + '</span></a></li>';
+      }).join('') + '</ul></section>';
+    }
     var html = '<div class="wrap page teach-setup">' +
-      '<header class="page__head"><h1>Teaching mode</h1><p>Present one case at a time, full screen, for ward rounds, journal club or a group session. Choices can be marked as the group votes; the answer stays hidden until you reveal it. Nothing here affects anyone’s review schedule or mistakes.</p></header>' +
+      '<header class="page__head"><h1>Teaching mode</h1><p>Present one case at a time, full screen, for ward rounds, journal club or a group session. Count the room’s votes for each answer choice; the answer stays hidden until you reveal it, and then the spread shows. Facilitator notes keep your discussion prompts off the shared screen. A summary at the end shows what to revisit. Nothing here affects anyone’s review schedule or mistakes.</p></header>' +
       '<div class="exam-form">' +
         '<fieldset><legend>Chapter</legend><label class="select"><select id="t-scope"><option value="all"' + (prefs.scope === 'all' ? ' selected' : '') + '>All chapters</option>' +
           allChapters().map(function (ch) { return '<option value="' + ch.id + '"' + (prefs.scope === ch.id ? ' selected' : '') + '>Chapter ' + ch.number + ': ' + esc(ch.short || ch.title) + '</option>'; }).join('') + '</select></label></fieldset>' +
@@ -1668,8 +1779,12 @@
         '<fieldset><legend>Order</legend><div class="seg">' +
           '<label><input type="radio" name="order" value="order"' + (prefs.order === 'order' ? ' checked' : '') + '><span>In order</span></label>' +
           '<label><input type="radio" name="order" value="shuffle"' + (prefs.order === 'shuffle' ? ' checked' : '') + '><span>Shuffled</span></label></div></fieldset>' +
+        '<fieldset id="t-counts-set"><legend>Vote counts on screen</legend><div class="seg">' +
+          '<label><input type="radio" name="counts" value="hide"' + (prefs.counts === 'hide' ? ' checked' : '') + '><span>Hide until reveal</span></label>' +
+          '<label><input type="radio" name="counts" value="show"' + (prefs.counts === 'show' ? ' checked' : '') + '><span>Show as I count</span></label></div>' +
+          '<p class="muted teach-setup__hint">Hiding keeps late voters from following the crowd. The presenter window always shows the live counts.</p></fieldset>' +
         '<button class="btn btn--solid" type="button" id="t-start">Start presenting</button>' +
-      '</div>' +
+      '</div>' + pastHtml +
       '<section class="teach-list"><h2 id="t-count"></h2><ol id="t-list"></ol></section></div>';
     setView('teach', html);
     document.title = 'Teaching mode — K&S Study Companion';
@@ -1677,19 +1792,21 @@
       prefs.scope = main.querySelector('#t-scope').value;
       prefs.kind = main.querySelector('input[name=kind]:checked').value;
       prefs.order = main.querySelector('input[name=order]:checked').value;
+      prefs.counts = main.querySelector('input[name=counts]:checked').value;
       store.set('teachPrefs', prefs);
     }
     function list() {
       read();
       var items = teachItems(prefs.scope, prefs.kind);
+      main.querySelector('#t-counts-set').hidden = prefs.kind !== 'mcq';
       main.querySelector('#t-hint').textContent = prefs.kind === 'mcq'
-        ? 'Single-best-answer vignettes. Reveal shows the answer and its explanation.'
+        ? 'Single-best-answer vignettes. Count the room’s votes, then reveal the answer and its explanation.'
         : 'The textbook cases summarized in each study guide. Reveal shows the teaching point.';
       main.querySelector('#t-count').textContent = plural(items.length, prefs.kind === 'mcq' ? 'question' : 'chapter case');
       main.querySelector('#t-list').innerHTML = items.map(function (it, i) {
         var label = prefs.kind === 'mcq' ? plain(it.c.q) : it.title;
         var meta = 'Ch ' + it.ch.number + ', ' + (prefs.kind === 'mcq' ? (it.c.tag || 'Case') : it.sec.title);
-        return '<li><button type="button" class="teach-item" data-start="' + i + '"><span class="teach-item__meta">' + esc(meta) + '</span><span class="teach-item__q">' + esc(label.length > 170 ? label.slice(0, 170) + '\u2026' : label) + '</span></button></li>';
+        return '<li><button type="button" class="teach-item" data-start="' + i + '"><span class="teach-item__meta">' + esc(meta) + '</span><span class="teach-item__q">' + esc(label.length > 170 ? label.slice(0, 170) + '…' : label) + '</span></button></li>';
       }).join('');
       main.querySelectorAll('[data-start]').forEach(function (b) { b.addEventListener('click', function () { start(parseInt(b.getAttribute('data-start'), 10)); }); });
     }
@@ -1699,12 +1816,12 @@
       if (!ids.length) return;
       var first = typeof from === 'number' ? ids[from] : null;
       if (prefs.order === 'shuffle') { shuffle(ids); if (first) { ids.splice(ids.indexOf(first), 1); ids.unshift(first); } }
-      store.set('teach', { scope: prefs.scope, kind: prefs.kind, order: ids, pos: prefs.order === 'shuffle' || first === null ? 0 : from });
+      store.set('teach', { scope: prefs.scope, kind: prefs.kind, order: ids, pos: prefs.order === 'shuffle' || first === null ? 0 : from, started: Date.now(), counts: prefs.counts, log: {} });
       enterFullscreen();
       location.hash = '#/teach/run';
     }
     main.querySelector('#t-scope').addEventListener('change', list);
-    main.querySelectorAll('input[name=kind], input[name=order]').forEach(function (i) { i.addEventListener('change', list); });
+    main.querySelectorAll('input[name=kind], input[name=order], input[name=counts]').forEach(function (i) { i.addEventListener('change', list); });
     main.querySelector('#t-start').addEventListener('click', function () { start(null); });
     list();
   }
@@ -1726,52 +1843,116 @@
     S.order = S.order.filter(function (id) { return byId[id]; });
     if (!S.order.length) { location.hash = '#/teach'; return; }
     S.pos = Math.max(0, Math.min(S.pos || 0, S.order.length - 1));
-    var st = { revealed: false, picked: null };
+    S.log = S.log || {};
+    if (!S.started) S.started = Date.now();
+    var mcq = S.kind === 'mcq';
+    var st = { revealed: false, undo: [] }, buf = '', notesOpen = false;
     setView('teach-run', '<div class="teach" id="teach" role="region" aria-label="Teaching mode"></div>');
     document.title = 'Teaching mode — K&S Study Companion';
     document.body.classList.add('is-teaching');
     var box = main.querySelector('#teach');
 
+    function curId() { return S.order[S.pos]; }
+    function cur() { return byId[curId()]; }
+    function persist() {
+      store.set('teach', S);
+      store.set('teachLive', { t: Date.now(), id: curId(), revealed: st.revealed, buf: buf });
+    }
+
     function draw() {
-      var it = byId[S.order[S.pos]];
-      var mcq = S.kind === 'mcq';
+      var it = cur(), e = S.log[curId()] || null;
       var meta = 'Chapter ' + it.ch.number + ', ' + (mcq ? (it.c.tag || 'Case') : it.sec.title);
-      var body;
+      var body, total = 0;
       if (mcq) {
-        var c = it.c;
+        var c = it.c, s = tStats(c, e), show = S.counts === 'show';
+        total = s.total;
         body = '<p class="teach__stem">' + fmt(c.q) + '</p><ul class="teach__choices">' + c.choices.map(function (ch2, i) {
-          var cls = st.revealed ? (i === c.answer ? ' is-correct' : (i === st.picked ? ' is-wrong' : ' is-dim')) : (i === st.picked ? ' is-picked' : '');
-          return '<li><button type="button" class="tchoice' + cls + '" data-pick="' + i + '"' + (st.revealed ? ' disabled' : '') + ' aria-pressed="' + (i === st.picked) + '"><span class="tchoice__key">' + LETTERS[i] + '</span><span>' + fmt(ch2) + '</span></button></li>';
+          var n = e ? (e.v[i] || 0) : 0, share = s.total ? Math.round(n / s.total * 100) : 0, cls = '';
+          if (st.revealed) cls = i === c.answer ? ' is-correct' : (i === s.topWrong ? ' is-wrong' : ' is-dim');
+          else if (n) cls = ' is-picked';
+          var badge = (st.revealed || show) && s.total ? '<span class="tchoice__n">' + n + (st.revealed ? ' · ' + share + '%' : '') + '</span>' : '';
+          var bar = st.revealed && s.total ? '<span class="tchoice__bar" style="width:' + share + '%"></span>' : '';
+          return '<li class="tc-row"><button type="button" class="tchoice' + cls + '" data-pick="' + i + '"' + (st.revealed ? ' disabled' : '') + '>' + bar + '<span class="tchoice__key">' + LETTERS[i] + '</span><span class="tchoice__txt">' + fmt(ch2) + '</span>' + badge + '</button>' +
+            (st.revealed ? '' : '<button type="button" class="tminus" data-minus="' + i + '" aria-label="Remove one vote for ' + LETTERS[i] + '" title="Remove one vote">−</button>') + '</li>';
         }).join('') + '</ul>' +
-        (st.revealed ? '<div class="teach__answer"><p class="teach__label">Answer: ' + LETTERS[c.answer] + (st.picked == null ? '' : st.picked === c.answer ? ', the group got it' : ', the group chose ' + LETTERS[st.picked]) + '</p><p>' + fmt(c.why) + '</p></div>' : '');
+        (st.revealed ? '<div class="teach__answer"><p class="teach__label">Answer: ' + LETTERS[c.answer] + (s.total ? ' · ' + s.ok + ' of ' + s.total + ' (' + s.pct + '%) chose it' : '') + '</p>' +
+          (s.total ? '<p class="teach__verdict">' + tVerdict(s.pct) + (s.topWrong > -1 ? ' Most chosen wrong answer: ' + LETTERS[s.topWrong] + ' (' + s.topWrongN + ').' : '') + '</p>' : '') +
+          '<p>' + fmt(c.why) + '</p></div>' : '');
       } else {
         body = '<h2 class="teach__title">' + esc(it.title) + '</h2><p class="teach__stem">' + fmt(it.text) + '</p>' +
           (st.revealed ? '<div class="teach__answer"><p class="teach__label">Teaching point</p><p>' + fmt(it.point || '') + '</p></div>' : '<p class="teach__prompt">What is the diagnosis, and what does this case teach?</p>');
       }
+      var last = S.pos >= S.order.length - 1;
       box.innerHTML =
         '<div class="teach__bar"><span class="teach__meta">' + esc(meta) + '</span><span class="teach__pos">' + (mcq ? 'Question ' : 'Case ') + (S.pos + 1) + ' of ' + S.order.length + '</span>' +
-          '<span class="teach__spacer"></span><button class="tbtn" type="button" id="t-fs">' + (isFullscreen() ? 'Exit full screen' : 'Full screen') + '</button><button class="tbtn" type="button" id="t-exit">Close</button></div>' +
+          (mcq ? '<span class="teach__votes" aria-live="polite">' + plural(total, 'vote') + (buf ? ' · adding ' + esc(buf) : '') + '</span>' : '') +
+          '<span class="teach__spacer"></span>' +
+          '<button class="tbtn" type="button" id="t-notes" aria-expanded="' + notesOpen + '">Notes</button>' +
+          '<button class="tbtn" type="button" id="t-presenter" title="Open the presenter view in its own window">Presenter window</button>' +
+          '<button class="tbtn" type="button" id="t-fs">' + (isFullscreen() ? 'Exit full screen' : 'Full screen') + '</button>' +
+          '<button class="tbtn" type="button" id="t-end">End session</button><button class="tbtn" type="button" id="t-exit">Close</button></div>' +
         '<div class="teach__stage"><div class="teach__inner' + (st.revealed ? ' is-revealed' : '') + '">' + body + '</div></div>' +
         '<div class="teach__nav"><button class="tbtn" type="button" id="t-prev"' + (S.pos ? '' : ' disabled') + '>Previous</button>' +
+          (mcq && !st.revealed ? '<button class="tbtn" type="button" id="t-undo"' + (st.undo.length ? '' : ' disabled') + '>Undo vote</button>' : '') +
           '<button class="tbtn tbtn--solid" type="button" id="t-reveal">' + (st.revealed ? 'Hide answer' : mcq ? 'Reveal answer' : 'Reveal teaching point') + '</button>' +
-          '<button class="tbtn" type="button" id="t-next"' + (S.pos < S.order.length - 1 ? '' : ' disabled') + '>Next</button></div>' +
-        '<p class="teach__keys" aria-hidden="true">Space reveal \u00b7 \u2190 \u2192 move \u00b7 ' + (mcq ? 'A\u2013E mark the group\u2019s answer \u00b7 ' : '') + 'F full screen \u00b7 Esc close</p>';
+          (last ? '<button class="tbtn" type="button" id="t-next">Finish</button>' : '<button class="tbtn" type="button" id="t-next">Next</button>') + '</div>' +
+        '<p class="teach__keys" aria-hidden="true">' + (mcq ? 'Click or A–E add a vote · Shift+letter or − removes one · type 12 then B adds 12 · U undo · ' : '') + 'Space reveal · ← → move · N notes · P presenter window · F full screen · Esc close</p>' +
+        (notesOpen ? '<aside class="teach__notes pn" aria-label="Facilitator notes"><div class="pn__head"><b>Facilitator notes</b><button class="pn__x" type="button" id="t-notes-x" aria-label="Close notes">×</button></div><p class="pn__warn">Visible to everyone while you share this screen. Use the presenter window to keep notes private.</p>' + teachNotesHtml(it, S.kind, e) + '</aside>' : '');
       linkTerms(box.querySelector('.teach__inner'), { skip: '.tchoice__key, .teach__label' });
       box.querySelectorAll('[data-pick]').forEach(function (b) {
-        b.addEventListener('click', function () { var i = parseInt(b.getAttribute('data-pick'), 10); st.picked = st.picked === i ? null : i; draw(); });
+        var i = parseInt(b.getAttribute('data-pick'), 10);
+        b.addEventListener('click', function (ev) { addVote(i, ev.shiftKey ? -1 : 1); });
+        b.addEventListener('contextmenu', function (ev) { ev.preventDefault(); addVote(i, -1); });
       });
+      box.querySelectorAll('[data-minus]').forEach(function (b) { b.addEventListener('click', function () { addVote(parseInt(b.getAttribute('data-minus'), 10), -1); }); });
       box.querySelector('#t-reveal').addEventListener('click', toggle);
       box.querySelector('#t-prev').addEventListener('click', function () { go(-1); });
-      box.querySelector('#t-next').addEventListener('click', function () { go(1); });
+      box.querySelector('#t-next').addEventListener('click', function () { if (last) finish(); else go(1); });
+      var ub = box.querySelector('#t-undo'); if (ub) ub.addEventListener('click', undo);
       box.querySelector('#t-exit').addEventListener('click', close);
+      box.querySelector('#t-end').addEventListener('click', finish);
+      box.querySelector('#t-notes').addEventListener('click', toggleNotes);
+      var nx = box.querySelector('#t-notes-x'); if (nx) nx.addEventListener('click', toggleNotes);
+      box.querySelector('#t-presenter').addEventListener('click', openPresenter);
       box.querySelector('#t-fs').addEventListener('click', function () { if (isFullscreen()) exitFullscreen(); else enterFullscreen(); });
       box.querySelector('.teach__stage').scrollTop = 0;
+      persist();
     }
-    function toggle() { st.revealed = !st.revealed; draw(); var a = box.querySelector('.teach__answer'); if (a) a.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' }); }
+    function toggleNotes() { notesOpen = !notesOpen; draw(); }
+    function openPresenter() {
+      var w = null;
+      try { w = window.open(location.href.split('#')[0] + '#/teach/presenter', 'ks-presenter', 'width=560,height=840'); } catch (x) { w = null; }
+      if (!w) { notesOpen = true; draw(); }
+    }
+    function addVote(i, d, n) {
+      if (!mcq || st.revealed) return;
+      var it = cur(), e = tEnsure(S, curId(), it.c.choices.length);
+      if (i < 0 || i >= it.c.choices.length) return;
+      var amt = n || (buf ? parseInt(buf, 10) : 1) || 1;
+      if (d < 0) amt = Math.min(amt, e.v[i]);
+      buf = '';
+      if (!amt) { draw(); return; }
+      e.v[i] += d * amt;
+      st.undo.push({ i: i, d: d, n: amt });
+      draw();
+    }
+    function undo() {
+      if (!mcq || st.revealed || !st.undo.length) return;
+      var op = st.undo.pop(), e = tEnsure(S, curId(), cur().c.choices.length);
+      e.v[op.i] = Math.max(0, e.v[op.i] - op.d * op.n);
+      draw();
+    }
+    function toggle() {
+      st.revealed = !st.revealed; buf = '';
+      if (st.revealed) tEnsure(S, curId(), mcq ? cur().c.choices.length : 0).r = 1;
+      draw();
+      var a = box.querySelector('.teach__answer'); if (a) a.scrollIntoView({ block: 'nearest', behavior: reduceMotion() ? 'auto' : 'smooth' });
+    }
     function go(d) {
       var np = S.pos + d; if (np < 0 || np >= S.order.length) return;
-      S.pos = np; store.set('teach', S); st = { revealed: false, picked: null }; draw();
+      S.pos = np; st = { revealed: false, undo: [] }; buf = ''; draw();
     }
+    function finish() { saveTeachSession(S); exitFullscreen(); location.hash = '#/teach/summary/' + S.started; }
     function close() { exitFullscreen(); location.hash = '#/teach'; }
     function onKey(e) {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -1781,23 +1962,172 @@
       else if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(1); }
       else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
       else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); if (isFullscreen()) exitFullscreen(); else enterFullscreen(); }
+      else if (e.key === 'n' || e.key === 'N') { e.preventDefault(); toggleNotes(); }
+      else if (e.key === 'p' || e.key === 'P') { e.preventDefault(); openPresenter(); }
+      else if (e.key === 'Escape' && buf) { e.preventDefault(); buf = ''; draw(); }
+      else if (e.key === 'Escape' && notesOpen) { e.preventDefault(); toggleNotes(); }
       else if (e.key === 'Escape' && !isFullscreen() && !(glPop && !glPop.hidden)) { e.preventDefault(); close(); }
-      else if (S.kind === 'mcq' && !st.revealed && /^[a-e]$/i.test(e.key)) {
-        var i = 'abcde'.indexOf(e.key.toLowerCase()), c = byId[S.order[S.pos]].c;
-        if (i < c.choices.length) { e.preventDefault(); st.picked = st.picked === i ? null : i; draw(); }
+      else if (mcq && !st.revealed && /^[0-9]$/.test(e.key)) { e.preventDefault(); if (buf.length < 3) { buf += e.key; draw(); } }
+      else if (mcq && !st.revealed && (e.key === 'u' || e.key === 'U' || e.key === 'Backspace')) { e.preventDefault(); if (buf) { buf = buf.slice(0, -1); draw(); } else undo(); }
+      else if (mcq && !st.revealed && /^[a-e]$/i.test(e.key)) {
+        var i = 'abcde'.indexOf(e.key.toLowerCase());
+        if (i < cur().c.choices.length) { e.preventDefault(); addVote(i, e.shiftKey ? -1 : 1); }
       }
+    }
+    /* Commands from the presenter window arrive through localStorage. */
+    function onStorage(ev) {
+      if (ev.key !== PREFIX + 'teachCmd' || !ev.newValue) return;
+      var m; try { m = JSON.parse(ev.newValue); } catch (x) { return; }
+      if (m.cmd === 'next') { if (S.pos >= S.order.length - 1) finish(); else go(1); }
+      else if (m.cmd === 'prev') go(-1);
+      else if (m.cmd === 'reveal') toggle();
+      else if (m.cmd === 'vote') addVote(m.i, m.d, m.n || 1);
+      else if (m.cmd === 'undo') undo();
     }
     function onFs() { var b = box.querySelector('#t-fs'); if (b) b.textContent = isFullscreen() ? 'Exit full screen' : 'Full screen'; }
     document.addEventListener('keydown', onKey);
+    window.addEventListener('storage', onStorage);
     document.addEventListener('fullscreenchange', onFs);
     document.addEventListener('webkitfullscreenchange', onFs);
     draw();
     view.cleanup = function () {
       document.removeEventListener('keydown', onKey);
+      window.removeEventListener('storage', onStorage);
       document.removeEventListener('fullscreenchange', onFs);
       document.removeEventListener('webkitfullscreenchange', onFs);
       document.body.classList.remove('is-teaching');
     };
+  }
+
+  /* ---------- presenter window: live counts, vote entry and private notes ---------- */
+  function renderTeachPresenter() {
+    document.title = 'Presenter view — K&S Study Companion';
+    document.body.classList.add('is-presenter');
+    setView('teach-presenter', '<div class="wrap page presenter" id="presenter"></div>');
+    var box = main.querySelector('#presenter');
+    function send(cmd, extra) {
+      var m = { cmd: cmd, seq: Date.now() + Math.random() };
+      if (extra) Object.keys(extra).forEach(function (k) { m[k] = extra[k]; });
+      store.set('teachCmd', m);
+    }
+    function draw() {
+      var S = store.get('teach', null), live = store.get('teachLive', null);
+      if (!S || !live) {
+        box.innerHTML = '<h1>Presenter view</h1><p>Start presenting in the main window, then this view follows along with live vote counts and your private notes.</p><p><a class="btn btn--solid" href="#/teach">Open teaching mode</a></p>';
+        return;
+      }
+      var byId = {};
+      teachItems(S.scope, S.kind).forEach(function (it) { byId[it.id] = it; });
+      var it = byId[live.id];
+      if (!it) { box.innerHTML = '<p>That session has ended.</p>'; return; }
+      var mcq = S.kind === 'mcq', e = (S.log || {})[live.id] || null, pos = S.order.indexOf(live.id);
+      var h = '<p class="pres__meta"><b>Presenter view</b> · ' + (mcq ? 'Question ' : 'Case ') + (pos + 1) + ' of ' + S.order.length + ' · Chapter ' + it.ch.number + ', ' + esc(mcq ? (it.c.tag || 'Case') : it.sec.title) + '</p>';
+      if (mcq) {
+        var c = it.c, s = tStats(c, e);
+        h += '<p class="pres__stem">' + fmt(c.q) + '</p><ul class="pres__choices">' + c.choices.map(function (t, i) {
+          var n = e ? (e.v[i] || 0) : 0;
+          return '<li class="' + (i === c.answer ? 'is-answer' : '') + '"><span class="pres__key">' + LETTERS[i] + '</span><span class="pres__txt">' + fmt(t) + (i === c.answer ? ' <span class="pn__tag is-ok">correct</span>' : '') + '</span>' +
+            '<span class="pres__ctl"><button type="button" data-v="' + i + '" data-d="-1" aria-label="Remove one vote for ' + LETTERS[i] + '"' + (live.revealed ? ' disabled' : '') + '>−</button><b class="pres__n">' + n + '</b><button type="button" data-v="' + i + '" data-d="1" aria-label="Add one vote for ' + LETTERS[i] + '"' + (live.revealed ? ' disabled' : '') + '>+</button></span></li>';
+        }).join('') + '</ul><p class="pres__tot">' + plural(s.total, 'vote') + (s.total ? ' · ' + s.pct + '% on the correct answer' : '') + (live.revealed ? ' · answer is showing on the main screen' : '') + '</p>';
+      } else {
+        h += '<h2>' + esc(it.title) + '</h2><p class="pres__stem">' + fmt(it.text) + '</p>';
+      }
+      h += '<div class="pres__nav"><button class="btn" type="button" data-c="prev"' + (pos ? '' : ' disabled') + '>Previous</button>' +
+        (mcq && !live.revealed ? '<button class="btn" type="button" data-c="undo">Undo vote</button>' : '') +
+        '<button class="btn btn--solid" type="button" data-c="reveal">' + (live.revealed ? 'Hide answer' : 'Reveal on main screen') + '</button>' +
+        '<button class="btn" type="button" data-c="next">' + (pos >= S.order.length - 1 ? 'Finish' : 'Next') + '</button></div>' +
+        '<section class="pn">' + teachNotesHtml(it, S.kind, e) + '</section>';
+      box.innerHTML = h;
+      linkTerms(box, {});
+      box.querySelectorAll('[data-v]').forEach(function (b) { b.addEventListener('click', function () { send('vote', { i: parseInt(b.getAttribute('data-v'), 10), d: parseInt(b.getAttribute('data-d'), 10), n: 1 }); }); });
+      box.querySelectorAll('[data-c]').forEach(function (b) { b.addEventListener('click', function () { send(b.getAttribute('data-c')); }); });
+    }
+    function onStorage(ev) { if (ev.key === PREFIX + 'teach' || ev.key === PREFIX + 'teachLive') draw(); }
+    window.addEventListener('storage', onStorage);
+    draw();
+    view.cleanup = function () { window.removeEventListener('storage', onStorage); document.body.classList.remove('is-presenter'); };
+  }
+
+  /* ---------- session summary ---------- */
+  function renderTeachSummary(id) {
+    var list = store.get('teachSessions', []) || [], rec = null;
+    list.forEach(function (r) { if (String(r.id) === String(id) || (!id && !rec)) rec = r; });
+    if (!rec) {
+      setView('teach-summary', '<div class="wrap empty" style="margin-top:48px"><h2>No session to summarize</h2><p>Finish a teaching session and its summary appears here.</p><a class="btn btn--solid" href="#/teach">Teaching mode</a></div>');
+      document.title = 'Session summary — K&S Study Companion';
+      return;
+    }
+    var sm = summarize(rec), mcq = rec.kind === 'mcq';
+    function rows(obj, sortWeak) {
+      var ks = Object.keys(obj);
+      if (sortWeak) ks.sort(function (a, b) { return obj[a].ok / obj[a].n - obj[b].ok / obj[b].n || obj[b].n - obj[a].n; });
+      return ks.map(function (k) {
+        var v = obj[k], p = pct(v.ok, v.n);
+        return '<tr><th scope="row">' + esc(k) + '</th><td>' + plural(v.q, 'question') + '</td><td>' + v.ok + ' of ' + plural(v.n, 'vote') + '</td><td class="bar-cell"><span class="score-bar"><span style="width:' + p + '%" class="' + (p >= 70 ? 'is-good' : p >= 50 ? 'is-mid' : 'is-low') + '"></span></span><span class="score-pct">' + p + '%</span></td></tr>';
+      }).join('');
+    }
+    function table(title, note, obj, weak) {
+      return '<section class="results-sec"><h2>' + title + '</h2><p class="muted">' + note + '</p><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">' + (weak ? 'Topic' : 'Chapter') + '</th><th scope="col">Questions</th><th scope="col">Correct</th><th scope="col">Score</th></tr></thead><tbody>' + rows(obj, weak) + '</tbody></table></div></section>';
+    }
+    var p = pct(sm.ok, sm.votes), live = store.get('teach', null), canResume = live && live.started === rec.id;
+    var html = '<div class="wrap page exam-results teach-summary">' +
+      '<header class="page__head"><p class="crumb"><a href="#/teach">Teaching mode</a></p><h1>Session summary</h1><p>' + fmtDate(rec.at) + '. ' + (rec.scope === 'all' ? 'All chapters' : 'Chapter ' + (chapter(rec.scope) || {}).number) + ', ' + (mcq ? 'board-style questions' : 'chapter cases') + '.</p></header>';
+    if (mcq) {
+      html += (sm.votes
+        ? '<div class="score"><p class="score__big">' + p + '<span>%</span></p><div><p class="score__line"><b>' + sm.ok + ' of ' + plural(sm.votes, 'vote') + '</b> on the correct answer</p><p class="score__line">' + plural(sm.polled, 'question') + ' polled' + (sm.presented > sm.polled ? ', ' + (sm.presented - sm.polled) + ' shown without a vote' : '') + '. The room got ' + sm.gotIt + ' of ' + sm.polled + ' (' + REVISIT_BELOW + '% or better).</p></div></div>'
+        : '<p class="muted">No votes were counted in this session, so there is no score. Votes are counted by clicking a choice or pressing A–E while presenting.</p>');
+    } else {
+      html += '<div class="score"><p class="score__big">' + sm.covered.length + '</p><div><p class="score__line"><b>chapter cases discussed</b> and revealed</p>' + (sm.skipped.length ? '<p class="score__line">' + sm.skipped.length + ' opened but not revealed.</p>' : '') + '</div></div>';
+    }
+    html += '<div class="empty__actions results-actions no-print">' +
+      (mcq && sm.revisit.length ? '<button class="btn btn--solid" type="button" id="ts-again">Present the ' + sm.revisit.length + ' to revisit</button>' : '') +
+      '<button class="btn' + (mcq && sm.revisit.length ? '' : ' btn--solid') + '" type="button" id="ts-print">Print or save as PDF</button>' +
+      '<button class="btn" type="button" id="ts-copy">Copy as text</button>' +
+      (canResume ? '<a class="btn" href="#/teach/run">Back to the session</a>' : '') +
+      '<a class="btn" href="#/teach">New session</a></div><p class="muted no-print" id="ts-msg" role="status"></p>';
+    if (mcq && sm.votes) {
+      html += table('Score by topic', 'Weakest first. Votes are pooled across the questions in each topic.', sm.byTopic, true) + table('Score by chapter', '', sm.byCh, false);
+      html += '<section class="results-sec"><h2>Questions to revisit</h2>';
+      if (!sm.revisit.length) html += '<p class="muted">The room scored ' + REVISIT_BELOW + '% or better on every question it was polled on.</p>';
+      else {
+        html += '<p class="muted">Under ' + REVISIT_BELOW + '% on the correct answer, lowest first.</p><ol class="ts-miss">' + sm.revisit.map(function (r) {
+          var c = r.it.c;
+          return '<li><p class="ts-miss__meta">Chapter ' + r.it.ch.number + ', ' + esc(c.tag || 'Case') + ' · ' + r.s.pct + '% correct (' + r.s.ok + ' of ' + r.s.total + ')</p><p class="ts-miss__q">' + fmt(c.q) + '</p>' +
+            '<p class="ts-miss__dist">' + c.choices.map(function (t, i) { return '<span class="' + (i === c.answer ? 'is-ok' : '') + '">' + LETTERS[i] + ' ' + (r.e.v[i] || 0) + '</span>'; }).join('') + '</p>' +
+            '<p><b>Answer ' + LETTERS[c.answer] + ':</b> ' + fmt(c.choices[c.answer]) + '</p><p class="ts-miss__why">' + fmt(c.why) + '</p></li>';
+        }).join('') + '</ol>';
+      }
+      html += '</section>';
+    } else if (!mcq && sm.covered.length) {
+      html += '<section class="results-sec"><h2>Cases discussed</h2><ol class="ts-miss">' + sm.covered.map(function (it) {
+        return '<li><p class="ts-miss__meta">Chapter ' + it.ch.number + ', ' + esc(it.sec.title) + '</p><p class="ts-miss__q"><b>' + esc(it.title) + '</b></p><p class="ts-miss__why">' + fmt(it.point || '') + '</p><p class="no-print"><a href="#/c/' + it.ch.id + '/guide/' + it.sec.id + '">Open in the study guide</a></p></li>';
+      }).join('') + '</ol></section>';
+    }
+    html += '</div>';
+    setView('teach-summary:' + rec.id, html);
+    document.title = 'Session summary — K&S Study Companion';
+    linkTerms(main, {});
+    var again = main.querySelector('#ts-again');
+    if (again) again.addEventListener('click', function () {
+      store.set('teach', { scope: 'all', kind: rec.kind, order: sm.revisit.map(function (r) { return r.it.id; }), pos: 0, started: Date.now(), counts: teachPrefs().counts, log: {} });
+      enterFullscreen();
+      location.hash = '#/teach/run';
+    });
+    main.querySelector('#ts-print').addEventListener('click', function () { try { window.print(); } catch (x) {} });
+    main.querySelector('#ts-copy').addEventListener('click', function () {
+      var t = 'Teaching session ' + fmtDate(rec.at) + '\n';
+      if (mcq) {
+        t += sm.votes ? p + '% correct (' + sm.ok + ' of ' + sm.votes + ' votes, ' + plural(sm.polled, 'question') + ')\n\nBy topic (weakest first):\n' : 'No votes counted.\n';
+        Object.keys(sm.byTopic).sort(function (a, b) { return sm.byTopic[a].ok / sm.byTopic[a].n - sm.byTopic[b].ok / sm.byTopic[b].n; }).forEach(function (k) { t += '- ' + k + ': ' + pct(sm.byTopic[k].ok, sm.byTopic[k].n) + '%\n'; });
+        if (sm.revisit.length) { t += '\nTo revisit:\n'; sm.revisit.forEach(function (r) { t += '- Ch ' + r.it.ch.number + ', ' + (r.it.c.tag || 'Case') + ' (' + r.s.pct + '%): ' + plain(r.it.c.q) + ' Answer ' + LETTERS[r.it.c.answer] + ': ' + plain(r.it.c.choices[r.it.c.answer]) + '\n'; }); }
+      } else {
+        t += plural(sm.covered.length, 'chapter case') + ' discussed:\n';
+        sm.covered.forEach(function (it) { t += '- Ch ' + it.ch.number + ': ' + it.title + '\n'; });
+      }
+      var msg = main.querySelector('#ts-msg');
+      function done(ok) { msg.textContent = ok ? 'Copied to the clipboard.' : 'Could not copy. Select the page text instead.'; }
+      try { navigator.clipboard.writeText(t).then(function () { done(true); }, function () { done(false); }); } catch (x) { done(false); }
+    });
   }
 
   /* ---------- what's new ---------- */
