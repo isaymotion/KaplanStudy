@@ -418,6 +418,27 @@
   }
 
   /* ---------- chapter header ---------- */
+  /* Previous / next chapter and a chapter menu. Switching keeps the study mode you are in, so a resident
+     reading study guides moves from guide to guide, and one drilling pharmacology cards stays in pharmacology. */
+  function chapterNav(ch, active) {
+    var list = allChapters().slice().sort(function (a, b) { return a.number - b.number; });
+    if (list.length < 2) return '';
+    var m = modeBy(active) || MODES[0], idx = 0;
+    list.forEach(function (c, i) { if (c.id === ch.id) idx = i; });
+    var prev = list[idx - 1], next = list[idx + 1];
+    function step(c, dir) {
+      var label = dir < 0 ? 'Previous chapter' : 'Next chapter', glyph = dir < 0 ? '\u2039' : '\u203a';
+      return c ? '<a class="chnav__step" id="ch-' + (dir < 0 ? 'prev' : 'next') + '" href="' + modeHref(c, m) + '" aria-label="' + label + ': Chapter ' + c.number + ', ' + esc(c.short || c.title) + '" title="' + label + ' ([ and ] keys)"><span aria-hidden="true">' + glyph + '</span></a>'
+        : '<span class="chnav__step is-off" aria-hidden="true">' + glyph + '</span>';
+    }
+    return '<nav class="chnav" aria-label="Chapter navigation">' + step(prev, -1) +
+      '<label class="chnav__pick"><span class="sr-only">Go to chapter</span><select id="ch-nav" aria-label="Go to chapter">' +
+      list.map(function (c) { return '<option value="' + modeHref(c, m) + '"' + (c.id === ch.id ? ' selected' : '') + '>Ch ' + c.number + ': ' + esc(c.short || c.title) + '</option>'; }).join('') +
+      '</select></label>' + step(next, 1) + '</nav>';
+  }
+  document.addEventListener('change', function (e) {
+    if (e.target && e.target.id === 'ch-nav') location.hash = e.target.value.replace(/^#/, '');
+  });
   function chapterHead(ch, active) {
     var tabs = MODES.map(function (m) {
       var on = m.key === active;
@@ -425,7 +446,7 @@
         esc(m.short) + (m.deck ? '<span class="mode__count">' + (ch[m.key] || []).length + '</span>' : '') + '</a>';
     }).join('');
     return '<header class="ch-head"><div class="wrap ch-head__inner">' +
-      '<p class="crumb"><a href="#/">All chapters</a></p>' +
+      '<div class="ch-head__top"><p class="crumb"><a href="#/">All chapters</a></p>' + chapterNav(ch, active) + '</div>' +
       '<div class="ch-head__title"><span class="ch-num" aria-hidden="true">' + ch.number + '</span><h1><span class="sr-only">Chapter ' + ch.number + ': </span>' + esc(ch.title) + '</h1></div>' +
       '</div><nav class="modes wrap" aria-label="Study modes">' + tabs + '</nav></header>';
   }
@@ -2625,6 +2646,11 @@
   qInput.addEventListener('blur', function () { setTimeout(closeSuggest, 120); });
   document.addEventListener('keydown', function (e) {
     if (e.key === '/' && !(e.target.matches && e.target.matches('input, textarea, select'))) { e.preventDefault(); qInput.focus(); qInput.select(); }
+
+    if ((e.key === '[' || e.key === ']') && !e.metaKey && !e.ctrlKey && !e.altKey && !(e.target.matches && e.target.matches('input, textarea, select')) && !document.body.classList.contains('is-teaching')) {
+      var a = document.getElementById(e.key === '[' ? 'ch-prev' : 'ch-next');
+      if (a) { e.preventDefault(); location.hash = a.getAttribute('href').replace(/^#/, ''); }
+    }
   });
 
   /* ---------- theme ---------- */

@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 20,
+    date: "2026-10-08",
+    title: "Move between chapters faster",
+    items: [
+      { type: "feature", text: "**Chapter navigator**: every chapter page now has previous and next buttons and a chapter menu beside \u201cAll chapters\u201d. It keeps the mode you are in, so a study guide goes to the next study guide and a pharmacology deck to the next pharmacology deck. On a keyboard, press [ and ] to step between chapters." }
+    ]
+  },
+  {
     id: 19,
     date: "2026-10-08",
     title: "Download handouts as a PDF",

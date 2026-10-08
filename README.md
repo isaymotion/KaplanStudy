@@ -45,6 +45,8 @@ For educators:
   - Mark the group's answer with a click or A to E, reveal with Space, move with the arrow keys, F toggles full screen, Esc closes. Teaching mode never affects review schedules or mistakes.
 - **What's new** (`#/whats-new`, linked in the footer): new chapters, features and corrections. Residents see a notice on the home page and an *Updated* tag on affected chapters until they open the page.
 
+**Chapter navigator**: each chapter page has previous and next buttons and a chapter menu beside *All chapters*. Switching keeps the current mode (study guide, high yield or the same flashcard deck), and the `[` and `]` keys step between chapters.
+
 Also included: light and dark themes, keyboard shortcuts, offline support after the first visit, and installability as an app on phones and desktops.
 
 ## Chapters
