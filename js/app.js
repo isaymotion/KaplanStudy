@@ -1532,11 +1532,13 @@
     /* Lay the topics out into three explicit columns. This is done by hand rather than with CSS
        multi-column, which Safari's print engine collapses into a single long column. */
     function colFull(col) { return col.scrollHeight > col.clientHeight + 1 || col.scrollWidth > col.clientWidth + 1; }
+    var PRINT_SLACK = 0.9;   // fill only 90% of the column height: printed text can run taller than on screen (iPhone Safari)
     function flow(body, size) {
       body.style.fontSize = size + 'pt';
       var cols = body.querySelectorAll('.sheet__col');
       if (!cols.length) return true;
-      cols.forEach(function (c) { c.innerHTML = ''; });
+      if (!body._colH) body._colH = Math.floor(body.clientHeight * PRINT_SLACK);
+      cols.forEach(function (c) { c.innerHTML = ''; c.style.height = body._colH + 'px'; });
       var ci = 0;
       function next() { ci++; return ci < cols.length; }
       var topics = body._topics || [];
