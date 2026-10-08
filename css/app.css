@@ -864,7 +864,17 @@ tbody th { font-weight: 700; }
 .sheet__kicker { margin: 0 0 1mm; font: 700 7pt/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #C2333B; }
 .sheet__head h1 { margin: 0; font: 800 14pt/1.15 var(--sans); letter-spacing: -0.01em; color: #1E2463; }
 .sheet__src { margin: 0; font: 400 7pt/1.5 var(--sans); color: #555; text-align: right; }
-.sheet__body { flex: 1; min-height: 0; overflow: hidden; column-count: 3; column-gap: 4.5mm; column-fill: auto; column-rule: .4pt solid #D9DCEA; font-size: 8pt; }
+.sheet__body { flex: 1 1 auto; min-height: 0; overflow: hidden; display: flex; align-items: stretch; font-size: 8pt; }
+.sheet__col { flex: 1 1 0; min-width: 0; height: 100%; overflow: hidden; padding: 0 2.25mm; border-left: .4pt solid #D9DCEA; }
+.sheet__col:first-child { padding-left: 0; border-left: 0; }
+.sheet__col:last-child { padding-right: 0; }
+.sheet__h { font: 700 1.04em/1.2 var(--sans); color: #1E2463; margin: .7em 0 .3em; padding-bottom: .15em; border-bottom: .6pt solid #DF6418; }
+.sheet__col > .sheet__h:first-child { margin-top: 0; }
+.sheet__list { margin: 0; padding-left: 1.05em; }
+.sheet__list li { font: 400 1em/1.26 var(--serif); margin: 0 0 .16em; overflow-wrap: break-word; }
+.sheet__list li::marker { color: #DF6418; }
+.sheet__list strong { font-weight: 700; }
+.sheet--blank .sheet__list strong { color: transparent; border-bottom: .7pt solid #333; }
 .sheet__topic { margin: 0 0 .7em; }
 .sheet__topic h2 { font: 700 1.04em/1.2 var(--sans); color: #1E2463; margin: 0 0 .3em; padding-bottom: .15em; border-bottom: .6pt solid #DF6418; break-after: avoid; }
 .sheet__topic ul { margin: 0; padding-left: 1.05em; }

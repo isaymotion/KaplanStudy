@@ -17,7 +17,7 @@ KS.changelog = [
     date: "2026-10-08",
     title: "Handouts print cleanly on iPhone and iPad",
     items: [
-      { type: "update", text: "**Printable handouts** now fit inside standard page margins, so the last lines no longer spill onto an extra page when printing from Safari on iPhone or iPad, or with browser margins switched on. Long chapters now add a page rather than shrink the type below 7 pt.", href: "#/c/ch12/handout", link: "Open a handout" }
+      { type: "update", text: "**Printable handouts** now fit inside standard page margins, and lay out their three columns themselves, so they no longer collapse into one long column or spill onto extra pages when printed from Safari on iPhone or iPad. Long chapters now add a page rather than shrink the type below 7 pt.", href: "#/c/ch12/handout", link: "Open a handout" }
     ]
   },
   {

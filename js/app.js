@@ -1514,9 +1514,7 @@
       return '<div class="sheet' + (blank ? ' sheet--blank' : '') + '" style="width:' + paper.w + ';height:' + paper.h + '">' +
         '<header class="sheet__head"><div><p class="sheet__kicker">High-yield ' + (blank ? 'worksheet' : 'handout') + (count > 1 ? ', page ' + (idx + 1) + ' of ' + count : '') + '</p><h1>Chapter ' + ch.number + ': ' + esc(ch.title) + '</h1></div>' +
           '<p class="sheet__src">Kaplan &amp; Sadock\u2019s Synopsis of Psychiatry, 12th ed.' + (blank && idx === 0 ? '<br>Name ____________________ Date __________' : '') + '</p></header>' +
-        '<div class="sheet__body">' + (topics.length ? topics.map(function (t) {
-          return '<section class="sheet__topic"><h2>' + esc(t.topic) + '</h2><ul>' + t.items.map(function (it) { return '<li>' + fmt(it) + '</li>'; }).join('') + '</ul></section>';
-        }).join('') : '<p class="sheet__none">Choose at least one topic.</p>') + '</div>' +
+        '<div class="sheet__body">' + (topics.length ? '<div class="sheet__col"></div><div class="sheet__col"></div><div class="sheet__col"></div>' : '<p class="sheet__none">Choose at least one topic.</p>') + '</div>' +
         '<footer class="sheet__foot">' + esc(ATTRIBUTION) + '</footer></div>';
     }
     function build() {
@@ -1526,19 +1524,54 @@
       var pages = Math.max(1, Math.min(prefs.pages, topics.length || 1));
       var groups = split(topics, pages);
       wrap.innerHTML = groups.map(function (g, i) { return sheetHTML(g, i, groups.length); }).join('');
+      wrap.querySelectorAll('.sheet__body').forEach(function (b, i) { b._topics = groups[i] || []; });
       main.querySelector('#ho-sum').textContent = 'Topics: ' + topics.length + ' of ' + ch.highYield.length + ' included';
       fit(topics.length, pages);
       scale();
     }
-    function overflows(body) { return body.scrollWidth > body.clientWidth + 1 || body.scrollHeight > body.clientHeight + 1; }
+    /* Lay the topics out into three explicit columns. This is done by hand rather than with CSS
+       multi-column, which Safari's print engine collapses into a single long column. */
+    function colFull(col) { return col.scrollHeight > col.clientHeight + 1 || col.scrollWidth > col.clientWidth + 1; }
+    function flow(body, size) {
+      body.style.fontSize = size + 'pt';
+      var cols = body.querySelectorAll('.sheet__col');
+      if (!cols.length) return true;
+      cols.forEach(function (c) { c.innerHTML = ''; });
+      var ci = 0;
+      function next() { ci++; return ci < cols.length; }
+      var topics = body._topics || [];
+      for (var t = 0; t < topics.length; t++) {
+        var topic = topics[t], h = null, ul = null;
+        for (var i = 0; i < topic.items.length; i++) {
+          while (true) {
+            var col = cols[ci];
+            if (!ul || ul.parentNode !== col) {
+              if (i === 0) {
+                h = document.createElement('h2'); h.className = 'sheet__h'; h.textContent = topic.topic;
+                col.appendChild(h);
+              }
+              ul = document.createElement('ul'); ul.className = 'sheet__list';
+              col.appendChild(ul);
+            }
+            var li = document.createElement('li'); li.innerHTML = fmt(topic.items[i]);
+            ul.appendChild(li);
+            if (!colFull(col)) break;
+            // does not fit: take it back (with an orphaned heading) and move to the next column
+            ul.removeChild(li);
+            if (!ul.children.length) { col.removeChild(ul); if (i === 0 && h && h.parentNode === col) col.removeChild(h); }
+            ul = null;
+            if (!next()) return false;
+          }
+        }
+      }
+      return true;
+    }
     function fitOne(body) {
       var lo = 4.5, hi = 11, best = lo;
-      body.style.fontSize = hi + 'pt';
-      if (!overflows(body)) return hi;
-      for (var k = 0; k < 14; k++) {
+      if (flow(body, hi)) return hi;
+      for (var k = 0; k < 12; k++) {
         var mid = (lo + hi) / 2;
-        body.style.fontSize = mid + 'pt';
-        if (overflows(body)) hi = mid; else { best = mid; lo = mid; }
+        if (flow(body, mid)) { best = mid; lo = mid; } else hi = mid;
       }
       return best;
     }
@@ -1550,7 +1583,7 @@
       var size = Math.floor(best * 0.97 * 10) / 10;   // a little slack for printer rendering
       lastSize = size;
       var bad = false;
-      bodies.forEach(function (b) { b.style.fontSize = size + 'pt'; if (overflows(b)) bad = true; });
+      bodies.forEach(function (b) { if (!flow(b, size)) bad = true; });
       var tooSmall = bad || size < MIN_PT;
       printBtn.disabled = tooSmall;
       fitMsg.className = 'handout-fit' + (tooSmall ? ' is-warn' : '');
