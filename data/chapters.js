@@ -91,6 +91,11 @@ KS.manifest = [
     id: 'ch12', number: 12, title: 'Somatic Symptom and Related Disorders', short: 'Somatic symptom and related',
     summary: 'Somatic symptom disorder, illness anxiety disorder, conversion disorder, psychological factors affecting medical conditions and factitious disorder: diagnosis, examination signs, detection, differential and management.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch13', number: 13, title: 'Feeding and Eating Disorders', short: 'Feeding and eating',
+    summary: 'Anorexia nervosa, bulimia nervosa, binge-eating disorder and night-eating syndrome: diagnosis, medical complications, differential, refeeding and hospital care, psychotherapy and medication, course and causes.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 

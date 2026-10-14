@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 21,
+    date: "2026-10-14",
+    title: "Chapter 13: Feeding and Eating Disorders",
+    items: [
+      { type: "chapter", ch: "ch13", text: "**Chapter 13, Feeding and Eating Disorders**, is now available: anorexia nervosa, bulimia nervosa, binge-eating disorder, night-eating syndrome and purging disorder, with medical complications, laboratory findings, refeeding and hospital management, family-based therapy, CBT and medication. Study guide, high-yield list, printable handout and 147 cards.", href: "#/c/ch13/guide", link: "Open the chapter" },
+      { type: "feature", text: "**New diagnostic helper**: *Which feeding or eating disorder?* works from the main eating problem to the likely diagnosis or a look-alike.", href: "#/helpers/eating", link: "Try it" },
+      { type: "update", text: "**Glossary**: 22 new terms from Chapter 13, including lanugo, refeeding syndrome, melanosis coli and postbinge anguish." }
+    ]
+  },
+  {
     id: 20,
     date: "2026-10-08",
     title: "Move between chapters faster",

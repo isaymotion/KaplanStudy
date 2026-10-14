@@ -2602,5 +2602,124 @@ KS.helpers = (KS.helpers || []).concat([
       iad_seek: { label: "Most likely", dx: "Illness anxiety disorder, care-seeking type", line: "Preoccupation with serious illness, few symptoms, and repeated tests, visits and reassurance-seeking.", points: ["CBT is first line; mindfulness, exposure and ACT also help.", "SSRIs, especially fluoxetine, have trial support."], link: { ch: "ch12", sec: "s12-iad", label: "Illness anxiety disorder" } },
       iad_avoid: { label: "Most likely", dx: "Illness anxiety disorder, care-avoidant type", line: "Preoccupation with serious illness, few symptoms, and avoidance of medical care.", points: ["Build trust gently and keep a careful medical examination.", "CBT is first line."], link: { ch: "ch12", sec: "s12-iad", label: "Illness anxiety disorder" } }
     }
+  },
+  {
+    id: "eating",
+    chapter: "ch13",
+    title: "Which feeding or eating disorder?",
+    summary: "Start from the main eating problem (restriction, binges, purging or night eating), then check fear of weight gain, compensation, weight and frequency to reach anorexia nervosa and its subtype, bulimia nervosa, binge-eating disorder, an other specified disorder or a look-alike.",
+    caution: "A teaching aid built from Chapter 13, not a substitute for a full assessment. Exclude medical causes of weight loss, check electrolytes and the ECG, and remember that anorexia nervosa carries a mortality as high as any psychiatric illness. Assess suicide risk in every patient.",
+    start: "main",
+    nodes: {
+      main: {
+        q: "What is the main eating problem?",
+        help: "Patients are often secretive, so confirm the history with relatives or close friends.",
+        options: [
+          { label: "Restricted intake with significantly low weight", to: "an_fear" },
+          { label: "Recurrent binges: a large amount in a short time with loss of control", to: "comp" },
+          { label: "Purging after small amounts of food, without binges", to: "r:purging" },
+          { label: "Most eating happens after the evening meal or at night", to: "night" },
+          { label: "Weight loss, but no fear of weight gain or concern with shape", to: "loss" }
+        ]
+      },
+      an_fear: {
+        q: "Is there intense fear of gaining weight (or behavior that prevents it), with a disturbed view of weight or shape, self-worth tied to thinness, or failure to see how serious the low weight is?",
+        help: "Body image distortion is common but not required. Appetite is usually preserved until late.",
+        options: [
+          { label: "Yes", to: "an_sub" },
+          { label: "No", to: "loss" }
+        ]
+      },
+      an_sub: {
+        q: "Over the last 3 months, has there been recurrent binging or purging?",
+        help: "Purging includes self-induced vomiting, laxatives, diuretics and emetics. Some purge after small amounts without bingeing.",
+        options: [
+          { label: "No: dieting, fasting and exercise only", to: "r:an_restrict" },
+          { label: "Yes", to: "r:an_bp" }
+        ]
+      },
+      loss: {
+        q: "Which best describes the weight loss?",
+        help: "Rule out a medical cause such as a brain tumor or cancer before settling on a psychiatric explanation.",
+        options: [
+          { label: "Reduced appetite with depressed mood, no food preoccupation", to: "r:depression" },
+          { label: "Refuses food believing it is poisoned", to: "r:psychosis" },
+          { label: "Good appetite, but nausea or bloating after meals with bradycardia and hypotension", to: "r:vagal" },
+          { label: "None of these, or not yet investigated", to: "r:medical" }
+        ]
+      },
+      comp: {
+        q: "Does the person regularly compensate to prevent weight gain?",
+        help: "Vomiting, laxatives, diuretics or other agents, fasting or excessive exercise.",
+        options: [
+          { label: "Yes", to: "low" },
+          { label: "No", to: "bed_feat" }
+        ]
+      },
+      low: {
+        q: "Is the person currently at an abnormally low weight with the features of anorexia nervosa?",
+        help: "If binging and purging occur only during anorexia nervosa, bulimia nervosa is not diagnosed.",
+        options: [
+          { label: "Yes", to: "r:an_bp" },
+          { label: "No: normal weight, or under- or overweight but not anorexic", to: "neuro" }
+        ]
+      },
+      neuro: {
+        q: "Are there neurologic features?",
+        help: "Exclude epileptic-equivalent seizures and CNS tumors in any new pattern of overeating.",
+        options: [
+          { label: "Episodes of hypersomnia lasting weeks, with overeating", to: "r:kleine" },
+          { label: "Visual agnosia, oral exploration of objects, placidity, hypersexuality", to: "r:kluver" },
+          { label: "None", to: "bn_freq" }
+        ]
+      },
+      bn_freq: {
+        q: "Do binges and compensation occur at least once a week for 3 months, with self-evaluation driven by weight and shape?",
+        help: "Severity is graded by the average number of compensatory behaviors per week.",
+        options: [
+          { label: "Yes", to: "r:bn" },
+          { label: "No: less often or for a shorter time", to: "r:sub" }
+        ]
+      },
+      bed_feat: {
+        q: "Are at least three present: eating much faster than normal, until uncomfortably full, when not hungry, alone from embarrassment, or feeling disgusted or guilty afterward, with marked distress?",
+        help: "Binge-eating disorder has no compensatory behavior and no extreme drive for thinness.",
+        options: [
+          { label: "Yes", to: "bed_freq" },
+          { label: "No", to: "r:sub" }
+        ]
+      },
+      bed_freq: {
+        q: "Do binges occur at least once a week for 3 months?",
+        options: [
+          { label: "Yes", to: "r:bed" },
+          { label: "No", to: "r:sub" }
+        ]
+      },
+      night: {
+        q: "Is the person awake and aware while eating?",
+        help: "Night eating also occurs in bulimia nervosa and binge-eating disorder; if they are present, diagnose them.",
+        options: [
+          { label: "Yes: awake, with insomnia and little morning appetite", to: "r:nes" },
+          { label: "No: eats involuntarily during sleep, may eat inedible items or not remember", to: "r:sred" }
+        ]
+      }
+    },
+    results: {
+      an_restrict: { label: "Most likely", dx: "Anorexia nervosa, restricting type", line: "Restriction to a significantly low weight with fear of weight gain, without binging or purging in the last 3 months.", points: ["Grade severity by BMI; check vital signs, electrolytes, blood count and ECG.", "20% below expected weight usually needs an inpatient program; 30% below, psychiatric hospitalization for 2 to 6 months.", "Refeed slowly to avoid refeeding syndrome; family-based therapy for patients under 18."], link: { ch: "ch13", sec: "s13-an-dx", label: "Diagnosing anorexia nervosa" } },
+      an_bp: { label: "Most likely", dx: "Anorexia nervosa, binge-eating/purging type", line: "Anorexia nervosa with recurrent binging or purging in the last 3 months.", points: ["Watch for hypokalemic alkalosis, ECG changes, enamel erosion and parotid swelling.", "Higher suicide rate than the restricting type; more substance use and personality disorders.", "Prevent vomiting by restricting bathroom access for 2 hours after meals."], link: { ch: "ch13", sec: "s13-tx-an-hosp", label: "Hospitalization and medical management" } },
+      purging: { label: "Most likely", dx: "Other specified feeding or eating disorder (purging disorder)", line: "Recurrent purging after small amounts of food at average weight, with a distorted body image and no binges.", points: ["Not diagnosed when the purging occurs during anorexia nervosa.", "Check electrolytes: purging causes hypokalemia and alkalosis."], link: { ch: "ch13", sec: "s13-bn-bed-core", label: "Other specified disorders" } },
+      bn: { label: "Most likely", dx: "Bulimia nervosa", line: "Recurrent binges with compensation at least weekly for 3 months, self-worth tied to weight and shape, not only during anorexia nervosa.", points: ["Ask about a past episode of anorexia nervosa (about half); check electrolytes even at normal weight.", "First line: CBT, about 18 to 20 sessions; add fluoxetine, often 60 to 80 mg. Avoid bupropion (seizures).", "Look for comorbid borderline personality, bipolar II and alcohol use."], link: { ch: "ch13", sec: "s13-tx-bn", label: "Treatment of bulimia nervosa" } },
+      bed: { label: "Most likely", dx: "Binge-eating disorder", line: "Recurrent binges with loss of control and at least three associated features, marked distress, and no compensation.", points: ["Nearly half are obese; screen for mood, anxiety and substance use disorders.", "CBT first line; reduces binges but not weight. Lisdexamfetamine reduces binges and weight; topiramate or zonisamide give moderate weight loss."], link: { ch: "ch13", sec: "s13-tx-bed-nes", label: "Treatment of binge-eating disorder" } },
+      sub: { label: "Consider", dx: "Other specified feeding or eating disorder (subthreshold)", line: "Binge or compensatory behavior that does not meet frequency, duration or feature criteria for a full disorder.", points: ["Subthreshold anorexia nervosa, bulimia nervosa and binge-eating disorder belong here.", "Reassess over time; they can still cause significant distress."], link: { ch: "ch13", sec: "s13-bn-bed-core", label: "Other specified disorders" } },
+      nes: { label: "Most likely", dx: "Night-eating syndrome (other specified feeding or eating disorder)", line: "Much of the day's food eaten after the evening meal or on waking at night, with insomnia and little morning appetite.", points: ["Little concern with body image; raised risk of obesity and metabolic syndrome.", "SSRIs help; adding topiramate aids weight loss; bright light therapy for comorbid depression; CBT."], link: { ch: "ch13", sec: "s13-ddx-other", label: "Night eating" } },
+      sred: { label: "Consider instead", dx: "Sleep-related eating disorder", line: "Involuntary eating during sleep, with risk of eating inedible substances and injury.", points: ["Associated with sleepwalking, restless legs syndrome and obstructive sleep apnea.", "Review medications: zolpidem, triazolam, olanzapine and risperidone can trigger episodes."], link: { ch: "ch13", sec: "s13-ddx-other", label: "Night eating" } },
+      kleine: { label: "Consider instead", dx: "Kleine–Levin syndrome", line: "Periodic hypersomnia lasting 2 to 3 weeks with hyperphagia.", points: ["Adolescent onset like bulimia nervosa, but more common in men."], link: { ch: "ch13", sec: "s13-ddx-bn", label: "Differential of bulimia nervosa" } },
+      kluver: { label: "Consider instead", dx: "Klüver–Bucy syndrome", line: "Visual agnosia, oral exploration, placidity, hypersexuality and hyperphagia.", points: ["Exceedingly rare; needs neurologic evaluation."], link: { ch: "ch13", sec: "s13-ddx-bn", label: "Differential of bulimia nervosa" } },
+      depression: { label: "Consider instead", dx: "A depressive disorder", line: "Decreased appetite without fear of obesity, body-image disturbance or food preoccupation.", points: ["In anorexia nervosa appetite is preserved and hyperactivity is planned and ritualistic.", "If both are present, treat the depressive disorder too."], link: { ch: "ch13", sec: "s13-ddx-an", label: "Differential of anorexia nervosa" } },
+      psychosis: { label: "Consider instead", dx: "Schizophrenia or another psychotic disorder", line: "Food delusions concern poisoning rather than calories, with no fear of obesity or hyperactivity.", points: ["Eating habits may be bizarre, but the full syndrome of anorexia nervosa is absent."], link: { ch: "ch13", sec: "s13-ddx-an", label: "Differential of anorexia nervosa" } },
+      vagal: { label: "Consider instead", dx: "Hyperactive vagus nerve syndrome", line: "A rare condition with weight loss, parasympathomimetic signs and gastric distress, but preserved appetite.", points: ["Anticholinergic drugs can reverse the potentially life-threatening hypotension and bradycardia."], link: { ch: "ch13", sec: "s13-ddx-an", label: "Differential of anorexia nervosa" } },
+      medical: { label: "Investigate", dx: "Exclude a medical cause of weight loss", line: "Weight loss, odd eating and vomiting occur in medical illness and several mental disorders.", points: ["Consider brain tumor and cancer; do a full physical and neurologic examination.", "Check electrolytes, blood count, glucose and an ECG."], link: { ch: "ch13", sec: "s13-labs", label: "Examination and laboratory workup" } }
+    }
   }
 ]);
