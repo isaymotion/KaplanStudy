@@ -1,0 +1,27 @@
+/* Chapter 21.2 pharmacology cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.2. */
+KS.add("ch21-2", "pharm", [
+  {"id":"p212-01","tag":"Serotonin syndrome","q":"Which drugs are listed for treating serotonin syndrome?","a":"Stop the agents, supportive care; **cyproheptadine**, methysergide, **benzodiazepines**, cooling blankets, chlorpromazine, dantrolene, anticonvulsants, nitroglycerin; ventilation and paralysis if severe."},
+  {"id":"p212-02","tag":"MAOI crisis","q":"How is an MAOI hypertensive crisis treated in the book?","a":"**Phentolamine** or **chlorpromazine** (BP falls within 5 minutes), IV **furosemide** for fluid load, a **β-blocker** for tachycardia; sublingual nifedipine is mentioned but is no longer recommended."},
+  {"id":"p212-03","tag":"SSRI sweating","q":"What treats SSRI-induced sweating?","a":"**Terazosin 1 to 2 mg** a day."},
+  {"id":"p212-04","tag":"SSRI insomnia","q":"How can SSRI-induced insomnia be treated?","a":"Morning dosing (fluoxetine), a **benzodiazepine**, **trazodone** (warn about priapism), or another sedative; heavy somnolence may need a switch to another SSRI or bupropion."},
+  {"id":"p212-05","tag":"Venlafaxine nausea","q":"What controls severe venlafaxine nausea?","a":"Start low; a **5-HT3 antagonist** or **mirtazapine**."},
+  {"id":"p212-06","tag":"TCA side effects","q":"How is TCA urinary hesitancy treated?","a":"**Bethanechol 25 to 50 mg** three or four times a day (also helps erectile dysfunction 30 minutes before sex)."},
+  {"id":"p212-07","tag":"TCA side effects","q":"How is TCA orthostatic hypotension managed?","a":"Avoid caffeine, **2 L fluid** a day, add salt, adjust antihypertensives; fludrocortisone works but switching to an SSRI is preferred."},
+  {"id":"p212-08","tag":"MAOI side effects","q":"How is MAOI orthostatic hypotension managed?","a":"Slow titration, no caffeine, **2 L fluid**, salt, support stockings, **fludrocortisone 0.1 to 0.2 mg** in severe cases; divide tranylcypromine doses."},
+  {"id":"p212-09","tag":"MAOI side effects","q":"What treats MAOI paresthesias?","a":"**Pyridoxine 50 to 150 mg** a day (MAOI-induced B6 deficiency)."},
+  {"id":"p212-10","tag":"Priapism","q":"What is the emergency treatment of trazodone priapism?","a":"**Intracavernosal α1-adrenergic agonist** (metaraminol or epinephrine); about one-third need surgery."},
+  {"id":"p212-11","tag":"Dosing","q":"Give the venlafaxine XR titration.","a":"**37.5 mg for 4 to 7 days**, then **75 mg**; raise by **75 mg every 4 or more days**; usual max **225 mg**, approved to **375 mg**; halve in hepatic or renal impairment; taper over 2 to 4 weeks."},
+  {"id":"p212-12","tag":"Dosing","q":"Give the phenelzine titration.","a":"Test dose **15 mg**; **15 mg three times daily** in week 1; then up **15 mg a day weekly** to **90 mg** by week 4."},
+  {"id":"p212-13","tag":"Dosing","q":"Give the vilazodone titration.","a":"**10 mg** for 7 days, **20 mg** for 7 days, then **40 mg** (book); **with food**; 20 mg with strong CYP3A4 inhibitors."},
+  {"id":"p212-14","tag":"Dosing","q":"Give the vortioxetine dosing.","a":"Start **10 mg**, then **20 mg**; 5 mg if not tolerated; max **10 mg** in **CYP2D6 poor metabolizers**; drop to 10 mg for a week before stopping 15 or 20 mg."},
+  {"id":"p212-15","tag":"Dosing","q":"Give the mirtazapine dosing.","a":"**15 mg at bedtime**, up by 15 mg every **5 days** to **45 mg**; lower in older adults and renal or hepatic disease."},
+  {"id":"p212-16","tag":"Dosing","q":"Give the trazodone dosing for depression and for sleep.","a":"Depression: start **50 mg** at bedtime, up **50 mg every 3 days**, range **200 to 600 mg**. Sleep: **25 to 100 mg** at bedtime."},
+  {"id":"p212-17","tag":"Dosing","q":"Give the nefazodone dosing.","a":"Start **100 mg twice daily** (50 mg twice daily in older adults); raise **100 to 200 mg a day weekly**; optimal **300 to 600 mg** in two doses; older adults max **400 mg**."},
+  {"id":"p212-18","tag":"Dosing","q":"How is a TCA started and stopped?","a":"Start **25 mg a day** (protriptyline lower) and raise as tolerated; stop by going to three-quarters for a month, then **25 mg every 4 to 7 days**."},
+  {"id":"p212-19","tag":"Dosing","q":"Give the maprotiline dosing.","a":"**25 mg**, raised over **4 weeks** to **225 mg**, kept only **6 weeks**, then **175 to 200 mg** (seizure risk)."},
+  {"id":"p212-20","tag":"Dosing","q":"What dose of imipramine is used in children?","a":"Start **1.5 mg/kg** a day, max **5 mg/kg**; **enuresis 50 to 100 mg at bedtime**. Clomipramine max **3 mg/kg or 200 mg**."},
+  {"id":"p212-21","tag":"Dosing","q":"Give the liothyronine augmentation regimen.","a":"**25 or 50 µg** a day for **2 to 3 weeks**; if effective, continue **2 months**, then taper **12.5 µg every 3 to 7 days**."},
+  {"id":"p212-22","tag":"Interactions","q":"How should triazolam and alprazolam be adjusted with nefazodone?","a":"Cut **triazolam by 75%** and **alprazolam by 50%** (CYP3A4 inhibition)."},
+  {"id":"p212-23","tag":"Interactions","q":"Which levels does fluvoxamine raise and by how much?","a":"**Theophylline threefold**, **warfarin twofold**; also clozapine, carbamazepine, methadone, propranolol, diltiazem, alprazolam, triazolam, diazepam."},
+  {"id":"p212-24","tag":"Interactions","q":"Which drugs raise TCA levels three- to fourfold?","a":"**Fluoxetine, fluvoxamine and paroxetine**."}
+]);

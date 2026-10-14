@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 28,
+    date: "2026-10-14",
+    title: "Chapter 21.2: Antidepressants",
+    items: [
+      { type: "chapter", ch: "ch21-2", text: "**Chapter 21.2, Antidepressants**: SSRIs and vortioxetine, SNRIs, bupropion, mirtazapine, nefazodone and trazodone, tricyclics, MAOIs and the tyramine diet, thyroid augmentation, ketamine, esketamine and the neurosteroids, with a closing section on choosing and switching. Study guide, high-yield list, printable handout and 107 cards, plus post-publication updates (zuranolone, dextromethorphan–bupropion, gepirone, esketamine monotherapy, the end of brexanolone, new adjunct antipsychotics, the 2025 FDA panel on SSRIs in pregnancy) and corrections of a few errors in the book.", href: "#/c/ch21-2/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: 39 antidepressants and augmenting agents added, with drug pages, comparisons, drills and a class sheet.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**New diagnostic helper**: *Choosing an antidepressant*.", href: "#/helpers/antidepressant", link: "Try it" },
+      { type: "update", text: "**Glossary**: 32 new terms from Chapter 21.2, including serotonin syndrome, tyramine, atypical depression and washout period." }
+    ]
+  },
+  {
     id: 27,
     date: "2026-10-14",
     title: "Source links in post-publication updates",

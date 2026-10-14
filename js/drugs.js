@@ -36,6 +36,16 @@
     function srcLinks(u) {
       var src = (u.source || '').toLowerCase(), seen = {}, out = (u.links || []).slice();
       (KS.sourceLinks || []).forEach(function (l) { if (src.indexOf(l.m.toLowerCase()) !== -1) out.push(l); });
+      // a cited label ("X prescribing information") links to its current DailyMed label when no entry covers it
+      if (/prescribing information|label/.test(src)) {
+        DRUGS.forEach(function (d) {
+          (d.brands || []).forEach(function (b) {
+            var w = String(b).split(/[ (]/)[0];
+            if (w.length > 3 && new RegExp('\\b' + w.toLowerCase() + '\\b').test(src) && !out.some(function (l) { var t = l.label.toLowerCase(); return t.indexOf(w.toLowerCase()) !== -1 || t.indexOf(d.name.toLowerCase()) !== -1; }))
+              out.push({ label: 'Label: ' + w + ' (DailyMed)', url: 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(w) });
+          });
+        });
+      }
       out = out.filter(function (l) { if (seen[l.url]) return false; seen[l.url] = 1; return true; });
       if (!out.length) return '';
       return '<p class="update__links"><span>Read the source:</span> ' + out.map(function (l) {

@@ -30,6 +30,19 @@
     { m: 'Johnson & Johnson announcement, November 2025', label: 'J&J: Caplyta approved for adjunctive MDD (Nov 2025)', url: 'https://www.jnj.com/media-center/press-releases/fda-approval-of-caplyta-lumateperone-has-the-potential-to-reset-treatment-expectations-offering-hope-for-remission-in-adults-with-major-depressive-disorder' },
     { m: 'CPIC guideline', label: 'CPIC SSRI guideline (PubMed)', url: 'https://pubmed.ncbi.nlm.nih.gov/37032427/' },
     { m: 'Abilify Maintena', label: 'Label: aripiprazole (DailyMed)', url: DM('aripiprazole') },
+    { m: 'FDA expert panel on SSRIs', label: 'RAPS: FDA panel debates SSRI pregnancy labeling (July 2025)', url: 'https://www.raps.org/news-and-articles/news-articles/2025/7/fda-panel-debates-label-change-on-ssri-use-during' },
+    { m: 'APA letter to the FDA, August 2025', label: 'APA letter to the FDA on the SSRI panel (Aug 2025)', url: 'https://www.psychiatry.org/getattachment/35594477-00d8-4025-bb1e-be42ca52284e/APA-Letter-FDA-Panel-SSRIs-Pregnancy-08182025.pdf' },
+    { m: 'compounded ketamine warning', label: 'FDA: risks of compounded ketamine (Oct 2023)', url: 'https://www.fda.gov/drugs/human-drug-compounding/fda-warns-patients-and-health-care-providers-about-potential-risks-associated-compounded-ketamine' },
+    { m: 'moratorium be placed on sublingual nifedipine', label: 'Summary: no more sublingual nifedipine (Relias Media)', url: 'https://reliasmedia.com/articles/37281-no-more-sublingual-nifedipine-for-hypertensive-emergencies' },
+    { m: 'Nefazodone prescribing information', label: 'Label: nefazodone (DailyMed)', url: DM('nefazodone') },
+    { m: 'Silenor prescribing information', label: 'Label: Silenor (DailyMed)', url: DM('Silenor') },
+    { m: 'Biogen and Sage announcement, August 4, 2023', label: 'Biogen: FDA approves Zurzuvae (Aug 2023)', url: 'https://investors.biogen.com/news-releases/news-release-details/fda-approves-zurzuvaetm-zuranolone-first-and-only-oral-treatment' },
+    { m: 'Sage Therapeutics third-quarter 2024 report', label: 'Sage: Zulresso to be discontinued (Oct 2024)', url: 'https://www.businesswire.com/news/home/20241029531414/en' },
+    { m: 'Axsome announcements, August 2022', label: 'Psychiatric News: FDA approves Auvelity (2022)', url: 'https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2022.11.11.13' },
+    { m: 'Axsome announcements, August 2022 and April 2026', label: 'Healio: Auvelity approved for Alzheimer agitation (Apr 2026)', url: 'https://www.healio.com/news/neurology/20260430/fda-approves-auvelity-for-agitation-in-alzheimers-disease' },
+    { m: 'FDA approval letter, September 2023', label: 'FDA approval letter: Exxua (Sept 2023)', url: 'https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/021164Orig1s000Approv.pdf' },
+    { m: 'Johnson & Johnson announcement, January 21, 2025', label: 'J&J: Spravato approved as monotherapy (Jan 2025)', url: 'https://jnj.com/media-center/press-releases/spravato-esketamine-approved-in-the-u-s-as-the-first-and-only-monotherapy-for-adults-with-treatment-resistant-depression' },
+    { m: 'AbbVie announcement, December 16, 2022', label: 'AbbVie: Vraylar approved as adjunct in MDD (Dec 2022)', url: 'https://news.abbvie.com/2022-12-16-U-S-FDA-Approves-VRAYLAR-R-cariprazine-as-an-Adjunctive-Treatment-for-Major-Depressive-Disorder' },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();

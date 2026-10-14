@@ -33,6 +33,7 @@ Across all chapters:
   - *Which elimination disorder?* (Chapter 14): feces or urine, age, frequency and duration, medical causes, then encopresis with or without constipation and overflow, enuresis (nocturnal, diurnal or both), or normal development, a transient reaction or a medical cause.
   - *Which medication-induced movement disorder?* (Chapter 21.0): fever and rigidity, sustained spasm, restlessness, stiffness, late involuntary movements, tremor or night-time leg symptoms. Reaches neuroleptic malignant syndrome and other hyperthermic syndromes, acute dystonia, akathisia, parkinsonism, rabbit syndrome, tardive dyskinesia and other tardive syndromes, postural tremor, restless legs or nocturnal myoclonus.
   - *Choosing an antipsychotic* (Chapter 21.1): the clinical situation (treatment resistance, Parkinson disease, acute agitation, poor adherence, dementia, intoxication or a first choice), then the side effect that matters most, to a short list of drugs.
+  - *Choosing an antidepressant* (Chapter 21.2): emergencies (serotonin syndrome, MAOI hypertensive crisis, discontinuation), pregnancy, postpartum depression and treatment resistance, or the symptom or risk that matters most, to a short list of drugs.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -73,6 +74,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 14 | Elimination Disorders | 15 | 48 | 106 |
 | 21.0 | Principles of Psychopharmacology | 23 | 87 | 106 |
 | 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
+| 21.2 | Antidepressants | 28 | 102 | 107 (plus generated drug drills) |
 
 ## Publish on GitHub Pages
 
@@ -136,4 +138,5 @@ An independent study aid built from *Kaplan & Sadock's Synopsis of Psychiatry*, 
 - `js/drugs.js` renders `#/drugs` (browse by class with indication and side-effect filters), `#/drugs/<id>` (drug page), `#/drugs/compare/<id,id,...>` (up to four, chosen by class and group), `#/drugs/drill/<scope>` (generated cards, same spaced-repetition store) and `#/updates` (every post-publication update in one list). It also links drug names in guide and high-yield text and adds drugs to search.
 - Drug data lives in `data/drugs/<class>.js` (`KS.drugClasses`, `KS.drugs`). Fields: `mechanism`, `indications {approved, other}`, `forms`, `dose {start, titration, range, max, notes}`, `half`/pharmacokinetics, `effects {common, serious}`, `profile` levels, `monitoring`, `interactions`, `populations`, `pearls`, `clues` (for "which drug?" cards) and `updates`.
 - Anything published after the 12th edition goes in an `updates` entry (`{year, title, text, source, field}`) on a drug, or a `{ type: "update", ... }` block in a study guide. Both render as a dashed "Post-publication update" box that names its source.
+- Source links: `data/sources.js` (`KS.sourceLinks`) maps text in an update's `source` to verified URLs, shown as "Read the source" links. A source that cites "<Brand> prescribing information" for a drug in the Drugs section also gets a DailyMed label link automatically.
 

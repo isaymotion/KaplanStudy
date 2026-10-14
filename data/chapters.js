@@ -111,6 +111,11 @@ KS.manifest = [
     id: 'ch21-1', number: '21.1', title: 'Antipsychotics', short: 'Antipsychotics',
     summary: 'Second-generation serotonin–dopamine antagonists and first-generation dopamine receptor antagonists: mechanisms, drug-by-drug indications and dosing, clozapine, neuroleptic malignant syndrome and other adverse effects, depots, levels and treatment resistance, with post-publication updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch21-2', number: '21.2', title: 'Antidepressants', short: 'Antidepressants',
+    summary: 'SSRIs and vortioxetine, SNRIs, bupropion, mirtazapine, nefazodone and trazodone, tricyclics, MAOIs and the tyramine diet, thyroid augmentation, ketamine, esketamine and neurosteroids: indications, dosing, side effects, interactions and overdose, with post-publication updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -124,5 +129,6 @@ KS.extraFiles = [
   'data/helpers.js',
   'data/sources.js',
   'data/drugs/antipsychotics.js',
+  'data/drugs/antidepressants.js',
   'data/changelog.js'
 ];
