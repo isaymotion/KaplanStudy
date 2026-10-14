@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 29,
+    date: "2026-10-14",
+    title: "Chapter 21.3: Mood Stabilizers",
+    items: [
+      { type: "chapter", ch: "ch21-3", text: "**Chapter 21.3, Mood Stabilizers**: lithium (indications, adverse effects, toxicity, special populations, interactions, dosing and levels), valproate, lamotrigine, carbamazepine and oxcarbazepine, the other anticonvulsants used in psychiatry, and calcium channel blockers, ending with a comparison of the four main mood stabilizers. Study guide, high-yield list, printable handout and 107 cards, with post-publication updates (current lithium targets, HLA-B*15:02 testing before carbamazepine, the 2024 valproate restrictions, lamotrigine HLH and arrhythmia warnings, gabapentinoid breathing risks, topiramate in pregnancy, the 2024 pregnancy guideline) and corrections of a few errors in the book.", href: "#/c/ch21-3/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: 16 mood stabilizers, anticonvulsants and calcium channel blockers added.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**New diagnostic helper**: *Choosing a mood stabilizer*.", href: "#/helpers/moodstab", link: "Try it" },
+      { type: "update", text: "**Glossary**: 26 new terms from Chapter 21.3, including autoinduction, HLA-B*15:02, ultradian cycling and trough level." }
+    ]
+  },
+  {
     id: 28,
     date: "2026-10-14",
     title: "Chapter 21.2: Antidepressants",

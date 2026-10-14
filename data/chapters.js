@@ -116,6 +116,11 @@ KS.manifest = [
     id: 'ch21-2', number: '21.2', title: 'Antidepressants', short: 'Antidepressants',
     summary: 'SSRIs and vortioxetine, SNRIs, bupropion, mirtazapine, nefazodone and trazodone, tricyclics, MAOIs and the tyramine diet, thyroid augmentation, ketamine, esketamine and neurosteroids: indications, dosing, side effects, interactions and overdose, with post-publication updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch21-3', number: '21.3', title: 'Mood Stabilizers', short: 'Mood stabilizers',
+    summary: 'Lithium, valproate, lamotrigine, carbamazepine and oxcarbazepine, the other anticonvulsants and calcium channel blockers: indications, dosing, levels, toxicity, interactions, monitoring and pregnancy, with post-publication updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -130,5 +135,6 @@ KS.extraFiles = [
   'data/sources.js',
   'data/drugs/antipsychotics.js',
   'data/drugs/antidepressants.js',
+  'data/drugs/mood-stabilizers.js',
   'data/changelog.js'
 ];

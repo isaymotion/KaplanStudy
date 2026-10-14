@@ -1,0 +1,27 @@
+/* Chapter 21.3 pharmacology cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.3. */
+KS.add("ch21-3", "pharm", [
+  {"id":"p213-01","tag":"Lithium tremor","q":"How is lithium tremor treated?","a":"Divide the dose, use slow release, cut caffeine, review other drugs, treat anxiety; **propranolol 30 to 120 mg** a day or **primidone 50 to 250 mg**; potassium if low."},
+  {"id":"p213-02","tag":"Lithium GI","q":"How can lithium GI effects be reduced?","a":"Divide doses, take with food, switch preparation (**lithium citrate** causes least diarrhea; beware lactose); loperamide, bismuth or diphenoxylate–atropine."},
+  {"id":"p213-03","tag":"Lithium polyuria","q":"Which diuretics are used for lithium polyuria?","a":"**Thiazides** or potassium-sparing **amiloride**, spironolactone, triamterene, or amiloride–hydrochlorothiazide, after **halving lithium**."},
+  {"id":"p213-04","tag":"Lithium toxicity","q":"List the steps for managing lithium toxicity.","a":"Emergency care; **stop lithium**; vital signs and neuro exam; **level, electrolytes, renal function, ECG**; emesis or lavage; **Kayexalate or GoLYTELY**; **hemodialysis** above 4.0 mEq/L."},
+  {"id":"p213-05","tag":"Lithium dosing","q":"Give the lithium starting dose and usual ranges.","a":"**300 mg three times daily** (300 mg once or twice daily in older adults or renal impairment); **900 to 1,200 mg** for 0.6 to 1.0 mEq/L; **1,200 to 1,800 mg** for 0.8 to 1.2."},
+  {"id":"p213-06","tag":"Lithium augmentation","q":"What dose of lithium augments an antidepressant?","a":"**300 mg three times daily**; 50% to 60% of nonresponders respond."},
+  {"id":"p213-07","tag":"Lithium depression","q":"What can be added when depression breaks through on lithium?","a":"Raise level to 1 to 1.2, add **valproate or carbamazepine**, **liothyronine 25 µg**, or judiciously an antidepressant or ECT."},
+  {"id":"p213-08","tag":"Valproate dosing","q":"How is valproate started outside acute mania?","a":"**250 mg with a meal** on day 1, up to **250 mg three times daily** over 3 to 6 days; most need **1,200 to 1,500 mg**; then all at bedtime."},
+  {"id":"p213-09","tag":"Valproate loading","q":"What is the valproate loading dose for mania?","a":"**20 to 30 mg/kg a day** orally; IV valproate for rapid stabilization."},
+  {"id":"p213-10","tag":"Valproate tremor","q":"What treats valproate tremor?","a":"**β-blockers** or **gabapentin**."},
+  {"id":"p213-11","tag":"Valproate hair loss","q":"What has been suggested for valproate hair loss?","a":"Vitamin supplements with **zinc and selenium**."},
+  {"id":"p213-12","tag":"Valproate hyperammonemia","q":"What treats valproate hyperammonemia?","a":"Stop valproate and protein intake; **L-carnitine** may help; check for a urea cycle disorder."},
+  {"id":"p213-13","tag":"Neural tube prevention","q":"What dose of folic acid does the book recommend with valproate or carbamazepine?","a":"**1 to 4 mg a day** for all women who could conceive (2024 guidance: 0.4 mg for all on antiseizure drugs)."},
+  {"id":"p213-14","tag":"Lamotrigine dosing","q":"Give the lamotrigine titration alone (book).","a":"**25 mg** weeks 1–2, **50 mg** weeks 3–4, then **100 to 200 mg** (max 200)."},
+  {"id":"p213-15","tag":"Lamotrigine dosing","q":"Give the lamotrigine titration with valproate.","a":"**25 mg every other day** weeks 1–2, **25 mg** weeks 3–4, then **50 to 100 mg** (max 100)."},
+  {"id":"p213-16","tag":"Lamotrigine dosing","q":"Give the lamotrigine titration with carbamazepine.","a":"**50 mg** weeks 1–2, **100 mg** weeks 3–4, then **200 to 400 mg** (max 400)."},
+  {"id":"p213-17","tag":"Carbamazepine dosing","q":"How is carbamazepine started in bipolar disorder?","a":"**200 mg at bedtime** in depression or euthymia; **600 to 800 mg** in divided doses for manic inpatients; target about **1,200 mg**; extended release all at bedtime."},
+  {"id":"p213-18","tag":"Carbamazepine rash","q":"What can suppress carbamazepine rash on rechallenge?","a":"**Prednisone 40 mg a day**, although fever and pneumonitis may still occur."},
+  {"id":"p213-19","tag":"Carbamazepine WBC","q":"Which drug can reverse carbamazepine's benign WBC fall?","a":"**Lithium**, which enhances colony-stimulating factor."},
+  {"id":"p213-20","tag":"Oxcarbazepine dosing","q":"What doses were used for oxcarbazepine in mania trials?","a":"**900 to 1,200 mg** a day, starting **150 or 300 mg at night**; range 150 to 2,400 mg in two doses."},
+  {"id":"p213-21","tag":"Gabapentin dosing","q":"Give the gabapentin titration.","a":"**300 mg day 1, 600 mg day 2, 900 mg day 3**, up to 1,800 mg; usual **1,200 to 2,400 mg** in divided doses."},
+  {"id":"p213-22","tag":"Topiramate dosing","q":"How is topiramate dosed for weight loss off-label?","a":"**25 mg at bedtime**, up 25 mg weekly; usually **75 to 150 mg** at bedtime; halve in renal insufficiency."},
+  {"id":"p213-23","tag":"Verapamil dosing","q":"Give the verapamil dosing for mania.","a":"**40 mg three times daily**, raised every 4 to 5 days to **80 to 120 mg three times daily**; monitor BP, pulse, ECG."},
+  {"id":"p213-24","tag":"Nimodipine dosing","q":"How is nimodipine used for ultrarapid cycling?","a":"**60 mg every 4 hours**, sometimes briefly up to **360 mg** a day."}
+]);

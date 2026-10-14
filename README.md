@@ -34,6 +34,7 @@ Across all chapters:
   - *Which medication-induced movement disorder?* (Chapter 21.0): fever and rigidity, sustained spasm, restlessness, stiffness, late involuntary movements, tremor or night-time leg symptoms. Reaches neuroleptic malignant syndrome and other hyperthermic syndromes, acute dystonia, akathisia, parkinsonism, rabbit syndrome, tardive dyskinesia and other tardive syndromes, postural tremor, restless legs or nocturnal myoclonus.
   - *Choosing an antipsychotic* (Chapter 21.1): the clinical situation (treatment resistance, Parkinson disease, acute agitation, poor adherence, dementia, intoxication or a first choice), then the side effect that matters most, to a short list of drugs.
   - *Choosing an antidepressant* (Chapter 21.2): emergencies (serotonin syndrome, MAOI hypertensive crisis, discontinuation), pregnancy, postpartum depression and treatment resistance, or the symptom or risk that matters most, to a short list of drugs.
+  - *Choosing a mood stabilizer* (Chapter 21.3): warning signs (lithium toxicity, rash, blood dyscrasia, valproate liver or pancreas toxicity), pregnancy, the type of manic episode, or the goal of long-term prevention, to a short list of drugs.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -75,6 +76,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.0 | Principles of Psychopharmacology | 23 | 87 | 106 |
 | 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
 | 21.2 | Antidepressants | 28 | 102 | 107 (plus generated drug drills) |
+| 21.3 | Mood Stabilizers | 26 | 102 | 107 (plus generated drug drills) |
 
 ## Publish on GitHub Pages
 
