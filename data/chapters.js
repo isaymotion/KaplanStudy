@@ -101,6 +101,11 @@ KS.manifest = [
     id: 'ch14', number: 14, title: 'Elimination Disorders', short: 'Elimination disorders',
     summary: 'Encopresis and enuresis: how continence develops, diagnostic criteria and minimum ages, medical differential, behavioral and drug treatment, and physiologic and psychosocial causes.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch21-1', number: '21.1', title: 'Antipsychotics', short: 'Antipsychotics',
+    summary: 'Second-generation serotonin–dopamine antagonists and first-generation dopamine receptor antagonists: mechanisms, drug-by-drug indications and dosing, clozapine, neuroleptic malignant syndrome and other adverse effects, depots, levels and treatment resistance, with post-publication updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -112,5 +117,6 @@ KS.extraFiles = [
   'data/glossary/g4.js',
   'data/glossary/g5-chapter-terms.js',
   'data/helpers.js',
+  'data/drugs/antipsychotics.js',
   'data/changelog.js'
 ];

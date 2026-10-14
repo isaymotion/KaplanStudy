@@ -2818,5 +2818,53 @@ KS.helpers = (KS.helpers || []).concat([
       enu_diur: { label: "Most likely", dx: "Enuresis, diurnal only", line: "Daytime wetting, often from habitual withholding with voluntary sphincter tightening.", points: ["Commoner in boys who delay voiding until too late.", "Behavioral approaches; bladder training and scheduled voiding."], link: { ch: "ch14", sec: "s14-enu-etio", label: "Causes of enuresis" } },
       enu_both: { label: "Most likely", dx: "Enuresis, nocturnal and diurnal", line: "Wetting by day and night; more often linked to infection or obstruction, so confirm medical causes are excluded.", points: ["Check for urinary frequency and urgency.", "Treat comorbid ADHD or encopresis if present."], link: { ch: "ch14", sec: "s14-enu-dx", label: "Diagnosing enuresis" } }
     }
+  },
+  {
+    id: "antipsychotic",
+    chapter: "ch21-1",
+    title: "Choosing an antipsychotic",
+    summary: "Start from the clinical situation (treatment resistance, Parkinson disease, acute agitation, poor adherence, dementia, intoxication or a first choice), then weigh the side effect that matters most to reach a short list from section 21.1.",
+    caution: "A teaching aid built from section 21.1 of the 12th edition, with post-publication updates marked. It does not replace a full assessment, current prescribing information or local guidelines. Check metabolic, cardiac and hematologic risks before prescribing.",
+    start: "situation",
+    nodes: {
+      situation: {
+        q: "Which situation are you in?",
+        options: [
+          { label: "Schizophrenia not helped by two adequate trials, or persistent suicidality", to: "r:clozapine" },
+          { label: "Psychosis in Parkinson disease", to: "r:pd" },
+          { label: "Acute severe agitation", to: "r:agitation" },
+          { label: "Repeated relapse from missed doses", to: "r:lai" },
+          { label: "Older patient with dementia and agitation or psychosis", to: "r:dementia" },
+          { label: "Psychosis during intoxication or withdrawal", to: "r:substance" },
+          { label: "Choosing a drug for schizophrenia or mania", to: "priority" }
+        ]
+      },
+      priority: {
+        q: "Which risk matters most for this patient?",
+        help: "All SGAs are first line except clozapine; choose by clinical status, past response and side effects.",
+        options: [
+          { label: "Weight gain, diabetes or dyslipidemia", to: "r:metabolic" },
+          { label: "Prolactin effects (galactorrhea, amenorrhea, sexual dysfunction)", to: "r:prolactin" },
+          { label: "QTc prolongation or heart disease", to: "r:qtc" },
+          { label: "EPS or akathisia", to: "r:eps" },
+          { label: "Sedation or orthostasis, for example in older adults", to: "r:sedation" },
+          { label: "Cost, with metabolic risk acceptable for a DRA", to: "r:dra" }
+        ]
+      }
+    },
+    results: {
+      clozapine: { label: "First choice", dx: "Clozapine", line: "The most effective drug for treatment-resistant schizophrenia and for suicidal patients with schizophrenia or schizoaffective disorder.", points: ["Document consent; baseline ECG, CBCs, liver and renal tests.", "Titrate from 12.5 mg; usual 300 to 450 mg; seizures rise above 600 mg.", "Monitor neutrophils (current ANC rules), and watch for myocarditis, constipation and sialorrhea.", "Never combine with carbamazepine or other marrow-suppressing drugs."], link: { ch: "ch21-1", sec: "s211-cloz", label: "Clozapine" } },
+      pd: { label: "Consider", dx: "Quetiapine or clozapine (pimavanserin since the book)", line: "Choose drugs that do not worsen parkinsonism.", points: ["Quetiapine is the SDA least likely to cause EPS at any dose.", "Clozapine is also used in Parkinson disease.", "Post-publication: pimavanserin, a 5-HT2A inverse agonist (34 mg daily), is approved for Parkinson disease psychosis.", "Avoid high-potency DRAs."], link: { ch: "ch21-1", sec: "s211-quet", label: "Quetiapine" } },
+      agitation: { label: "Options", dx: "IM antipsychotic, with or without a benzodiazepine", line: "Agitation responds quickly; observe for an hour after the first dose.", points: ["Olanzapine IM 10 mg (not approved in combination with benzodiazepines).", "Ziprasidone IM 10 mg every 2 hours or 20 mg every 4 hours, maximum 40 mg a day.", "Haloperidol (equivalent of 5 to 20 mg a day; about 1 mg in older adults) plus lorazepam 2 mg IM if needed.", "Rapid neuroleptization adds nothing over waiting a few hours."], link: { ch: "ch21-1", sec: "s211-dra-dose", label: "Short-term treatment" } },
+      lai: { label: "Consider", dx: "A long-acting injectable", line: "Depots overcome adherence problems.", points: ["Book: haloperidol decanoate (monthly), fluphenazine decanoate or enanthate, Risperdal Consta (every 2 weeks), Invega Sustenna (monthly), Zyprexa Relprevv (3-hour observation).", "Give an oral test dose first and start low to avoid early dystonia.", "Post-publication: paliperidone every 3 or 6 months, aripiprazole every 1 or 2 months, subcutaneous risperidone and olanzapine."], link: { ch: "ch21-1", sec: "s211-depot", label: "Long-acting depot injections" } },
+      dementia: { label: "Caution", dx: "Lowest effective dose, with the boxed warning in mind", line: "Elderly patients with dementia-related psychosis have a 1.6 to 1.7 times higher risk of death on antipsychotics, and a higher stroke risk.", points: ["About two-thirds of agitated patients improve on a DRA; use low doses of a high-potency drug (haloperidol 0.5 to 1 mg a day).", "Avoid low-potency drugs, which worsen anticholinergic delirium, orthostasis and cognition.", "Post-publication: brexpiprazole is approved for agitation in Alzheimer dementia (2023)."], link: { ch: "ch21-1", sec: "s211-dra-ind", label: "Dementia and delirium" } },
+      substance: { label: "Prefer", dx: "A benzodiazepine first", line: "Substance-induced psychosis is usually time-limited.", points: ["Use a benzodiazepine rather than a DRA in phencyclidine intoxication.", "In alcohol-withdrawal hallucinosis DRAs may raise seizure risk.", "Reserve antipsychotics for severe agitation or aggression."], link: { ch: "ch21-1", sec: "s211-dra-ind", label: "Substance-induced psychosis" } },
+      metabolic: { label: "Short list", dx: "Ziprasidone, aripiprazole, lurasidone or asenapine", line: "Little weight gain in the book: ziprasidone almost none, aripiprazole no increase, lurasidone and asenapine little.", points: ["Avoid olanzapine and clozapine, which cause the most weight gain and diabetes.", "Among DRAs, molindone and perhaps loxapine cause the least.", "Post-publication: olanzapine with samidorphan reduces olanzapine weight gain.", "Monitor BMI, waist, BP, fasting glucose and lipids for any SGA."], link: { ch: "ch21-1", sec: "s211-sga", label: "Metabolic monitoring" } },
+      prolactin: { label: "Short list", dx: "Aripiprazole, quetiapine or ziprasidone", line: "These rarely or never raise prolactin.", points: ["Avoid risperidone (marked rise, up to 3 to 4 times normal), asenapine (persistent rise) and DRAs.", "SSRIs added to risperidone can raise prolactin further."], link: { ch: "ch21-1", sec: "s211-arip", label: "Aripiprazole" } },
+      qtc: { label: "Short list", dx: "Aripiprazole (no significant QTc effect)", line: "Avoid the QT-prolonging antipsychotics.", points: ["Avoid ziprasidone, iloperidone (+9 ms), thioridazine, pimozide, mesoridazine, IV haloperidol and high-dose quetiapine.", "Paliperidone and asenapine also prolong QTc a little.", "Check potassium, magnesium and other QT drugs; get an ECG."], link: { ch: "ch21-1", sec: "s211-dra-adverse", label: "Cardiac effects" } },
+      eps: { label: "Short list", dx: "Quetiapine or clozapine; iloperidone near placebo", line: "Quetiapine is the SDA least likely to cause EPS; clozapine causes none.", points: ["Risperidone causes dose-dependent EPS above 6 mg; high-potency DRAs cause the most.", "Aripiprazole and lurasidone often cause akathisia.", "If a DRA is used, prophylactic antiparkinsonian drugs prevent acute motor effects."], link: { ch: "ch21-1", sec: "s211-quet", label: "Quetiapine" } },
+      sedation: { label: "Short list", dx: "Aripiprazole, or a high-potency drug at low dose", line: "Low-potency DRAs, quetiapine, clozapine, olanzapine and iloperidone cause the most sedation or orthostasis.", points: ["Titrate iloperidone and quetiapine slowly.", "Give the dose at bedtime, but bedtime dosing raises fall risk in older adults.", "Check supine and standing blood pressure."], link: { ch: "ch21-1", sec: "s211-sga-use", label: "Starting an SGA" } },
+      dra: { label: "Consider", dx: "A high-potency or intermediate-potency DRA", line: "DRAs remain effective, cheaper and lower in metabolic risk.", points: ["Perphenazine is as effective and well tolerated as the SGAs.", "Prefer high potency over low potency (fewer cardiac, hypotensive, epileptogenic, sexual and allergic effects).", "Use prophylactic antiparkinsonian drugs; watch for tardive dyskinesia and NMS."], link: { ch: "ch21-1", sec: "s211-levels", label: "Choosing a DRA" } }
+    }
   }
 ]);

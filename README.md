@@ -69,6 +69,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 12 | Somatic Symptom and Related Disorders | 22 | 66 | 130 |
 | 13 | Feeding and Eating Disorders | 22 | 105 | 147 |
 | 14 | Elimination Disorders | 15 | 48 | 106 |
+| 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
 
 ## Publish on GitHub Pages
 
@@ -126,3 +127,10 @@ To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to
 App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com
 
 An independent study aid built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition. Not affiliated with or endorsed by the publisher. The underlying textbook is copyrighted, so consider who has access to the published site. Always confirm doses and prescribing details against current product labeling.
+
+## Drugs section and post-publication updates
+
+- `js/drugs.js` renders `#/drugs` (browse by class with indication and side-effect filters), `#/drugs/<id>` (drug page), `#/drugs/compare/<id,id,...>` (up to four, chosen by class and group), `#/drugs/drill/<scope>` (generated cards, same spaced-repetition store) and `#/updates` (every post-publication update in one list). It also links drug names in guide and high-yield text and adds drugs to search.
+- Drug data lives in `data/drugs/<class>.js` (`KS.drugClasses`, `KS.drugs`). Fields: `mechanism`, `indications {approved, other}`, `forms`, `dose {start, titration, range, max, notes}`, `half`/pharmacokinetics, `effects {common, serious}`, `profile` levels, `monitoring`, `interactions`, `populations`, `pearls`, `clues` (for "which drug?" cards) and `updates`.
+- Anything published after the 12th edition goes in an `updates` entry (`{year, title, text, source, field}`) on a drug, or a `{ type: "update", ... }` block in a study guide. Both render as a dashed "Post-publication update" box that names its source.
+

@@ -117,7 +117,7 @@
     var pg = PAGES[P.paper] || PAGES.letter, m = pg.m, W = pg.w - 2 * m;
     var g = { pg: pg, m: m, W: W };
     // header
-    var srcLines = ['Kaplan & Sadock’s Synopsis of Psychiatry, 12th ed.'];
+    var srcLines = P.src || ['Kaplan & Sadock’s Synopsis of Psychiatry, 12th ed.'];
     g.srcFirst = srcLines.concat(P.blank ? ['Name ____________________ Date __________'] : []);
     g.srcRest = srcLines;
     var srcW = 0;
@@ -127,7 +127,7 @@
     });
     g.srcW = srcW;
     g.titleW = W - srcW - 6 * MM;
-    g.titleLines = wrap(words('Chapter ' + P.number + ': ' + P.title, 'H', true), 14, g.titleW, 'H', 'HB');
+    g.titleLines = wrap(words(P.heading || ('Chapter ' + P.number + ': ' + P.title), 'H', true), 14, g.titleW, 'H', 'HB');
     var kick = 7, title = g.titleLines.length * 14 * 1.15;
     g.headH = kick + 1 * MM + title + 2.4 * MM + 1.2 + 3 * MM;
     g.footH = 2 * MM + 1.6 * MM + 6.5 * 1.3;
@@ -224,7 +224,7 @@
   function renderPage(ops, size, g, P, idx, count, attribution) {
     var pg = g.pg, page = new Page(pg.h), m = g.m;
     // header
-    var kicker = ('High-yield ' + (P.blank ? 'worksheet' : 'handout') + (count > 1 ? ', page ' + (idx + 1) + ' of ' + count : '')).toUpperCase();
+    var kicker = ((P.kicker || ('High-yield ' + (P.blank ? 'worksheet' : 'handout'))) + (count > 1 ? ', page ' + (idx + 1) + ' of ' + count : '')).toUpperCase();
     var kmap = ''; for (var i = 0; i < kicker.length; i++) kmap += mapChar(kicker.charAt(i)).ch;
     page.text('HB', 7, RED, m, m + 6, kmap, 0.56);
     var ty = m + 7 + 1 * MM;
@@ -317,7 +317,7 @@
     var pages = layAll(P.groups, size, g);
     if (!pages) return null;
     var contents = pages.map(function (ops, i) { return renderPage(ops, size, g, P, i, pages.length, P.attribution); });
-    var blob = assemble(contents, g.pg, 'Chapter ' + P.number + ' high-yield ' + (P.blank ? 'worksheet' : 'handout'));
+    var blob = assemble(contents, g.pg, P.heading || ('Chapter ' + P.number + ' high-yield ' + (P.blank ? 'worksheet' : 'handout')));
     blob.fontSize = size;
     return blob;
   };

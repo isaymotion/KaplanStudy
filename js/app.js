@@ -263,6 +263,8 @@
         if (p[1] === 'review') return renderExamReview(p[2], p[3] || 'missed', parseInt(p[4] || '0', 10));
         return renderExamSetup();
       case 'glossary': return renderGlossary(p[1]);
+      case 'drugs': return DRUG ? DRUG.route(p) : renderMissing();
+      case 'updates': return DRUG ? DRUG.renderUpdates() : renderMissing();
       case 'helpers': return p[1] ? renderHelper(p[1]) : renderHelpers();
       case 'teach':
         if (p[1] === 'run') return renderTeachRun();
@@ -360,7 +362,8 @@
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
           '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, substance, psychotic, mood, anxiety, OCD-related, trauma-related, dissociative, somatic symptom, eating and elimination disorders, step by step</span></a>' +
-          '<a class="tool tool--wide" href="#/bookmarks"><span class="tool__name">Bookmarks</span><span class="tool__meta">' + (bookmarkList().length ? plural(bookmarkList().length, 'saved section') + ' across the study guides' : 'Tap the ribbon on any study-guide section to save it here') + '</span></a>' +
+          '<a class="tool" href="#/drugs"><span class="tool__name">Drugs</span><span class="tool__meta">' + ((KS.drugs || []).length ? (KS.drugs || []).length + ' drugs by class: mechanism, dosing, side effects, monitoring; compare and drill' : 'Drug reference by class') + '</span></a>' +
+          '<a class="tool" href="#/bookmarks"><span class="tool__name">Bookmarks</span><span class="tool__meta">' + (bookmarkList().length ? plural(bookmarkList().length, 'saved section') + ' across the study guides' : 'Tap the ribbon on any study-guide section to save it here') + '</span></a>' +
         '</div>' +
       '</section>';
 
@@ -490,6 +493,8 @@
           if (r.note) g += '<span class="timeline__note">' + fmt(r.note) + '</span>';
         });
         return '<div class="g-block timeline" id="' + id + '">' + (b.title ? '<p class="timeline__title">' + fmt(b.title) + '</p>' : '') + g + '</div></div>';
+      case 'update':
+        return DRUG ? DRUG.updateBox(b, { id: id }) : '';
       case 'steps':
         return open + (b.title ? '<h4>' + fmt(b.title) + '</h4>' : '') + '<ol class="steps">' +
           b.items.map(function (s) { return '<li><b>' + fmt(s[0]) + '</b>' + fmt(s[1]) + '</li>'; }).join('') + '</ol>' + close;
@@ -507,6 +512,7 @@
       case 'table': return plain((b.caption || '') + ' ' + (b.head || []).join(' ') + ' ' + b.rows.map(function (r) { return typeof r === 'string' ? r : r.join(' '); }).join(' '));
       case 'timeline': return plain((b.title || '') + ' ' + b.rows.map(function (r) { return r.label + ' ' + r.bar + ' ' + (r.note || ''); }).join(' '));
       case 'steps': return plain((b.title || '') + ' ' + b.items.map(function (s) { return s[0] + ' ' + s[1]; }).join(' '));
+      case 'update': return plain('Post-publication update ' + (b.year || '') + ' ' + (b.title || '') + ' ' + b.text);
     }
     return '';
   }
@@ -546,7 +552,7 @@
       '</div>';
     setView(key, html, focusTarget);
     document.title = 'Ch ' + ch.number + ' study guide — K&S Study Companion';
-    main.querySelectorAll('.reading__intro, .objectives, .g-sec').forEach(function (s) { linkTerms(s); });
+    main.querySelectorAll('.reading__intro, .objectives, .g-sec').forEach(function (s) { if (DRUG) DRUG.link(s); linkTerms(s); });
 
     // bookmark ribbons
     main.querySelector('.reading').addEventListener('click', function (e) {
@@ -612,7 +618,7 @@
       '</div>';
     setView(key, html, focusTarget);
     document.title = 'Ch ' + ch.number + ' high yield — K&S Study Companion';
-    main.querySelectorAll('.hy-topic').forEach(function (t) { linkTerms(t, { skip: 'strong' }); });
+    main.querySelectorAll('.hy-topic').forEach(function (t) { if (DRUG) DRUG.link(t); linkTerms(t, { skip: 'strong' }); });
     var page = main.querySelector('.hy-page');
     var toggle = main.querySelector('#hy-quiz');
     var hyt = main.querySelector('#hy-teach');
@@ -2482,7 +2488,8 @@
     cases: { label: 'Clinical case card', css: 'case' },
     pharm: { label: 'Pharmacology card', css: 'pharm' },
     foundations: { label: 'Foundations card', css: 'found' },
-    glossary: { label: 'Glossary', css: 'gloss' }
+    glossary: { label: 'Glossary', css: 'gloss' },
+    drug: { label: 'Drug', css: 'pharm' }
   };
   function buildIndex() {
     INDEX = [];
@@ -2509,6 +2516,7 @@
     });
     if (!GL) buildGloss();
     GL.list.forEach(function (g) { INDEX.push({ ch: null, kind: 'glossary', title: g.t, text: g.d, src: g.src, href: '#/glossary/' + g.slug }); });
+    if (DRUG) DRUG.searchEntries().forEach(function (e) { INDEX.push(e); });
     INDEX.forEach(function (e) { e.lc = e.text.toLowerCase(); e.lt = e.title.toLowerCase(); });
   }
   function terms(q) { return q.toLowerCase().replace(/[^\p{L}\p{N}\-\s.]/gu, ' ').split(/\s+/).filter(function (t) { return t.length > 0; }); }
@@ -2529,6 +2537,7 @@
       if (ts.length > 1 && e.lc.indexOf(phrase) > -1) score += 6;
       if (e.kind === 'hy') score += 0.5;
       if (e.kind === 'glossary' && e.lt === phrase) score += 10;
+      if (e.kind === 'drug' && e.lt.indexOf(phrase) === 0) score += 12;
       out.push({ e: e, score: score });
     });
     out.sort(function (a, b) { return b.score - a.score; });
@@ -2551,19 +2560,19 @@
     while ((m = re.exec(s))) { outp += esc(s.slice(last, m.index)) + '<mark>' + esc(m[0]) + '</mark>'; last = m.index + m[0].length; if (m[0].length === 0) re.lastIndex++; }
     return outp + esc(s.slice(last));
   }
-  function kindGroup(k) { return k === 'guide' ? 'guide' : k === 'hy' ? 'hy' : k === 'glossary' ? 'glossary' : 'cards'; }
+  function kindGroup(k) { return k === 'guide' ? 'guide' : k === 'hy' ? 'hy' : k === 'glossary' ? 'glossary' : k === 'drug' ? 'drugs' : 'cards'; }
   function whereLabel(e, short) { return e.ch ? (short ? 'Ch ' : 'Chapter ') + e.ch.number : (e.src ? 'From ' + e.src : 'Book glossary'); }
 
   function renderSearch(q) {
     var res = runSearch(q);
     var ts = terms(q);
     var filter = 'all';
-    var counts = { all: res.length, guide: 0, hy: 0, cards: 0, glossary: 0 };
+    var counts = { all: res.length, guide: 0, hy: 0, cards: 0, glossary: 0, drugs: 0 };
     res.forEach(function (e) { counts[kindGroup(e.kind)]++; });
     var html = '<div class="wrap search-page"><h1>' + (q ? 'Results for \u201c' + esc(q) + '\u201d' : 'Search') + '</h1>' +
       '<p class="search-page__sub">' + (q ? res.length + ' matches across every chapter in the app' : 'Type in the search box above to search every study guide, high-yield list, flashcard and glossary term.') + '</p>' +
       (q && res.length ? '<div class="filters" role="group" aria-label="Filter results">' +
-        [['all', 'All'], ['guide', 'Study guide'], ['hy', 'High yield'], ['cards', 'Flashcards'], ['glossary', 'Glossary']].filter(function (f) { return f[0] === 'all' || counts[f[0]]; }).map(function (f) {
+        [['all', 'All'], ['drugs', 'Drugs'], ['guide', 'Study guide'], ['hy', 'High yield'], ['cards', 'Flashcards'], ['glossary', 'Glossary']].filter(function (f) { return f[0] === 'all' || counts[f[0]]; }).map(function (f) {
           return '<button class="filter" type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === 'all') + '">' + f[1] + ' (' + counts[f[0]] + ')</button>';
         }).join('') + '</div>' : '') +
       '<ol class="results" id="results"></ol>' +
@@ -2672,7 +2681,7 @@
       if (tools) html += '<div class="menu-panel__tools"><h2>Study tools</h2>' + Array.prototype.map.call(tools.querySelectorAll('a'), function (a) {
         return '<a href="' + a.getAttribute('href') + '">' + a.innerHTML.replace(/ data-nav="[^"]*"/g, '') + '</a>';
       }).join('') + '</div>';
-      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
+      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
       panel.innerHTML = html;
     }
     function open() {
@@ -2747,7 +2756,30 @@
   })();
 
   window.addEventListener('hashchange', function () { syncHist(); route(); });
+  function savePdf(blob, name) {
+    var file = null;
+    try { file = new File([blob], name, { type: 'application/pdf' }); } catch (e) {}
+    function save() {
+      var url = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = url; a.download = name; a.rel = 'noopener'; document.body.appendChild(a); a.click();
+      setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 4000);
+    }
+    if ('ontouchend' in document && file && navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share) {
+      navigator.share({ files: [file], title: name }).catch(function (e) { if (e && e.name !== 'AbortError') save(); });
+    } else save();
+  }
+  var DRUG = null;
   loadAll().then(function () {
+    if (KS.drugModule) {
+      DRUG = KS.drugModule({
+        esc: esc, fmt: fmt, plain: plain, store: store, plural: plural, shuffle: shuffle, toast: toast,
+        setView: setView, main: function () { return main; }, viewKey: function () { return view.key; }, setCleanup: function (fn) { view.cleanup = fn; },
+        chapter: chapter, allChapters: allChapters, renderMissing: renderMissing, linkTerms: linkTerms,
+        cards: function () { return CARDS; }, srs: function () { return SRS; }, isDue: isDue, Player: Player,
+        tallyKeys: tallyKeys, tallyHTML: tallyHTML, kbdHelp: kbdHelp, savePdf: savePdf, ATTRIBUTION: ATTRIBUTION
+      });
+      DRUG.inject();
+    }
     indexCards();
     updateNavBadges();
     route();

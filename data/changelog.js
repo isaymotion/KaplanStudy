@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 24,
+    date: "2026-10-14",
+    title: "Chapter 21.1: Antipsychotics, and a new Drugs section",
+    items: [
+      { type: "chapter", ch: "ch21-1", text: "**Chapter 21.1, Antipsychotics**, the first part of the psychopharmacology chapter: second-generation drugs one by one, first-generation drugs by potency, neuroleptic malignant syndrome and other adverse effects, dosing, depots and treatment resistance. Study guide, high-yield list, printable handout and cards.", href: "#/c/ch21-1/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: a drug reference arranged by class. Each drug page has the same fields (mechanism, indications, dosing, pharmacokinetics, side effects, monitoring, interactions, special populations and pearls). Filter by class, indication or side-effect profile; **compare** up to four drugs side by side, choosing by class and group; **drill** drug facts with spaced repetition; download a one-page **class sheet** PDF. Drug names in the study guides link to their pages.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**Post-publication updates**: approvals, label changes and guidelines since the 12th edition (for example the 2025 removal of the clozapine REMS, xanomeline–trospium, new long-acting injectables) appear in dashed boxes where they are discussed, and are gathered on one page.", href: "#/updates", link: "See all updates" }
+    ]
+  },
+  {
     id: 23,
     date: "2026-10-14",
     title: "Chapter 14: Elimination Disorders",

@@ -1,0 +1,523 @@
+/* Drug reference: antipsychotics. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.1, unless a
+   field sits inside an `updates` entry, which marks information published after the 12th edition, with its source.
+   Profile levels: N none or minimal, L low, M moderate, H high (from the book's descriptions and Table 21-12). */
+KS.drugClasses = (KS.drugClasses || []).concat([
+  {
+    id: 'antipsychotics', label: 'Antipsychotics', singular: 'antipsychotic', chapter: 'ch21-1',
+    intro: 'All antipsychotics block D2 receptors except the newest, non-dopaminergic agents. Second-generation drugs add strong 5-HT2A antagonism and carry less EPS but more metabolic risk; first-generation drugs are sorted by potency.',
+    groups: [
+      { id: 'sga', label: 'Second-generation (serotonin–dopamine antagonists)', short: 'Second-generation' },
+      { id: 'new', label: 'Newer mechanisms (after the 12th edition)', short: 'Newer mechanisms' },
+      { id: 'fga-high', label: 'First-generation, high potency', short: 'FGA, high potency' },
+      { id: 'fga-mid', label: 'First-generation, intermediate potency', short: 'FGA, mid potency' },
+      { id: 'fga-low', label: 'First-generation, low potency', short: 'FGA, low potency' }
+    ],
+    profile: [
+      ['weight', 'Weight and metabolic'], ['sedation', 'Sedation'], ['eps', 'EPS'], ['prolactin', 'Prolactin'],
+      ['qtc', 'QTc'], ['ach', 'Anticholinergic'], ['ortho', 'Orthostasis']
+    ],
+    lowFilters: [['weight', 'Low weight gain'], ['eps', 'Low EPS'], ['prolactin', 'Low prolactin'], ['qtc', 'Low QTc risk'], ['sedation', 'Low sedation']],
+    indications: {
+      schizophrenia: 'Schizophrenia', schizoaffective: 'Schizoaffective disorder', mania: 'Bipolar mania', 'bp-dep': 'Bipolar depression',
+      'bp-maint': 'Bipolar maintenance', 'mdd-adj': 'Adjunct in major depression', trd: 'Treatment-resistant depression',
+      autism: 'Irritability in autism', agitation: 'Acute agitation (IM)', 'trs': 'Treatment-resistant schizophrenia', suicide: 'Suicidality in schizophrenia',
+      tourette: 'Tourette disorder', pdp: 'Parkinson disease psychosis', 'ad-agitation': 'Agitation in Alzheimer dementia', nausea: 'Nausea and vomiting'
+    }
+  }
+]);
+
+KS.drugs = (KS.drugs || []).concat([
+  /* ===================== second generation ===================== */
+  {
+    id: 'risperidone', name: 'Risperidone', brands: ['Risperdal', 'Risperdal M-Tab', 'Risperdal Consta'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-risp', book: true,
+    summary: 'Potent D2 and 5-HT2A blocker; marked prolactin rise and dose-dependent EPS; long-acting injection every 2 weeks.',
+    ind: ['schizophrenia', 'mania', 'autism'],
+    mechanism: 'Antagonist at **5-HT2A**, **D2**, **α1**, **α2** and **H1** receptors, with low muscarinic affinity. As potent a D2 blocker as haloperidol, yet with less EPS. Converted on first pass to **9-hydroxy risperidone** (paliperidone), which is equally active.',
+    indications: {
+      approved: ['Schizophrenia, acute and maintenance, adults; ages 13 to 17', 'Acute manic or mixed episodes of bipolar I, alone (adults; ages 10 to 17) or with lithium or valproate', 'Irritability of autism spectrum disorder, ages 5 to 16 (aggression, self-injury, tantrums, quickly changing moods)'],
+      other: ['Augments clozapine (raises clozapine levels)', 'Aggression and self-injury in children']
+    },
+    forms: 'Tablets 0.25, 0.5, 1, 2, 3, 4 mg; oral solution 1 mg/mL; orally disintegrating tablets 0.5, 1, 2 mg; Consta IM injection 25, 50 mg (book also lists 75 mg)',
+    dose: { start: '1 mg once a day (1 to 2 mg at night)', titration: '2 mg on day 2, 4 mg on day 3; later changes of 1 to 2 mg at least a week apart', range: '2 to 6 mg once a day (PET: 1 to 4 mg gives adequate D2 blockade)', max: '6 mg a day; more causes more EPS', notes: ['Once-daily dosing is as effective as twice daily.', 'Children and adolescents start lower.', '**Consta**: 25 mg IM every 2 weeks (up to 50 mg), with oral risperidone for the first **3 weeks**.'] },
+    half: 'About 20 hours (risperidone plus 9-hydroxy metabolite)',
+    pk: ['Peak 1 hour (parent) and 3 hours (metabolite); bioactivity 70%.', 'No link between plasma level and response.'],
+    effects: {
+      common: ['Dose-dependent **EPS**', 'Weight gain (more in children)', 'Anxiety, nausea and vomiting, rhinitis', 'Erectile and orgasmic dysfunction', 'Increased pigmentation', 'Dizziness, somnolence, hyperkinesia'],
+      serious: ['**Marked prolactin elevation** (galactorrhea, breast enlargement), up to 3 to 4 times normal']
+    },
+    monitoring: ['Class metabolic monitoring (weight, BMI, waist, BP, fasting glucose and lipids)', 'Prolactin-related symptoms'],
+    interactions: ['**Paroxetine** and **fluoxetine** (CYP2D6 inhibitors) block formation of the active metabolite.', 'With SSRIs, prolactin can rise sharply (galactorrhea, breast enlargement).', 'Weak CYP2D6 inhibitor itself; little effect on other drugs.'],
+    pearls: ['The SGA most associated with prolactin elevation.', 'Adding risperidone to clozapine can produce dramatic improvement by raising clozapine levels.'],
+    profile: { weight: 'M', sedation: 'L', eps: 'M', prolactin: 'H', ach: 'N' },
+    drill: { mech: 'Potent **D2** and **5-HT2A** antagonist (also α1, α2, H1); active metabolite **9-hydroxy risperidone** (paliperidone).', dose: 'Start **1 mg** a day, usual **2 to 6 mg** once daily; above 6 mg more EPS. Consta **25 mg every 2 weeks** with 3 weeks of oral overlap.', se: '**Prolactin elevation**, dose-dependent **EPS**, weight gain (especially in children), sexual dysfunction.', mon: 'Metabolic monitoring; prolactin symptoms.' },
+    clues: ['the SGA with the most marked prolactin elevation', 'approved for irritability in autism from age 5, with a 2-weekly long-acting injection'],
+    updates: [
+      { year: '2023', title: 'New long-acting risperidone injections', field: 'dose', text: '**Uzedy** (subcutaneous, monthly or every 2 months, 2023) needs **no loading dose or oral overlap**; therapeutic levels in 6 to 24 hours. Oral-to-Uzedy: 2 mg oral = 50 mg monthly or 100 mg every 2 months, up to 5 mg = 125 mg monthly or 250 mg every 2 months. Bipolar I maintenance added in October 2025 (monthly only). **Rykindo** (IM every 2 weeks, 2023) is approved for schizophrenia and bipolar I maintenance.', source: 'Teva and MedinCell announcement, April 2023; Uzedy prescribing information (2025); Luye Pharma announcement, January 2023' }
+    ]
+  },
+  {
+    id: 'paliperidone', name: 'Paliperidone', brands: ['Invega', 'Invega Sustenna'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-risp', book: true,
+    summary: 'The active metabolite of risperidone; little hepatic metabolism, so dose by kidney function; monthly injection.',
+    ind: ['schizophrenia', 'schizoaffective'],
+    mechanism: 'Benzisoxazole and the **primary active metabolite of risperidone** (9-hydroxy risperidone). CYP2D6 and CYP3A4 play only a limited role in its elimination.',
+    indications: { approved: ['Schizophrenia, acute and maintenance', 'Schizoaffective disorder, acute, alone or with mood stabilizers or antidepressants'], other: [] },
+    forms: 'Extended-release tablets 3, 6, 9 mg; Invega Sustenna monthly IM (39, 78, 117, 156, 234 mg paliperidone palmitate)',
+    dose: { start: '6 mg once a day in the morning (3 to 9 mg)', titration: 'Peak about 24 hours after a dose; steady state in 4 to 5 days', range: '3 to 6 mg a day maintenance (Table 21-9)', max: '12 mg a day', notes: ['With or without food.', '**Reduce the dose in renal impairment**; no change for mild or moderate hepatic impairment.', '**Sustenna**: first **two** injections in the **deltoid** (levels 28% higher than gluteal), then deltoid or gluteal; 117 mg monthly is typical; half-life 25 to 49 days.'] },
+    half: 'Steady state 4 to 5 days; Sustenna 25 to 49 days',
+    pk: ['Minimal hepatic metabolism.'],
+    effects: { common: ['Orthostatic hypotension, tachycardia, somnolence', 'Akathisia, dystonia, EPS, parkinsonism', 'Sensitivity to temperature extremes'], serious: ['**QTc prolongation**: avoid with other QT-prolonging drugs'] },
+    monitoring: ['Renal function before dosing', 'Class metabolic monitoring', 'ECG if QT risk factors'],
+    interactions: ['Avoid other QTc-prolonging drugs.'],
+    pearls: ['Choose it over risperidone in liver disease; adjust it in kidney disease.'],
+    profile: { sedation: 'L', eps: 'M', qtc: 'M', ortho: 'M' },
+    drill: { mech: 'Active metabolite of risperidone (9-hydroxy risperidone); D2/5-HT2A antagonist with little hepatic metabolism.', dose: '**6 mg** each morning; max **12 mg**. Sustenna: first two injections **deltoid**, about **117 mg monthly**.', se: 'EPS and akathisia, orthostasis, tachycardia, **QTc prolongation**.', mon: '**Renal function** (reduce dose in renal impairment); metabolic monitoring.' },
+    clues: ['the risperidone metabolite dosed by kidney function, whose monthly injection starts with two deltoid doses'],
+    updates: [
+      { year: '2021', title: '3-month and 6-month paliperidone injections', field: 'dose', text: '**Invega Trinza** (every 3 months) follows at least 4 months of Sustenna: 78 → 273 mg, 117 → 410 mg, 156 → 546 mg, 234 → 819 mg, given when the next monthly dose is due. **Invega Hafyera** (every **6 months**, gluteal, 2021) follows at least 4 months of Sustenna or one Trinza cycle: 1,092 mg (from 156 mg monthly or 546 mg every 3 months) or 1,560 mg (from 234 mg or 819 mg). **Erzofri** (2024) is a monthly paliperidone palmitate whose start skips the day-8 injection.', source: 'Invega Trinza and Invega Hafyera prescribing information; Janssen announcement, September 2021; Luye Pharma announcement, July 2024' }
+    ]
+  },
+  {
+    id: 'olanzapine', name: 'Olanzapine', brands: ['Zyprexa', 'Zyprexa Zydis', 'Zyprexa Relprevv', 'Symbyax (with fluoxetine)'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-olz', book: true,
+    summary: 'Broad receptor blocker with the most weight gain after clozapine; IM for agitation; depot carries a post-injection delirium warning.',
+    ind: ['schizophrenia', 'mania', 'bp-maint', 'bp-dep', 'trd', 'agitation'],
+    mechanism: 'Antagonist at **5-HT2A** and **D2**, plus **D1**, **D4**, **α1**, **5-HT1A**, **muscarinic M1 to M5** and **H1** receptors.',
+    indications: {
+      approved: ['Schizophrenia', 'Bipolar I: acute manic or mixed episodes (alone or with lithium or valproate) and maintenance', 'With fluoxetine (**Symbyax**): bipolar I depression and **treatment-resistant depression** (olanzapine alone is not approved for TRD)', 'IM: acute agitation in schizophrenia and bipolar disorder'],
+      other: ['Severe tardive dyskinesia', 'Aggression and self-injury in children']
+    },
+    forms: 'Tablets and Zydis orally disintegrating tablets 2.5 to 20 mg; IM 10 mg; Relprevv long-acting injection',
+    dose: { start: '5 to 10 mg once a day (mania 10 to 15 mg)', titration: 'Steps of 5 mg no more often than weekly; each step needs a week to reach steady state', range: '10 to 20 mg a day (5 to 20 mg commonly used)', max: '20 mg a day in the label; 30 to 40 mg used in treatment-resistant patients, with more EPS and other effects', notes: ['**IM 10 mg** for acute agitation; combining with benzodiazepines is not approved.', 'Orally disintegrating form helps patients who cannot swallow pills or who "cheek" them.', '**Relprevv**: deep gluteal injection every 2 or 4 weeks; aspirate first; **observe 3 hours** after each dose in a registered facility (PDSS).'] },
+    half: '31 hours (21 to 54)',
+    pk: ['About 85% absorbed; 40% removed by first-pass metabolism; peak 5 hours.'],
+    effects: {
+      common: ['**Weight gain**: more than any SGA except clozapine; not dose-related, peaks around 9 months then may keep rising slowly', 'Somnolence, dry mouth, dizziness, constipation, dyspepsia, increased appetite', 'Akathisia, tremor; dose-related EPS'],
+      serious: ['Diabetes and dyslipidemia', '**Transaminase elevation** (2% stop the drug)', '**Post-injection delirium/sedation syndrome** with Relprevv (boxed warning)', 'Stroke risk in elderly patients with dementia (class warning)']
+    },
+    monitoring: ['Periodic **blood glucose** and **transaminases** (manufacturer)', 'Class metabolic monitoring', '3-hour observation after each Relprevv injection'],
+    interactions: ['**Fluvoxamine** and **cimetidine** raise levels; **carbamazepine** and **phenytoin** lower them.', '**Ethanol** increases absorption by more than 25%, adding sedation.', 'Little effect on other drugs.'],
+    pearls: ['Taper when stopping to avoid **cholinergic rebound** (sweating, flushing, diarrhea, hyperactivity).', 'Safe to start after clozapine agranulocytosis, but wait for recovery first.', 'Switching from risperidone: taper risperidone over 3 weeks while starting olanzapine 10 mg.'],
+    profile: { weight: 'H', sedation: 'M', eps: 'L', ach: 'H' },
+    drill: { mech: 'D2 and 5-HT2A antagonist with broad **muscarinic (M1 to M5)**, **H1**, α1 and D1/D4 blockade.', dose: 'Start **5 to 10 mg**, usual **10 to 20 mg** once daily (label max 20 mg); IM **10 mg** for agitation.', se: '**Weight gain and diabetes** (most after clozapine), sedation, anticholinergic effects, transaminase rise; Relprevv **PDSS**.', mon: 'Glucose, lipids, weight; periodic **transaminases**; 3-hour observation after Relprevv.' },
+    clues: ['the long-acting injection that needs 3 hours of observation for post-injection delirium/sedation syndrome', 'combined with fluoxetine for bipolar depression and treatment-resistant depression'],
+    updates: [
+      { year: '2021', title: 'Olanzapine with samidorphan (Lybalvi)', field: 'effects', text: 'Approved May 2021 for schizophrenia and bipolar I. **Samidorphan**, an opioid antagonist, reduces olanzapine weight gain. **Contraindicated** with opioid use or acute opioid withdrawal; stop short-acting opioids 7 days and long-acting opioids 14 days before starting. See its own drug page.', source: 'Alkermes announcement, June 2021; Lybalvi prescribing information (2026)' },
+      { year: '2026', title: 'Subcutaneous long-acting olanzapine (Weltruza)', field: 'dose', text: 'Approved **October 9, 2026** for adults with schizophrenia: a monthly **subcutaneous** injection (318, 425 or 531 mg, matching 10, 15 or 20 mg oral) with **no loading dose, oral overlap or post-injection observation**. No PDSS cases occurred in 3,971 trial injections, but the warning remains on the label.', source: 'MedinCell and Teva announcement, October 9, 2026; Psychiatric Times, October 2026. Label not yet reviewed.' }
+    ]
+  },
+  {
+    id: 'olanzapine-samidorphan', name: 'Olanzapine/samidorphan', brands: ['Lybalvi'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-new', book: false,
+    summary: 'Olanzapine plus an opioid antagonist to blunt weight gain; contraindicated with opioids.',
+    ind: ['schizophrenia', 'mania', 'bp-maint'],
+    mechanism: '**Olanzapine** (D2 and 5-HT2 antagonist) combined with **samidorphan**, an **opioid antagonist** that reduces olanzapine-associated weight gain.',
+    indications: { approved: ['Schizophrenia', 'Bipolar I: acute manic or mixed episodes (alone or with lithium or valproate) and maintenance monotherapy'], other: [] },
+    forms: 'Tablets 5/10, 10/10, 15/10, 20/10 mg (olanzapine/samidorphan); do not split or combine strengths',
+    dose: { start: 'Schizophrenia 5/10 or 10/10 mg once a day; mania 10/10 or 15/10 mg', titration: 'Schizophrenia: 5 mg olanzapine steps weekly; mania: no more than once every 24 hours', range: '10/10 to 20/10 mg', max: '20/10 mg a day' },
+    effects: { common: ['Weight gain (less than olanzapine alone), somnolence, dry mouth, headache'], serious: ['**Precipitated opioid withdrawal**; overdose risk if opioids are used to overcome the blockade', 'DRESS (as with olanzapine)'] },
+    monitoring: ['Orthostatic vital signs during titration', 'Metabolic monitoring', 'CBC if history of low white counts'],
+    interactions: ['**Contraindicated** with opioids or in acute opioid withdrawal: stop short-acting opioids **7 days** and long-acting opioids **14 days** before; stop Lybalvi **5 days** before planned opioid treatment.', 'Avoid strong CYP3A4 inducers; adjust for CYP1A2 inhibitors and inducers.', 'Can cause **false-positive** opioid urine screens.'],
+    pearls: ['In the 6-month ENLIGHTEN-2 trial, percent weight gain and the share gaining 10% or more were lower than with olanzapine.'],
+    drill: { mech: 'Olanzapine plus **samidorphan**, an opioid antagonist that limits weight gain.', dose: '5/10 to 20/10 mg once daily; max **20/10 mg**.', se: 'Weight gain (less), somnolence, dry mouth; **precipitated opioid withdrawal**.', mon: 'Opioid history; orthostatic vitals; metabolic monitoring.' },
+    clues: ['the olanzapine combination contraindicated in patients taking opioids'],
+    updates: [{ year: '2021', title: 'Approved after the 12th edition', text: 'FDA approval May 28, 2021. Not covered in the 12th edition.', source: 'Alkermes announcement, June 2021; Lybalvi prescribing information (January 2026)' }]
+  },
+  {
+    id: 'quetiapine', name: 'Quetiapine', brands: ['Seroquel', 'Seroquel XR'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-quet', book: true,
+    summary: 'The SGA least likely to cause EPS at any dose; sedation and orthostasis; approved for bipolar depression; QTc caution.',
+    ind: ['schizophrenia', 'mania', 'bp-dep', 'bp-maint', 'mdd-adj'],
+    mechanism: 'Antagonist at **D2** and **5-HT2**, plus **5-HT6**, **D1**, **H1**, **α1** and **α2**. No muscarinic or benzodiazepine receptor blockade. Generally lower receptor antagonism than other antipsychotics; occupancy persists after blood levels fall.',
+    indications: { approved: ['Schizophrenia', 'Acute mania in bipolar I, alone or with lithium or valproate', 'Bipolar depression (monotherapy)', 'Bipolar I maintenance with lithium or divalproex', 'Adjunct to antidepressants in MDD (XR)'], other: ['Dopamine agonist–induced psychosis in Parkinson disease', 'Insomnia (25 to 300 mg at night)', 'Severe tardive dyskinesia'] },
+    forms: 'Tablets 25, 50, 100, 200, 300, 400 mg; XR tablets',
+    dose: { start: '25 mg twice a day', titration: '25 to 50 mg per dose every 2 to 3 days (Table 21-9: 2 or 3 times a day on days 2 and 3) toward 300 to 500 mg by day 4', range: '300 to 800 mg a day', max: '800 mg a day (Table 21-9); the book notes some patients use 1,200 to 1,600 mg with serial ECGs', notes: ['Often works once daily despite its short half-life.', '**XR**: once daily in the evening, 3 to 4 hours before bed, without food or with a light meal; start 300 mg, then 400 to 800 mg.'] },
+    half: 'About 7 hours (steady state)',
+    pk: ['Peak 1 to 2 hours.'],
+    effects: { common: ['**Somnolence**, **postural hypotension** and dizziness (the most common; transient, managed by slow titration)', 'Modest, sometimes considerable, weight gain', 'Small heart rate rise, constipation, transient transaminase rise'], serious: ['**QTc prolongation**, especially above recommended doses, with other QT drugs, or in overdose', 'Animal data raised cataract concerns, not borne out clinically'] },
+    monitoring: ['ECG at higher doses or with QT risk factors', 'Consider lens examination early and periodically (book)', 'Class metabolic monitoring'],
+    interactions: ['**Phenytoin** increases clearance fivefold.', 'Do not combine with QT-prolonging drugs: class IA and III antiarrhythmics, ziprasidone, chlorpromazine, thioridazine, gatifloxacin, moxifloxacin, pentamidine, methadone.', 'Avoid with bradycardia, low potassium or magnesium, or congenital long QT.'],
+    pearls: ['The best SGA for psychosis in Parkinson disease because it almost never causes EPS.', 'Prolactin elevation is rare, mild and transient.'],
+    profile: { weight: 'M', sedation: 'H', eps: 'N', prolactin: 'N', qtc: 'M', ach: 'N', ortho: 'H' },
+    drill: { mech: 'D2 and 5-HT2 antagonist with **H1**, α1/α2 and 5-HT6 blockade; **no muscarinic** blockade; loose, low D2 binding.', dose: 'Start **25 mg twice daily**, raise 25 to 50 mg per dose every 2 to 3 days; usual **300 to 800 mg**; max **800 mg** (Table 21-9).', se: '**Sedation**, **orthostasis**, dizziness; modest weight gain; **QTc** caution; almost **no EPS**.', mon: 'ECG at high doses or with QT risks; metabolic monitoring.' },
+    clues: ['the SGA least likely to cause EPS, preferred for psychosis in Parkinson disease', 'approved as monotherapy for bipolar depression and as adjunct in MDD in its XR form'],
+    updates: [{ year: '2026', title: 'Current label maximum', field: 'dose', text: 'The current immediate-release label caps **acute schizophrenia at 750 mg/day**, with up to 800 mg for maintenance, adolescents and mania; XR maximum 800 mg. With a strong CYP3A4 inhibitor, cut the dose to one-sixth.', source: 'Seroquel and Seroquel XR prescribing information (April 2026)' }]
+  },
+  {
+    id: 'ziprasidone', name: 'Ziprasidone', brands: ['Geodon'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-zip', book: true,
+    summary: 'Weight-neutral SGA with QTc liability; must be taken with food, twice daily; IM for agitation.',
+    ind: ['schizophrenia', 'mania', 'bp-maint', 'agitation'],
+    mechanism: 'Blocks **5-HT2A** and **D2**, plus 5-HT1D, **5-HT2C**, D3, D4, α1 and H1; very low affinity for D1, M1 and α2. **5-HT1A agonist** and inhibits **serotonin and norepinephrine reuptake**, consistent with antidepressant-like effects.',
+    indications: { approved: ['Schizophrenia', 'Acute manic or mixed episodes of bipolar I (monotherapy)', 'Bipolar I maintenance with lithium or valproate', 'IM: acute agitation in schizophrenia'], other: [] },
+    forms: 'Capsules 20, 40, 60, 80 mg; IM 20 mg/mL vial',
+    dose: { start: '20 mg twice a day **with food** (40 mg a day)', titration: 'Adjust at least 2 days apart', range: '40 to 80 mg twice a day (80 to 160 mg a day); up to 240 mg used in practice', max: '80 mg twice a day', notes: ['**Food doubles bioavailability**.', '**IM**: 10 mg every 2 hours or 20 mg every 4 hours, up to **40 mg a day**, for no more than 3 consecutive days.'] },
+    half: '5 to 10 hours (twice-daily dosing); IM 2 to 5 hours',
+    pk: ['Oral peak 2 to 6 hours; IM peak about 1 hour; steady state by days 1 to 3.'],
+    effects: { common: ['Somnolence, headache, dizziness, nausea, lightheadedness', 'Almost no weight gain; no sustained prolactin rise'], serious: ['**QTc prolongation** (rises at 40 and 120 mg/day)'] },
+    monitoring: ['ECG and electrolytes when QT risk factors exist'],
+    interactions: ['**Contraindicated** with QT-prolonging drugs: dofetilide, sotalol, quinidine, other class IA and III antiarrhythmics, mesoridazine, thioridazine, chlorpromazine, droperidol, pimozide, sparfloxacin, gatifloxacin, moxifloxacin, halofantrine, mefloquine, pentamidine, arsenic trioxide, dolasetron, probucol, tacrolimus.', 'Otherwise low potential for drug interactions.'],
+    pearls: ['Avoid in congenital long QT or a history of arrhythmia.', 'Lacks anticholinergic effects: abrupt switches from olanzapine, clozapine or a DRA can cause cholinergic rebound.'],
+    profile: { weight: 'N', sedation: 'M', prolactin: 'L', qtc: 'H', ach: 'N' },
+    drill: { mech: 'D2/5-HT2A antagonist that is also a **5-HT1A agonist** and inhibits **serotonin and norepinephrine reuptake**.', dose: '**20 mg twice daily with food**, up to **80 mg twice daily**; IM 10 to 20 mg, max **40 mg/day**.', se: '**QTc prolongation**; almost **no weight gain**; somnolence, dizziness.', mon: 'ECG and electrolytes when QT risk is present.' },
+    clues: ['the weight-neutral SGA whose absorption doubles with food and which is contraindicated with QT-prolonging drugs'],
+    updates: []
+  },
+  {
+    id: 'aripiprazole', name: 'Aripiprazole', brands: ['Abilify', 'Abilify Maintena'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-arip', book: true,
+    summary: 'D2 partial agonist; little weight gain or prolactin; akathisia-like activation is the main problem.',
+    ind: ['schizophrenia', 'mania', 'bp-maint', 'mdd-adj', 'autism'],
+    mechanism: '**Partial D2 agonist**: competes with dopamine and lowers net dopaminergic activity, a modulator rather than a blocker, at postsynaptic D2 receptors and presynaptic autoreceptors. Also a potent **5-HT2A antagonist** and an **α1 antagonist** (orthostasis).',
+    indications: { approved: ['Schizophrenia', 'Bipolar I manic and mixed episodes, acute and maintenance, alone or with lithium or valproate', 'Adjunct to antidepressants in MDD', 'Irritability of autistic disorder'], other: ['Aggression in oppositional defiant or conduct disorder (about 60% response in one study)'] },
+    forms: 'Tablets 5, 10, 15, 20, 30 mg',
+    dose: { start: '10 to 15 mg once a day; many start at **5 mg** for tolerability', titration: 'Do not increase before 2 weeks (Table 21-9)', range: '10 to 30 mg a day', max: '30 mg a day' },
+    half: 'About 75 hours (active metabolite 96 hours)',
+    pk: ['Peak 3 to 5 hours; food does not affect absorption; 99% protein-bound.', 'Metabolized by **CYP3A4** and **CYP2D6**; clearance reduced in the elderly.'],
+    effects: { common: ['Headache, somnolence, agitation, dyspepsia, anxiety, nausea', '**Akathisia-like activation** (restlessness), a common reason for stopping', 'Insomnia'], serious: ['Seizures reported'] },
+    monitoring: ['Class metabolic monitoring (weight gain and diabetes not increased in data so far)'],
+    interactions: ['**Carbamazepine** and **valproate** lower levels; **ketoconazole**, **fluoxetine**, **paroxetine** and **quinidine** raise them.', 'Lithium and valproate do not change steady-state levels.', 'Additive hypotension with antihypertensives.'],
+    pearls: ['No significant QTc effect and little prolactin elevation.', 'Start low (5 mg) to limit nausea, insomnia and akathisia.'],
+    profile: { weight: 'L', sedation: 'L', eps: 'L', prolactin: 'N', qtc: 'N', ortho: 'L' },
+    drill: { mech: '**Partial D2 agonist** (functional dopamine reduction) and 5-HT2A antagonist; α1 antagonism.', dose: 'Start **10 to 15 mg** (often 5 mg), range **10 to 30 mg** once daily; max **30 mg**; wait 2 weeks between increases.', se: '**Akathisia-like activation**, insomnia, nausea, headache; little weight gain, prolactin or QTc change.', mon: 'Metabolic monitoring; watch for akathisia.' },
+    clues: ['the D2 partial agonist whose main problem is akathisia-like activation', 'an SGA with a half-life of about 75 hours that does not raise prolactin'],
+    updates: [
+      { year: '2023', title: 'Long-acting aripiprazole options', field: 'dose', text: '**Abilify Maintena**: 400 mg monthly (no sooner than 26 days apart), 300 mg for side effects; start with two 400 mg injections plus 20 mg oral on one day, or one injection plus 14 days of oral 10 to 20 mg. **Abilify Asimtufii** (every 2 months, 2023): 960 mg every 56 days for schizophrenia and bipolar I maintenance. **Aristada** (aripiprazole lauroxil): 441 to 882 mg monthly, 882 mg every 6 weeks or 1,064 mg every 2 months; start with Aristada Initio 675 mg plus a single 30 mg oral dose, or 21 days of oral overlap.', source: 'Abilify Maintena (2026), Abilify Asimtufii and Aristada (2025) prescribing information; Otsuka announcement, April 2023' }
+    ]
+  },
+  {
+    id: 'brexpiprazole', name: 'Brexpiprazole', brands: ['Rexulti'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-new', book: 'list',
+    summary: 'D2/5-HT1A partial agonist; adjunct in MDD, schizophrenia, and the first approval for agitation in Alzheimer dementia.',
+    ind: ['schizophrenia', 'mdd-adj', 'ad-agitation'],
+    mechanism: '**Partial agonist at 5-HT1A, D2 and D3**; **antagonist at 5-HT2A, α1B and α2C**.',
+    indications: { approved: ['Adjunct to antidepressants in MDD (adults)', 'Schizophrenia (adults; ages 13 and older since January 2022)', '**Agitation associated with dementia due to Alzheimer disease** (May 2023): the first such approval'], other: [] },
+    dose: { start: 'MDD 0.5 to 1 mg; schizophrenia 1 mg (adolescents 0.5 mg); Alzheimer agitation 0.5 mg', titration: 'Alzheimer agitation: 0.5 mg days 1 to 7, 1 mg days 8 to 14, 2 mg from day 15', range: 'MDD target 2 mg; schizophrenia 2 to 4 mg; agitation 2 mg', max: 'MDD 3 mg; schizophrenia 4 mg; agitation 3 mg' },
+    half: 'About 91 hours',
+    effects: { common: ['Weight gain, somnolence, akathisia (MDD); EPS in adolescents', 'Nasopharyngitis, dizziness (Alzheimer agitation)'], serious: ['Boxed warnings: increased mortality in elderly patients with dementia-related psychosis; suicidality'] },
+    interactions: ['Half the dose in CYP2D6 poor metabolizers or with a strong CYP2D6 or CYP3A4 inhibitor; a quarter with combined inhibition; double the dose over 1 to 2 weeks with strong CYP3A4 inducers.', 'In MDD, no adjustment needed for strong CYP2D6-inhibiting antidepressants (paroxetine, fluoxetine).'],
+    populations: [['Hepatic and renal', 'Child-Pugh 7 or more, or creatinine clearance under 60: max 2 mg (MDD, agitation) or 3 mg (schizophrenia)']],
+    drill: { mech: 'Partial agonist at **5-HT1A, D2, D3**; antagonist at 5-HT2A, α1B, α2C.', dose: 'MDD **2 mg** (max 3); schizophrenia **2 to 4 mg** (max 4); Alzheimer agitation titrate to **2 mg** (max 3).', se: 'Weight gain, akathisia, somnolence; dementia mortality boxed warning.', mon: 'Metabolic monitoring; CYP2D6 status and interacting drugs.' },
+    clues: ['the first drug FDA-approved for agitation associated with Alzheimer dementia (2023)'],
+    updates: [
+      { year: '2023', title: 'Not covered in the 12th edition', text: 'The book only lists brexpiprazole among the SGAs. Its Alzheimer agitation approval came in May 2023; a PTSD application (with sertraline) was rejected in September 2025. Details on this page come from the current label.', source: 'Rexulti prescribing information (April 2026); Otsuka and Lundbeck announcements, 2022 to 2025' }
+    ]
+  },
+  {
+    id: 'cariprazine', name: 'Cariprazine', brands: ['Vraylar'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-new', book: 'list',
+    summary: 'D2/D3 partial agonist with very long-lived active metabolites; schizophrenia, bipolar mania and depression, adjunct in MDD.',
+    ind: ['schizophrenia', 'mania', 'bp-dep', 'mdd-adj'],
+    mechanism: '**Partial agonist at D2 and 5-HT1A**, antagonist at 5-HT2A; active metabolites **DCAR** and **DDCAR** bind similarly.',
+    indications: { approved: ['Schizophrenia (adults; ages 13 and up)', 'Bipolar I manic or mixed episodes (adults; ages 10 and up)', 'Bipolar I depression (adults)', 'Adjunct in MDD (December 2022)'], other: [] },
+    dose: { start: '1.5 mg once a day (adolescents 0.5 mg)', titration: 'MDD: 1.5 mg, may increase to 3 mg on day 15', range: 'Schizophrenia 1.5 to 6 mg; mania 3 to 6 mg; bipolar depression and MDD 1.5 or 3 mg', max: '6 mg (schizophrenia, mania); 3 mg (bipolar depression, MDD)' },
+    half: 'Parent 2 to 4 days; DDCAR 1 to 3 weeks',
+    pk: ['DDCAR reaches steady state at 4 to 8 weeks and exceeds parent exposure about fourfold; levels fall about 50% at 1 week and 90% at 4 weeks after stopping.'],
+    effects: { common: ['**Akathisia** and EPS', 'Restlessness, dyspepsia, vomiting, somnolence (mania)', 'Fatigue, constipation, nausea, insomnia (MDD)'], serious: ['Boxed warnings: dementia mortality; suicidality'] },
+    interactions: ['Lower the dose with strong or moderate CYP3A4 inhibitors; avoid CYP3A4 inducers.'],
+    populations: [['Hepatic and renal', 'Not recommended with Child-Pugh 10 or more or creatinine clearance under 30']],
+    drill: { mech: '**D2 and 5-HT1A partial agonist** (D3-preferring); long-lived metabolites DCAR and **DDCAR**.', dose: 'Start **1.5 mg**; schizophrenia and mania up to **6 mg**; bipolar depression and MDD **1.5 to 3 mg**.', se: '**Akathisia**, EPS, restlessness, nausea; side effects can appear weeks after a dose change.', mon: 'Watch for late-emerging akathisia because of DDCAR.' },
+    clues: ['the partial agonist whose metabolite DDCAR has a half-life of 1 to 3 weeks'],
+    updates: [{ year: '2022', title: 'Not covered in the 12th edition', text: 'The book only lists cariprazine among the SGAs. Adjunctive MDD was approved in December 2022; pediatric indications followed. Details on this page come from the current label.', source: 'Vraylar prescribing information (December 2025); AbbVie announcement, December 2022' }]
+  },
+  {
+    id: 'asenapine', name: 'Asenapine', brands: ['Saphris'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-others', book: true,
+    summary: 'Sublingual only (under 2% bioavailable if swallowed); little weight gain; persistent prolactin rise.',
+    ind: ['schizophrenia', 'mania'],
+    mechanism: 'Affinity for **5-HT2A**, **5-HT2C**, **α1**, **α2**, **D3** and **D4** (higher than for D2) and **H1**; negligible M1 affinity, so few anticholinergic effects.',
+    indications: { approved: ['Acute schizophrenia in adults', 'Acute manic or mixed episodes of bipolar I, with or without psychosis, in adults'], other: [] },
+    forms: 'Sublingual tablets 5 and 10 mg',
+    dose: { start: 'Schizophrenia 5 mg twice a day; bipolar 10 mg twice a day', titration: 'Not necessary; lower bipolar dose to 5 mg twice a day if poorly tolerated', range: '5 to 10 mg twice a day', max: '10 mg twice a day', notes: ['Place **under the tongue**; dissolves in seconds.', '**No food or drink for 10 minutes** afterward.', 'In schizophrenia, 10 mg twice daily adds side effects without benefit.'] },
+    pk: ['Bioavailability **35% sublingual** versus **under 2% swallowed**; peak 1 hour.', 'Glucuronidation and **CYP1A2**: caution with fluvoxamine.'],
+    effects: { common: ['Somnolence, dizziness, EPS other than akathisia, weight gain (mean 0.9 kg at 52 weeks)'], serious: ['QTc rises 2 to 5 ms (no patient reached 500 ms)', '**Prolactin elevation that can persist**: galactorrhea, amenorrhea, gynecomastia, impotence'] },
+    monitoring: ['Prolactin-related symptoms', 'Avoid with other QT drugs or arrhythmia history'],
+    interactions: ['**Fluvoxamine** and other CYP1A2 inhibitors raise levels.'],
+    pearls: ['No clinically relevant change in lipids or glucose over 52 weeks in trials.'],
+    profile: { weight: 'L', sedation: 'M', eps: 'M', prolactin: 'M', qtc: 'L', ach: 'N' },
+    drill: { mech: 'Blocks 5-HT2A/2C, α1/α2, H1 and D3/D4 more than D2; negligible M1.', dose: '**5 mg twice daily sublingual** (bipolar 10 mg twice daily); max **10 mg twice daily**; nothing by mouth for 10 minutes.', se: 'Somnolence, dizziness, EPS, persistent **prolactin** rise; little weight gain.', mon: 'Prolactin symptoms; QT precautions.' },
+    clues: ['the SGA that must be given sublingually because swallowed bioavailability is under 2%'],
+    updates: []
+  },
+  {
+    id: 'clozapine', name: 'Clozapine', brands: ['Clozaril'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-cloz', book: true,
+    summary: 'The most effective antipsychotic for treatment resistance and suicidality; neutropenia monitoring, seizures, myocarditis, sialorrhea.',
+    ind: ['trs', 'suicide'],
+    mechanism: 'Antagonist of **5-HT2A**, **D1**, **D3**, **D4** and **α** (especially α1) receptors with **relatively low D2 potency**: clinical doses occupy only **40% to 50% of striatal D2 receptors** (haloperidol 10 mg: 80%), probably why it causes no EPS. Loose, fast-dissociating D2 binding has also been proposed.',
+    indications: { approved: ['Treatment-resistant schizophrenia', 'Suicidal patients with schizophrenia or schizoaffective disorder'], other: ['**Severe tardive dyskinesia** (suppresses it; it returns on stopping)', 'Intolerance of EPS', 'Treatment-resistant mania; severe psychotic depression', 'Parkinson and Huntington disease', 'Treatment-resistant autism and OCD (alone or with an SSRI)'] },
+    forms: 'Tablets 25 and 100 mg',
+    dose: { start: '12.5 mg once or twice a day (book text also gives 25 mg once or twice a day)', titration: '25 to 50 mg on day 2, then 25 to 50 mg a day to 300 to 450 mg; later increases no more than once or twice weekly, by 100 mg or less', range: '150 to 300 mg a day in divided doses, or 200 mg in the evening', max: '900 mg a day', notes: ['A level above **350** predicts better response (the book prints µg/mL; reported as ng/mL elsewhere).', 'Taper when stopping to avoid cholinergic rebound.', 'Document informed consent.'] },
+    half: 'About 12 hours',
+    pk: ['Peak about 2 hours; steady state in under a week on twice-daily dosing.', 'Active metabolite N-desmethylclozapine (the book prints N-dimethyl clozapine).'],
+    effects: {
+      common: ['Sedation, dizziness, syncope, **tachycardia**, hypotension, ECG changes, nausea, vomiting', 'Fatigue, **weight gain**, **constipation**, anticholinergic effects, muscle weakness', '**Sialorrhea** (worst at night, from impaired swallowing)'],
+      serious: ['**Agranulocytosis**: 0.73% in year 1, 0.07% in year 2 (neutropenia 2.32% and 0.69%)', '**Seizures**: about 4% above 600 mg a day', '**Myocarditis and cardiomyopathy** (chest pain, dyspnea, fever, tachypnea): can be fatal', 'Neuroleptic malignant syndrome can still occur']
+    },
+    monitoring: ['Book: WBC **weekly for 6 months**, then every 2 weeks; stop if WBC under 3,000/mm³ or granulocytes under 1,500/mm³; never rechallenge after agranulocytosis (see update for current ANC rules)', 'If chest pain, dyspnea, fever or tachypnea: serial **CK-MB**, **troponin** and **ECG**, and stop clozapine', 'Baseline ECG, several CBCs, liver and renal function; periodic glucose, lipids and weight'],
+    interactions: ['Never with other **marrow-suppressing** drugs: **carbamazepine**, phenytoin, propylthiouracil, sulfonamides, captopril.', '**Lithium** raises the risk of seizures, confusion and movement disorders; avoid after NMS.', '**Clomipramine** lowers seizure threshold and raises clozapine levels.', '**Risperidone, fluoxetine, paroxetine, fluvoxamine** raise clozapine levels; paroxetine may precipitate neutropenia.'],
+    populations: [['Contraindications (book)', 'WBC under 3,500/mm³, prior bone marrow disorder, agranulocytosis on clozapine, or another marrow-suppressing drug']],
+    pearls: ['For drooling, the book’s practical fix is a towel over the pillow; clonidine or amitriptyline may help.', 'After agranulocytosis, olanzapine can be used safely, but wait for recovery (it can slow recovery from 3 to 4 days to 11 to 12).'],
+    profile: { weight: 'H', sedation: 'H', eps: 'N', prolactin: 'N', ach: 'H', ortho: 'H' },
+    drill: { mech: 'Weak **D2** blocker (40% to 50% striatal occupancy) with 5-HT2A, D1, D3, **D4** and α1 antagonism.', dose: 'Start **12.5 mg** once or twice daily, titrate to **300 to 450 mg**; max **900 mg**; level above 350 predicts response.', se: '**Agranulocytosis**, **seizures** (4% above 600 mg), **myocarditis**, **sialorrhea**, constipation, weight gain, sedation, tachycardia.', mon: 'Neutrophil counts (weekly for 6 months, then every 2 weeks, then monthly under current rules); troponin, CK-MB and ECG if myocarditis is suspected.' },
+    clues: ['the antipsychotic that suppresses severe tardive dyskinesia and reduces suicide in schizophrenia', 'the antipsychotic whose drooling is worst at night and whose seizure risk is about 4% above 600 mg'],
+    updates: [
+      { year: '2025', title: 'Clozapine REMS removed; ANC rules replace WBC rules', field: 'monitoring', text: 'FDA stopped enforcing the clozapine REMS in February 2025 and removed it in **June 2025**: no registry enrollment, and pharmacies no longer check ANC before dispensing. The **neutropenia boxed warning remains** and prescribers should still monitor **ANC**: weekly for months 0 to 6, every 2 weeks for months 7 to 12, then monthly. Do not start if baseline ANC is under **1,500/µL** (**1,000/µL** in benign ethnic neutropenia, with 2 baseline counts). General population: ANC 1,000 to 1,499 continue with checks 3 times a week; 500 to 999 interrupt and consult hematology, resume at 1,000 or more; under 500 stop. The book’s WBC and granulocyte cutoffs are obsolete.', source: 'FDA, Information on clozapine and Drug Safety Communication (2025); Clozaril prescribing information (June 2025)' }
+    ]
+  },
+  {
+    id: 'iloperidone', name: 'Iloperidone', brands: ['Fanapt'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-others', book: true,
+    summary: 'Must be titrated slowly for orthostasis; QTc prolongation; CYP2D6-dependent; EPS near placebo.',
+    ind: ['schizophrenia', 'mania'],
+    mechanism: 'Strongest affinity for **D3**, then **α2C**, **5-HT1A**, D2A and 5-HT6; low histamine affinity. Not a derivative of another antipsychotic.',
+    indications: { approved: ['Acute schizophrenia in adults (book)'], other: [] },
+    dose: { start: '1 mg twice a day', titration: 'Increase daily on a twice-a-day schedule (titration pack) to reach the effective 12 mg a day around day 4 (Table 21-9 gives 2, 4, 6, 8 and 12 mg twice daily over 7 days)', range: '12 to 24 mg a day in divided doses', max: '12 mg twice a day (24 mg)', notes: ['Without regard to food.', '**Halve the dose** with potent CYP2D6 or CYP3A4 inhibitors.', 'Restart titration if doses are missed.'] },
+    half: '18 to 26 hours (CYP2D6 extensive metabolizers); 31 to 37 hours (poor metabolizers)',
+    pk: ['Peak 2 to 4 hours; CYP2D6 and CYP3A4 metabolism; caution in severe hepatic impairment.', 'About 7% to 10% of white and 3% to 8% of African American people cannot metabolize CYP2D6 substrates.'],
+    effects: { common: ['Dizziness, dry mouth, fatigue, sedation, **tachycardia**, **orthostatic hypotension**', 'Mean weight gain 2.1 kg', 'EPS and akathisia similar to placebo'], serious: ['**QTc prolongation** (9 ms at 12 mg twice daily); arrhythmia and sudden death', 'Prolactin elevation in some', 'Priapism (3 premarketing cases)'] },
+    monitoring: ['Orthostatic vital signs during titration', 'ECG and electrolytes with cardiac risk factors'],
+    interactions: ['Avoid other QTc-prolonging drugs; potassium, magnesium, bradycardia and CYP inhibition add risk.'],
+    profile: { weight: 'L', sedation: 'M', eps: 'N', prolactin: 'L', qtc: 'H', ortho: 'H' },
+    drill: { mech: 'Highest affinity for **D3**, then α2C, 5-HT1A, D2 and 5-HT6.', dose: '**1 mg twice daily**, titrated to **12 mg/day** by about day 4; max **12 mg twice daily**; halve with strong CYP2D6/3A4 inhibitors.', se: '**Orthostatic hypotension**, tachycardia, **QTc prolongation**, priapism reports; EPS near placebo.', mon: 'Orthostatic BP during titration; ECG with risk factors.' },
+    clues: ['the SGA with a titration pack because of orthostatic hypotension, prolonging QTc about 9 ms'],
+    updates: [{ year: '2024', title: 'Bipolar mania indication and a prodrug', field: 'indications', text: 'Approved for **acute bipolar I manic or mixed episodes** in April 2024 (1, 3, 6 and 9 mg twice daily on days 1 to 4, then 12 mg twice daily; halve for CYP2D6 poor metabolizers). In February 2026 FDA approved **milsaperidone (Bysanti)**, which converts to iloperidone and is bioequivalent, for schizophrenia and bipolar mania.', source: 'Vanda announcement, April 2024; Fanapt prescribing information; Drugs.com new drug approvals, February 2026' }]
+  },
+  {
+    id: 'lurasidone', name: 'Lurasidone', brands: ['Latuda'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-others', book: true,
+    summary: 'Once daily with food; little weight or metabolic change; strict CYP3A4 rules; renal and hepatic dose caps.',
+    ind: ['schizophrenia', 'bp-dep'],
+    mechanism: 'Serotonin–dopamine antagonist (the book does not detail its receptor profile).',
+    indications: { approved: ['Schizophrenia'], other: [] },
+    forms: 'Tablets 20, 40, 80, 120 mg',
+    dose: { start: '40 mg once a day **with food**', titration: 'Not required', range: '40 to 120 mg a day (40 to 80 mg in Table 21-9)', max: '160 mg a day (text; Table 21-9 lists 120 mg)', notes: ['120 mg adds side effects without proven extra benefit, though some patients benefit from 160 mg.'] },
+    effects: { common: ['Somnolence, **akathisia**, nausea, parkinsonism, agitation'], serious: ['Less weight gain and metabolic change than asenapine or iloperidone in trials'] },
+    interactions: ['Moderate CYP3A4 inhibitor (diltiazem): no more than **40 mg a day**.', '**Never** with a potent CYP3A4 inhibitor (ketoconazole) or inducer (rifampin).'],
+    populations: [['Renal', 'Moderate to severe impairment: no more than 80 mg a day'], ['Hepatic', 'Severe impairment: no more than 40 mg a day']],
+    profile: { weight: 'L', sedation: 'M', eps: 'M' },
+    drill: { mech: 'Serotonin–dopamine antagonist.', dose: '**40 mg once daily with food**, range **40 to 120 mg**, max **160 mg**; no titration.', se: 'Akathisia, parkinsonism, somnolence, nausea; **little weight gain**.', mon: 'CYP3A4 drug check; renal and hepatic caps.' },
+    clues: ['the SGA that must be taken with food and is contraindicated with ketoconazole or rifampin'],
+    updates: [{ year: '2025', title: 'Indications since the book', field: 'indications', text: 'The current label also covers **bipolar I depression** (adults 20 to 120 mg, alone or with lithium or valproate; ages 10 to 17, 20 to 80 mg monotherapy) and **adolescent schizophrenia** (13 to 17, 40 to 80 mg). Take with at least 350 calories. Moderate CYP3A4 inhibitor: start 20 mg, max 80 mg. Renal (CrCl under 50) and Child-Pugh 7 to 9: max 80 mg; Child-Pugh 10 to 15: max 40 mg.', source: 'Latuda prescribing information (January 2025)' }]
+  },
+  {
+    id: 'lumateperone', name: 'Lumateperone', brands: ['Caplyta'], cls: 'antipsychotics', group: 'sga', chapter: 'ch21-1', sec: 's211-others', book: true,
+    summary: 'Fixed 42 mg dose with no titration; now approved for bipolar depression and as an adjunct in MDD.',
+    ind: ['schizophrenia', 'bp-dep', 'mdd-adj'],
+    mechanism: 'Antagonist at **5-HT2A**, **D1**, **D2** and **D4** (book); the label describes 5-HT2A antagonism with D2 partial agonism.',
+    indications: { approved: ['Schizophrenia in adults (approved December 2019, available February 2020)'], other: [] },
+    dose: { start: '42 mg once a day', titration: 'None', range: '42 mg', max: '42 mg (highest approved dose)' },
+    effects: { common: ['Somnolence or sedation and dry mouth (label)'], serious: [] },
+    interactions: ['Label: strong CYP3A4 inhibitor 10.5 mg; moderate 21 mg; avoid CYP3A4 inducers.'],
+    populations: [['Hepatic (label)', 'Child-Pugh B or C: 21 mg']],
+    profile: { sedation: 'M' },
+    drill: { mech: '5-HT2A antagonist with D1, D2 and D4 actions (label: D2 partial agonism).', dose: '**42 mg once daily**, no titration.', se: 'Somnolence, dry mouth.', mon: 'CYP3A4 interactions; hepatic dose reduction.' },
+    clues: ['the antipsychotic given at a single fixed dose of 42 mg with no titration'],
+    updates: [{ year: '2025', title: 'Bipolar depression and adjunctive MDD', field: 'indications', text: 'The book reports disappointing bipolar depression studies, but FDA approved lumateperone for **bipolar I or II depression** (alone or with lithium or valproate) in December 2021 and as an **adjunct in MDD** in November 2025, all at 42 mg daily.', source: 'Caplyta prescribing information (April 2026); Johnson & Johnson announcement, November 2025' }]
+  },
+
+  /* ===================== newer mechanisms ===================== */
+  {
+    id: 'xanomeline-trospium', name: 'Xanomeline–trospium', brands: ['Cobenfy'], cls: 'antipsychotics', group: 'new', chapter: 'ch21-1', sec: 's211-new', book: false,
+    summary: 'The first antipsychotic that does not block dopamine: a muscarinic M1/M4 agonist paired with a peripheral blocker.',
+    ind: ['schizophrenia'],
+    mechanism: '**Xanomeline** is a central **M1/M4-preferring muscarinic agonist**; **trospium** is a muscarinic antagonist that stays largely outside the brain and blunts peripheral cholinergic effects. No direct D2 blockade.',
+    indications: { approved: ['Schizophrenia in adults (September 2024)'], other: [] },
+    dose: { start: '50/20 mg twice a day for at least 2 days', titration: 'Then 100/20 mg twice a day for at least 5 days', range: '100/20 to 125/30 mg twice a day', max: '125/30 mg twice a day (older adults 100/20 mg)', notes: ['Take at least **1 hour before or 2 hours after a meal**.'] },
+    effects: { common: ['Nausea, dyspepsia, constipation, vomiting, hypertension, abdominal pain, diarrhea, tachycardia, dizziness, reflux'], serious: ['Urinary retention; angioedema; anticholinergic effects in the elderly'] },
+    monitoring: ['Baseline **liver enzymes and bilirubin**, and **heart rate**'],
+    interactions: ['Contraindicated: urinary retention, gastric retention, moderate or severe hepatic impairment, untreated narrow-angle glaucoma.', 'Not recommended in mild hepatic impairment or eGFR under 60.'],
+    pearls: ['No boxed warning; no EPS or prolactin rise expected from its mechanism.', 'As an add-on to atypicals (ARISE, 2025) it did not separate from placebo.'],
+    profile: { weight: 'N', eps: 'N', prolactin: 'N' },
+    drill: { mech: 'Central **M1/M4 muscarinic agonist** (xanomeline) plus peripheral antagonist (trospium); no D2 blockade.', dose: '50/20 mg twice daily, then 100/20 mg; max **125/30 mg twice daily**; empty stomach.', se: 'Nausea, dyspepsia, constipation, vomiting, hypertension, tachycardia; urinary retention.', mon: 'Liver tests, bilirubin and heart rate at baseline.' },
+    clues: ['the first FDA-approved antipsychotic acting on muscarinic rather than dopamine receptors'],
+    updates: [{ year: '2024', title: 'Approved after the 12th edition', text: 'FDA approved Cobenfy on September 26, 2024. The adjunctive ARISE trial failed in April 2025; Alzheimer psychosis (ADEPT) results are expected from 2027.', source: 'FDA news release, September 2024; Cobenfy prescribing information (January 2026); Bristol Myers Squibb, 2025 to 2026' }]
+  },
+  {
+    id: 'pimavanserin', name: 'Pimavanserin', brands: ['Nuplazid'], cls: 'antipsychotics', group: 'new', chapter: 'ch21-1', sec: 's211-new', book: false,
+    summary: 'A 5-HT2A inverse agonist with no dopamine action, approved only for Parkinson disease psychosis.',
+    ind: ['pdp'],
+    mechanism: '**Inverse agonist and antagonist at 5-HT2A** (less at 5-HT2C); no meaningful dopamine receptor action.',
+    indications: { approved: ['Hallucinations and delusions of Parkinson disease psychosis'], other: [] },
+    dose: { start: '34 mg once a day', titration: 'None', range: '34 mg', max: '34 mg (10 mg with strong CYP3A4 inhibitors)', notes: ['Capsule may be opened onto soft food.'] },
+    effects: { common: ['Peripheral edema, confusional state'], serious: ['QTc rises about 5 to 8 ms', 'Dementia mortality boxed warning (not for Parkinson psychosis)'] },
+    interactions: ['Avoid with QT-prolonging drugs; avoid strong or moderate CYP3A4 inducers.'],
+    pearls: ['Does not worsen parkinsonism because it does not block dopamine.', 'Turned down for dementia-related psychosis (2021) and Alzheimer psychosis (2022); failed for negative symptoms of schizophrenia (2024).'],
+    profile: { eps: 'N', qtc: 'L' },
+    drill: { mech: '**5-HT2A inverse agonist**; no dopamine blockade.', dose: '**34 mg once daily**, no titration.', se: 'Peripheral edema, confusion, small QTc rise.', mon: 'QT risk factors.' },
+    clues: ['the 5-HT2A inverse agonist approved only for Parkinson disease psychosis'],
+    updates: [{ year: '2016', title: 'Not covered in the 12th edition', text: 'Pimavanserin is not discussed in the book. Its label was clarified in 2023 to cover Parkinson disease psychosis with or without dementia.', source: 'Nuplazid prescribing information (April 2026); Practical Neurology, 2023' }]
+  },
+
+  /* ===================== first generation ===================== */
+  {
+    id: 'haloperidol', name: 'Haloperidol', brands: ['Haldol', 'Haldol Decanoate'], cls: 'antipsychotics', group: 'fga-high', chapter: 'ch21-1', sec: 's211-dra-dose', book: true,
+    summary: 'High-potency butyrophenone: low sedation and autonomic effects, high EPS; monthly decanoate; IV use linked to torsades.',
+    ind: ['schizophrenia', 'agitation', 'tourette'],
+    mechanism: '**D2 antagonist** (butyrophenone); 10 mg occupies about 80% of striatal D2 receptors.', potency: '2 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders', 'Tourette disorder (with pimozide, the DRAs used most)'], other: ['Agitation in dementia (0.5 to 1 mg a day)', 'Delirium', 'Huntington disease psychosis and chorea', 'Acute agitation'] },
+    forms: 'Tablets 0.5, 1, 2, 5, 10, 20 mg; solution 2 mg/5 mL; IM 5 mg/mL; decanoate 50 and 100 mg/mL',
+    dose: { start: '5 mg is a usual effective daily dose; older adults may need only 1 mg', titration: 'Acute: the equivalent of 5 to 20 mg a day', range: 'Acute 5 to 20 mg PO, 12.5 to 25 mg IM; maintenance 1 to 10 mg PO', max: '—', notes: ['**Decanoate** 25 to 200 mg IM monthly; begin with 25 mg (some start with 6.25 mg every few days).', 'PRN: about 2 mg.'] },
+    half: 'About 24 hours (class)',
+    effects: { common: ['High **EPS**; little sedation or autonomic effect'], serious: ['**IV haloperidol**: ventricular arrhythmias, **torsades de pointes**, sudden death', 'Neuroleptic malignant syndrome'] },
+    monitoring: ['Plasma level therapeutic window **2 to 15 ng/mL** (the best-studied antipsychotic)', 'ECG if given IV'],
+    interactions: ['Fluvoxamine raises levels; carbamazepine can halve them.'],
+    pearls: ['May be among the safest typical antipsychotics in overdose.'],
+    profile: { weight: 'L', sedation: 'L', eps: 'H', prolactin: 'H', ach: 'L', ortho: 'L', qtc: 'M' },
+    drill: { mech: 'High-potency **D2 antagonist** (butyrophenone).', dose: 'Usual **5 mg/day** (acute 5 to 20 mg); decanoate **25 to 200 mg monthly**; elderly 0.5 to 1 mg.', se: 'High **EPS**, prolactin; IV use → **torsades**; NMS.', mon: 'Level window **2 to 15 ng/mL**; ECG with IV use.' },
+    clues: ['the antipsychotic with a plasma therapeutic window of 2 to 15 ng/mL', 'the high-potency DRA whose IV use is linked to torsades de pointes'],
+    updates: []
+  },
+  {
+    id: 'fluphenazine', name: 'Fluphenazine', brands: ['Prolixin'], cls: 'antipsychotics', group: 'fga-high', chapter: 'ch21-1', sec: 's211-dra-dose', book: true,
+    summary: 'High-potency piperazine phenothiazine with decanoate and enanthate depots.',
+    ind: ['schizophrenia'],
+    mechanism: 'High-potency **D2 antagonist** (phenothiazine, piperazine type).', potency: '2 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Tablets 1, 2.5, 5, 10 mg; solutions; IM 2.5 mg/mL; decanoate and enanthate',
+    dose: { start: 'Depot: 12.5 mg (0.5 mL); some start with 3.125 mg every few days', titration: 'After 3 to 4 weeks, combine the doses given into one injection', range: 'Acute 2.5 to 40 mg PO, 5 to 20 mg IM; maintenance 1 to 15 mg PO or 12.5 to 50 mg IM depot weekly or every 2 weeks', max: '—', notes: ['**Decanoate** is absorbed more slowly than **enanthate**, so it is given less often.', 'Give at least one oral dose first to check for severe EPS or allergy.'] },
+    effects: { common: ['High EPS; low sedation and autonomic effects'], serious: ['Early depot dystonia from fast initial absorption'] },
+    profile: { sedation: 'L', eps: 'H', prolactin: 'H', ach: 'L', ortho: 'L' },
+    drill: { mech: 'High-potency phenothiazine D2 antagonist.', dose: 'Oral 1 to 15 mg maintenance; depot start **12.5 mg**, maintenance 12.5 to 50 mg every 1 to 2 weeks.', se: 'High EPS; early dystonia with depot.', mon: 'EPS; test oral dose before depot.' },
+    clues: ['the high-potency phenothiazine available as both a decanoate and an enanthate depot'],
+    updates: []
+  },
+  {
+    id: 'pimozide', name: 'Pimozide', brands: ['Orap'], cls: 'antipsychotics', group: 'fga-high', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'Diphenylbutylpiperidine used mainly for Tourette disorder; QTc prolongation and torsades.',
+    ind: ['tourette'],
+    mechanism: 'High-potency **D2 antagonist** (diphenylbutylpiperidine).', potency: '1.5 mg ≈ 100 mg chlorpromazine (the most potent in Table 21-12)',
+    indications: { approved: ['Tourette disorder (its principal use)'], other: [] },
+    forms: 'Tablets 2 mg',
+    dose: { start: '—', titration: '—', range: 'Acute 0.5 to 20 mg; maintenance 0.5 to 5 mg', max: '—' },
+    effects: { common: ['High EPS'], serious: ['**QTc prolongation**, torsades de pointes, sudden death'] },
+    interactions: ['Do not combine with other QT-prolonging drugs.'],
+    profile: { sedation: 'L', eps: 'H', ach: 'L', ortho: 'L', qtc: 'H' },
+    drill: { mech: 'High-potency D2 antagonist (diphenylbutylpiperidine).', dose: 'Maintenance 0.5 to 5 mg/day.', se: '**QTc prolongation**, torsades; high EPS.', mon: 'ECG; avoid QT drugs.' },
+    clues: ['the DRA used principally for Tourette disorder that prolongs QTc'],
+    updates: []
+  },
+  {
+    id: 'thiothixene', name: 'Thiothixene', brands: ['Navane'], cls: 'antipsychotics', group: 'fga-high', chapter: 'ch21-1', sec: 's211-dra-dose', book: true,
+    summary: 'High-potency thioxanthene.',
+    ind: ['schizophrenia'], mechanism: 'High-potency **D2 antagonist** (thioxanthene).', potency: '4 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Capsules 1, 2, 5, 10, 20 mg; solution 5 mg/mL; IM',
+    dose: { start: '—', titration: '—', range: 'Acute 60 to 100 mg PO (Table 21-14), 8 to 30 mg IM; maintenance 6 to 30 mg PO', max: '—' },
+    effects: { common: ['High EPS; low sedation and autonomic effects'], serious: [] },
+    profile: { sedation: 'L', eps: 'H', ach: 'L', ortho: 'L' },
+    drill: { mech: 'High-potency thioxanthene D2 antagonist.', dose: 'Maintenance 6 to 30 mg/day.', se: 'High EPS.', mon: 'EPS.' },
+    clues: ['the high-potency thioxanthene (4 mg equals 100 mg chlorpromazine)'],
+    updates: []
+  },
+  {
+    id: 'trifluoperazine', name: 'Trifluoperazine', brands: ['Stelazine'], cls: 'antipsychotics', group: 'fga-high', chapter: 'ch21-1', sec: 's211-dra-dose', book: true,
+    summary: 'High-potency piperazine phenothiazine.',
+    ind: ['schizophrenia'], mechanism: 'High-potency **D2 antagonist** (phenothiazine, piperazine type).', potency: '5 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Tablets 1, 2, 5, 10 mg; solution 10 mg/mL; IM 2 mg/mL',
+    dose: { start: '—', titration: '—', range: 'Acute 4 to 40 mg PO, 4 to 10 mg IM; maintenance 5 to 20 mg PO', max: '—' },
+    effects: { common: ['High EPS; moderate sedation'], serious: [] },
+    profile: { sedation: 'M', eps: 'H', ach: 'L', ortho: 'L' },
+    drill: { mech: 'High-potency phenothiazine D2 antagonist.', dose: 'Maintenance 5 to 20 mg/day.', se: 'High EPS.', mon: 'EPS.' },
+    clues: ['a piperazine phenothiazine where 5 mg equals 100 mg chlorpromazine'],
+    updates: []
+  },
+  {
+    id: 'perphenazine', name: 'Perphenazine', brands: ['Trilafon'], cls: 'antipsychotics', group: 'fga-mid', chapter: 'ch21-1', sec: 's211-dra', book: true,
+    summary: 'Intermediate-potency phenothiazine as effective and well tolerated as the SGAs.',
+    ind: ['schizophrenia'], mechanism: 'Intermediate-potency **D2 antagonist** (phenothiazine, piperazine type).', potency: '8 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Tablets 2, 4, 8, 16 mg; solution 16 mg/5 mL; IM 5 mg/mL',
+    dose: { start: '—', titration: '—', range: 'Acute 12 to 64 mg PO, 15 to 30 mg IM; maintenance 8 to 24 mg PO', max: '—' },
+    effects: { common: ['Moderate sedation; moderate to high EPS'], serious: [] },
+    monitoring: ['Plasma level range **0.8 to 2.4 ng/mL**'],
+    interactions: ['Can disturb pregnancy, bilirubin and urobilinogen tests (with chlorpromazine).'],
+    pearls: ['Intermediate-potency DRAs such as perphenazine are as effective and well tolerated as the SGAs (book).'],
+    profile: { sedation: 'M', eps: 'M', prolactin: 'H', ach: 'L', ortho: 'L' },
+    drill: { mech: 'Intermediate-potency phenothiazine D2 antagonist.', dose: 'Maintenance 8 to 24 mg/day; level 0.8 to 2.4 ng/mL.', se: 'Moderate sedation and EPS.', mon: 'Plasma level if no response.' },
+    clues: ['the intermediate-potency DRA the book calls as effective and well tolerated as the SGAs'],
+    updates: []
+  },
+  {
+    id: 'loxapine', name: 'Loxapine', brands: ['Loxitane'], cls: 'antipsychotics', group: 'fga-mid', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'Dibenzoxazepine with little weight gain.',
+    ind: ['schizophrenia'], mechanism: 'Intermediate-potency **D2 antagonist** (dibenzoxazepine).', potency: '10 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Capsules 5, 10, 25, 50 mg; solution; IM 50 mg/mL',
+    dose: { start: '—', titration: '—', range: 'Acute 20 to 250 mg PO, 20 to 75 mg IM; maintenance 20 to 100 mg PO', max: '—' },
+    effects: { common: ['Moderate sedation; moderate to high EPS'], serious: [] },
+    profile: { weight: 'L', sedation: 'M', eps: 'M', ach: 'L', ortho: 'L' },
+    drill: { mech: 'Intermediate-potency dibenzoxazepine D2 antagonist.', dose: 'Maintenance 20 to 100 mg/day.', se: 'EPS; perhaps little weight gain.', mon: 'EPS.' },
+    clues: ['with molindone, the DRA least likely to cause weight gain'],
+    updates: []
+  },
+  {
+    id: 'molindone', name: 'Molindone', brands: ['Moban'], cls: 'antipsychotics', group: 'fga-mid', chapter: 'ch21-1', sec: 's211-dra', book: true,
+    summary: 'The DRA with the lowest weight and metabolic risk; manufacture discontinued in the United States.',
+    ind: ['schizophrenia'], mechanism: 'Intermediate-potency **D2 antagonist** (dihydroindolone).', potency: '10 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    forms: 'Tablets 5 to 100 mg; solution 20 mg/mL (no longer made in the US)',
+    dose: { start: '—', titration: '—', range: 'Acute 50 to 225 mg; maintenance 5 to 150 mg', max: '—' },
+    effects: { common: ['Low EPS for a DRA; moderate sedation'], serious: [] },
+    profile: { weight: 'N', sedation: 'M', eps: 'L', ach: 'L', ortho: 'L' },
+    drill: { mech: 'Intermediate-potency dihydroindolone D2 antagonist.', dose: 'Maintenance 5 to 150 mg/day.', se: '**Lowest weight and metabolic risk** of the DRAs.', mon: '—' },
+    clues: ['the DRA with the lowest risk of weight gain, discontinued in the United States'],
+    updates: []
+  },
+  {
+    id: 'prochlorperazine', name: 'Prochlorperazine', brands: ['Compazine'], cls: 'antipsychotics', group: 'fga-mid', chapter: 'ch21-1', sec: 's211-dra', book: true,
+    summary: 'Phenothiazine used rarely, if ever, as an antipsychotic; mainly an antiemetic.',
+    ind: ['nausea'], mechanism: '**D2 antagonist** (phenothiazine, piperazine type).', potency: '15 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Nausea and vomiting'], other: ['Used rarely, if ever, as an antipsychotic (Table 21-12)'] },
+    forms: 'Tablets, capsules, solution, IM, rectal suppositories 2.5, 5, 25 mg',
+    dose: { start: '—', titration: '—', range: 'Acute 15 to 200 mg PO, 40 to 80 mg IM; maintenance 15 to 60 mg PO', max: '—' },
+    effects: { common: ['High EPS; moderate sedation'], serious: [] },
+    profile: { sedation: 'M', eps: 'H', ach: 'L', ortho: 'L' },
+    drill: { mech: 'Piperazine phenothiazine D2 antagonist.', dose: 'Antiemetic use; also rectal suppositories.', se: 'EPS.', mon: '—' },
+    clues: ['the phenothiazine used rarely as an antipsychotic and available as a rectal suppository'],
+    updates: []
+  },
+  {
+    id: 'chlorpromazine', name: 'Chlorpromazine', brands: ['Thorazine'], cls: 'antipsychotics', group: 'fga-low', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'The first antipsychotic (1950s) and the potency reference: most sedating, hypotensive, anticholinergic; skin and eye pigment, cholestatic jaundice.',
+    ind: ['schizophrenia', 'nausea'], mechanism: 'Low-potency **D2 antagonist** with strong **H1**, **α1** and **muscarinic** blockade (aliphatic phenothiazine).', potency: '100 mg (the reference dose)',
+    indications: { approved: ['Psychotic disorders', 'Nausea, emesis, intractable hiccups'], other: [] },
+    forms: 'Tablets, capsules, solution, IM 25 mg/mL, rectal suppositories',
+    dose: { start: '—', titration: '—', range: 'Acute 100 to 1,600 mg PO, 25 to 400 mg IM; maintenance 50 to 400 mg PO; about 300 mg/day is usually effective', max: '—', notes: ['More than **25 mg in one injection** can cause profound hypotension.'] },
+    effects: { common: ['**Most sedating** typical antipsychotic', '**Orthostatic hypotension**, anticholinergic effects', 'Weight gain'], serious: ['QT and PR prolongation, blunted T waves, ST depression', '**Photosensitivity**; long-term **blue-gray skin discoloration**', 'Benign **lens and corneal deposits**', '**Cholestatic jaundice** (usually in the first month)', 'Lowers seizure threshold'] },
+    monitoring: ['Plasma range **30 to 100 ng/mL**', 'Lying and standing BP after IM doses'],
+    interactions: ['Avoid with QT-prolonging drugs.', 'False pregnancy-test results and falsely high bilirubin and urobilinogen.'],
+    pearls: ['Limit sun to 30 to 60 minutes and use sunscreen.'],
+    profile: { weight: 'M', sedation: 'H', eps: 'M', prolactin: 'H', qtc: 'M', ach: 'H', ortho: 'H' },
+    drill: { mech: 'Low-potency aliphatic phenothiazine: D2 plus strong **H1, α1 and muscarinic** blockade.', dose: 'About **300 mg/day**; acute up to 1,600 mg; IM no more than **25 mg** per injection.', se: '**Sedation**, **orthostasis**, anticholinergic effects, photosensitivity, **blue-gray skin**, lens deposits, **cholestatic jaundice**.', mon: 'Level 30 to 100 ng/mL; BP after IM doses.' },
+    clues: ['the DRA linked to blue-gray skin discoloration and cholestatic jaundice', 'the potency reference for typical antipsychotics (100 mg)'],
+    updates: []
+  },
+  {
+    id: 'thioridazine', name: 'Thioridazine', brands: ['Mellaril'], cls: 'antipsychotics', group: 'fga-low', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'Most cardiotoxic DRA; retinal pigmentation above 800 mg; retrograde ejaculation; last-resort drug.',
+    ind: ['schizophrenia'], mechanism: 'Low-potency **D2 antagonist** (piperidine phenothiazine) with strong anticholinergic and α1 blockade.', potency: '100 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders, only when other agents have failed'], other: [] },
+    forms: 'Tablets 10 to 200 mg; solutions',
+    dose: { start: '—', titration: '—', range: 'Acute 200 to 800 mg; maintenance 100 to 300 mg', max: '**800 mg a day** (retinal risk above 1,000 mg)' },
+    effects: { common: ['High sedation and autonomic effects; low EPS', '**Decreased libido**, **retrograde ejaculation**'], serious: ['**QT prolongation**: 28 of 46 sudden antipsychotic deaths in one study', '**Irreversible retinal pigmentation** above 1,000 mg a day (night-vision trouble first), which can progress to blindness'] },
+    interactions: ['**Contraindicated** with CYP2D6 inhibitors or in poor CYP2D6 metabolizers, and with QT-prolonging drugs.', 'Can raise **phenytoin** to toxic levels.'],
+    profile: { sedation: 'H', eps: 'L', prolactin: 'H', qtc: 'H', ach: 'H', ortho: 'H' },
+    drill: { mech: 'Low-potency piperidine phenothiazine with strong anticholinergic and α1 blockade.', dose: 'Maintenance 100 to 300 mg; max **800 mg/day**.', se: '**QTc prolongation** (most sudden deaths), **retinal pigmentation** above 1,000 mg, retrograde ejaculation.', mon: 'ECG; CYP2D6 inhibitors contraindicated.' },
+    clues: ['the DRA capped at 800 mg a day because of irreversible retinal pigmentation', 'the antipsychotic responsible for 61% of sudden antipsychotic deaths in one study'],
+    updates: []
+  },
+  {
+    id: 'mesoridazine', name: 'Mesoridazine', brands: ['Serentil'], cls: 'antipsychotics', group: 'fga-low', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'Low-potency piperidine phenothiazine; strongly anticholinergic and QT-prolonging.',
+    ind: ['schizophrenia'], mechanism: 'Low-potency **D2 antagonist** (piperidine phenothiazine).', potency: '50 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    dose: { start: '—', titration: '—', range: 'Acute 100 to 400 mg PO, 25 to 200 mg IM; maintenance 30 to 150 mg', max: '—' },
+    effects: { common: ['High sedation; marked peripheral anticholinergic effects; low EPS'], serious: ['QT prolongation (contraindicated with ziprasidone)'] },
+    profile: { sedation: 'H', eps: 'L', ach: 'H', ortho: 'M', qtc: 'H' },
+    drill: { mech: 'Low-potency piperidine phenothiazine.', dose: 'Maintenance 30 to 150 mg/day.', se: 'Sedation, anticholinergic effects, QT prolongation.', mon: 'ECG.' },
+    clues: ['a low-potency piperidine phenothiazine where 50 mg equals 100 mg chlorpromazine'],
+    updates: []
+  },
+  {
+    id: 'chlorprothixene', name: 'Chlorprothixene', brands: ['Taractan'], cls: 'antipsychotics', group: 'fga-low', chapter: 'ch21-1', sec: 's211-dra-adverse', book: true,
+    summary: 'Low-potency thioxanthene; frequent orthostatic hypotension.',
+    ind: ['schizophrenia'], mechanism: 'Low-potency **D2 antagonist** (thioxanthene).', potency: '100 mg ≈ 100 mg chlorpromazine',
+    indications: { approved: ['Psychotic disorders'], other: [] },
+    dose: { start: '—', titration: '—', range: 'Acute 75 to 600 mg PO, 75 to 200 mg IM; maintenance 50 to 400 mg', max: '—' },
+    effects: { common: ['High sedation and autonomic effects; low to moderate EPS', '**Orthostatic hypotension**'], serious: [] },
+    profile: { sedation: 'H', eps: 'L', ach: 'H', ortho: 'H' },
+    drill: { mech: 'Low-potency thioxanthene.', dose: 'Maintenance 50 to 400 mg/day.', se: 'Sedation, orthostasis.', mon: 'Orthostatic BP.' },
+    clues: ['the low-potency thioxanthene listed with chlorpromazine and thioridazine for orthostatic hypotension'],
+    updates: []
+  }
+]);
