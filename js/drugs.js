@@ -33,12 +33,21 @@
     }
 
     /* ---------- post-publication update boxes ---------- */
+    function srcLinks(u) {
+      var src = (u.source || '').toLowerCase(), seen = {}, out = (u.links || []).slice();
+      (KS.sourceLinks || []).forEach(function (l) { if (src.indexOf(l.m.toLowerCase()) !== -1) out.push(l); });
+      out = out.filter(function (l) { if (seen[l.url]) return false; seen[l.url] = 1; return true; });
+      if (!out.length) return '';
+      return '<p class="update__links"><span>Read the source:</span> ' + out.map(function (l) {
+        return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">' + esc(l.label) + '<span class="sr-only"> (opens in a new tab)</span></a>';
+      }).join('') + '</p>';
+    }
     function updateBox(u, opts) {
       return '<aside class="g-block update"' + (opts && opts.id ? ' id="' + opts.id + '"' : '') + '>' +
         '<p class="update__kicker">Post-publication update' + (u.year ? ' · ' + esc(u.year) : '') + '</p>' +
         (u.title ? '<p class="update__title">' + fmt(u.title) + '</p>' : '') +
         '<p class="update__text">' + fmt(u.text) + '</p>' +
-        '<p class="update__src">Not from the 12th edition.' + (u.source ? ' Source: ' + esc(u.source) + '.' : '') + ' Confirm against current labeling.</p></aside>';
+        '<p class="update__src">Not from the 12th edition.' + (u.source ? ' Source: ' + esc(u.source) + '.' : '') + ' Confirm against current labeling.</p>' + srcLinks(u) + '</aside>';
     }
 
     /* ---------- generated drill cards ---------- */

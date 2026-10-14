@@ -122,6 +122,7 @@ KS.extraFiles = [
   'data/glossary/g4.js',
   'data/glossary/g5-chapter-terms.js',
   'data/helpers.js',
+  'data/sources.js',
   'data/drugs/antipsychotics.js',
   'data/changelog.js'
 ];

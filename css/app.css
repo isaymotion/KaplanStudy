@@ -1150,6 +1150,10 @@ body.is-presenter .topbar, body.is-presenter .site-foot { display: none; }
 p.update__kicker, .g-sec .update p.update__kicker { margin: 0 0 6px; font: 700 .74rem/1.2 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--upd); }
 p.update__title, .g-sec .update p.update__title { margin: 0 0 6px; font: 700 1.02rem/1.3 var(--sans); color: var(--ink); }
 p.update__text, .g-sec .update p.update__text { margin: 0 0 10px; font: 400 1rem/1.6 var(--serif); }
+p.update__links, .g-sec .update p.update__links { margin: 8px 0 0; font: 600 .82rem/1.5 var(--sans); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.update__links > span:first-child { color: var(--upd); text-transform: uppercase; letter-spacing: .06em; font-size: .72rem; }
+.update__links a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.update__links a::after { content: " \2197"; }
 p.update__src, .g-sec .update p.update__src { margin: 0; font: 400 .82rem/1.45 var(--sans); color: var(--ink-3); }
 
 /* ---------- drug links ---------- */

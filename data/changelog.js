@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 27,
+    date: "2026-10-14",
+    title: "Source links in post-publication updates",
+    items: [
+      { type: "feature", text: "**Read the source**: post-publication update boxes now link to the FDA, EMA, APA and CPIC pages, manufacturer and news announcements, and current drug labels (DailyMed) they cite, so you can read them yourself. Links open in a new tab.", href: "#/updates", link: "See all updates" }
+    ]
+  },
+  {
     id: 26,
     date: "2026-10-14",
     title: "Navigation fix",
