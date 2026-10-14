@@ -35,6 +35,7 @@ Across all chapters:
   - *Choosing an antipsychotic* (Chapter 21.1): the clinical situation (treatment resistance, Parkinson disease, acute agitation, poor adherence, dementia, intoxication or a first choice), then the side effect that matters most, to a short list of drugs.
   - *Choosing an antidepressant* (Chapter 21.2): emergencies (serotonin syndrome, MAOI hypertensive crisis, discontinuation), pregnancy, postpartum depression and treatment resistance, or the symptom or risk that matters most, to a short list of drugs.
   - *Choosing a mood stabilizer* (Chapter 21.3): warning signs (lithium toxicity, rash, blood dyscrasia, valproate liver or pancreas toxicity), pregnancy, the type of manic episode, or the goal of long-term prevention, to a short list of drugs.
+  - *Choosing an anxiolytic* (Chapter 21.4): suspected sedative overdose (and when flumazenil helps or harms), withdrawal, stopping a long-term benzodiazepine, or a target symptom (panic, generalized anxiety, performance anxiety, catatonia, akathisia, alcohol withdrawal, older adults, insomnia).
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -77,6 +78,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
 | 21.2 | Antidepressants | 28 | 102 | 107 (plus generated drug drills) |
 | 21.3 | Mood Stabilizers | 26 | 102 | 107 (plus generated drug drills) |
+| 21.4 | Anxiolytics | 14 | 86 | 93 (plus generated drug drills) |
 
 ## Publish on GitHub Pages
 

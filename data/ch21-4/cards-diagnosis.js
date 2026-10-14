@@ -1,0 +1,28 @@
+/* Chapter 21.4 diagnosis cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.4. */
+KS.add("ch21-4", "diagnosis", [
+  {"id":"d214-01","tag":"Benzodiazepine intoxication","q":"What are the signs of benzodiazepine intoxication?","a":"**Confusion, slurred speech, ataxia, drowsiness, dyspnea, hyporeflexia**."},
+  {"id":"d214-02","tag":"Benzodiazepine withdrawal","q":"List the signs of benzodiazepine withdrawal (Table 21-44).","a":"Anxiety, irritability, insomnia, **hyperacusis**, nausea, poor concentration, tremor, **depersonalization**, **hyperesthesia**, **myoclonus**, **delirium**, **seizures**."},
+  {"id":"d214-03","tag":"Benzodiazepine withdrawal","q":"Which features mark severe benzodiazepine withdrawal?","a":"**Depression, paranoia, delirium and seizures**, mainly after abrupt stops of short half-life drugs or high long-term doses."},
+  {"id":"d214-04","tag":"Benzodiazepine withdrawal","q":"When does withdrawal from a long half-life benzodiazepine appear?","a":"It may be **delayed 1 to 2 weeks**."},
+  {"id":"d214-05","tag":"Benzodiazepine withdrawal","q":"Which benzodiazepine is especially linked to immediate, severe withdrawal?","a":"**Alprazolam**."},
+  {"id":"d214-06","tag":"Rebound","q":"What problems are more common with short half-life benzodiazepines?","a":"**Rebound insomnia** and **anterograde amnesia** (and next-day anxiety with triazolam)."},
+  {"id":"d214-07","tag":"Accumulation","q":"Why might toxicity appear after 7 to 10 days on a long-acting benzodiazepine?","a":"Steady state takes up to **2 weeks**, so the drug **accumulates** after a dose that seemed therapeutic."},
+  {"id":"d214-08","tag":"Paradoxical reaction","q":"In whom is paradoxical aggression with benzodiazepines reported?","a":"People with **preexisting brain damage**."},
+  {"id":"d214-09","tag":"Neonates","q":"What happens to breastfed infants of mothers on benzodiazepines?","a":"**Dyspnea, bradycardia and drowsiness**."},
+  {"id":"d214-10","tag":"Flumazenil","q":"Who is most at risk of seizures after flumazenil?","a":"Patients with **seizure disorders**, **physical dependence** on benzodiazepines, or **large ingestions** (and mixed TCA overdoses)."},
+  {"id":"d214-11","tag":"Flumazenil","q":"What does it mean if a patient is still sedated 5 minutes after 5 mg of flumazenil?","a":"The sedation is probably **not caused by a benzodiazepine**."},
+  {"id":"d214-12","tag":"Catatonia","q":"Which mood or psychotic disorder is acute catatonia more often associated with, according to the book?","a":"**Bipolar disorder** (more than schizophrenia)."},
+  {"id":"d214-13","tag":"Buspirone","q":"Which anxiety symptoms respond better or worse to buspirone than to benzodiazepines?","a":"Better: **anger and hostility**; equal: **psychic** anxiety; worse: **somatic** anxiety."},
+  {"id":"d214-14","tag":"Buspirone","q":"A patient on buspirone feels restless. What may this represent?","a":"Mild drug-related restlessness, or **incompletely treated anxiety**."},
+  {"id":"d214-15","tag":"β-blockers","q":"Which neuroleptic movement disorders do β-blockers not help?","a":"**Acute dystonia** and **parkinsonism** (they help akathisia)."},
+  {"id":"d214-16","tag":"β-blockers","q":"Why are β-blockers dangerous in diabetes treated with insulin?","a":"They **blunt the warning signs of hypoglycemia** (and the physiologic response to it)."},
+  {"id":"d214-17","tag":"β-blockers","q":"What are the neuropsychiatric side effects of β-blockers?","a":"Lassitude, fatigue, **dysphoria**, insomnia, **vivid nightmares**; rarely depression and psychosis; blunted cognition."},
+  {"id":"d214-18","tag":"β-blockers","q":"What happens if β-blockers are stopped abruptly?","a":"**Rebound worsening of angina**."},
+  {"id":"d214-19","tag":"Barbiturates","q":"What are the signs of barbiturate intoxication?","a":"Confusion, drowsiness, irritability, **hyporeflexia or areflexia, ataxia, nystagmus**; severe: respiratory depression, Cheyne–Stokes, shock, **miosis**, hypothermia, coma."},
+  {"id":"d214-20","tag":"Barbiturates","q":"Which metabolic disorder do barbiturates precipitate?","a":"**Acute intermittent porphyria**."},
+  {"id":"d214-21","tag":"Amytal interview","q":"What sign marks adequate amobarbital infusion during an interview?","a":"Sustained **lateral nystagmus** or drowsiness, usually at **75 to 150 mg**."},
+  {"id":"d214-22","tag":"Chloral hydrate","q":"What is a 'Mickey Finn'?","a":"**Chloral hydrate with alcohol**, a dangerous combination through metabolic interference."},
+  {"id":"d214-23","tag":"Paraldehyde","q":"What clinical sign suggests a patient has taken paraldehyde?","a":"**Foul breath** from unmetabolized drug exhaled by the lungs."},
+  {"id":"d214-24","tag":"Meprobamate","q":"What happens on abrupt withdrawal from long-term meprobamate?","a":"A withdrawal syndrome with **seizures and hallucinations**."},
+  {"id":"d214-25","tag":"Etomidate","q":"Which endocrine effect does etomidate have?","a":"It **inhibits cortisol release**."}
+]);

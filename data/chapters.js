@@ -121,6 +121,11 @@ KS.manifest = [
     id: 'ch21-3', number: '21.3', title: 'Mood Stabilizers', short: 'Mood stabilizers',
     summary: 'Lithium, valproate, lamotrigine, carbamazepine and oxcarbazepine, the other anticonvulsants and calcium channel blockers: indications, dosing, levels, toxicity, interactions, monitoring and pregnancy, with post-publication updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch21-4', number: '21.4', title: 'Anxiolytics', short: 'Anxiolytics',
+    summary: 'Benzodiazepines and flumazenil, buspirone, β-blockers, barbiturates and older sedatives: pharmacokinetics, indications, dependence and withdrawal, overdose, interactions and dosing, with post-publication updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -136,5 +141,6 @@ KS.extraFiles = [
   'data/drugs/antipsychotics.js',
   'data/drugs/antidepressants.js',
   'data/drugs/mood-stabilizers.js',
+  'data/drugs/anxiolytics.js',
   'data/changelog.js'
 ];

@@ -409,7 +409,24 @@ KS.glossary = (KS.glossary || []).concat([
   ["SUDEP", "Sudden unexpected death in epilepsy, listed among tiagabine's serious risks.", "Ch 21.3"],
   ["L-type calcium channel", "The long-acting voltage-gated calcium channel blocked by verapamil, nimodipine, isradipine and amlodipine; genes for its subunits have been linked to bipolar disorder and other psychiatric disorders.", "Ch 21.3"],
   ["carbamazepine-10,11-epoxide", "The active metabolite of carbamazepine; valproate and some other drugs raise it and can cause toxicity even when carbamazepine levels look normal.", "Ch 21.3"],
-  ["gabapentinoid", "Gabapentin or pregabalin, drugs that bind the α2δ subunit of voltage-gated calcium channels; used for neuropathic pain, anxiety and insomnia, with respiratory depression risk when combined with opioids.", "Ch 21.3"]
+  ["gabapentinoid", "Gabapentin or pregabalin, drugs that bind the α2δ subunit of voltage-gated calcium channels; used for neuropathic pain, anxiety and insomnia, with respiratory depression risk when combined with opioids.", "Ch 21.3"],
+  ["benzodiazepine", "A sedative-anxiolytic that enhances GABA's inhibitory effect by binding the benzodiazepine site of the GABAA receptor; used for anxiety, insomnia, seizures, alcohol withdrawal and catatonia, with risks of sedation, dependence and withdrawal.", "Ch 21.4"],
+  ["GABAA receptor", "The main inhibitory ligand-gated chloride channel in the brain; benzodiazepines, barbiturates, neurosteroids, propofol and etomidate act at different sites on it.", "Ch 21.4"],
+  ["flumazenil", "A benzodiazepine receptor antagonist given IV to reverse benzodiazepine sedation or overdose; it does not reverse alcohol, barbiturates or opioids and can provoke seizures.", "Ch 21.4"],
+  ["rebound insomnia", "Worse sleep than before treatment on the nights after stopping a hypnotic, especially a short half-life benzodiazepine.", "Ch 21.4"],
+  ["residual daytime sedation", "Drowsiness the day after a bedtime hypnotic, more common with long-acting drugs such as flurazepam.", "Ch 21.4"],
+  ["dynamic half-life", "The duration of a drug's action at its receptor, which can be longer than its elimination half-life.", "Ch 21.4"],
+  ["high-potency benzodiazepine", "A benzodiazepine effective at small doses, such as clonazepam (0.25 mg ≈ diazepam 5 mg), alprazolam and triazolam; used for panic disorder and more prone to amnesia and withdrawal.", "Ch 21.4"],
+  ["desmethyldiazepam", "The long-acting active metabolite (half-life over 120 hours) shared by diazepam, chlordiazepoxide and clorazepate.", "Ch 21.4"],
+  ["azapirone", "A class of 5-HT1A partial agonists that includes buspirone and gepirone.", "Ch 21.4"],
+  ["intrinsic sympathomimetic activity", "Partial agonist activity at β receptors by a β-blocker such as pindolol, causing less bradycardia.", "Ch 21.4"],
+  ["barbiturate", "A sedative-hypnotic acting at the GABAA receptor complex, with a low therapeutic index, high abuse potential and enzyme induction; now used mainly for seizures, ECT anesthesia (methohexital) and sedative withdrawal.", "Ch 21.4"],
+  ["pentobarbital challenge test", "A test of sedative tolerance: pentobarbital 200 mg orally, then 100 mg every 2 hours if not sedated (up to 500 mg); the dose producing mild intoxication guides phenobarbital substitution (30 mg per 100 mg) and a 10% daily taper.", "Ch 21.4"],
+  ["Amytal interview", "A drug-assisted interview using IV amobarbital (50 mg a minute until lateral nystagmus or drowsiness) to evaluate conversion, catatonia, stupor or mutism; diazepam is now preferred because of laryngospasm.", "Ch 21.4"],
+  ["Mickey Finn", "The dangerous combination of chloral hydrate and alcohol.", "Ch 21.4"],
+  ["Cheyne–Stokes respiration", "Cyclic breathing that waxes and wanes with periods of apnea, seen in severe barbiturate intoxication and other brain or cardiac disorders.", "Ch 21.4"],
+  ["Beers Criteria", "The American Geriatrics Society list of potentially inappropriate medications for older adults; the 2023 update advises avoiding benzodiazepines.", "Ch 21.4"],
+  ["sedative-hypnotic withdrawal", "Withdrawal from benzodiazepines, barbiturates or similar drugs: anxiety, insomnia, tremor, hyperacusis, delirium and seizures; managed by substituting a long-acting drug and tapering slowly.", "Ch 21.4"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -574,5 +591,15 @@ KS.glossaryAliases = {
   "loading dose": "oral loading",
   "l-type calcium channels": "L-type calcium channel",
   "10,11-epoxide": "carbamazepine-10,11-epoxide",
-  "gabapentinoids": "gabapentinoid"
+  "gabapentinoids": "gabapentinoid",
+  "benzodiazepines": "benzodiazepine",
+  "gaba-a receptor": "GABAA receptor",
+  "gabaa receptors": "GABAA receptor",
+  "high-potency benzodiazepines": "high-potency benzodiazepine",
+  "azapirones": "azapirone",
+  "isa": "intrinsic sympathomimetic activity",
+  "barbiturates": "barbiturate",
+  "pentobarbital challenge": "pentobarbital challenge test",
+  "amobarbital interview": "Amytal interview",
+  "sedative withdrawal": "sedative-hypnotic withdrawal"
 };

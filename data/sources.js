@@ -59,6 +59,11 @@
     { m: 'FDA and Cephalon warning, February 2005', label: 'PharmaTimes: FDA and Cephalon warn over Gabitril (2005)', url: 'https://pharmatimes.com/?p=16269' },
     { m: 'Lyrica prescribing information', label: 'Label: Lyrica (DailyMed)', url: DM('Lyrica') },
     { m: 'Gabitril prescribing information', label: 'Label: Gabitril (DailyMed)', url: DM('Gabitril') },
+    { m: 'FDA, boxed warning for the benzodiazepine class, September 2020', label: 'FDA: boxed warning for benzodiazepines (Sept 2020)', url: 'https://www.fda.gov/drugs/fda-drug-safety-podcasts/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class' },
+    { m: 'Joint Clinical Practice Guideline on Benzodiazepine Tapering', label: 'ASAM: 2025 benzodiazepine tapering guideline', url: 'https://www.asam.org/news/detail/2025/06/17/new-benzodiazepine-tapering-guideline-emphasizes-patient-centered-approach' },
+    { m: 'FDA Drug Safety Communication on opioids with benzodiazepines, August 2016', label: 'FDA: risks of combining opioids and benzodiazepines (2016)', url: 'https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or' },
+    { m: 'American Geriatrics Society 2023 Beers Criteria', label: 'Summary of the 2023 AGS Beers Criteria (UIC)', url: 'https://dig.pharmacy.uic.edu/faqs/2023-2/september-2023-faqs/a-summary-of-the-2023-american-geriatrics-society-updated-beers-criteria-for-potentially-inappropriate-medication-use-in-the-elderly' },
+    { m: 'Flumazenil prescribing information', label: 'Label: flumazenil (DailyMed)', url: DM('flumazenil') },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();

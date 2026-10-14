@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 30,
+    date: "2026-10-15",
+    title: "Chapter 21.4: Anxiolytics",
+    items: [
+      { type: "chapter", ch: "ch21-4", text: "**Chapter 21.4, Anxiolytics**: benzodiazepines (pharmacokinetics, indications from panic to catatonia, adverse effects, dependence and withdrawal, interactions) and flumazenil, buspirone, β-blockers, and barbiturates and older sedatives, ending with a comparison table. Study guide, high-yield list, printable handout and 93 cards, with post-publication updates (the 2020 benzodiazepine boxed warning, the 2016 opioid–benzodiazepine warning, the 2025 tapering guideline, the 2023 Beers Criteria) and a correction of flumazenil's half-life.", href: "#/c/ch21-4/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: 26 anxiolytics, sedatives, β-blockers and barbiturates added.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**New diagnostic helper**: *Choosing an anxiolytic*.", href: "#/helpers/anxiolytic", link: "Try it" },
+      { type: "update", text: "**Glossary**: 17 new terms from Chapter 21.4, including GABAA receptor, pentobarbital challenge test and Amytal interview." }
+    ]
+  },
+  {
     id: 29,
     date: "2026-10-14",
     title: "Chapter 21.3: Mood Stabilizers",
