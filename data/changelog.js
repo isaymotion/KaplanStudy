@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 33,
+    date: "2026-10-15",
+    title: "All high-yield summaries as one PDF",
+    items: [
+      { type: "feature", text: "**For educators**: a new *All high-yield (PDF)* page compiles every chapter’s high-yield list into one two-column PDF, with each chapter starting on a new page and running page numbers. Build the full set in one file, or download any single chapter’s PDF on its own. Also linked from each chapter’s high-yield page.", href: "#/all-highyield", link: "Open it" }
+    ]
+  },
+  {
     id: 32,
     date: "2026-10-15",
     title: "Chapter 21.6: Stimulants",

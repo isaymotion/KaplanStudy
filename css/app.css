@@ -870,6 +870,12 @@ tbody th { font-weight: 700; }
 .handout-tools__go { display: flex; align-items: center; gap: 10px 18px; flex-wrap: wrap; }
 .handout-fit { margin: 0; color: var(--good); font-weight: 600; font-size: .92rem; }
 .handout-fit.is-warn { color: var(--bad); }
+
+/* ---------- all high-yield PDFs (educators) ---------- */
+.ahy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 4px; }
+.ahy-grid .btn { width: 100%; justify-content: center; }
+.ahy-status { margin: 10px 0 0; font-weight: 600; font-size: .92rem; color: var(--ink-3); min-height: 1.3em; }
+.ahy-status.is-warn { color: var(--bad); }
 .sheet-frame { position: relative; overflow: hidden; }
 .sheets { transform-origin: top left; display: grid; gap: 24px; width: max-content; }
 .sheet {

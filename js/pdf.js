@@ -301,6 +301,115 @@
     return new Blob([bytes], { type: 'application/pdf' });
   }
 
+  /* ---- all high-yield PDFs (educators): a flowing two-column document, any number of pages,
+     each chapter starting on a fresh page, with running headers and "Page x of y" footers.
+     Public: KS.allHighYieldPdf({ paper:'letter'|'a4', chapters:[{number,title,highYield}], attribution }) -> Blob|null */
+  var FLOW_BODY = 9, FLOW_TITLE = 15;
+
+  function flowGeometry(paper, title) {
+    var pg = PAGES[paper] || PAGES.letter, m = pg.m, W = pg.w - 2 * m;
+    var gap = 4.5 * MM, colW = (W - gap) / 2;
+    var titleLines = wrap(words(title, 'H', true), FLOW_TITLE, W, 'H', 'HB');
+    var titleLH = FLOW_TITLE * 1.15;
+    var kickH = 7 * 1.2;
+    var headH = kickH + 1 * MM + titleLines.length * titleLH + 2.4 * MM + 1.2 + 3 * MM;
+    var footH = 2 * MM + 1.6 * MM + 6.5 * 1.3;
+    var bodyTop = m + headH;
+    var bodyH = pg.h - m - footH - bodyTop;
+    return { pg: pg, m: m, W: W, gap: gap, colW: colW, titleLines: titleLines, titleLH: titleLH, bodyTop: bodyTop, bodyH: bodyH, footH: footH };
+  }
+
+  // lays one chapter's topics into as many two-column pages as needed; returns an array of ops arrays
+  function layFlowChapter(topics, size, g) {
+    var pages = [], ops = [], ci = 0, y = 0;
+    var hs = size * 1.04, lh = size * 1.26, indent = size * 1.05, colH = g.bodyH;
+    function xOf(c) { return g.m + c * (g.colW + g.gap); }
+    function startPage() { if (ops.length) pages.push(ops); ops = []; ci = 0; y = 0; }
+    for (var t = 0; t < topics.length; t++) {
+      var topic = topics[t], hl = wrap(words(topic.topic, 'H', true), hs, g.colW, 'H', 'HB');
+      var headH = hl.length * hs * 1.2 + hs * 0.15 + 0.6;
+      for (var i = 0; i < topic.items.length; i++) {
+        var il = wrap(words(topic.items[i], 'T'), size, g.colW - indent, 'T', 'T');
+        var itemH = il.length * lh;
+        var needHead = i === 0, guard = 0;
+        while (true) {
+          guard++;
+          var extra = needHead ? (y > 0 ? 0.7 * hs : 0) + headH + 0.3 * hs : 0;
+          if (y + extra + itemH <= colH + 0.01 || guard > 4) {
+            if (needHead) {
+              y += (y > 0 ? 0.7 * hs : 0);
+              ops.push({ k: 'head', c: ci, y: y, lines: hl, hs: hs, x: xOf(ci), w: g.colW });
+              y += headH + 0.3 * hs;
+              needHead = false;
+            }
+            ops.push({ k: 'item', c: ci, y: y, lines: il, size: size, lh: lh, x: xOf(ci), indent: indent });
+            y += itemH + 0.16 * size;
+            break;
+          }
+          if (ci === 0) { ci = 1; y = 0; } else startPage();
+        }
+      }
+    }
+    if (ops.length) pages.push(ops);
+    return pages.length ? pages : [[]];
+  }
+
+  function renderFlowPage(ops, g, pageNum, totalPages, attribution) {
+    var pg = g.pg, page = new Page(pg.h), m = g.m;
+    var kmap = ''; var kicker = 'HIGH-YIELD SUMMARY';
+    for (var i = 0; i < kicker.length; i++) kmap += mapChar(kicker.charAt(i)).ch;
+    page.text('HB', 7, RED, m, m + 6, kmap, 0.56);
+    var ty = m + 7 + 1 * MM;
+    g.titleLines.forEach(function (ln, k) {
+      drawLine(page, ln, m, ty + k * g.titleLH + g.titleLH * 0.78, FLOW_TITLE, NAVY, false, g.W, 'left', 'HB');
+    });
+    var ruleY = ty + g.titleLines.length * g.titleLH + 2.4 * MM;
+    page.rect(m, ruleY, g.W, 1.2, NAVY);
+    var top = g.bodyTop, hgt = g.bodyH;
+    page.rect(m + g.colW + g.gap / 2, top, 0.4, hgt, SEP);
+    ops.forEach(function (o) {
+      if (o.k === 'head') {
+        o.lines.forEach(function (ln, k) {
+          drawLine(page, ln, o.x, top + o.y + k * o.hs * 1.2 + o.hs * 1.2 * 0.78, o.hs, NAVY, false, o.w, 'left', 'HB');
+        });
+        page.rect(o.x, top + o.y + o.lines.length * o.hs * 1.2 + o.hs * 0.15 - 0.3, o.w, 0.6, ORANGE);
+      } else {
+        o.lines.forEach(function (ln, k) {
+          var base = top + o.y + k * o.lh + o.lh * 0.5 + o.size * 0.23;
+          if (k === 0) page.text('T', o.size, ORANGE, o.x + o.indent * 0.1, base, '\x95');
+          drawLine(page, ln, o.x + o.indent, base, o.size, INK, false, 0, 'left', 'T');
+        });
+      }
+    });
+    var fy = pg.h - m - g.footH;
+    page.rect(m, fy + 2 * MM, g.W, 0.5, FOOT);
+    var af = ''; for (var j = 0; j < attribution.length; j++) af += mapChar(attribution.charAt(j)).ch;
+    page.text('H', 6.5, GRAY, m, fy + 2 * MM + 1.6 * MM + 6.5 * 1.3 * 0.78, af);
+    var label = 'Page ' + pageNum + ' of ' + totalPages, ws = words(label, 'H');
+    drawLine(page, ws, m, fy + 2 * MM + 1.6 * MM + 6.5 * 1.3 * 0.78, 6.5, GRAY, false, g.W, 'right', 'H');
+    return page.s;
+  }
+
+  KS.allHighYieldPdf = function (P) {
+    var chapters = (P.chapters || []).filter(function (c) { return (c.highYield || []).length; });
+    if (!chapters.length) return null;
+    var built = chapters.map(function (c) {
+      var g = flowGeometry(P.paper, 'Chapter ' + c.number + ': ' + c.title);
+      var pages = layFlowChapter(c.highYield, FLOW_BODY, g);
+      return { g: g, pages: pages };
+    });
+    var total = 0; built.forEach(function (b) { total += b.pages.length; });
+    var contents = [], n = 0, pg = built[0].g.pg;
+    built.forEach(function (b) {
+      b.pages.forEach(function (ops) {
+        n++;
+        contents.push(renderFlowPage(ops, b.g, n, total, P.attribution));
+      });
+    });
+    var title = chapters.length === 1 ? ('Chapter ' + chapters[0].number + ' high-yield summary') : 'High-yield summaries, all chapters';
+    return assemble(contents, pg, title);
+  };
+
   KS.handoutPdf = function (P) {
     var g = geometry(P);
     if (!P.groups.length || !P.groups.every(function (x) { return x.length; })) return null;

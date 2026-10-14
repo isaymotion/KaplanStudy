@@ -273,6 +273,7 @@
         return renderTeachSetup();
       case 'progress': return renderProgress();
       case 'whats-new': return renderNews();
+      case 'all-highyield': return renderAllHighYield();
       case 'c':
         var ch = chapter(p[1]);
         if (!ch) return renderMissing();
@@ -400,6 +401,7 @@
         '<a class="tool" href="#/teach"><span class="tool__name">Teaching mode</span><span class="tool__meta">Present a case full screen for group discussion; reveal the answer on click.</span></a>' +
         '<div class="tool"><span class="tool__name">Printable handouts</span><span class="tool__meta">A print-ready high-yield sheet per chapter, as an answer key or a fill-in worksheet.</span><span class="tool__links">' +
           chs.map(function (ch) { return '<a href="#/c/' + ch.id + '/handout">Chapter ' + ch.number + '</a>'; }).join('') + '</span></div>' +
+        '<a class="tool" href="#/all-highyield"><span class="tool__name">All high-yield (PDF)</span><span class="tool__meta">Every chapter’s high-yield list as one compiled, paginated PDF, or one chapter at a time.</span></a>' +
         '<a class="tool" href="#/whats-new"><span class="tool__name">What’s new</span><span class="tool__meta">New chapters, features and corrections, so residents know what to revisit.</span></a>' +
       '</div></section>' +
       '<section class="wrap home-section"><h2>How to study a chapter</h2><div class="howto">' +
@@ -614,7 +616,7 @@
       '<div class="wrap hy-page' + (quiz ? ' quiz-on' : '') + '">' +
         '<div class="hy-tools"><label class="switch"><input type="checkbox" id="hy-quiz"' + (quiz ? ' checked' : '') + '> Hide key facts</label>' +
         '<p>With key facts hidden, each bold fact becomes a blank. Say the answer, then tap the blank to check.</p>' +
-        '<a class="btn hy-tools__print" href="#/c/' + ch.id + '/handout">Printable handout</a><a class="btn" href="#/teach" id="hy-teach">Present as fill-in-the-blank</a></div>' +
+        '<a class="btn hy-tools__print" href="#/c/' + ch.id + '/handout">Printable handout</a><a class="btn" href="#/all-highyield">High-yield PDF</a><a class="btn" href="#/teach" id="hy-teach">Present as fill-in-the-blank</a></div>' +
         '<div class="hy-grid">' + topics + '</div>' +
       '</div>';
     setView(key, html, focusTarget);
@@ -1694,6 +1696,60 @@
     };
   }
 
+  /* ---------- all high-yield PDFs (for educators) ----------
+     One compiled, two-column PDF of every chapter's high-yield list (or any single chapter), paginated
+     with running headers and page numbers. Unlike the per-chapter handout, this one flows across as many
+     pages as a chapter needs, at a fixed comfortable size, rather than shrinking to fit one sheet. */
+  function renderAllHighYield() {
+    var chs = allChapters().slice().sort(function (a, b) { return a.number - b.number; });
+    var prefs = store.get('allHyPrefs', { paper: 'a4' });
+    if (!PAPER[prefs.paper]) prefs.paper = 'a4';
+    function seg(name, opts, cur) {
+      return '<div class="seg" role="radiogroup">' + opts.map(function (o) {
+        return '<label><input type="radio" name="' + name + '" value="' + o[0] + '"' + (String(o[0]) === String(cur) ? ' checked' : '') + '><span>' + o[1] + '</span></label>';
+      }).join('') + '</div>';
+    }
+    var html = '<div class="wrap page">' +
+      '<header class="page__head"><h1>All high-yield summaries (PDF)</h1>' +
+        '<p>Every chapter’s high-yield list in one two-column PDF, each chapter starting on a new page, with page numbers. For a one-page sheet or a fill-in worksheet of a single chapter, use the high-yield PDF on each chapter’s high-yield page.</p></header>' +
+      '<div class="handout-tools no-print">' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Paper</span>' + seg('paper', [['a4', 'A4'], ['letter', 'Letter']], prefs.paper) + '</div>' +
+        '<div class="handout-tools__go"><button class="btn btn--solid" type="button" id="ahy-all">Create PDF of all ' + chs.length + ' chapters</button><p class="ahy-status" id="ahy-status" aria-live="polite"></p></div>' +
+      '</div>' +
+      '<div class="ahy-grid">' + chs.map(function (ch) {
+        return '<button class="btn" type="button" data-ch="' + ch.id + '">Ch ' + ch.number + ' PDF</button>';
+      }).join('') + '</div>' +
+    '</div>';
+    setView('all-highyield', html);
+    document.title = 'All high-yield summaries — K&S Study Companion';
+    var status = main.querySelector('#ahy-status');
+    main.querySelectorAll('input[name=paper]').forEach(function (i) {
+      i.addEventListener('change', function () { prefs.paper = i.value; store.set('allHyPrefs', prefs); });
+    });
+    function build(chapters, name) {
+      status.className = 'ahy-status'; status.textContent = 'Building ' + name + '…';
+      setTimeout(function () {
+        var blob = window.KS && KS.allHighYieldPdf && KS.allHighYieldPdf({
+          paper: prefs.paper, chapters: chapters.map(function (ch) { return { number: ch.number, title: ch.title, highYield: ch.highYield || [] }; }), attribution: ATTRIBUTION
+        });
+        if (!blob) { status.className = 'ahy-status is-warn'; status.textContent = 'Could not build that PDF.'; return; }
+        savePdf(blob, name);
+        status.textContent = '';
+      }, 10);
+    }
+    var allBtn = main.querySelector('#ahy-all');
+    if (allBtn) allBtn.addEventListener('click', function () {
+      build(chs, 'KS-all-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+    });
+    main.querySelectorAll('[data-ch]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ch = chapter(b.getAttribute('data-ch'));
+        if (!ch || !(ch.highYield || []).length) { status.className = 'ahy-status is-warn'; status.textContent = 'That chapter has no high-yield list.'; return; }
+        build([ch], 'KS-Ch' + ch.number + '-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+      });
+    });
+  }
+
   /* ---------- teaching mode ----------
      A full-screen presentation of one case at a time for group discussion.
      - Group tally: the presenter counts the room's votes per answer choice; reveal shows the spread.
@@ -2682,7 +2738,7 @@
       if (tools) html += '<div class="menu-panel__tools"><h2>Study tools</h2>' + Array.prototype.map.call(tools.querySelectorAll('a'), function (a) {
         return '<a href="' + a.getAttribute('href') + '">' + a.innerHTML.replace(/ data-nav="[^"]*"/g, '') + '</a>';
       }).join('') + '</div>';
-      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
+      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
       panel.innerHTML = html;
     }
     function open() {
