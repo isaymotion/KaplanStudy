@@ -96,6 +96,11 @@ KS.manifest = [
     id: 'ch13', number: 13, title: 'Feeding and Eating Disorders', short: 'Feeding and eating',
     summary: 'Anorexia nervosa, bulimia nervosa, binge-eating disorder and night-eating syndrome: diagnosis, medical complications, differential, refeeding and hospital care, psychotherapy and medication, course and causes.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch14', number: 14, title: 'Elimination Disorders', short: 'Elimination disorders',
+    summary: 'Encopresis and enuresis: how continence develops, diagnostic criteria and minimum ages, medical differential, behavioral and drug treatment, and physiologic and psychosocial causes.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 

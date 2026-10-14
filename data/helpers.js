@@ -2721,5 +2721,102 @@ KS.helpers = (KS.helpers || []).concat([
       vagal: { label: "Consider instead", dx: "Hyperactive vagus nerve syndrome", line: "A rare condition with weight loss, parasympathomimetic signs and gastric distress, but preserved appetite.", points: ["Anticholinergic drugs can reverse the potentially life-threatening hypotension and bradycardia."], link: { ch: "ch13", sec: "s13-ddx-an", label: "Differential of anorexia nervosa" } },
       medical: { label: "Investigate", dx: "Exclude a medical cause of weight loss", line: "Weight loss, odd eating and vomiting occur in medical illness and several mental disorders.", points: ["Consider brain tumor and cancer; do a full physical and neurologic examination.", "Check electrolytes, blood count, glucose and an ECG."], link: { ch: "ch13", sec: "s13-labs", label: "Examination and laboratory workup" } }
     }
+  },
+  {
+    id: "elimination",
+    chapter: "ch14",
+    title: "Which elimination disorder?",
+    summary: "Start with whether the problem is feces or urine, check the child's age, frequency and duration, rule out medical causes, then reach encopresis (with or without constipation and overflow), enuresis (nocturnal, diurnal or both) or a look-alike.",
+    caution: "A teaching aid built from Chapter 14, not a substitute for a full assessment. Medical causes (Hirschsprung disease, urinary infection, obstruction, diabetes, seizures) must be considered before a psychiatric label, and a child who is soiling or wetting should be asked about stressors and safety.",
+    start: "what",
+    nodes: {
+      what: {
+        q: "What is the child passing in the wrong place?",
+        help: "Both disorders can be voluntary or involuntary. Some children have both.",
+        options: [
+          { label: "Feces", to: "enc_age" },
+          { label: "Urine", to: "enu_age" }
+        ]
+      },
+      enc_age: {
+        q: "Is the child at least 4 years old (developmental or chronologic)?",
+        options: [
+          { label: "Yes", to: "enc_freq" },
+          { label: "No", to: "r:too_young_enc" }
+        ]
+      },
+      enc_freq: {
+        q: "Has it happened at least once a month for at least 3 months?",
+        help: "Brief soiling around a stressor such as a new sibling does not meet criteria.",
+        options: [
+          { label: "Yes", to: "enc_med" },
+          { label: "No: sporadic or recent", to: "r:enc_stress" }
+        ]
+      },
+      enc_med: {
+        q: "Could a medical condition (other than one causing constipation), a drug or a substance explain it?",
+        help: "Hirschsprung disease signs appear shortly after birth: an empty rectum with no urge to defecate, yet overflow.",
+        options: [
+          { label: "Yes or possibly", to: "r:enc_medical" },
+          { label: "No", to: "enc_const" }
+        ]
+      },
+      enc_const: {
+        q: "Is there constipation with overflow incontinence?",
+        help: "Hard fecal masses on palpation, frequent liquid stools, painful defecation and stool withholding.",
+        options: [
+          { label: "Yes", to: "r:enc_with" },
+          { label: "No: normal-consistency stool deposited deliberately or unaware", to: "r:enc_without" }
+        ]
+      },
+      enu_age: {
+        q: "Is the child at least 5 years old (developmental or chronologic)?",
+        help: "Wetting is developmentally normal in toddlers (82% at 2, 49% at 3, 26% at 4).",
+        options: [
+          { label: "Yes", to: "enu_freq" },
+          { label: "No", to: "r:too_young_enu" }
+        ]
+      },
+      enu_freq: {
+        q: "Has it happened at least twice a week for at least 3 months?",
+        options: [
+          { label: "Yes", to: "enu_med" },
+          { label: "No", to: "r:enu_sub" }
+        ]
+      },
+      enu_med: {
+        q: "Are there features of a medical cause?",
+        help: "Frequency, urgency, pain on urinating, wetting day and night, polyuria and thirst, small night-time volumes, seizures, sleepwalking or a new drug.",
+        options: [
+          { label: "Infection, obstruction or anatomic problem suspected", to: "r:enu_uti" },
+          { label: "Excess thirst and urine", to: "r:enu_dm" },
+          { label: "Seizure or sleepwalking episodes", to: "r:enu_sz" },
+          { label: "None", to: "enu_type" }
+        ]
+      },
+      enu_type: {
+        q: "When does the wetting happen?",
+        options: [
+          { label: "Only at night", to: "r:enu_noct" },
+          { label: "Only during the day", to: "r:enu_diur" },
+          { label: "Both", to: "r:enu_both" }
+        ]
+      }
+    },
+    results: {
+      too_young_enc: { label: "Not a disorder", dx: "Normal development (too young for encopresis)", line: "Encopresis is not diagnosed before age 4.", points: ["Mastery of bowel control occurs over several months in toddlers; nocturnal fecal continence comes first.", "Review toilet training and developmental delay."], link: { ch: "ch14", sec: "s14-dev", label: "How bowel and bladder control develops" } },
+      enc_stress: { label: "Consider", dx: "Transient soiling around a stressor", line: "Sporadic soiling that does not meet the frequency and duration criteria.", points: ["Often follows a stressor such as a new sibling or a move.", "Support the family and reassess if it persists."], link: { ch: "ch14", sec: "s14-enc-dx", label: "Diagnosing encopresis" } },
+      enc_medical: { label: "Investigate", dx: "Medical cause of fecal incontinence", line: "Rule out Hirschsprung disease and other medical causes before diagnosing encopresis.", points: ["Hirschsprung disease: about 1 in 5,000, signs shortly after birth, empty rectum.", "Other causes: anorectal innervation problems, neuronal intestinal dysplasia, spinal cord damage, drug effects, endocrine or neurologic illness."], link: { ch: "ch14", sec: "s14-enc-workup", label: "Workup and differential" } },
+      enc_with: { label: "Most likely", dx: "Encopresis, with constipation and overflow incontinence", line: "Chronic retention of stool with liquid overflow around hard fecal masses.", points: ["Treat with disimpaction, daily PEG (about 1 g/kg a day) and a toileting routine with CBT.", "Children who cannot relax the sphincter respond poorly to laxatives; keep the family nonpunitive."], link: { ch: "ch14", sec: "s14-enc-tx", label: "Treating encopresis" } },
+      enc_without: { label: "Most likely", dx: "Encopresis, without constipation and overflow incontinence", line: "Soiling with normal-consistency stool, either unaware or deliberate.", points: ["Look for emotional causes (anger, stress) and neurodevelopmental problems; ask about a fear of the toilet.", "Laxatives are not needed; regular timed toilet sittings and family work help."], link: { ch: "ch14", sec: "s14-enc-etio", label: "Causes of encopresis" } },
+      too_young_enu: { label: "Not a disorder", dx: "Normal development (too young for enuresis)", line: "Enuresis is not diagnosed before age 5.", points: ["Bedwetting is common at 2 to 4 years.", "Review toilet training and developmental status."], link: { ch: "ch14", sec: "s14-overview", label: "Minimum ages for diagnosis" } },
+      enu_sub: { label: "Consider", dx: "Wetting below the diagnostic threshold", line: "Less frequent than twice a week or shorter than 3 months.", points: ["Record a baseline and reassess.", "Simple measures (restrict fluids before bed, star chart) can help."], link: { ch: "ch14", sec: "s14-enu-tx", label: "Behavioral treatment" } },
+      enu_uti: { label: "Investigate", dx: "Urinary tract infection, obstruction or anatomic abnormality", line: "Combined day and night wetting with frequency and urgency points to a medical cause.", points: ["Structural obstruction in up to 3% of apparent enuresis; also spina bifida occulta and cystitis.", "Defer advanced imaging in uncomplicated cases."], link: { ch: "ch14", sec: "s14-enu-ddx", label: "Differential of enuresis" } },
+      enu_dm: { label: "Investigate", dx: "Polyuria: diabetes mellitus or diabetes insipidus", line: "Excess thirst and urine can cause wetting.", points: ["Check glucose and urine concentration."], link: { ch: "ch14", sec: "s14-enu-ddx", label: "Differential of enuresis" } },
+      enu_sz: { label: "Investigate", dx: "Seizure, sleepwalking or intoxication", line: "Disturbances of consciousness or sleep during which the child urinates.", points: ["Also review medications for adverse effects."], link: { ch: "ch14", sec: "s14-enu-ddx", label: "Differential of enuresis" } },
+      enu_noct: { label: "Most likely", dx: "Enuresis, nocturnal only", line: "Night-time wetting, the commonest type (about 80%).", points: ["First line: toilet-training review, record keeping, star chart, fluid restriction before bed and the bell-and-pad alarm (over 50% dry, child 6 to 7 or older).", "Desmopressin or imipramine only if needed; relapse is common after stopping.", "Small night-time volumes suggest a medical cause."], link: { ch: "ch14", sec: "s14-enu-tx", label: "Behavioral treatment of enuresis" } },
+      enu_diur: { label: "Most likely", dx: "Enuresis, diurnal only", line: "Daytime wetting, often from habitual withholding with voluntary sphincter tightening.", points: ["Commoner in boys who delay voiding until too late.", "Behavioral approaches; bladder training and scheduled voiding."], link: { ch: "ch14", sec: "s14-enu-etio", label: "Causes of enuresis" } },
+      enu_both: { label: "Most likely", dx: "Enuresis, nocturnal and diurnal", line: "Wetting by day and night; more often linked to infection or obstruction, so confirm medical causes are excluded.", points: ["Check for urinary frequency and urgency.", "Treat comorbid ADHD or encopresis if present."], link: { ch: "ch14", sec: "s14-enu-dx", label: "Diagnosing enuresis" } }
+    }
   }
 ]);

@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 23,
+    date: "2026-10-14",
+    title: "Chapter 14: Elimination Disorders",
+    items: [
+      { type: "chapter", ch: "ch14", text: "**Chapter 14, Elimination Disorders**, is now available: encopresis and enuresis, with criteria and minimum ages, medical differential, behavioral treatment (PEG and toileting routines, the bell-and-pad alarm), medication and causes. Study guide, high-yield list, printable handout and 106 cards.", href: "#/c/ch14/guide", link: "Open the chapter" },
+      { type: "feature", text: "**New diagnostic helper**: *Which elimination disorder?*", href: "#/helpers/elimination", link: "Try it" },
+      { type: "update", text: "**Glossary**: 13 new terms from Chapter 14, including Hirschsprung disease, megacolon and the bell-and-pad alarm." }
+    ]
+  },
+  {
     id: 22,
     date: "2026-10-14",
     title: "A tidier top bar and a chapter menu",

@@ -277,7 +277,20 @@ KS.glossary = (KS.glossary || []).concat([
   ["Kleine–Levin syndrome", "Periodic hypersomnia lasting 2 to 3 weeks with hyperphagia, starting in adolescence and more common in men; in the differential of bulimia nervosa.", "Ch 13"],
   ["cholecystokinin", "Satiety hormone (CCK) released by the small intestine; reduced secretion may favor overeating in bulimia nervosa.", "Ch 13"],
   ["weight cycling", "Repeatedly gaining or losing more than 10 kg; common in binge-eating disorder.", "Ch 13"],
-  ["poikilothermia", "Inability to keep a stable body temperature, which drifts with the environment; seen in starvation.", "Ch 13"]
+  ["poikilothermia", "Inability to keep a stable body temperature, which drifts with the environment; seen in starvation.", "Ch 13"],
+  ["Hirschsprung disease", "Congenital absence of ganglion cells in part of the colon (aganglionic megacolon), about 1 in 5,000; signs appear shortly after birth, with an empty rectum, no urge to defecate and overflow of feces.", "Ch 14"],
+  ["megacolon", "Enlarged colon and rectum from chronic fecal retention; the stretched rectal wall loses tone and sensitivity, so overflow soiling occurs.", "Ch 14"],
+  ["overflow incontinence", "Leakage of liquid or soft stool around a hard fecal mass in a constipated child; a DSM-5 specifier for encopresis.", "Ch 14"],
+  ["fecal impaction", "A large, hard mass of stool in the rectum that cannot be passed; treated with disimpaction before maintenance laxatives.", "Ch 14"],
+  ["disimpaction", "Clearing hard stool from the rectum, manually or under sedation or anesthesia, before starting maintenance laxatives in encopresis.", "Ch 14"],
+  ["polyethylene glycol", "Osmotic laxative (PEG) used daily, about 1 g/kg a day, to treat constipation in encopresis.", "Ch 14"],
+  ["bell-and-pad alarm", "Moisture-triggered alarm on underwear or a mat that wakes a child when voiding starts; classical conditioning, the most effective treatment for enuresis (over 50% dry).", "Ch 14"],
+  ["desmopressin", "Antidiuretic given as an intranasal spray for enuresis; lowers night-time urine output but enuresis usually returns when stopped; rare hyponatremic seizure.", "Ch 14"],
+  ["night lifting", "Waking a child at night to use the toilet, a simple behavioral measure for enuresis.", "Ch 14"],
+  ["reboxetine", "Norepinephrine reuptake inhibitor with a noncardiotoxic profile, a possible safer alternative to imipramine for enuresis; not available in the United States.", "Ch 14"],
+  ["nocturnal enuresis", "Wetting during sleep; about 80% of enuresis, about 50% more common in boys, resolving spontaneously at about 15% a year.", "Ch 14"],
+  ["diurnal enuresis", "Daytime wetting, often from habitual voluntary sphincter tightening and delayed voiding.", "Ch 14"],
+  ["bladder training", "Rewarding a child for delaying urination for longer intervals while awake; less effective than the bell-and-pad alarm.", "Ch 14"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -363,5 +376,13 @@ KS.glossaryAliases = {
   "ipecac": "emetine",
   "refeeding": "refeeding syndrome",
   "binge-purge type": "binge-eating/purging type",
-  "compensatory behaviors": "compensatory behavior"
+  "compensatory behaviors": "compensatory behavior",
+  "hirschsprung": "hirschsprung disease",
+  "aganglionic megacolon": "hirschsprung disease",
+  "peg": "polyethylene glycol",
+  "bell and pad": "bell-and-pad alarm",
+  "enuresis alarm": "bell-and-pad alarm",
+  "alarm therapy": "bell-and-pad alarm",
+  "bedwetting": "nocturnal enuresis",
+  "overflow soiling": "overflow incontinence"
 };

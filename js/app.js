@@ -359,7 +359,7 @@
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
-          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, substance, psychotic, mood, anxiety, OCD-related, trauma-related, dissociative, somatic symptom and eating disorders, step by step</span></a>' +
+          '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, substance, psychotic, mood, anxiety, OCD-related, trauma-related, dissociative, somatic symptom, eating and elimination disorders, step by step</span></a>' +
           '<a class="tool tool--wide" href="#/bookmarks"><span class="tool__name">Bookmarks</span><span class="tool__meta">' + (bookmarkList().length ? plural(bookmarkList().length, 'saved section') + ' across the study guides' : 'Tap the ribbon on any study-guide section to save it here') + '</span></a>' +
         '</div>' +
       '</section>';

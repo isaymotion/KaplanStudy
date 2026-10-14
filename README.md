@@ -30,6 +30,7 @@ Across all chapters:
   - *Which dissociative disorder?* (Chapter 11): the leading complaint (memory gaps, depersonalization or derealization, separate identities, trance, approximate answers or coercive persuasion), then medical, substance and psychiatric look-alikes. Reaches the dissociative amnesia types and fugue, depersonalization/derealization disorder, DID, other specified dissociative disorder, trance and possession, Ganser syndrome, feigned presentations and normal cultural or childhood experiences.
   - *Which somatic symptom or related disorder?* (Chapter 12): deliberate production (malingering, factitious disorder imposed on self or on another), psychological effects on a medical illness, then what dominates the picture. Reaches somatic symptom disorder by severity and with predominant pain, illness anxiety disorder by type, acute or persistent conversion disorder, psychological factors affecting other medical conditions, brief forms, and look-alikes such as adjustment disorder, panic, OCD, body dysmorphic disorder and psychosis.
   - *Which feeding or eating disorder?* (Chapter 13): the main eating problem (restriction, binges, purging after small amounts, night eating, or weight loss without fear of fatness), then fear of weight gain, compensation, weight, neurologic features and frequency. Reaches anorexia nervosa (restricting or binge-eating/purging), bulimia nervosa, binge-eating disorder, purging disorder, night-eating syndrome, subthreshold disorders, sleep-related eating disorder, Kleine–Levin and Klüver–Bucy syndromes, depression, psychosis, the hyperactive vagus syndrome, or a medical workup.
+  - *Which elimination disorder?* (Chapter 14): feces or urine, age, frequency and duration, medical causes, then encopresis with or without constipation and overflow, enuresis (nocturnal, diurnal or both), or normal development, a transient reaction or a medical cause.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -67,6 +68,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 11 | Dissociative Disorders | 15 | 48 | 86 |
 | 12 | Somatic Symptom and Related Disorders | 22 | 66 | 130 |
 | 13 | Feeding and Eating Disorders | 22 | 105 | 147 |
+| 14 | Elimination Disorders | 15 | 48 | 106 |
 
 ## Publish on GitHub Pages
 
