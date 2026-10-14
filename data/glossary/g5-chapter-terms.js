@@ -426,7 +426,20 @@ KS.glossary = (KS.glossary || []).concat([
   ["Mickey Finn", "The dangerous combination of chloral hydrate and alcohol.", "Ch 21.4"],
   ["Cheyne–Stokes respiration", "Cyclic breathing that waxes and wanes with periods of apnea, seen in severe barbiturate intoxication and other brain or cardiac disorders.", "Ch 21.4"],
   ["Beers Criteria", "The American Geriatrics Society list of potentially inappropriate medications for older adults; the 2023 update advises avoiding benzodiazepines.", "Ch 21.4"],
-  ["sedative-hypnotic withdrawal", "Withdrawal from benzodiazepines, barbiturates or similar drugs: anxiety, insomnia, tremor, hyperacusis, delirium and seizures; managed by substituting a long-acting drug and tapering slowly.", "Ch 21.4"]
+  ["sedative-hypnotic withdrawal", "Withdrawal from benzodiazepines, barbiturates or similar drugs: anxiety, insomnia, tremor, hyperacusis, delirium and seizures; managed by substituting a long-acting drug and tapering slowly.", "Ch 21.4"],
+  ["Z drug", "A nonbenzodiazepine hypnotic (zolpidem, zaleplon or eszopiclone) that binds near the benzodiazepine site with selectivity for particular GABAA subunits, giving sedation with little muscle relaxant or anticonvulsant effect.", "Ch 21.5"],
+  ["complex sleep behaviors", "Sleepwalking, sleep driving, cooking or other activities done while not fully awake, usually with amnesia; a boxed warning since 2019 for zolpidem, zaleplon and eszopiclone, which are contraindicated after an episode.", "Ch 21.5"],
+  ["sleep-onset insomnia", "Difficulty falling asleep; treated with short-acting hypnotics such as zaleplon, immediate-release zolpidem or ramelteon.", "Ch 21.5"],
+  ["sleep-maintenance insomnia", "Difficulty staying asleep through the night; treated with longer-acting hypnotics such as eszopiclone or controlled-release zolpidem, and since the book with orexin antagonists and low-dose doxepin.", "Ch 21.5"],
+  ["melatonin", "A hormone made from serotonin, mainly by the pineal gland at night, that acts on MT1 and MT2 receptors in the suprachiasmatic nucleus to regulate the sleep–wake cycle; sold in the United States as a dietary supplement.", "Ch 21.5"],
+  ["melatonin receptor agonist", "A drug that stimulates MT1 and MT2 receptors, such as ramelteon (sleep-onset insomnia) and tasimelteon (non-24-hour disorder).", "Ch 21.5"],
+  ["suprachiasmatic nucleus", "The hypothalamic nucleus that serves as the master circadian clock and contains melatonin receptors.", "Ch 21.5"],
+  ["orexin receptor antagonist", "A hypnotic that blocks orexin (hypocretin) OX1 and OX2 receptors, such as suvorexant, lemborexant and daridorexant; contraindicated in narcolepsy.", "Ch 21.5"],
+  ["orexin", "A lateral hypothalamic neuropeptide (also called hypocretin) that promotes wakefulness; its loss causes narcolepsy with cataplexy.", "Ch 21.5"],
+  ["sodium oxybate", "The sodium salt of γ-hydroxybutyrate (GHB), approved for narcolepsy with cataplexy; it increases slow-wave sleep and carries risks of abuse, dependence and respiratory depression.", "Ch 21.5"],
+  ["circadian rhythm sleep–wake disorder", "A sleep disorder caused by misalignment between the body clock and the desired sleep time, such as jet lag, shift work, delayed sleep phase and non-24-hour types.", "Ch 21.5"],
+  ["non-24-hour sleep–wake disorder", "A circadian disorder in which sleep times drift later each day because the body clock is not entrained to light, mostly in totally blind people; tasimelteon is approved for it.", "Ch 21.5"],
+  ["CBT-I", "Cognitive behavioral therapy for insomnia, the recommended first-line treatment for chronic insomnia, using sleep restriction, stimulus control, cognitive work and sleep hygiene.", "Ch 21.5"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -601,5 +614,19 @@ KS.glossaryAliases = {
   "barbiturates": "barbiturate",
   "pentobarbital challenge": "pentobarbital challenge test",
   "amobarbital interview": "Amytal interview",
-  "sedative withdrawal": "sedative-hypnotic withdrawal"
+  "sedative withdrawal": "sedative-hypnotic withdrawal",
+  "z drugs": "Z drug",
+  "z-drugs": "Z drug",
+  "complex sleep behavior": "complex sleep behaviors",
+  "sleep driving": "complex sleep behaviors",
+  "melatonin agonists": "melatonin receptor agonist",
+  "scn": "suprachiasmatic nucleus",
+  "orexin antagonists": "orexin receptor antagonist",
+  "dual orexin receptor antagonist": "orexin receptor antagonist",
+  "hypocretin": "orexin",
+  "ghb": "sodium oxybate",
+  "γ-hydroxybutyrate": "sodium oxybate",
+  "circadian rhythm disorders": "circadian rhythm sleep–wake disorder",
+  "non-24": "non-24-hour sleep–wake disorder",
+  "cognitive behavioral therapy for insomnia": "CBT-I"
 };

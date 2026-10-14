@@ -36,6 +36,7 @@ Across all chapters:
   - *Choosing an antidepressant* (Chapter 21.2): emergencies (serotonin syndrome, MAOI hypertensive crisis, discontinuation), pregnancy, postpartum depression and treatment resistance, or the symptom or risk that matters most, to a short list of drugs.
   - *Choosing a mood stabilizer* (Chapter 21.3): warning signs (lithium toxicity, rash, blood dyscrasia, valproate liver or pancreas toxicity), pregnancy, the type of manic episode, or the goal of long-term prevention, to a short list of drugs.
   - *Choosing an anxiolytic* (Chapter 21.4): suspected sedative overdose (and when flumazenil helps or harms), withdrawal, stopping a long-term benzodiazepine, or a target symptom (panic, generalized anxiety, performance anxiety, catatonia, akathisia, alcohol withdrawal, older adults, insomnia).
+  - *Choosing a sleep medicine* (Chapter 21.5): complex sleep behaviors, sleep-onset or maintenance insomnia, middle-of-the-night waking, circadian problems or trauma nightmares, with risk factors such as substance misuse, age and liver disease.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -79,6 +80,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.2 | Antidepressants | 28 | 102 | 107 (plus generated drug drills) |
 | 21.3 | Mood Stabilizers | 26 | 102 | 107 (plus generated drug drills) |
 | 21.4 | Anxiolytics | 14 | 86 | 93 (plus generated drug drills) |
+| 21.5 | Drugs Used to Treat Sleep Disorders | 8 | 38 | 48 (plus generated drug drills) |
 
 ## Publish on GitHub Pages
 

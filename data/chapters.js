@@ -126,6 +126,11 @@ KS.manifest = [
     id: 'ch21-4', number: '21.4', title: 'Anxiolytics', short: 'Anxiolytics',
     summary: 'Benzodiazepines and flumazenil, buspirone, β-blockers, barbiturates and older sedatives: pharmacokinetics, indications, dependence and withdrawal, overdose, interactions and dosing, with post-publication updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
+    id: 'ch21-5', number: '21.5', title: 'Drugs Used to Treat Sleep Disorders', short: 'Sleep drugs',
+    summary: 'Zolpidem, zaleplon and eszopiclone, sodium oxybate, ramelteon and melatonin, and prazosin for nightmares, with post-publication updates on complex sleep behaviors, dosing, orexin antagonists, low-dose doxepin and guidelines.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -142,5 +147,6 @@ KS.extraFiles = [
   'data/drugs/antidepressants.js',
   'data/drugs/mood-stabilizers.js',
   'data/drugs/anxiolytics.js',
+  'data/drugs/hypnotics.js',
   'data/changelog.js'
 ];

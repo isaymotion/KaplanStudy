@@ -64,6 +64,14 @@
     { m: 'FDA Drug Safety Communication on opioids with benzodiazepines, August 2016', label: 'FDA: risks of combining opioids and benzodiazepines (2016)', url: 'https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-about-serious-risks-and-death-when-combining-opioid-pain-or' },
     { m: 'American Geriatrics Society 2023 Beers Criteria', label: 'Summary of the 2023 AGS Beers Criteria (UIC)', url: 'https://dig.pharmacy.uic.edu/faqs/2023-2/september-2023-faqs/a-summary-of-the-2023-american-geriatrics-society-updated-beers-criteria-for-potentially-inappropriate-medication-use-in-the-elderly' },
     { m: 'Flumazenil prescribing information', label: 'Label: flumazenil (DailyMed)', url: DM('flumazenil') },
+    { m: 'FDA, boxed warning for certain prescription insomnia medicines, April 2019', label: 'FDA: boxed warning for complex sleep behaviors (2019)', url: 'https://www.fda.gov/drugs/fda-drug-safety-podcasts/fda-adds-boxed-warning-risk-serious-injuries-caused-sleepwalking-certain-prescription-insomnia' },
+    { m: 'FDA Drug Safety Communications on zolpidem (January 2013) and eszopiclone (May 2014)', label: 'Harvard Health: FDA lowers zolpidem dose for women (2013)', url: 'https://www.health.harvard.edu/blog/sleep-drug-dosage-change-aims-to-avoid-daytime-drowsiness-201301165804' },
+    { m: 'eszopiclone (May 2014)', label: 'Sleep Review: FDA lowers Lunesta starting dose (2014)', url: 'https://sleepreviewmag.com/sleep-treatments/pharmaceuticals/prescription-drugs/fda-lowers-lunesta-starting-dose/' },
+    { m: 'Cohen PA et al., melatonin gummy content', label: 'Patient Care: mislabeled melatonin gummies (JAMA 2023)', url: 'https://www.patientcareonline.com/view/daily-dose-mislabeled-melatonin-gummy-products' },
+    { m: 'AASM clinical practice guideline for the pharmacologic treatment of chronic insomnia', label: 'AASM insomnia drug guideline (2017, PMC)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5263087/' },
+    { m: 'Idorsia announcement, January 2022', label: 'Idorsia: FDA approves Quviviq (Jan 2022)', url: 'https://www.idorsia.com/media/news/news-archive/media-release-details?id=2665386' },
+    { m: 'Raskind MA et al., prazosin for PTSD', label: 'Scientific American: prazosin fails a rigorous trial (2018)', url: 'https://www.scientificamerican.com/article/a-drug-widely-used-to-treat-ptsd-symptoms-has-failed-a-rigorous-trial' },
+    { m: 'VA/DoD clinical practice guideline for PTSD, 2023', label: 'CFPC Tools for Practice: prazosin evidence and guidelines', url: 'https://cfpclearn.ca/tfp384/' },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();

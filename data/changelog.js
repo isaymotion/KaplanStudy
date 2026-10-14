@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 31,
+    date: "2026-10-15",
+    title: "Chapter 21.5: Drugs Used to Treat Sleep Disorders",
+    items: [
+      { type: "chapter", ch: "ch21-5", text: "**Chapter 21.5, Drugs Used to Treat Sleep Disorders**: zolpidem, zaleplon and eszopiclone, sodium oxybate, ramelteon, melatonin and agomelatine, and prazosin for nightmares, with a comparison of hypnotics. Study guide, high-yield list, printable handout and 48 cards. Post-publication boxes cover the 2019 complex sleep behavior warning, lower zolpidem and eszopiclone doses, orexin antagonists, low-dose doxepin, tasimelteon, newer oxybates, melatonin label accuracy, the prazosin evidence and the AASM guideline, and correct the book on prazosin forms and GHB's receptor.", href: "#/c/ch21-5/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: 12 hypnotics and sleep drugs added, including the orexin antagonists.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**New diagnostic helper**: *Choosing a sleep medicine*.", href: "#/helpers/sleepdrug", link: "Try it" },
+      { type: "update", text: "**Glossary**: 13 new terms from Chapter 21.5, including Z drug, complex sleep behaviors, orexin and CBT-I." }
+    ]
+  },
+  {
     id: 30,
     date: "2026-10-15",
     title: "Chapter 21.4: Anxiolytics",

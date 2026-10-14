@@ -457,7 +457,7 @@ KS.drugs = (KS.drugs || []).concat([
     updates: []
   },
   {
-    id: "doxepin", name: "Doxepin", brands: ["Sinequan", "Adapin"], cls: "antidepressants", group: "tca", chapter: "ch21-2", sec: "s212-tca-ind", book: true,
+    id: "doxepin", name: "Doxepin", brands: ["Sinequan", "Adapin", "Silenor"], cls: "antidepressants", group: "tca", chapter: "ch21-2", sec: "s212-tca-ind", book: true,
     summary: "The most antihistaminic TCA; FDA approved for anxiety; very sedating.",
     ind: ["mdd", "gad", "insomnia"],
     mechanism: "Tertiary-amine TCA with the **strongest H1 (and H2) blockade**.",
