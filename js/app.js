@@ -518,11 +518,12 @@
   }
 
   function tocHTML(ch) {
-    var n = 0;
+    var n = 0, total = ch.guide.parts.reduce(function (a, pt) { return a + pt.sections.length; }, 0);
+    var nw = ((ch.number + '.' + total).length * 0.62 + 0.6).toFixed(1) + 'em';
     return ch.guide.parts.map(function (pt) {
       return '<p class="toc__part">' + esc(pt.title) + '</p><ol>' + pt.sections.map(function (s) {
         n++;
-        return '<li><a href="#/c/' + ch.id + '/guide/' + s.id + '" data-sec="' + s.id + '"' + (isBookmarked(ch.id, s.id) ? ' class="is-bm"' : '') + '><span class="toc__n">' + ch.number + '.' + n + '</span><span>' + esc(s.title) + '</span></a></li>';
+        return '<li><a href="#/c/' + ch.id + '/guide/' + s.id + '" data-sec="' + s.id + '" style="--nw:' + nw + '"' + (isBookmarked(ch.id, s.id) ? ' class="is-bm"' : '') + '><span class="toc__n">' + ch.number + '.' + n + '</span><span>' + esc(s.title) + '</span></a></li>';
       }).join('') + '</ol>';
     }).join('') + '<a class="toc__bookmarks" href="#/bookmarks">' + RIBBON + 'All bookmarks</a>';
   }

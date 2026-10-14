@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 26,
+    date: "2026-10-14",
+    title: "Navigation fix",
+    items: [
+      { type: "update", text: "**Study guide contents list**: section numbers such as 21.1.13 no longer overlap the section titles on iPad, desktop or phone." }
+    ]
+  },
+  {
     id: 25,
     date: "2026-10-14",
     title: "Chapter 21.0: Principles of Psychopharmacology",
