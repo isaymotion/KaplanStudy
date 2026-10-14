@@ -439,7 +439,22 @@ KS.glossary = (KS.glossary || []).concat([
   ["sodium oxybate", "The sodium salt of γ-hydroxybutyrate (GHB), approved for narcolepsy with cataplexy; it increases slow-wave sleep and carries risks of abuse, dependence and respiratory depression.", "Ch 21.5"],
   ["circadian rhythm sleep–wake disorder", "A sleep disorder caused by misalignment between the body clock and the desired sleep time, such as jet lag, shift work, delayed sleep phase and non-24-hour types.", "Ch 21.5"],
   ["non-24-hour sleep–wake disorder", "A circadian disorder in which sleep times drift later each day because the body clock is not entrained to light, mostly in totally blind people; tasimelteon is approved for it.", "Ch 21.5"],
-  ["CBT-I", "Cognitive behavioral therapy for insomnia, the recommended first-line treatment for chronic insomnia, using sleep restriction, stimulus control, cognitive work and sleep hygiene.", "Ch 21.5"]
+  ["CBT-I", "Cognitive behavioral therapy for insomnia, the recommended first-line treatment for chronic insomnia, using sleep restriction, stimulus control, cognitive work and sleep hygiene.", "Ch 21.5"],
+  ["sympathomimetic", "A drug that mimics the effects of epinephrine and the sympathetic nervous system, such as the amphetamines and methylphenidate; it raises alertness, heart rate and blood pressure.", "Ch 21.6"],
+  ["psychostimulant", "A drug that increases motivation, mood, energy and wakefulness, such as methylphenidate, the amphetamines and modafinil; used mainly for ADHD and narcolepsy.", "Ch 21.6"],
+  ["narcolepsy", "A sleep disorder with sudden sleep attacks, cataplexy, sleep paralysis and hypnagogic or hypnopompic hallucinations, linked to loss of orexin (hypocretin) neurons; treated with modafinil, stimulants and oxybates.", "Ch 21.6"],
+  ["sleep paralysis", "Brief inability to move on falling asleep or waking, while conscious; one of the classic features of narcolepsy.", "Ch 21.6"],
+  ["prodrug", "An inactive compound converted in the body to an active drug; lisdexamfetamine is cleaved by red blood cell enzymes to release dextroamphetamine.", "Ch 21.6"],
+  ["lisdexamfetamine", "L-lysine–d-amphetamine (Vyvanse), a prodrug giving gradual, once-daily dextroamphetamine release with lower abuse potential; approved for ADHD and adult binge-eating disorder.", "Ch 21.6"],
+  ["mixed amphetamine salts", "Adderall: about 75% dextroamphetamine and 25% levoamphetamine, used for ADHD and narcolepsy.", "Ch 21.6"],
+  ["modafinil", "A Schedule IV wakefulness-promoting drug for narcolepsy, shift work sleep disorder and sleep apnea sleepiness; armodafinil is its R-enantiomer.", "Ch 21.6"],
+  ["atomoxetine", "A selective norepinephrine reuptake inhibitor (Strattera), the first nonstimulant approved for ADHD; no abuse potential, metabolized by CYP2D6.", "Ch 21.6"],
+  ["nonstimulant ADHD medication", "An ADHD drug without stimulant abuse potential, such as atomoxetine, viloxazine, or extended-release guanfacine and clonidine; effects build over weeks.", "Ch 21.6"],
+  ["stimulant rebound", "Irritability or worsening hyperactivity as a stimulant dose wears off; managed by overlapping doses or long-acting forms.", "Ch 21.6"],
+  ["stimulant diversion", "Giving or selling prescribed stimulants to others; the main misuse concern in ADHD treatment and the reason for the 2023 FDA boxed warning advice never to share them.", "Ch 21.6"],
+  ["fen-phen", "The weight-loss combination of fenfluramine and phentermine; fenfluramine and dexfenfluramine were withdrawn for valvular heart disease and pulmonary hypertension.", "Ch 21.6"],
+  ["shift work sleep disorder", "Insomnia or excessive sleepiness from work hours that overlap the usual sleep period; modafinil and armodafinil are approved for the sleepiness.", "Ch 21.6"],
+  ["MTA study", "The Multimodal Treatment Study of ADHD; its young adult follow-up found consistent stimulant users about 2.5 cm shorter as adults.", "Ch 21.6"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -628,5 +643,16 @@ KS.glossaryAliases = {
   "γ-hydroxybutyrate": "sodium oxybate",
   "circadian rhythm disorders": "circadian rhythm sleep–wake disorder",
   "non-24": "non-24-hour sleep–wake disorder",
-  "cognitive behavioral therapy for insomnia": "CBT-I"
+  "cognitive behavioral therapy for insomnia": "CBT-I",
+  "stimulants": "psychostimulant",
+  "stimulant": "psychostimulant",
+  "adderall": "mixed amphetamine salts",
+  "vyvanse": "lisdexamfetamine",
+  "armodafinil": "modafinil",
+  "strattera": "atomoxetine",
+  "nonstimulant": "nonstimulant ADHD medication",
+  "rebound (stimulant)": "stimulant rebound",
+  "diversion": "stimulant diversion",
+  "fenfluramine": "fen-phen",
+  "multimodal treatment study of adhd": "MTA study"
 };

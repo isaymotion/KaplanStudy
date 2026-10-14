@@ -1,0 +1,19 @@
+/* Chapter 21.6 diagnosis cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.6. */
+KS.add("ch21-6", "diagnosis", [
+  {"id":"d216-01","tag":"Mechanism","q":"Why are stimulants called sympathomimetics?","a":"They **mimic the effects of epinephrine** (sympathetic activation): raised heart rate, BP, alertness and energy."},
+  {"id":"d216-02","tag":"ADHD","q":"What proportion of children with ADHD respond to stimulants, and how quickly?","a":"About **75%**; methylphenidate and dextroamphetamine act within **15 to 30 minutes**."},
+  {"id":"d216-03","tag":"Switching","q":"A child does not respond to methylphenidate. What next?","a":"Try another stimulant (an **amphetamine**): about **70%** of nonresponders respond to the other class; try all stimulants before switching to a nonstimulant."},
+  {"id":"d216-04","tag":"Narcolepsy","q":"Name the four classic features of narcolepsy.","a":"**Sleep attacks**, **cataplexy**, **sleep paralysis**, and **hypnagogic or hypnopompic hallucinations**."},
+  {"id":"d216-05","tag":"Tolerance","q":"How does tolerance differ between ADHD and narcolepsy?","a":"In ADHD, tolerance to the therapeutic effect is unusual; in **narcolepsy**, patients **may develop tolerance**. Tolerance to euphoria and sympathomimetic effects is general."},
+  {"id":"d216-06","tag":"Pseudodementia","q":"How can a stimulant help distinguish depression from dementia?","a":"A test dose of **dextroamphetamine 5 mg**: a depressed patient becomes more alert with better cognition."},
+  {"id":"d216-07","tag":"Tics","q":"What does the book say about stimulants and tics?","a":"Small doses do not worsen tics much; tics often self-limit in **7 to 10 days**, but **methylphenidate may worsen tics in one-third**. Confirm a dose relationship before changing doses."},
+  {"id":"d216-08","tag":"Toxicity","q":"What are the features of long-term high-dose stimulant use?","a":"**Paranoid delusional disorder** resembling schizophrenia; also mydriasis, bruxism, **formication**, lability and seizures."},
+  {"id":"d216-09","tag":"Overdose","q":"How is stimulant overdose managed?","a":"**Benzodiazepines** for seizures, **β-blockers** for cardiac effects, **cooling** for hyperthermia, **antipsychotics** for delirium."},
+  {"id":"d216-10","tag":"Modafinil","q":"What are modafinil's approved indications?","a":"Excessive sleepiness in **narcolepsy**, **shift work sleep disorder** and **obstructive sleep apnea**."},
+  {"id":"d216-11","tag":"Atomoxetine","q":"When is atomoxetine preferred over a stimulant?","a":"With **substance use disorders** or suspected stimulant seeking (no abuse potential), or when stimulants are **too activating** or not tolerated."},
+  {"id":"d216-12","tag":"Atomoxetine","q":"Which patients have fivefold higher atomoxetine exposure?","a":"**CYP2D6 poor metabolizers** and those on **fluoxetine, paroxetine or bupropion**."},
+  {"id":"d216-13","tag":"Fen-phen","q":"Why were fenfluramine and dexfenfluramine withdrawn?","a":"**Valvular heart disease**, **pulmonary hypertension** and serotonin nerve damage; phentermine alone does not share these effects."},
+  {"id":"d216-14","tag":"Growth","q":"What did the MTA follow-up show about stimulants and growth (post-publication)?","a":"Children who used stimulants **consistently** were about **2.5 cm shorter** as adults; the book says there is no growth suppression."},
+  {"id":"d216-15","tag":"Psychosis","q":"Which stimulant class carries a higher psychosis risk in adolescents and young adults (post-publication)?","a":"**Amphetamines**: about **twice** the rate with methylphenidate in a 2019 NEJM cohort aged 13 to 25 (still rare)."},
+  {"id":"d216-16","tag":"Narcolepsy","q":"Which newer drug treats both sleepiness and cataplexy in narcolepsy (post-publication)?","a":"**Pitolisant** (Wakix), an H3 antagonist/inverse agonist; oxybates also treat cataplexy."}
+]);

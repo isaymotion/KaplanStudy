@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 32,
+    date: "2026-10-15",
+    title: "Chapter 21.6: Stimulants",
+    items: [
+      { type: "chapter", ch: "ch21-6", text: "**Chapter 21.6, Stimulants**: methylphenidate and dexmethylphenidate, the amphetamines and lisdexamfetamine, methamphetamine, modafinil and armodafinil, and atomoxetine, for ADHD, narcolepsy, depression, apathy and fatigue, with side-effect management, dosing tables and a comparison of ADHD medicines. Study guide, high-yield list, printable handout and 58 cards. Post-publication boxes cover the 2023 boxed warning, MTA growth findings, psychosis risk with amphetamines, label doses, and newer drugs (viloxazine, Azstarys, extended-release guanfacine and clonidine, solriamfetol, pitolisant), and correct the book on how methylphenidate works.", href: "#/c/ch21-6/guide", link: "Open the chapter" },
+      { type: "feature", text: "**Drugs**: 16 stimulants and ADHD drugs added, including the newer nonstimulants and wakefulness agents.", href: "#/drugs", link: "Open Drugs" },
+      { type: "feature", text: "**New diagnostic helper**: *Choosing an ADHD or wakefulness medicine*.", href: "#/helpers/adhdmed", link: "Try it" },
+      { type: "update", text: "**Glossary**: 15 new terms from Chapter 21.6, including sympathomimetic, narcolepsy, prodrug, lisdexamfetamine and stimulant diversion." }
+    ]
+  },
+  {
     id: 31,
     date: "2026-10-15",
     title: "Chapter 21.5: Drugs Used to Treat Sleep Disorders",

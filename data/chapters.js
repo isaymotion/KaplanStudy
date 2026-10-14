@@ -131,6 +131,10 @@ KS.manifest = [
     id: 'ch21-5', number: '21.5', title: 'Drugs Used to Treat Sleep Disorders', short: 'Sleep drugs',
     summary: 'Zolpidem, zaleplon and eszopiclone, sodium oxybate, ramelteon and melatonin, and prazosin for nightmares, with post-publication updates on complex sleep behaviors, dosing, orexin antagonists, low-dose doxepin and guidelines.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  { id: 'ch21-6', number: '21.6', title: 'Stimulants', short: 'Stimulants',
+    summary: 'Methylphenidate, the amphetamines and lisdexamfetamine, modafinil and armodafinil, and atomoxetine for ADHD, narcolepsy, depression and apathy, with post-publication updates on mechanism, growth, misuse warnings, psychosis risk and newer ADHD and wakefulness drugs.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 
@@ -148,5 +152,6 @@ KS.extraFiles = [
   'data/drugs/mood-stabilizers.js',
   'data/drugs/anxiolytics.js',
   'data/drugs/hypnotics.js',
+  'data/drugs/stimulants.js',
   'data/changelog.js'
 ];

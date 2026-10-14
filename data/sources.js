@@ -72,6 +72,11 @@
     { m: 'Idorsia announcement, January 2022', label: 'Idorsia: FDA approves Quviviq (Jan 2022)', url: 'https://www.idorsia.com/media/news/news-archive/media-release-details?id=2665386' },
     { m: 'Raskind MA et al., prazosin for PTSD', label: 'Scientific American: prazosin fails a rigorous trial (2018)', url: 'https://www.scientificamerican.com/article/a-drug-widely-used-to-treat-ptsd-symptoms-has-failed-a-rigorous-trial' },
     { m: 'VA/DoD clinical practice guideline for PTSD, 2023', label: 'CFPC Tools for Practice: prazosin evidence and guidelines', url: 'https://cfpclearn.ca/tfp384/' },
+    { m: 'young adult outcomes in the MTA', label: 'MTA young adult follow-up (2017), FPG summary', url: 'https://fpg.unc.edu/publications/young-adult-outcomes-follow-multimodal-treatment-study-attention-deficithyperactivity' },
+    { m: 'FDA Drug Safety Communication on prescription stimulants', label: 'FDA: updated stimulant warnings (May 2023)', url: 'https://www.fda.gov/drugs/drug-safety-and-availability/fda-updating-warnings-improve-safe-use-prescription-stimulants-used-treat-adhd-and-other-conditions' },
+    { m: 'Moran LV', label: 'Psychiatric News on the 2019 NEJM stimulant psychosis study', url: 'https://psychiatryonline.org/doi/10.1176/appi.pn.2019.4b22' },
+    { m: 'Supernus announcements', label: 'Supernus: Qelbree approval for adults (2022)', url: 'https://www.biospace.com/supernus-announces-fda-approval-of-qelbree-for-the-treatment-of-adhd-in-adults' },
+    { m: 'KemPharm announcement', label: 'KemPharm: Azstarys approval (March 2021)', url: 'https://www.biospace.com/article/releases/kempharm-announces-fda-approval-of-azstarys-serdexmethylphenidate-and-dexmethylphenidate-capsules-for-oral-use-cii-a-new-once-daily-treatment-for-adhd/' },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();
