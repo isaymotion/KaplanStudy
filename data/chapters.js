@@ -103,6 +103,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   },
   {
+    id: 'ch21-0', number: '21.0', title: 'Principles of Psychopharmacology', short: 'Psychopharmacology principles',
+    summary: 'How drugs are chosen, dosed and monitored: pharmacodynamics and kinetics, side effects, antidepressant suicidality, medication-induced movement disorders and NMS, overdose, treatment failure, withdrawal, combinations, special populations, off-label use and placebos.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
     id: 'ch21-1', number: '21.1', title: 'Antipsychotics', short: 'Antipsychotics',
     summary: 'Second-generation serotonin–dopamine antagonists and first-generation dopamine receptor antagonists: mechanisms, drug-by-drug indications and dosing, clozapine, neuroleptic malignant syndrome and other adverse effects, depots, levels and treatment resistance, with post-publication updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']

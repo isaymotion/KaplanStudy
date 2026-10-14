@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 25,
+    date: "2026-10-14",
+    title: "Chapter 21.0: Principles of Psychopharmacology",
+    items: [
+      { type: "chapter", ch: "ch21-0", text: "**Chapter 21.0, Principles of Psychopharmacology**: pharmacodynamics and kinetics, side effects and their time course, the antidepressant suicidality debate, medication-induced movement disorders (parkinsonism, dystonia, akathisia, tardive dyskinesia, neuroleptic malignant syndrome and other hyperthermic syndromes), overdose, dosing and monitoring, treatment failure, withdrawal, combinations, special populations, off-label use and placebos. Study guide, high-yield list, printable handout and 106 cards, with post-publication updates on the antidepressant warning, VMAT2 inhibitors, pharmacogenetic dosing and valproate in men.", href: "#/c/ch21-0/guide", link: "Open the chapter" },
+      { type: "feature", text: "**New diagnostic helper**: *Which medication-induced movement disorder?*", href: "#/helpers/movement", link: "Try it" },
+      { type: "update", text: "**Glossary**: 34 new terms from Chapter 21.0, including acute dystonia, rabbit syndrome, the AIMS and therapeutic index." }
+    ]
+  },
+  {
     id: 24,
     date: "2026-10-14",
     title: "Chapter 21.1: Antipsychotics, and a new Drugs section",

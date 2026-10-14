@@ -2866,5 +2866,85 @@ KS.helpers = (KS.helpers || []).concat([
       sedation: { label: "Short list", dx: "Aripiprazole, or a high-potency drug at low dose", line: "Low-potency DRAs, quetiapine, clozapine, olanzapine and iloperidone cause the most sedation or orthostasis.", points: ["Titrate iloperidone and quetiapine slowly.", "Give the dose at bedtime, but bedtime dosing raises fall risk in older adults.", "Check supine and standing blood pressure."], link: { ch: "ch21-1", sec: "s211-sga-use", label: "Starting an SGA" } },
       dra: { label: "Consider", dx: "A high-potency or intermediate-potency DRA", line: "DRAs remain effective, cheaper and lower in metabolic risk.", points: ["Perphenazine is as effective and well tolerated as the SGAs.", "Prefer high potency over low potency (fewer cardiac, hypotensive, epileptogenic, sexual and allergic effects).", "Use prophylactic antiparkinsonian drugs; watch for tardive dyskinesia and NMS."], link: { ch: "ch21-1", sec: "s211-levels", label: "Choosing a DRA" } }
     }
+  },
+  {
+    id: "movement",
+    chapter: "ch21-0",
+    title: "Which medication-induced movement disorder?",
+    summary: "Start from the main feature (fever and rigidity, sustained muscle spasm, restlessness, stiffness and slowness, late involuntary movements, tremor, or leg symptoms at night) and timing, to reach neuroleptic malignant syndrome, acute dystonia, akathisia, parkinsonism, tardive dyskinesia, tremor, restless legs or a look-alike, with first steps.",
+    caution: "A teaching aid built from section 21.0, not a substitute for examination. Fever with rigidity and altered consciousness is an emergency: stop the antipsychotic, check CPK, renal function and vital signs, and get medical care. Laryngeal dystonia can threaten the airway.",
+    start: "main",
+    nodes: {
+      main: {
+        q: "What is the main problem?",
+        help: "Most of these follow drugs that block D2 receptors, but antidepressants, lithium, valproate and stimulants cause some of them.",
+        options: [
+          { label: "Fever with rigidity, confusion or unstable vital signs", to: "fever" },
+          { label: "Sustained muscle spasm: eyes rolled up, twisted neck, jaw or tongue", to: "r:dystonia" },
+          { label: "Restlessness: can't sit still, pacing, jittery", to: "restless" },
+          { label: "Stiffness, slowness, shuffling, drooling", to: "r:parkinsonism" },
+          { label: "Involuntary writhing or chewing movements after months of treatment", to: "late" },
+          { label: "Rhythmic tremor", to: "tremor" },
+          { label: "Leg sensations or jerks at night", to: "legs" }
+        ]
+      },
+      fever: {
+        q: "What preceded the fever and rigidity?",
+        help: "Every medication-induced movement disorder can be associated with hyperthermia; the history points to the syndrome.",
+        options: [
+          { label: "An antipsychotic (or methyldopa, reserpine)", to: "r:nms" },
+          { label: "Anesthesia with succinylcholine or halothane", to: "r:mh" },
+          { label: "Tricyclic overdose: anticholinergic signs and arrhythmias", to: "r:tca" },
+          { label: "Stimulant use: excitement and hyperreflexia", to: "r:autonomic" }
+        ]
+      },
+      restless: {
+        q: "When does the restlessness occur?",
+        options: [
+          { label: "Throughout the day, starting weeks after a drug was started or raised", to: "r:akathisia" },
+          { label: "Mainly at rest in the evening, with creeping leg sensations", to: "r:rls" },
+          { label: "Late in long-term treatment and persisting after stopping", to: "r:tardive_akath" }
+        ]
+      },
+      late: {
+        q: "What do the movements look like?",
+        help: "Tardive dyskinesia rarely starts before 6 months of treatment and disappears during sleep.",
+        options: [
+          { label: "Perioral: tongue darting, chewing, lip-puckering, grimacing, finger movements", to: "r:td" },
+          { label: "A fast tremor of the lips only", to: "r:rabbit" },
+          { label: "Sustained twisting postures that persist despite stopping", to: "r:tardive_dyst" }
+        ]
+      },
+      tremor: {
+        q: "Which drug and what kind of tremor?",
+        options: [
+          { label: "Fine postural tremor on lithium, valproate, antidepressants, stimulants or caffeine", to: "r:postural" },
+          { label: "Coarse resting-type tremor with rigidity on an antipsychotic", to: "r:parkinsonism" }
+        ]
+      },
+      legs: {
+        q: "Is the patient aware of the symptoms?",
+        options: [
+          { label: "Yes: creeping sensations and an urge to move", to: "r:rls" },
+          { label: "No: a bed partner notices leg jerks every 20 to 60 seconds", to: "r:myoclonus" }
+        ]
+      }
+    },
+    results: {
+      nms: { label: "Emergency", dx: "Neuroleptic malignant syndrome", line: "Rigidity, hyperthermia, autonomic instability and altered consciousness, with raised CPK and WBC.", points: ["Stop the antipsychotic; cool, hydrate, oxygenate and monitor renal output.", "Consider dantrolene, bromocriptine or amantadine; ECT if drugs fail.", "Evolves over 24 to 72 hours; mortality 10% to 20%, higher with depots."], link: { ch: "ch21-0", sec: "s210-nms", label: "Neuroleptic malignant syndrome" } },
+      mh: { label: "Emergency", dx: "Malignant hyperthermia", line: "Hyperthermia and rigidity after neuromuscular blockers or halothane; familial.", points: ["IV dantrolene.", "About 10% mortality if untreated."], link: { ch: "ch21-0", sec: "s210-nms", label: "Hyperthermic syndromes" } },
+      tca: { label: "Emergency", dx: "Tricyclic overdose", line: "Hyperthermia with confusion, hallucinations, anticholinergic signs and arrhythmias.", points: ["Sodium bicarbonate if arrhythmia; physostigmine with cardiac monitoring.", "A 1-month TCA supply can be fatal."], link: { ch: "ch21-0", sec: "s210-nms", label: "Hyperthermic syndromes" } },
+      autonomic: { label: "Consider", dx: "Autonomic hyperreflexia from stimulants", line: "Hyperthermia, excitement and hyperreflexia after amphetamines.", points: ["Supportive cooling; reversible."], link: { ch: "ch21-0", sec: "s210-nms", label: "Hyperthermic syndromes" } },
+      dystonia: { label: "Most likely", dx: "Acute dystonia", line: "Early sustained contractions (oculogyric crisis, torticollis, trismus, tongue protrusion), most often in young men on high-potency or IM drugs.", points: ["IM anticholinergic or IV/IM diphenhydramine 50 mg almost always works.", "Watch for laryngeal–pharyngeal dystonia affecting breathing.", "Consider changing the antipsychotic if the patient fears recurrence."], link: { ch: "ch21-0", sec: "s210-park", label: "Acute dystonia" } },
+      akathisia: { label: "Most likely", dx: "Acute akathisia", line: "Subjective and objective restlessness on antipsychotics, antidepressants or sympathomimetics; middle-aged women at highest risk.", points: ["Lower the dose, then add a β-blocker (most effective); anticholinergics, benzodiazepines or cyproheptadine help some.", "Consider switching; aripiprazole can cause severe akathisia.", "Do not mistake it for psychotic agitation or anxiety."], link: { ch: "ch21-0", sec: "s210-park", label: "Akathisia" } },
+      tardive_akath: { label: "Consider", dx: "Tardive akathisia", line: "Akathisia that emerges late and can persist for months or years after stopping.", points: ["Reassess the need for the antipsychotic and use the lowest dose."], link: { ch: "ch21-0", sec: "s210-td", label: "Tardive syndromes" } },
+      parkinsonism: { label: "Most likely", dx: "Neuroleptic-induced parkinsonism", line: "Lead pipe and cogwheel rigidity, shuffling gait, stooped posture, drooling, within 5 to 90 days; elderly women at highest risk.", points: ["Anticholinergic, amantadine or diphenhydramine; try withdrawing after 4 to 6 weeks.", "Distinguish from depression and idiopathic Parkinson disease.", "Can persist 2 weeks after stopping, 3 months in the elderly."], link: { ch: "ch21-0", sec: "s210-park", label: "Parkinsonism" } },
+      td: { label: "Most likely", dx: "Tardive dyskinesia", line: "Late choreoathetoid movements, mostly perioral, worse with stress and absent in sleep.", points: ["Examine with the AIMS; reduce or stop the antipsychotic or switch to clozapine or another SDA.", "VMAT2 inhibitors (valbenazine, deutetrabenazine) are approved treatments.", "Risk is higher in women, children, patients over 50 and those with mood disorders or brain damage."], link: { ch: "ch21-0", sec: "s210-td", label: "Tardive dyskinesia" } },
+      rabbit: { label: "Most likely", dx: "Rabbit syndrome", line: "A perioral tremor of the lips, a parkinsonian effect that tends to come late.", points: ["Orphenadrine, diphenhydramine or amantadine."], link: { ch: "ch21-0", sec: "s210-park", label: "Parkinsonism" } },
+      tardive_dyst: { label: "Consider", dx: "Tardive dystonia", line: "Dystonia emerging late in treatment and persisting despite stopping or reducing the drug.", points: ["Reassess the antipsychotic; consider clozapine or another SDA."], link: { ch: "ch21-0", sec: "s210-td", label: "Tardive syndromes" } },
+      postural: { label: "Most likely", dx: "Medication-induced postural tremor", line: "Fine (8 to 12 Hz) tremor, worse with stress, from lithium, valproate, antidepressants, stimulants or caffeine.", points: ["Lowest effective dose, less caffeine, bedtime dosing, and propranolol if needed."], link: { ch: "ch21-0", sec: "s210-tremor", label: "Tremor" } },
+      rls: { label: "Consider", dx: "Restless legs syndrome", line: "Creeping calf sensations at rest with an urge to move; a rare SSRI effect.", points: ["Ropinirole or pramipexole; also benzodiazepines and other options."], link: { ch: "ch21-0", sec: "s210-tremor", label: "Restless legs" } },
+      myoclonus: { label: "Consider", dx: "Nocturnal myoclonus", line: "Unaware leg jerks every 20 to 60 seconds in sleep, with unrefreshing sleep; a rare SSRI effect.", points: ["No universally effective treatment: benzodiazepines, levodopa, quinine, rarely opioids."], link: { ch: "ch21-0", sec: "s210-tremor", label: "Nocturnal myoclonus" } }
+    }
   }
 ]);
