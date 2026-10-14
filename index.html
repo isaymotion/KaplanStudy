@@ -23,6 +23,9 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="topbar">
     <div class="topbar__inner">
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu: chapters and study tools" aria-expanded="false" aria-controls="menu-panel" title="Chapters and tools">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
       <div class="histnav" role="group" aria-label="Page history">
         <button class="hist-btn" id="nav-back" type="button" aria-label="Back" title="Back (Alt+Left)" disabled>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -55,6 +58,8 @@
       </button>
     </div>
   </header>
+  <div class="menu-scrim" id="menu-scrim" hidden></div>
+  <nav class="menu-panel" id="menu-panel" aria-label="Chapters and study tools" hidden></nav>
 
   <main id="main" tabindex="-1">
     <div class="loading wrap">Loading chapters…</div>

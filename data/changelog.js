@@ -13,6 +13,15 @@
  */
 KS.changelog = [
   {
+    id: 22,
+    date: "2026-10-14",
+    title: "A tidier top bar and a chapter menu",
+    items: [
+      { type: "feature", text: "**Menu button** (three bars, top left): jump to any chapter from anywhere. It keeps the mode you are in, so a study guide goes to the next study guide. On narrower screens it also holds Review, Exam, Mistakes, Bookmarks, Glossary and the Diagnostic helper." },
+      { type: "update", text: "**Top bar** now stays on a single row, with search beside the other buttons, on iPad, tablet and phone." }
+    ]
+  },
+  {
     id: 21,
     date: "2026-10-14",
     title: "Chapter 13: Feeding and Eating Disorders",
