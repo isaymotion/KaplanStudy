@@ -876,6 +876,8 @@ tbody th { font-weight: 700; }
 .ahy-grid .btn { width: 100%; justify-content: center; }
 .ahy-status { margin: 10px 0 0; font-weight: 600; font-size: .92rem; color: var(--ink-3); min-height: 1.3em; }
 .ahy-status.is-warn { color: var(--bad); }
+.ahy-subhead { margin: 36px 0 6px; font-size: 1.3rem; }
+.ahy-sub { margin: 0 0 14px; color: var(--ink-3); max-width: 70ch; }
 .sheet-frame { position: relative; overflow: hidden; }
 .sheets { transform-origin: top left; display: grid; gap: 24px; width: max-content; }
 .sheet {

@@ -354,9 +354,9 @@
     return pages.length ? pages : [[]];
   }
 
-  function renderFlowPage(ops, g, pageNum, totalPages, attribution) {
+  function renderFlowPage(ops, g, pageNum, totalPages, attribution, kicker) {
     var pg = g.pg, page = new Page(pg.h), m = g.m;
-    var kmap = ''; var kicker = 'HIGH-YIELD SUMMARY';
+    var kmap = '';
     for (var i = 0; i < kicker.length; i++) kmap += mapChar(kicker.charAt(i)).ch;
     page.text('HB', 7, RED, m, m + 6, kmap, 0.56);
     var ty = m + 7 + 1 * MM;
@@ -390,12 +390,15 @@
     return page.s;
   }
 
-  KS.allHighYieldPdf = function (P) {
-    var chapters = (P.chapters || []).filter(function (c) { return (c.highYield || []).length; });
-    if (!chapters.length) return null;
-    var built = chapters.map(function (c) {
-      var g = flowGeometry(P.paper, 'Chapter ' + c.number + ': ' + c.title);
-      var pages = layFlowChapter(c.highYield, FLOW_BODY, g);
+  /* Shared engine: lays out any number of named "sections" (a chapter, a drug class, ...), each a list of
+     topics, as a flowing two-column document, one or more pages per section, each section starting fresh,
+     with a running header, "Page x of y" footers and the given kicker. sections: [{ heading, topics }]. */
+  function buildFlowDocument(paper, sections, attribution, kicker, docTitle) {
+    sections = sections.filter(function (s) { return (s.topics || []).length; });
+    if (!sections.length) return null;
+    var built = sections.map(function (s) {
+      var g = flowGeometry(paper, s.heading);
+      var pages = layFlowChapter(s.topics, FLOW_BODY, g);
       return { g: g, pages: pages };
     });
     var total = 0; built.forEach(function (b) { total += b.pages.length; });
@@ -403,11 +406,27 @@
     built.forEach(function (b) {
       b.pages.forEach(function (ops) {
         n++;
-        contents.push(renderFlowPage(ops, b.g, n, total, P.attribution));
+        contents.push(renderFlowPage(ops, b.g, n, total, attribution, kicker));
       });
     });
+    return assemble(contents, pg, docTitle);
+  }
+
+  KS.allHighYieldPdf = function (P) {
+    var chapters = (P.chapters || []).filter(function (c) { return (c.highYield || []).length; });
+    if (!chapters.length) return null;
+    var sections = chapters.map(function (c) { return { heading: 'Chapter ' + c.number + ': ' + c.title, topics: c.highYield }; });
     var title = chapters.length === 1 ? ('Chapter ' + chapters[0].number + ' high-yield summary') : 'High-yield summaries, all chapters';
-    return assemble(contents, pg, title);
+    return buildFlowDocument(P.paper, sections, P.attribution, 'HIGH-YIELD SUMMARY', title);
+  };
+
+  /* Public: KS.drugClassPdf({ paper, classes:[{heading, topics}], attribution, title }) -> Blob|null
+     Same engine, for one or more drug classes: each class starts a new page, drugs flow as its topics. */
+  KS.drugClassPdf = function (P) {
+    var classes = (P.classes || []).filter(function (c) { return (c.topics || []).length; });
+    if (!classes.length) return null;
+    var title = P.title || (classes.length === 1 ? (classes[0].heading + ' drug class sheet') : 'Drug class reference, all classes');
+    return buildFlowDocument(P.paper, classes, P.attribution, 'DRUG CLASS SHEET', title);
   };
 
   KS.handoutPdf = function (P) {

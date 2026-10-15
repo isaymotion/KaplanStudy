@@ -1702,6 +1702,7 @@
      pages as a chapter needs, at a fixed comfortable size, rather than shrinking to fit one sheet. */
   function renderAllHighYield() {
     var chs = allChapters().slice().sort(function (a, b) { return a.number - b.number; });
+    var classes = DRUG ? DRUG.classesInfo() : [];
     var prefs = store.get('allHyPrefs', { paper: 'a4' });
     if (!PAPER[prefs.paper]) prefs.paper = 'a4';
     function seg(name, opts, cur) {
@@ -1719,33 +1720,60 @@
       '<div class="ahy-grid">' + chs.map(function (ch) {
         return '<button class="btn" type="button" data-ch="' + ch.id + '">Ch ' + ch.number + ' PDF</button>';
       }).join('') + '</div>' +
+      (classes.length ?
+        '<h2 class="ahy-subhead">Drug class PDFs</h2>' +
+        '<p class="ahy-sub">Every drug’s mechanism, dosing and key warnings, grouped by class, in the same two-column format — one class per page or two, or every class combined into one reference.</p>' +
+        '<div class="handout-tools no-print">' +
+          '<div class="handout-tools__go"><button class="btn btn--solid" type="button" id="ahy-cls-all">Create PDF of all ' + classes.length + ' drug classes</button><p class="ahy-status" id="ahy-cls-status" aria-live="polite"></p></div>' +
+        '</div>' +
+        '<div class="ahy-grid">' + classes.map(function (c) {
+          return '<button class="btn" type="button" data-cls="' + c.id + '">' + esc(c.label) + ' PDF</button>';
+        }).join('') + '</div>'
+      : '') +
     '</div>';
     setView('all-highyield', html);
     document.title = 'All high-yield summaries — K&S Study Companion';
     var status = main.querySelector('#ahy-status');
+    var clsStatus = main.querySelector('#ahy-cls-status');
     main.querySelectorAll('input[name=paper]').forEach(function (i) {
       i.addEventListener('change', function () { prefs.paper = i.value; store.set('allHyPrefs', prefs); });
     });
-    function build(chapters, name) {
-      status.className = 'ahy-status'; status.textContent = 'Building ' + name + '…';
+    function build(statusEl, builderFn, name) {
+      statusEl.className = 'ahy-status'; statusEl.textContent = 'Building ' + name + '…';
       setTimeout(function () {
-        var blob = window.KS && KS.allHighYieldPdf && KS.allHighYieldPdf({
-          paper: prefs.paper, chapters: chapters.map(function (ch) { return { number: ch.number, title: ch.title, highYield: ch.highYield || [] }; }), attribution: ATTRIBUTION
-        });
-        if (!blob) { status.className = 'ahy-status is-warn'; status.textContent = 'Could not build that PDF.'; return; }
+        var blob = builderFn();
+        if (!blob) { statusEl.className = 'ahy-status is-warn'; statusEl.textContent = 'Could not build that PDF.'; return; }
         savePdf(blob, name);
-        status.textContent = '';
+        statusEl.textContent = '';
       }, 10);
     }
     var allBtn = main.querySelector('#ahy-all');
     if (allBtn) allBtn.addEventListener('click', function () {
-      build(chs, 'KS-all-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+      build(status, function () {
+        return window.KS && KS.allHighYieldPdf && KS.allHighYieldPdf({
+          paper: prefs.paper, chapters: chs.map(function (ch) { return { number: ch.number, title: ch.title, highYield: ch.highYield || [] }; }), attribution: ATTRIBUTION
+        });
+      }, 'KS-all-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
     });
     main.querySelectorAll('[data-ch]').forEach(function (b) {
       b.addEventListener('click', function () {
         var ch = chapter(b.getAttribute('data-ch'));
         if (!ch || !(ch.highYield || []).length) { status.className = 'ahy-status is-warn'; status.textContent = 'That chapter has no high-yield list.'; return; }
-        build([ch], 'KS-Ch' + ch.number + '-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+        build(status, function () {
+          return window.KS && KS.allHighYieldPdf && KS.allHighYieldPdf({
+            paper: prefs.paper, chapters: [{ number: ch.number, title: ch.title, highYield: ch.highYield || [] }], attribution: ATTRIBUTION
+          });
+        }, 'KS-Ch' + ch.number + '-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+      });
+    });
+    var clsAllBtn = main.querySelector('#ahy-cls-all');
+    if (clsAllBtn) clsAllBtn.addEventListener('click', function () {
+      build(clsStatus, function () { return DRUG && DRUG.classPdf('all', prefs.paper); }, 'KS-drug-classes-all-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+    });
+    main.querySelectorAll('[data-cls]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var id = b.getAttribute('data-cls');
+        build(clsStatus, function () { return DRUG && DRUG.classPdf(id, prefs.paper); }, 'KS-drugs-' + id + '-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
       });
     });
   }

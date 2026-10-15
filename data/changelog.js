@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 34,
+    date: "2026-10-15",
+    title: "Drug class PDFs",
+    items: [
+      { type: "feature", text: "**All high-yield (PDF)** now has a *Drug class PDFs* section: every drug's mechanism, dosing, side effects to watch for and monitoring, grouped by class, in the same two-column, paginated format as the chapter high-yield PDFs. Build one class at a time, or all 6 classes combined into one reference. Also linked from the Drugs page.", href: "#/all-highyield", link: "Open it" }
+    ]
+  },
+  {
     id: 33,
     date: "2026-10-15",
     title: "All high-yield summaries as one PDF",

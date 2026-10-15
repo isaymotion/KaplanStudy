@@ -159,7 +159,7 @@
       var lowChips = Object.keys(lowSet).map(function (k) { return '<button class="filter" type="button" data-low="' + k + '" aria-pressed="' + (p.low.indexOf(k) > -1) + '">' + esc(lowSet[k]) + '</button>'; }).join('');
       var html = '<div class="wrap page drugs-page">' +
         '<header class="page__head"><h1>Drugs</h1><p>Every drug from the pharmacology chapters, arranged by class, with mechanism, indications, dosing, side effects, monitoring and interactions. Open a drug, compare up to four side by side, drill the facts with spaced repetition, or print a one-page class sheet.</p></header>' +
-        '<div class="dtools"><a class="btn btn--solid" href="#/drugs/compare">Compare drugs</a><a class="btn" href="#/drugs/drill/all">Drill all drugs</a><a class="btn" href="#/updates">Post-publication updates</a></div>' +
+        '<div class="dtools"><a class="btn btn--solid" href="#/drugs/compare">Compare drugs</a><a class="btn" href="#/drugs/drill/all">Drill all drugs</a><a class="btn" href="#/all-highyield">Drug class PDFs</a><a class="btn" href="#/updates">Post-publication updates</a></div>' +
         '<div class="dfilters">' +
           '<label class="select"><span class="sr-only">Class</span><select id="df-cls">' + clsOpts + '</select></label>' +
           '<label class="select"><span class="sr-only">Indication</span><select id="df-ind">' + indOpts + '</select></label>' +
@@ -413,6 +413,34 @@
       A.savePdf(blob, 'KS-drugs-' + scope.replace(/[:]/g, '-') + '-' + paper + '.pdf');
     }
 
+    /* ---------- drug class PDFs (all high-yield page): one class per page, flowing across as many
+       pages as it needs, or every class combined into one compiled PDF. Shares the engine used for the
+       chapter high-yield PDFs (KS.drugClassPdf in js/pdf.js) rather than the one-page class sheet above. */
+    function classHeading(c) {
+      var ch = c.chapter && A.chapter(c.chapter);
+      return c.label + (ch ? ' (Chapter ' + ch.number + ')' : '');
+    }
+    // Chapter data files load as separate dynamic <script> tags and are not guaranteed to execute in
+    // request order, so KS.drugClasses can arrive in any order; sort by each class's chapter number
+    // (not yet in the book, if any, go last) for a stable, sensible order wherever classes are listed.
+    function orderedClasses() {
+      return CLASSES.slice().sort(function (a, b) {
+        var na = (a.chapter && A.chapter(a.chapter) && A.chapter(a.chapter).number) || 999;
+        var nb = (b.chapter && A.chapter(b.chapter) && A.chapter(b.chapter).number) || 999;
+        return na - nb;
+      });
+    }
+    function classesInfo() {
+      return orderedClasses().map(function (c) { return { id: c.id, label: c.label, heading: classHeading(c), count: scopeDrugs(c.id).length }; }).filter(function (c) { return c.count; });
+    }
+    function classPdf(scope, paper) {
+      if (!KS.drugClassPdf) return null;
+      var classes = scope === 'all'
+        ? orderedClasses().map(function (c) { return { heading: classHeading(c), topics: sheetTopics(scopeDrugs(c.id)) }; })
+        : (CLS[scope] ? [{ heading: classHeading(CLS[scope]), topics: sheetTopics(scopeDrugs(scope)) }] : []);
+      return KS.drugClassPdf({ paper: paper, classes: classes, attribution: A.ATTRIBUTION });
+    }
+
     /* ---------- drug-name links in reading text ---------- */
     var NAME_RE = null, NAME_MAP = {};
     function buildNames() {
@@ -529,6 +557,6 @@
       return renderDrug(p[1]);
     }
 
-    return { inject: inject, route: route, renderUpdates: renderUpdates, link: link, updateBox: updateBox, searchEntries: searchEntries, count: function () { return DRUGS.length; } };
+    return { inject: inject, route: route, renderUpdates: renderUpdates, link: link, updateBox: updateBox, searchEntries: searchEntries, count: function () { return DRUGS.length; }, classesInfo: classesInfo, classPdf: classPdf };
   };
 })();
