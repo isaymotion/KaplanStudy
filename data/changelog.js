@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 38,
+    date: "2026-10-15",
+    title: "Offline storage fix",
+    items: [
+      { type: "correction", text: "Offline storage no longer clears the other study apps' offline copies." }
+    ]
+  },
+  {
     id: 37,
     date: "2026-10-15",
     title: "Post-publication updates for Chapters 5, 6 and 7",

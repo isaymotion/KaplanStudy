@@ -1,5 +1,6 @@
 /* Offline support: network first, cached copy when offline. Bump VERSION when you publish a new chapter. */
-const VERSION = 'ks-companion-2026-10-upd567';
+const PREFIX = 'ks-companion-';
+const VERSION = PREFIX + '2026-10-sw-scope';
 const CORE = [
   './', './index.html', './css/app.css', './js/app.js', './js/pdf.js', './js/drugs.js', './data/chapters.js',
   './manifest.webmanifest', './icons/favicon.ico', './icons/favicon-32.png', './icons/favicon-64.png', './icons/home-brain.png', './icons/icon-192.png', './icons/icon-512.png'
@@ -12,7 +13,8 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+      // Only delete this app's own old caches: the other study apps on this site share the same cache storage.
+      .then((keys) => Promise.all(keys.filter((k) => k.indexOf(PREFIX) === 0 && k !== VERSION).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
