@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 37,
+    date: "2026-10-15",
+    title: "Post-publication updates for Chapters 5, 6 and 7",
+    items: [
+      { type: "update", ch: "ch05", text: "**Chapter 5, schizophrenia spectrum**: 15 dashed update boxes on ICD-11, xanomeline–trospium and lumateperone, the APA 2020 guideline, prolactin (correcting the book's claim that all antipsychotics raise it), VMAT2 inhibitors, olanzapine–samidorphan, clozapine REMS removal and guideline position, newer long-acting injections, the TRRIP definition of treatment resistance, coordinated specialty care (RAISE-ETP), high-potency cannabis, the 2022 genetics study and suicide prevention. Plus 9 high-yield points and 7 cards.", href: "#/updates", link: "See all updates" },
+      { type: "update", ch: "ch06", text: "**Chapter 6, bipolar disorders**: 8 boxes on the five approved treatments for bipolar depression (adding cariprazine and lumateperone), iloperidone and olanzapine–samidorphan, lithium level targets and pediatric approval, valproate restrictions, lamotrigine warnings, the Equetro approval date and DMDD. Plus 8 high-yield points and 5 cards.", href: "#/c/ch06/guide/s6-depression-tx", link: "Open" },
+      { type: "update", ch: "ch07", text: "**Chapter 7, depressive disorders**: 9 boxes on prolonged grief disorder, USPSTF screening, CPIC genotype-guided dosing, newer antidepressants (dextromethorphan–bupropion, gepirone, zuranolone, esketamine monotherapy), compounded ketamine, newer adjunctive antipsychotics, accelerated TMS (SAINT), peripartum treatment and suicide prevention. Plus 8 high-yield points and 6 cards.", href: "#/c/ch07/guide/s7-novel", link: "Open" }
+    ]
+  },
+  {
     id: 36,
     date: "2026-10-15",
     title: "Chapter 19: Personality Disorders",

@@ -1,9 +1,9 @@
 /* Chapter 5 high yield. Bold text becomes a blank in "Hide key facts" mode. */
 KS.add("ch05", "highYield", [
   {
-    id: "hy-core",
-    topic: "Core concepts",
-    items: [
+    "id": "hy-core",
+    "topic": "Core concepts",
+    "items": [
       "Diagnosis rests **entirely on history and mental status examination**; there is **no laboratory test** and no pathognomonic sign.",
       "Onset is usually **before age 25**; the illness tends to persist **throughout life** and affects all social classes.",
       "US financial cost likely **exceeds all cancers combined**.",
@@ -13,9 +13,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-mse",
-    topic: "Mental status red flags and pearls",
-    items: [
+    "id": "hy-mse",
+    "topic": "Mental status red flags and pearls",
+    "items": [
       "Most common hallucinations: **auditory**. Voices **conversing** or **commenting** on the patient are classic.",
       "**Tactile, olfactory and gustatory** hallucinations are unusual; they should prompt a search for a **medical or neurologic** cause.",
       "Patients are usually **oriented**; **disorientation** suggests a medical or neurologic brain disorder.",
@@ -30,9 +30,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-risk",
-    topic: "Suicide and violence",
-    items: [
+    "id": "hy-risk",
+    "topic": "Suicide and violence",
+    "items": [
       "Suicide is the **single leading cause of premature death** in schizophrenia.",
       "Lifetime suicidality about **34.5%**; attempts **20–50%**; long-term suicide rate **10–13%**; DSM-5 estimate **5–6%**.",
       "The most important suicide risk factor is a **major depressive episode**; up to **80%** have one in their lifetime.",
@@ -46,9 +46,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-dx",
-    topic: "Diagnostic criteria and durations",
-    items: [
+    "id": "hy-dx",
+    "topic": "Diagnostic criteria and durations",
+    "items": [
       "Schizophrenia (DSM-5): **two or more** symptoms, at least one of **delusions, hallucinations or disorganized speech**, for at least **6 months**, with functional impairment.",
       "ICD-10 duration for schizophrenia: **1 month**.",
       "Schizophreniform: at least **1 month** but less than **6 months**, with return to baseline.",
@@ -63,9 +63,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-related",
-    topic: "Related psychotic disorders",
-    items: [
+    "id": "hy-related",
+    "topic": "Related psychotic disorders",
+    "items": [
       "Schizophreniform good prognostic features (need **two or more**): psychotic symptoms within **4 weeks** of first behavior change, **confusion**, **good premorbid function**, **no negative symptoms**.",
       "About **60–80%** of patients with schizophreniform disorder later develop **schizophrenia**.",
       "Schizophreniform is about **half** as common as schizophrenia and more common in **men** and the young.",
@@ -82,9 +82,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-ddx",
-    topic: "Workup and differential",
-    items: [
+    "id": "hy-ddx",
+    "topic": "Workup and differential",
+    "items": [
       "Tests mainly **rule out** other causes, such as **syphilis** and **anti-NMDA receptor encephalitis**.",
       "Pursue medical causes aggressively with **unusual symptoms** or any change in **level of consciousness**.",
       "A patient with schizophrenia is **just as likely** to have a brain tumor causing psychosis as anyone else.",
@@ -98,9 +98,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-course",
-    topic: "Comorbidity, course and prognosis",
-    items: [
+    "id": "hy-course",
+    "topic": "Comorbidity, course and prognosis",
+    "items": [
       "Lifetime comorbid substance use disorder: **74%**. Most common: **tobacco, alcohol, cannabis, cocaine**.",
       "Best-supported model of the substance link: **shared vulnerability** (e.g., reward pathway dysfunction).",
       "Psychosis in complex partial epilepsy: **left-sided** focus, **medial temporal** lesion, **early** seizure onset.",
@@ -119,9 +119,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-pharm",
-    topic: "Antipsychotic treatment",
-    items: [
+    "id": "hy-pharm",
+    "topic": "Antipsychotic treatment",
+    "items": [
       "Guidelines recommend starting with a **second-generation** antipsychotic; drugs differ most in their **side effects**.",
       "Acute phase usually lasts **4–8 weeks**.",
       "An adequate trial is **4–6 weeks** at an adequate dose; partial responders may keep improving for **3–6 months**.",
@@ -138,9 +138,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-se",
-    topic: "Side effects and monitoring",
-    items: [
+    "id": "hy-se",
+    "topic": "Side effects and monitoring",
+    "items": [
       "FGAs: **EPS** (high potency), **sedation and postural hypotension** (low potency). SGAs: **weight gain and metabolic** effects.",
       "Most effective drugs for EPS: **anticholinergic antiparkinson** agents (dry mouth, constipation, blurred vision, memory loss).",
       "Akathisia: **propranolol 30–90 mg/day**.",
@@ -155,9 +155,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-clozapine",
-    topic: "Clozapine",
-    items: [
+    "id": "hy-clozapine",
+    "topic": "Clozapine",
+    "items": [
       "Clozapine is the **most effective** antipsychotic, especially in **treatment-resistant** and the most severe illness.",
       "Use after failure of at least **two** antipsychotic trials.",
       "Agranulocytosis in about **0.3%**.",
@@ -169,9 +169,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-table",
-    topic: "Drug table details that get tested",
-    items: [
+    "id": "hy-table",
+    "topic": "Drug table details that get tested",
+    "items": [
       "Lurasidone must be taken with at least **350 kcal**; ziprasidone with at least **500 kcal**.",
       "Asenapine is **sublingual**: bioavailability falls to **2% or less** if swallowed; no food or drink for **10 minutes**.",
       "Ziprasidone is metabolized mostly by **aldehyde oxidase** (two thirds).",
@@ -185,9 +185,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-psychosocial",
-    topic: "Psychosocial treatment",
-    items: [
+    "id": "hy-psychosocial",
+    "topic": "Psychosocial treatment",
+    "items": [
       "Combined medication and psychosocial treatment beats **either alone**.",
       "Hospitalization: short stays of **4–6 weeks** are as effective as long ones; readmission **40–60%** within 2 years.",
       "Schizophrenia occupies about **50%** of psychiatric beds.",
@@ -204,9 +204,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-epi",
-    topic: "Epidemiology",
-    items: [
+    "id": "hy-epi",
+    "topic": "Epidemiology",
+    "items": [
       "Lifetime prevalence: about **0.7%** worldwide.",
       "Prevalence is **equal** in men and women; onset **earlier in men**.",
       "Peak onset: men **10–25**, women **25–35**; women have a **second peak in middle age**.",
@@ -220,9 +220,9 @@ KS.add("ch05", "highYield", [
     ]
   },
   {
-    id: "hy-neuro",
-    topic: "Neurobiology and genetics",
-    items: [
+    "id": "hy-neuro",
+    "topic": "Neurobiology and genetics",
+    "items": [
       "Imaging: enlarged **lateral and third ventricles**, reduced cortical **gray matter** from the earliest stages.",
       "Smaller **amygdala, hippocampus and parahippocampal gyrus**.",
       "Thalamus: fewer neurons in the **medial dorsal nucleus**; total cells reduced **30–45%**.",
@@ -239,6 +239,21 @@ KS.add("ch05", "highYield", [
       "PCP, a **glutamate (NMDA) antagonist**, produces a schizophrenia-like syndrome.",
       "Positive symptoms: **anterior cingulate–basal ganglia–thalamocortical** circuit. Negative symptoms: **dorsolateral prefrontal** circuit.",
       "Antipsychotics act on striatal dopamine and do little for **negative and cognitive** symptoms."
+    ]
+  },
+  {
+    "id": "hy-post",
+    "topic": "Post-publication updates",
+    "items": [
+      "**ICD-11** (2022) also dropped the schizophrenia **subtypes**; it uses symptom and course qualifiers.",
+      "**Xanomeline–trospium** (2024): first antipsychotic **without D2 blockade** (muscarinic M1/M4 agonist).",
+      "Not all antipsychotics raise **prolactin**: aripiprazole can **lower** it.",
+      "**VMAT2 inhibitors** (valbenazine, deutetrabenazine) treat **tardive dyskinesia**.",
+      "Clozapine **REMS removed (2025)**; ANC monitoring and the boxed warning remain.",
+      "Treatment resistance (TRRIP): **two adequate trials**, 6 weeks, ≥600 mg CPZ equivalent, adherence confirmed.",
+      "**Coordinated specialty care** (RAISE-ETP) improves first-episode outcomes, most with short untreated psychosis.",
+      "Daily **high-potency cannabis**: about **5 times** the odds of psychosis.",
+      "**287 loci** in the 2022 genome-wide study, mostly synaptic genes."
     ]
   }
 ]);

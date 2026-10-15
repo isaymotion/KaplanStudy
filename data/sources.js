@@ -101,6 +101,15 @@
     { m: 'APA practice guideline for the treatment of patients with borderline personality disorder', label: 'APA news release: updated BPD guideline (December 2024)', url: 'https://www.psychiatry.org/News-room/News-Releases/Updated-Borderline-Personality-Disorder-Guideline' },
     { m: 'pharmacological interventions for borderline personality disorder', label: 'Cochrane review 2022: drugs for BPD', url: 'https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012956.pub2/information' },
     { m: 'LABILE lamotrigine trial', label: 'Crawford et al. 2018: LABILE trial (American Journal of Psychiatry)', url: 'https://ajp.psychiatryonline.org/doi/10.1176/appi.ajp.2018.17091006' },
+    { m: 'what is new in ICD-11 schizophrenia', label: 'Neurotorium: what is new in ICD-11 schizophrenia', url: 'https://neurotorium.org/slidedeck/schizophrenia-definitions-and-diagnosis/slide/44-schizophrenia-definitions-and-diagnosis-slide/' },
+    { m: 'TRRIP consensus', label: 'Psychiatric News on the TRRIP treatment-resistance criteria', url: 'https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2016.pp12b2' },
+    { m: 'RAISE-ETP', label: 'NIMH: team-based treatment is better for first-episode psychosis', url: 'https://www.nimh.nih.gov/news/science-news/2015/team-based-treatment-is-better-for-first-episode-psychosis.shtml' },
+    { m: 'cannabis use and psychotic disorder across Europe', label: "King's College London on the EU-GEI cannabis study (2019)", url: 'https://www.kcl.ac.uk/news/high-potency-cannabis-linked-to-higher-rates-of-psychosis' },
+    { m: 'mapping genomic loci implicates genes', label: 'Trubetskoy et al. 2022 (PubMed)', url: 'https://pubmed.ncbi.nlm.nih.gov/35396580/' },
+    { m: 'tips for understanding prolonged grief', label: 'APA: understanding prolonged grief disorder', url: 'https://psychiatry.org/news-room/news-releases/apa-offers-tips-for-understanding-prolonged-grief' },
+    { m: 'USPSTF, screening for depression and suicide risk in adults', label: 'USPSTF 2023 adult depression screening (PubMed)', url: 'https://pubmed.ncbi.nlm.nih.gov/37338872/' },
+    { m: 'USPSTF 2022 adolescent depression screening', label: 'USPSTF 2022: adolescent depression screening (summary)', url: 'https://evidence.unboundmedicine.com/evidence/pview/infoPOEMs/1315755/all/USPSTF%202022:%20Screening%20for%20major%20depressive%20disorder%20recommended%20in%20adolescents%20aged%2012%20to%2018%20years%20%20B%20recommendation%20' },
+    { m: 'FDA clearance of SAINT', label: 'Psychiatric News: FDA clears SAINT (Sept 2022)', url: 'https://alert.psychnews.org/2022/09/fda-clears-novel-rapid-acting-tms.html' },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();
