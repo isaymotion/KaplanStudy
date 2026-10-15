@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 39,
+    date: "2026-10-15",
+    title: "Bottom tab bar on phones and tablets",
+    items: [
+      { type: "feature", text: "A bottom tab bar (Home, Review, Drugs, Search, Menu) now appears on phones and tablets. It slides away as you scroll down and returns when you scroll up, so more text fits on screen." }
+    ]
+  },
+  {
     id: 38,
     date: "2026-10-15",
     title: "Offline storage fix",

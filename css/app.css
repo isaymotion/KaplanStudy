@@ -1256,3 +1256,29 @@ table.cmp tr.cmp__prof td { white-space: nowrap; }
   .sitenav .nav-long { display: none; }
   .sitenav a { text-transform: capitalize; padding: 8px 8px; }
 }
+
+/* ---------- bottom tab bar (phones and tablets) ---------- */
+.tabbar { display: none; }
+@media (max-width: 1079px) {
+  .tabbar {
+    display: flex; position: fixed; z-index: 37; left: 0; right: 0; bottom: 0;
+    background: var(--night); color: var(--night-ink-2);
+    padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px));
+    box-shadow: 0 -6px 20px rgba(0,0,0,.22);
+    transition: transform .22s cubic-bezier(.2,.7,.2,1);
+  }
+  .tabbar a, .tabbar button {
+    flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    min-height: 48px; padding: 6px 4px; border: 0; border-radius: 12px; background: none; cursor: pointer;
+    color: inherit; text-decoration: none; font: 600 .7rem/1 var(--sans);
+  }
+  .tabbar svg { width: 22px; height: 22px; }
+  .tabbar a.is-active { color: var(--night-ink); background: rgba(255,255,255,.14); }
+  .tabbar .badge { position: absolute; top: 2px; left: calc(50% + 6px); min-width: 16px; height: 16px; font-size: .62rem; line-height: 16px; padding: 0 4px; }
+  body.tabbar-hidden .tabbar { transform: translateY(105%); box-shadow: none; }
+  body.is-teaching .tabbar { display: none; }
+  .site-foot { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
+  .toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 1079px) and (prefers-reduced-motion: reduce) { .tabbar { transition: none; } }
+@media print { .tabbar { display: none !important; } }

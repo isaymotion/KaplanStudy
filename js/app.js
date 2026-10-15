@@ -302,8 +302,7 @@
     });
   }
   function updateNavBadges() {
-    var b = document.querySelector('[data-badge="review"]');
-    if (b && CARD_LIST.length) { var s = dueSummary('all'); var n = s.due + s.newToday; b.textContent = n; b.hidden = !n; }
+    if (CARD_LIST.length) { var s = dueSummary('all'); var n = s.due + s.newToday; document.querySelectorAll('[data-badge="review"]').forEach(function (b) { b.textContent = n; b.hidden = !n; }); }
     var nw = document.querySelector('[data-badge="news"]');
     if (nw && KS.changelog) { var u = unseenNews().length; nw.textContent = u; nw.hidden = !u; }
     var m = document.querySelector('[data-badge="mistakes"]');
@@ -2853,6 +2852,47 @@
       navigator.share({ files: [file], title: name }).catch(function (e) { if (e && e.name !== 'AbortError') save(); });
     } else save();
   }
+
+  /* ---------- bottom tab bar: markers, actions and auto-hide on scroll ---------- */
+  (function () {
+    var bar = document.getElementById('tabbar'), body = document.body, menuBtn = document.getElementById('menu-btn');
+    if (!bar) return;
+    var tabs = bar.querySelectorAll('[data-tab]');
+    function mark() {
+      var p = (location.hash.replace(/^#\/?/, '').split('/')[0]) || 'home';
+      Array.prototype.forEach.call(tabs, function (t) {
+        if (t.tagName !== 'A') return;
+        var on = t.getAttribute('data-tab') === p;
+        t.classList.toggle('is-active', on);
+        if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
+      });
+    }
+    bar.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('button[data-tab]');
+      if (!t) return;
+      if (t.getAttribute('data-tab') === 'menu' && menuBtn) menuBtn.click();
+      else if (t.getAttribute('data-tab') === 'search') { var q = document.getElementById('q'); if (q) { window.scrollTo(0, 0); q.focus(); } }
+    });
+    var last = 0, ticking = false, DOWN = 10, UP = 6, EDGE = 80;
+    function show() { body.classList.remove('tabbar-hidden'); }
+    function menuOpen() { return menuBtn && menuBtn.getAttribute('aria-expanded') === 'true'; }
+    function update() {
+      ticking = false;
+      var y = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (y < EDGE || max - y < EDGE || menuOpen() || body.classList.contains('is-teaching')) { show(); last = y; return; }
+      var d = y - last;
+      if (d > DOWN) { body.classList.add('tabbar-hidden'); last = y; }
+      else if (d < -UP) { show(); last = y; }
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('hashchange', function () { last = 0; show(); mark(); });
+    document.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches('input, textarea, select')) show(); });
+    if (menuBtn) menuBtn.addEventListener('click', show);
+    window.addEventListener('resize', function () { last = window.pageYOffset || 0; });
+    mark();
+  })();
+
   var DRUG = null;
   loadAll().then(function () {
     if (KS.drugModule) {
