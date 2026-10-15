@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 35,
+    date: "2026-10-15",
+    title: "Chapter 25.3: Psychiatric Emergencies",
+    items: [
+      { type: "chapter", ch: "ch25-3", text: "**Chapter 25.3, Psychiatric Emergencies**: settings and triage, the five questions of every emergency evaluation, medical versus psychiatric causes, interviewing psychotic, suicidal and violent patients and survivors of rape, emergency psychotherapy, medication, restraint, disposition and documentation, the book's table of common emergencies grouped by cause, and emergencies in children. Study guide, high-yield list, printable handout and 68 cards. Post-publication boxes cover universal suicide screening, safety planning and 988, the ASQ for youth, Project BETA agitation guidance, inhaled loxapine and sublingual dexmedetomidine, CMS restraint rules, excited delirium, lithium dialysis criteria, VMAT2 inhibitors, OTC naloxone and buprenorphine without the X-waiver, current HIV care, and correct the book on flumazenil dosing, emergency contraception, priapism, sumatriptan, paper bag rebreathing and anorexia criteria.", href: "#/c/ch25-3/guide", link: "Open the chapter" },
+      { type: "feature", text: "**New diagnostic helper**: *Managing an agitated patient in the emergency department*.", href: "#/helpers/agitation", link: "Try it" },
+      { type: "correction", text: "**Diagnostic helpers**: when an answer has no explanation of its own, the *Why* list now shows the question and the answer chosen instead of a blank line." },
+      { type: "update", text: "**Glossary**: 19 new terms from Chapter 25.3, including psychiatric triage, verbal de-escalation, safety plan, anticholinergic toxidrome and the silent rape reaction." }
+    ]
+  },
+  {
     id: 34,
     date: "2026-10-15",
     title: "Drug class PDFs",

@@ -454,7 +454,26 @@ KS.glossary = (KS.glossary || []).concat([
   ["stimulant diversion", "Giving or selling prescribed stimulants to others; the main misuse concern in ADHD treatment and the reason for the 2023 FDA boxed warning advice never to share them.", "Ch 21.6"],
   ["fen-phen", "The weight-loss combination of fenfluramine and phentermine; fenfluramine and dexfenfluramine were withdrawn for valvular heart disease and pulmonary hypertension.", "Ch 21.6"],
   ["shift work sleep disorder", "Insomnia or excessive sleepiness from work hours that overlap the usual sleep period; modafinil and armodafinil are approved for the sleepiness.", "Ch 21.6"],
-  ["MTA study", "The Multimodal Treatment Study of ADHD; its young adult follow-up found consistent stimulant users about 2.5 cm shorter as adults.", "Ch 21.6"]
+  ["MTA study", "The Multimodal Treatment Study of ADHD; its young adult follow-up found consistent stimulant users about 2.5 cm shorter as adults.", "Ch 21.6"],
+  ["psychiatric emergency", "Any disturbance in thoughts, feelings or actions for which immediate therapeutic intervention is necessary.", "Ch 25.3"],
+  ["psychiatric triage", "A brief first assessment, ideally by a senior clinician, that sorts emergency patients into emergency, urgent and nonurgent categories or redirects them to another service.", "Ch 25.3"],
+  ["extended observation", "A period of hours in a secure emergency setting that lets toxic psychoses, brief decompensations and adjustment reactions settle or clarify, often avoiding admission.", "Ch 25.3"],
+  ["rapid tranquilization", "Repeated doses of an antipsychotic or benzodiazepine at short intervals to calm a dangerously agitated patient; small repeated doses avoid overmedication.", "Ch 25.3"],
+  ["verbal de-escalation", "Calm, respectful, nonthreatening talk that offers choices and sets limits, the first step for an agitated patient before medication or restraint.", "Ch 25.3"],
+  ["physical restraint", "Devices or holds that limit a dangerous patient's movement when nothing else can control the danger; requires continuous observation and, in U.S. hospitals, time-limited orders and a face-to-face evaluation within 1 hour.", "Ch 25.3"],
+  ["seclusion", "Involuntary confinement of a patient alone in a room they cannot leave, used only for immediate danger and under the same rules as restraint.", "Ch 25.3"],
+  ["safety plan", "A written, collaborative list of a suicidal patient's warning signs, coping steps, people and services to contact (including 988) and steps to limit access to lethal means; it replaces no-suicide contracts.", "Ch 25.3"],
+  ["no-suicide contract", "A patient's promise not to harm themselves; it has no evidence of protection and is not a substitute for assessment or a safety plan.", "Ch 25.3"],
+  ["anticholinergic toxidrome", "Hot, dry, flushed skin, dilated pupils, tachycardia, urinary retention, delirium and visual hallucinations from anticholinergic drugs (\"hot as a hare, dry as a bone, red as a beet, blind as a bat, mad as a hatter\"); antipsychotics are contraindicated.", "Ch 25.3"],
+  ["excited delirium", "An outdated, nonspecific label for extreme agitation with hyperthermia, often used after deaths in custody; ACEP withdrew its support in 2023, and APA and AMA reject it as a diagnosis.", "Ch 25.3"],
+  ["silent rape reaction", "Signs of an unreported sexual assault: loss of appetite, sleep disturbance, anxiety and sometimes agoraphobia, with silences, stuttering, blocking or physical symptoms when the sexual history is taken.", "Ch 25.3"],
+  ["group hysteria", "Spread of extreme grief, fear or physical symptoms through a group without a medical cause (mass psychogenic illness); managed by dispersing the group and crisis support.", "Ch 25.3"],
+  ["suicide pact", "An agreement between two people to die together; in the book's account often the end of a provocative, masochistic relationship, with one partner killing the other and then themselves.", "Ch 25.3"],
+  ["school phobia", "Fear and avoidance of school itself, as distinct from separation anxiety; both can present as school refusal.", "Ch 25.3"],
+  ["emergency contraception", "Prevention of pregnancy after unprotected intercourse or assault: levonorgestrel 1.5 mg or ulipristal 30 mg by mouth, or a copper IUD (most effective), within 5 days.", "Ch 25.3"],
+  ["Columbia-Suicide Severity Rating Scale", "A structured, validated scale (C-SSRS) that screens for and rates suicidal ideation and behavior; widely used in emergency departments.", "Ch 25.3"],
+  ["Ask Suicide-Screening Questions", "The NIMH ASQ, four questions validated to screen young people (10 and older) for suicide risk in medical and emergency settings.", "Ch 25.3"],
+  ["988 Suicide & Crisis Lifeline", "The U.S. three-digit crisis line (call, text or chat) launched on July 16, 2022.", "Ch 25.3"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -654,5 +673,19 @@ KS.glossaryAliases = {
   "rebound (stimulant)": "stimulant rebound",
   "diversion": "stimulant diversion",
   "fenfluramine": "fen-phen",
-  "multimodal treatment study of adhd": "MTA study"
+  "multimodal treatment study of adhd": "MTA study",
+  "triage": "psychiatric triage",
+  "de-escalation": "verbal de-escalation",
+  "restraint": "physical restraint",
+  "restraints": "physical restraint",
+  "safety planning": "safety plan",
+  "safety planning intervention": "safety plan",
+  "no-harm contract": "no-suicide contract",
+  "anticholinergic intoxication": "anticholinergic toxidrome",
+  "excited delirium syndrome": "excited delirium",
+  "mass psychogenic illness": "group hysteria",
+  "mass hysteria": "group hysteria",
+  "c-ssrs": "Columbia-Suicide Severity Rating Scale",
+  "asq": "Ask Suicide-Screening Questions",
+  "988": "988 Suicide & Crisis Lifeline"
 };

@@ -38,6 +38,7 @@ Across all chapters:
   - *Choosing an anxiolytic* (Chapter 21.4): suspected sedative overdose (and when flumazenil helps or harms), withdrawal, stopping a long-term benzodiazepine, or a target symptom (panic, generalized anxiety, performance anxiety, catatonia, akathisia, alcohol withdrawal, older adults, insomnia).
   - *Choosing a sleep medicine* (Chapter 21.5): complex sleep behaviors, sleep-onset or maintenance insomnia, middle-of-the-night waking, circadian problems or trauma nightmares, with risk factors such as substance misuse, age and liver disease.
   - *Choosing an ADHD or wakefulness medicine* (Chapter 21.6): starting ADHD treatment, switching after nonresponse, substance use, tics, psychosis risk, narcolepsy, shift work and sleep apnea sleepiness, depression and apathy, and common stimulant side effects.
+  - *Managing an agitated patient in the emergency department* (Chapter 25.3): imminent violence and restraint, then the likely cause (delirium or medical illness, alcohol intoxication or withdrawal, stimulants, anticholinergic drugs, psychosis or mania, or unknown) and whether the patient will take oral medication, with Project BETA guidance marked as post-publication.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -85,6 +86,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.4 | Anxiolytics | 14 | 86 | 93 (plus generated drug drills) |
 | 21.5 | Drugs Used to Treat Sleep Disorders | 8 | 38 | 48 (plus generated drug drills) |
 | 21.6 | Stimulants | 8 | 58 | 58 (plus generated drug drills) |
+| 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Publish on GitHub Pages
 

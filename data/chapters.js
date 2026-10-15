@@ -135,6 +135,10 @@ KS.manifest = [
   { id: 'ch21-6', number: '21.6', title: 'Stimulants', short: 'Stimulants',
     summary: 'Methylphenidate, the amphetamines and lisdexamfetamine, modafinil and armodafinil, and atomoxetine for ADHD, narcolepsy, depression and apathy, with post-publication updates on mechanism, growth, misuse warnings, psychosis risk and newer ADHD and wakefulness drugs.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
+    summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   }
 ];
 

@@ -1448,7 +1448,7 @@
     function current() { if (!path.length) return h.start; return path[path.length - 1].to; }
     function drawTrail() {
       trail.innerHTML = path.map(function (s, i) {
-        return '<li><p class="trail__q">' + esc(h.nodes[s.node].q) + '</p><p class="trail__a">' + esc(s.label) + '</p><p class="trail__note">' + esc(s.note) + '</p>' +
+        return '<li><p class="trail__q">' + esc(h.nodes[s.node].q) + '</p><p class="trail__a">' + esc(s.label) + '</p>' + (s.note ? '<p class="trail__note">' + esc(s.note) + '</p>' : '') +
           '<button class="link-btn" type="button" data-back="' + i + '">Change this answer</button></li>';
       }).join('');
       empty.hidden = !!path.length;
@@ -1462,7 +1462,7 @@
         var res = h.results[cur.slice(2)];
         var link = res.link ? '<a class="btn btn--solid" href="#/c/' + res.link.ch + '/guide/' + res.link.sec + '">Read: ' + esc(res.link.label) + '</a>' : '';
         area.innerHTML = '<div class="result-card"><p class="result-card__eyebrow">' + esc(res.label || 'Most likely') + '</p><h2>' + esc(res.dx) + '</h2><p class="result-card__line">' + esc(res.line) + '</p>' +
-          '<h3>Why</h3><ul class="result-card__why">' + path.map(function (s) { return '<li>' + esc(s.note) + '</li>'; }).join('') + '</ul>' +
+          '<h3>Why</h3><ul class="result-card__why">' + path.map(function (s) { return '<li>' + esc(s.note || (h.nodes[s.node].q.replace(/\?$/, '') + ': ' + s.label)) + '</li>'; }).join('') + '</ul>' +
           '<h3>Next steps and points from the chapter</h3><ul>' + res.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
           '<div class="empty__actions">' + link + (res.also ? '<a class="btn" href="' + esc(res.also.href) + '">' + esc(res.also.label) + '</a>' : '') + '<a class="btn" href="#/c/' + h.chapter + '/cards/cases">Practice clinical cases</a></div></div>' + nav;
         linkTerms(area.querySelector('.result-card'), { skip: 'h2' });
