@@ -1,0 +1,15 @@
+/* Chapter 19 pharmacology cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 19. */
+KS.add("ch19", "pharm", [
+  {"id":"p19-01","tag":"Affective aggression","q":"Which drugs treat affective (hot-tempered) aggression in personality disorders?","a":"**Lithium, SSRIs, anticonvulsants** and low-dose antipsychotics; avoid **benzodiazepines** (disinhibition)."},
+  {"id":"p19-02","tag":"Organic aggression","q":"Which drugs treat organic-like aggression after brain injury?","a":"**β-blockers**, valproate, quetiapine, carbamazepine, TCAs and cholinesterase inhibitors (donepezil)."},
+  {"id":"p19-03","tag":"Ictal aggression","q":"Which drugs treat ictal aggression, and which are avoided?","a":"**Carbamazepine, phenytoin, valproate**, clonazepam; avoid **TCAs and low-potency typical antipsychotics** (lower seizure threshold)."},
+  {"id":"p19-04","tag":"Lability","q":"Which drugs treat emotional lability or rapid cycling in personality disorders?","a":"**Lithium, lamotrigine, valproate** and low-dose antipsychotics; avoid **TCAs** and standard antidepressants (switching)."},
+  {"id":"p19-05","tag":"Detachment","q":"Which drugs are suggested for social and emotional detachment?","a":"**Low-dose antipsychotics**: aripiprazole, olanzapine, low-dose clozapine, sulpiride."},
+  {"id":"p19-06","tag":"Schizotypal","q":"How is schizotypal personality disorder treated with medication?","a":"**Antipsychotics** for ideas of reference, illusions and related symptoms; **antidepressants** for depression; both adjuncts to psychotherapy."},
+  {"id":"p19-07","tag":"Antisocial","q":"Which drugs reduce aggression in antisocial personality disorder?","a":"**Anticonvulsants** (especially with an abnormal EEG), **β-blockers, lithium** and antipsychotics; use judiciously given substance misuse."},
+  {"id":"p19-08","tag":"Avoidant","q":"Which medications help avoidant personality disorder?","a":"**β-blockers (atenolol)** for autonomic hyperactivity; **serotonergic drugs** for rejection sensitivity; treatment of anxiety and depression."},
+  {"id":"p19-09","tag":"OCPD","q":"Which medications have some evidence in OCPD?","a":"**Fluvoxamine**, **carbamazepine**; **citalopram** for comorbid depression (better than sertraline in one study)."},
+  {"id":"p19-10","tag":"Narcissistic","q":"Which medications may help narcissistic personality disorder?","a":"**Lithium** for mood swings; **serotonergic antidepressants** for rejection-related depression."},
+  {"id":"p19-11","tag":"Lamotrigine","q":"What did the LABILE trial show (post-publication)?","a":"**Lamotrigine** up to 400 mg a day was **no better than placebo** for borderline symptoms, self-harm or functioning over 12 months (2018)."},
+  {"id":"p19-12","tag":"Borderline","q":"Summarize the 2024 APA guidance on medication for borderline PD (post-publication).","a":"No drug treats **core symptoms**; use medication only **time-limited**, for a **specific target symptom**, alongside psychotherapy; **review every 6 months**; limit polypharmacy."}
+]);

@@ -473,7 +473,31 @@ KS.glossary = (KS.glossary || []).concat([
   ["emergency contraception", "Prevention of pregnancy after unprotected intercourse or assault: levonorgestrel 1.5 mg or ulipristal 30 mg by mouth, or a copper IUD (most effective), within 5 days.", "Ch 25.3"],
   ["Columbia-Suicide Severity Rating Scale", "A structured, validated scale (C-SSRS) that screens for and rates suicidal ideation and behavior; widely used in emergency departments.", "Ch 25.3"],
   ["Ask Suicide-Screening Questions", "The NIMH ASQ, four questions validated to screen young people (10 and older) for suicide risk in medical and emergency settings.", "Ch 25.3"],
-  ["988 Suicide & Crisis Lifeline", "The U.S. three-digit crisis line (call, text or chat) launched on July 16, 2022.", "Ch 25.3"]
+  ["988 Suicide & Crisis Lifeline", "The U.S. three-digit crisis line (call, text or chat) launched on July 16, 2022.", "Ch 25.3"],
+  ["personality disorder", "An enduring, inflexible, pervasive pattern of inner experience and behavior, starting by adolescence or early adulthood, that deviates from cultural expectations and causes distress or impairment.", "Ch 19"],
+  ["alloplastic", "Adapting by trying to change the external environment rather than oneself; typical of personality disorders (contrast autoplastic).", "Ch 19"],
+  ["splitting", "A primitive defense that divides people (or the self) into all good or all bad, so that others are alternately idealized and devalued; typical of borderline personality disorder.", "Ch 19"],
+  ["projective identification", "A primitive defense, mainly in borderline personality disorder: projecting part of the self onto another person, coercing that person into identifying with it, and then feeling at one with them.", "Ch 19"],
+  ["identity diffusion", "A lack of a consistent sense of self, values and goals; a feature of borderline personality disorder.", "Ch 19"],
+  ["micropsychotic episode", "A brief, circumscribed, stress-related psychotic experience (paranoia, dissociation, ideas of reference) in borderline and some other personality disorders.", "Ch 19"],
+  ["character armor", "Wilhelm Reich's term for a person's characteristic defensive style against impulses and interpersonal anxiety.", "Ch 19"],
+  ["counterprojection", "A technique with paranoid patients: acknowledging that the world they describe is conceivable, without disputing or endorsing it, before discussing their real feelings.", "Ch 19"],
+  ["isolation of affect", "A defense that separates an idea or memory from its feeling, so facts are recalled in detail without emotion; typical of obsessive-compulsive personalities.", "Ch 19"],
+  ["introjection", "Internalizing a significant person as an inner presence that still feels like a separate object (contrast identification, in which the traits become part of the self).", "Ch 19"],
+  ["stress interview", "An interview that vigorously confronts a patient with inconsistencies in the history, sometimes needed to reveal antisocial pathology.", "Ch 19"],
+  ["dialectical behavior therapy", "DBT: a skills-based cognitive behavioral treatment for borderline personality disorder combining group skills training, individual therapy, phone coaching and a therapist consultation team; the best-supported treatment for self-harm in BPD.", "Ch 19"],
+  ["mentalization-based treatment", "MBT: psychotherapy for borderline personality disorder that strengthens the capacity to understand one's own and others' mental states.", "Ch 19"],
+  ["transference-focused psychotherapy", "TFP: an object-relations psychodynamic therapy for borderline personality disorder using clarification and confrontation of transference distortions to reduce splitting.", "Ch 19"],
+  ["anankastic personality disorder", "The ICD-10 name for obsessive-compulsive personality disorder; anankastia is also an ICD-11 trait domain.", "Ch 19"],
+  ["dissocial personality disorder", "The ICD-10 name for antisocial personality disorder; dissociality is also an ICD-11 trait domain.", "Ch 19"],
+  ["emotionally unstable personality disorder", "The ICD-10 counterpart of borderline personality disorder, with impulsive and borderline subtypes.", "Ch 19"],
+  ["frontal lobe syndrome", "Personality change after frontal lobe damage: apathy and indifference or disinhibition with hollow euphoria, facile jocularity, poor judgment and diminished foresight.", "Ch 19"],
+  ["temperament", "Heritable, early-appearing, stable biases in automatic emotional responses; Cloninger's four dimensions are harm avoidance, novelty seeking, reward dependence and persistence.", "Ch 19"],
+  ["harm avoidance", "A temperament dimension: inhibition in response to signals of punishment; high scorers are pessimistic, fearful, shy and easily tired. Linked to serotonin.", "Ch 19"],
+  ["novelty seeking", "A temperament dimension: approach and exploration in response to novelty and reward; high scorers are impulsive, extravagant, quick-tempered and easily bored. Linked to dopamine.", "Ch 19"],
+  ["reward dependence", "A temperament dimension: maintaining behavior in response to social reward; high scorers are sentimental, warm and dependent. Linked to norepinephrine and oxytocin.", "Ch 19"],
+  ["persistence", "A temperament dimension: persevering despite frustration and intermittent reward; high scorers are industrious, ambitious and perfectionistic.", "Ch 19"],
+  ["Alternative Model for Personality Disorders", "The dimensional DSM-5 model in Section III that rates impairment in personality functioning plus pathological trait domains.", "Ch 19"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -687,5 +711,18 @@ KS.glossaryAliases = {
   "mass hysteria": "group hysteria",
   "c-ssrs": "Columbia-Suicide Severity Rating Scale",
   "asq": "Ask Suicide-Screening Questions",
-  "988": "988 Suicide & Crisis Lifeline"
+  "988": "988 Suicide & Crisis Lifeline",
+  "dbt": "dialectical behavior therapy",
+  "mbt": "mentalization-based treatment",
+  "tfp": "transference-focused psychotherapy",
+  "mentalization": "mentalization-based treatment",
+  "isolation": "isolation of affect",
+  "micropsychotic episodes": "micropsychotic episode",
+  "all good or all bad": "splitting",
+  "anankastia": "anankastic personality disorder",
+  "dissociality": "dissocial personality disorder",
+  "ampd": "Alternative Model for Personality Disorders",
+  "personality disorders": "personality disorder",
+  "autoplastic": "alloplastic",
+  "temperament dimensions": "temperament"
 };

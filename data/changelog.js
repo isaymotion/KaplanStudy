@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 36,
+    date: "2026-10-15",
+    title: "Chapter 19: Personality Disorders",
+    items: [
+      { type: "chapter", ch: "ch19", text: "**Chapter 19, Personality Disorders**: general criteria and the three clusters, then each of the ten disorders (presentation, interview, DSM-5 and ICD-10 criteria, differential, comorbidity, course, epidemiology and treatment), borderline treatment (DBT, MBT, TFP), personality change due to a medical condition, target-symptom pharmacotherapy, defenses and how to respond to them, and Cloninger's temperament dimensions. Study guide, high-yield list, printable handout and 66 cards. Post-publication boxes cover ICD-11's severity-and-trait model, the 10-year course of borderline personality disorder, the 2024 APA borderline guideline, the Cochrane review and LABILE lamotrigine trial, the community sex ratio of BPD, and correct the avoidant criteria.", href: "#/c/ch19/guide", link: "Open the chapter" },
+      { type: "feature", text: "**New diagnostic helper**: *Which personality disorder?*", href: "#/helpers/personality", link: "Try it" },
+      { type: "update", text: "**Glossary**: 24 new terms from Chapter 19, including splitting, projective identification, counterprojection, DBT, MBT and Cloninger's temperament dimensions." }
+    ]
+  },
+  {
     id: 35,
     date: "2026-10-15",
     title: "Chapter 25.3: Psychiatric Emergencies",

@@ -103,6 +103,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
   },
   {
+    id: 'ch19', number: 19, title: 'Personality Disorders', short: 'Personality disorders',
+    summary: 'The ten personality disorders in three clusters: presentation, DSM-5 and ICD-10 criteria, differential diagnosis, comorbidity, course, epidemiology and treatment (including DBT, MBT and TFP), personality change due to a medical condition, target-symptom pharmacotherapy, defenses and temperament, with post-publication updates on ICD-11 and borderline personality disorder.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']
+  },
+  {
     id: 'ch21-0', number: '21.0', title: 'Principles of Psychopharmacology', short: 'Psychopharmacology principles',
     summary: 'How drugs are chosen, dosed and monitored: pharmacodynamics and kinetics, side effects, antidepressant suicidality, medication-induced movement disorders and NMS, overdose, treatment failure, withdrawal, combinations, special populations, off-label use and placebos.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations']

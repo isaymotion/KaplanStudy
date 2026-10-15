@@ -39,6 +39,7 @@ Across all chapters:
   - *Choosing a sleep medicine* (Chapter 21.5): complex sleep behaviors, sleep-onset or maintenance insomnia, middle-of-the-night waking, circadian problems or trauma nightmares, with risk factors such as substance misuse, age and liver disease.
   - *Choosing an ADHD or wakefulness medicine* (Chapter 21.6): starting ADHD treatment, switching after nonresponse, substance use, tics, psychosis risk, narcolepsy, shift work and sleep apnea sleepiness, depression and apathy, and common stimulant side effects.
   - *Managing an agitated patient in the emergency department* (Chapter 25.3): imminent violence and restraint, then the likely cause (delirium or medical illness, alcohol intoxication or withdrawal, stimulants, anticholinergic drugs, psychosis or mania, or unknown) and whether the patient will take oral medication, with Project BETA guidance marked as post-publication.
+  - *Which personality disorder?* (Chapter 19): enduring pattern versus medical change or an episode of another disorder, then cluster and core style, with the age rule for antisocial personality disorder and the OCPD versus OCD distinction.
 
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
@@ -79,6 +80,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 12 | Somatic Symptom and Related Disorders | 22 | 66 | 130 |
 | 13 | Feeding and Eating Disorders | 22 | 105 | 147 |
 | 14 | Elimination Disorders | 15 | 48 | 106 |
+| 19 | Personality Disorders | 19 | 65 | 66 |
 | 21.0 | Principles of Psychopharmacology | 23 | 87 | 106 |
 | 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
 | 21.2 | Antidepressants | 28 | 102 | 107 (plus generated drug drills) |

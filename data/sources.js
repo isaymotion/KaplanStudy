@@ -96,6 +96,11 @@
     { m: 'elimination of the DATA waiver', label: 'Quarles: X-waiver eliminated by Congress (2023)', url: 'https://www.quarles.com/newsroom/publications/consolidated-appropriations-act-of-2023-signed-into-law' },
     { m: 'Ask Suicide-Screening Questions', label: 'NIMH ASQ toolkit', url: 'https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/asq-tool/asq-screening-tool.shtml' },
     { m: 'CDC revised recommendations for HIV testing, 2006', label: 'CDC press release: routine HIV testing (September 2006)', url: 'https://archive.cdc.gov/www_cdc_gov/media/pressrel/r060921.htm' },
+    { m: 'the ICD-11 classification of personality disorders', label: 'Bach et al. 2022: ICD-11 personality disorders', url: 'https://link.springer.com/article/10.1186/s40479-022-00182-0' },
+    { m: '10-year course of borderline personality disorder', label: 'Zanarini et al. 2010 (American Journal of Psychiatry)', url: 'https://ajp.psychiatryonline.org/doi/10.1176/appi.ajp.2009.09081130' },
+    { m: 'APA practice guideline for the treatment of patients with borderline personality disorder', label: 'APA news release: updated BPD guideline (December 2024)', url: 'https://www.psychiatry.org/News-room/News-Releases/Updated-Borderline-Personality-Disorder-Guideline' },
+    { m: 'pharmacological interventions for borderline personality disorder', label: 'Cochrane review 2022: drugs for BPD', url: 'https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012956.pub2/information' },
+    { m: 'LABILE lamotrigine trial', label: 'Crawford et al. 2018: LABILE trial (American Journal of Psychiatry)', url: 'https://ajp.psychiatryonline.org/doi/10.1176/appi.ajp.2018.17091006' },
     { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
   ];
 })();
