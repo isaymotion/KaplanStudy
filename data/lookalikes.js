@@ -156,5 +156,54 @@ KS.lookalikes = [
       { ch: "ch21-7", sec: "s217-dis-use", label: "Using disulfiram" },
       { ch: "ch04", sec: "s4-alc-rehab", label: "Alcohol rehabilitation and medications" }
     ]
+  },
+  {
+    id: "psychosis-durations",
+    title: "Brief psychotic, schizophreniform, schizophrenia, schizoaffective and delusional disorder",
+    summary: "Five psychotic disorders told apart mostly by duration, mood and which symptoms are present.",
+    items: ["Brief psychotic disorder", "Schizophreniform disorder", "Schizophrenia", "Schizoaffective disorder", "Delusional disorder"],
+    rows: [
+      ["Duration", "**1 day to under 1 month**", "**1 month to under 6 months**", "**6 months or more**, including prodromal and residual phases", "Uninterrupted illness; psychosis **2 weeks or more without** a mood episode", "Delusions for **1 month or more**"],
+      ["Symptoms", "Delusions, hallucinations, disorganized speech or grossly disorganized or catatonic behavior", "Same as schizophrenia (criterion A)", "Two or more criterion A symptoms, one being delusions, hallucinations or disorganized speech", "Criterion A symptoms **plus a major mood episode** at the same time", "**Nonbizarre-type** delusions; hallucinations not prominent; no other criterion A symptoms"],
+      ["Mood episodes", "Not explained by a mood disorder", "Not explained by a mood disorder", "Absent or brief relative to the illness", "Present for the **majority** of the illness", "Brief relative to the delusional periods"],
+      ["Function", "**Full return** to baseline", "Decline not required", "**Marked decline** in work, relationships or self-care", "Usually impaired", "**Not markedly impaired** apart from the delusion"],
+      ["Typical trigger or course", "Often follows a **marked stressor**; complete, lasting recovery", "Many go on to schizophrenia; those who do not have a **better outcome**", "Chronic, with relapses", "Course **between** schizophrenia and mood disorders", "Chronic but often stable"]
+    ],
+    keys: [
+      "Count the **time**: under 1 month, under 6 months, or 6 months or more.",
+      "If mood episodes fill **most** of the illness and psychosis also occurs **without** them for 2 weeks, think schizoaffective disorder.",
+      "A single fixed delusion with **preserved functioning** and little else points to delusional disorder."
+    ],
+    links: [
+      { ch: "ch05", sec: "s-durations", label: "The diagnostic map" },
+      { ch: "ch05", sec: "s-brief", label: "Brief psychotic disorder" },
+      { ch: "ch05", sec: "s-schizophreniform", label: "Schizophreniform disorder" },
+      { ch: "ch05", sec: "s-schizoaffective", label: "Schizoaffective disorder" },
+      { ch: "ch05", sec: "s-delusional", label: "Delusional disorder" }
+    ]
+  },
+  {
+    id: "grief-depression",
+    title: "Normal grief, major depression, persistent depressive disorder and prolonged grief disorder",
+    summary: "Four ways sadness can present after a loss or over time.",
+    items: ["Normal grief", "Major depressive disorder", "Persistent depressive disorder", "Prolonged grief disorder (post-publication)"],
+    rows: [
+      ["Time frame", "Eases over months, in waves", "**2 weeks** or more of symptoms", "**2 years** or more (1 year in children); no more than 2 months symptom-free", "**12 months** or more after a death (6 in children)"],
+      ["Core feature", "Pangs of grief tied to **reminders** of the deceased", "Pervasive **depressed mood or anhedonia** with at least five symptoms", "Chronic low mood with fewer symptoms", "Persistent **longing** for or preoccupation with the deceased"],
+      ["Self-esteem and guilt", "Preserved; guilt about things **left undone**", "**Worthlessness**, guilt of commission", "Low self-esteem, hopelessness", "Identity disruption, feeling part of oneself died"],
+      ["Mood reactivity", "Can still enjoy and laugh", "Mood **unreactive**", "Variable", "Intense emotional pain around the loss"],
+      ["Red flags", "None of the depressive signs in the next column", "Marked **retardation**, active **suicidal ideation**, mood-congruent delusions", "Superimposed major depression (**double depression**)", "Avoidance of reminders, disbelief, numbness, loneliness"]
+    ],
+    keys: [
+      "Grief that is tied to **reminders**, with preserved self-esteem, is usually normal.",
+      "**Worthlessness, retardation and active suicidal ideation** after a loss mean a depressive disorder.",
+      "Look at the **time**: 2 weeks (major depression), 2 years (persistent depressive disorder), 12 months of longing after a death (prolonged grief)."
+    ],
+    links: [
+      { ch: "ch07", sec: "s7-bereavement", label: "Bereavement and grief" },
+      { ch: "ch07", sec: "s7-mdd", label: "Major depressive disorder" },
+      { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" },
+      { ch: "ch07", sec: "s7-other", label: "Other depressive disorders" }
+    ]
   }
 ];

@@ -13,6 +13,17 @@
  */
 KS.changelog = [
   {
+    id: 43,
+    date: "2026-10-22",
+    title: "Learning tools for Chapters 5, 6 and 7",
+    items: [
+      { type: "feature", ch: "ch05", text: "Chapter 5 (schizophrenia and other psychotic disorders) now has Check yourself questions in every section, a pre-test and post-test, wrong-answer explanations for all 53 cases, board blueprint tags and a visual summary of antipsychotic side effects.", href: "#/c/ch05/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch06", text: "Chapter 6 (bipolar disorders) now has the same learning tools, with a visual summary of where the main drugs work.", href: "#/c/ch06/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch07", text: "Chapter 7 (depressive disorders) now has the same learning tools, with a visual summary of melancholic versus atypical features.", href: "#/c/ch07/guide", link: "Open the study guide" },
+      { type: "feature", text: "New look-alikes: the five psychotic disorders by duration; and normal grief, major depression, persistent depressive disorder and prolonged grief disorder.", href: "#/compare", link: "Open look-alikes" }
+    ]
+  },
+  {
     id: 42,
     date: "2026-10-21",
     title: "Chapter 21.7: Drugs Used to Treat Substance Use Disorders",
