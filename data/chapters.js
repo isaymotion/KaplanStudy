@@ -142,6 +142,10 @@ KS.manifest = [
     summary: 'Methylphenidate, the amphetamines and lisdexamfetamine, modafinil and armodafinil, and atomoxetine for ADHD, narcolepsy, depression and apathy, with post-publication updates on mechanism, growth, misuse warnings, psychosis risk and newer ADHD and wakefulness drugs.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch21-7', number: '21.7', title: 'Drugs Used to Treat Substance Use Disorders', short: 'Substance use disorder drugs',
+    summary: 'Methadone, buprenorphine and tramadol; naltrexone, nalmefene and naloxone with the naloxone challenge and rapid detoxification; disulfiram and acamprosate; and clonidine and guanfacine, with post-publication updates on prescribing rules, long-acting buprenorphine, fentanyl-era induction, pregnancy, over-the-counter naloxone, lofexidine and the alcohol guideline.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
@@ -164,5 +168,6 @@ KS.extraFiles = [
   'data/drugs/anxiolytics.js',
   'data/drugs/hypnotics.js',
   'data/drugs/stimulants.js',
+  'data/drugs/substance.js',
   'data/changelog.js'
 ];

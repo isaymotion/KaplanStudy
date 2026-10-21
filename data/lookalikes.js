@@ -103,5 +103,58 @@ KS.lookalikes = [
       { ch: "ch05", sec: "s-delusional", label: "Delusional disorder" },
       { ch: "ch05", sec: "s-ddx", label: "Schizophrenia: differential diagnosis" }
     ]
+  },
+  {
+    id: "oud-meds",
+    title: "Methadone, buprenorphine and naltrexone",
+    summary: "Full agonist, partial agonist or antagonist: three ways to treat opioid use disorder.",
+    items: ["Methadone", "Buprenorphine (with naloxone)", "Naltrexone"],
+    rows: [
+      ["Receptor action", "**Full µ agonist**", "**Partial µ agonist**, κ antagonist; ceiling effect", "**Competitive antagonist** (mainly µ)"],
+      ["Before the first dose", "In withdrawal or opioid-dependent", "**Objective withdrawal**: 12 to 24 hours after short-acting opioids, 24 to 48 after methadone", "**Opioid-free** 5 days (short-acting) or 10 days (methadone), plus a **naloxone challenge**"],
+      ["Starting dose", "15 to 20 mg (up to 40 mg on day 1)", "2 to 4 mg; day 1 up to 16 mg", "Build up to 50 mg a day"],
+      ["Maintenance", "At least 60 to 70 mg a day (usually up to 120 mg)", "6 to 16 mg a day; alternate-day possible", "50 mg a day, 100 mg alternate days, 150 mg every third day, or monthly injection"],
+      ["Where", "Opioid treatment programs only (Schedule II)", "Office practice; post-publication, any Schedule III DEA registrant", "Any setting"],
+      ["Overdose risk", "**Highest at induction** (deaths at 50 to 60 mg in week 1); with benzodiazepines", "Lower (ceiling), but deaths with **benzodiazepines**", "High if the blockade is **overridden** or after stopping"],
+      ["Adherence driver", "Withdrawal if doses are missed", "Withdrawal (milder)", "Nothing pharmacologic: needs psychosocial support"],
+      ["Pregnancy", "Recommended: lowest effective dose, split in the third trimester", "Used; post-publication data support the combination", "Only for compelling need"]
+    ],
+    keys: [
+      "A full agonist given to a dependent person relieves withdrawal; a **partial agonist** given too early **precipitates** it; an **antagonist** precipitates it unless the person is opioid-free.",
+      "Choose **methadone** for structure and observed dosing, **buprenorphine** for office treatment with less overdose risk, and **naltrexone** for patients who want no opioid and can complete a washout.",
+      "Post-publication (X:BOT): once started, extended-release naltrexone and buprenorphine–naloxone work about equally well."
+    ],
+    links: [
+      { ch: "ch21-7", sec: "s217-pk", label: "Methadone and buprenorphine pharmacology" },
+      { ch: "ch21-7", sec: "s217-bup", label: "Buprenorphine induction" },
+      { ch: "ch21-7", sec: "s217-challenge", label: "Making sure the patient is opioid-free" },
+      { ch: "ch04", sec: "s4-opi-maintenance", label: "Opioid maintenance treatment" }
+    ]
+  },
+  {
+    id: "aud-meds",
+    title: "Naltrexone, acamprosate and disulfiram for alcohol use disorder",
+    summary: "Three relapse-prevention drugs with different requirements and dangers.",
+    items: ["Naltrexone", "Acamprosate", "Disulfiram"],
+    rows: [
+      ["How it works", "Opioid antagonist: less **craving** and reward", "**Glutamate/NMDA** modulation", "Blocks **aldehyde dehydrogenase**: aversive acetaldehyde reaction"],
+      ["Start when", "Opioid-free; can be used to reduce drinking", "Only **after detoxification** and abstinence", "After **12 hours** without alcohol"],
+      ["Dose", "50 mg a day (or monthly injection)", "666 mg three times daily", "500 mg for 1 to 2 weeks, then 250 mg"],
+      ["Clearance and organ cautions", "Liver: avoid in acute hepatitis or liver failure", "Kidneys: avoid if CrCl under 30; halve at 30 to 50", "Heart and lungs: avoid in significant disease; liver injury"],
+      ["Key interaction", "Blocks opioid analgesics", "Naltrexone raises its levels", "Raises phenytoin and anticoagulant levels; never with paraldehyde"],
+      ["Typical side effects", "Nausea, headache", "Diarrhea, headache", "Reaction with any alcohol (up to 2 weeks after the last dose); may worsen psychosis"],
+      ["Guideline place (post-publication)", "First line (APA 2018)", "First line (APA 2018)", "Second line, for motivated, supervised patients"]
+    ],
+    keys: [
+      "Ask about **opioids** (naltrexone), **kidneys** (acamprosate) and **heart disease or psychosis** (disulfiram).",
+      "Only **naltrexone** helps people still drinking to cut down; acamprosate needs abstinence first.",
+      "Disulfiram works through **fear** of the reaction, so it needs motivation and supervision."
+    ],
+    links: [
+      { ch: "ch21-7", sec: "s217-antag-aud", label: "Antagonists for alcohol use disorder" },
+      { ch: "ch21-7", sec: "s217-acamp", label: "Acamprosate" },
+      { ch: "ch21-7", sec: "s217-dis-use", label: "Using disulfiram" },
+      { ch: "ch04", sec: "s4-alc-rehab", label: "Alcohol rehabilitation and medications" }
+    ]
   }
 ];

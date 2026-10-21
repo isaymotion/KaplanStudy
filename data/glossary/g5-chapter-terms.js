@@ -497,7 +497,18 @@ KS.glossary = (KS.glossary || []).concat([
   ["novelty seeking", "A temperament dimension: approach and exploration in response to novelty and reward; high scorers are impulsive, extravagant, quick-tempered and easily bored. Linked to dopamine.", "Ch 19"],
   ["reward dependence", "A temperament dimension: maintaining behavior in response to social reward; high scorers are sentimental, warm and dependent. Linked to norepinephrine and oxytocin.", "Ch 19"],
   ["persistence", "A temperament dimension: persevering despite frustration and intermittent reward; high scorers are industrious, ambitious and perfectionistic.", "Ch 19"],
-  ["Alternative Model for Personality Disorders", "The dimensional DSM-5 model in Section III that rates impairment in personality functioning plus pathological trait domains.", "Ch 19"]
+  ["Alternative Model for Personality Disorders", "The dimensional DSM-5 model in Section III that rates impairment in personality functioning plus pathological trait domains.", "Ch 19"],
+  ["naloxone challenge test", "Giving naloxone (0.2 mg IV then 0.6 mg, or 0.8 mg SC) and watching for withdrawal before starting naltrexone; any withdrawal sign means the patient is not yet opioid-free.", "Ch 21.7"],
+  ["disulfiram–alcohol reaction", "Flushing, throbbing headache, nausea, vomiting, hypertension, tachycardia and sweating within minutes of drinking on disulfiram, caused by acetaldehyde build-up; lasts 30 minutes to 2 hours and can be severe.", "Ch 21.7"],
+  ["opioid treatment program", "A certified clinic (methadone maintenance treatment program) that dispenses methadone for opioid use disorder under federal rules, usually with directly observed dosing.", "Ch 21.7"],
+  ["opioid antagonist", "A drug that binds opioid receptors without activating them (naltrexone, nalmefene, naloxone), blocking opioid effects and precipitating withdrawal in dependent people.", "Ch 21.7"],
+  ["rapid detoxification", "Moving from opioid use to antagonist maintenance in 2 to 3 days by giving clonidine and a benzodiazepine while rapidly introducing naltrexone.", "Ch 21.7"],
+  ["ceiling effect", "The point beyond which higher doses add no further effect; for buprenorphine, more drug prolongs action without more respiratory depression.", "Ch 21.7"],
+  ["aversive conditioning", "Treatment that pairs a behavior with an unpleasant consequence so the person avoids it, as disulfiram does with drinking.", "Ch 21.7"],
+  ["low-dose buprenorphine initiation", "Starting buprenorphine at very small, rising doses while other opioids continue, to avoid precipitated withdrawal; used especially with fentanyl, with mostly observational evidence.", "Ch 21.7"],
+  ["aldehyde dehydrogenase", "The enzyme that converts acetaldehyde to acetyl-CoA in alcohol metabolism; disulfiram blocks it.", "Ch 21.7"],
+  ["mu opioid receptor", "The opioid receptor that mediates analgesia, euphoria and respiratory depression; the main target of opioid analgesics, methadone and buprenorphine.", "Ch 21.7"],
+  ["kappa opioid receptor", "The opioid receptor whose activation causes analgesia with dysphoria and stress-related depression; blocking it may be antidepressant.", "Ch 21.7"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -724,5 +735,21 @@ KS.glossaryAliases = {
   "ampd": "Alternative Model for Personality Disorders",
   "personality disorders": "personality disorder",
   "autoplastic": "alloplastic",
-  "temperament dimensions": "temperament"
+  "temperament dimensions": "temperament",
+  "naloxone challenge": "naloxone challenge test",
+  "disulfiram-alcohol reaction": "disulfiram–alcohol reaction",
+  "disulfiram reaction": "disulfiram–alcohol reaction",
+  "antabuse reaction": "disulfiram–alcohol reaction",
+  "methadone maintenance treatment program": "opioid treatment program",
+  "methadone maintenance treatment programs": "opioid treatment program",
+  "opioid treatment programs": "opioid treatment program",
+  "opioid antagonists": "opioid antagonist",
+  "opioid receptor antagonists": "opioid antagonist",
+  "rapid detox": "rapid detoxification",
+  "low-dose initiation": "low-dose buprenorphine initiation",
+  "microinduction": "low-dose buprenorphine initiation",
+  "µ-opioid receptor": "mu opioid receptor",
+  "µ-opioid receptors": "mu opioid receptor",
+  "κ-opioid receptor": "kappa opioid receptor",
+  "κ-opioid receptors": "kappa opioid receptor"
 };

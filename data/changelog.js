@@ -13,6 +13,20 @@
  */
 KS.changelog = [
   {
+    id: 42,
+    date: "2026-10-21",
+    title: "Chapter 21.7: Drugs Used to Treat Substance Use Disorders",
+    items: [
+      { type: "chapter", ch: "ch21-7", text: "New section 21.7: methadone, buprenorphine and tramadol; naltrexone, nalmefene and naloxone, with the naloxone challenge and rapid detoxification; disulfiram and acamprosate; and clonidine and guanfacine. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch21-7/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch21-7", text: "Post-publication updates: the end of the buprenorphine X-waiver, the 2024 opioid treatment program rule, long-acting buprenorphine injections, induction in the fentanyl era, buprenorphine–naloxone in pregnancy, over-the-counter naloxone, nalmefene's return, lofexidine and the APA alcohol guideline.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Choosing a medicine for a substance use disorder.", href: "#/helpers/sudmed", link: "Open the helper" },
+      { type: "feature", text: "Drug reference: 14 drugs for substance use disorders, with drills and a class PDF.", href: "#/drugs", link: "Open drugs" },
+      { type: "feature", text: "New look-alikes: methadone, buprenorphine and naltrexone; and the three alcohol use disorder medicines.", href: "#/compare/ch/ch21-7", link: "Open look-alikes" },
+      { type: "correction", ch: "ch04", text: "Chapter 4 now notes that the DEA waiver for prescribing buprenorphine was eliminated in December 2022.", href: "#/c/ch04/guide/s4-opi-detox", link: "See the correction" },
+      { type: "correction", text: "Drug class PDFs now print the µ (mu) symbol correctly in every PDF viewer.", href: "#/all-highyield", link: "Open the PDFs" }
+    ]
+  },
+  {
     id: 41,
     date: "2026-10-21",
     title: "Look-alikes in the main menu, with PDF reviewers",
