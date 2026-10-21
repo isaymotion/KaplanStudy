@@ -46,6 +46,7 @@ Across all chapters:
   - *Choosing an anxiolytic* (Chapter 21.4): suspected sedative overdose (and when flumazenil helps or harms), withdrawal, stopping a long-term benzodiazepine, or a target symptom (panic, generalized anxiety, performance anxiety, catatonia, akathisia, alcohol withdrawal, older adults, insomnia).
   - *Choosing a sleep medicine* (Chapter 21.5): complex sleep behaviors, sleep-onset or maintenance insomnia, middle-of-the-night waking, circadian problems or trauma nightmares, with risk factors such as substance misuse, age and liver disease.
   - *Choosing a medicine for a substance use disorder* (Chapter 21.7): overdose reversal, opioid use disorder (pregnancy, methadone, buprenorphine induction timing and fentanyl, antagonists, long-acting injections), withdrawal management and rapid detoxification, and alcohol use disorder (withdrawal first, opioid, renal and liver contraindications, first- and second-line drugs).
+  - *Choosing a cognitive enhancer* (Chapter 21.8): workup first, mild cognitive impairment (exercise, anti-amyloid eligibility), mild to moderate Alzheimer disease (donepezil, rivastigmine, patches, cardiac cautions), moderate to severe disease (memantine, donepezil), Parkinson disease dementia, and healthy people seeking enhancement.
   - *Choosing an ADHD or wakefulness medicine* (Chapter 21.6): starting ADHD treatment, switching after nonresponse, substance use, tics, psychosis risk, narcolepsy, shift work and sleep apnea sleepiness, depression and apathy, and common stimulant side effects.
   - *Managing an agitated patient in the emergency department* (Chapter 25.3): imminent violence and restraint, then the likely cause (delirium or medical illness, alcohol intoxication or withdrawal, stimulants, anticholinergic drugs, psychosis or mania, or unknown) and whether the patient will take oral medication, with Project BETA guidance marked as post-publication.
   - *Which personality disorder?* (Chapter 19): enduring pattern versus medical change or an episode of another disorder, then cluster and core style, with the age rule for antisocial personality disorder and the OCPD versus OCD distinction.
@@ -100,6 +101,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.5 | Drugs Used to Treat Sleep Disorders | 8 | 38 | 48 (plus generated drug drills) |
 | 21.6 | Stimulants | 8 | 58 | 58 (plus generated drug drills) |
 | 21.7 | Drugs Used to Treat Substance Use Disorders | 24 | 72 | 84 (plus generated drug drills) |
+| 21.8 | Drugs Used for Cognitive Enhancement | 17 | 43 | 64 (plus generated drug drills) |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Publish on GitHub Pages

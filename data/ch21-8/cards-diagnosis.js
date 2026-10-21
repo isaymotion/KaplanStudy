@@ -1,0 +1,13 @@
+/* Chapter 21.8 diagnosis cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.8. */
+KS.add("ch21-8", "diagnosis", [
+  {"id":"d218-01","tag":"Stage","q":"Which drugs are matched to which stage of Alzheimer disease in the book?","a":"**Cholinesterase inhibitors** (donepezil, rivastigmine, galantamine): **mild to moderate**. **Memantine**: **moderate to severe**."},
+  {"id":"d218-02","tag":"Before starting","q":"What must be done before starting a cholinesterase inhibitor?","a":"**Rule out treatable causes** of dementia and establish the diagnosis of dementia of the Alzheimer type."},
+  {"id":"d218-03","tag":"Expected benefit","q":"What benefit can patients and families expect?","a":"A **modest** gain in memory and goal-directed thought, or **stability** for months; fewer behavioral symptoms; **later nursing home placement**. Functional autonomy is less well preserved."},
+  {"id":"d218-04","tag":"Other dementias","q":"Which other conditions may respond to cholinesterase inhibitors?","a":"**Parkinson disease and Lewy body disease** (donepezil, rivastigmine), **traumatic brain injury** and **vascular dementia**."},
+  {"id":"d218-05","tag":"Catastrophic reaction","q":"What is the catastrophic reaction to cholinesterase inhibitors?","a":"An **idiosyncratic** reaction with **grief and agitation** that is **self-limited** after the drug is stopped."},
+  {"id":"d218-06","tag":"Healthy people","q":"Should healthy people use cholinesterase inhibitors to sharpen memory?","a":"**No**: the book says this should be **discouraged**."},
+  {"id":"d218-07","tag":"MCI (post-publication)","q":"What does the 2018 neurology guideline say about cholinesterase inhibitors in mild cognitive impairment?","a":"Clinicians **may choose not to offer** them; if offered, explain the use is **off-label** without high-quality evidence. Recommend **regular exercise**."},
+  {"id":"d218-08","tag":"Anti-amyloid eligibility (post-publication)","q":"Who is eligible for lecanemab or donanemab?","a":"People with **MCI or mild dementia** due to Alzheimer disease with **confirmed amyloid** (PET or CSF), after **MRI** and **ApoE** testing."},
+  {"id":"d218-09","tag":"Blood biomarkers (post-publication)","q":"Where do Alzheimer blood tests fit now?","a":"In **specialty care** for people **with cognitive symptoms**, after a full evaluation: high-performing tests can **rule out** or even **replace PET or CSF**; not for screening people without symptoms."},
+  {"id":"d218-10","tag":"Agitation (post-publication)","q":"What is approved for agitation associated with Alzheimer dementia?","a":"**Brexpiprazole** (2023), target **2 mg** a day; boxed warning for increased death in dementia."}
+]);

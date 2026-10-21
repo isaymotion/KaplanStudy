@@ -508,7 +508,15 @@ KS.glossary = (KS.glossary || []).concat([
   ["low-dose buprenorphine initiation", "Starting buprenorphine at very small, rising doses while other opioids continue, to avoid precipitated withdrawal; used especially with fentanyl, with mostly observational evidence.", "Ch 21.7"],
   ["aldehyde dehydrogenase", "The enzyme that converts acetaldehyde to acetyl-CoA in alcohol metabolism; disulfiram blocks it.", "Ch 21.7"],
   ["mu opioid receptor", "The opioid receptor that mediates analgesia, euphoria and respiratory depression; the main target of opioid analgesics, methadone and buprenorphine.", "Ch 21.7"],
-  ["kappa opioid receptor", "The opioid receptor whose activation causes analgesia with dysphoria and stress-related depression; blocking it may be antidepressant.", "Ch 21.7"]
+  ["kappa opioid receptor", "The opioid receptor whose activation causes analgesia with dysphoria and stress-related depression; blocking it may be antidepressant.", "Ch 21.7"],
+  ["cholinesterase inhibitor", "A drug that slows the breakdown of acetylcholine by blocking acetylcholinesterase or butyrylcholinesterase, such as donepezil, rivastigmine or galantamine; used for mild to moderate Alzheimer disease.", "Ch 21.8"],
+  ["acetylcholinesterase", "The enzyme that breaks down acetylcholine at synapses; its inhibition raises acetylcholine levels, especially in the hippocampus and cortex.", "Ch 21.8"],
+  ["butyrylcholinesterase", "A second cholinesterase that also breaks down acetylcholine; rivastigmine inhibits it as well as acetylcholinesterase.", "Ch 21.8"],
+  ["excitotoxicity", "Neuronal injury from excessive glutamate stimulation of NMDA receptors, which lets too much calcium into cells; the rationale for memantine in Alzheimer disease.", "Ch 21.8"],
+  ["amyloid-related imaging abnormalities", "MRI changes caused by anti-amyloid antibodies: ARIA-E (edema or effusion) and ARIA-H (microhemorrhages and superficial siderosis); usually silent but can cause headache, confusion, seizures and rarely death; most common in ApoE ε4 homozygotes.", "Ch 21.8"],
+  ["anti-amyloid monoclonal antibody", "An antibody such as lecanemab or donanemab that clears amyloid-β plaques and modestly slows decline in mild cognitive impairment or mild dementia due to Alzheimer disease with confirmed amyloid.", "Ch 21.8"],
+  ["ApoE ε4", "The ε4 allele of the apolipoprotein E gene, the strongest common genetic risk factor for late-onset Alzheimer disease; homozygotes have the highest risk of ARIA on anti-amyloid antibodies.", "Ch 21.8"],
+  ["blood-based biomarker", "A blood test, such as the plasma pTau217 to amyloid-β 1-42 ratio, that indicates Alzheimer pathology in people with cognitive symptoms; used in specialty care to rule out or confirm amyloid.", "Ch 21.8"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -751,5 +759,19 @@ KS.glossaryAliases = {
   "µ-opioid receptor": "mu opioid receptor",
   "µ-opioid receptors": "mu opioid receptor",
   "κ-opioid receptor": "kappa opioid receptor",
-  "κ-opioid receptors": "kappa opioid receptor"
+  "κ-opioid receptors": "kappa opioid receptor",
+  "cholinesterase inhibitors": "cholinesterase inhibitor",
+  "acetylcholinesterase inhibitor": "cholinesterase inhibitor",
+  "acetylcholinesterase inhibitors": "cholinesterase inhibitor",
+  "anticholinesterase": "cholinesterase inhibitor",
+  "aria": "amyloid-related imaging abnormalities",
+  "aria-e": "amyloid-related imaging abnormalities",
+  "aria-h": "amyloid-related imaging abnormalities",
+  "anti-amyloid antibody": "anti-amyloid monoclonal antibody",
+  "anti-amyloid antibodies": "anti-amyloid monoclonal antibody",
+  "apoe4": "ApoE ε4",
+  "apoe e4": "ApoE ε4",
+  "apolipoprotein e4": "ApoE ε4",
+  "blood-based biomarkers": "blood-based biomarker",
+  "excitotoxic": "excitotoxicity"
 };

@@ -205,5 +205,55 @@ KS.lookalikes = [
       { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" },
       { ch: "ch07", sec: "s7-other", label: "Other depressive disorders" }
     ]
+  },
+  {
+    id: "dementia-drugs",
+    title: "Donepezil, rivastigmine, galantamine and memantine",
+    summary: "Four symptomatic dementia drugs that differ in stage, dosing, side effects and interactions.",
+    items: ["Donepezil", "Rivastigmine", "Galantamine", "Memantine"],
+    rows: [
+      ["How it works", "**CNS-selective** acetylcholinesterase inhibitor", "Acetyl- and **butyryl**cholinesterase inhibitor; more peripheral activity", "Acetylcholinesterase inhibitor; daffodil alkaloid", "**NMDA antagonist** (low to moderate affinity)"],
+      ["Stage (book)", "Mild to moderate (severe too since 2006)", "Mild to moderate; **Parkinson disease dementia**", "Mild to moderate", "**Moderate to severe**"],
+      ["Half-life and dosing", "**70 hours**: once at night", "1 hour, acts 10 hours: **twice daily with food**", "About 6 hours: twice daily (ER once daily)", "**60 to 80 hours**: twice daily (XR once daily)"],
+      ["Start and target", "5 mg, then **10 mg** after 4 weeks", "1.5 mg twice daily, up to **6 mg twice daily**", "4 mg twice daily, to **16 to 24 mg** a day", "5 mg, +5 mg weekly to **10 mg twice daily**"],
+      ["Elimination and interactions", "**CYP2D6 and 3A4**", "Mostly unbound: **no significant** interactions", "**CYP2D6 and 3A4**", "**Kidneys**, unchanged; accumulates in **alkaline urine**"],
+      ["Typical side effects", "Fewest GI effects; bradycardia, syncope, weight loss", "**Most GI effects** (nausea 48% at 6 to 12 mg)", "Dizziness, headache, GI effects", "Dizziness, headache, **constipation**, confusion"],
+      ["Other forms (post-publication)", "23 mg tablet; **weekly patch**", "**Daily patch**", "US brand **Razadyne**", "XR 28 mg; combined capsule with donepezil"]
+    ],
+    keys: [
+      "Stage first: cholinesterase inhibitor for **mild to moderate**, memantine for **moderate to severe**.",
+      "Many other drugs? **Rivastigmine** (no significant interactions). Simple dosing? **Donepezil** (once at night).",
+      "Kidney disease or alkaline urine points to trouble with **memantine**; heart block or syncope to trouble with **cholinesterase inhibitors**."
+    ],
+    links: [
+      { ch: "ch21-8", sec: "s218-pk", label: "Pharmacokinetics" },
+      { ch: "ch21-8", sec: "s218-int", label: "Drug interactions" },
+      { ch: "ch21-8", sec: "s218-dose", label: "Dosing the cholinesterase inhibitors" },
+      { ch: "ch21-8", sec: "s218-mem-dose", label: "Memantine dosing" },
+      { ch: "ch03", sec: "s3-dem-treat", label: "Treating dementia" }
+    ]
+  },
+  {
+    id: "anti-amyloid",
+    title: "Lecanemab and donanemab (post-publication)",
+    summary: "Two anti-amyloid antibodies for early Alzheimer disease with similar eligibility but different dosing and stopping rules.",
+    items: ["Lecanemab (Leqembi)", "Donanemab (Kisunla)"],
+    rows: [
+      ["Target", "Soluble amyloid-β **protofibrils** and plaques", "Deposited **plaque** (pyroglutamate amyloid)"],
+      ["Approved", "2023 (traditional approval July 6, 2023)", "July 2024"],
+      ["Eligibility", "MCI or mild dementia with **confirmed amyloid**", "MCI or mild dementia with **confirmed amyloid**"],
+      ["Dosing", "**10 mg/kg IV every 2 weeks**; after 18 months, every 4 weeks IV or **360 mg subcutaneous weekly**", "IV **every 4 weeks**: 350, 700, 1,050, then 1,400 mg"],
+      ["Stopping", "Continued", "Can **stop when amyloid is minimal** on PET"],
+      ["ARIA", "Boxed warning; MRI monitoring", "Boxed warning; gentler titration (2025) cut ARIA-E to about 14%"]
+    ],
+    keys: [
+      "Both need **confirmed amyloid**, a **baseline MRI** and **ApoE ε4** testing; ARIA risk is highest in ε4 homozygotes and with anticoagulants.",
+      "Every **2 weeks** and a home **subcutaneous** option: lecanemab. Every **4 weeks** with a **stop** rule: donanemab."
+    ],
+    links: [
+      { ch: "ch21-8", sec: "s218-amyloid", label: "Anti-amyloid antibodies" },
+      { ch: "ch21-8", sec: "s218-mci", label: "Mild cognitive impairment" }
+    ],
+    source: "FDA, FDA converts novel Alzheimer's disease treatment to traditional approval, July 6, 2023; HCPLive, FDA approves subcutaneous lecanemab, August 29, 2025; NeurologyLive, FDA approves updated label for donanemab, July 2025"
   }
 ];

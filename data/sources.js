@@ -133,6 +133,27 @@
     { m: 'pharmacological treatment of alcohol use disorder', label: 'APA alcohol use disorder guideline (2018), summary', url: 'https://psychopharmacologyinstitute.com/publication/2018-apa-alcohol-use-disorder-guideline-summary-of-recommendations-2238/' },
     { m: 'lofexidine (Lucemyra)', label: 'Drugs.com: Lucemyra approval history', url: 'https://www.drugs.com/history/lucemyra.html' },
     { m: 'lofexidine (Lucemyra)', label: 'Label: lofexidine (DailyMed)', url: DM('lofexidine') },
-    { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' }
+    { m: 'Delirium, 2nd edition', label: 'APA delirium guideline (2025)', url: 'https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines/delirium' },
+    { m: "LiverTox: Tacrine", label: "LiverTox: Tacrine (NIH)", url: "https://www.ncbi.nlm.nih.gov/books/NBK547868/" },
+    { m: "Galantamine prescribing information", label: "Label: galantamine (DailyMed)", url: DM('galantamine') },
+    { m: "rivastigmine prescribing information", label: "Label: rivastigmine (DailyMed)", url: DM('rivastigmine') },
+    { m: "Memantine prescribing information", label: "Label: memantine (DailyMed)", url: DM('memantine') },
+    { m: "Namenda XR prescribing information", label: "Drugs.com: Namenda XR prescribing information", url: "https://www.drugs.com/pro/namenda-xr.html" },
+    { m: "Alzforum: donepezil", label: "Alzforum: donepezil (Aricept)", url: "https://alzforum.org/node/1915" },
+    { m: "US clears Exelon for Parkinson", label: "PharmaTimes: US clears Exelon for Parkinson's dementia (2006)", url: "https://pharmatimes.com/?p=17708" },
+    { m: "Reminyl renamed in USA", label: "PharmaTimes: Reminyl renamed in USA (2005)", url: "https://pharmatimes.com/?p=16063" },
+    { m: "FDA approves new Alzheimer's medication, December 29, 2014", label: "Psychiatric News: FDA approves Namzaric (2014)", url: "https://alert.psychnews.org/2014/12/fda-approves-new-alzheimers-medication.html" },
+    { m: "Adlarity approval history", label: "Drugs.com: Adlarity approval history", url: "https://www.drugs.com/history/adlarity.html" },
+    { m: "Biogen discontinues Aduhelm", label: "Pharmaceutical Commerce: Biogen discontinues Aduhelm (2024)", url: "https://www.pharmaceuticalcommerce.com/view/biogen-discontinues-maligned-alzheimer-disease-treatment-aduhelm" },
+    { m: "FDA converts novel Alzheimer's disease treatment to traditional approval", label: "FDA: lecanemab traditional approval (July 2023)", url: "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval" },
+    { m: "FDA approves subcutaneous lecanemab", label: "HCPLive: subcutaneous lecanemab approved (Aug 2025)", url: "https://www.hcplive.com/view/fda-approves-subcutaneous-lecanemab-irmb-leqembi-for-early-alzheimer-disease" },
+    { m: "FDA approves updated label for donanemab", label: "NeurologyLive: donanemab label update (July 2025)", url: "https://www.neurologylive.com/view/fda-approves-updated-label-alzheimer-therapy-donanemab-lower-aria-e-risk" },
+    { m: "FDA clears first blood test to help diagnose Alzheimer disease", label: "HMP Global: first Alzheimer blood test cleared (May 2025)", url: "https://www.hmpgloballearningnetwork.com/site/pcn/news/fda-clears-first-blood-test-help-diagnose-alzheimer-disease" },
+    { m: "guideline on blood-based biomarker tests", label: "Patient Care: Alzheimer's Association blood biomarker guideline (2025)", url: "https://www.patientcareonline.com/view/alzheimer-s-association-releases-first-clinical-guideline-on-use-of-blood-based-biomarker-tests" },
+    { m: "Practice guideline update summary: mild cognitive impairment", label: "AAN guideline: mild cognitive impairment (2018), PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/29282327/" },
+    { m: "agitation symptoms associated with dementia due to Alzheimer's disease", label: "BioSpace: brexpiprazole approved for Alzheimer agitation (2023)", url: "https://www.biospace.com/fda-approves-first-drug-to-treat-agitation-symptoms-associated-with-dementia-due-to-alzheimer-s-disease" },
+    { m: "Lecanemab prescribing information", label: "Label: lecanemab (DailyMed)", url: DM('lecanemab') },
+    { m: "Donanemab prescribing information", label: "Label: donanemab (DailyMed)", url: DM('donanemab') },
+    { m: "Donepezil prescribing information", label: "Label: donepezil (DailyMed)", url: DM('donepezil') }
   ];
 })();

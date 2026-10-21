@@ -146,6 +146,10 @@ KS.manifest = [
     summary: 'Methadone, buprenorphine and tramadol; naltrexone, nalmefene and naloxone with the naloxone challenge and rapid detoxification; disulfiram and acamprosate; and clonidine and guanfacine, with post-publication updates on prescribing rules, long-acting buprenorphine, fentanyl-era induction, pregnancy, over-the-counter naloxone, lofexidine and the alcohol guideline.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch21-8', number: '21.8', title: 'Drugs Used for Cognitive Enhancement', short: 'Cognitive enhancers',
+    summary: 'Donepezil, rivastigmine, galantamine and tacrine, and memantine for Alzheimer disease and other dementias, with post-publication updates on approvals for severe disease and Parkinson disease dementia, patches and combination products, label dose corrections, anti-amyloid antibodies and ARIA, blood tests, mild cognitive impairment and agitation.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
@@ -169,5 +173,6 @@ KS.extraFiles = [
   'data/drugs/hypnotics.js',
   'data/drugs/stimulants.js',
   'data/drugs/substance.js',
+  'data/drugs/cognitive.js',
   'data/changelog.js'
 ];
