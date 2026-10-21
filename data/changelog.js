@@ -13,6 +13,30 @@
  */
 KS.changelog = [
   {
+    id: 45,
+    date: "2026-10-22",
+    title: "Learning tools for Chapters 8 to 11",
+    items: [
+      { type: "feature", ch: "ch08", text: "Chapter 8 (anxiety disorders) now has Check yourself questions in every section, a pre-test and post-test, wrong-answer explanations for all 40 cases, board blueprint tags and a visual summary of drug evidence by disorder.", href: "#/c/ch08/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch09", text: "Chapter 9 (obsessive-compulsive and related disorders) now has the same learning tools, with a visual summary of how the five disorders differ.", href: "#/c/ch09/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch10", text: "Chapter 10 (trauma- and stressor-related disorders) now has the same learning tools, with a timeline of the diagnostic time rules after trauma.", href: "#/c/ch10/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch11", text: "Chapter 11 (dissociative disorders) now has the same learning tools, with a visual summary of which functions each disorder disrupts.", href: "#/c/ch11/guide", link: "Open the study guide" }
+    ]
+  },
+  {
+    id: 44,
+    date: "2026-10-22",
+    title: "Chapter 21.8: Drugs Used for Cognitive Enhancement",
+    items: [
+      { type: "chapter", ch: "ch21-8", text: "New section 21.8: donepezil, rivastigmine, galantamine and tacrine, and memantine, covering pharmacology, indications, adverse effects (with Table 21-56), tacrine liver monitoring, interactions, urine pH and dosing. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch21-8/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch21-8", text: "Post-publication updates: donepezil for severe disease, rivastigmine for Parkinson disease dementia and its patch, the Razadyne name, memantine XR and the memantine–donepezil capsule, the weekly donepezil patch, tacrine's withdrawal, label dose corrections for galantamine, rivastigmine and memantine, lecanemab and donanemab with ARIA, Alzheimer blood tests, the mild cognitive impairment guideline and brexpiprazole for agitation.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Choosing a cognitive enhancer.", href: "#/helpers/cogmed", link: "Open the helper" },
+      { type: "feature", text: "Drug reference: 8 cognitive enhancers and anti-amyloid antibodies, with drills and a class PDF.", href: "#/drugs", link: "Open drugs" },
+      { type: "feature", text: "New look-alikes: the four symptomatic dementia drugs; and lecanemab versus donanemab.", href: "#/compare/ch/ch21-8", link: "Open look-alikes" },
+      { type: "update", ch: "ch03", text: "Chapter 3's dementia treatment section now notes tacrine's withdrawal, newer approvals, anti-amyloid antibodies and brexpiprazole for agitation.", href: "#/c/ch03/guide/s3-dem-treat", link: "See the update" }
+    ]
+  },
+  {
     id: 43,
     date: "2026-10-22",
     title: "Learning tools for Chapters 5, 6 and 7",
