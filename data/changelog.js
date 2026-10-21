@@ -13,6 +13,15 @@
  */
 KS.changelog = [
   {
+    id: 41,
+    date: "2026-10-21",
+    title: "Look-alikes in the main menu, with PDF reviewers",
+    items: [
+      { type: "feature", text: "Look-alikes is now in the top navigation and under Study tools in the menu, which now lists the study tools before the chapters. Filter comparisons by chapter or search them.", href: "#/compare", link: "Open look-alikes" },
+      { type: "feature", text: "Download look-alikes as a landscape PDF reviewer, as an answer key or a blank worksheet to fill in, one at a time, by chapter or all together. Also on the All high-yield (PDF) page.", href: "#/all-highyield", link: "Open the PDF page" }
+    ]
+  },
+  {
     id: 40,
     date: "2026-10-21",
     title: "New ways to learn: checks, pre-tests, look-alikes, shareable quizzes and read aloud",

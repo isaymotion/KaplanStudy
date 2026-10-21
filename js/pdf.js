@@ -429,6 +429,134 @@
     return buildFlowDocument(P.paper, classes, P.attribution, 'DRUG CLASS SHEET', title);
   };
 
+  /* ---- look-alikes reviewer: landscape comparison tables, as an answer key or a blank worksheet.
+     Public: KS.lookalikePdf({ paper, blank, items:[{ title, summary, items, rows, keys, readMore, chapters }], attribution, title }) -> Blob|null
+     Each comparison starts a new page; long tables continue with the header row repeated. With more than one
+     comparison a contents page comes first. Worksheets keep the features and headings and leave the cells empty. */
+  var TINT = [236, 238, 248], WHITE = [255, 255, 255], RULE = [200, 204, 222];
+  function latin(str) { var o = ''; for (var i = 0; i < str.length; i++) o += mapChar(str.charAt(i)).ch; return o; }
+  function firstFontOf(family, bold) { return family === 'H' ? (bold ? 'HB' : 'H') : (bold ? 'TB' : 'T'); }
+  function lines(text, family, bold, size, width) { return wrap(words(String(text == null ? '' : text), family, bold), size, width, family, firstFontOf(family, bold)); }
+  function drawLines(page, ls, family, bold, size, color, x, y, lh, width, align) {
+    ls.forEach(function (ln, k) { drawLine(page, ln, x, y + k * lh + lh * 0.78, size, color, false, width, align || 'left', firstFontOf(family, bold)); });
+    return ls.length * lh;
+  }
+
+  KS.lookalikePdf = function (P) {
+    var list = (P.items || []).filter(function (x) { return x.rows && x.rows.length; });
+    if (!list.length) return null;
+    var base = PAGES[P.paper] || PAGES.letter, pg = { w: base.h, h: base.w, m: base.m }, m = pg.m, W = pg.w - 2 * m;
+    var blank = !!P.blank, kind = blank ? 'WORKSHEET' : 'ANSWER KEY';
+    var footH = 2 * MM + 1.6 * MM + 6.5 * 1.3, bottom = pg.h - m - footH - 2 * MM;
+    var S = 8.8, LH = S * 1.3, PAD = 4.5, HS = 8.6, TS = 15;
+    var PG = [];
+    function newPage() { var p = new Page(pg.h); PG.push(p); return p; }
+    function header(p, title, sub) {
+      p.text('HB', 7, RED, m, m + 6, latin('LOOK-ALIKES ' + String.fromCharCode(183) + ' ' + kind), 0.56);
+      var y = m + 7 + 1 * MM;
+      y += drawLines(p, lines(title, 'H', true, TS, W), 'H', true, TS, NAVY, m, y, TS * 1.15, W);
+      if (sub) { y += 1.2 * MM; y += drawLines(p, lines(sub, 'H', false, 8.5, W), 'H', false, 8.5, GRAY, m, y, 8.5 * 1.35, W); }
+      y += 2 * MM; p.rect(m, y, W, 1.2, NAVY);
+      return y + 1.2 + 3.5 * MM;
+    }
+    var starts = [];
+    list.forEach(function (it) {
+      var nC = it.items.length + 1, fw = Math.min(Math.max(118, W * 0.19), W * 0.3), cw = (W - fw) / (nC - 1);
+      var xs = [m]; for (var c = 1; c < nC; c++) xs.push(m + fw + (c - 1) * cw);
+      function widthOf(c) { return (c === 0 ? fw : cw) - 2 * PAD; }
+      var headCells = ['Feature'].concat(it.items).map(function (t, c) { return lines(t, 'H', true, HS, widthOf(c)); });
+      var headH = Math.max.apply(null, headCells.map(function (l) { return l.length; })) * HS * 1.25 + 2 * PAD;
+      function drawHead(p, y) {
+        p.rect(m, y, W, headH, NAVY);
+        headCells.forEach(function (l, c) { drawLines(p, l, 'H', true, HS, WHITE, xs[c] + PAD, y + PAD, HS * 1.25, widthOf(c)); });
+        return y + headH;
+      }
+      var p = newPage(); starts.push(PG.length);
+      var y = header(p, it.title, it.summary);
+      y = drawHead(p, y);
+      var tableTop = y;
+      function closeGrid(p, top, bot) {
+        for (var c = 1; c < nC; c++) p.rect(xs[c] - 0.25, top, 0.5, bot - top, RULE);
+        p.rect(m, top, 0.5, bot - top, RULE); p.rect(m + W - 0.5, top, 0.5, bot - top, RULE);
+        p.rect(m, bot - 0.5, W, 0.5, RULE);
+      }
+      it.rows.forEach(function (r) {
+        var cells = r.map(function (t, c) { return c === 0 ? lines(t, 'H', true, S, widthOf(c)) : lines(t, 'T', false, S, widthOf(c)); });
+        var n = Math.max.apply(null, cells.map(function (l) { return l.length; }));
+        var rh = n * LH + 2 * PAD;
+        if (blank) rh = Math.max(rh, 2.8 * LH + 2 * PAD);
+        if (y + rh > bottom && y > tableTop + 1) {
+          closeGrid(p, tableTop, y);
+          p = newPage(); y = header(p, it.title + ' (continued)'); y = drawHead(p, y); tableTop = y;
+        }
+        p.rect(m, y + 0.3, fw, rh - 0.6, TINT);
+        cells.forEach(function (l, c) {
+          if (c === 0) drawLines(p, l, 'H', true, S, NAVY, xs[c] + PAD, y + PAD, LH, widthOf(c));
+          else if (!blank) drawLines(p, l, 'T', false, S, INK, xs[c] + PAD, y + PAD, LH, widthOf(c));
+        });
+        p.rect(m, y + rh - 0.25, W, 0.5, RULE);
+        y += rh;
+      });
+      closeGrid(p, tableTop, y);
+      y += 5 * MM;
+      // how to tell them apart
+      var keys = it.keys || [];
+      if (keys.length) {
+        var kl = keys.map(function (k) { return lines(k, 'T', false, 9.2, W - 12); });
+        var need = 11 * 1.3 + 2 * MM + (blank ? (keys.length + 1) * 18 : kl.reduce(function (a, l) { return a + l.length * 9.2 * 1.35 + 3; }, 0));
+        if (y + Math.min(need, 120) > bottom) { p = newPage(); y = header(p, it.title + ' (continued)'); }
+        y += drawLines(p, lines('How to tell them apart', 'H', true, 11, W), 'H', true, 11, NAVY, m, y, 11 * 1.3, W);
+        p.rect(m, y + 0.8, 80, 0.8, ORANGE); y += 2 * MM;
+        if (blank) {
+          for (var q = 0; q <= keys.length; q++) {
+            if (y + 18 > bottom) { p = newPage(); y = header(p, it.title + ' (continued)'); }
+            y += 18; p.rect(m, y, W, 0.5, RULE);
+          }
+        } else {
+          kl.forEach(function (l) {
+            var h = l.length * 9.2 * 1.35;
+            if (y + h > bottom) { p = newPage(); y = header(p, it.title + ' (continued)'); }
+            p.text('T', 9.2, ORANGE, m + 1, y + 9.2 * 1.35 * 0.78, '\x95');
+            drawLines(p, l, 'T', false, 9.2, INK, m + 12, y, 9.2 * 1.35, W - 12);
+            y += h + 3;
+          });
+        }
+        y += 3 * MM;
+      }
+      if (it.readMore) {
+        var rl = lines('Read more: ' + it.readMore, 'H', false, 7.5, W);
+        if (y + rl.length * 7.5 * 1.4 <= bottom) drawLines(p, rl, 'H', false, 7.5, GRAY, m, y, 7.5 * 1.4, W);
+        else if (!blank) { p = newPage(); y = header(p, it.title + ' (continued)'); drawLines(p, rl, 'H', false, 7.5, GRAY, m, y, 7.5 * 1.4, W); }
+      }
+    });
+    // contents page
+    if (list.length > 1) {
+      var cp = new Page(pg.h);
+      var y = header(cp, P.title || 'Look-alikes reviewer', blank
+        ? 'Worksheet: for each comparison, fill in every cell and write how to tell the conditions apart, then check against the answer key.'
+        : 'Answer key: side-by-side comparisons of conditions that are easy to confuse, with how to tell them apart.');
+      y += drawLines(cp, lines('Contents', 'H', true, 11, W), 'H', true, 11, NAVY, m, y, 11 * 1.3, W) + 2 * MM;
+      list.forEach(function (it, i) {
+        var label = it.title + (it.chapters ? '  (' + it.chapters + ')' : '');
+        var tl = lines(label, 'H', false, 9.5, W - 60);
+        if (y + tl.length * 9.5 * 1.4 > bottom) return;
+        drawLines(cp, tl, 'H', false, 9.5, INK, m, y, 9.5 * 1.4, W - 60);
+        drawLine(cp, words(String(starts[i] + 1), 'H'), m, y + 9.5 * 1.4 * 0.78, 9.5, NAVY, false, W, 'right', 'H');
+        y += tl.length * 9.5 * 1.4;
+        cp.rect(m, y + 1.5, W, 0.4, SEP); y += 5;
+      });
+      PG.unshift(cp);
+    }
+    var total = PG.length, attr = latin(P.attribution || '');
+    PG.forEach(function (p, i) {
+      var fy = pg.h - m - footH;
+      p.rect(m, fy + 2 * MM, W, 0.5, FOOT);
+      p.text('H', 6.5, GRAY, m, fy + 2 * MM + 1.6 * MM + 6.5 * 1.3 * 0.78, attr);
+      drawLine(p, words('Page ' + (i + 1) + ' of ' + total, 'H'), m, fy + 2 * MM + 1.6 * MM + 6.5 * 1.3 * 0.78, 6.5, GRAY, false, W, 'right', 'H');
+    });
+    return assemble(PG.map(function (p) { return p.s; }), pg, P.title || ('Look-alikes ' + (blank ? 'worksheet' : 'answer key')));
+  };
+
   KS.handoutPdf = function (P) {
     var g = geometry(P);
     if (!P.groups.length || !P.groups.every(function (x) { return x.length; })) return null;

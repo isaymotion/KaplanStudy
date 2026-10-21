@@ -431,7 +431,7 @@
       case 'whats-new': return renderNews();
       case 'all-highyield': return renderAllHighYield();
       case 'quiz': return renderQuiz(p);
-      case 'compare': return p[1] ? renderCompare(p[1]) : renderCompareList();
+      case 'compare': return p[1] === 'ch' ? renderCompareList(p[2]) : p[1] ? renderCompare(p[1]) : renderCompareList();
       case 'c':
         var ch = chapter(p[1]);
         if (!ch) return renderMissing();
@@ -720,7 +720,7 @@
     var g = ch.guide;
     var intro = '<p class="reading__intro">' + fmt(g.intro) + '</p>' +
       (g.objectives ? '<div class="objectives"><h2>By the end of this chapter you should be able to</h2><ul>' + g.objectives.map(function (o) { return '<li>' + fmt(o) + '</li>'; }).join('') + '</ul></div>' : '') +
-      prepostHTML(ch);
+      prepostHTML(ch) + chapterLookalikes(ch);
     var html = chapterHead(ch, 'guide') +
       '<div class="wrap guide">' +
         '<nav class="toc" aria-label="Chapter sections">' + tocHTML(ch) + '</nav>' +
@@ -819,6 +819,12 @@
     }
     return ids.map(function (id) { return ch.id + '/cases/' + id; }).filter(function (k) { return CARDS[k]; });
   }
+  function chapterLookalikes(ch) {
+    var list = comparisonsInChapter(ch.id);
+    if (!list.length) return '';
+    return '<p class="g-lookalikes"><b>Look-alikes in this chapter:</b> ' + list.map(function (c) { return '<a href="#/compare/' + c.id + '">' + esc(c.title) + '</a>'; }).join('') +
+      '<a class="g-lookalikes__all" href="#/compare/ch/' + ch.id + '">All, with PDFs</a></p>';
+  }
   function prepostHTML(ch) {
     var keys = pretestKeys(ch);
     if (keys.length < 3) return '';
@@ -853,17 +859,91 @@
 
   /* ---------- look-alikes (comparisons across chapters) ---------- */
   function lookalike(id) { var l = KS.lookalikes || []; for (var i = 0; i < l.length; i++) if (l[i].id === id) return l[i]; return null; }
-  function renderCompareList() {
-    var list = (KS.lookalikes || []).slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
-    var html = '<div class="wrap page">' +
-      '<header class="page__head"><h1>Look-alikes</h1><p>Side-by-side comparisons of conditions that are easy to confuse, with the features that tell them apart and links to the chapters.</p></header>' +
-      (list.length ? '<ul class="cmp-list">' + list.map(function (c) {
-        return '<li><a class="cmp-card" href="#/compare/' + c.id + '"><span class="cmp-card__title">' + esc(c.title) + '</span><span class="cmp-card__meta">' + esc(c.summary || '') + '</span><span class="cmp-card__ch">' +
-          chaptersIn(c).map(function (ch) { return 'Ch ' + ch.number; }).join(' \u00b7 ') + '</span></a></li>';
-      }).join('') + '</ul>' : '<p class="muted">Comparisons are being added chapter by chapter.</p>') +
+  function comparisonsInChapter(chId) { return (KS.lookalikes || []).filter(function (c) { return (c.links || []).some(function (l) { return l.ch === chId; }); }); }
+  function laPrefs() { var p = store.get('laPrefs', {}) || {}; return { paper: PAPER[p.paper] ? p.paper : 'a4', blank: !!p.blank }; }
+  function laPdfItem(c) {
+    var chs = chaptersIn(c);
+    return {
+      title: c.title, summary: c.summary, items: c.items, rows: c.rows, keys: c.keys,
+      chapters: chs.map(function (ch) { return 'Ch ' + ch.number; }).join(', '),
+      readMore: (c.links || []).map(function (l) { var ch = chapter(l.ch); return ch ? 'Chapter ' + ch.number + ', ' + l.label : ''; }).filter(Boolean).join('; ')
+    };
+  }
+  function laFileName(base, blank, paper) { return 'KS-lookalikes-' + base + '-' + (blank ? 'worksheet' : 'answer-key') + '-' + PAPER[paper].label.toLowerCase() + '.pdf'; }
+  /* builds and saves a look-alikes PDF; statusEl shows progress */
+  function laPdf(list, blank, paper, base, statusEl, title) {
+    if (statusEl) { statusEl.className = 'ahy-status'; statusEl.textContent = 'Building the PDF…'; }
+    setTimeout(function () {
+      var blob = window.KS && KS.lookalikePdf && KS.lookalikePdf({ paper: paper, blank: blank, items: list.map(laPdfItem), attribution: ATTRIBUTION, title: title });
+      if (!blob) { if (statusEl) { statusEl.className = 'ahy-status is-warn'; statusEl.textContent = 'Could not build that PDF.'; } return; }
+      savePdf(blob, laFileName(base, blank, paper));
+      if (statusEl) statusEl.textContent = '';
+    }, 10);
+  }
+  function laSeg(name, opts, cur) {
+    return '<div class="seg" role="radiogroup">' + opts.map(function (o) {
+      return '<label><input type="radio" name="' + name + '" value="' + o[0] + '"' + (String(o[0]) === String(cur) ? ' checked' : '') + '><span>' + o[1] + '</span></label>';
+    }).join('') + '</div>';
+  }
+  function renderCompareList(chFilter) {
+    var all = (KS.lookalikes || []).slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
+    var pr = laPrefs();
+    var chs = allChapters().filter(function (ch) { return comparisonsInChapter(ch.id).length; }).sort(function (a, b) { return a.number - b.number; });
+    if (chFilter && !chapter(chFilter)) chFilter = '';
+    var html = '<div class="wrap page cmp-page">' +
+      '<header class="page__head"><h1>Look-alikes</h1><p>Side-by-side comparisons of conditions that are easy to confuse, with the features that tell them apart and links to the chapters. Download any of them as a landscape PDF, as an answer key or a blank worksheet to fill in.</p></header>' +
+      (all.length ? '<div class="cmp-tools no-print">' +
+        '<label class="cmp-tools__field"><span>Chapter</span><select id="cmp-ch"><option value="">All chapters (' + all.length + ')</option>' + chs.map(function (ch) {
+          return '<option value="' + ch.id + '"' + (ch.id === chFilter ? ' selected' : '') + '>Ch ' + ch.number + ': ' + esc(ch.short || ch.title) + ' (' + comparisonsInChapter(ch.id).length + ')</option>';
+        }).join('') + '</select></label>' +
+        '<label class="cmp-tools__field cmp-tools__search"><span>Find</span><input id="cmp-q" type="search" placeholder="Condition or feature" autocomplete="off"></label>' +
+      '</div><p class="cmp-count" id="cmp-count" aria-live="polite"></p>' +
+      '<ul class="cmp-list">' + all.map(function (c) {
+        var txt = plain(c.title + ' ' + (c.summary || '') + ' ' + c.items.join(' ') + ' ' + c.rows.map(function (r) { return r.join(' '); }).join(' ')).toLowerCase();
+        return '<li class="cmp-item" data-id="' + c.id + '" data-chs="' + chaptersIn(c).map(function (ch) { return ch.id; }).join(' ') + '" data-text="' + esc(txt) + '">' +
+          '<a class="cmp-card" href="#/compare/' + c.id + '"><span class="cmp-card__title">' + esc(c.title) + '</span><span class="cmp-card__meta">' + esc(c.summary || '') + '</span>' +
+          '<span class="cmp-card__ch">' + chaptersIn(c).map(function (ch) { return 'Ch ' + ch.number; }).join(' · ') + ' · ' + plural(c.items.length, 'condition') + '</span></a>' +
+          '<div class="cmp-item__pdf"><button class="btn btn--small" type="button" data-la="' + c.id + '" data-blank="0">Answer key PDF</button><button class="btn btn--small" type="button" data-la="' + c.id + '" data-blank="1">Worksheet PDF</button></div></li>';
+      }).join('') + '</ul>' +
+      '<section class="handout-tools cmp-pdf no-print" aria-labelledby="cmp-pdf-h"><h2 id="cmp-pdf-h">Look-alikes reviewer (PDF)</h2>' +
+        '<p class="muted">One landscape page per comparison, with a contents page. The answer key fills every cell; the worksheet keeps the features and headings and leaves the cells and the <i>how to tell them apart</i> lines blank.</p>' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Version</span>' + laSeg('la-ver', [['0', 'Answer key'], ['1', 'Blank worksheet']], pr.blank ? '1' : '0') + '</div>' +
+        '<div class="handout-tools__row"><span class="handout-tools__label">Paper</span>' + laSeg('la-paper', [['a4', 'A4'], ['letter', 'Letter']], pr.paper) + '</div>' +
+        '<div class="handout-tools__go"><button class="btn btn--solid" type="button" id="la-all"></button><p class="ahy-status" id="la-status" aria-live="polite"></p></div>' +
+      '</section>'
+      : '<p class="muted">Comparisons are being added chapter by chapter.</p>') +
       '</div>';
     setView('compare', html);
     document.title = 'Look-alikes — K&S Study Companion';
+    if (!all.length) return;
+    var sel = main.querySelector('#cmp-ch'), q = main.querySelector('#cmp-q'), status = main.querySelector('#la-status'), go = main.querySelector('#la-all');
+    function shown() {
+      var ch = sel.value, t = q.value.trim().toLowerCase(), out = [];
+      main.querySelectorAll('.cmp-item').forEach(function (li) {
+        var ok = (!ch || (' ' + li.getAttribute('data-chs') + ' ').indexOf(' ' + ch + ' ') > -1) && (!t || li.getAttribute('data-text').indexOf(t) > -1);
+        li.hidden = !ok; if (ok) out.push(lookalike(li.getAttribute('data-id')));
+      });
+      return out;
+    }
+    function paint() {
+      var list = shown(), c = sel.value ? chapter(sel.value) : null;
+      main.querySelector('#cmp-count').textContent = list.length === all.length ? plural(all.length, 'comparison') : plural(list.length, 'comparison') + ' of ' + all.length + (c ? ' in Chapter ' + c.number : '');
+      go.textContent = list.length === all.length ? 'Create PDF of all ' + plural(all.length, 'comparison') : 'Create PDF of the ' + plural(list.length, 'comparison') + ' shown';
+      go.disabled = !list.length;
+    }
+    sel.addEventListener('change', function () { history.replaceState(history.state, '', sel.value ? '#/compare/ch/' + sel.value : '#/compare'); paint(); });
+    q.addEventListener('input', paint);
+    function savePr(k, v) { var p = store.get('laPrefs', {}) || {}; p[k] = v; store.set('laPrefs', p); }
+    main.querySelectorAll('input[name=la-ver]').forEach(function (i) { i.addEventListener('change', function () { savePr('blank', i.value === '1'); }); });
+    main.querySelectorAll('input[name=la-paper]').forEach(function (i) { i.addEventListener('change', function () { savePr('paper', i.value); }); });
+    go.addEventListener('click', function () {
+      var list = shown(), p = laPrefs(), c = sel.value ? chapter(sel.value) : null;
+      laPdf(list, p.blank, p.paper, c ? 'ch' + c.number : (list.length === all.length ? 'all' : 'selected'), status, c ? 'Chapter ' + c.number + ' look-alikes' : 'Look-alikes reviewer');
+    });
+    main.querySelectorAll('[data-la]').forEach(function (b) {
+      b.addEventListener('click', function () { var c = lookalike(b.getAttribute('data-la')); laPdf([c], b.getAttribute('data-blank') === '1', laPrefs().paper, c.id, status, c.title); });
+    });
+    paint();
   }
   function chaptersIn(c) {
     var seen = {}, out = [];
@@ -883,8 +963,12 @@
         var ch = chapter(l.ch); return ch ? '<li><a href="#/c/' + ch.id + '/guide/' + l.sec + '">Chapter ' + ch.number + ': ' + esc(l.label) + '</a></li>' : '';
       }).join('') + '</ul></section>' : '') +
       '<p class="muted cmp-src">' + esc(c.source || 'Built from Kaplan & Sadock\u2019s Synopsis of Psychiatry, 12th edition.') + '</p>' +
+      '<div class="empty__actions no-print cmp-detail-pdf"><button class="btn" type="button" data-la-one="0">Answer key PDF</button><button class="btn" type="button" data-la-one="1">Worksheet PDF</button><a class="btn" href="#/compare">All look-alikes</a><p class="ahy-status" id="la-status" aria-live="polite"></p></div>' +
       '</div>';
     setView('compare:' + id, html);
+    main.querySelectorAll('[data-la-one]').forEach(function (b) {
+      b.addEventListener('click', function () { laPdf([c], b.getAttribute('data-la-one') === '1', laPrefs().paper, c.id, main.querySelector('#la-status'), c.title); });
+    });
     main.querySelectorAll('.compare').forEach(function (s) { if (DRUG) DRUG.link(s); linkTerms(s); });
     document.title = c.title + ' — K&S Study Companion';
   }
@@ -2160,6 +2244,17 @@
           return '<button class="btn" type="button" data-cls="' + c.id + '">' + esc(c.label) + ' PDF</button>';
         }).join('') + '</div>'
       : '') +
+      ((KS.lookalikes || []).length ?
+        '<h2 class="ahy-subhead">Look-alike PDFs</h2>' +
+        '<p class="ahy-sub">Comparison tables of conditions that are easy to confuse, one landscape page each, as an answer key or a blank worksheet to fill in. <a href="#/compare">Open look-alikes</a></p>' +
+        '<div class="handout-tools no-print">' +
+          '<div class="handout-tools__row"><span class="handout-tools__label">Version</span>' + seg('la-ver', [['0', 'Answer key'], ['1', 'Blank worksheet']], laPrefs().blank ? '1' : '0') + '</div>' +
+          '<div class="handout-tools__go"><button class="btn btn--solid" type="button" id="ahy-la-all">Create PDF of all ' + plural(KS.lookalikes.length, 'comparison') + '</button><p class="ahy-status" id="ahy-la-status" aria-live="polite"></p></div>' +
+        '</div>' +
+        '<div class="ahy-grid">' + chs.filter(function (ch) { return comparisonsInChapter(ch.id).length; }).map(function (ch) {
+          return '<button class="btn" type="button" data-la-ch="' + ch.id + '">Ch ' + ch.number + ' look-alikes (' + comparisonsInChapter(ch.id).length + ')</button>';
+        }).join('') + '</div>'
+      : '') +
     '</div>';
     setView('all-highyield', html);
     document.title = 'All high-yield summaries — K&S Study Companion';
@@ -2194,6 +2289,19 @@
             paper: prefs.paper, chapters: [{ number: ch.number, title: ch.title, highYield: ch.highYield || [] }], attribution: ATTRIBUTION
           });
         }, 'KS-Ch' + ch.number + '-highyield-' + PAPER[prefs.paper].label.toLowerCase() + '.pdf');
+      });
+    });
+    main.querySelectorAll('input[name=la-ver]').forEach(function (i) {
+      i.addEventListener('change', function () { var p = store.get('laPrefs', {}) || {}; p.blank = i.value === '1'; store.set('laPrefs', p); });
+    });
+    var laStatus = main.querySelector('#ahy-la-status'), laAll = main.querySelector('#ahy-la-all');
+    if (laAll) laAll.addEventListener('click', function () {
+      laPdf((KS.lookalikes || []).slice().sort(function (a, b) { return a.title.localeCompare(b.title); }), laPrefs().blank, prefs.paper, 'all', laStatus, 'Look-alikes reviewer');
+    });
+    main.querySelectorAll('[data-la-ch]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ch = chapter(b.getAttribute('data-la-ch'));
+        laPdf(comparisonsInChapter(ch.id), laPrefs().blank, prefs.paper, 'ch' + ch.number, laStatus, 'Chapter ' + ch.number + ' look-alikes');
       });
     });
     var clsAllBtn = main.querySelector('#ahy-cls-all');
@@ -2824,7 +2932,7 @@
      this device (keeping the more advanced record of each card) or replaces everything, and a snapshot taken
      just before makes the last import undoable. */
   var BACKUP_FORMAT = 'ks-study-companion-progress';
-  var BACKUP_TYPES = { srs: 'o', mistakes: 'o', bookmarks: 'o', examHistory: 'a', teachSessions: 'a', newToday: 'o', seenNews: 'n', hyQuiz: 'b', reviewPrefs: 'o', examPrefs: 'o', deckPrefs: 'o', teachPrefs: 'o', handoutPrefs: 'o', glLinks: 'b', theme: 's', prepost: 'o', textSize: 's', ttsRate: 's' };
+  var BACKUP_TYPES = { srs: 'o', mistakes: 'o', bookmarks: 'o', examHistory: 'a', teachSessions: 'a', newToday: 'o', seenNews: 'n', hyQuiz: 'b', reviewPrefs: 'o', examPrefs: 'o', deckPrefs: 'o', teachPrefs: 'o', handoutPrefs: 'o', glLinks: 'b', theme: 's', prepost: 'o', textSize: 's', ttsRate: 's', laPrefs: 'o' };
   var BACKUP_KEYS = Object.keys(BACKUP_TYPES);
   function typeOk(v, t) {
     if (t === 'o') return v && typeof v === 'object' && !Array.isArray(v);
@@ -3191,15 +3299,15 @@
     function build() {
       var cur = currentMode(), mode = cur.mode || MODES[0];
       var list = (KS.manifest || []).slice().sort(function (a, b) { return a.number - b.number; });
-      var html = '<a href="#/"><span class="mn-num" aria-hidden="true">\u2302</span><span class="mn-ch">All chapters (home)</span></a><h2>Chapters</h2>' +
+      var tools = document.querySelector('.sitenav');
+      var toolsHtml = tools ? '<div class="menu-panel__tools"><h2>Study tools</h2>' + Array.prototype.map.call(tools.querySelectorAll('a'), function (a) {
+        return '<a href="' + a.getAttribute('href') + '">' + a.innerHTML.replace(/ data-nav="[^"]*"/g, '') + '</a>';
+      }).join('') + '</div>' : '';
+      var html = '<a href="#/"><span class="mn-num" aria-hidden="true">\u2302</span><span class="mn-ch">All chapters (home)</span></a>' + toolsHtml + '<h2>Chapters</h2>' +
         list.map(function (c) {
           return '<a href="' + modeHref(c, mode) + '"' + (c.id === cur.ch ? ' class="is-current" aria-current="page"' : '') + '><span class="mn-num">' + c.number + '</span><span class="mn-ch">' + esc(c.short || c.title) + '</span></a>';
         }).join('');
-      var tools = document.querySelector('.sitenav');
-      if (tools) html += '<div class="menu-panel__tools"><h2>Study tools</h2>' + Array.prototype.map.call(tools.querySelectorAll('a'), function (a) {
-        return '<a href="' + a.getAttribute('href') + '">' + a.innerHTML.replace(/ data-nav="[^"]*"/g, '') + '</a>';
-      }).join('') + '</div>';
-      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/compare"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Look-alikes</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
+      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
       panel.innerHTML = html;
     }
     function open() {
