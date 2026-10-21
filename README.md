@@ -7,12 +7,19 @@ Each chapter has:
 - **Study guide**: the full chapter reorganized for learning, with comparison tables, duration timelines, chapter case summaries, clinical pearls and exam tips.
 - **High yield**: the facts most likely to appear on exams and boards. Switch on *Hide key facts* to turn every bold fact into a blank for self-testing.
 - **Flashcards** in four decks: **Diagnosis**, **Clinical cases** (single-best-answer vignettes with explanations), **Pharmacology**, and **Foundations** (epidemiology, neurobiology, etiology and psychosocial care). Rate each card *Again*, *Hard*, *Good* or *Easy* and a spaced-repetition schedule brings it back just before you are likely to forget it.
+- **Learning layer** (`data/chNN/learning.js`):
+  - **Check yourself**: two or three retrieval questions at the end of every study-guide section; answer in your head, then open each to check.
+  - **Pre-test and post-test**: the same set of the chapter's clinical cases (8 by default) before and after reading, untimed, with the change in score shown on the study guide. Pre-test answers do not go to Mistakes.
+  - **Wrong-answer explanations**: after answering a clinical case (in a deck, review, mistakes or exam review, and in teaching-mode notes), each wrong choice shows why it is wrong.
+  - **Visual summaries**: heatmaps and chronologies placed in the relevant guide sections.
 - **Search** across every chapter, guide, high-yield list, flashcard and glossary term. Press `/` anywhere to jump to the search box.
 
 Across all chapters:
 
 - **Daily review**: one queue of every card due today from every chapter, followed by new cards up to a daily limit (10, 20, 40 or 80). The home page shows what is due, per chapter.
 - **Board-style exam**: a timed (90 seconds per question) or untimed exam of clinical cases drawn at random from the chapters you pick, with shuffled answer choices, flags and a question navigator. Results show the score by topic (weakest first) and by chapter, with a *Review what I missed* walkthrough. The last 20 exams are kept.
+- **Board domains**: every clinical case is tagged with an ABPN Psychiatry certification content outline (2025) Dimension 2 competency (neuroscience, behavioral and social sciences, clinical aspects, diagnostic procedures, treatment, communication, professionalism, ethics and law, practice-based learning, systems-based practice). Exam mode filters by domain and the results page scores by domain. Tags are automatic from the question wording unless `learning.js` overrides them.
+- **Look-alikes** (`#/compare`, in the menu and on the home page): side-by-side comparisons of conditions that are easy to confuse, across chapters, with how to tell them apart and links to the guide sections. Linked sections show a *Look-alikes* chip.
 - **Mistakes**: every clinical case answered wrong, in a deck, the daily review or an exam, is collected automatically. Answer it correctly to clear it.
 - **Bookmarks**: tap the ribbon beside any study-guide section title to save it. Bookmarked sections are marked in the chapter contents and collected on the Bookmarks page (`#/bookmarks`) in book order, with a preview of each section.
 - **Glossary**: the book's glossary of signs and symptoms (431 terms, definitions written in the app's own words) plus terms defined within the chapters. Glossary terms are underlined with a dotted line throughout the app; tap one to see its definition. This can be switched off on the glossary page.
@@ -41,6 +48,7 @@ Across all chapters:
   - *Managing an agitated patient in the emergency department* (Chapter 25.3): imminent violence and restraint, then the likely cause (delirium or medical illness, alcohol intoxication or withdrawal, stimulants, anticholinergic drugs, psychosis or mania, or unknown) and whether the patient will take oral medication, with Project BETA guidance marked as post-publication.
   - *Which personality disorder?* (Chapter 19): enduring pattern versus medical change or an episode of another disorder, then cluster and core style, with the age rule for antisocial personality disorder and the OCPD versus OCD distinction.
 
+- **Text size and read aloud** (the *Aa* button in the top bar): four text sizes, saved per device, and a read-aloud speed. The speaker beside any study-guide section reads from there to the end of the chapter (and *Listen* on a high-yield page reads the list), highlighting each paragraph, with pause, back, skip and stop. It uses the device's built-in voice and works offline.
 - **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
 
 Progress (review schedule, mistakes, bookmarks, exam history, teaching sessions, settings) is saved in the browser on each device. **Back up progress** (`#/progress`, linked in the footer) exports it to a file and imports it on another device: *Merge* keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions, *Replace* swaps everything, and *Undo last import* restores the device to just before. The home page reminds people with 30 or more reviewed cards to back up once a month.
@@ -56,6 +64,7 @@ For educators:
   - **Facilitator notes**: press N for a side panel, or P (or *Presenter window*) for a separate window that shows live counts, +/- vote buttons, reveal and next/previous controls, and private discussion prompts, so nothing extra appears on the shared screen. Notes are built from each case (prompts by topic, the anchor explanation, a probe for each wrong choice with the most chosen one flagged). A case may carry its own `notes: { ask: [], watch: "", extend: [] }` in its data file, which is shown first.
   - **Session summary**: *End session* (or Finish on the last case) opens a summary with the overall score, score by topic (weakest first) and by chapter, and the questions under 60% with the room's vote spread and the explanation. *Present the ones to revisit* starts a new session from them; *Print or save as PDF* and *Copy as text* are included. The last 10 sessions are kept in the browser and listed on the setup page.
   - Mark the group's answer with a click or A to E, reveal with Space, move with the arrow keys, F toggles full screen, Esc closes. Teaching mode never affects review schedules or mistakes.
+- **Shareable quizzes**: in Exam mode, choose chapters, board domains, the number of questions and timing, then *Share as a quiz link*. The link (and its QR code, drawn on the device, with a download button) gives everyone the same questions in the same order with the same answer order. Exam results also have *Share these questions*. Answers stay on each resident's device.
 - **What's new** (`#/whats-new`, linked in the footer): new chapters, features and corrections. Residents see a notice on the home page and an *Updated* tag on affected chapters until they open the page.
 
 **Chapter navigator**: each chapter page has previous and next buttons and a chapter menu beside *All chapters*. Switching keeps the current mode (study guide, high yield or the same flashcard deck), and the `[` and `]` keys step between chapters.
@@ -109,6 +118,7 @@ js/app.js               Router, study guide, high yield, flashcards and spaced r
 data/chapters.js        Chapter registry and list of shared data files
 data/glossary/          Glossary (g1–g4: book glossary; g5: chapter-defined terms and aliases)
 data/helpers.js         Diagnostic helper decision trees
+data/lookalikes.js      Look-alike comparison pages
 data/changelog.js       What's new entries
 data/ch01/ … data/ch09/ Chapter content
   guide.js              Study guide
@@ -117,16 +127,21 @@ data/ch01/ … data/ch09/ Chapter content
   cards-cases.js        Clinical case deck
   cards-pharm.js        Pharmacology deck
   cards-foundations.js  Foundations deck
+  learning.js           Wrong-answer explanations, section checks, pre-test, board-domain overrides, visual summaries
+js/qr.js                QR code encoder for shareable quizzes (loaded on demand)
 icons/                  App icons (PNG sizes, maskable versions, favicon) and the home page image
 manifest.webmanifest    Install metadata
+tools/validate-learning.js  Checks every chapter's learning layer and reports coverage (Node)
 sw.js                   Offline cache
 ```
 
 ## Adding a chapter
 
-1. Create `data/chNN/` with the same six files as `data/ch05/`, following the same data shapes.
+1. Create `data/chNN/` with the same seven files as `data/ch19/`, following the same data shapes. Every new chapter ships with a complete `learning.js`: a reason for every wrong choice of every clinical case, two or three checks for every guide section, a chosen pre-test and any visual summaries; add look-alike pages for the chapter's commonly confused conditions to `data/lookalikes.js`.
 2. Add an entry to `KS.manifest` in `data/chapters.js` (id, number, title, short title, one-sentence summary, file list).
 3. Change `VERSION` in `sw.js` so returning users get the new content.
+
+Run `node tools/validate-learning.js --strict chNN` before publishing: it checks every explanation lines up with its choices, every section has checks and every look-alike link exists.
 
 Search, the home page, daily review, exam mode and the chapter navigation pick up the new chapter automatically.
 
@@ -137,7 +152,8 @@ To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to
 ### Content conventions
 
 - `**bold**` and `*italic*` are supported in all text. In high-yield items, bold marks the fact that becomes a blank in self-test mode, so bold the answer, not the topic.
-- Study guide block types: `p`, `h`, `list`, `defs`, `table`, `callout` (`pearl`, `exam`, `caution`), `case`, `timeline`, `steps`.
+- Study guide block types: `p`, `h`, `list`, `defs`, `table`, `callout` (`pearl`, `exam`, `caution`), `case`, `timeline`, `steps`, `update`, `heatmap` (`cols`, `rows: [{ label, v: [0–3 per column] }]`, optional `legend`, `note`) and `chronology` (`events: [{ year, label, note }]`). Visual summaries normally go in `learning.js` as `visuals: [{ sec, at, block }]`.
+- In `learning.js`, `whyNot[caseId]` is an array aligned with the case's `choices`, with `""` at the correct answer.
 - Clinical case cards use `choices` and a zero-based `answer` index, plus `why`. Case cards feed exam mode and the mistakes pile, and their `tag` is the topic used in exam scoring.
 - Card `id`s are the key for each card's review schedule, so keep them stable when editing content.
 

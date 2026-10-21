@@ -13,6 +13,18 @@
  */
 KS.changelog = [
   {
+    id: 40,
+    date: "2026-10-21",
+    title: "New ways to learn: checks, pre-tests, look-alikes, shareable quizzes and read aloud",
+    items: [
+      { type: "feature", text: "Every study-guide section can now end with Check yourself questions, and each chapter has a pre-test and post-test so you can see what you learned. Chapter 19 has them first; the other chapters are being filled in.", ch: "ch19", href: "#/c/ch19/guide", link: "Try Chapter 19" },
+      { type: "feature", text: "After a clinical case, each wrong answer now explains why it is wrong (Chapter 19 first, more chapters coming).", ch: "ch19", href: "#/c/ch19/cards/cases", link: "Open Chapter 19 cases" },
+      { type: "feature", text: "Look-alikes: side-by-side comparisons of conditions that are easy to confuse, with links to the chapters.", href: "#/compare", link: "Open look-alikes" },
+      { type: "feature", text: "Exam mode can filter by ABPN board domain, scores your results by domain, and can share a quiz as a link or QR code so everyone gets the same questions.", href: "#/exam", link: "Open exam mode" },
+      { type: "feature", text: "Text size and read aloud: tap Aa in the top bar to change the text size, and the speaker beside any study-guide section to hear it read aloud.", ch: "ch19", href: "#/c/ch19/guide/s19-glance", link: "See the new visual summary" }
+    ]
+  },
+  {
     id: 39,
     date: "2026-10-15",
     title: "Bottom tab bar on phones and tablets",
