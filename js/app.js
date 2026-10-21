@@ -3344,8 +3344,21 @@
 
 
   /* ---------- boot ---------- */
-  function setTopVar() { document.documentElement.style.setProperty('--top', headerH() + 'px'); }
+  /* Keep the top bar usable at every width and text size: when the search box gets too narrow,
+     first hide the brand name, then shorten the links, then move the study-tool links into the menu. */
+  function fitTopbar() {
+    var root = document.documentElement, q = document.querySelector('.search');
+    root.classList.remove('nav-nobrand', 'nav-compact', 'nav-tight');
+    if (!q || window.innerWidth < 1080) return;
+    var steps = ['nav-nobrand', 'nav-compact', 'nav-tight'];
+    for (var i = 0; i < steps.length; i++) {
+      if (q.getBoundingClientRect().width >= 80) return;
+      root.classList.add(steps[i]);
+    }
+  }
+  function setTopVar() { fitTopbar(); document.documentElement.style.setProperty('--top', headerH() + 'px'); }
   window.addEventListener('resize', setTopVar);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setTopVar);
   setTopVar();
   /* ---------- back and forward buttons ----------
      Each history entry the app visits is stamped with its position (history.state.ksIdx), so the

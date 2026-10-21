@@ -1420,3 +1420,11 @@ body.tts-on .site-foot { padding-bottom: calc(80px + env(safe-area-inset-bottom,
 @media print { .checks, .g-listen, .prepost, .g-compare, .tts, .display-panel, .share { display: none !important; } }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hm-3, :root:not([data-theme="light"]) .hm-2 { color: #1A0B0D; } }
 :root[data-theme="dark"] .hm-3, :root[data-theme="dark"] .hm-2 { color: #1A0B0D; }
+
+/* top bar fitting (see fitTopbar in app.js) */
+.nav-nobrand .brand__name { display: none !important; }
+.nav-compact .sitenav .nav-long, .nav-compact .sitenav .nav-full { display: none; }
+.nav-compact .sitenav .nav-short { display: inline; }
+.nav-compact .sitenav a { text-transform: capitalize; padding: 8px 8px; }
+.nav-tight .sitenav { display: none !important; }
+.nav-tight .menu-panel__tools { display: block !important; }
