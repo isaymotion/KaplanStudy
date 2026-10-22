@@ -13,6 +13,29 @@
  */
 KS.changelog = [
   {
+    id: 49,
+    date: "2026-10-22",
+    title: "Learning tools for Sections 21.0 to 21.3",
+    items: [
+      { type: "feature", ch: "ch21-0", text: "Section 21.0 (principles of psychopharmacology) now has Check yourself questions in every section, a pre-test and post-test, wrong-answer explanations for all 27 cases, board blueprint tags and a timeline of when movement side effects appear.", href: "#/c/ch21-0/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch21-1", text: "Section 21.1 (antipsychotics) now has the same learning tools, with a visual summary of second-generation antipsychotic side-effect profiles.", href: "#/c/ch21-1/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch21-2", text: "Section 21.2 (antidepressants) now has the same learning tools, with a visual summary of antidepressant side-effect profiles.", href: "#/c/ch21-2/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch21-3", text: "Section 21.3 (mood stabilizers) now has the same learning tools, with a visual summary of the key risks of each mood stabilizer.", href: "#/c/ch21-3/guide", link: "Open the study guide" }
+    ]
+  },
+  {
+    id: 48,
+    date: "2026-10-22",
+    title: "Chapter 21.10: Drugs Used to Treat the Side Effects of Psychotropic Drugs",
+    items: [
+      { type: "chapter", ch: "ch21-10", text: "New section 21.10: anticholinergics for parkinsonism and dystonia, anticholinergic intoxication and physostigmine, antihistamines, dopamine agonists, levodopa and amantadine, and drugs for psychotropic weight gain. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch21-10/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch21-10", text: "Post-publication updates and corrections: physostigmine's mechanism and dosing, hydroxyzine QT limits, promethazine warnings and doses, ranitidine's withdrawal, dopamine agonist impulse control warnings, the 2024 restless legs guideline, amantadine and influenza, and GLP-1 drugs (liraglutide, semaglutide, tirzepatide), naltrexone–bupropion and olanzapine–samidorphan, with the 2025 HISTORI trial and a 2026 network meta-analysis.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Treating a psychotropic side effect.", href: "#/helpers/sedrug", link: "Open the helper" },
+      { type: "feature", text: "Drug reference: 16 drugs for psychotropic side effects, with drills and a class PDF.", href: "#/drugs", link: "Open drugs" },
+      { type: "feature", text: "New look-alikes: the four antipsychotic movement side effects; and anticholinergic intoxication, serotonin syndrome and NMS.", href: "#/compare/ch/ch21-10", link: "Open look-alikes" }
+    ]
+  },
+  {
     id: 47,
     date: "2026-10-22",
     title: "Learning tools for Chapters 12, 13, 14 and 25.3",
