@@ -13,6 +13,29 @@
  */
 KS.changelog = [
   {
+    id: 47,
+    date: "2026-10-22",
+    title: "Learning tools for Chapters 12, 13, 14 and 25.3",
+    items: [
+      { type: "feature", ch: "ch12", text: "Chapter 12 (somatic symptom and related disorders) now has Check yourself questions in every section, a pre-test and post-test, wrong-answer explanations for all 34 cases, board blueprint tags and a visual summary of intent and motive from somatic symptom disorder to malingering.", href: "#/c/ch12/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch13", text: "Chapter 13 (feeding and eating disorders) now has the same learning tools, with a visual summary for telling the eating disorders apart.", href: "#/c/ch13/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch14", text: "Chapter 14 (elimination disorders) now has the same learning tools, with a timeline of continence milestones and diagnostic ages.", href: "#/c/ch14/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch25-3", text: "Section 25.3 (psychiatric emergencies) now has the same learning tools, with a visual summary of choosing a drug for agitation by cause.", href: "#/c/ch25-3/guide", link: "Open the study guide" }
+    ]
+  },
+  {
+    id: 46,
+    date: "2026-10-22",
+    title: "Chapter 21.9: Drugs Used to Treat Sexual Disorders",
+    items: [
+      { type: "chapter", ch: "ch21-9", text: "New section 21.9: sildenafil, vardenafil and tadalafil (the erectile cascade, pharmacokinetics, cardiac risk and nitrates, vision and hearing effects, interactions and dosing), phenylephrine for priapism, and yohimbine. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch21-9/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch21-9", text: "Post-publication updates and corrections: amyl nitrite (not nitrate), riociguat and nitrate timing, hearing loss labeling (2007), priapism warnings and the 2022 guideline doses, avanafil and other approvals, evidence in women on antidepressants, yohimbe supplements, and flibanserin and bremelanotide for low sexual desire in women.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Choosing a drug for a sexual problem.", href: "#/helpers/sexmed", link: "Open the helper" },
+      { type: "feature", text: "Drug reference: 8 drugs for sexual disorders, with drills and a class PDF.", href: "#/drugs", link: "Open drugs" },
+      { type: "feature", text: "New look-alikes: the four PDE-5 inhibitors; and flibanserin versus bremelanotide.", href: "#/compare/ch/ch21-9", link: "Open look-alikes" }
+    ]
+  },
+  {
     id: 45,
     date: "2026-10-22",
     title: "Learning tools for Chapters 8 to 11",
