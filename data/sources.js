@@ -166,6 +166,23 @@
     { m: "Vyleesi approval history", label: "Drugs.com: Vyleesi approval history", url: "https://www.drugs.com/history/vyleesi.html" },
     { m: "Flibanserin prescribing information", label: "Label: flibanserin (DailyMed)", url: DM('flibanserin') },
     { m: "Bremelanotide prescribing information", label: "Label: bremelanotide (DailyMed)", url: DM('bremelanotide') },
-    { m: "Avanafil prescribing information", label: "Label: avanafil (DailyMed)", url: DM('avanafil') }
+    { m: "Avanafil prescribing information", label: "Label: avanafil (DailyMed)", url: DM('avanafil') },
+    { m: "Physostigmine for management of anticholinergic toxidrome", label: "emDocs: physostigmine for anticholinergic toxidrome", url: "https://www.emdocs.net/physostigmine-for-management-of-anticholinergic-toxidrome" },
+    { m: "FDA requests removal of all ranitidine products", label: "Pharmacy Times: FDA requests removal of all ranitidine (April 2020)", url: "https://pharmacytimes.com/view/fda-requests-removal-of-all-ranitidine-products-from-us-market" },
+    { m: "effects on heart rhythm with hydroxyzine-containing medicines", label: "EMA: hydroxyzine heart rhythm restrictions (2015)", url: "https://www.ema.europa.eu/en/news/new-restrictions-minimise-risks-effects-heart-rhythm-hydroxyzine-containing-medicines" },
+    { m: "promethazine FDA alerts", label: "Drugs.com: promethazine FDA alerts", url: "https://drugs.com/fda-alerts/1949-0.html" },
+    { m: "AASM updates clinical guidelines for restless legs syndrome", label: "HCPLive: AASM restless legs guideline (2024)", url: "https://www.hcplive.com/view/aasm-updates-clinical-guidelines-restless-legs-syndrome" },
+    { m: "Pramipexole prescribing information", label: "Label: pramipexole (DailyMed)", url: DM('pramipexole') },
+    { m: "ropinirole prescribing information", label: "Label: ropinirole (DailyMed)", url: DM('ropinirole') },
+    { m: "antiviral drug resistance among influenza viruses", label: "CDC: antiviral drug resistance among influenza viruses", url: "https://www.cdc.gov/flu/hcp/antivirals/antiviral-drug-resistance.html" },
+    { m: "Larsen JR et al., liraglutide", label: "PubMed: liraglutide in antipsychotic-treated patients (JAMA Psychiatry 2017)", url: "https://pubmed.ncbi.nlm.nih.gov/28601891/" },
+    { m: "semaglutide injections boost metabolic health in schizophrenia", label: "Epocrates: HISTORI semaglutide trial in schizophrenia (2025)", url: "https://epocrates.com/online/article/semaglutide-shows-promise-for-weight-glucose-control-in-schizophrenia" },
+    { m: "FDA approves diabetes drug tirzepatide for chronic weight management", label: "AJMC: tirzepatide approved for weight (Nov 2023)", url: "https://ajmc.com/view/fda-approves-diabetes-drug-tirzepatide-for-chronic-weight-management" },
+    { m: "FDA adds another weight loss drug to the US market (Contrave)", label: "Pharmaceutical Journal: Contrave approved (2014)", url: "https://pharmaceutical-journal.com/article/news/fda-adds-another-weight-loss-drug-to-the-us-market" },
+    { m: "network meta-analysis of interventions for antipsychotic-induced weight gain", label: "Consultant360: network meta-analysis of weight interventions (JAMA Psychiatry 2026)", url: "https://www.consultant360.com/exclusive/semaglutide-associated-largest-weight-reduction-patients-schizophrenia-spectrum-disorders" },
+    { m: "no signs of link between GLP-1s and suicidal thoughts", label: "TCTMD: FDA finds no link between GLP-1s and suicidality (Jan 2024)", url: "https://www.tctmd.com/news/fda-no-signs-link-between-glp-1s-and-suicidal-thoughts-actions" },
+    { m: "Lybalvi approval history", label: "Drugs.com: Lybalvi approval history", url: "https://drugs.com/history/lybalvi.html" },
+    { m: "Wegovy prescribing information", label: "Label: semaglutide (DailyMed)", url: DM('semaglutide') },
+    { m: "FDA approves new drug treatment for chronic weight management, first since 2014", label: "BioSpace: FDA approves Wegovy (June 2021)", url: "https://www.biospace.com/fda-approves-new-drug-treatment-for-chronic-weight-management-first-since-2014" }
   ];
 })();

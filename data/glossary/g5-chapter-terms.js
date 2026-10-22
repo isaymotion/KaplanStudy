@@ -522,7 +522,11 @@ KS.glossary = (KS.glossary || []).concat([
   ["nonarteritic anterior ischemic optic neuropathy", "Sudden, sometimes permanent vision loss from reduced blood flow to the optic nerve; reported rarely within 24 hours of taking a PDE-5 inhibitor.", "Ch 21.9"],
   ["hypoactive sexual desire disorder", "Persistently deficient sexual thoughts, fantasies or desire causing distress; flibanserin and bremelanotide are approved for the acquired, generalized form in premenopausal women.", "Ch 21.9"],
   ["erectile disorder", "Persistent difficulty obtaining or maintaining an erection, or reduced rigidity, during sexual activity; causes are organic, psychogenic or mixed.", "Ch 21.9"],
-  ["poppers", "Recreational amyl or other alkyl nitrites inhaled to intensify orgasm; combined with a PDE-5 inhibitor they can cause precipitous hypotension, MI and death.", "Ch 21.9"]
+  ["poppers", "Recreational amyl or other alkyl nitrites inhaled to intensify orgasm; combined with a PDE-5 inhibitor they can cause precipitous hypotension, MI and death.", "Ch 21.9"],
+  ["livedo reticularis", "Purple, net-like mottling of the skin from dilated vessels, seen on the legs in up to 5% of people taking amantadine; it resolves when the drug is stopped.", "Ch 21.10"],
+  ["GLP-1 receptor agonist", "A drug such as liraglutide or semaglutide that mimics glucagon-like peptide 1, increasing satiety and slowing gastric emptying; effective for antipsychotic-induced weight gain.", "Ch 21.10"],
+  ["impulse control disorder (dopamine agonist)", "Pathological gambling, hypersexuality, compulsive shopping or binge eating emerging on dopamine agonists such as pramipexole and ropinirole; ask about them at every visit.", "Ch 21.10"],
+  ["augmentation (restless legs)", "Worsening, earlier and spreading restless legs symptoms caused by long-term dopamine agonist treatment, in about 7% to 10% of patients a year.", "Ch 21.10"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -788,5 +792,10 @@ KS.glossaryAliases = {
   "naion": "nonarteritic anterior ischemic optic neuropathy",
   "hsdd": "hypoactive sexual desire disorder",
   "erectile dysfunction": "erectile disorder",
-  "amyl nitrite": "poppers"
+  "amyl nitrite": "poppers",
+  "anticholinergic delirium": "anticholinergic toxidrome",
+  "glp-1 agonist": "GLP-1 receptor agonist",
+  "glp-1 agonists": "GLP-1 receptor agonist",
+  "glp-1 receptor agonists": "GLP-1 receptor agonist",
+  "impulse control disorders": "impulse control disorder (dopamine agonist)"
 };

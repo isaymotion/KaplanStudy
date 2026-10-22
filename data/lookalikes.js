@@ -301,5 +301,54 @@ KS.lookalikes = [
       { ch: "ch21-9", sec: "s219-women", label: "Low sexual desire in women" }
     ],
     source: "Pharmacy Times, FDA orders safety labeling changes for female sexual dysfunction therapy, April 2019; Drugs.com, Vyleesi approval history"
+  },
+  {
+    id: "eps-syndromes",
+    title: "Acute dystonia, parkinsonism, akathisia and tardive dyskinesia",
+    summary: "Four antipsychotic movement side effects with different timing, populations and treatments.",
+    items: ["Acute dystonia", "Parkinsonism", "Akathisia", "Tardive dyskinesia"],
+    rows: [
+      ["Timing", "**Hours to days**", "After **2 to 3 weeks**", "Days to weeks", "**Months to years**"],
+      ["Typical patient", "**Young men**, high-potency DRAs", "**Older adults**, high-potency DRAs", "Any; common with some SGAs", "Older adults, women, long exposure"],
+      ["Features", "Sustained spasm of **neck, tongue, eyes**, jaw, back; laryngeal dystonia is an emergency", "**Tremor, rigidity, bradykinesia**, drooling, shuffling", "Inner and outer **restlessness**, cannot sit still", "Choreoathetoid **orofacial** and limb movements"],
+      ["First treatment", "**Benztropine 1 to 2 mg IM** or diphenhydramine IV", "Lower dose or switch; **benztropine** or **amantadine**", "**β-blocker**; benzodiazepine or clonidine", "**VMAT2 inhibitor** (post-publication)"],
+      ["Anticholinergics", "Treat and prevent", "Treat (all equally effective)", "Weak", "**No benefit**; may worsen"]
+    ],
+    keys: [
+      "Ask **when** it started: days (dystonia), weeks (parkinsonism, akathisia), months to years (tardive dyskinesia).",
+      "Restlessness is **akathisia**: do not reach for benztropine first.",
+      "Amantadine helps parkinsonism and rabbit syndrome but **not** akathisia or tardive dyskinesia."
+    ],
+    links: [
+      { ch: "ch21-10", sec: "s2110-ac-ind", label: "Anticholinergic indications" },
+      { ch: "ch21-10", sec: "s2110-ac-dose", label: "Dosing anticholinergics" },
+      { ch: "ch21-0", sec: "s210-park", label: "Medication-induced parkinsonism" },
+      { ch: "ch21-0", sec: "s210-td", label: "Tardive dyskinesia" }
+    ]
+  },
+  {
+    id: "toxidromes",
+    title: "Anticholinergic intoxication, serotonin syndrome and neuroleptic malignant syndrome",
+    summary: "Three drug-induced syndromes with fever, agitation or confusion that need opposite treatments.",
+    items: ["Anticholinergic intoxication", "Serotonin syndrome", "Neuroleptic malignant syndrome"],
+    rows: [
+      ["Cause", "Anticholinergics, antihistamines, tricyclics, low-potency DRAs", "Combined **serotonergic** drugs (SSRIs, MAOIs)", "**Dopamine blockers**"],
+      ["Onset", "Hours", "Hours", "Days"],
+      ["Skin and pupils", "**Hot, dry, flushed**; **dilated** pupils", "**Sweating**; dilated pupils", "Sweating; normal pupils"],
+      ["Neuromuscular", "Normal tone", "**Clonus, hyperreflexia**, tremor", "**Lead-pipe rigidity**, bradyreflexia"],
+      ["Bowel", "**Absent** bowel sounds", "**Hyperactive**, diarrhea", "Normal or reduced"],
+      ["Specific treatment", "Stop drugs; **physostigmine** if severe; benzodiazepines", "Stop drugs; benzodiazepines; **cyproheptadine**", "Stop the antipsychotic; cooling, fluids; **dantrolene, bromocriptine**"]
+    ],
+    keys: [
+      "**Dry skin** points to anticholinergic toxicity; **clonus** to serotonin syndrome; **lead-pipe rigidity** to NMS.",
+      "Antipsychotics are **contraindicated** in anticholinergic delirium and must be stopped in NMS.",
+      "Cyproheptadine treats serotonin syndrome; bromocriptine treats NMS."
+    ],
+    links: [
+      { ch: "ch21-10", sec: "s2110-ac-safety", label: "Anticholinergic intoxication" },
+      { ch: "ch21-10", sec: "s2110-ah", label: "Cyproheptadine" },
+      { ch: "ch21-0", sec: "s210-nms", label: "Neuroleptic malignant syndrome" },
+      { ch: "ch25-3", sec: "s253-meds", label: "Medication-induced emergencies" }
+    ]
   }
 ];

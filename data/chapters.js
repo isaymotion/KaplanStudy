@@ -154,6 +154,10 @@ KS.manifest = [
     summary: 'Sildenafil, vardenafil and tadalafil, phenylephrine for priapism, and yohimbine, with post-publication updates on avanafil and other approvals, nitrites, riociguat and nitrate timing, hearing loss and priapism labeling, the priapism guideline, evidence in women, yohimbe supplements, and flibanserin and bremelanotide.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch21-10', number: '21.10', title: 'Drugs Used to Treat the Side Effects of Psychotropic Drugs', short: 'Side-effect drugs',
+    summary: 'Anticholinergics and physostigmine, antihistamines, dopamine agonists, levodopa and amantadine, and drugs for psychotropic weight gain, with post-publication updates on physostigmine, promethazine and hydroxyzine safety, ranitidine, impulse control, restless legs, influenza, and GLP-1 drugs for antipsychotic weight gain.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
@@ -179,5 +183,6 @@ KS.extraFiles = [
   'data/drugs/substance.js',
   'data/drugs/cognitive.js',
   'data/drugs/sexual.js',
+  'data/drugs/sideeffect.js',
   'data/changelog.js'
 ];
