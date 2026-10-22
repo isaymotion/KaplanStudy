@@ -255,5 +255,51 @@ KS.lookalikes = [
       { ch: "ch21-8", sec: "s218-mci", label: "Mild cognitive impairment" }
     ],
     source: "FDA, FDA converts novel Alzheimer's disease treatment to traditional approval, July 6, 2023; HCPLive, FDA approves subcutaneous lecanemab, August 29, 2025; NeurologyLive, FDA approves updated label for donanemab, July 2025"
+  },
+  {
+    id: "pde5-drugs",
+    title: "Sildenafil, vardenafil, tadalafil and avanafil",
+    summary: "Four PDE-5 inhibitors with the same mechanism but different timing, duration and side effects.",
+    items: ["Sildenafil", "Vardenafil", "Tadalafil", "Avanafil (post-publication)"],
+    rows: [
+      ["Half-life", "**3 to 4 hours**", "**3 to 4 hours**", "About **18 hours**", "Short"],
+      ["Onset and timing", "About 30 to 60 minutes; take **1 hour before**", "Slightly faster; take about **1 hour before**", "Slightly faster than sildenafil", "About **15 minutes**"],
+      ["Duration", "About **4 hours**", "Similar to sildenafil", "Up to **36 hours** (\"weekend pill\")", "Short"],
+      ["Usual dose", "**50 mg** (25 to 100)", "**10 mg** (5 to 20); 10 mg orally disintegrating", "**10 mg** (5 to 20) or **2.5 to 5 mg daily**", "50 to 200 mg"],
+      ["Distinctive effects", "**Blue-tinged vision**", "As sildenafil", "**Back and muscle pain** (about 10%)", "As the class"],
+      ["Other approved uses", "Pulmonary hypertension (Revatio)", "—", "**BPH**; pulmonary hypertension (Adcirca)", "—"]
+    ],
+    keys: [
+      "All four need **sexual stimulation** and are **contraindicated with nitrates, poppers and riociguat**.",
+      "Long window or daily dosing: **tadalafil**. Fastest onset: **avanafil**.",
+      "Start **sildenafil 25 mg** over 65, with cirrhosis, severe renal impairment or CYP3A4 inhibitors."
+    ],
+    links: [
+      { ch: "ch21-9", sec: "s219-pk", label: "Pharmacokinetics" },
+      { ch: "ch21-9", sec: "s219-dose", label: "Dosing" },
+      { ch: "ch21-9", sec: "s219-cardiac", label: "Cardiac risk and nitrates" }
+    ]
+  },
+  {
+    id: "hsdd-drugs",
+    title: "Flibanserin and bremelanotide (post-publication)",
+    summary: "Two brain-acting drugs for low sexual desire in premenopausal women, one nightly and one as needed.",
+    items: ["Flibanserin (Addyi)", "Bremelanotide (Vyleesi)"],
+    rows: [
+      ["Approved", "August 2015", "June 2019"],
+      ["How it works", "**5-HT1A agonist**, **5-HT2A antagonist**", "**Melanocortin receptor agonist**"],
+      ["How it is taken", "**100 mg every night** at bedtime", "**Injection at least 45 minutes before** sex"],
+      ["Limits", "Stop if no benefit after 8 weeks", "1 dose in 24 hours; **8 a month**"],
+      ["Main risks", "**Hypotension and syncope** with alcohol or CYP3A4 inhibitors", "**Nausea** (40%), flushing, transient BP rise"]
+    ],
+    keys: [
+      "Nightly pill with an **alcohol** rule (stop at least 2 hours before): **flibanserin**.",
+      "As-needed **injection** with nausea: **bremelanotide**.",
+      "Both are for **acquired, generalized** HSDD in **premenopausal** women; rule out antidepressant, relationship and medical causes first."
+    ],
+    links: [
+      { ch: "ch21-9", sec: "s219-women", label: "Low sexual desire in women" }
+    ],
+    source: "Pharmacy Times, FDA orders safety labeling changes for female sexual dysfunction therapy, April 2019; Drugs.com, Vyleesi approval history"
   }
 ];

@@ -516,7 +516,13 @@ KS.glossary = (KS.glossary || []).concat([
   ["amyloid-related imaging abnormalities", "MRI changes caused by anti-amyloid antibodies: ARIA-E (edema or effusion) and ARIA-H (microhemorrhages and superficial siderosis); usually silent but can cause headache, confusion, seizures and rarely death; most common in ApoE ε4 homozygotes.", "Ch 21.8"],
   ["anti-amyloid monoclonal antibody", "An antibody such as lecanemab or donanemab that clears amyloid-β plaques and modestly slows decline in mild cognitive impairment or mild dementia due to Alzheimer disease with confirmed amyloid.", "Ch 21.8"],
   ["ApoE ε4", "The ε4 allele of the apolipoprotein E gene, the strongest common genetic risk factor for late-onset Alzheimer disease; homozygotes have the highest risk of ARIA on anti-amyloid antibodies.", "Ch 21.8"],
-  ["blood-based biomarker", "A blood test, such as the plasma pTau217 to amyloid-β 1-42 ratio, that indicates Alzheimer pathology in people with cognitive symptoms; used in specialty care to rule out or confirm amyloid.", "Ch 21.8"]
+  ["blood-based biomarker", "A blood test, such as the plasma pTau217 to amyloid-β 1-42 ratio, that indicates Alzheimer pathology in people with cognitive symptoms; used in specialty care to rule out or confirm amyloid.", "Ch 21.8"],
+  ["phosphodiesterase-5 inhibitor", "A drug such as sildenafil, vardenafil or tadalafil that blocks breakdown of cGMP in the corpus cavernosum, prolonging an erection started by sexual stimulation; contraindicated with nitrates.", "Ch 21.9"],
+  ["nitric oxide", "The neurotransmitter released by penile nerves during sexual stimulation; it raises cGMP, relaxing cavernosal smooth muscle so the penis fills with blood.", "Ch 21.9"],
+  ["nonarteritic anterior ischemic optic neuropathy", "Sudden, sometimes permanent vision loss from reduced blood flow to the optic nerve; reported rarely within 24 hours of taking a PDE-5 inhibitor.", "Ch 21.9"],
+  ["hypoactive sexual desire disorder", "Persistently deficient sexual thoughts, fantasies or desire causing distress; flibanserin and bremelanotide are approved for the acquired, generalized form in premenopausal women.", "Ch 21.9"],
+  ["erectile disorder", "Persistent difficulty obtaining or maintaining an erection, or reduced rigidity, during sexual activity; causes are organic, psychogenic or mixed.", "Ch 21.9"],
+  ["poppers", "Recreational amyl or other alkyl nitrites inhaled to intensify orgasm; combined with a PDE-5 inhibitor they can cause precipitous hypotension, MI and death.", "Ch 21.9"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -773,5 +779,14 @@ KS.glossaryAliases = {
   "apoe e4": "ApoE ε4",
   "apolipoprotein e4": "ApoE ε4",
   "blood-based biomarkers": "blood-based biomarker",
-  "excitotoxic": "excitotoxicity"
+  "excitotoxic": "excitotoxicity",
+  "pde-5 inhibitor": "phosphodiesterase-5 inhibitor",
+  "pde-5 inhibitors": "phosphodiesterase-5 inhibitor",
+  "pde5 inhibitor": "phosphodiesterase-5 inhibitor",
+  "pde5 inhibitors": "phosphodiesterase-5 inhibitor",
+  "phosphodiesterase-5 inhibitors": "phosphodiesterase-5 inhibitor",
+  "naion": "nonarteritic anterior ischemic optic neuropathy",
+  "hsdd": "hypoactive sexual desire disorder",
+  "erectile dysfunction": "erectile disorder",
+  "amyl nitrite": "poppers"
 };

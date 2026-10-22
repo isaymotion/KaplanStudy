@@ -154,6 +154,18 @@
     { m: "agitation symptoms associated with dementia due to Alzheimer's disease", label: "BioSpace: brexpiprazole approved for Alzheimer agitation (2023)", url: "https://www.biospace.com/fda-approves-first-drug-to-treat-agitation-symptoms-associated-with-dementia-due-to-alzheimer-s-disease" },
     { m: "Lecanemab prescribing information", label: "Label: lecanemab (DailyMed)", url: DM('lecanemab') },
     { m: "Donanemab prescribing information", label: "Label: donanemab (DailyMed)", url: DM('donanemab') },
-    { m: "Donepezil prescribing information", label: "Label: donepezil (DailyMed)", url: DM('donepezil') }
+    { m: "Donepezil prescribing information", label: "Label: donepezil (DailyMed)", url: DM('donepezil') },
+    { m: "Nurnberg HG et al., sildenafil for women", label: "ScienceDaily: sildenafil for antidepressant-associated sexual dysfunction in women (JAMA 2008)", url: "https://www.sciencedaily.com/releases/2008/07/080722162119.htm" },
+    { m: "Tadalafil prescribing information", label: "Label: tadalafil (DailyMed)", url: DM('tadalafil') },
+    { m: "sildenafil prescribing information", label: "Label: sildenafil (DailyMed)", url: DM('sildenafil') },
+    { m: "revisions to labels for Cialis, Levitra and Viagra", label: "FDA press release: hearing loss labeling (Oct 2007)", url: "https://www.fiercebiotech.com/biotech/press-release-fda-announces-revisions-to-labels-for-cialis-levitra-and-viagra" },
+    { m: "Updated urology guidelines for priapism", label: "ACEP Now: updated urology guidelines for priapism (2024)", url: "https://acepnow.com/article/updated-urology-guidelines-for-priapism/2" },
+    { m: "FDA approves new drug for erectile dysfunction (Stendra)", label: "ABC News: FDA approves Stendra (April 2012)", url: "https://abcnews.com/blogs/health/2012/04/27/fda-approves-new-drug-for-erectile-dysfunction" },
+    { m: "Yohimbe: usefulness and safety", label: "NCCIH: Yohimbe (NIH)", url: "https://www.nccih.nih.gov/health/yohimbe" },
+    { m: "safety labeling changes for female sexual dysfunction therapy", label: "Pharmacy Times: flibanserin alcohol label change (April 2019)", url: "https://pharmacytimes.com/view/fda-orders-safety-labeling-changes-for-female-sexual-dysfunction-therapy" },
+    { m: "Vyleesi approval history", label: "Drugs.com: Vyleesi approval history", url: "https://www.drugs.com/history/vyleesi.html" },
+    { m: "Flibanserin prescribing information", label: "Label: flibanserin (DailyMed)", url: DM('flibanserin') },
+    { m: "Bremelanotide prescribing information", label: "Label: bremelanotide (DailyMed)", url: DM('bremelanotide') },
+    { m: "Avanafil prescribing information", label: "Label: avanafil (DailyMed)", url: DM('avanafil') }
   ];
 })();

@@ -150,6 +150,10 @@ KS.manifest = [
     summary: 'Donepezil, rivastigmine, galantamine and tacrine, and memantine for Alzheimer disease and other dementias, with post-publication updates on approvals for severe disease and Parkinson disease dementia, patches and combination products, label dose corrections, anti-amyloid antibodies and ARIA, blood tests, mild cognitive impairment and agitation.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch21-9', number: '21.9', title: 'Drugs Used to Treat Sexual Disorders', short: 'Sexual disorder drugs',
+    summary: 'Sildenafil, vardenafil and tadalafil, phenylephrine for priapism, and yohimbine, with post-publication updates on avanafil and other approvals, nitrites, riociguat and nitrate timing, hearing loss and priapism labeling, the priapism guideline, evidence in women, yohimbe supplements, and flibanserin and bremelanotide.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
@@ -174,5 +178,6 @@ KS.extraFiles = [
   'data/drugs/stimulants.js',
   'data/drugs/substance.js',
   'data/drugs/cognitive.js',
+  'data/drugs/sexual.js',
   'data/changelog.js'
 ];
