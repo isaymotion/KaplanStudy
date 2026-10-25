@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 51,
+    date: "2026-10-25",
+    title: "Learning tools for Sections 21.4 to 21.6",
+    items: [
+      { type: "feature", ch: "ch21-4", text: "Section 21.4 (anxiolytics) now has Check yourself questions in every section, a pre-test and post-test, wrong-answer explanations for all 30 cases, board blueprint tags and a visual summary comparing benzodiazepines, buspirone, β-blockers and barbiturates.", href: "#/c/ch21-4/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch21-5", text: "Section 21.5 (drugs for sleep disorders) now has the same learning tools, with a visual summary of which hypnotic fits which sleep problem.", href: "#/c/ch21-5/guide", link: "Open the study guide" },
+      { type: "feature", ch: "ch21-6", text: "Section 21.6 (stimulants) now has the same learning tools, with a visual summary comparing ADHD medicines.", href: "#/c/ch21-6/guide", link: "Open the study guide" }
+    ]
+  },
+  {
     id: 50,
     date: "2026-10-25",
     title: "Chapter 21.11: Nutritional Supplements and Medical Foods",
