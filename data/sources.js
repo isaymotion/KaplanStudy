@@ -183,6 +183,18 @@
     { m: "no signs of link between GLP-1s and suicidal thoughts", label: "TCTMD: FDA finds no link between GLP-1s and suicidality (Jan 2024)", url: "https://www.tctmd.com/news/fda-no-signs-link-between-glp-1s-and-suicidal-thoughts-actions" },
     { m: "Lybalvi approval history", label: "Drugs.com: Lybalvi approval history", url: "https://drugs.com/history/lybalvi.html" },
     { m: "Wegovy prescribing information", label: "Label: semaglutide (DailyMed)", url: DM('semaglutide') },
-    { m: "FDA approves new drug treatment for chronic weight management, first since 2014", label: "BioSpace: FDA approves Wegovy (June 2021)", url: "https://www.biospace.com/fda-approves-new-drug-treatment-for-chronic-weight-management-first-since-2014" }
+    { m: "FDA approves new drug treatment for chronic weight management, first since 2014", label: "BioSpace: FDA approves Wegovy (June 2021)", url: "https://www.biospace.com/fda-approves-new-drug-treatment-for-chronic-weight-management-first-since-2014" },
+    { m: "final rule declaring dietary supplements containing ephedrine alkaloids adulterated", label: "FDA: ephedrine alkaloid final rule, compliance guide (2004)", url: "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/small-entity-compliance-guide-final-rule-declaring-dietary-supplements-containing-ephedrine" },
+    { m: "warns consumers not to purchase or use any tianeptine product", label: "FDA: warning on tianeptine products (2023–2025)", url: "https://www.fda.gov/drugs/drug-alerts-and-statements/fda-warns-consumers-not-purchase-or-use-any-tianeptine-product-due-serious-risks" },
+    { m: "pediatric melatonin ingestions 2012–2021", label: "NBC News: pediatric melatonin poisonings up 530% (CDC MMWR 2022)", url: "https://www.nbcnews.com/health/sleep/melatonin-kids-poison-control-calls-study-rcna31823" },
+    { m: "ISNPR practice guidelines for omega-3 fatty acids", label: "Medical Dialogues: ISNPR omega-3 guideline for depression (2019)", url: "https://speciality.medicaldialogues.in/amp/omega-3-polyunsaturated-fatty-acids-pufa-antidepressants-major-depressive-disorder-treatment-depression" },
+    { m: "eosinophilia-myalgia syndrome and L-tryptophan-containing products", label: "CDC MMWR: eosinophilia-myalgia syndrome and L-tryptophan (1989)", url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/00001502.htm" },
+    { m: "Grant JE et al., N-acetylcysteine for trichotillomania", label: "ScienceDaily: NAC for trichotillomania (Archives of General Psychiatry 2009)", url: "https://www.sciencedaily.com/releases/2009/07/090706161158.htm" },
+    { m: "clinical relevance of St. John's wort drug interactions revisited", label: "PMC: St. John's wort drug interactions revisited (Br J Pharmacol 2020)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7056460/" },
+    { m: "NCCIH, St. John's wort", label: "NCCIH: St. John's wort", url: "https://www.nccih.nih.gov/health/st-johns-wort" },
+    { m: "NIH Office of Dietary Supplements, kava", label: "NIH ODS: kava", url: "https://ods.od.nih.gov/Health_Information/kava.aspx" },
+    { m: "Ginkgo biloba for preventing cognitive decline in older adults", label: "PMC: Ginkgo Evaluation of Memory study (JAMA 2009)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2832285" },
+    { m: "FDA recommends scheduling of 7-OH", label: "HHS: FDA recommends scheduling 7-OH (July 2025)", url: "https://www.hhs.gov/press-room/fda-7-oh-scheduling-recommendation.html" },
+    { m: "ashwagandha food supplements with potential health risks", label: "BfR: ashwagandha food supplements with potential health risks (2024)", url: "https://www.bfr.bund.de/cm/349/ashwagandha-food-supplements-with-potential-health-risks.pdf" }
   ];
 })();

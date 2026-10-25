@@ -350,5 +350,53 @@ KS.lookalikes = [
       { ch: "ch21-0", sec: "s210-nms", label: "Neuroleptic malignant syndrome" },
       { ch: "ch25-3", sec: "s253-meds", label: "Medication-induced emergencies" }
     ]
+  },
+  {
+    id: "supp-categories",
+    title: "Dietary supplement, medical food and prescription drug",
+    summary: "Three regulatory categories that patients often confuse; only drugs need FDA approval and proof of efficacy.",
+    items: ["Dietary supplement", "Medical food", "Prescription drug"],
+    rows: [
+      ["Legal basis", "**DSHEA (1994)**", "**Orphan Drug Act** definition", "Food, Drug, and Cosmetic Act"],
+      ["Premarket FDA approval", "**No**", "**No**", "**Yes**"],
+      ["Proof of efficacy", "Not required; FDA does not evaluate", "Must meet the **distinctive nutritional needs** of a specific disease", "Required"],
+      ["Intended for", "Healthy adults", "A **specific disease**, under **medical supervision**", "Labeled indications"],
+      ["Oversight", "Laxer; quality varies; FDA acts after harm (ephedra, 2004)", "Manufacturing practices, facility registration, **annual inspections**", "Full drug regulation"],
+      ["Psychiatric examples", "St. John's wort, kava, SAMe, 5-HTP, melatonin", "**L-methylfolate** (Deplin), caprylic triglyceride (Axona), Theramine", "SSRIs, ramelteon, esketamine"]
+    ],
+    keys: [
+      "**Neither supplements nor medical foods** need premarket approval.",
+      "A medical food is defined by a **specific disease** and **medical supervision**, not by proven efficacy in drug-style trials.",
+      "Unapproved drugs sold as supplements (tianeptine) are **not lawful dietary ingredients** (post-publication)."
+    ],
+    links: [
+      { ch: "ch21-11", sec: "s2111-regulation", label: "Regulation" },
+      { ch: "ch21-11", sec: "s2111-medfoods", label: "Medical foods" }
+    ],
+    source: "FDA, small entity compliance guide: final rule declaring dietary supplements containing ephedrine alkaloids adulterated; FDA, warns consumers not to purchase or use any tianeptine product due to serious risks"
+  },
+  {
+    id: "serotonergic-supps",
+    title: "St. John's wort, 5-HTP, SAMe and L-tryptophan",
+    summary: "Four 'natural' antidepressant products that all add serotonergic risk but differ in their other dangers.",
+    items: ["St. John's wort", "5-HTP", "SAMe", "L-tryptophan"],
+    rows: [
+      ["What it is", "Herb (**hypericin, hyperforin**)", "**Immediate serotonin precursor**", "Natural **methyl donor**", "Essential amino acid, serotonin precursor"],
+      ["Book dose", "**100 to 950 mg** a day", "**100 mg to 2 g**, safer with carbidopa", "**200 to 1,600 mg**", "**4 to 5 g** a day"],
+      ["Serotonin syndrome", "With **SSRIs or MAOIs**", "With **SSRIs or MAOIs**, carcinoid", "With **SSRIs or SNRIs**", "Additive serotonergic risk"],
+      ["Distinctive risk", "**Lowers drug levels** (CYP3A4, P-gp); **photosensitivity**; mania with sertraline", "Serotonin syndrome", "**Hypomania**; worsens Parkinson symptoms", "**Eosinophilia-myalgia syndrome** (1989, post-publication)"],
+      ["Category", "Phytomedicine", "Dietary supplement", "Supplement and medical food", "Medical food"]
+    ],
+    keys: [
+      "Only **St. John's wort** also **lowers the levels** of other drugs: think contraceptives, cyclosporine and HIV drugs.",
+      "**SAMe** can trigger **hypomania**: ask about bipolar disorder.",
+      "Myalgia with **eosinophilia** after tryptophan points to **eosinophilia-myalgia syndrome**."
+    ],
+    links: [
+      { ch: "ch21-11", sec: "s2111-sjw", label: "St. John's wort" },
+      { ch: "ch21-11", sec: "s2111-mood", label: "Supplements for mood" },
+      { ch: "ch21-2", sec: "s212-ssri-ae", label: "Serotonin syndrome (SSRIs)" }
+    ],
+    source: "Nicolussi S et al., clinical relevance of St. John's wort drug interactions revisited, British Journal of Pharmacology, 2020; CDC MMWR, eosinophilia-myalgia syndrome and L-tryptophan-containing products, November 1989"
   }
 ];

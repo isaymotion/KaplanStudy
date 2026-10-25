@@ -158,6 +158,10 @@ KS.manifest = [
     summary: 'Anticholinergics and physostigmine, antihistamines, dopamine agonists, levodopa and amantadine, and drugs for psychotropic weight gain, with post-publication updates on physostigmine, promethazine and hydroxyzine safety, ranitidine, impulse control, restless legs, influenza, and GLP-1 drugs for antipsychotic weight gain.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch21-11', number: '21.11', title: 'Nutritional Supplements and Medical Foods', short: 'Supplements',
+    summary: 'Dietary supplements, medical foods and phytomedicines: DSHEA and medical food rules, supplements for cognition and mood, melatonin, L-methylfolate and N-acetylcysteine, St. John\'s wort, kava and other sedative, stimulant and toxic herbs, and the supplement history, with post-publication updates on ephedra, tianeptine, melatonin, St. John\'s wort interactions, kava, ginkgo, L-tryptophan, kratom 7-OH, ashwagandha and omega-3s.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
@@ -184,5 +188,6 @@ KS.extraFiles = [
   'data/drugs/cognitive.js',
   'data/drugs/sexual.js',
   'data/drugs/sideeffect.js',
+  'data/drugs/supplement.js',
   'data/changelog.js'
 ];

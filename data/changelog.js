@@ -13,6 +13,18 @@
  */
 KS.changelog = [
   {
+    id: 50,
+    date: "2026-10-25",
+    title: "Chapter 21.11: Nutritional Supplements and Medical Foods",
+    items: [
+      { type: "chapter", ch: "ch21-11", text: "New section 21.11, which completes Chapter 21: how dietary supplements, medical foods and phytomedicines are regulated, safety in pregnancy and lactation, supplements for cognition and mood, melatonin, medical foods such as L-methylfolate and N-acetylcysteine, St. John's wort, kava and other sedative, stimulant and toxic herbs, kratom, and taking a supplement history. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch21-11/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch21-11", text: "Post-publication updates: the 2004 ephedra ban, FDA tianeptine warnings, pediatric melatonin poisonings and gummy mislabeling, how St. John's wort lowers drug levels and current evidence, the 2002 kava liver advisory, the Ginkgo Evaluation of Memory trial, L-tryptophan and eosinophilia-myalgia syndrome, NAC for trichotillomania, the 2025 FDA 7-OH (kratom) scheduling recommendation, ashwagandha liver injury and the 2019 omega-3 guideline.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Checking a patient's supplement.", href: "#/helpers/suppchk", link: "Open the helper" },
+      { type: "feature", text: "Drug reference: 12 supplements, medical foods and herbs, with drills and a class PDF.", href: "#/drugs", link: "Open drugs" },
+      { type: "feature", text: "New look-alikes: dietary supplement, medical food and prescription drug; and St. John's wort, 5-HTP, SAMe and L-tryptophan.", href: "#/compare/ch/ch21-11", link: "Open look-alikes" }
+    ]
+  },
+  {
     id: 49,
     date: "2026-10-22",
     title: "Learning tools for Sections 21.0 to 21.3",

@@ -49,6 +49,7 @@ Across all chapters:
   - *Choosing a cognitive enhancer* (Chapter 21.8): workup first, mild cognitive impairment (exercise, anti-amyloid eligibility), mild to moderate Alzheimer disease (donepezil, rivastigmine, patches, cardiac cautions), moderate to severe disease (memantine, donepezil), Parkinson disease dementia, and healthy people seeking enhancement.
   - *Choosing a drug for a sexual problem* (Chapter 21.9): priapism emergencies, erectile dysfunction (nitrates, poppers and riociguat, cardiac review, short- versus long-acting PDE-5 inhibitors, low starting doses), antidepressant-related dysfunction, and low sexual desire in women (flibanserin, bremelanotide).
   - *Treating a psychotropic side effect* (Chapter 21.10): acute and laryngeal dystonia, parkinsonism (anticholinergics versus amantadine), akathisia, tardive dyskinesia, anticholinergic intoxication, hyperprolactinemia, SSRI sexual effects and weight gain.
+  - *Checking a patient's supplement* (Chapter 21.11): a supplement added to a psychiatric drug (serotonergic, sedating, stimulant or cholinergic products and evidence-based adjuncts), pregnancy and lactation, liver injury, bleeding and surgery, gas-station products such as tianeptine and 7-OH, and childhood ingestions.
   - *Choosing an ADHD or wakefulness medicine* (Chapter 21.6): starting ADHD treatment, switching after nonresponse, substance use, tics, psychosis risk, narcolepsy, shift work and sleep apnea sleepiness, depression and apathy, and common stimulant side effects.
   - *Managing an agitated patient in the emergency department* (Chapter 25.3): imminent violence and restraint, then the likely cause (delirium or medical illness, alcohol intoxication or withdrawal, stimulants, anticholinergic drugs, psychosis or mania, or unknown) and whether the patient will take oral medication, with Project BETA guidance marked as post-publication.
   - *Which personality disorder?* (Chapter 19): enduring pattern versus medical change or an episode of another disorder, then cluster and core style, with the age rule for antisocial personality disorder and the OCPD versus OCD distinction.
@@ -106,6 +107,7 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.8 | Drugs Used for Cognitive Enhancement | 17 | 43 | 64 (plus generated drug drills) |
 | 21.9 | Drugs Used to Treat Sexual Disorders | 12 | 37 | 53 (plus generated drug drills) |
 | 21.10 | Drugs Used to Treat the Side Effects of Psychotropic Drugs | 17 | 43 | 67 (plus generated drug drills) |
+| 21.11 | Nutritional Supplements and Medical Foods | 14 | 46 | 68 (plus generated drug drills) |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Publish on GitHub Pages

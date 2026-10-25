@@ -526,7 +526,19 @@ KS.glossary = (KS.glossary || []).concat([
   ["livedo reticularis", "Purple, net-like mottling of the skin from dilated vessels, seen on the legs in up to 5% of people taking amantadine; it resolves when the drug is stopped.", "Ch 21.10"],
   ["GLP-1 receptor agonist", "A drug such as liraglutide or semaglutide that mimics glucagon-like peptide 1, increasing satiety and slowing gastric emptying; effective for antipsychotic-induced weight gain.", "Ch 21.10"],
   ["impulse control disorder (dopamine agonist)", "Pathological gambling, hypersexuality, compulsive shopping or binge eating emerging on dopamine agonists such as pramipexole and ropinirole; ask about them at every visit.", "Ch 21.10"],
-  ["augmentation (restless legs)", "Worsening, earlier and spreading restless legs symptoms caused by long-term dopamine agonist treatment, in about 7% to 10% of patients a year.", "Ch 21.10"]
+  ["augmentation (restless legs)", "Worsening, earlier and spreading restless legs symptoms caused by long-term dopamine agonist treatment, in about 7% to 10% of patients a year.", "Ch 21.10"],
+  ["dietary supplement", "A product taken by mouth that contains a dietary ingredient (vitamin, mineral, herb, amino acid or similar) meant to supplement the diet; under DSHEA (1994) it needs no FDA approval or proof of efficacy before sale.", "Ch 21.11"],
+  ["medical food", "A food for oral or tube feeding, labeled for the dietary management of a specific disease with distinctive nutritional needs and used under medical supervision; no premarket approval, but manufacturers are inspected annually.", "Ch 21.11"],
+  ["phytomedicine", "An herb or plant preparation used as medicine; classed as a dietary supplement, so no safety data are required before marketing.", "Ch 21.11"],
+  ["St. John's wort", "Hypericum perforatum, an herbal antidepressant for mild depression; serotonin syndrome with SSRIs or MAOIs, photosensitivity, and lower levels of many drugs through CYP3A4 and P-glycoprotein induction.", "Ch 21.11"],
+  ["hyperforin", "The St. John's wort constituent that activates the pregnane X receptor, inducing CYP3A4 and P-glycoprotein and so lowering the levels of many drugs.", "Ch 21.11"],
+  ["pregnane X receptor", "A nuclear receptor that switches on genes for drug-metabolizing enzymes such as CYP3A4 and transporters such as P-glycoprotein; activated by hyperforin and many inducing drugs.", "Ch 21.11"],
+  ["kava", "Piper methysticum, a sedative herb used for anxiety; associated with severe liver toxicity and synergistic with alcohol and anxiolytics.", "Ch 21.11"],
+  ["kratom", "Mitragyna speciosa leaf with stimulant and sedating effects; its alkaloids, especially 7-hydroxymitragynine, act at opioid receptors and cause dependence and withdrawal.", "Ch 21.11"],
+  ["7-hydroxymitragynine", "A potent kratom alkaloid that acts at opioid receptors, sold in concentrated products; the FDA recommended scheduling it in July 2025.", "Ch 21.11"],
+  ["tianeptine", "An antidepressant not approved in the United States that is sold illegally as a supplement or nootropic ('gas station heroin'); linked to seizures, loss of consciousness and deaths.", "Ch 21.11"],
+  ["eosinophilia-myalgia syndrome", "Disabling muscle pain with marked eosinophilia, sometimes fatal, linked in 1989 to contaminated L-tryptophan supplements.", "Ch 21.11"],
+  ["ginseng abuse syndrome", "Insomnia, hypertonia and edema from regular ginseng use.", "Ch 21.11"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -797,5 +809,12 @@ KS.glossaryAliases = {
   "glp-1 agonist": "GLP-1 receptor agonist",
   "glp-1 agonists": "GLP-1 receptor agonist",
   "glp-1 receptor agonists": "GLP-1 receptor agonist",
-  "impulse control disorders": "impulse control disorder (dopamine agonist)"
+  "impulse control disorders": "impulse control disorder (dopamine agonist)",
+  "nutritional supplement": "dietary supplement",
+  "dshea": "dietary supplement",
+  "phytomedicinal": "phytomedicine",
+  "st john's wort": "St. John's wort",
+  "st. john’s wort": "St. John's wort",
+  "kava kava": "kava",
+  "7-oh": "7-hydroxymitragynine"
 };
