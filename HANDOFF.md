@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-26, after backfill pass 5. Update the status table and next steps at the end of every unit.
+Last updated 2026-10-26, after backfill pass 8 (Chapters 3 and 4). **The learning-layer backfill is complete**: every chapter and section has its full learning tools, and all of it is pushed and live. **Next work: the unbuilt feature list in section 7.** Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -9,12 +9,13 @@ Last updated 2026-10-26, after backfill pass 5. Update the status table and next
 
 ## 2. Fixed rules
 - The attribution must stay exactly: `App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com`
-- In `sw.js`, keep `PREFIX = 'ks-companion-'` and only ever delete caches with that prefix. Bump `VERSION` (for example `PREFIX + '2026-10-learn-p6'`) with every release.
+- In `sw.js`, keep `PREFIX = 'ks-companion-'` and only ever delete caches with that prefix. Bump `VERSION` (for example `PREFIX + '2026-10-<release-name>'`) with every release.
 - Content is written in the app's own words; never paste book text.
-- **Corrections policy:** book content stays as the book says. Book errors and anything newer go in `update` boxes, each with a `source` that resolves in `data/sources.js`. Verify every post-publication fact by web search before writing it.
+- **Corrections policy:** book content stays as the book says. Book errors and anything newer go in `update` boxes, each with a `source` that resolves in `data/sources.js`. Verify every post-publication fact by web search before writing it. Check questions may cite the update box (for example, "The book says none; since then lecanemab and donanemab...").
 - Style: plain, short sentences; **bold** key facts (bold becomes a blank in "Hide key facts" mode); "to" for ranges in prose.
 - Commits end with the session's Co-Authored-By and Claude-Session lines. Push to `main` after the tests pass.
-- After each unit, give the user a status table of the backfill.
+- After each unit, give the user a status table.
+- The user prefers subagents for simpler drafting to save tokens; Claude keeps design, clinical content decisions and the final review.
 
 ## 3. Architecture and data formats
 - `data/chapters.js`: `KS.manifest` entries `{id, number, title, short, summary, files:['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations','learning']}`, plus `KS.extraFiles` (drug files, changelog).
@@ -32,7 +33,7 @@ Last updated 2026-10-26, after backfill pass 5. Update the status table and next
   - `domains`: `{caseId: 'A'–'I'}` overrides. ABPN Dimension 2: A neuroscience, B behavioral/social, C clinical, D diagnostic procedures, E treatment, F communication, G ethics/law, H practice-based learning, I systems. Cases without an override are auto-classified.
   - `whyNot`: `{caseId: [5 strings]}` aligned to the **stored (already shuffled) choice order**, with `""` at the answer index
   - `checks`: `{secId: [{q, a}]}` for **every** section
-  - `visuals`: `[{sec, at, block}]`, where `block` is a `heatmap {title, cols, rows:[{label, v:[0-3]}], legend[4], note}` or a `chronology {title, events:[{year, label}], note}`
+  - `visuals`: `[{sec, at, block}]`, where `at` is the block index to insert before (omit to append), and `block` is a `heatmap {title, cols, rows:[{label, v:[0-3]}], legend[4], note}` or a `chronology {title, events:[{year, label}], note}`
 - **Other files:**
   - Look-alikes (`data/lookalikes.js`): `{id, title, summary, items, rows, keys, links:[{ch, sec, label}], source?}`
   - Helpers (`data/helpers.js`): `{id, chapter, title, summary, caution, start, nodes:{q, options:[{label, note, to}]}, results:{label, dx, line, points, link}}`, where `to` is a node id or `"r:<result>"`
@@ -41,17 +42,28 @@ Last updated 2026-10-26, after backfill pass 5. Update the status table and next
   - Changelog: `data/changelog.js`; the newest entry goes at the top with the next id.
 
 ## 4. Per-unit recipes
-**A. Backfill pass (one chapter that lacks a learning layer)**
+**A. Learning layer for a chapter** (use for any future chapter built with recipe B)
 1. `cd /home/claude/kaplanstudy && node /home/claude/tools/learn/dump.js chNN guide > /tmp/chNN-guide.txt && node /home/claude/tools/learn/dump.js chNN cases > /tmp/chNN-cases.txt`
-2. Read both files. Write `/home/claude/updwork/learn-chNN-whynot.js` as `({ "caseId": [5 strings aligned to the dumped choice order, "" at answer], ... })`.
-3. Write `/home/claude/updwork/learn-chNN-rest.js` as `({ domains:{...}, pretest:[8 ids], checks:{every section id: 2–3 {q,a}}, visuals:[1 heatmap or chronology] })`. Model it on `updwork/learn-ch21-4-rest.js`.
-4. `node /home/claude/tools/learn/apply.js chNN` (it refuses on any misalignment or missing section).
+2. **Draft with subagents.** Split the cases file in half (`sed -n`), then launch Sonnet agents in parallel. Two write `updwork/learn-chNN-whynot-a.js` and `-b.js`, each `({ "caseId": [5 strings aligned to the dumped choice order, "" at answer], ... })`. A third writes `updwork/learn-chNN-checks.js` (`{secId: [2–3 {q, a}]}`, key facts in **bold**). Put "STEP 1 (MANDATORY): read the ENTIRE guide before writing" at the top of each whyNot prompt; in pass 7 agents skipped the guide without it, and in pass 8 they all read it. Tell each agent to self-check with node (key count, 5 strings, `""` only at the answer, all section ids).
+3. Meanwhile, write the domains, pretest (8 ids across the chapter) and one visual yourself, as `updwork/learn-chNN-rest-base.js`. Build the visual from a table already in the guide. Find its `at` by listing the section's blocks from `data/chNN/guide.js`.
+4. Merge everything with node into `updwork/learn-chNN-whynot.js` and `updwork/learn-chNN-rest.js` (`{domains, pretest, checks, visuals}`), then `node /home/claude/tools/learn/apply.js chNN` (it refuses on any misalignment or missing section).
 5. `node tools/validate-learning.js --strict chNN` must say `no errors`.
-6. Add a changelog entry (next id) and bump the `sw.js` VERSION, then run the tests (section 5), commit and push.
+6. **Clinical review (you, not an agent):**
+   - Print each case's stem and choices beside its whyNot text and read every line.
+   - Grep the guide for every number or claim in the checks.
+   - Check the chapter's `update` boxes, because an answer drawn from book text alone may be outdated.
+   - Fix lines that state facts the stem does not give, contradict the guide, refer to a "list", imply unproven efficacy, or **sit on the wrong choice**. The validator only checks where the blank is, so two swapped wrong-answer strings pass it.
+   - Fixes needed so far: pass 6, 5; pass 7, 7; pass 8, 11 across two chapters, including one swapped pair (c4-ha08), a borrowed figure (a morphine lethal dose quoted as nicotine's) and a check answer contradicting its update box.
+7. Add a changelog entry (next id) and bump the `sw.js` VERSION, then run the tests (section 5), commit and push `main`. Copy the two final updwork files to `devtools-wt/updwork/`, then commit and push `dev-tools`.
 
-For a big chapter (more than about 60 cases), split the whyNot writing into two files and merge them before step 4; `apply.js` needs the whole chapter.
+**B. New chapter section** (needs the epub): copy the previous `build_<ch>.js`, write the work folder, build, then register it in `chapters.js`, `extraFiles`, `helpers.js`, `sources.js`, the glossary, `lookalikes.js`, the changelog, `README.md`, the `fulltest.py` CHS and routes, and `sw.js`. Then add its learning layer with recipe A. All chapters of the book through 21.11 are built, so this recipe is only for future chapters.
 
-**B. New chapter section** (needs the epub): copy the previous `build_<ch>.js`, write the work folder, build, then register it in `chapters.js`, `extraFiles`, `helpers.js`, `sources.js`, the glossary, `lookalikes.js`, the changelog, `README.md`, the `fulltest.py` CHS and routes, and `sw.js`. All chapters of the book through 21.11 are built, so this recipe is only for future chapters.
+**C. New app feature** (for the section 7 list)
+1. Read the relevant parts of `js/app.js` and the router first. Check that the feature does not already exist in some form.
+2. Agree the design and scope with the user before building. Keep it vanilla JS, offline-capable, and in the app's existing style.
+3. Verify every clinical number (scale cutoffs, equivalence tables, ANC thresholds, lithium ranges) by web search against a current primary source, and add each source to `data/sources.js`. Use only rating scales that are free to use; confirm the license by web search.
+4. Register any new files in `sw.js` CORE and `KS.extraFiles`, add new routes to the `fulltest.py` routes and to `e2e.py` where useful, add a changelog entry (next id), and bump VERSION.
+5. Run the tests (section 5), commit and push `main`, then update this doc.
 
 ## 5. Commands
 ```
@@ -64,29 +76,37 @@ cd /home/claude/kaplanstudy
 node tools/validate-learning.js --strict <ch...>   # expect "no errors"
 node /tmp/srcs4.js | grep '^NO'                    # only the 6 known lines (see pitfalls)
 python3 /home/claude/fulltest.py | tail -3         # expect "errors: []"
-python3 -m http.server 8124 >/dev/null 2>&1 &      # e2e needs a server
+python3 -m http.server 8124 >/dev/null 2>&1 &      # e2e needs a server; confirm with curl (200) first
 python3 /home/claude/tools/learn/e2e.py | tail -1  # expect "ERRORS []"
 ```
 After changing tools, copy them back into the dev-tools worktree, then commit and push `dev-tools`.
 
-## 6. Status (learning-layer backfill)
+## 6. Status (learning-layer backfill: complete)
 | Chapter | Cases with whyNot | Sections with checks | State |
 |---|---|---|---|
-| Ch 1 | 0/87 | 0/46 | **Pass 6: next** |
-| Ch 2 | 0/114 | 0/57 | Pass 7 |
-| Ch 3 | 0/85 | 0/37 | Pass 8a |
-| Ch 4 | 0/86 | 0/53 | Pass 8b |
-| Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (24 chapters/sections) |
+| Ch 1 | 87/87 | 46/46 | Complete (pass 6) |
+| Ch 2 | 114/114 | 57/57 | Complete (pass 7) |
+| Ch 3 | 85/85 | 37/37 | Complete (pass 8) |
+| Ch 4 | 86/86 | 53/53 | Complete (pass 8) |
+| Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 
-Totals: 771/1,143 cases and 473/666 sections. The last commits on `main` are `d561c02` (21.11) and `efeaaa7` (pass 5). The latest changelog id is **51**, and `sw.js` VERSION is `'2026-10-learn-p5'`.
+Totals: **1,143/1,143 cases and 666/666 sections.** The last commits on `main` are `a7bb9a8` (pass 7) and `2d11436` (pass 8); `dev-tools` ends with the pass 8 work files (`82f0144`) and this handoff update. The latest changelog id is **55**, and `sw.js` VERSION is `'2026-10-learn-p8'`.
 
 ## 7. Next steps
-1. **Pass 6: Chapter 1** (`ch01`), recipe A. Use changelog id **52**, titled "Learning tools for Chapter 1", and VERSION `'2026-10-learn-p6'`.
-2. Pass 7: `ch02` (id 53, `-p7`).
-3. Pass 8: `ch03`, then `ch04` (ids 54 and 55).
-4. When all are done, report a final status table. A reminder about unbuilt features is scheduled for Oct 28.
+1. **Unbuilt features** (from the Oct 28 reminder; the user wants to start early). Ask the user which to build first, then use recipe C:
+   - **Clinical tools:** interactive rating scales (PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS, C-SSRS screener); reference calculators (benzodiazepine and antipsychotic equivalents, clozapine ANC schedule, lithium level interpretation); links to the Stahl and DSM-5-TR companion apps.
+   - **Progress:** a weak-topics dashboard, and mixed review across chapters with confidence ratings.
+   - **Educator:** a teaching-mode results summary. A session-summary page (`#/teach/summary/<id>`) already exists in `js/app.js`, so first find out what the user wants beyond it.
+   - **Quality:** a "Report an error" link on each section.
+2. Use changelog id **56** for the first feature release.
+3. Any new chapter: recipe B, then recipe A.
 
-## 8. Pitfalls learned
+## 8. Scheduled tasks (manage only with the user's explicit say-so)
+- **"Kaplan backfill pass"**: runs daily at 1:41 am Manila and reads this file. With the backfill complete, it should report that and make no changes. It is now obsolete; ask the user whether to turn it off or delete it.
+- **"Remind: remaining K&S app feature ideas"**: fires once on Oct 28 at 9:00 am Manila in an older session. Its content is the list in section 7.1.
+- **"Weekly app backup to Google Drive"**: Sundays at 7:31 am Manila. Leave it running.
+
+## 9. Pitfalls learned
 - whyNot must follow the **stored** choice order from `dump.js cases`, not the original order in the work folder.
 - A glossary alias that equals an existing term makes validation error. Check `grep -i` first.
 - Foreground `sleep` is blocked; use background loops or Python waits.
@@ -94,6 +114,12 @@ Totals: 771/1,143 cases and 473/666 sections. The last commits on `main` are `d5
 - `srcs4.js` prints 6 known `NO` lines (generic sources such as "DSM-5-TR (American Psychiatric Association, 2022)"). These are expected.
 - `gh` GraphQL is blocked; use `gh api repos/...` (REST).
 - The remote says "repository moved" on push. It is harmless (it redirects to `isaymotion/KaplanStudy`).
+- **Push access:** cloning works without attaching the repo, but pushing does not (git proxy 403). Claude cannot attach the repo with push access on its own initiative; the request is blocked. At the start of a session, ask the user to say "Add isaymotion/KaplanStudy to this session with push access", then call `add_repo` with `access: "push"`. If a clone already exists at `/home/claude/kaplanstudy`, keep it; do not re-clone.
+- The first Bash call of a session may be refused with "the classifier gave no verdict"; repeating the identical call once works.
+- The local test server can stop between turns. If `curl localhost:8124` does not return 200, restart it and rerun e2e.
+- In whyNot text, do not state facts the stem does not give, and do not contradict the guide's own tables (for example, factor analysis is listed under content validity, and the book's IQ bands overlap at 80 and 90).
+- The guide can contain two different figures for one fact in different sections (for example, reversible dementia "about 15%" and "10 to 15%"). Don't ask the same check twice with different answers.
+- **Keep both copies of this doc in sync:** `claude/handoff.md` in the project and `HANDOFF.md` on `dev-tools`. The scheduled task reads the dev-tools copy; before pass 8, that copy was still stale at pass 5.
 
-## 9. Files to re-attach
-- The K&S Synopsis 12e epub: **only** for building new chapters (recipe B), not for backfill passes.
+## 10. Files to re-attach
+- The K&S Synopsis 12e epub: **only** for building new chapters (recipe B).
