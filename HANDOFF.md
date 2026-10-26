@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-26, after backfill pass 8 (Chapters 3 and 4) and a parallel session's Chapter 15 release (`556be5e`). **The learning-layer backfill is complete**: every chapter and section has its full learning tools, and all of it is pushed and live. **Next work: the unbuilt feature list in section 7.** Update the status table and next steps at the end of every unit.
+Last updated 2026-10-26, after release 57 (`cf090c5`): the **Weak topics** dashboard and the **Resident handout** for teaching sessions. The learning-layer backfill is complete and live. **Next work: the rest of the feature list in section 7.** Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -78,6 +78,7 @@ node /tmp/srcs4.js | grep '^NO'                    # only the 6 known lines (see
 python3 /home/claude/fulltest.py | tail -3         # expect "errors: []"
 python3 -m http.server 8124 >/dev/null 2>&1 &      # e2e needs a server; confirm with curl (200) first
 python3 /home/claude/tools/learn/e2e.py | tail -1  # expect "ERRORS []"
+python3 /home/claude/tools/learn/e2e_weak.py | tail -1  # Weak topics + handout; expect "ERRORS []"
 ```
 After changing tools, copy them back into the dev-tools worktree, then commit and push `dev-tools`.
 
@@ -91,15 +92,22 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 
-Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `556be5e`. The last commits on `main` are `2d11436` (pass 8) and `556be5e` (Chapter 15). The latest changelog id is **56**, and `sw.js` VERSION is `'2026-10-ch15'`.
+Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `cf090c5`. The last commits on `main` are `556be5e` (Chapter 15) and `cf090c5` (release 57). The latest changelog id is **57**, and `sw.js` VERSION is `'2026-10-weak-topics'`.
+
+### Features built (recipe C)
+| Feature | Route | Release | Notes |
+|---|---|---|---|
+| Weak topics dashboard | `#/weak` | 57 | `renderWeak`/`weakData` in `js/app.js`. Topic = chapter + card tag. Pools kept exams and quizzes (pre-tests and unanswered items left out), flashcard ratings (Again = miss) and open mistakes. Ranked once a topic has 3 tries (`WEAK_MIN`); roll-ups by chapter and ABPN domain; "Drill" starts an untimed `kind:'quiz'` exam of up to 20 of the topic's cases. Linked from Home tools and the Mistakes page. |
+| SRS review counter | — | 57 | `srsNext` now stores `n` (total reviews). `srsTries(s)` falls back to `r + l` for older records; backup merge uses it. |
+| Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Unbuilt features** (from the Oct 28 reminder; the user wants to start early). Ask the user which to build first, then use recipe C:
-   - **Clinical tools:** interactive rating scales (PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS, C-SSRS screener); reference calculators (benzodiazepine and antipsychotic equivalents, clozapine ANC schedule, lithium level interpretation); links to the Stahl and DSM-5-TR companion apps.
-   - **Progress:** a weak-topics dashboard, and mixed review across chapters with confidence ratings.
-   - **Educator:** a teaching-mode results summary. A session-summary page (`#/teach/summary/<id>`) already exists in `js/app.js`, so first find out what the user wants beyond it.
-   - **Quality:** a "Report an error" link on each section.
-2. Use changelog id **57** for the next release. Pull `main` first, because a parallel chat may have used it.
+1. **Remaining features.** Ask the user which to build next, then use recipe C:
+   - **Clinical tools:** interactive rating scales (PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS, C-SSRS screener); reference calculators (benzodiazepine and antipsychotic equivalents, clozapine ANC schedule, lithium level interpretation); links to the Stahl and DSM-5-TR companion apps. Heaviest verification load (cutoffs, licences, equivalence tables).
+   - **Quality:** a "Report an error" link on each section (smallest job).
+   - **Progress, mostly done already:** daily review already mixes cards across chapters with Again/Hard/Good/Easy ratings. What's left is optional: mixing cases into daily review, or a confidence rating before the answer is shown. Confirm with the user whether either is wanted.
+   - Done in release 57: the weak-topics dashboard and the teaching handout (the user chose a resident takeaway sheet over a session-trend view).
+2. Use changelog id **58** for the next release. Pull `main` first, because a parallel chat may have used it.
 3. Unbuilt chapters (16, 17, 18, 20, ...): recipe B, then recipe A. Check first which ones the parallel chat has done.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
