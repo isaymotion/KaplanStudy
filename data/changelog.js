@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 52,
+    date: "2026-10-26",
+    title: "Learning tools for Chapter 1",
+    items: [
+      { type: "feature", ch: "ch01", text: "Chapter 1 (examination of the psychiatric patient) now has Check yourself questions in all 46 sections, a pre-test and post-test, wrong-answer explanations for all 87 cases, board blueprint tags and a visual summary comparing the four aphasias.", href: "#/c/ch01/guide", link: "Open the study guide" }
+    ]
+  },
+  {
     id: 51,
     date: "2026-10-25",
     title: "Learning tools for Sections 21.4 to 21.6",
