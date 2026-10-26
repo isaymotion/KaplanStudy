@@ -313,10 +313,18 @@
     return t;
   }
   function reviewPrefs() { return store.get('reviewPrefs', { newPerDay: 20, scope: 'all' }); }
+  /* Card types in daily review. All four by default; at least one always stays on. */
+  function reviewDecks() {
+    var all = DECKS.map(function (d) { return d.key; }), d = reviewPrefs().decks;
+    d = Array.isArray(d) ? all.filter(function (k) { return d.indexOf(k) >= 0; }) : all;
+    return d.length ? d : all;
+  }
+  function inReviewDecks(r) { return reviewDecks().indexOf(r.deck.key) >= 0; }
   function dueSummary(scope) {
     var due = 0, fresh = 0;
     CARD_LIST.forEach(function (r) {
       if (scope && scope !== 'all' && r.ch.id !== scope) return;
+      if (!inReviewDecks(r)) return;
       if (isDue(r.key)) due++; else if (!SRS[r.key]) fresh++;
     });
     var quota = Math.max(0, reviewPrefs().newPerDay - newSeenToday());
@@ -413,6 +421,7 @@
       case 'review': return renderReview(p[1]);
       case 'mistakes': return renderMistakes();
       case 'weak': return renderWeak();
+      case 'tools': return TOOLS ? TOOLS.route(p) : renderMissing();
       case 'bookmarks': return renderBookmarks();
       case 'exam':
         if (p[1] === 'run') return renderExamRun();
@@ -519,6 +528,7 @@
         '</div>' +
         '<div class="tools">' +
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
+          '<a class="tool" href="#/tools"><span class="tool__name">Clinical tools</span><span class="tool__meta">Rating scales (PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS, C-SSRS) and dose and level calculators</span></a>' +
           '<a class="tool" href="#/weak"><span class="tool__name">Weak topics</span><span class="tool__meta">Your exam answers and flashcard ratings, pooled by topic, weakest first</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
@@ -717,11 +727,12 @@
         pt.sections.map(function (s) {
           n++;
           return '<section class="g-sec" id="' + s.id + '" aria-labelledby="' + s.id + '-h"><div class="g-sec__head"><h3 id="' + s.id + '-h"><span class="g-n">' + ch.number + '.' + n + '</span><span>' + esc(s.title).replace(/\//g, '/<wbr>') + '</span></h3>' + listenBtn(s.id) + ribbonBtn(ch.id, s) + '</div>' +
-            s.blocks.map(function (b, i) { return blockHTML(b, s.id + '--' + i); }).join('') + checksHTML(ch, s) + compareChips(ch, s) + '</section>';
+            s.blocks.map(function (b, i) { return blockHTML(b, s.id + '--' + i); }).join('') + checksHTML(ch, s) + compareChips(ch, s) + reportLink(ch, s, n) + '</section>';
         }).join('');
     }).join('');
     var g = ch.guide;
     var intro = '<p class="reading__intro">' + fmt(g.intro) + '</p>' +
+      chapterTools(ch) +
       (g.objectives ? '<div class="objectives"><h2>By the end of this chapter you should be able to</h2><ul>' + g.objectives.map(function (o) { return '<li>' + fmt(o) + '</li>'; }).join('') + '</ul></div>' : '') +
       prepostHTML(ch) + chapterLookalikes(ch);
     var html = chapterHead(ch, 'guide') +
@@ -773,6 +784,22 @@
 
   function listenBtn(secId) {
     return TTS.ok ? '<button class="g-listen" type="button" data-listen="' + secId + '" aria-label="Listen from this section" title="Listen from here"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>' : '';
+  }
+  /* Clinical tools (rating scales, calculators) that list this chapter. */
+  function chapterTools(ch) {
+    if (!TOOLS) return '';
+    var list = TOOLS.scales.concat(TOOLS.calcs).filter(function (t) { return (t.chapters || []).indexOf(ch.id) >= 0; });
+    return list.length ? '<p class="g-tools"><span>Clinical tools for this chapter:</span> ' + list.map(function (t) { return '<a href="#/tools/' + t.id + '">' + esc(t.short) + '</a>'; }).join('') + '</p>' : '';
+  }
+  /* "Report an error": opens the reader's mail app with the section, its link and the app release filled in. */
+  var REPORT_TO = 'isaymotion@gmail.com';
+  function appRelease() { var c = (KS.changelog || [])[0]; return c ? 'release ' + c.id + ' (' + c.date + ')' : 'unknown release'; }
+  function reportLink(ch, s, n) {
+    var where = 'Chapter ' + ch.number + '.' + n + ', ' + plain(s.title);
+    var link = location.origin + location.pathname + '#/c/' + ch.id + '/guide/' + s.id;
+    var body = 'What is wrong, and what it should say (with a source if you have one):\n\n\n\n---\nSection: ' + where + '\nLink: ' + link + '\nApp: ' + appRelease();
+    var href = 'mailto:' + REPORT_TO + '?subject=' + encodeURIComponent('K&S app error: ' + where) + '&body=' + encodeURIComponent(body);
+    return '<p class="g-report no-print"><a href="' + esc(href) + '">Report an error in this section</a></p>';
   }
   function checksHTML(ch, s) {
     var list = checksFor(ch, s.id);
@@ -1278,7 +1305,8 @@
     var out = [];
     allChapters().forEach(function (ch) {
       if (scope !== 'all' && ch.id !== scope) return;
-      var lists = DECKS.map(function (d) { return deckKeys(ch, d.key).filter(function (k) { return !SRS[k]; }); });
+      var on = reviewDecks();
+      var lists = DECKS.filter(function (d) { return on.indexOf(d.key) >= 0; }).map(function (d) { return deckKeys(ch, d.key).filter(function (k) { return !SRS[k]; }); });
       var more = true, i = 0;
       while (more) { more = false; lists.forEach(function (l) { if (i < l.length) { out.push(l[i]); more = true; } }); i++; }
     });
@@ -1289,7 +1317,7 @@
     if (scopeArg) { prefs.scope = chapter(scopeArg) ? scopeArg : 'all'; store.set('reviewPrefs', prefs); }
     var scope = prefs.scope || 'all';
     if (scope !== 'all' && !chapter(scope)) scope = 'all';
-    function inScope(r) { return scope === 'all' || r.ch.id === scope; }
+    function inScope(r) { return (scope === 'all' || r.ch.id === scope) && inReviewDecks(r); }
     var due = CARD_LIST.filter(function (r) { return inScope(r) && isDue(r.key); }).map(function (r) { return r.key; });
     shuffle(due); due.sort(function (a, b) { return SRS[a].d - SRS[b].d; });
     var quota = Math.max(0, prefs.newPerDay - newSeenToday());
@@ -1304,6 +1332,10 @@
       '<div class="deck-bar"><div class="deck-bar__opts">' +
         '<label class="select"><span>Chapters</span><select id="rv-scope">' + scopeOpts + '</select></label>' +
         '<label class="select"><span>New cards</span><select id="rv-new">' + newOpts + '</select></label>' +
+        '<fieldset class="rv-types"><legend>Card types</legend>' + DECKS.map(function (d) {
+          var on = reviewDecks().indexOf(d.key) >= 0;
+          return '<label class="rv-type c-' + d.css + '"><input type="checkbox" data-rvdeck="' + d.key + '"' + (on ? ' checked' : '') + '> ' + esc(d.short) + '</label>';
+        }).join('') + '</fieldset>' +
       '</div><span class="deck-bar__count">' + plural(due.length, 'due card') + ', ' + plural(fresh.length, 'new card') + '</span></div>' +
       '<div id="card-area" aria-live="polite"></div>' + kbdHelp(true) + '</div>';
     setView('review:' + scope, html);
@@ -1326,6 +1358,13 @@
       var p = reviewPrefs(); p.scope = e.target.value; store.set('reviewPrefs', p);
       var target = '#/review' + (e.target.value === 'all' ? '' : '/' + e.target.value);
       if (location.hash === target) renderReview(); else location.hash = target;
+    });
+    main.querySelectorAll('[data-rvdeck]').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        var on = Array.prototype.filter.call(main.querySelectorAll('[data-rvdeck]'), function (x) { return x.checked; }).map(function (x) { return x.getAttribute('data-rvdeck'); });
+        if (!on.length) { cb.checked = true; toast('Keep at least one card type.'); return; }
+        var p = reviewPrefs(); p.decks = on; store.set('reviewPrefs', p); updateNavBadges(); renderReview();
+      });
     });
     main.querySelector('#rv-new').addEventListener('change', function (e) { var p = reviewPrefs(); p.newPerDay = parseInt(e.target.value, 10); store.set('reviewPrefs', p); updateNavBadges(); renderReview(); });
   }
@@ -3477,7 +3516,7 @@
         list.map(function (c) {
           return '<a href="' + modeHref(c, mode) + '"' + (c.id === cur.ch ? ' class="is-current" aria-current="page"' : '') + '><span class="mn-num">' + c.number + '</span><span class="mn-ch">' + esc(c.short || c.title) + '</span></a>';
         }).join('');
-      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
+      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/tools"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Clinical tools</span></a><a href="#/weak"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Weak topics</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
       panel.innerHTML = html;
     }
     function open() {
@@ -3655,7 +3694,7 @@
     mark();
   })();
 
-  var DRUG = null;
+  var DRUG = null, TOOLS = null;
   loadAll().then(function () {
     if (KS.drugModule) {
       DRUG = KS.drugModule({
@@ -3667,6 +3706,7 @@
       });
       DRUG.inject();
     }
+    if (KS.toolsModule) TOOLS = KS.toolsModule({ esc: esc, fmt: fmt, plural: plural, toast: toast, setView: setView, main: function () { return main; }, chapter: chapter, renderMissing: renderMissing });
     indexCards();
     updateNavBadges();
     route();

@@ -13,6 +13,18 @@
  */
 KS.changelog = [
   {
+    id: 58,
+    date: "2026-10-27",
+    title: "Clinical tools, Report an error and review card types",
+    items: [
+      { type: "feature", text: "New Clinical tools page: PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS and the C-SSRS screener score as you answer, with severity bands, the AIMS Schooler–Kane threshold and the Columbia response protocol. Nothing you enter is saved. Each tool shows its sources and terms of use.", href: "#/tools", link: "Open Clinical tools" },
+      { type: "feature", text: "Four calculators: antipsychotic equivalents by WHO defined daily dose (oral and long-acting injectables), benzodiazepine equivalents (Ashton), clozapine ANC monitoring (US label, general population and benign ethnic neutropenia) and lithium level interpretation (ISBD/IGSLi 2019).", href: "#/tools", link: "Open calculators" },
+      { type: "feature", text: "Every study-guide section now has a Report an error link that opens a pre-filled email with the section, its link and the app release." },
+      { type: "feature", text: "Daily review: choose which card types to review (diagnosis, clinical cases, pharmacology, foundations).", href: "#/review", link: "Open daily review" },
+      { type: "update", text: "Chapter study guides link to their clinical tools, and the Clinical tools page links to the Stahl and DSM-5-TR companion apps." }
+    ]
+  },
+  {
     id: 57,
     date: "2026-10-26",
     title: "Weak topics and session takeaway sheets",

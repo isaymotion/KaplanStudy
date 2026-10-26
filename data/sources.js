@@ -4,6 +4,15 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Clinical tools (rating scales and calculators), October 2026 */
+    { m: 'Kroenke K, Spitzer RL, Williams JBW. The PHQ-9', label: 'PHQ-9 form (NIDA Common Data Elements)', url: 'https://cde.nida.nih.gov/system/files/PatientHealthQuestionnaire-9_2014Mar19.pdf' },
+    { m: 'Columbia Lighthouse Project', label: 'C-SSRS for communities and healthcare (Columbia)', url: 'https://cssrs.columbia.edu/the-columbia-scale-c-ssrs/cssrs-for-communities-and-healthcare/' },
+    { m: 'ASAM alcohol withdrawal guideline', label: 'CIWA-Ar ranges, ASAM 2020 (CSAM)', url: 'https://www.csam-asam.org/ciwa-ar' },
+    { m: 'Wesson DR, Ling W', label: 'COWS form (NIDA)', url: 'https://nida.nih.gov/sites/default/files/ClinicalOpiateWithdrawalScale.pdf' },
+    { m: 'WHO ATC/DDD Index', label: 'WHO ATC/DDD Index: antipsychotics (N05A)', url: 'https://atcddd.fhi.no/atc_ddd_index/?code=N05A&showdescription=no' },
+    { m: 'Ashton Manual', label: 'Ashton Manual: benzodiazepine equivalence table', url: 'https://www.benzo.org.uk/bzequiv.htm' },
+    { m: 'Clozaril prescribing information, revised 6/2025', label: 'Clozaril prescribing information (FDA, June 2025)', url: 'https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/019758Orig1s107lbl.pdf' },
+    { m: 'NCMH Crisis Hotline', label: 'NCMH Crisis Hotline numbers (Daily Tribune, Jan 2026)', url: 'https://tribune.net.ph/2026/01/03/doh-mental-health-hotline-gets-nearly-1k-calls-during-holiday-season' },
     { m: 'Vanda Pharmaceuticals, April 2024', label: 'Psychiatric Times: FDA approves Bysanti (Feb 2026)', url: 'https://www.psychiatrictimes.com/view/fda-approves-bysanti-for-treatment-of-bipolar-1-disorder-and-schizophrenia' },
     { m: 'Rexulti (April 2026)', label: 'Label: brexpiprazole (DailyMed)', url: DM('brexpiprazole') },
     { m: 'Rexulti (April 2026)', label: 'Label: cariprazine (DailyMed)', url: DM('cariprazine') },
