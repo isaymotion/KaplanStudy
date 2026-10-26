@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-26, after backfill pass 8 (Chapters 3 and 4). **The learning-layer backfill is complete**: every chapter and section has its full learning tools, and all of it is pushed and live. **Next work: the unbuilt feature list in section 7.** Update the status table and next steps at the end of every unit.
+Last updated 2026-10-26, after backfill pass 8 (Chapters 3 and 4) and a parallel session's Chapter 15 release (`556be5e`). **The learning-layer backfill is complete**: every chapter and section has its full learning tools, and all of it is pushed and live. **Next work: the unbuilt feature list in section 7.** Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -56,7 +56,7 @@ Last updated 2026-10-26, after backfill pass 8 (Chapters 3 and 4). **The learnin
    - Fixes needed so far: pass 6, 5; pass 7, 7; pass 8, 11 across two chapters, including one swapped pair (c4-ha08), a borrowed figure (a morphine lethal dose quoted as nicotine's) and a check answer contradicting its update box.
 7. Add a changelog entry (next id) and bump the `sw.js` VERSION, then run the tests (section 5), commit and push `main`. Copy the two final updwork files to `devtools-wt/updwork/`, then commit and push `dev-tools`.
 
-**B. New chapter section** (needs the epub): copy the previous `build_<ch>.js`, write the work folder, build, then register it in `chapters.js`, `extraFiles`, `helpers.js`, `sources.js`, the glossary, `lookalikes.js`, the changelog, `README.md`, the `fulltest.py` CHS and routes, and `sw.js`. Then add its learning layer with recipe A. All chapters of the book through 21.11 are built, so this recipe is only for future chapters.
+**B. New chapter section** (needs the epub): copy the previous `build_<ch>.js`, write the work folder, build, then register it in `chapters.js`, `extraFiles`, `helpers.js`, `sources.js`, the glossary, `lookalikes.js`, the changelog, `README.md`, the `fulltest.py` CHS and routes, and `sw.js`. Then add its learning layer with recipe A. Built so far: Chapters 1–15, 19, 21.0–21.11 and 25.3. **Not yet built: 16, 17, 18, 20 and the rest of the book.** Another chat of the user's built Chapter 15 in parallel, so before building a chapter, pull `main` and check `data/chapters.js` to make sure it is not already done.
 
 **C. New app feature** (for the section 7 list)
 1. Read the relevant parts of `js/app.js` and the router first. Check that the feature does not already exist in some form.
@@ -89,8 +89,9 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 3 | 85/85 | 37/37 | Complete (pass 8) |
 | Ch 4 | 86/86 | 53/53 | Complete (pass 8) |
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
+| Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 
-Totals: **1,143/1,143 cases and 666/666 sections.** The last commits on `main` are `a7bb9a8` (pass 7) and `2d11436` (pass 8); `dev-tools` ends with the pass 8 work files (`82f0144`) and this handoff update. The latest changelog id is **55**, and `sw.js` VERSION is `'2026-10-learn-p8'`.
+Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `556be5e`. The last commits on `main` are `2d11436` (pass 8) and `556be5e` (Chapter 15). The latest changelog id is **56**, and `sw.js` VERSION is `'2026-10-ch15'`.
 
 ## 7. Next steps
 1. **Unbuilt features** (from the Oct 28 reminder; the user wants to start early). Ask the user which to build first, then use recipe C:
@@ -98,8 +99,8 @@ Totals: **1,143/1,143 cases and 666/666 sections.** The last commits on `main` a
    - **Progress:** a weak-topics dashboard, and mixed review across chapters with confidence ratings.
    - **Educator:** a teaching-mode results summary. A session-summary page (`#/teach/summary/<id>`) already exists in `js/app.js`, so first find out what the user wants beyond it.
    - **Quality:** a "Report an error" link on each section.
-2. Use changelog id **56** for the first feature release.
-3. Any new chapter: recipe B, then recipe A.
+2. Use changelog id **57** for the next release. Pull `main` first, because a parallel chat may have used it.
+3. Unbuilt chapters (16, 17, 18, 20, ...): recipe B, then recipe A. Check first which ones the parallel chat has done.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
 - **"Kaplan backfill pass"**: runs daily at 1:41 am Manila and reads this file. With the backfill complete, it should report that and make no changes. It is now obsolete; ask the user whether to turn it off or delete it.
@@ -107,6 +108,7 @@ Totals: **1,143/1,143 cases and 666/666 sections.** The last commits on `main` a
 - **"Weekly app backup to Google Drive"**: Sundays at 7:31 am Manila. Leave it running.
 
 ## 9. Pitfalls learned
+- **Parallel chats push to `main`.** Always `git pull --ff-only origin main` before starting a unit and again before committing. Take the next changelog id and VERSION from the pulled files, not from this doc.
 - whyNot must follow the **stored** choice order from `dump.js cases`, not the original order in the work folder.
 - A glossary alias that equals an existing term makes validation error. Check `grep -i` first.
 - Foreground `sleep` is blocked; use background loops or Python waits.
