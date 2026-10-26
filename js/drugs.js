@@ -442,7 +442,7 @@
     }
 
     /* ---------- drug-name links in reading text ---------- */
-    var NAME_RE = null, NAME_MAP = {};
+    var NAME_RE = null, NAME_MAP = {}, NAME_EXACT = {};
     function buildNames() {
       var names = [];
       DRUGS.forEach(function (d) {
@@ -451,6 +451,7 @@
           if (base.length < 4 || /\s(M-Tab|Zydis|Consta|Relprevv|Maintena|Sustenna|Decanoate|XR)$/.test(base) && base !== d.name) return;
           var k = base.toLowerCase(); if (NAME_MAP[k]) return;
           NAME_MAP[k] = d.id; names.push(base);
+          if (/[A-Z].*[A-Z]/.test(base) && /[a-z]/.test(base)) NAME_EXACT[k] = base; /* mixed-case names such as SAMe link only in that exact case, not the word 'same' */
         });
       });
       names.sort(function (a, b) { return b.length - a.length; });
@@ -472,6 +473,7 @@
         var text = node.nodeValue, m, last = 0, frag = null; NAME_RE.lastIndex = 0;
         while ((m = NAME_RE.exec(text))) {
           var id = NAME_MAP[m[2].toLowerCase()]; if (!id || seen[id]) continue;
+          if (NAME_EXACT[m[2].toLowerCase()] && NAME_EXACT[m[2].toLowerCase()] !== m[2]) continue;
           seen[id] = 1;
           var start = m.index + m[1].length;
           frag = frag || document.createDocumentFragment();

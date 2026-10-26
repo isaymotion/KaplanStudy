@@ -195,6 +195,19 @@
     { m: "NIH Office of Dietary Supplements, kava", label: "NIH ODS: kava", url: "https://ods.od.nih.gov/Health_Information/kava.aspx" },
     { m: "Ginkgo biloba for preventing cognitive decline in older adults", label: "PMC: Ginkgo Evaluation of Memory study (JAMA 2009)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2832285" },
     { m: "FDA recommends scheduling of 7-OH", label: "HHS: FDA recommends scheduling 7-OH (July 2025)", url: "https://www.hhs.gov/press-room/fda-7-oh-scheduling-recommendation.html" },
-    { m: "ashwagandha food supplements with potential health risks", label: "BfR: ashwagandha food supplements with potential health risks (2024)", url: "https://www.bfr.bund.de/cm/349/ashwagandha-food-supplements-with-potential-health-risks.pdf" }
+    { m: "ashwagandha food supplements with potential health risks", label: "BfR: ashwagandha food supplements with potential health risks (2024)", url: "https://www.bfr.bund.de/cm/349/ashwagandha-food-supplements-with-potential-health-risks.pdf" },
+    { m: "AASM Manual for the Scoring of Sleep", label: "AASM scoring manual", url: "https://aasm.org/clinical-resources/scoring-manual/" },
+    { m: "International Classification of Sleep Disorders, 3rd ed., text revision", label: "AASM: ICSD-3-TR (2023)", url: "https://aasm.org/clinical-resources/international-classification-sleep-disorders/" },
+    { m: "Qaseem A et al., ACP guideline on chronic insomnia", label: "ACP: management of chronic insomnia (2016)", url: "https://www.acpjournals.org/doi/10.7326/M15-2175" },
+    { m: "AASM guideline on behavioral and psychological treatments for insomnia", label: "AASM: behavioral treatments for insomnia (2021)", url: "https://aasm.org/new-guideline-supports-behavioral-psychological-treatments-for-insomnia/" },
+    { m: "Xywav approved for idiopathic hypersomnia", label: "AASM: Xywav approved for idiopathic hypersomnia (2021)", url: "https://aasm.org/fda-approves-new-indication-for-xywav-for-idiopathic-hypersomnia/" },
+    { m: "Wakix pediatric approval", label: "AASM: Wakix for children with narcolepsy (2024)", url: "https://aasm.org/fda-approves-wakix-for-narcolepsy-in-pediatric-patients/" },
+    { m: "Orzeyful approval", label: "Healio: FDA approves Orzeyful (Aug 2026)", url: "https://www.healio.com/news/neurology/20260807/fda-approves-orzeyful-for-type-1-narcolepsy-in-adults" },
+    { m: "FDA approval of Zepbound for obstructive sleep apnea", label: "WebMD: FDA approves Zepbound for sleep apnea (Dec 2024)", url: "https://www.webmd.com/sleep-disorders/sleep-apnea/news/20241223/cm/fda-approves-zepbound-obstructive-sleep-apnea" },
+    { m: "Apnimed AD109 NDA acceptance", label: "NeurologyLive: AD109 NDA accepted (2026)", url: "https://www.neurologylive.com/view/fda-accepts-nda-apnimed-ad109-treatment-obstructive-sleep-apnea" },
+    { m: "Inspire upper airway stimulation", label: "FDA: Inspire approval expansion (2023)", url: "https://www.fda.gov/medical-devices/recently-approved-devices/inspire-upper-airway-stimulation-p130008s090" },
+    { m: "remedē system approval", label: "FDA: remedē system (2017)", url: "https://www.fda.gov/medical-devices/recently-approved-devices/remeder-system-p160039" },
+    { m: "AASM position paper on nightmare disorder", label: "AASM: nightmare disorder position paper (2018)", url: "https://aasm.org/new-position-paper-recommends-treatment-options-for-nightmare-disorder-in-adults/" },
+    { m: "AASM guideline for RLS and PLMD", label: "AASM: restless legs guideline summary (2024)", url: "https://aasm.org/summary-of-new-clinical-practice-guideline-for-rls-and-plmd/" }
   ];
 })();

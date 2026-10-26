@@ -3665,5 +3665,191 @@ KS.helpers = (KS.helpers || []).concat([
       gas: { label: "Urgent", dx: "Consider tianeptine or concentrated 7-OH (kratom) products", line: "Post-publication FDA warnings: tianeptine is unapproved and linked to seizures and deaths; 7-OH is an opioid that can be more potent than morphine.", points: ["Treat as poisoning; contact poison control (1-800-222-1222 in the United States).", "Ask about dependence and withdrawal; kratom causes withdrawal."], link: { ch: "ch21-11", sec: "s2111-kratom", label: "Kratom" } },
       child: { label: "Urgent", dx: "Pediatric ingestion: contact poison control", line: "Pediatric melatonin ingestions rose about 530% from 2012 to 2021; mistletoe berries, nux vomica and catnip (delirium) are dangerous in children.", points: ["Bring the product; labels may be inaccurate.", "Advise safe storage for all supplements in the home."], link: { ch: "ch21-11", sec: "s2111-safety", label: "Safety" } }
     }
+  },
+  {
+    id: "sleep",
+    chapter: "ch15",
+    title: "Which sleep–wake disorder?",
+    summary: "Start from the main complaint (trouble sleeping, excessive sleepiness, abnormal behavior in sleep, leg sensations or movements, or sleep at the wrong times), rule out substance, medical, psychiatric and breathing causes, then use timing, recall, cataplexy, test findings and age to reach the most likely sleep–wake disorder or a look-alike.",
+    caution: "A teaching aid built from Chapter 15, not a substitute for a full sleep history, a bed partner’s account and examination. Ask every sleepy patient about drowsy driving: sleep-related crashes are a major public safety risk. Excessive sleepiness, apneas witnessed by others, and violent or injurious behavior at night need prompt evaluation, with polysomnography when indicated.",
+    start: "main",
+    nodes: {
+      main: {
+        q: "What is the main sleep complaint?",
+        help: "Begin with habitual bedtimes and rising times on weekdays and weekends, naps and overall sleepiness. Ask the bed partner about snoring, breathing pauses, leg kicks and dream enactment (Table 15-19).",
+        options: [
+          { label: "Trouble falling asleep, staying asleep or waking too early", to: "ins_cause", note: "The main complaint is insomnia: difficulty initiating or maintaining sleep, or early waking." },
+          { label: "Excessive sleepiness or sleeping too much", to: "hyp_first", note: "The main complaint is excessive daytime sleepiness or prolonged sleep." },
+          { label: "Abnormal behavior or experiences during sleep", to: "para_sz", note: "The main complaint is an event during sleep or at its boundaries, pointing to a parasomnia." },
+          { label: "Uncomfortable leg sensations, or movements during sleep", to: "move_kind", note: "The main complaint is a sensation or movement, pointing to a sleep-related movement disorder." },
+          { label: "Sleep comes at the wrong times", to: "circ_kind", note: "The main complaint is mistimed sleep, pointing to a circadian rhythm sleep–wake disorder." }
+        ]
+      },
+      ins_cause: {
+        q: "Could a substance, medical condition, mental disorder or another sleep disorder explain the insomnia?",
+        help: "DSM-5 insomnia disorder is not diagnosed when another condition better explains the poor sleep. Insomnia comorbid with a mental disorder is the most common type.",
+        options: [
+          { label: "Caffeine, decongestants, stimulants, SSRIs or other drugs; or alcohol or sedatives with rebound", to: "r:ins_subst", note: "A drug or substance from Table 15-7 could be disturbing sleep." },
+          { label: "Pain, reflux, COPD, a neurodegenerative disease, or depression, bipolar disorder, PTSD, anxiety or psychosis", to: "r:ins_comorbid", note: "A medical or psychiatric condition accompanies the insomnia." },
+          { label: "Loud snoring, gasping or breathing pauses seen by a partner", to: "r:osa", note: "Snoring and witnessed apneas suggest obstructive sleep apnea behind the poor sleep." },
+          { label: "Waking short of breath, with heart failure, stroke, long-acting opioids or high altitude", to: "r:csa", note: "Insomnia with breathlessness on waking in a predisposing setting suggests central sleep apnea." },
+          { label: "An urge to move the legs at rest that keeps the person awake", to: "rls", note: "Leg discomfort at bedtime suggests restless legs syndrome." },
+          { label: "Sleep is normal in length but shifted later, earlier or broken up", to: "circ_kind", note: "A timing problem suggests a circadian rhythm sleep–wake disorder." },
+          { label: "Fear of sleeping because of frequent frightening dreams", to: "r:nightmare", note: "Frequent nightmares are producing a fear-of-sleeping insomnia." },
+          { label: "None of these, or they have been treated and insomnia persists", to: "ins_freq", note: "Substance, medical, psychiatric and other sleep disorder causes are reasonably excluded." }
+        ]
+      },
+      ins_freq: {
+        q: "Does it occur at least 3 nights a week for at least 3 months, despite adequate opportunity for sleep, with distress or impaired functioning?",
+        help: "DSM-5 course: episodic (1 to 3 months), persistent (3 months or more) or recurrent. ICSD-3 separates short-term (under 3 months) from chronic insomnia disorder.",
+        options: [
+          { label: "Yes", to: "ins_type", note: "Frequency, duration and impairment meet DSM-5 insomnia disorder." },
+          { label: "No: under 3 months, often after an acute stressor", to: "r:ins_short", note: "The insomnia is recent or brief, often tied to a stressor." }
+        ]
+      },
+      ins_type: {
+        q: "Which pattern best describes the insomnia?",
+        help: "DSM-5 has no formal subtypes, but the ICSD-3 subtypes in the chapter point to different treatments.",
+        options: [
+          { label: "Worries about not sleeping, tries too hard, sleeps better away from own bed or in front of the television", to: "r:ppi", note: "Conditioned arousal linked to the bed and the effort to sleep, as in Table 15-6." },
+          { label: "Reports little or no sleep, but recordings show normal sleep", to: "r:paradox", note: "The complaint is not matched by objective evidence of disrupted sleep." },
+          { label: "Late caffeine or nicotine, stimulating activity before bed, daytime naps or an irregular schedule", to: "r:hygiene", note: "Habits that raise arousal or disturb sleep architecture are driving the insomnia." },
+          { label: "A child who needs a parent or object to fall asleep, or stalls and refuses bedtime", to: "r:child", note: "Sleep onset depends on specific conditions or limit setting is inadequate." }
+        ]
+      },
+      hyp_first: {
+        q: "Is there a simple explanation for the sleepiness?",
+        help: "Ask how many hours the person actually sleeps on workdays and weekends, about sedating drugs and recent stimulant use, and about mood.",
+        options: [
+          { label: "Sleeps too little or irregularly, and catches up on weekends", to: "r:insufficient", note: "Habitually short or irregular sleep can explain the sleepiness." },
+          { label: "Sedative–hypnotics or opioids, or stopping stimulants; or depression, including seasonal or bipolar depression", to: "r:hyp_cause", note: "A substance, withdrawal or mood disorder can explain the sleepiness." },
+          { label: "No: adequate sleep time, no such cause", to: "breath", note: "Sleep time is adequate and substance or mood causes are not evident." }
+        ]
+      },
+      breath: {
+        q: "Are there signs of a sleep-related breathing disorder?",
+        help: "OSA: snoring, obesity, choking or gasping awakenings, morning dry mouth and headache, night sweats (Table 15-2). Many patients are unaware of gasping; a bed partner often witnesses the pauses. People who sleep alone may have no witness.",
+        options: [
+          { label: "Loud snoring, witnessed pauses or gasping, obesity or a small or set-back jaw", to: "r:osa", note: "Snoring, witnessed apneas and body habitus point to obstructive sleep apnea; polysomnography is needed." },
+          { label: "Breathing pauses without snoring, with heart failure, stroke, long-acting opioids or high altitude", to: "r:csa", note: "Pauses without obstruction in a predisposing setting suggest central sleep apnea." },
+          { label: "Obesity, neuromuscular or chest disease with low oxygen not explained by apneas", to: "r:hypovent", note: "Hypoventilation without apneas suggests sleep-related hypoventilation." },
+          { label: "None", to: "narc", note: "No snoring, witnessed apneas or other breathing signs." }
+        ]
+      },
+      narc: {
+        q: "Are there sudden episodes of muscle weakness triggered by laughter or strong emotion, with the person still conscious?",
+        help: "Cataplexy ranges from buckling knees to full collapse lasting seconds to minutes. Ask too about sleep paralysis and hypnagogic or hypnopompic hallucinations. Cataplexy can be confused with seizures or movement disorders.",
+        options: [
+          { label: "Yes, clear cataplexy", to: "r:narc", note: "Clear cataplexy with sleepiness strongly indicates narcolepsy." },
+          { label: "No, or doubtful (for example, vague weakness only during heated arguments)", to: "pattern", note: "Cataplexy is absent or equivocal, so other hypersomnias stay in the differential." }
+        ]
+      },
+      pattern: {
+        q: "How does the sleepiness behave over time?",
+        help: "The key test for a long sleeper: give a consistent full night (often 10 to 12 hours) and see whether daytime sleepiness disappears.",
+        options: [
+          { label: "Recurrent episodes of days to weeks with 18 to 20 hours of sleep, voracious eating, hypersexuality or disinhibition, and normal intervals", to: "r:kls", note: "Episodic hypersomnia with normal intervals fits Kleine–Levin syndrome." },
+          { label: "Needs long nights, but is alert by day when allowed a full 10 to 12 hours", to: "r:long_sleeper", note: "Daytime sleepiness disappears with a consistently long sleep period." },
+          { label: "Sleepy despite adequate or long sleep: naps, main sleep over 9 hours yet unrefreshing, hard to wake", to: "narc_tests", note: "Persistent sleepiness despite adequate sleep needs objective testing." }
+        ]
+      },
+      narc_tests: {
+        q: "What did polysomnography and the next-day MSLT show?",
+        help: "The MSLT follows an overnight polysomnogram: five 20-minute nap opportunities at 2-hour intervals. Low CSF hypocretin also supports narcolepsy.",
+        options: [
+          { label: "REM within 15 minutes of sleep onset overnight, or MSLT mean latency 8 minutes or less with 2 or more sleep-onset REM periods; or low CSF hypocretin", to: "r:narc", note: "REM intrusion at sleep onset or hypocretin deficiency confirms narcolepsy." },
+          { label: "Short mean sleep latency, fewer than 2 sleep-onset REM periods, often more slow-wave sleep", to: "r:hypersom", note: "Objective sleepiness without sleep-onset REM periods fits hypersomnolence disorder (idiopathic hypersomnia)." }
+        ]
+      },
+      para_sz: {
+        q: "Are there features of nocturnal seizures or of a breathing disorder?",
+        help: "Seizure disorder belongs at the top of the differential for most parasomnias. Breathing disorders can trigger sleepwalking, sleep terrors, confusional arousals, enuresis and nightmares.",
+        options: [
+          { label: "Tongue biting, stereotyped events, or episodes that do not fit a typical parasomnia", to: "r:seizure", note: "The events could be nocturnal seizures." },
+          { label: "Snoring, witnessed apneas or gasping", to: "r:osa", note: "Sleep apnea may be triggering the night-time events; treat it and reassess." },
+          { label: "Neither", to: "para_kind", note: "No seizure or breathing red flags in the history." }
+        ]
+      },
+      para_kind: {
+        q: "What happens during the episodes, and what does the person remember?",
+        help: "NREM arousal disorders arise from slow-wave sleep early in the night with little recall; nightmares and REM sleep behavior disorder come from REM sleep, usually later, with dream recall.",
+        options: [
+          { label: "Gets up and walks or acts semi-purposefully, hard to wake, confused, no memory: a child", to: "r:sw_child", note: "Sleepwalking with amnesia in a child, in whom it is common." },
+          { label: "Same picture, but in an adult", to: "r:sw_adult", note: "Sleepwalking in an adult, in whom it is rare." },
+          { label: "Sits up screaming in terror with racing heart and sweating, unresponsive, little or no recall", to: "r:terror", note: "Sudden terror from deep sleep with amnesia fits sleep terrors." },
+          { label: "Wakes from a long, frightening dream, quickly alert and recalls it", to: "r:nightmare", note: "Full arousal with vivid dream recall fits nightmares." },
+          { label: "Punches, kicks or leaps as if acting out a dream; alert when woken; often injuries", to: "r:rbd", note: "Dream enactment with loss of REM atonia fits REM sleep behavior disorder." },
+          { label: "Cannot move on falling asleep or waking, sometimes with a sensed presence", to: "r:paralysis", note: "REM atonia intruding into wakefulness fits sleep paralysis." }
+        ]
+      },
+      move_kind: {
+        q: "Which best describes the sensation or movement?",
+        help: "Ask the bed partner about leg jerks and teeth grinding. A sleep study is not needed to diagnose restless legs syndrome.",
+        options: [
+          { label: "Uncomfortable, creeping feelings in the legs with an urge to move them at rest", to: "rls", note: "An urge to move with leg discomfort at rest suggests restless legs syndrome." },
+          { label: "Repetitive leg jerks during sleep reported by a partner, with unrefreshing sleep", to: "r:plmd", note: "Stereotyped limb movements in sleep suggest periodic limb movement disorder." },
+          { label: "A painful calf contraction wakes the person", to: "r:cramps", note: "Painful muscle contractions that wake the sleeper are sleep-related leg cramps." },
+          { label: "Grinding or clenching of the teeth, jaw pain or tooth wear", to: "r:brux", note: "Teeth grinding in sleep is sleep-related bruxism." }
+        ]
+      },
+      rls: {
+        q: "Is the urge worse in the evening or at night and relieved by moving, at least 3 times a week for 3 months?",
+        help: "DSM-5 requires all three features and excludes akathisia, substance effects, other medical or mental disorders and habitual movements.",
+        options: [
+          { label: "Yes", to: "r:rls", note: "The urge, evening worsening and relief by movement are all present." },
+          { label: "Inner restlessness of the whole body that began after an antipsychotic or other dopamine blocker", to: "r:akathisia", note: "Drug-induced restlessness is akathisia, an exclusion for restless legs syndrome." },
+          { label: "Leg pain or discomfort without this pattern", to: "r:rls_mimic", note: "The pattern does not fit restless legs syndrome." }
+        ]
+      },
+      circ_kind: {
+        q: "What does the sleep–wake pattern look like?",
+        help: "A sleep diary or actigraphy over days to weeks shows the pattern. Check that the problem causes insomnia, sleepiness or impairment and is not just a preference.",
+        options: [
+          { label: "Falls asleep and wakes much later than desired; alert in the evening (night owl)", to: "r:dspd", note: "Sleep onset and waking are consistently later than desired." },
+          { label: "Sleepy early in the evening and wakes very early (lark)", to: "r:aspd", note: "Sleep onset and waking are consistently earlier than desired." },
+          { label: "Sleep broken into 3 or more irregular bouts across 24 hours", to: "r:irregular", note: "No clear daily rhythm: sleep is fragmented and unpredictable." },
+          { label: "Sleep time drifts later day by day, with weeks of insomnia and sleepiness then a few normal days; often blind", to: "r:n24", note: "The clock is not resetting to 24 hours, so sleep drifts around the clock." },
+          { label: "Works night or rotating shifts", to: "r:shift", note: "The work schedule conflicts with the circadian clock." },
+          { label: "Just flew across several time zones", to: "r:jetlag", note: "Rapid travel has desynchronized the clock from local time." }
+        ]
+      }
+    },
+    results: {
+      ins_subst: { label: "Consider first", dx: "Insomnia due to a drug or substance", line: "Caffeine, decongestants, stimulants, SSRIs, antiparkinsonian and antiepileptic drugs, or rebound after alcohol or sedatives (Table 15-7).", points: ["Caffeine’s half-life is 3 to 7 hours; some people react to any coffee or chocolate.", "Alcohol shortens sleep latency but fragments later sleep, and tolerance and withdrawal worsen insomnia.", "Stopping cocaine or amphetamines causes hypersomnolence rather than insomnia."], link: { ch: "ch15", sec: "s15-ins-subst", label: "Insomnia due to drugs and substances" } },
+      ins_comorbid: { label: "Consider first", dx: "Insomnia comorbid with a mental or medical disorder", line: "The commonest type; about 35% of insomnia patients at sleep centers have a mental disorder, most often major depression.", points: ["Insomnia is an independent suicide risk factor in major depression; lost sleep can precipitate mania.", "Pain and poor sleep feed each other; treat reflux to improve sleep, as hypnotics do not relieve it.", "Diagnose insomnia disorder as well, with a comorbidity specifier, if it needs independent attention."], link: { ch: "ch15", sec: "s15-ins-ddx", label: "Insomnia: differential and comorbidity" } },
+      ins_short: { label: "Consider", dx: "Short-term insomnia (episodic course)", line: "Insomnia lasting under 3 months, often in the setting of an acute stressor.", points: ["DSM-5 calls 1 to 3 months episodic; ICSD-3 calls under 3 months short-term insomnia disorder.", "Consider whether a short sleeper without daytime impairment is simply a normal variant.", "Reassess: conditioned arousal can turn an acute insomnia chronic."], link: { ch: "ch15", sec: "s15-ins-dx", label: "Insomnia disorder: criteria" } },
+      ppi: { label: "Most likely", dx: "Insomnia disorder: psychophysiologic insomnia", line: "Conditioned arousal: the bed, bedroom and effort to sleep have become cues for wakefulness.", points: ["Document the pattern with a sleep log; avoid labeling insomnia alone as masked depression.", "CBTi is first line, with stimulus control (bed only for sleep, get up if awake) and sleep restriction.", "Hypnotics help short term, but insomnia usually returns when they stop."], link: { ch: "ch15", sec: "s15-ins-types", label: "Insomnia subtypes" } },
+      paradox: { label: "Consider", dx: "Insomnia disorder: paradoxical insomnia", line: "The person believes they are awake while recordings show normal sleep.", points: ["Needs objective evidence: polysomnography or actigraphy shows no sleep disruption.", "Can occur without psychopathology, but may reflect somatic delusion, hypochondriasis or obsessional focus on the body."], link: { ch: "ch15", sec: "s15-ins-types", label: "Insomnia subtypes" } },
+      hygiene: { label: "Most likely", dx: "Insomnia disorder: inadequate sleep hygiene", line: "Habits that raise arousal near bedtime or disturb sleep architecture.", points: ["Pick one or two changes with the patient (Table 15-24) rather than a long list.", "Sleep hygiene education alone has little effect; combine it with the other parts of CBTi."], link: { ch: "ch15", sec: "s15-cbti-behav", label: "Sleep hygiene, stimulus control and sleep restriction" } },
+      child: { label: "Most likely", dx: "Insomnia disorder: behavioral insomnia of childhood", line: "Sleep onset depends on a parent, object or setting, or bedtime limits are not set.", points: ["Look for bedtime stalling and refusal.", "Work with caregivers on consistent limit setting and sleep-onset conditions."], link: { ch: "ch15", sec: "s15-ins-types", label: "Insomnia subtypes" } },
+      insufficient: { label: "Consider first", dx: "Insufficient sleep", line: "Sleepiness from habitually short or irregular sleep rather than a primary hypersomnia.", points: ["ICSD-3 lists insufficient sleep syndrome among the hypersomnias.", "Sleep deprivation worsens parasomnias and seizures; extend and regularize sleep, then reassess.", "Warn about drowsy driving while sleepy."], link: { ch: "ch15", sec: "s15-narc-ddx", label: "Hypersomnia differential" } },
+      hyp_cause: { label: "Consider first", dx: "Sleepiness from a substance or a mood disorder", line: "Sedative–hypnotics and opioids sedate, stopping stimulants causes hypersomnolence, and depression often presents with sleepiness.", points: ["Hypersomnolence is especially linked to bipolar and seasonal depression (Table 15-23).", "Polysomnography, interview and psychometric testing help separate low-grade depression from a primary hypersomnia.", "Stimulant misuse is common in people trying to stay awake."], link: { ch: "ch15", sec: "s15-hyp", label: "Hypersomnolence disorder" } },
+      osa: { label: "Most likely", dx: "Obstructive sleep apnea-hypopnea", line: "Airway collapse in sleep with desaturation and arousals; risk factors include male sex, middle age, obesity, jaw abnormalities, hypothyroidism and acromegaly.", points: ["Confirm with polysomnography: at least 5 obstructive events an hour with symptoms, or at least 15 regardless; a negative home test with obvious symptoms needs a laboratory study.", "PAP is the preferred treatment; oral appliances for mild to moderate cases, positional therapy, surgery mainly after PAP failure, and weight loss; since 2024, tirzepatide is approved for OSA with obesity.", "Look for hypertension, heart failure, depression and memory problems."], link: { ch: "ch15", sec: "s15-osa", label: "Obstructive sleep apnea-hypopnea" } },
+      csa: { label: "Consider", dx: "Central sleep apnea", line: "Breathing stops because effort ceases, not because the airway is blocked.", points: ["Polysomnography shows absent chest and abdominal effort during apneas, 5 or more an hour.", "DSM-5 types: idiopathic, Cheyne–Stokes breathing (older men with heart failure or stroke) and comorbid with opioid use.", "High-altitude periodic breathing can be treated with acetazolamide."], link: { ch: "ch15", sec: "s15-csa", label: "Central sleep apnea" } },
+      hypovent: { label: "Consider", dx: "Sleep-related hypoventilation", line: "Reduced breathing with raised CO2, or persistent low oxygen not caused by apneas or hypopneas.", points: ["DSM-5 types: idiopathic, congenital central alveolar and comorbid (spinal cord injury, COPD, neuromuscular disease).", "ICSD-3 obesity hypoventilation syndrome: daytime PaCO2 over 45 mm Hg with BMI over 30.", "Abnormal blood gases while awake mark more severe illness."], link: { ch: "ch15", sec: "s15-hypovent", label: "Sleep-related hypoventilation" } },
+      narc: { label: "Most likely", dx: "Narcolepsy", line: "Irresistible sleep or naps at least 3 times a week for 3 months, plus cataplexy, hypocretin deficiency, or sleep-onset REM on polysomnography or MSLT.", points: ["Exclude medical causes of cataplexy, such as hypothalamic tumors, sarcoidosis and multiple sclerosis (Table 15-22).", "Modafinil, armodafinil, stimulants, pitolisant or solriamfetol for sleepiness; REM-suppressing antidepressants or sodium oxybate for cataplexy.", "Add scheduled naps, counseling and monitoring of refills and cardiac status."], link: { ch: "ch15", sec: "s15-narc", label: "Narcolepsy" } },
+      hypersom: { label: "Most likely", dx: "Hypersomnolence disorder (idiopathic hypersomnia)", line: "Excessive sleepiness despite adequate sleep, with unrefreshing long sleep or difficult waking, at least 3 times a week for 3 months.", points: ["Sleep looks like that of a sleep-deprived person, but the pattern persists after several nights of extended sleep, often with more slow-wave sleep.", "Stimulants or modafinil are used, with drug holidays and monitoring; low-sodium oxybate has been approved for idiopathic hypersomnia since 2021.", "Look for comorbid bipolar disorder, depression and neurodegenerative disease."], link: { ch: "ch15", sec: "s15-hyp", label: "Hypersomnolence disorder" } },
+      kls: { label: "Consider", dx: "Kleine–Levin syndrome", line: "Rare recurrent hypersomnia with 18- to 20-hour sleep, voracious eating, hypersexuality and disinhibition, between normal periods.", points: ["Mostly males in early adolescence; first attack usually between 10 and 21 years.", "Episodes last days to weeks and recur once to 10 times a year; a monosymptomatic form exists."], link: { ch: "ch15", sec: "s15-kls", label: "Kleine–Levin syndrome" } },
+      long_sleeper: { label: "Not a disorder", dx: "Long sleeper (normal variant)", line: "Needs more sleep than most people but is not sleepy by day when allowed it.", points: ["Sleepiness appears only when the long sleep need is not met.", "Idiopathic hypersomnia, by contrast, persists despite long sleep and may show more slow-wave sleep."], link: { ch: "ch15", sec: "s15-variants", label: "Isolated symptoms and normal variants" } },
+      seizure: { label: "Investigate", dx: "Nocturnal seizures", line: "Seizures belong at the top of the differential for sleepwalking, terrors, REM sleep behavior disorder, nightmares and bruxism.", points: ["Polysomnography with an extended EEG montage, after a clinical EEG, helps separate seizures from parasomnias.", "Sleep deprivation worsens both parasomnias and seizures."], link: { ch: "ch15", sec: "s15-para-other", label: "Other parasomnias and their triggers" } },
+      sw_child: { label: "Most likely", dx: "NREM sleep arousal disorder, sleepwalking type (child)", line: "Very common in children, peaking at 4 to 8 years and usually gone after adolescence.", points: ["Episodes start late in the first or second slow-wave period; sleep deprivation provokes them.", "Guide the child back to bed gently; grabbing or shouting can provoke a defensive reaction.", "Confusional arousals (sits up confused, then lies back down) lie on the same continuum."], link: { ch: "ch15", sec: "s15-nrem", label: "NREM sleep arousal disorders" } },
+      sw_adult: { label: "Consider", dx: "NREM sleep arousal disorder, sleepwalking type (adult)", line: "Rare in adults and familial; may be primary or secondary to another sleep disorder such as sleep apnea.", points: ["Needs careful evaluation: polysomnography with clinical EEG to exclude seizures.", "Ask about alcohol and sleeping pills; specify sleep-related eating or sexual behavior if present.", "Nightly to weekly episodes with injury are severe; secure the home."], link: { ch: "ch15", sec: "s15-nrem", label: "NREM sleep arousal disorders" } },
+      terror: { label: "Most likely", dx: "NREM sleep arousal disorder, sleep terror type", line: "A piercing scream with intense fear and autonomic arousal from slow-wave sleep, usually with amnesia.", points: ["Dream imagery is absent or fragmentary, unlike the elaborate dream of a nightmare.", "Fever, sleep deprivation and CNS depressant withdrawal provoke episodes.", "Seldom linked to psychopathology in children; in adults, look for trauma or psychiatric illness."], link: { ch: "ch15", sec: "s15-nrem", label: "NREM sleep arousal disorders" } },
+      nightmare: { label: "Most likely", dx: "Nightmare disorder", line: "Long, vivid, threatening dreams from REM sleep, recalled on waking with rapid return to alertness.", points: ["Review drugs: L-DOPA, beta-blockers, withdrawal from REM suppressants, and alcohol or drug use.", "Fear of sleeping causes insomnia, and sleep loss worsens nightmares.", "Imagery rehearsal, exposure and cognitive therapy; prazosin for PTSD-related nightmares."], link: { ch: "ch15", sec: "s15-nightmare", label: "Nightmare disorder" } },
+      rbd: { label: "Most likely", dx: "REM sleep behavior disorder", line: "Loss of REM atonia, so dreams are acted out; the person is alert, not confused, on waking.", points: ["Confirm REM sleep without atonia on polysomnography, which also rules out seizures.", "Many patients later develop a neurodegenerative disorder such as Parkinson disease.", "Injuries to patient and bed partner are common; review drugs in Table 15-15 (antidepressants, MAOIs, withdrawal states)."], link: { ch: "ch15", sec: "s15-rbd", label: "REM sleep behavior disorder" } },
+      paralysis: { label: "Consider", dx: "Recurrent isolated sleep paralysis", line: "Normal REM atonia briefly intruding into wakefulness at sleep onset or on waking, lasting one to several minutes.", points: ["If there is also daytime sleepiness or cataplexy, consider narcolepsy.", "Irregular sleep, sleep deprivation, stress and shift work increase episodes; first-line care is sufficient, regular sleep."], link: { ch: "ch15", sec: "s15-rbd", label: "REM sleep behavior disorder and sleep paralysis" } },
+      rls: { label: "Most likely", dx: "Restless legs syndrome", line: "An urge to move the legs with uncomfortable sensations, worse at night and relieved by movement.", points: ["Check ferritin in every patient and look for secondary causes (Table 15-17: iron deficiency, uremia, neuropathy, diabetes, thyroid disease).", "Review antidepressants, antihistamines, antipsychotics and lithium (Table 15-18).", "Since the 2024 AASM guideline, gabapentinoids and iron come first; the book's dopamine agonists (pramipexole, ropinirole, rotigotine) cause augmentation over time."], link: { ch: "ch15", sec: "s15-rls", label: "Restless legs syndrome" } },
+      akathisia: { label: "Consider instead", dx: "Akathisia", line: "Drug-induced motor restlessness, an explicit exclusion for restless legs syndrome in DSM-5.", points: ["Ask about recent antipsychotic starts or dose increases.", "See Chapter 21.0 for recognition and management."], link: { ch: "ch15", sec: "s15-rls", label: "Restless legs syndrome" } },
+      rls_mimic: { label: "Investigate", dx: "Another cause of leg discomfort", line: "Arthritis, neuropathy, positional ischemia and peripheral artery disease can mimic restless legs.", points: ["Take a detailed history and examine the legs.", "Habitual movements are also an exclusion for restless legs syndrome."], link: { ch: "ch15", sec: "s15-rls", label: "Restless legs syndrome" } },
+      plmd: { label: "Most likely", dx: "Periodic limb movement disorder", line: "Brief stereotyped leg movements every 20 to 40 seconds in NREM sleep, with arousals.", points: ["Polysomnography with leg EMG shows the movements; the patient is often unaware.", "Linked to aging, folate deficiency, renal disease, anemia and antidepressants.", "Treat as restless legs syndrome if both are present; clonazepam is reported to help otherwise."], link: { ch: "ch15", sec: "s15-plmd", label: "Periodic limb movements and leg cramps" } },
+      cramps: { label: "Most likely", dx: "Sleep-related leg cramps", line: "Painful calf contractions that wake the sleeper.", points: ["Look for metabolic disorders, mineral or electrolyte problems, diabetes and pregnancy.", "Unlike restless legs, the problem is pain from contraction, not an urge to move."], link: { ch: "ch15", sec: "s15-plmd", label: "Periodic limb movements and leg cramps" } },
+      brux: { label: "Most likely", dx: "Sleep-related bruxism", line: "Grinding or clenching of the teeth in sleep with tooth wear, jaw pain or noise.", points: ["Worse with stress, stimulants, alcohol and some SSRIs; may follow a breathing disorder.", "Consider nocturnal seizures in the differential.", "A mouth guard short term or a hard bite splint long term; relaxation and stress management help."], link: { ch: "ch15", sec: "s15-brux", label: "Bruxism and rhythmic movement disorder" } },
+      dspd: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, delayed sleep phase type", line: "The clock runs late: alert in the evening, sleepy in the morning.", points: ["Early-morning bright light advances the clock.", "Chronotherapy delays bedtime 2 to 3 hours a night around the clock but is hard to maintain.", "Night owls struggle most with eastward travel."], link: { ch: "ch15", sec: "s15-circ-phase", label: "Delayed, advanced, irregular and non-24-hour types" } },
+      aspd: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, advanced sleep phase type", line: "The clock runs early: drowsy in the evening, awake very early.", points: ["Evening bright light delays the clock.", "Larks theoretically struggle more with westward travel."], link: { ch: "ch15", sec: "s15-circ-phase", label: "Delayed, advanced, irregular and non-24-hour types" } },
+      irregular: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, irregular sleep–wake type", line: "The rhythm is absent or weak, so normal total sleep is split into 3 or more irregular bouts.", points: ["Night insomnia with daytime sleepiness and long naps.", "Bedridden, hospitalized, ICU and dementia patients develop chaotic patterns; when it does not fit a type, it is unspecified."], link: { ch: "ch15", sec: "s15-circ-phase", label: "Delayed, advanced, irregular and non-24-hour types" } },
+      n24: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, non–24-hour type", line: "The clock is not reset each day, so sleep drifts around the clock with periodic insomnia and sleepiness.", points: ["Seen with blindness and traumatic brain injury.", "Symptoms peak when internal and external clocks are 12 hours apart, then ease for a few days."], link: { ch: "ch15", sec: "s15-circ-phase", label: "Delayed, advanced, irregular and non-24-hour types" } },
+      shift: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, shift work type", line: "Insomnia when trying to sleep and sleepiness at work, worse with frequent rotation and unshifted weekends.", points: ["The 3 to 5 AM low point is when sleep-related accidents cluster.", "Modafinil is the only drug approved for shift work sleepiness; timed light helps reset the clock.", "Strongly linked to psychiatric and medical comorbidity."], link: { ch: "ch15", sec: "s15-circ-shift", label: "Shift work, jet lag and unspecified types" } },
+      jetlag: { label: "Consider", dx: "Jet lag disorder (ICSD-3; not in DSM-5)", line: "Rapid travel across several time zones forces a phase advance or delay.", points: ["One or two time zones are usually tolerated; adjusting to 8 hours can take 4 or more days.", "Eastward travel needs a phase advance and is harder for night owls.", "Timed light exposure helps travelers."], link: { ch: "ch15", sec: "s15-circ-shift", label: "Shift work, jet lag and unspecified types" } }
+    }
   }
 ]);

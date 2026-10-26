@@ -1782,7 +1782,7 @@
     GL_STOP.forEach(function (w) { stop[w] = 1; });
     var forms = [];
     list.forEach(function (e) { if (!stop[e.t.toLowerCase()]) forms.push(e.t.toLowerCase()); });
-    Object.keys(aliases).forEach(function (a) { if (map[aliases[a]]) forms.push(a.toLowerCase()); });
+    Object.keys(aliases).forEach(function (a) { if (map[String(aliases[a]).toLowerCase()]) forms.push(a.toLowerCase()); });
     forms.sort(function (a, b) { return b.length - a.length; });
     var alts = forms.map(function (f) { return escRe(f).replace(/\s+/g, '\\s+') + '(?:s|es)?'; }).join('|');
     GL = { list: list, map: map, aliases: aliases, re: alts ? new RegExp('(^|[^\\p{L}\\p{N}])(' + alts + ')(?![\\p{L}\\p{N}])', 'giu') : null };
@@ -1793,7 +1793,7 @@
     for (var i = 0; i < tries.length; i++) {
       var t = tries[i];
       if (GL.map[t]) return GL.map[t];
-      if (GL.aliases[t] && GL.map[GL.aliases[t]]) return GL.map[GL.aliases[t]];
+      if (GL.aliases[t] && GL.map[String(GL.aliases[t]).toLowerCase()]) return GL.map[String(GL.aliases[t]).toLowerCase()];
     }
     return null;
   }
@@ -3112,7 +3112,8 @@
     pharm: { label: 'Pharmacology card', css: 'pharm' },
     foundations: { label: 'Foundations card', css: 'found' },
     glossary: { label: 'Glossary', css: 'gloss' },
-    drug: { label: 'Drug', css: 'pharm' }
+    drug: { label: 'Drug', css: 'pharm' },
+    compare: { label: 'Look-alikes', css: 'found' }
   };
   function buildIndex() {
     INDEX = [];
@@ -3186,7 +3187,7 @@
     while ((m = re.exec(s))) { outp += esc(s.slice(last, m.index)) + '<mark>' + esc(m[0]) + '</mark>'; last = m.index + m[0].length; if (m[0].length === 0) re.lastIndex++; }
     return outp + esc(s.slice(last));
   }
-  function kindGroup(k) { return k === 'guide' ? 'guide' : k === 'hy' ? 'hy' : k === 'glossary' ? 'glossary' : k === 'drug' ? 'drugs' : 'cards'; }
+  function kindGroup(k) { return k === 'guide' ? 'guide' : k === 'hy' ? 'hy' : k === 'glossary' ? 'glossary' : k === 'drug' ? 'drugs' : k === 'compare' ? 'guide' : 'cards'; }
   function whereLabel(e, short) { return e.ch ? (short ? 'Ch ' : 'Chapter ') + e.ch.number : (e.src ? 'From ' + e.src : 'Book glossary'); }
 
   function renderSearch(q) {

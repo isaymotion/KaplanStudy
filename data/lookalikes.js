@@ -398,5 +398,115 @@ KS.lookalikes = [
       { ch: "ch21-2", sec: "s212-ssri-ae", label: "Serotonin syndrome (SSRIs)" }
     ],
     source: "Nicolussi S et al., clinical relevance of St. John's wort drug interactions revisited, British Journal of Pharmacology, 2020; CDC MMWR, eosinophilia-myalgia syndrome and L-tryptophan-containing products, November 1989"
+  },
+  {
+    id: "sleep-night-events",
+    title: "Night terrors, nightmares, RBD and nocturnal seizures",
+    summary: "Four causes of frightening or violent events at night: which stage of sleep, and what is remembered?",
+    items: ["Sleepwalking and sleep terrors", "Nightmare disorder", "REM sleep behavior disorder", "Nocturnal seizures"],
+    rows: [
+      ["Sleep stage", "**Slow-wave (NREM)** sleep", "**REM** sleep", "**REM** sleep, without normal atonia", "Can arise from any stage; seizure-like EEG activity often in slow-wave sleep"],
+      ["Timing in the night", "Toward the end of the **first or second** slow-wave period (early)", "Usually later, when REM is longest", "During REM periods", "Variable"],
+      ["Behavior", "Walks or acts semi-purposefully; terrors begin with a **piercing scream** and autonomic arousal", "Wakes from a long, increasingly frightening dream; little movement or vocalization", "**Acts out the dream**: punches, kicks, leaps; often injures self or bed partner", "Stereotyped events; tongue biting, jerks"],
+      ["State on waking", "Hard to wake; **confused** or disoriented", "Quickly **awake and alert**", "**Not confused** when woken", "May be postictally confused"],
+      ["Recall", "**Amnesia**; little or no dream report", "**Vivid recall** of the dream", "Recalls dream imagery that matches the behavior", "Usually none"],
+      ["Typical patient", "Children (sleepwalking peaks at **4 to 8 years**); rare and familial in adults", "Children 3 to 6; trauma, drugs, withdrawal from REM suppressants", "Older adults; Parkinson disease and other neurodegenerative disorders", "Any age; history of epilepsy or febrile convulsions"],
+      ["Key test", "Polysomnography with EEG if adult, injurious or atypical", "Usually clinical", "Polysomnography: **REM sleep without atonia**", "Clinical EEG and polysomnography with an extended EEG montage"],
+      ["Management notes", "Guide back to bed gently; avoid sleep deprivation; secure the home", "Imagery rehearsal, exposure, cognitive therapy; prazosin for PTSD nightmares", "Protect the sleeping environment; watch for a later neurodegenerative disorder", "Treat the seizure disorder (neurology)"]
+    ],
+    keys: [
+      "Ask what the person **remembers**: nothing (sleep terrors, sleepwalking), a long dream with full alertness (nightmare), or a dream that matches the movements (RBD).",
+      "**Early-night** events from slow-wave sleep point to NREM arousal disorders; dream enactment in REM points to RBD.",
+      "A sleepwalker calmly steps through a window; a patient with RBD **dives** through it as if into a dream lake.",
+      "Put **seizures** at the top of the differential for most parasomnias and order polysomnography with EEG for adult, violent or atypical events.",
+      "Sleep apnea can trigger sleepwalking, terrors and nightmares; ask about snoring and witnessed apneas."
+    ],
+    links: [
+      { ch: "ch15", sec: "s15-nrem", label: "NREM sleep arousal disorders" },
+      { ch: "ch15", sec: "s15-nightmare", label: "Nightmare disorder" },
+      { ch: "ch15", sec: "s15-rbd", label: "REM sleep behavior disorder and sleep paralysis" },
+      { ch: "ch15", sec: "s15-para-other", label: "Other parasomnias and their triggers" }
+    ]
+  },
+  {
+    id: "sleepy-patient",
+    title: "Narcolepsy, hypersomnolence, sleep apnea and the long sleeper",
+    summary: "Four reasons a person is sleepy or sleeps too long: how to tell them apart with the history and the sleep laboratory.",
+    items: ["Narcolepsy", "Hypersomnolence disorder", "Obstructive sleep apnea", "Long sleeper"],
+    rows: [
+      ["Core complaint", "Irresistible sleep attacks or naps, at least 3 times a week for 3 months", "Sleepy despite adequate sleep; main sleep **over 9 hours** but unrefreshing; hard to wake", "Daytime sleepiness with **snoring**, choking or gasping, morning headache and dry mouth", "Needs long nights (often 10 to 12 hours)"],
+      ["Distinctive feature", "**Cataplexy** triggered by laughter or emotion; sleep paralysis; hypnagogic hallucinations", "No cataplexy; often more slow-wave sleep", "**Witnessed apneas**; obesity, small or set-back jaw", "**No daytime sleepiness** when allowed a full night"],
+      ["Polysomnography", "REM within 15 minutes of sleep onset", "Looks sleep deprived, and stays so after several long nights", "Airflow stops for at least 10 s while chest and abdominal effort continue; desaturation and arousals", "Normal when sleep need is met"],
+      ["MSLT and other tests", "Mean latency **8 minutes or less** with **2 or more sleep-onset REM periods**; low CSF hypocretin", "Mean latency 8 minutes or less with **fewer than 2** sleep-onset REM periods", "Diagnosis rests on events per hour: at least 5 with symptoms, or at least 15", "Not needed"],
+      ["Treatment", "Modafinil, armodafinil, stimulants, pitolisant, solriamfetol; antidepressants or sodium oxybate for cataplexy; scheduled naps", "Stimulants or modafinil off label; drug holidays and monitoring", "PAP first; oral appliance, positional therapy, surgery, weight loss", "None: protect the sleep time"]
+    ],
+    keys: [
+      "**Clear cataplexy** strongly indicates narcolepsy; vague weakness during arguments is equivocal.",
+      "Give a consistent long night: a **long sleeper** is then alert, while idiopathic hypersomnia is not.",
+      "**Sleep-onset REM periods** separate narcolepsy from hypersomnolence disorder on the MSLT.",
+      "Ask a bed partner about snoring and pauses; people who sleep alone may never know they have apneas.",
+      "Exclude insufficient sleep, sedating drugs, stimulant withdrawal and depression first, and ask about drowsy driving."
+    ],
+    links: [
+      { ch: "ch15", sec: "s15-narc", label: "Narcolepsy: presentation and criteria" },
+      { ch: "ch15", sec: "s15-narc-ddx", label: "Narcolepsy: differential and comorbidity" },
+      { ch: "ch15", sec: "s15-hyp", label: "Hypersomnolence disorder" },
+      { ch: "ch15", sec: "s15-osa", label: "Obstructive sleep apnea-hypopnea" },
+      { ch: "ch15", sec: "s15-mslt", label: "MSLT, maintenance of wakefulness test and actigraphy" },
+      { ch: "ch15", sec: "s15-variants", label: "Isolated symptoms and normal variants" }
+    ]
+  },
+  {
+    id: "circadian-types",
+    title: "Delayed, advanced, non-24-hour and irregular circadian types",
+    summary: "Four ways the body clock can be out of step with the day.",
+    items: ["Delayed sleep phase", "Advanced sleep phase", "Non–24-hour type", "Irregular sleep–wake type"],
+    rows: [
+      ["What goes wrong", "Clock runs slow or is shifted **later**", "Clock shifts **earlier**", "Clock is **not reset** each day, so it drifts", "Rhythm is **absent** or weak"],
+      ["Sleep pattern", "Falls asleep and wakes late; alert in the evening (**night owl**)", "Drowsy early in the evening, wakes very early (**lark**)", "Sleep onset moves progressively later; weeks of insomnia and sleepiness, then a few normal days", "Normal total sleep split into **3 or more** irregular bouts"],
+      ["Typical complaint", "Sleep-onset insomnia and morning sleepiness", "Evening sleepiness and early waking", "**Periodic** insomnia and periodic excessive sleepiness", "Night insomnia with daytime sleepiness and long naps"],
+      ["Associated with", "Young and middle-aged adults’ natural tendency to delay; may be familial", "May be familial", "**Blindness**, traumatic brain injury", "Dementia, bedridden or hospitalized patients"],
+      ["Light therapy", "**Morning** bright light to advance", "**Evening** bright light to delay", "Timed light in sighted patients; totally blind patients cannot be reset by light", "Regular light and activity cues"],
+      ["Other treatment", "Melatonin; chronotherapy (delay 2 to 3 hours a night around the clock)", "Low-dose melatonin to realign the rhythm", "Melatonin or ramelteon (off label) to re-entrain", "Regular schedule; melatonin"]
+    ],
+    keys: [
+      "Ask when the person **would** sleep if free to choose: later (delayed) or earlier (advanced) but otherwise normal sleep.",
+      "Sleep that **drifts** later each day with cycles of good and bad weeks suggests non–24-hour type, especially in a blind patient.",
+      "Sleep **fragmented** into several bouts with no clear night points to irregular type.",
+      "Light before the temperature low point delays the clock; light after it advances it.",
+      "Use a sleep diary or actigraphy over days to weeks; consider insomnia disorder, mood disorders and a normal variant."
+    ],
+    links: [
+      { ch: "ch15", sec: "s15-circ", label: "The circadian clock and the DSM-5 types" },
+      { ch: "ch15", sec: "s15-circ-phase", label: "Delayed, advanced, irregular and non-24-hour types" },
+      { ch: "ch15", sec: "s15-circ-tx", label: "Light, melatonin and chronotherapy" }
+    ]
+  },
+  {
+    id: "rls-plmd-cramps",
+    title: "Restless legs, periodic limb movements, leg cramps and akathisia",
+    summary: "Four causes of uncomfortable legs or leg movements around sleep.",
+    items: ["Restless legs syndrome", "Periodic limb movement disorder", "Sleep-related leg cramps", "Akathisia"],
+    rows: [
+      ["What the patient notices", "Creeping, crawling feelings with an **urge to move** the legs", "Often nothing; the bed partner reports kicks; unrefreshing sleep", "A **painful** calf contraction that wakes them", "Drug-induced inner and motor restlessness"],
+      ["When", "At rest and on lying down; **worse at night**", "During **NREM sleep**", "During sleep", "Not tied to sleep"],
+      ["Relieved by", "**Moving** or walking", "Not applicable (unaware)", "Easing the cramp", "See Chapter 21.0"],
+      ["Movement pattern", "Voluntary moving to relieve discomfort", "Brief stereotyped big-toe extension with ankle, knee and hip flexion, every **20 to 40 s**", "Sustained muscle contraction", "See Chapter 21.0"],
+      ["Workup", "History and examination; **ferritin** in every patient; no sleep study needed", "Polysomnography with leg EMG", "Metabolic, mineral and electrolyte problems, diabetes, pregnancy", "Medication history: recent antipsychotic"],
+      ["Treatment", "Gabapentinoids and iron first (AASM 2024); the book's dopamine agonists risk augmentation", "As for RLS if both present; clonazepam reported to help", "Correct the precipitant", "See Chapter 21.0"]
+    ],
+    keys: [
+      "RLS needs all three: an **urge** to move, **worse at night**, and **relief** by movement, at least 3 times a week for 3 months.",
+      "PLMD is a finding in sleep that the patient may not notice; RLS is a waking complaint.",
+      "**Pain** from muscle contraction means a cramp, not RLS.",
+      "DSM-5 lists **akathisia** as an exclusion for RLS: always ask about antipsychotics and other dopamine blockers.",
+      "Antidepressants, antihistamines, antipsychotics and lithium can cause or worsen RLS and PLMD (Table 15-18)."
+    ],
+    links: [
+      { ch: "ch15", sec: "s15-rls", label: "Restless legs syndrome" },
+      { ch: "ch15", sec: "s15-plmd", label: "Periodic limb movements and leg cramps" },
+      { ch: "ch15", sec: "s15-move-other", label: "Drug-induced movement disorders" },
+      { ch: "ch21-0", sec: "s210-park", label: "Parkinsonism, acute dystonia and akathisia" }
+    ]
   }
 ];

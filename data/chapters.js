@@ -104,6 +104,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
   {
+    id: 'ch15', number: 15, title: 'Sleep–Wake Disorders', short: 'Sleep–wake disorders',
+    summary: 'Sleep stages and classification; insomnia and CBTi; hypersomnolence, Kleine–Levin syndrome and narcolepsy; obstructive and central sleep apnea and hypoventilation; circadian rhythm disorders; parasomnias; restless legs and other movement disorders; and polysomnography, MSLT and the sleep history, with post-publication updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  {
     id: 'ch19', number: 19, title: 'Personality Disorders', short: 'Personality disorders',
     summary: 'The ten personality disorders in three clusters: presentation, DSM-5 and ICD-10 criteria, differential diagnosis, comorbidity, course, epidemiology and treatment (including DBT, MBT and TFP), personality change due to a medical condition, target-symptom pharmacotherapy, defenses and temperament, with post-publication updates on ICD-11 and borderline personality disorder.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

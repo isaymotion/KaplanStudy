@@ -13,6 +13,21 @@
  */
 KS.changelog = [
   {
+    id: 56,
+    date: "2026-10-26",
+    title: "Chapter 15: Sleep–Wake Disorders",
+    items: [
+      { type: "chapter", ch: "ch15", text: "New Chapter 15: sleep stages and the three classification systems; insomnia disorder, its subtypes and CBTi (sleep hygiene, stimulus control, sleep restriction, relaxation and cognitive therapy); hypersomnolence disorder, Kleine–Levin syndrome and narcolepsy; obstructive and central sleep apnea and hypoventilation; the circadian rhythm types with light therapy, melatonin and chronotherapy; NREM arousal disorders, nightmares, REM sleep behavior disorder and other parasomnias; restless legs, periodic limb movements and bruxism; and polysomnography, home testing, the MSLT and the sleep history. It includes Check yourself questions, a pre-test and post-test, wrong-answer explanations for every case and two visual summaries.", href: "#/c/ch15/guide", link: "Open the study guide" },
+      { type: "update", ch: "ch15", text: "Post-publication updates and corrections: N3 scoring, ICSD-3-TR, newer hypnotics and the 2019 boxed warning, CBTi as first-line treatment, the DSM-5 narcolepsy and apnea criteria, low-sodium oxybate for idiopathic hypersomnia, pediatric pitolisant and the 2026 approval of oveporexton (Orzeyful), tirzepatide for sleep apnea, hypoglossal and phrenic nerve stimulation, tasimelteon, the 2018 nightmare position paper and the 2024 restless legs guideline.", href: "#/updates", link: "See all updates" },
+      { type: "feature", text: "New diagnostic helper: Which sleep–wake disorder?", href: "#/helpers/sleep", link: "Open the helper" },
+      { type: "feature", text: "New look-alikes: night terrors, nightmares, RBD and nocturnal seizures; narcolepsy, hypersomnolence, sleep apnea and the long sleeper; the circadian types; and restless legs, periodic limb movements, leg cramps and akathisia.", href: "#/compare/ch/ch15", link: "Open look-alikes" },
+      { type: "update", text: "Glossary: 30 new terms from Chapter 15, including psychophysiologic insomnia, sleep efficiency, the MSLT, apnea-hypopnea index and REM sleep behavior disorder." },
+      { type: "correction", text: "Glossary shortcuts such as Z drugs, CBT-I and GLP-1 agonist now show their definitions; 32 alternative names were not linking." },
+      { type: "correction", text: "The ordinary word \"same\" no longer links to the SAMe supplement page in the study guides." },
+      { type: "correction", text: "Search no longer stops showing results when a match falls in a look-alike comparison; look-alikes now appear in results with the study guide." }
+    ]
+  },
+  {
     id: 55,
     date: "2026-10-26",
     title: "Learning tools for Chapter 4",
