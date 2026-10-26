@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 57,
+    date: "2026-10-26",
+    title: "Weak topics and session takeaway sheets",
+    items: [
+      { type: "feature", text: "New Weak topics page: your exam and quiz answers, flashcard ratings and open mistakes, pooled by topic and ranked weakest first, with roll-ups by chapter and by ABPN board domain. Each topic has a one-click drill of its cases. Pre-tests are left out, and everything stays in this browser.", href: "#/weak", link: "Open Weak topics" },
+      { type: "feature", text: "Teaching mode: every session summary now has a Resident handout, a printable takeaway sheet with the questions to revisit (or every question discussed), the answer, the explanation and why each wrong choice is wrong, plus the room's score by topic. It shows no per-choice vote counts, so it can go straight to residents.", href: "#/teach", link: "Open teaching mode" },
+      { type: "update", text: "Flashcards now keep a count of every review, so the Weak topics page can show how often you rated each card. Cards reviewed before this release are counted from their saved history." }
+    ]
+  },
+  {
     id: 56,
     date: "2026-10-26",
     title: "Chapter 15: Sleep–Wake Disorders",

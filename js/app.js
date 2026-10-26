@@ -284,7 +284,7 @@
     else if (g === 2) { e = Math.max(1.3, e - 0.15); i = r === 0 ? 1 : Math.max(s.i + 1, Math.round(s.i * 1.2)); r++; }
     else if (g === 3) { i = r === 0 ? 2 : r === 1 ? 5 : Math.max(s.i + 1, Math.round(s.i * e)); r++; }
     else { e = e + 0.15; i = r === 0 ? 4 : Math.max(s.i + 2, Math.round(s.i * e * 1.3)); r++; }
-    return { i: i, e: Math.round(e * 100) / 100, r: r, l: l, d: today() + i };
+    return { i: i, e: Math.round(e * 100) / 100, r: r, l: l, n: srsTries(s) + 1, d: today() + i };
   }
   function ivLabel(i) { return i === 0 ? 'Today' : i === 1 ? '1 day' : i < 30 ? i + ' days' : i < 365 ? Math.round(i / 30) + ' mo' : (i / 365).toFixed(1) + ' yr'; }
   function cardStatus(key) {
@@ -412,6 +412,7 @@
       case 'search': var q = p.slice(1).join('/'); qInput.value = q; return renderSearch(q);
       case 'review': return renderReview(p[1]);
       case 'mistakes': return renderMistakes();
+      case 'weak': return renderWeak();
       case 'bookmarks': return renderBookmarks();
       case 'exam':
         if (p[1] === 'run') return renderExamRun();
@@ -425,6 +426,7 @@
       case 'teach':
         if (p[1] === 'run') return renderTeachRun();
         if (p[1] === 'summary') return renderTeachSummary(p[2]);
+        if (p[1] === 'handout') return renderTeachHandout(p[2], p[3] === 'all');
         if (p[1] === 'presenter') return renderTeachPresenter();
         return renderTeachSetup();
       case 'progress': return renderProgress();
@@ -517,6 +519,7 @@
         '</div>' +
         '<div class="tools">' +
           '<a class="tool" href="#/exam"><span class="tool__name">Board-style exam</span><span class="tool__meta">' + (lastExam ? 'Last score ' + pct(lastExam.score, lastExam.total) + '%' : 'Timed clinical cases from every chapter') + '</span></a>' +
+          '<a class="tool" href="#/weak"><span class="tool__name">Weak topics</span><span class="tool__meta">Your exam answers and flashcard ratings, pooled by topic, weakest first</span></a>' +
           '<a class="tool" href="#/mistakes"><span class="tool__name">Mistakes</span><span class="tool__meta">' + (mk ? plural(mk, 'case') + ' to revisit' : 'Cases you miss collect here') + '</span></a>' +
           '<a class="tool" href="#/glossary"><span class="tool__name">Glossary</span><span class="tool__meta">' + (KS.glossary || []).length + ' signs and symptoms</span></a>' +
           '<a class="tool" href="#/helpers"><span class="tool__name">Diagnostic helper</span><span class="tool__meta">Medical workup and developmental, cognitive, substance, psychotic, mood, anxiety, OCD-related, trauma-related, dissociative, somatic symptom, eating and elimination disorders, step by step</span></a>' +
@@ -1383,7 +1386,7 @@
         '<p class="mk__q">' + esc(plain(r.c.q)) + '</p><button class="link-btn" type="button" data-remove="' + esc(k) + '">Remove</button></li>';
     }).join('');
     var html = '<div class="wrap page">' +
-      '<header class="page__head"><h1>Mistakes</h1><p>Every clinical case you answer incorrectly, in the decks, daily review or an exam, lands here. Answer it correctly to clear it.</p></header>' +
+      '<header class="page__head"><h1>Mistakes</h1><p>Every clinical case you answer incorrectly, in the decks, daily review or an exam, lands here. Answer it correctly to clear it. To see which topics you miss most, open <a href="#/weak">Weak topics</a>.</p></header>' +
       (keys.length ? '<div class="deck-bar"><span class="deck-bar__count">' + plural(keys.length, 'case') + ' to revisit</span><button class="link-btn" type="button" id="mk-clear">Clear all mistakes</button></div><div id="card-area" aria-live="polite"></div>' +
         '<details class="mk-list"><summary>See all ' + plural(keys.length, 'missed case') + '</summary><ul>' + list + '</ul></details>'
         : '<div class="empty"><h2>No mistakes yet</h2><p>Cases you get wrong will collect here so you can come back to them.</p><div class="empty__actions"><a class="btn btn--solid" href="#/exam">Take a practice exam</a><a class="btn" href="#/review">Daily review</a></div></div>') +
@@ -1407,6 +1410,115 @@
     });
     main.querySelectorAll('[data-remove]').forEach(function (b) {
       b.addEventListener('click', function () { clearMistake(b.getAttribute('data-remove')); b.closest('li').remove(); });
+    });
+  }
+
+  /* ---------- weak topics ----------
+     Pools what this browser already keeps, nothing new: answers in kept exams and quizzes (pre-tests
+     are left out because they are taken before studying), flashcard ratings (each Again is a miss)
+     and open mistakes. A topic is a chapter plus the card's tag, as on the exam results page. */
+  var WEAK_MIN = 3, WEAK_SHOW = 15, DRILL_MAX = 20;
+  function srsTries(s) { return s ? (typeof s.n === 'number' ? s.n : (s.r || 0) + (s.l || 0)) : 0; }
+  function weakData() {
+    var T = {}, C = {}, D = {}, exams = 0;
+    function topic(r) {
+      var tag = r.c.tag || 'General', k = r.ch.id + '|' + tag;
+      return T[k] || (T[k] = { key: k, ch: r.ch, tag: tag, en: 0, emiss: 0, fn: 0, fmiss: 0, open: 0 });
+    }
+    function bump(o, k, n, miss) { var v = o[k] || (o[k] = { n: 0, miss: 0 }); v.n += n; v.miss += miss; }
+    (store.get('examHistory', []) || []).forEach(function (ex) {
+      if (!ex || ex.kind === 'pre') return;
+      var any = false;
+      (ex.items || []).forEach(function (x) {
+        var r = CARDS[x.k];
+        if (!r || x.a == null) return; /* unanswered questions say nothing about what you know */
+        any = true;
+        var miss = x.a === r.c.answer ? 0 : 1, t = topic(r);
+        t.en++; t.emiss += miss;
+        bump(C, r.ch.id, 1, miss); bump(D, caseDomain(r.c), 1, miss);
+      });
+      if (any) exams++;
+    });
+    Object.keys(SRS).forEach(function (k) {
+      var r = CARDS[k], s = SRS[k], n = srsTries(s);
+      if (!r || !n) return;
+      var miss = Math.min(s.l || 0, n), t = topic(r);
+      t.fn += n; t.fmiss += miss;
+      bump(C, r.ch.id, n, miss);
+      if (r.deck.key === 'cases') bump(D, caseDomain(r.c), n, miss);
+    });
+    mistakeKeys().forEach(function (k) { topic(CARDS[k]).open++; });
+    var all = Object.keys(T).map(function (k) { var t = T[k]; t.n = t.en + t.fn; t.miss = t.emiss + t.fmiss; return t; });
+    function weakFirst(a, b) { return b.miss / b.n - a.miss / a.n || b.n - a.n; }
+    var ranked = all.filter(function (t) { return t.n >= WEAK_MIN; }).sort(weakFirst);
+    var thin = all.filter(function (t) { return t.n < WEAK_MIN && (t.n || t.open); }).sort(function (a, b) { return b.open - a.open || b.miss - a.miss; });
+    return { ranked: ranked, thin: thin, byCh: C, byDom: D, exams: exams, tries: all.reduce(function (s, t) { return s + t.n; }, 0) };
+  }
+  function topicCaseKeys(ch, tag) {
+    return deckKeys(ch, 'cases').filter(function (k) { return CARDS[k] && (CARDS[k].c.tag || 'General') === tag; });
+  }
+  function scoreBar(ok, n) {
+    var p = pct(ok, n);
+    return '<span class="bar-cell"><span class="score-bar"><span style="width:' + p + '%" class="' + (p >= 70 ? 'is-good' : p >= 50 ? 'is-mid' : 'is-low') + '"></span></span><span class="score-pct">' + p + '%</span></span>';
+  }
+  function renderWeak(showAll) {
+    var W = weakData(), list = showAll ? W.ranked : W.ranked.slice(0, WEAK_SHOW);
+    function sources(t) {
+      var bits = [];
+      if (t.en) bits.push('Exams: ' + (t.en - t.emiss) + ' of ' + t.en + ' right');
+      if (t.fn) bits.push('Flashcards: Again ' + t.fmiss + ' of ' + plural(t.fn, 'review'));
+      if (t.open) bits.push(plural(t.open, 'open mistake'));
+      return bits.join(' · ');
+    }
+    function actions(t) {
+      var n = topicCaseKeys(t.ch, t.tag).length;
+      return '<p class="weak__acts">' + (n ? '<button class="btn btn--small btn--solid" type="button" data-drill="' + esc(t.key) + '">Drill ' + plural(Math.min(n, DRILL_MAX), 'case') + '</button>' : '') +
+        '<a class="btn btn--small" href="#/c/' + t.ch.id + '/guide">Chapter ' + t.ch.number + ' guide</a><a class="btn btn--small" href="#/c/' + t.ch.id + '/high-yield">High yield</a></p>';
+    }
+    function item(t) {
+      return '<li class="weak__item"><div class="weak__top"><h3>Ch ' + t.ch.number + ', ' + esc(t.tag) + '</h3><span class="weak__miss">Missed ' + t.miss + ' of ' + plural(t.n, 'try', 'tries') + '</span></div>' +
+        scoreBar(t.n - t.miss, t.n) + '<p class="weak__src">' + sources(t) + '</p>' + actions(t) + '</li>';
+    }
+    function rollup(title, note, obj, label, href) {
+      var ks = Object.keys(obj).filter(function (k) { return obj[k].n; });
+      if (!ks.length) return '';
+      ks.sort(function (a, b) { return obj[b].miss / obj[b].n - obj[a].miss / obj[a].n || obj[b].n - obj[a].n; });
+      return '<section class="results-sec"><h2>' + title + '</h2><p class="muted">' + note + '</p><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">' + label + '</th><th scope="col">Correct</th><th scope="col">Score</th></tr></thead><tbody>' +
+        ks.map(function (k) {
+          var v = obj[k], name = href(k);
+          return '<tr><th scope="row">' + name + '</th><td>' + (v.n - v.miss) + ' of ' + v.n + '</td><td>' + scoreBar(v.n - v.miss, v.n) + '</td></tr>';
+        }).join('') + '</tbody></table></div></section>';
+    }
+    var head = '<header class="page__head"><h1>Weak topics</h1><p>Your exam and quiz answers, flashcard ratings and open mistakes, pooled by topic so you can see where to spend your next hour. Pre-tests are left out because you take them before studying. Everything is read from this browser; nothing is sent anywhere.</p></header>';
+    var html;
+    if (!W.tries) {
+      html = '<div class="wrap page weak-page">' + head + '<div class="empty"><h2>Nothing to rank yet</h2><p>Take an exam or rate some flashcards and your weakest topics appear here. A topic needs at least ' + WEAK_MIN + ' tries to be ranked.</p>' +
+        '<div class="empty__actions"><a class="btn btn--solid" href="#/exam">Take a practice exam</a><a class="btn" href="#/review">Daily review</a></div></div></div>';
+    } else {
+      html = '<div class="wrap page weak-page">' + head +
+        '<p class="weak__sum">' + plural(W.tries, 'try', 'tries') + ' counted' + (W.exams ? ', from ' + plural(W.exams, 'exam or quiz', 'exams and quizzes') + ' and your flashcard reviews' : ', all from flashcard reviews') + '. Each Again counts as a miss; Hard, Good and Easy count as right.</p>' +
+        '<section class="results-sec"><h2>Weakest first</h2>' +
+        (W.ranked.length ? '<ol class="weak__list">' + list.map(item).join('') + '</ol>' +
+          (W.ranked.length > WEAK_SHOW ? '<p><button class="btn" type="button" id="wk-more">' + (showAll ? 'Show the weakest ' + WEAK_SHOW : 'Show all ' + W.ranked.length + ' topics') + '</button></p>' : '')
+          : '<p class="muted">No topic has ' + WEAK_MIN + ' tries yet. Keep going and the ranking fills in.</p>') +
+        '</section>' +
+        rollup('By chapter', 'All tries in each chapter, weakest first.', W.byCh, 'Chapter', function (id) { var c = chapter(id); return c ? '<a href="#/review/' + c.id + '">Chapter ' + c.number + ': ' + esc(c.short || c.title) + '</a>' : esc(id); }) +
+        rollup('By board domain', 'Clinical cases only, grouped by the ABPN content outline.', W.byDom, 'Domain', function (k) { return esc(k + '. ' + domainName(k)); }) +
+        (W.thin.length ? '<section class="results-sec"><details class="weak__thin"><summary>' + plural(W.thin.length, 'topic') + ' with fewer than ' + WEAK_MIN + ' tries</summary><ul>' +
+          W.thin.map(function (t) { return '<li><b>Ch ' + t.ch.number + ', ' + esc(t.tag) + '</b> <span class="muted">' + (sources(t) || 'Not tried yet') + '</span></li>'; }).join('') + '</ul></details></section>' : '') +
+        '</div>';
+    }
+    setView('weak', html);
+    document.title = 'Weak topics — K&S Study Companion';
+    var more = main.querySelector('#wk-more');
+    if (more) more.addEventListener('click', function () { renderWeak(!showAll); });
+    main.querySelectorAll('[data-drill]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-drill'), i = k.indexOf('|'), ch = chapter(k.slice(0, i)), tag = k.slice(i + 1);
+        if (!ch) return;
+        var keys = shuffle(topicCaseKeys(ch, tag)).slice(0, DRILL_MAX);
+        startExam({ keys: keys, timed: false, kind: 'quiz', chapters: [ch.id], quiz: { t: 'Drill: Chapter ' + ch.number + ', ' + tag } });
+      });
     });
   }
 
@@ -2840,6 +2952,62 @@
   }
 
   /* ---------- session summary ---------- */
+  /* Resident takeaway sheet for a finished session: what to revisit, with answers, explanations and
+     why-not lines, and the room's score by topic. No per-choice vote counts, so it can go to residents. */
+  function renderTeachHandout(id, all) {
+    var list = store.get('teachSessions', []) || [], rec = null;
+    list.forEach(function (r) { if (String(r.id) === String(id)) rec = r; });
+    if (!rec) { renderTeachSummary(id); return; }
+    var kind = rec.kind, voting = isVoting(kind), mcq = kind === 'mcq', sm = summarize(rec), byId = {};
+    teachItems(rec.scope, kind).forEach(function (it) { byId[it.id] = it; });
+    var picked = [];
+    if (voting) {
+      if (all) rec.order.forEach(function (oid) {
+        var it = byId[oid], e = rec.log && rec.log[oid];
+        if (!it || !e) return;
+        var s = tItemStats(it, kind, e);
+        if (s.total) picked.push({ it: it, s: s });
+      });
+      else picked = sm.revisit.map(function (r) { return { it: r.it, s: r.s }; });
+    }
+    var okWord = mcq ? 'correct' : 'knew it';
+    var scope = rec.scope === 'all' ? 'All chapters' : 'Chapter ' + (chapter(rec.scope) || {}).number;
+    var kindLabel = ((KIND_OPTS.filter(function (o) { return o[0] === kind; })[0]) || [kind, kind])[1];
+    function entry(p) {
+      var it = p.it, meta = '<p class="ts-miss__meta">Chapter ' + it.ch.number + ', ' + esc(itemTag(it, kind)) + (p.s ? ' · Room: ' + p.s.pct + '% ' + okWord : '') + '</p>';
+      if (mcq) {
+        var c = it.c;
+        return '<li>' + meta + '<p class="ts-miss__q">' + fmt(c.q) + '</p><ol class="ho-choices">' + c.choices.map(function (t, i) {
+          var ok = i === c.answer, why = !ok && c.whyNot && c.whyNot[i];
+          return '<li class="' + (ok ? 'is-ok' : '') + '"><span class="ho-key">' + LETTERS[i] + '</span><span>' + fmt(t) + (ok ? ' <b class="ho-mark">Answer</b>' : '') + (why ? '<span class="ho-why">' + fmt(why) + '</span>' : '') + '</span></li>';
+        }).join('') + '</ol><p class="ts-miss__why"><b>Why ' + LETTERS[c.answer] + ':</b> ' + fmt(c.why) + '</p></li>';
+      }
+      if (kind === 'hy') return '<li>' + meta + '<p class="ts-miss__q">' + blankify(it.text, true) + '</p></li>';
+      return '<li>' + meta + '<p class="ts-miss__q">' + fmt(it.rc.q) + '</p><p><b>Answer:</b> ' + fmt(it.rc.a) + '</p>' + (it.rc.why ? '<p class="ts-miss__why">' + fmt(it.rc.why) + '</p>' : '') + '</li>';
+    }
+    var body = '';
+    if (voting) {
+      var tk = Object.keys(sm.byTopic).sort(function (a, b) { return sm.byTopic[a].ok / sm.byTopic[a].n - sm.byTopic[b].ok / sm.byTopic[b].n; });
+      if (tk.length) body += '<section class="results-sec"><h2>How the room did by topic</h2><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">Topic</th><th scope="col">' + (mcq ? 'Questions' : 'Items') + '</th><th scope="col">Room score</th></tr></thead><tbody>' +
+        tk.map(function (k) { var v = sm.byTopic[k]; return '<tr><th scope="row">' + esc(k) + '</th><td>' + v.q + '</td><td>' + scoreBar(v.ok, v.n) + '</td></tr>'; }).join('') + '</tbody></table></div></section>';
+      body += '<section class="results-sec"><h2>' + (all ? 'Every ' + (KIND_NOUN[kind] || 'item') + ' discussed' : 'To revisit') + '</h2>' +
+        (picked.length ? '<p class="muted">' + (all ? 'In the order presented.' : 'The room scored under ' + REVISIT_BELOW + '% on these, lowest first.') + '</p><ol class="ts-miss">' + picked.map(entry).join('') + '</ol>'
+          : '<p class="muted">' + (all ? 'No items were polled in this session.' : 'The room scored ' + REVISIT_BELOW + '% or better on every item. Choose "Every item discussed" for a full review sheet.') + '</p>') + '</section>';
+    } else {
+      body += '<section class="results-sec"><h2>Cases discussed</h2>' + (sm.covered.length ? '<ol class="ts-miss">' + sm.covered.map(function (it) {
+        return '<li><p class="ts-miss__meta">Chapter ' + it.ch.number + ', ' + esc(it.sec.title) + '</p><p class="ts-miss__q"><b>' + esc(it.title) + '</b></p>' + (it.text ? '<p>' + fmt(it.text) + '</p>' : '') + '<p class="ts-miss__why"><b>Teaching point:</b> ' + fmt(it.point || '') + '</p></li>';
+      }).join('') + '</ol>' : '<p class="muted">No cases were revealed in this session.</p>') + '</section>';
+    }
+    var html = '<div class="wrap page exam-results teach-summary teach-handout">' +
+      '<header class="page__head"><p class="crumb"><a href="#/teach/summary/' + rec.id + '">Session summary</a></p><h1>Session takeaways</h1><p>' + esc(fmtDate(rec.at)) + ' · ' + esc(scope) + ' · ' + esc(kindLabel) + (voting && sm.votes ? ' · Room score ' + pct(sm.ok, sm.votes) + '% ' + okWord : '') + '</p></header>' +
+      '<div class="no-print ho-bar">' + (voting ? '<div class="seg" role="group" aria-label="Items to include"><a class="btn btn--small' + (all ? '' : ' btn--solid') + '" href="#/teach/handout/' + rec.id + '"' + (all ? '' : ' aria-current="page"') + '>To revisit</a><a class="btn btn--small' + (all ? ' btn--solid' : '') + '" href="#/teach/handout/' + rec.id + '/all"' + (all ? ' aria-current="page"' : '') + '>Every item discussed</a></div>' : '') +
+        '<button class="btn btn--solid" type="button" id="ho-print">Print or save as PDF</button></div>' +
+      body + '<footer class="ho-foot">' + esc(ATTRIBUTION) + '</footer></div>';
+    setView('teach-handout:' + rec.id + (all ? ':all' : ''), html);
+    document.title = 'Session takeaways — K&S Study Companion';
+    main.querySelector('#ho-print').addEventListener('click', function () { try { window.print(); } catch (x) {} });
+  }
+
   function renderTeachSummary(id) {
     var list = store.get('teachSessions', []) || [], rec = null;
     list.forEach(function (r) { if (String(r.id) === String(id) || (!id && !rec)) rec = r; });
@@ -2872,7 +3040,8 @@
     }
     html += '<div class="empty__actions results-actions no-print">' +
       (voting && sm.revisit.length ? '<button class="btn btn--solid" type="button" id="ts-again">Present the ' + sm.revisit.length + ' to revisit</button>' : '') +
-      '<button class="btn' + (voting && sm.revisit.length ? '' : ' btn--solid') + '" type="button" id="ts-print">Print or save as PDF</button>' +
+      '<a class="btn' + (voting && sm.revisit.length ? '' : ' btn--solid') + '" href="#/teach/handout/' + rec.id + '">Resident handout</a>' +
+      '<button class="btn" type="button" id="ts-print">Print this summary</button>' +
       '<button class="btn" type="button" id="ts-copy">Copy as text</button>' +
       (canResume ? '<a class="btn" href="#/teach/run">Back to the session</a>' : '') +
       '<a class="btn" href="#/teach">New session</a></div><p class="muted no-print" id="ts-msg" role="status"></p>';
@@ -2973,7 +3142,7 @@
     Object.keys(b).forEach(function (k) {
       var x = s[k], y = b[k];
       if (!x) { s[k] = y; return; }
-      var hx = (x.r || 0) + (x.l || 0), hy = (y.r || 0) + (y.l || 0);
+      var hx = srsTries(x), hy = srsTries(y);
       if (hy > hx || (hy === hx && y.d > x.d)) s[k] = y;
     });
     if (Object.keys(s).length) out.srs = s;
