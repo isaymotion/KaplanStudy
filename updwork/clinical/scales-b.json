@@ -1,0 +1,1034 @@
+{
+  "aims": {
+    "license": {
+      "text": "This information is available in the public domain and has not been modified.",
+      "url": "https://upstate.edu/psych/pdf/education/aims.pdf",
+      "note": "Statement appears on SUNY Upstate's copy of the form headed 'Public Health Service, Alcohol, Drug Abuse, and Mental Health Administration, National Institute of Mental Health ... Final: 9/2000'. It is a statement on a university-hosted copy, not on an NIMH web page (NIMH page not fetchable). CAMCOPS documentation lists the IP status as 'Work of the US federal government.' (https://camcops.readthedocs.io/en/latest/tasks/aims.html). Warning: the Neurocrine-branded booklet (gapna.org) carries '(c)2022 Neurocrine Biosciences' - do NOT copy that wording or layout."
+    },
+    "citation": "Guy W. ECDEU Assessment Manual for Psychopharmacology, Revised. Rockville, MD: US Department of Health, Education, and Welfare (DHEW Publication No. ADM 76-338); 1976. AIMS pp. 534-537 (UNVERIFIED page numbers; publisher/number/year confirmed from Maryland DoH copy).",
+    "instructions": "Complete the examination procedure before making ratings. Rate highest severity observed. Rate movements that occur upon activation one less than those observed spontaneously. Circle movement as well as code number that applies. Rating code: 0 = None, 1 = Minimal (may be extreme normal), 2 = Mild, 3 = Moderate, 4 = Severe.",
+    "procedure": [
+      "Ask the patient whether there is anything in his/her mouth (e.g., gum, candy) and, if so, to remove it.",
+      "Ask patient about the current condition of his/her teeth. Does he/she wear dentures? Do teeth or dentures bother the patient now?",
+      "Ask whether the patient notices any movements in mouth, face, hands, or feet. If yes, ask to describe and to what extent they currently bother the patient or interfere with activities.",
+      "Have patient sit in chair with hands on knees, legs slightly apart, and feet flat on floor. Look at the entire body for movements while in this position.",
+      "Ask patient to sit with hands hanging unsupported (if male, between legs; if female wearing a dress, hanging over knees). Observe hands and other body areas.",
+      "Ask patient to open mouth. Observe tongue at rest within mouth. Do this twice.",
+      "Ask patient to protrude tongue. Observe abnormalities of tongue movement. Do this twice.",
+      "Ask patient to tap thumb, with each finger, as rapidly as possible for 10 to 15 seconds; separately with right hand, then with left hand. Observe facial and leg movements.",
+      "Flex and extend patient's left and right arms (one at a time).",
+      "Ask patient to stand up. Observe in profile. Observe all body areas again, hips included.",
+      "Ask patient to extend both arms outstretched in front with palms down. Observe trunk, legs, and mouth.",
+      "Have patient walk a few paces, turn, and walk back to chair. Observe hands and gait. Do this twice."
+    ],
+    "procedureNote": "Steps are wording from the Maryland DoH copy via WebFetch summariser: step text in the first clause is quoted, parenthetical/trailing elaborations are reconstructed from the standard Guy 1976 text and are UNVERIFIED verbatim. Also: 'Use a hard, firm chair without arms'; observe patient unobtrusively at rest before/after exam.",
+    "items": [
+      {
+        "label": "1. Muscles of facial expression (e.g., movements of forehead, eyebrows, periorbital area, cheeks, including frowning, blinking, smiling, grimacing)",
+        "group": "Facial and oral movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "2. Lips and perioral area (e.g., puckering, pouting, smacking)",
+        "group": "Facial and oral movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "3. Jaw (e.g., biting, clenching, chewing, mouth opening, lateral movement)",
+        "group": "Facial and oral movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "4. Tongue (rate only increases in movement both in and out of mouth, NOT inability to sustain movement)",
+        "group": "Facial and oral movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "5. Upper (arms, wrists, hands, fingers): include choreic movements (rapid, objectively purposeless, irregular, spontaneous) and athetoid movements (slow, irregular, complex, serpentine). Do NOT include tremor (repetitive, regular, rhythmic)",
+        "group": "Extremity movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "6. Lower (legs, knees, ankles, toes) (e.g., lateral knee movement, foot tapping, heel dropping, foot squirming, inversion and eversion of foot)",
+        "group": "Extremity movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "7. Neck, shoulders, hips (e.g., rocking, twisting, squirming, pelvic gyrations; include diaphragmatic movements)",
+        "group": "Trunk movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ]
+      }
+    ],
+    "globalItems": [
+      {
+        "label": "8. Severity of abnormal movements overall",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ],
+        "addToTotal": false,
+        "note": "Anchors on the fetched forms say only 0-4 (None to Severe); the 'Minimal may be extreme normal' wording for 8-9 was stated by the Neurocrine booklet only."
+      },
+      {
+        "label": "9. Incapacitation due to abnormal movements",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Minimal (may be extreme normal)",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Severe",
+            4
+          ]
+        ],
+        "addToTotal": false
+      },
+      {
+        "label": "10. Patient's awareness of abnormal movements (rate only patient's report)",
+        "options": [
+          [
+            "No awareness",
+            0
+          ],
+          [
+            "Aware, no distress",
+            1
+          ],
+          [
+            "Aware, mild distress",
+            2
+          ],
+          [
+            "Aware, moderate distress",
+            3
+          ],
+          [
+            "Aware, severe distress",
+            4
+          ]
+        ],
+        "addToTotal": false
+      }
+    ],
+    "dentalItems": [
+      {
+        "label": "11. Current problems with teeth and/or dentures",
+        "options": [
+          [
+            "No",
+            0
+          ],
+          [
+            "Yes",
+            1
+          ]
+        ],
+        "addToTotal": false
+      },
+      {
+        "label": "12. Are dentures usually worn?",
+        "options": [
+          [
+            "No",
+            0
+          ],
+          [
+            "Yes",
+            1
+          ]
+        ],
+        "addToTotal": false
+      }
+    ],
+    "dentalNote": "Upstate's copy of the form also lists 'Edentia?' and 'Do movements disappear in sleep?' (Yes/No) as items 13 and 14; Maryland copy lists only item 11 as dental. Original Guy form numbering UNVERIFIED.",
+    "scoring": {
+      "total": "Sum of items 1-7 (0-28). Items 8-10 are global judgements and are NOT added to the total; items 11-12 are dental status (Yes/No) and are not scored. (Neurocrine booklet: 'The sum of items 1-7 is the AIMS dyskinesia total score' and the scale 'is not linear'.) The Guy form itself prints no cut-offs for the total; the note that items 8-10 are not added is from the Neurocrine booklet, not from NIMH text - UNVERIFIED in primary form.",
+      "range": [
+        0,
+        28
+      ],
+      "schoolerKane": {
+        "text": "Schooler-Kane research criteria (as stated by psychiatrist.com): >=3 months cumulative neuroleptic exposure; absence of other conditions that might cause involuntary movements; and either moderate dyskinetic movements (AIMS >=3) in one body area, or mild dyskinetic movements (AIMS >=2) in 2 body areas. Source says '2 body areas' (not 'two or more'), and does not use the word 'probable'. Source also states AIMS 'cannot be used by itself to diagnose TD'.",
+        "url": "https://www.psychiatrist.com/jcp/diagnosing-tardive-dyskinesia/",
+        "citation": "Schooler NR, Kane JM. Research diagnoses for tardive dyskinesia. Arch Gen Psychiatry. 1982;39(4):486-487. doi:10.1001/archpsyc.1982.04290040080014 (as listed on psychiatrist.com; original paper NOT fetched, UNVERIFIED against PubMed/JAMA)"
+      }
+    },
+    "sources": [
+      "https://upstate.edu/psych/pdf/education/aims.pdf",
+      "https://health.maryland.gov/mmcp/pap/docs/Antipsychotic%20Review%20Programs/Abnormal%20Involuntary%20Movement%20Scale.pdf",
+      "https://camcops.readthedocs.io/en/latest/tasks/aims.html",
+      "https://www.gapna.org/sites/default/files/documents/sponsors/AIMSScorecardandInstructions.pdf (Neurocrine copyright, used only for scoring note)",
+      "https://www.psychiatrist.com/jcp/diagnosing-tardive-dyskinesia/"
+    ],
+    "caveat": "WebFetch returns summaries with short quotes only, not verbatim full documents; direct curl to hosts was blocked (403 proxy policy). Item descriptor wording is faithful to fetched summaries but should be checked against the Guy 1976 PDF (archive.org ecdeuassessmentm1933guyw) before publishing."
+  },
+  "ciwa": {
+    "license": {
+      "text": "The CIWA-Ar is not copyrighted and may be reproduced freely.",
+      "url": "https://rightdecisions.scot.nhs.uk/media/1854/ciwa-ar.pdf",
+      "note": "Statement on the NHS Scotland copy of the form (a third party, not the authors). The ADAI/University of Washington copy (https://adai.uw.edu/instruments/pdf/Clinical_Institute_Withdrawal_Assessment_for_Alcohol_Revised_67.pdf) carries no copyright statement. No owner statement from Sullivan et al./Addiction Research Foundation was found."
+    },
+    "citation": "Sullivan JT, Sykora K, Schneiderman J, Naranjo CA, Sellers EM. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict. 1989;84(11):1353-1357. doi:10.1111/j.1360-0443.1989.tb00737.x. PMID 2597811 (Europe PMC record).",
+    "instructions": "For each item, ask the prompts and/or observe behaviour. Items 1-9 are scored 0-7 (items 'intermediate' points 2-3 and 5-6 sit between the anchors where only 0, 1, 4, 7 are described); item 10 is scored 0-4. Pulse/heart rate (beats per minute), blood pressure and time (24-hour clock) are recorded on the form but are NOT scored. Total is the sum of the 10 items.",
+    "itemOrderNote": "Item order matches the form from the standard form layout; NOT confirmed from a fetched page; the ADAI summary lists items in a different order (nausea, tactile, tremor, auditory, sweats, visual, anxiety, headache, agitation, orientation). Order is not scored. Anchors 2-3 and 5-6 labelled '(intermediate)' per source. Anchors for tactile/auditory/visual 1-3 reconstructed from ADAI summary: UNVERIFIED verbatim.",
+    "items": [
+      {
+        "label": "1. Nausea and vomiting (ask 'Do you feel sick to your stomach? Have you vomited?')",
+        "options": [
+          [
+            "No nausea and no vomiting",
+            0
+          ],
+          [
+            "Mild nausea with no vomiting",
+            1
+          ],
+          [
+            "(intermediate)",
+            2
+          ],
+          [
+            "(intermediate)",
+            3
+          ],
+          [
+            "Intermittent nausea with dry heaves",
+            4
+          ],
+          [
+            "(intermediate)",
+            5
+          ],
+          [
+            "(intermediate)",
+            6
+          ],
+          [
+            "Constant nausea, frequent dry heaves and vomiting",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "2. Tremor (arms extended and fingers spread apart)",
+        "options": [
+          [
+            "No tremor",
+            0
+          ],
+          [
+            "Not visible, but can be felt fingertip to fingertip",
+            1
+          ],
+          [
+            "(intermediate)",
+            2
+          ],
+          [
+            "(intermediate)",
+            3
+          ],
+          [
+            "Moderate, with patient's arms extended",
+            4
+          ],
+          [
+            "(intermediate)",
+            5
+          ],
+          [
+            "(intermediate)",
+            6
+          ],
+          [
+            "Severe, even with arms not extended",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "3. Paroxysmal sweats",
+        "options": [
+          [
+            "No sweat visible",
+            0
+          ],
+          [
+            "Barely perceptible sweating, palms moist",
+            1
+          ],
+          [
+            "(intermediate)",
+            2
+          ],
+          [
+            "(intermediate)",
+            3
+          ],
+          [
+            "Beads of sweat obvious on forehead",
+            4
+          ],
+          [
+            "(intermediate)",
+            5
+          ],
+          [
+            "(intermediate)",
+            6
+          ],
+          [
+            "Drenching sweats",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "4. Anxiety (ask 'Do you feel nervous?')",
+        "options": [
+          [
+            "No anxiety, at ease",
+            0
+          ],
+          [
+            "Mildly anxious",
+            1
+          ],
+          [
+            "(intermediate)",
+            2
+          ],
+          [
+            "(intermediate)",
+            3
+          ],
+          [
+            "Moderately anxious, or guarded, so anxiety is inferred",
+            4
+          ],
+          [
+            "(intermediate)",
+            5
+          ],
+          [
+            "(intermediate)",
+            6
+          ],
+          [
+            "Equivalent to acute panic states as seen in severe delirium or acute schizophrenic reactions",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "5. Agitation",
+        "options": [
+          [
+            "Normal activity",
+            0
+          ],
+          [
+            "Somewhat more than normal activity",
+            1
+          ],
+          [
+            "(intermediate)",
+            2
+          ],
+          [
+            "(intermediate)",
+            3
+          ],
+          [
+            "Moderately fidgety and restless",
+            4
+          ],
+          [
+            "(intermediate)",
+            5
+          ],
+          [
+            "(intermediate)",
+            6
+          ],
+          [
+            "Paces back and forth during most of the interview, or constantly thrashes about",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "6. Tactile disturbances (itching, pins-and-needles sensations, burning, numbness, feeling of bugs crawling on or under the skin)",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Very mild itching, pins and needles, burning or numbness",
+            1
+          ],
+          [
+            "Mild itching, pins and needles, burning or numbness",
+            2
+          ],
+          [
+            "Moderate itching, pins and needles, burning or numbness",
+            3
+          ],
+          [
+            "Moderately severe hallucinations",
+            4
+          ],
+          [
+            "Severe hallucinations",
+            5
+          ],
+          [
+            "Extremely severe hallucinations",
+            6
+          ],
+          [
+            "Continuous hallucinations",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "7. Auditory disturbances (ask 'Are you more aware of sounds around you? Are they harsh? Do they frighten you? Are you hearing anything that is disturbing to you? Are you hearing things you know are not there?')",
+        "options": [
+          [
+            "Not present",
+            0
+          ],
+          [
+            "Very mild harshness or ability to frighten",
+            1
+          ],
+          [
+            "Mild harshness or ability to frighten",
+            2
+          ],
+          [
+            "Moderate harshness or ability to frighten",
+            3
+          ],
+          [
+            "Moderately severe hallucinations",
+            4
+          ],
+          [
+            "Severe hallucinations",
+            5
+          ],
+          [
+            "Extremely severe hallucinations",
+            6
+          ],
+          [
+            "Continuous hallucinations",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "8. Visual disturbances (ask 'Does the light appear to be too bright? Is its color different? Does it hurt your eyes? Are you seeing anything that is disturbing to you? Are you seeing things you know are not there?')",
+        "options": [
+          [
+            "Not present",
+            0
+          ],
+          [
+            "Very mild sensitivity",
+            1
+          ],
+          [
+            "Mild sensitivity",
+            2
+          ],
+          [
+            "Moderate sensitivity",
+            3
+          ],
+          [
+            "Moderately severe hallucinations",
+            4
+          ],
+          [
+            "Severe hallucinations",
+            5
+          ],
+          [
+            "Extremely severe hallucinations",
+            6
+          ],
+          [
+            "Continuous hallucinations",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "9. Headache, fullness in head (ask 'Does your head feel different? Does it feel like there is a band around your head?' Do not rate for dizziness or lightheadedness)",
+        "options": [
+          [
+            "Not present",
+            0
+          ],
+          [
+            "Very mild",
+            1
+          ],
+          [
+            "Mild",
+            2
+          ],
+          [
+            "Moderate",
+            3
+          ],
+          [
+            "Moderately severe",
+            4
+          ],
+          [
+            "Severe",
+            5
+          ],
+          [
+            "Very severe",
+            6
+          ],
+          [
+            "Extremely severe",
+            7
+          ]
+        ]
+      },
+      {
+        "label": "10. Orientation and clouding of sensorium (ask 'What day is this? Where are you? Who am I?')",
+        "options": [
+          [
+            "Oriented and can do serial additions",
+            0
+          ],
+          [
+            "Cannot do serial additions or is uncertain about date",
+            1
+          ],
+          [
+            "Disoriented for date by no more than 2 calendar days",
+            2
+          ],
+          [
+            "Disoriented for date by more than 2 calendar days",
+            3
+          ],
+          [
+            "Disoriented for place and/or person",
+            4
+          ]
+        ]
+      }
+    ],
+    "scoring": {
+      "range": [
+        0,
+        67
+      ],
+      "note": "Maximum 67 (stated on the form); equals 9 items x 7 + orientation 4.",
+      "thresholds": [
+        {
+          "source": "NHS Scotland form (and ADAI form)",
+          "url": "https://rightdecisions.scot.nhs.uk/media/1854/ciwa-ar.pdf",
+          "text": "Patients scoring less than 10 do not usually need additional medication for withdrawal. The maximum score is 67 (see instrument)."
+        },
+        {
+          "source": "West Virginia University Medicine NCCU alcohol detoxification protocol/form",
+          "url": "https://wvumedicine.org/criticalcare/wp-content/uploads/sites/31/2019/03/NCCU-CIWA.pdf",
+          "text": "Scores of 8 to 15 indicate moderate withdrawal (marked autonomic arousal); and scores of 15 or more indicate severe withdrawal. Protocol: CIWA >0 but <8 and stable vitals: no medication; >8 but <15: lorazepam 2 mg PO/IM; >=15 (>15 in text) or DBP >110: lorazepam 2 mg q1h until CIWA <15. Call MD if >6 mg lorazepam in 3 h.",
+          "caveat": "Protocol uses strict < and > so exact 8 and 15 are unassigned; the same form states <10 does not usually need medication. 'Mild' (<8) is implied by the protocol, not worded as 'mild' in the fetched summary."
+        }
+      ],
+      "suggestedBands": "Mild/minimal: <8 (WVU protocol, no medication) or <10 (form footnote); Moderate: 8-15; Severe: >=15. Sources conflict; show both."
+    },
+    "sources": [
+      "https://rightdecisions.scot.nhs.uk/media/1854/ciwa-ar.pdf",
+      "https://adai.uw.edu/instruments/pdf/Clinical_Institute_Withdrawal_Assessment_for_Alcohol_Revised_67.pdf",
+      "https://wvumedicine.org/criticalcare/wp-content/uploads/sites/31/2019/03/NCCU-CIWA.pdf",
+      "Europe PMC REST record for PMID 2597811"
+    ],
+    "caveat": "Item prompt wording in parentheses and item order were NOT confirmed verbatim from a fetched page (summariser could not quote at length); anchors were fetched from the ADAI copy in paraphrase."
+  },
+  "cows": {
+    "license": {
+      "text": "This version may be copied and used clinically.",
+      "url": "https://nida.nih.gov/sites/default/files/ClinicalOpiateWithdrawalScale.pdf",
+      "note": "Statement on the NIDA-hosted COWS PDF (also on UW PCL copy https://pcl.psychiatry.uw.edu/wp-content/uploads/2025/06/ClinicalOpiateWithdrawalScale.pdf). NIDA distributes it freely. No explicit 'public domain' wording; no copyright notice seen."
+    },
+    "citation": "Wesson DR, Ling W. The Clinical Opiate Withdrawal Scale (COWS). J Psychoactive Drugs. 2003;35(2):253-259. doi:10.1080/02791072.2003.10400007. PMID 12924748 (Europe PMC record).",
+    "instructions": "For each item, write in the number that best describes the patient's signs or symptom. Rate on just the apparent relationship to opiate withdrawal. For example, if heart rate is increased because the patient was jogging just prior to assessment, the increased pulse rate would not add to the score. (Instruction paraphrase from the NIDA summary; verbatim wording UNVERIFIED.) Total score is the sum of all 11 items.",
+    "items": [
+      {
+        "label": "1. Resting pulse rate (beats/minute; measured after patient is sitting or lying for one minute)",
+        "options": [
+          [
+            "80 or below",
+            0
+          ],
+          [
+            "81-100",
+            1
+          ],
+          [
+            "101-120",
+            2
+          ],
+          [
+            "Greater than 120",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "2. GI upset (over last 1/2 hour)",
+        "options": [
+          [
+            "No GI symptoms",
+            0
+          ],
+          [
+            "Stomach cramps",
+            1
+          ],
+          [
+            "Nausea or loose stool",
+            2
+          ],
+          [
+            "Vomiting or diarrhea",
+            3
+          ],
+          [
+            "Multiple episodes of diarrhea or vomiting",
+            5
+          ]
+        ]
+      },
+      {
+        "label": "3. Sweating (over past 1/2 hour not accounted for by room temperature or patient activity)",
+        "options": [
+          [
+            "No report of chills or flushing",
+            0
+          ],
+          [
+            "Subjective report of chills or flushing",
+            1
+          ],
+          [
+            "Flushed or observable moistness on face",
+            2
+          ],
+          [
+            "Beads of sweat on brow or face",
+            3
+          ],
+          [
+            "Sweat streaming off face",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "4. Tremor (observation of outstretched hands)",
+        "options": [
+          [
+            "No tremor",
+            0
+          ],
+          [
+            "Tremor can be felt, but not observed",
+            1
+          ],
+          [
+            "Slight tremor observable",
+            2
+          ],
+          [
+            "Gross tremor or muscle twitching",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "5. Restlessness (observation during assessment)",
+        "options": [
+          [
+            "Able to sit still",
+            0
+          ],
+          [
+            "Reports difficulty sitting still, but is able to do so",
+            1
+          ],
+          [
+            "Frequent shifting or extraneous movements of legs/arms",
+            3
+          ],
+          [
+            "Unable to sit still for more than a few seconds",
+            5
+          ]
+        ]
+      },
+      {
+        "label": "6. Yawning (observation during assessment)",
+        "options": [
+          [
+            "No yawning",
+            0
+          ],
+          [
+            "Yawning once or twice during assessment",
+            1
+          ],
+          [
+            "Yawning three or more times during assessment",
+            2
+          ],
+          [
+            "Yawning several times/minute",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "7. Pupil size",
+        "options": [
+          [
+            "Pupils pinned or normal size for room light",
+            0
+          ],
+          [
+            "Pupils possibly larger than normal for room light",
+            1
+          ],
+          [
+            "Pupils moderately dilated",
+            2
+          ],
+          [
+            "Pupils so dilated that only the rim of the iris is visible",
+            5
+          ]
+        ]
+      },
+      {
+        "label": "8. Anxiety or irritability",
+        "options": [
+          [
+            "None",
+            0
+          ],
+          [
+            "Patient reports increasing irritability or anxiousness",
+            1
+          ],
+          [
+            "Patient obviously irritable or anxious",
+            2
+          ],
+          [
+            "Patient so irritable or anxious that participation in the assessment is difficult",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "9. Bone or joint aches (if patient was having pain previously, only the additional component attributed to opiates withdrawal is scored)",
+        "options": [
+          [
+            "Not present",
+            0
+          ],
+          [
+            "Mild diffuse discomfort",
+            1
+          ],
+          [
+            "Patient reports severe diffuse aching of joints/muscles",
+            2
+          ],
+          [
+            "Patient is rubbing joints or muscles and is unable to sit still because of discomfort",
+            4
+          ]
+        ]
+      },
+      {
+        "label": "10. Gooseflesh skin",
+        "options": [
+          [
+            "Skin is smooth",
+            0
+          ],
+          [
+            "Piloerection of skin can be felt or hairs standing up on arms",
+            3
+          ],
+          [
+            "Prominent piloerection",
+            5
+          ]
+        ]
+      },
+      {
+        "label": "11. Runny nose or tearing (not accounted for by cold symptoms or allergies)",
+        "options": [
+          [
+            "Not present",
+            0
+          ],
+          [
+            "Nasal stuffiness or unusually moist eyes",
+            1
+          ],
+          [
+            "Nose running or tearing",
+            2
+          ],
+          [
+            "Nose constantly running or tears streaming down cheeks",
+            4
+          ]
+        ]
+      }
+    ],
+    "scoring": {
+      "range": [
+        0,
+        48
+      ],
+      "rangeNote": "Max 48 computed from item maxima (4+5+4+4+5+4+5+4+4+5+4); not printed on the fetched source - UNVERIFIED as a stated figure.",
+      "bands": [
+        [
+          "Mild",
+          5,
+          12
+        ],
+        [
+          "Moderate",
+          13,
+          24
+        ],
+        [
+          "Moderately severe",
+          25,
+          36
+        ],
+        [
+          "Severe",
+          37,
+          null
+        ]
+      ],
+      "bandSource": {
+        "text": "Score: 5- 12 = mild; 13-24 = moderate; 25-36 = moderately severe; more than 36 = severe withdrawal",
+        "url": "https://pcl.psychiatry.uw.edu/wp-content/uploads/2025/06/ClinicalOpiateWithdrawalScale.pdf (same bands on NIDA PDF)"
+      },
+      "buprenorphine": [
+        {
+          "source": "UNM Emergency Medicine buprenorphine induction guide",
+          "url": "https://hsc.unm.edu/medicine/departments/emergency-medicine/_docs/clinical_resources/general-policies-and-guidelines/unm-em-buprenorphine-induction-guide-05_2274.pdf",
+          "text": "'If your patient has a COWS score >8' discuss buprenorphine and start induction in the ED if no contraindications; contraindications section says 'COWS >= 8'; COWS 4-7: do not give buprenorphine in ED, consider home induction. Internal inconsistency (>8 vs >=8) in the document.",
+          "caveat": "Single institutional protocol; broad guideline sources (SAMHSA TIP 63, ASAM) not fetched. Other widely cited thresholds (e.g., COWS >=12) UNVERIFIED."
+        }
+      ]
+    },
+    "sources": [
+      "https://nida.nih.gov/sites/default/files/ClinicalOpiateWithdrawalScale.pdf",
+      "https://pcl.psychiatry.uw.edu/wp-content/uploads/2025/06/ClinicalOpiateWithdrawalScale.pdf",
+      "https://hsc.unm.edu/medicine/departments/emergency-medicine/_docs/clinical_resources/general-policies-and-guidelines/unm-em-buprenorphine-induction-guide-05_2274.pdf",
+      "Europe PMC REST record for PMID 12924748"
+    ],
+    "caveat": "Item anchors from NIDA PDF via WebFetch paraphrase (items/points reliable; exact phrasing of anchors approximate)."
+  }
+}

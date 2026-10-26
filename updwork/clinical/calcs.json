@@ -1,0 +1,1732 @@
+{
+ "_meta": {
+  "generated": "2026-10-27",
+  "note": "Every value was read from a fetched page unless marked UNVERIFIED. Clinical use requires judgment; equivalence tables are approximate."
+ },
+ "antipsychotic": {
+  "leucht2016_primary": {
+   "citation": "Leucht S, Samara M, Heres S, Davis JM. Dose Equivalents for Antipsychotic Drugs: The DDD Method. Schizophr Bull. 2016;42(Suppl 1):S90-S94. doi:10.1093/schbul/sbv167",
+   "status": "UNVERIFIED: the article's own tables could not be fetched (PMC returned a bot check, TUM mediatum was denied, OUP view-large showed only a different article's abstract). Citation confirmed via ropensci chlorpromazineR docs page.",
+   "url": "https://doi.org/10.1093/schbul/sbv167"
+  },
+  "leucht2016_derived_cpz_key": {
+   "description": "Chlorpromazine 100 mg equivalents as encoded in the chlorpromazineR package leucht2016.csv, documented as sourced from Leucht 2016 (secondary source). Values are consistent with WHO DDD/3 (CPZ DDD 0.3 g oral), e.g. olanzapine 10/3=3.33, haloperidol 8/3=2.67; LAI values consistent with depot DDD/3 (risperidone 2.7->0.90). Units: mg of the drug equivalent to CPZ 100 mg oral.",
+   "source_url": "https://raw.githubusercontent.com/ropensci/chlorpromazineR/master/inst/extdata/leucht2016.csv",
+   "doc_url": "https://docs.ropensci.org/chlorpromazineR/reference/leucht2016.html",
+   "status": "secondary source, not the paper; values fetched",
+   "table": [
+    {
+     "route": "oral",
+     "drug": "Acepromazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Acetophenazine",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "oral",
+     "drug": "Amisulpride",
+     "cpz_100mg_equiv_mg": 133.33
+    },
+    {
+     "route": "oral",
+     "drug": "Aripiprazole",
+     "cpz_100mg_equiv_mg": 5.0
+    },
+    {
+     "route": "oral",
+     "drug": "Asenapine",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "oral",
+     "drug": "Benperidol",
+     "cpz_100mg_equiv_mg": 0.5
+    },
+    {
+     "route": "oral",
+     "drug": "Bromperidol",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "oral",
+     "drug": "Butaperazine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "oral",
+     "drug": "Chlorpromazine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Chlorprothixene",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Clopenthixol",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Clotiapine",
+     "cpz_100mg_equiv_mg": 26.67
+    },
+    {
+     "route": "oral",
+     "drug": "Clozapine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Dixyrazine",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "oral",
+     "drug": "Flupentixol",
+     "cpz_100mg_equiv_mg": 2.0
+    },
+    {
+     "route": "oral",
+     "drug": "Fluphenazine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "oral",
+     "drug": "Haloperidol",
+     "cpz_100mg_equiv_mg": 2.67
+    },
+    {
+     "route": "oral",
+     "drug": "Levomepromazine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Levosulpiride",
+     "cpz_100mg_equiv_mg": 133.33
+    },
+    {
+     "route": "oral",
+     "drug": "Loxapine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Lurasidone",
+     "cpz_100mg_equiv_mg": 20.0
+    },
+    {
+     "route": "oral",
+     "drug": "Melperone",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Mesoridazine",
+     "cpz_100mg_equiv_mg": 66.67
+    },
+    {
+     "route": "oral",
+     "drug": "Molindone",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "oral",
+     "drug": "Moperone",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "oral",
+     "drug": "Olanzapine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "oral",
+     "drug": "Oxypertine",
+     "cpz_100mg_equiv_mg": 40.0
+    },
+    {
+     "route": "oral",
+     "drug": "Paliperidone",
+     "cpz_100mg_equiv_mg": 2.0
+    },
+    {
+     "route": "oral",
+     "drug": "Penfluridol",
+     "cpz_100mg_equiv_mg": 2.0
+    },
+    {
+     "route": "oral",
+     "drug": "Perazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Periciazine",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "oral",
+     "drug": "Perphenazine",
+     "cpz_100mg_equiv_mg": 10.0
+    },
+    {
+     "route": "oral",
+     "drug": "Pimozide",
+     "cpz_100mg_equiv_mg": 1.33
+    },
+    {
+     "route": "oral",
+     "drug": "Pipamperone",
+     "cpz_100mg_equiv_mg": 66.67
+    },
+    {
+     "route": "oral",
+     "drug": "Pipotiazine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "oral",
+     "drug": "Prochlorperazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Promazine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Prothipendyl",
+     "cpz_100mg_equiv_mg": 80.0
+    },
+    {
+     "route": "oral",
+     "drug": "Quetiapine",
+     "cpz_100mg_equiv_mg": 133.33
+    },
+    {
+     "route": "oral",
+     "drug": "Remoxipride",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Risperidone",
+     "cpz_100mg_equiv_mg": 1.67
+    },
+    {
+     "route": "oral",
+     "drug": "Sertindole",
+     "cpz_100mg_equiv_mg": 5.33
+    },
+    {
+     "route": "oral",
+     "drug": "Sulpiride",
+     "cpz_100mg_equiv_mg": 266.67
+    },
+    {
+     "route": "oral",
+     "drug": "Sultopride",
+     "cpz_100mg_equiv_mg": 400.0
+    },
+    {
+     "route": "oral",
+     "drug": "Thiopropazate",
+     "cpz_100mg_equiv_mg": 20.0
+    },
+    {
+     "route": "oral",
+     "drug": "Thioproperazine",
+     "cpz_100mg_equiv_mg": 25.0
+    },
+    {
+     "route": "oral",
+     "drug": "Thioridazine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "oral",
+     "drug": "Tiapride",
+     "cpz_100mg_equiv_mg": 133.33
+    },
+    {
+     "route": "oral",
+     "drug": "Tiotixene",
+     "cpz_100mg_equiv_mg": 10.0
+    },
+    {
+     "route": "oral",
+     "drug": "Trifluoperazine",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "oral",
+     "drug": "trifluperidol",
+     "cpz_100mg_equiv_mg": 0.67
+    },
+    {
+     "route": "oral",
+     "drug": "Triflupromazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "oral",
+     "drug": "Ziprasidone",
+     "cpz_100mg_equiv_mg": 26.67
+    },
+    {
+     "route": "oral",
+     "drug": "Zotepine",
+     "cpz_100mg_equiv_mg": 66.67
+    },
+    {
+     "route": "oral",
+     "drug": "Zuclopenthixol",
+     "cpz_100mg_equiv_mg": 10.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Acepromazine",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Aripiprazole",
+     "cpz_100mg_equiv_mg": 5.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Bromperidol",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Chlorpromazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Chlorprothixene",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Clopenthixol",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Clotiapine",
+     "cpz_100mg_equiv_mg": 26.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Clozapine",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Dixyrazine",
+     "cpz_100mg_equiv_mg": 10.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Droperidol",
+     "cpz_100mg_equiv_mg": 0.83
+    },
+    {
+     "route": "SAI",
+     "drug": "Haloperidol",
+     "cpz_100mg_equiv_mg": 2.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Levomepromazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Melperone",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Mesoridazine",
+     "cpz_100mg_equiv_mg": 66.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Moperone",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Olanzapine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Perazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Periciazine",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Perphenazine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Prochlorperazine",
+     "cpz_100mg_equiv_mg": 16.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Promazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Prothipendyl",
+     "cpz_100mg_equiv_mg": 80.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Remoxipride",
+     "cpz_100mg_equiv_mg": 100.0
+    },
+    {
+     "route": "SAI",
+     "drug": "Sulpiride",
+     "cpz_100mg_equiv_mg": 266.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Thioproperazine",
+     "cpz_100mg_equiv_mg": 6.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Tiapride",
+     "cpz_100mg_equiv_mg": 133.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Trifluoperazine",
+     "cpz_100mg_equiv_mg": 2.67
+    },
+    {
+     "route": "SAI",
+     "drug": "Triflupromazine",
+     "cpz_100mg_equiv_mg": 33.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Ziprasidone",
+     "cpz_100mg_equiv_mg": 13.33
+    },
+    {
+     "route": "SAI",
+     "drug": "Zuclopenthixol",
+     "cpz_100mg_equiv_mg": 10.0
+    },
+    {
+     "route": "LAI",
+     "drug": "Bromperidol",
+     "cpz_100mg_equiv_mg": 1.1
+    },
+    {
+     "route": "LAI",
+     "drug": "Flupentixol",
+     "cpz_100mg_equiv_mg": 1.33
+    },
+    {
+     "route": "LAI",
+     "drug": "Fluphenazine",
+     "cpz_100mg_equiv_mg": 0.33
+    },
+    {
+     "route": "LAI",
+     "drug": "Fluspirilene",
+     "cpz_100mg_equiv_mg": 0.23
+    },
+    {
+     "route": "LAI",
+     "drug": "Haloperidol",
+     "cpz_100mg_equiv_mg": 1.1
+    },
+    {
+     "route": "LAI",
+     "drug": "Olanzapine",
+     "cpz_100mg_equiv_mg": 3.33
+    },
+    {
+     "route": "LAI",
+     "drug": "Paliperidone",
+     "cpz_100mg_equiv_mg": 0.83
+    },
+    {
+     "route": "LAI",
+     "drug": "Perphenazine",
+     "cpz_100mg_equiv_mg": 2.33
+    },
+    {
+     "route": "LAI",
+     "drug": "Pipotiazine",
+     "cpz_100mg_equiv_mg": 1.67
+    },
+    {
+     "route": "LAI",
+     "drug": "Risperidone",
+     "cpz_100mg_equiv_mg": 0.9
+    },
+    {
+     "route": "LAI",
+     "drug": "Zuclopenthixol",
+     "cpz_100mg_equiv_mg": 5.0
+    }
+   ]
+  },
+  "gardner2010": {
+   "citation": "Gardner DM, Murphy AL, O'Donnell H, Centorrino F, Baldessarini RJ. International consensus study of antipsychotic dosing. Am J Psychiatry. 2010;167(6):686-693. doi:10.1176/appi.ajp.2009.09060802",
+   "citation_url": "https://doi.org/10.1176/appi.ajp.2009.09060802",
+   "status": "UNVERIFIED against the paper (not fetched). Values below are from the chlorpromazineR package gardner2010.csv, a secondary source. The 'median' column appears to be the consensus dose equivalent to chlorpromazine 600 mg/day oral (e.g. olanzapine 20, haloperidol 10, risperidone 6); the 600 mg reference is inferred from the values, not stated on a fetched page. To get mg per CPZ 100 mg divide by 6 (the package does this). LAI figures are per dosing interval in days. SAI figures are relative to CPZ injectable, not oral (per package docs; Davis 1974 factor of 3 for SAI vs oral).",
+   "source_url": "https://raw.githubusercontent.com/ropensci/chlorpromazineR/master/inst/extdata/gardner2010.csv",
+   "doc_url": "https://docs.ropensci.org/chlorpromazineR/reference/gardner2010.html",
+   "table": [
+    {
+     "route": "oral",
+     "drug": "Chlorpromazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 600.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Amisulpride",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 700.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Aripiprazole",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 30.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Benperidol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 5.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Clopenthixol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 60.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Clorprothixene",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 500.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Clotiapine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Clozapine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 400.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Droperidol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 10.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Flupenthixol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 10.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Fluphenazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 12.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Haloperidol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 10.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Levomepromazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 400.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Loxapine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 60.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Mesoridazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 300.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Methotrimeprazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 300.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Molindone",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Olanzapine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 20.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Oxypertine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 240.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Paliperidone",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 9.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Pericyazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 50.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Perphenazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 30.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Pimozide",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 8.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Prochlorperazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 88.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Quetiapine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 750.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Remoxipride",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 212.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Risperidone",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 6.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Sertindole",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 20.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Sulpiride",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 800.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Thioridazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 500.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Thiothixene",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 30.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Trifluoperazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 20.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Trifluperidol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 2.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Triflupromazine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Ziprasidone",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 160.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Zotepine",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 300.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "oral",
+     "drug": "Zuclopenthixol",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 50.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Chlorpromazine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Clotiapine injectable",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 40.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Fluphenazine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 5.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Haloperidol lactate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 5.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Loxapine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 25.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Mesoridazine besylate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Olanzapine tartrate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 10.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Perphenazine USP",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 10.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Prochlorperazine mesylate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 22.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Promazine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Trifluoperazine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 5.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Triflupromazine HCl",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 60.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Ziprasidone mesylate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 20.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "SAI",
+     "drug": "Zuclopenthixol acetate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 50.0,
+     "lai_interval_days": null
+    },
+    {
+     "route": "LAI",
+     "drug": "Clopenthixol decanoate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 300.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Flupenthixol decanoate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 40.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Fluphenazine decanoate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 25.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Fluphenazine enanthate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 25.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Fluspirilene",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 6.0,
+     "lai_interval_days": 7
+    },
+    {
+     "route": "LAI",
+     "drug": "Haloperidol decanoate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 150.0,
+     "lai_interval_days": 28
+    },
+    {
+     "route": "LAI",
+     "drug": "Perphenazine enanthate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Pipotiazine palmitate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 100.0,
+     "lai_interval_days": 28
+    },
+    {
+     "route": "LAI",
+     "drug": "Risperidone microspheres",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 50.0,
+     "lai_interval_days": 14
+    },
+    {
+     "route": "LAI",
+     "drug": "Zuclopenthixol decanoate",
+     "median_dose_mg_equiv_to_CPZ_600mg_oral_per_package": 200.0,
+     "lai_interval_days": 14
+    }
+   ]
+  },
+  "leucht2015_olanzapine_equivalents": {
+   "citation": "Leucht S, Samara M, Heres S, Patel MX, Furukawa T, Cipriani A, Geddes J, Davis JM. Dose Equivalents for Second-Generation Antipsychotic Drugs: The Classical Mean Dose Method. Schizophr Bull. 2015;41(6):1397-1402. doi:10.1093/schbul/sbv037. PMC4601707",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4601707",
+   "note": "A different paper from the 2016 DDD paper, fetched as a cross-check. Doses (mg/day) equivalent to 1 mg/day olanzapine; weighted means. Iloperidone, lurasidone, paliperidone: not available. The article states WHO DDD is a drug utilization metric rather than a dose-equivalence definition.",
+   "table_olanzapine_1mg_equivalent": {
+    "amisulpride": 38.33,
+    "aripiprazole": 1.41,
+    "asenapine": 0.89,
+    "clozapine": 30.62,
+    "chlorpromazine": 38.88,
+    "haloperidol": 0.74,
+    "olanzapine": 1.0,
+    "quetiapine": 32.27,
+    "risperidone": 0.38,
+    "sertindole": 1.08,
+    "ziprasidone": 7.92,
+    "zotepine": 13.24
+   },
+   "table_cpz_100mg_equivalent_davis1974": {
+    "acetophenazine": 23.5,
+    "butaperazine": 8.9,
+    "carphenazine": 24.3,
+    "chlorpromazine": 100,
+    "chlorprothixene": 43.9,
+    "fluphenazine": 1.2,
+    "haloperidol": 1.6,
+    "mesoridazine": 55.3,
+    "perphenazine": 8.9,
+    "piperacetazine": 10.5,
+    "prochlorperazine": 14.3,
+    "thioridazine": 95.3,
+    "thiothixene": 5.2,
+    "trifluoperazine": 2.8,
+    "triflupromazine": 28.4
+   }
+  },
+  "who_atc_ddd": {
+   "source": "WHO Collaborating Centre for Drug Statistics Methodology, ATC/DDD Index, N05A subgroups AA, AB, AD, AE, AF, AH, AL, AX; page 'last updated 2026-01-20'. Route: O oral, P parenteral, SL sublingual, depot = long-acting injectable. Units g or mg as shown. Subgroups AC (piperidine phenothiazines), AG, AN not fetched.",
+   "url": "https://atcddd.fhi.no/atc_ddd_index/?code=N05A&showdescription=no",
+   "subgroup_urls": [
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AX&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AH&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AD&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AE&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AF&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AB&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AL&showdescription=no",
+    "https://atcddd.fhi.no/atc_ddd_index/?code=N05AA&showdescription=no"
+   ],
+   "post_2016_agents": {
+    "brexpiprazole": "3 mg oral (N05AX16)",
+    "cariprazine": "3 mg oral (N05AX15)",
+    "lumateperone": "ATC N05AD10, no DDD assigned",
+    "xanomeline_trospium": "ATC N05AX50, no DDD assigned",
+    "iloperidone": "18 mg oral (N05AX14)",
+    "lurasidone": "60 mg oral (N05AE05)",
+    "pimavanserin": "N05AX17, no DDD"
+   },
+   "table": [
+    {
+     "atc": "N05AA01",
+     "drug": "chlorpromazine",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AA01",
+     "drug": "chlorpromazine",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "P",
+     "note": ""
+    },
+    {
+     "atc": "N05AA02",
+     "drug": "levomepromazine",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AA03",
+     "drug": "promazine",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AA05",
+     "drug": "triflupromazine",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AB02",
+     "drug": "fluphenazine",
+     "ddd": 10,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AB02",
+     "drug": "fluphenazine",
+     "ddd": 1,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AB03",
+     "drug": "perphenazine",
+     "ddd": 30,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AB03",
+     "drug": "perphenazine",
+     "ddd": 7,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AB04",
+     "drug": "prochlorperazine",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AB06",
+     "drug": "trifluoperazine",
+     "ddd": 20,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AB10",
+     "drug": "perazine",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AD01",
+     "drug": "haloperidol",
+     "ddd": 8,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AD01",
+     "drug": "haloperidol",
+     "ddd": 8,
+     "unit": "mg",
+     "route": "P",
+     "note": ""
+    },
+    {
+     "atc": "N05AD01",
+     "drug": "haloperidol",
+     "ddd": 3.3,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AD03",
+     "drug": "melperone",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AD06",
+     "drug": "bromperidol",
+     "ddd": 10,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AD06",
+     "drug": "bromperidol",
+     "ddd": 3.3,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AD07",
+     "drug": "benperidol",
+     "ddd": 1.5,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AD08",
+     "drug": "droperidol",
+     "ddd": 2.5,
+     "unit": "mg",
+     "route": "P",
+     "note": ""
+    },
+    {
+     "atc": "N05AD10",
+     "drug": "lumateperone",
+     "ddd": null,
+     "unit": "",
+     "route": "",
+     "note": "no DDD assigned in index as fetched"
+    },
+    {
+     "atc": "N05AE01",
+     "drug": "oxypertine",
+     "ddd": 0.12,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AE02",
+     "drug": "molindone",
+     "ddd": 50,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AE03",
+     "drug": "sertindole",
+     "ddd": 16,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AE04",
+     "drug": "ziprasidone",
+     "ddd": 80,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AE04",
+     "drug": "ziprasidone",
+     "ddd": 40,
+     "unit": "mg",
+     "route": "P",
+     "note": ""
+    },
+    {
+     "atc": "N05AE05",
+     "drug": "lurasidone",
+     "ddd": 60,
+     "unit": "mg",
+     "route": "O",
+     "note": "as hydrochloride"
+    },
+    {
+     "atc": "N05AF01",
+     "drug": "flupentixol",
+     "ddd": 6,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AF01",
+     "drug": "flupentixol",
+     "ddd": 4,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AF02",
+     "drug": "clopenthixol",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AF03",
+     "drug": "chlorprothixene",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AF04",
+     "drug": "tiotixene",
+     "ddd": 30,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AF05",
+     "drug": "zuclopenthixol",
+     "ddd": 30,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AF05",
+     "drug": "zuclopenthixol",
+     "ddd": 15,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AH01",
+     "drug": "loxapine",
+     "ddd": 0.1,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AH02",
+     "drug": "clozapine",
+     "ddd": 0.3,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AH03",
+     "drug": "olanzapine",
+     "ddd": 10,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AH03",
+     "drug": "olanzapine",
+     "ddd": 10,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AH04",
+     "drug": "quetiapine",
+     "ddd": 0.4,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AH05",
+     "drug": "asenapine",
+     "ddd": 20,
+     "unit": "mg",
+     "route": "SL",
+     "note": ""
+    },
+    {
+     "atc": "N05AH06",
+     "drug": "clotiapine",
+     "ddd": 80,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AH53",
+     "drug": "olanzapine and samidorphan",
+     "ddd": null,
+     "unit": "",
+     "route": "",
+     "note": "no DDD"
+    },
+    {
+     "atc": "N05AL01",
+     "drug": "sulpiride",
+     "ddd": 0.8,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AL03",
+     "drug": "tiapride",
+     "ddd": 0.4,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AL05",
+     "drug": "amisulpride",
+     "ddd": 0.4,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AL05",
+     "drug": "amisulpride",
+     "ddd": 7.5,
+     "unit": "mg",
+     "route": "P",
+     "note": ""
+    },
+    {
+     "atc": "N05AL07",
+     "drug": "levosulpiride",
+     "ddd": 0.4,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX08",
+     "drug": "risperidone",
+     "ddd": 5,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX08",
+     "drug": "risperidone",
+     "ddd": 2.7,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AX11",
+     "drug": "zotepine",
+     "ddd": 0.2,
+     "unit": "g",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX12",
+     "drug": "aripiprazole",
+     "ddd": 15,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX12",
+     "drug": "aripiprazole",
+     "ddd": 13.3,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot"
+    },
+    {
+     "atc": "N05AX13",
+     "drug": "paliperidone",
+     "ddd": 6,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX13",
+     "drug": "paliperidone",
+     "ddd": 2.5,
+     "unit": "mg",
+     "route": "P",
+     "note": "depot, expressed as paliperidone"
+    },
+    {
+     "atc": "N05AX14",
+     "drug": "iloperidone",
+     "ddd": 18,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX15",
+     "drug": "cariprazine",
+     "ddd": 3,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX16",
+     "drug": "brexpiprazole",
+     "ddd": 3,
+     "unit": "mg",
+     "route": "O",
+     "note": ""
+    },
+    {
+     "atc": "N05AX17",
+     "drug": "pimavanserin",
+     "ddd": null,
+     "unit": "",
+     "route": "",
+     "note": "no DDD"
+    },
+    {
+     "atc": "N05AX50",
+     "drug": "xanomeline and trospium",
+     "ddd": null,
+     "unit": "",
+     "route": "",
+     "note": "no DDD in index as fetched"
+    }
+   ],
+   "caveat": "WHO DDD is a utilization metric, not a dose-equivalence standard. Current 2026 DDDs may differ from those used in Leucht 2016 (not compared because that paper was not fetched)."
+  }
+ },
+ "benzo": {
+  "ashton": {
+   "citation": "Ashton CH. Benzodiazepine Equivalence Table (Revised April 2007), benzo.org.uk archive",
+   "url": "https://www.benzo.org.uk/bzequiv.htm",
+   "reference": "approx oral dose equal to diazepam 10 mg; half-life hours, active metabolite in [ ]",
+   "caveats": "Based on clinical experience when switching to diazepam for withdrawal; differ from other authors; vary between individuals; hypnotics/anxiolytics marketed aims a/h/e on source page.",
+   "table": [
+    {
+     "drug": "Alprazolam",
+     "half_life_h": "6-12",
+     "eq_to_diazepam_10mg_mg": "0.5"
+    },
+    {
+     "drug": "Bromazepam",
+     "half_life_h": "10-20",
+     "eq_to_diazepam_10mg_mg": "5-6"
+    },
+    {
+     "drug": "Chlordiazepoxide",
+     "half_life_h": "5-30 [36-200]",
+     "eq_to_diazepam_10mg_mg": "25"
+    },
+    {
+     "drug": "Clobazam",
+     "half_life_h": "12-60",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Clonazepam",
+     "half_life_h": "18-50",
+     "eq_to_diazepam_10mg_mg": "0.5"
+    },
+    {
+     "drug": "Clorazepate",
+     "half_life_h": "[36-200]",
+     "eq_to_diazepam_10mg_mg": "15"
+    },
+    {
+     "drug": "Diazepam",
+     "half_life_h": "20-100 [36-200]",
+     "eq_to_diazepam_10mg_mg": "10"
+    },
+    {
+     "drug": "Estazolam",
+     "half_life_h": "10-24",
+     "eq_to_diazepam_10mg_mg": "1-2"
+    },
+    {
+     "drug": "Flunitrazepam",
+     "half_life_h": "18-26 [36-200]",
+     "eq_to_diazepam_10mg_mg": "1"
+    },
+    {
+     "drug": "Flurazepam",
+     "half_life_h": "[40-250]",
+     "eq_to_diazepam_10mg_mg": "15-30"
+    },
+    {
+     "drug": "Halazepam",
+     "half_life_h": "[30-100]",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Ketazolam",
+     "half_life_h": "30-100 [36-200]",
+     "eq_to_diazepam_10mg_mg": "15-30"
+    },
+    {
+     "drug": "Loprazolam",
+     "half_life_h": "6-12",
+     "eq_to_diazepam_10mg_mg": "1-2"
+    },
+    {
+     "drug": "Lorazepam",
+     "half_life_h": "10-20",
+     "eq_to_diazepam_10mg_mg": "1"
+    },
+    {
+     "drug": "Lormetazepam",
+     "half_life_h": "10-12",
+     "eq_to_diazepam_10mg_mg": "1-2"
+    },
+    {
+     "drug": "Medazepam",
+     "half_life_h": "36-200",
+     "eq_to_diazepam_10mg_mg": "10"
+    },
+    {
+     "drug": "Nitrazepam",
+     "half_life_h": "15-38",
+     "eq_to_diazepam_10mg_mg": "10"
+    },
+    {
+     "drug": "Nordazepam",
+     "half_life_h": "36-200",
+     "eq_to_diazepam_10mg_mg": "10"
+    },
+    {
+     "drug": "Oxazepam",
+     "half_life_h": "4-15",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Prazepam",
+     "half_life_h": "[36-200]",
+     "eq_to_diazepam_10mg_mg": "10-20"
+    },
+    {
+     "drug": "Quazepam",
+     "half_life_h": "25-100",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Temazepam",
+     "half_life_h": "8-22",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Triazolam",
+     "half_life_h": "2",
+     "eq_to_diazepam_10mg_mg": "0.5"
+    },
+    {
+     "drug": "Zaleplon (non-BZD)",
+     "half_life_h": "2",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Zolpidem (non-BZD)",
+     "half_life_h": "2",
+     "eq_to_diazepam_10mg_mg": "20"
+    },
+    {
+     "drug": "Zopiclone (non-BZD)",
+     "half_life_h": "5-6",
+     "eq_to_diazepam_10mg_mg": "15"
+    },
+    {
+     "drug": "Eszopiclone (non-BZD)",
+     "half_life_h": "6 (9 in elderly)",
+     "eq_to_diazepam_10mg_mg": "3"
+    }
+   ]
+  },
+  "sps_nhs": {
+   "citation": "UK Specialist Pharmacy Service (NHS SPS), 'Oral benzodiazepines and choosing equivalent doses'; published 11 Jan 2022, reviewed/republished 2 Jul 2025",
+   "url": "https://sps.nhs.uk/articles/oral-benzodiazepines-and-choosing-equivalent-doses/",
+   "reference": "approx equivalent to diazepam 5 mg; no numeric half-lives, only short/long category",
+   "caveats": "Equivalence not exact; accumulation of long-acting agents in liver impairment (oxazepam may be preferred); lower doses in renal impairment.",
+   "table": [
+    {
+     "drug": "Alprazolam",
+     "eq_to_diazepam_5mg": "250 mcg",
+     "category": "short"
+    },
+    {
+     "drug": "Chlordiazepoxide",
+     "eq_to_diazepam_5mg": "12.5 mg",
+     "category": "long"
+    },
+    {
+     "drug": "Clobazam",
+     "eq_to_diazepam_5mg": "10 mg",
+     "category": "long"
+    },
+    {
+     "drug": "Clonazepam",
+     "eq_to_diazepam_5mg": "250 mcg",
+     "category": "long"
+    },
+    {
+     "drug": "Flurazepam",
+     "eq_to_diazepam_5mg": "7.5-15 mg",
+     "category": "long"
+    },
+    {
+     "drug": "Loprazolam",
+     "eq_to_diazepam_5mg": "500 mcg-1 mg",
+     "category": "short"
+    },
+    {
+     "drug": "Lorazepam",
+     "eq_to_diazepam_5mg": "500 mcg",
+     "category": "short"
+    },
+    {
+     "drug": "Lormetazepam",
+     "eq_to_diazepam_5mg": "500 mcg-1 mg",
+     "category": "short"
+    },
+    {
+     "drug": "Nitrazepam",
+     "eq_to_diazepam_5mg": "5 mg",
+     "category": "long"
+    },
+    {
+     "drug": "Oxazepam",
+     "eq_to_diazepam_5mg": "10 mg",
+     "category": "short"
+    },
+    {
+     "drug": "Temazepam",
+     "eq_to_diazepam_5mg": "10 mg",
+     "category": "short"
+    }
+   ],
+   "scaled_to_diazepam_10mg_for_comparison": "double each SPS value (e.g. lorazepam 1 mg, alprazolam 0.5 mg, clonazepam 0.5 mg, oxazepam 20 mg, temazepam 20 mg, chlordiazepoxide 25 mg); these match Ashton for those drugs; clobazam 20 mg matches; nitrazepam 10 mg matches."
+  },
+  "status": "VA/DoD guideline table not fetched (UNVERIFIED); SPS NHS used as second source. Note SPS sodium? none. Ashton page is a 2007 archive."
+ },
+ "clozapine": {
+  "label": {
+   "product": "Clozaril (clozapine) tablets, Novartis/HLS; FDA label PDF 'Revised 6/2025' (Reference ID 5608164) as hosted on accessdata.fda.gov under a 2026 folder (019758Orig1s107lbl.pdf)",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/019758Orig1s107lbl.pdf",
+   "status": "DailyMed was blocked by the proxy, so the FDA accessdata copy was used. The fetch tool returned a summary, not verbatim text, so table wording is paraphrased; confirm against the PDF before publishing. Generic clozapine labels carry the same tables."
+  },
+  "baseline": {
+   "general": "Obtain baseline ANC; initiation not recommended if ANC < 1500/uL",
+   "BEN": "Obtain at least two baseline ANCs; do not start if ANC < 1000/uL"
+  },
+  "table_general_population": [
+   {
+    "anc": ">=1500 (normal)",
+    "action": "Continue, no change",
+    "monitoring": "Weekly months 1-6; every 2 weeks months 7-12; monthly from month 13"
+   },
+   {
+    "anc": "1000-1499 (mild neutropenia)",
+    "action": "Continue, no change",
+    "monitoring": "Three times weekly until ANC >=1500, then return to the normal-range schedule"
+   },
+   {
+    "anc": "500-999 (moderate)",
+    "action": "Interrupt treatment; hematology consultation; resume once ANC >=1000",
+    "monitoring": "Daily until ANC >=1000, then three times weekly; once ANC >=1500, weekly for 4 weeks then normal schedule"
+   },
+   {
+    "anc": "<500 (severe)",
+    "action": "Discontinue; hematology consultation; rechallenge only if benefit outweighs risk, once ANC >=1500",
+    "monitoring": "Daily until ANC >=1000, then three times weekly; after restart follow new-start schedule"
+   }
+  ],
+  "table_BEN": [
+   {
+    "anc": ">=1000 (normal for BEN)",
+    "action": "Continue, no change",
+    "monitoring": "Weekly months 1-6; every 2 weeks months 7-12; monthly from month 13"
+   },
+   {
+    "anc": "500-999",
+    "action": "Hematology consultation; continue treatment, no dose change",
+    "monitoring": "Three times weekly; once ANC >=1000 and at/above baseline, weekly for 4 weeks then BEN normal schedule"
+   },
+   {
+    "anc": "<500",
+    "action": "Discontinue; hematology consultation; rechallenge only if benefit outweighs risk, once ANC >=1000 and at/above baseline",
+    "monitoring": "Daily until ANC >=500, then three times weekly; after restart follow BEN new-start schedule"
+   }
+  ],
+  "note_confirm_initial": "Confirm any initial ANC below 1500 with a repeat test within 24 hours (per fetched summary).",
+  "rems": {
+   "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine",
+   "dates": "Drug Safety Communication dated 2025-08-27 per fetched page; REMS removal effective 2025-06-13; page current as of 2026-04-03.",
+   "changed": [
+    "Clozapine REMS removed",
+    "Prescribers no longer enroll, enroll patients or submit ANC results",
+    "Pharmacies/pharmacists no longer enroll or verify ANC/eligibility before dispensing",
+    "Labeling updated with new Medication Guide; severe neutropenia in Boxed Warning"
+   ],
+   "unchanged": [
+    "Risk of severe neutropenia persists ('never goes away')",
+    "Label still addresses the risk; prescribers should continue to monitor ANC per the monitoring frequencies in the prescribing information",
+    "Patient counseling about neutropenia symptoms still expected"
+   ],
+   "label_still_recommends_anc_monitoring": true,
+   "earlier_history": "2015-09-15 FDA Drug Safety Communication (shared REMS; ANC <1000 interrupt, <500 for BEN) fetched: https://www.fda.gov/media/93482/download",
+   "status_note": "The FDA page date discrepancy (Aug 27 2025 vs Jun 2025) is as returned by the fetch tool; verify on the page."
+  }
+ },
+ "lithium": {
+  "isbd_igsli": {
+   "citation": "Nolen WA, Licht RW, Young AH, et al. What is the optimal serum level for lithium in the maintenance treatment of bipolar disorder? A systematic review and recommendations from the ISBD/IGSLI Task Force on treatment with lithium. Bipolar Disord. 2019;21(5):394-409. doi:10.1111/bdi.12805. PMID 31112628",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6688930",
+   "maintenance_adult_standard_mmol_L": "0.60-0.80 (consensus)",
+   "options": "0.40-0.60 if poorly tolerated; 0.80-1.00 if insufficient response",
+   "older_adults": "usually 0.40-0.60 mmol/L, up to max 0.70 or 0.80 at age 65-79, max 0.70 over age 80 (no consensus; majority endorsed)",
+   "children_adolescents": "majority endorsed same as adult (no consensus)",
+   "timing": "Morning, 12 +/- 1 hours after the evening dose (consensus; twice daily and evening once-daily dosing)"
+  },
+  "us_label": {
+   "url": "https://prescriberpoint.com/therapies/lithium-carbonate-5e18d10",
+   "alt_url": "https://drugcentral.org/label/074e3c3b-3a36-4c66-b0a7-e19f9aac8548/view",
+   "product": "Lithium carbonate extended-release tablets; mirrors of FDA label; revised May 2025 (prescriberpoint) and 09/2023 (drugcentral)",
+   "acute_mania_target_mEq_L": "1.0-1.5",
+   "maintenance_mEq_L": "0.6-1.2",
+   "timing": "Drawn immediately prior to next dose when concentrations relatively stable, 8 to 12 hours after previous dose (label wording as returned)",
+   "monitoring": "Twice weekly during acute phase until stabilized; maintenance at least every 2 months",
+   "toxic_statements": [
+    "Toxic levels (>=1.5 mEq/L) are close to therapeutic",
+    "Should not exceed 2.0 mEq/L during acute treatment",
+    "Above 3.0 mEq/L may produce complex multiorgan picture",
+    "Unusually sensitive patients may show toxicity below 1.0 mEq/L"
+   ],
+   "half_life": "approximately 24 hours (drugcentral label)"
+  },
+  "toxicity_bands": {
+   "source": "StatPearls, Lithium Toxicity (Slubicki, Avula, Schaffer, Swoboda), last update 2026-06-19",
+   "url": "https://www.ncbi.nlm.nih.gov/books/NBK499992/",
+   "bands_mmol_L": {
+    "mild": "1.5-2.5",
+    "moderate": "2.5-3.5",
+    "severe": ">3.5"
+   },
+   "note": "Described as 'traditionally' categorized; levels correlate imperfectly with clinical toxicity (chronic > acute at same level). WikEM: hemodialysis recommended with impaired renal function and Li >4.0, suggested >5.0 (EXTRIP, Decker 2015, PMID 25583293)",
+   "secondary_url": "https://wikem.org/wiki/Lithium_toxicity"
+  },
+  "UNVERIFIED": [
+   "Steady state after about 5 days: not stated on any fetched page (label gives elimination half-life ~24 h only). Standard pharmacology, but not confirmed from a fetched source.",
+   "12 hours exactly: ISBD says 12 +/- 1 h; US label says 8 to 12 h.",
+   "Label fetched via third-party mirrors, not DailyMed or accessdata directly."
+  ]
+ }
+}

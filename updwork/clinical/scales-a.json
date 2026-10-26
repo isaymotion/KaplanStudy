@@ -1,0 +1,111 @@
+{
+"phq9": {
+ "license": {"text": "\"No permission required to reproduce, translate, display or distribute, 1999.\" / \"Developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, with an educational grant from Pfizer Inc.\" (as printed on the PHQ-9/GAD-7 form hosted by ND HHS; this is the phqscreeners.com standard footer, but phqscreeners.com itself could not be fetched, robots-disallowed/blocked: UNVERIFIED on owner's own page)", "url": "https://www.hhs.nd.gov/sites/www/files/documents/BH/BHC/PHQ-9-and-GAD-7.pdf"},
+ "citation": "Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-613. doi:10.1046/j.1525-1497.2001.016009606.x",
+ "citationUrl": "https://pubmed.ncbi.nlm.nih.gov/11556941/",
+ "instructions": "Over the last 2 weeks, how often have you been bothered by any of the following problems?",
+ "options": [["Not at all",0],["Several days",1],["More than half the days",2],["Nearly every day",3]],
+ "items": [
+  "Little interest or pleasure in doing things.",
+  "Feeling down, depressed, or hopeless.",
+  "Trouble falling or staying asleep, or sleeping too much.",
+  "Feeling tired or having little energy.",
+  "Poor appetite or overeating.",
+  "Feeling bad about yourself – or that you are a failure or have let yourself or your family down.",
+  "Trouble concentrating on things, such as reading the newspaper or watching television.",
+  "Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual.",
+  "Thoughts that you would be better off dead, or of hurting yourself in some way."
+ ],
+ "extra": {
+  "functionalQuestion": "If you checked off any problems, how difficult have these made it for you to do your work, take care of things at home, or get along with other people?",
+  "functionalOptions": ["Not difficult at all","Somewhat difficult","Very difficult","Extremely difficult"],
+  "functionalNote": "Not scored. Wording from ND HHS form; another fetched copy (Concussions Ontario) reads 'how difficult have these problems made it'.",
+  "item9Rule": "UNVERIFIED: no fetched page stated the item 9 follow-up rule. Commonly taught: any non-zero answer needs clinical suicide-risk assessment; confirm against a primary source before publishing."
+ },
+ "scoring": {"range":[0,27],
+  "bands":[[0,4,"Minimal"],[5,9,"Mild"],[10,14,"Moderate"],[15,19,"Moderately severe"],[20,27,"Severe"]],
+  "cutoff": 10,
+  "notes":[
+   "Items summed 0-3 each.",
+   "Original paper abstract (via Europe PMC): score >=10 had 88% sensitivity and 88% specificity for major depression; scores of 5, 10, 15, 20 represent mild, moderate, moderately severe, severe depression.",
+   "Cigna PDF lists bands as 1-4 minimal, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe (it starts minimal at 1; 0-4 used here per paper's 5/10/15/20 cut points).",
+   "Another fetched form (Concussions Ontario) uses non-standard bands 0-4 / 5-14 / 15-19 / 20+; not used."
+  ]},
+ "sources": ["https://www.hhs.nd.gov/sites/www/files/documents/BH/BHC/PHQ-9-and-GAD-7.pdf","https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:11556941%20AND%20SRC:MED&resultType=core&format=json","https://static.cigna.com/assets/chcp/pdf/resourceLibrary/educationCenter/phq9XscoringAndActionsv2.pdf","https://concussionsontario.org/sites/default/files/2025-01/PHQ9%20Appendix%208.1%20Jan%202025.pdf","https://www.phqscreeners.com/"]
+},
+"gad7": {
+ "license": {"text": "\"No permission required to reproduce, translate, display or distribute, 1999.\" / \"Developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, with an educational grant from Pfizer Inc.\" (printed on the combined PHQ-9/GAD-7 form hosted by ND HHS; owner's phqscreeners.com page UNVERIFIED)", "url": "https://www.hhs.nd.gov/sites/www/files/documents/BH/BHC/PHQ-9-and-GAD-7.pdf"},
+ "citation": "Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097. doi:10.1001/archinte.166.10.1092",
+ "citationUrl": "https://pubmed.ncbi.nlm.nih.gov/16717171/",
+ "instructions": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+ "options": [["Not at all",0],["Several days",1],["More than half the days",2],["Nearly every day",3]],
+ "items": [
+  "Feeling nervous, anxious, or on edge",
+  "Not being able to stop or control worrying",
+  "Worrying too much about different things",
+  "Trouble relaxing",
+  "Being so restless that it is hard to sit still",
+  "Becoming easily annoyed or irritable",
+  "Feeling afraid as if something awful might happen"
+ ],
+ "extra": {
+  "functionalQuestion": "If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
+  "functionalOptions": ["Not difficult at all","Somewhat difficult","Very difficult","Extremely difficult"],
+  "wordingVariants": "Option 3 label: 'More than half the days' (UT Southwestern copy) vs 'Over half the days' (ND HHS, Dartmouth copies). Item 5: 'it is hard' (UTSW) vs 'it's hard' (Dartmouth, ND HHS 'hard to sit still'). Two copies misprint option 0 as 'Not at all sure'. Official phqscreeners.com wording UNVERIFIED."
+ },
+ "scoring": {"range":[0,21],
+  "bands":[[0,4,"Minimal"],[5,9,"Mild"],[10,14,"Moderate"],[15,21,"Severe"]],
+  "cutoff": 10,
+  "notes":[
+   "Dartmouth copy: \"Scores of 5, 10, and 15 are taken as the cut-off points for mild, moderate and severe anxiety, respectively.\" and \"When used as a screening tool, further evaluation is recommended when the score is 10 or greater.\"",
+   "UTSW copy: \">=10 Possible diagnosis of GAD; confirm by further evaluation\".",
+   "Paper abstract: cut point optimized sensitivity 89% and specificity 82% (cut point value of 10 not stated in the abstract page fetched; 10 comes from the Dartmouth/UTSW forms).",
+   "The label 'Minimal' for 0-4 is conventional, not on the fetched forms (UNVERIFIED label). Range 0-21 follows from 7 items x 0-3."
+  ]},
+ "sources": ["https://www.hhs.nd.gov/sites/www/files/documents/BH/BHC/PHQ-9-and-GAD-7.pdf","https://www.utsouthwestern.edu/edumedia/edufiles/departments_centers/depression/vitalsign6/measures/gad-7.pdf","https://www.dartmouth-hitchcock.org/sites/default/files/2021-02/gad-7-anxiety-scale.pdf","https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:16717171%20AND%20SRC:MED&resultType=core&format=json"]
+},
+"cssrs": {
+ "license": {"text": "\"You do not need special permission from us to take the Columbia Protocol tools and use them in your setting\" (page names no formal licence; invites sending materials/EHR screenshots to kelly.posner@nyspi.columbia.edu for an accuracy check). Fetched screener PDFs contained no copyright line.", "url": "https://cssrs.columbia.edu/the-columbia-scale-c-ssrs/cssrs-for-communities-and-healthcare/"},
+ "citation": "Posner K, Brown GK, Stanley B, et al. The Columbia-Suicide Severity Rating Scale: initial validity and internal consistency findings from three multisite studies with adolescents and adults. Am J Psychiatry. 2011;168(12):1266-1277. UNVERIFIED: not fetched",
+ "citationUrl": "",
+ "instructions": "Screen version. Ask the questions that are bolded and underlined. Ask Questions 1 and 2 always. If YES to 2, ask questions 3, 4, 5 and 6. If NO to 2, go directly to question 6. Responses YES/NO.",
+ "options": [["Yes",1],["No",0]],
+ "items": [
+  "Have you wished you were dead or wished you could go to sleep and not wake up?",
+  "Have you actually had any thoughts of killing yourself?",
+  "Have you been thinking about how you might do this? (E.g. \"I thought about taking an overdose but I never made a specific plan as to when where or how I would actually do it....and I would never go through with it.\")",
+  "Have you had these thoughts and had some intention of acting on them? (As opposed to \"I have the thoughts but I definitely will not do anything about them.\")",
+  "Have you started to work out or worked out the details of how to kill yourself? Did you intend to carry out this plan?",
+  "Have you ever done anything, started to do anything, or prepared to do anything to end your life? (Examples: Took pills, tried to shoot yourself, cut yourself, tried to hang yourself, took out pills but didn't swallow any, held a gun but changed your mind or it was grabbed from your hand, went to the roof but didn't jump, collected pills, obtained a gun, gave away valuables, wrote a will or suicide note, etc.) If YES, ask: Was this within the past three months?"
+ ],
+ "extra": {
+  "forms": {
+   "recentPastMonth": "https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-triage-points-2026.pdf (header 'Recent Past month'; Q1-5 past month; Q6 lifetime with past-3-months follow-up)",
+   "sinceLastContact": "https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-since-last-contact-with-triage-points-2026.pdf (same 6 questions, framed 'Since Last Contact'; exact wording only paraphrased by fetch tool: UNVERIFIED verbatim)"
+  },
+  "timeFrames": "Q1-Q5: past month (recent form) or since last contact. Q6: lifetime, with follow-up 'within the past three months?'",
+  "triageNote": "Columbia's generic 2026 screener PDFs show Low/Moderate/High Risk checkboxes but the fetch did not return the per-question mapping or actions. Columbia's setting-specific 2026 forms (Primary Care, Outpatient) give a response protocol per item (see triageSettingSpecific). The L/M/H mapping below is from a third-party (Wilder/Clay County, 2022) copy of the Columbia screener, NOT Columbia's own page.",
+  "triageGenericThirdParty": {
+   "Q1_Q2": "Yes = Low (per generic Columbia convention; UNVERIFIED on fetched page)",
+   "Q3": {"Yes":"Moderate","No":"Low"},
+   "Q4": {"Yes":"High","No":"Low"},
+   "Q5": {"Yes":"High","No":"Low"},
+   "Q6": {"Yes within past 3 months":"High","Yes more than 3 months ago":"Moderate","No":"Low"},
+   "rule": "Triage level = the highest risk level determined from any C-SSRS question.",
+   "actions": {"High":"Emergent psychiatric assessment needed. Do not leave alone.","Moderate":"Not at imminent risk to self; assess coping skills and stressors; connect with primary physician.","Low":"Assess coping skills and stressors; connect with 988 Suicide and Crisis Lifeline resources."},
+   "source": "https://www.wilder.org/sites/default/files/C-SSRS-Clay-County-Triage-September-2022-with-988.pdf"
+  },
+  "triageSettingSpecific": {
+   "Q1 Yes, Q2 Yes, Q3 Yes": "Behavioral Health Referral",
+   "Q4 Yes, Q5 Yes": "Behavioral Health Consultation and Patient Safety Precautions",
+   "Q6 Yes (lifetime)": "Behavioral Health Referral",
+   "Q6 Yes within 3 months": "Behavioral Health Consultation and Patient Safety Precautions",
+   "sources": ["https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-Triage-Points-for-Primary-Care-2026.pdf","https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-Triage-Points-for-outpatientambulatory-2026.pdf"],
+   "note": "Outpatient page listed Q1 as no-action in one reading; Q1 mapping confirmed only for Primary Care form."
+  },
+  "crisis": "Page directs people in crisis to call 988."
+ },
+ "scoring": {"range":null,"bands":[["Low","Moderate","High"]],"cutoff":null,"notes":["No numeric score. Risk is triaged by item, highest level wins."]},
+ "sources": ["https://cssrs.columbia.edu/the-columbia-scale-c-ssrs/cssrs-for-communities-and-healthcare/","https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-triage-points-2026.pdf","https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-since-last-contact-with-triage-points-2026.pdf","https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-Triage-Points-for-Primary-Care-2026.pdf","https://cssrs.columbia.edu/wp-content/uploads/C-SSRS-Screener-with-Triage-Points-for-outpatientambulatory-2026.pdf","https://www.wilder.org/sites/default/files/C-SSRS-Clay-County-Triage-September-2022-with-988.pdf"]
+}
+}

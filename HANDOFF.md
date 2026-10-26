@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-26, after release 57 (`cf090c5`): the **Weak topics** dashboard and the **Resident handout** for teaching sessions. The learning-layer backfill is complete and live. **Next work: the rest of the feature list in section 7.** Update the status table and next steps at the end of every unit.
+Last updated 2026-10-27, after release 58 (`3b9c435`): **Clinical tools** (6 rating scales, 4 calculators), **Report an error** and **daily-review card types**. Release 57 (`cf090c5`) added Weak topics and the Resident handout. The learning-layer backfill is complete. **The section 7 feature list is now fully built; next work is unbuilt chapters (recipe B).** Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -79,6 +79,7 @@ python3 /home/claude/fulltest.py | tail -3         # expect "errors: []"
 python3 -m http.server 8124 >/dev/null 2>&1 &      # e2e needs a server; confirm with curl (200) first
 python3 /home/claude/tools/learn/e2e.py | tail -1  # expect "ERRORS []"
 python3 /home/claude/tools/learn/e2e_weak.py | tail -1  # Weak topics + handout; expect "ERRORS []"
+python3 /home/claude/tools/learn/e2e_tools.py | tail -2  # Clinical tools, report link, card types; expect "FAILS []" and "ERRORS []"
 ```
 After changing tools, copy them back into the dev-tools worktree, then commit and push `dev-tools`.
 
@@ -92,27 +93,28 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 
-Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `cf090c5`. The last commits on `main` are `556be5e` (Chapter 15) and `cf090c5` (release 57). The latest changelog id is **57**, and `sw.js` VERSION is `'2026-10-weak-topics'`.
+Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3b9c435`. The last commits on `main` are `cf090c5` (release 57) and `3b9c435` (release 58). The latest changelog id is **58**, and `sw.js` VERSION is `'2026-10-clinical-tools'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
 |---|---|---|---|
 | Weak topics dashboard | `#/weak` | 57 | `renderWeak`/`weakData` in `js/app.js`. Topic = chapter + card tag. Pools kept exams and quizzes (pre-tests and unanswered items left out), flashcard ratings (Again = miss) and open mistakes. Ranked once a topic has 3 tries (`WEAK_MIN`); roll-ups by chapter and ABPN domain; "Drill" starts an untimed `kind:'quiz'` exam of up to 20 of the topic's cases. Linked from Home tools and the Mistakes page. |
 | SRS review counter | — | 57 | `srsNext` now stores `n` (total reviews). `srsTries(s)` falls back to `r + l` for older records; backup merge uses it. |
+| Clinical tools hub | `#/tools`, `#/tools/<id>` | 58 | `js/tools.js` (`KS.toolsModule`, loaded like `drugs.js`; in `index.html`, `sw.js` CORE). Data: `data/tools/scales.js` (`KS.scales`) and `data/tools/calcs.js` (`KS.calcs`), both in `KS.extraFiles`. Nothing entered is saved. Hub also links the Stahl and DSM-5-TR companion apps. Guides show "Clinical tools for this chapter" chips (`chapterTools` in `app.js`, from each tool's `chapters`). |
+| Rating scales | `phq9`, `gad7`, `aims`, `ciwa`, `cows`, `cssrs` | 58 | Generic scale renderer: items/opts/bands/flags; custom rules `RULES.cssrs` and `RULES.aims`. C-SSRS: Columbia primary-care response protocol (items 4, 5 and item 6 within 3 months → consultation + precautions; items 1–3 and older item 6 → referral). CIWA-Ar bands ASAM 2020 (<10, 10–18, ≥19). AIMS Schooler–Kane (one area ≥3 or two ≥2). PHQ-9 item 9 and positive C-SSRS show NCMH 1553 / 0919-057-1553 / 0917-899-8727. COWS shows bands only; buprenorphine start thresholds left to local protocol (no guideline figure verified). |
+| Calculators | `antipsychotic`, `benzodiazepine`, `clozapine-anc`, `lithium-level` | 58 | `ENGINES.ddd` (WHO DDDs, N05A index updated 2026-01-20; paliperidone palmitate ÷1.56), `ENGINES.benzo` (Ashton + NHS SPS), `ENGINES.anc` (Clozaril PI 6/2025 tables 1–2; REMS ended June 13, 2025), `ENGINES.lithium` (ISBD/IGSLi 2019, US label, StatPearls bands; flags non-12-hour samples). Verified research is in `updwork/clinical/*.json` on dev-tools. |
+| Report an error | every guide section | 58 | `reportLink` in `app.js`: mailto isaymotion@gmail.com with section, link and release. |
+| Daily-review card types | `#/review` | 58 | `reviewDecks()`; choice saved in `reviewPrefs.decks`; at least one stays on. Clinical cases were already in daily review; this adds the on/off choice. |
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Remaining features.** Ask the user which to build next, then use recipe C:
-   - **Clinical tools:** interactive rating scales (PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS, C-SSRS screener); reference calculators (benzodiazepine and antipsychotic equivalents, clozapine ANC schedule, lithium level interpretation); links to the Stahl and DSM-5-TR companion apps. Heaviest verification load (cutoffs, licences, equivalence tables).
-   - **Quality:** a "Report an error" link on each section (smallest job).
-   - **Progress, mostly done already:** daily review already mixes cards across chapters with Again/Hard/Good/Easy ratings. What's left is optional: mixing cases into daily review, or a confidence rating before the answer is shown. Confirm with the user whether either is wanted.
-   - Done in release 57: the weak-topics dashboard and the teaching handout (the user chose a resident takeaway sheet over a session-trend view).
-2. Use changelog id **58** for the next release. Pull `main` first, because a parallel chat may have used it.
+1. **Feature list: done.** Releases 57 and 58 built every item from the Oct 28 reminder. Possible follow-ups only if the user asks: more scales (for example YMRS, which needs a licence check, or the MoCA, which is not free), a confidence rating before the answer in daily review, Tagalog versions of the scales.
+2. Use changelog id **59** for the next release. Pull `main` first, because a parallel chat may have used it.
 3. Unbuilt chapters (16, 17, 18, 20, ...): recipe B, then recipe A. Check first which ones the parallel chat has done.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
-- **"Kaplan backfill pass"**: runs daily at 1:41 am Manila and reads this file. With the backfill complete, it should report that and make no changes. It is now obsolete; ask the user whether to turn it off or delete it.
-- **"Remind: remaining K&S app feature ideas"**: fires once on Oct 28 at 9:00 am Manila in an older session. Its content is the list in section 7.1.
+- **"Kaplan backfill pass"**: the user asked to delete it on Oct 27. It did not appear in `list_triggers` (even with `include_completed`), so it was not deleted from here; it may be a scheduled task stored locally by the desktop app. The user was told to remove it there.
+- **"Remind: remaining K&S app feature ideas"**: fires once on Oct 28 at 9:00 am Manila in an older session. Everything on its list is now built (releases 57 and 58).
 - **"Weekly app backup to Google Drive"**: Sundays at 7:31 am Manila. Leave it running.
 
 ## 9. Pitfalls learned
@@ -130,6 +132,9 @@ Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `c
 - In whyNot text, do not state facts the stem does not give, and do not contradict the guide's own tables (for example, factor analysis is listed under content validity, and the book's IQ bands overlap at 80 and 90).
 - The guide can contain two different figures for one fact in different sections (for example, reversible dementia "about 15%" and "10 to 15%"). Don't ask the same check twice with different answers.
 - **Keep both copies of this doc in sync:** `claude/handoff.md` in the project and `HANDOFF.md` on `dev-tools`. The scheduled task reads the dev-tools copy; before pass 8, that copy was still stale at pass 5.
+
+- **Clinical numbers need primary sources.** Subagent research is a starting point; read the label or guideline page yourself for any threshold that drives an action (pass 58 caught a C-SSRS item 6 over-triage and unverified CIWA-Ar bands this way).
+- A container restart can drop recent turns from view while files survive. Before rebuilding, run `git status` in the clone and check `/tmp/claude-0/.../tasks/` for earlier work.
 
 ## 10. Files to re-attach
 - The K&S Synopsis 12e epub: **only** for building new chapters (recipe B).
