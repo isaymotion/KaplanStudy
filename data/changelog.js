@@ -13,6 +13,14 @@
  */
 KS.changelog = [
   {
+    id: 53,
+    date: "2026-10-26",
+    title: "Learning tools for Chapter 2",
+    items: [
+      { type: "feature", ch: "ch02", text: "Chapter 2 (child and adolescent psychiatry) now has Check yourself questions in all 57 sections, a pre-test and post-test, wrong-answer explanations for all 114 cases, board blueprint tags and a visual summary comparing treatments for tics.", href: "#/c/ch02/guide", link: "Open the study guide" }
+    ]
+  },
+  {
     id: 52,
     date: "2026-10-26",
     title: "Learning tools for Chapter 1",
