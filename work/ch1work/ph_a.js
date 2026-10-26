@@ -1,0 +1,20 @@
+[
+  { id: "p1-01", tag: "Drug cautions", q: "Why is propranolol contraindicated in bronchial asthma?", a: "It blocks catecholamine-induced **bronchodilation**, and emergency **epinephrine** will not work." },
+  { id: "p1-02", tag: "Drug cautions", q: "Which antihypertensive is antagonized by tricyclics?", a: "**Guanethidine**: tricyclics reduce or abolish its effect." },
+  { id: "p1-03", tag: "Drug cautions", q: "Why may hypertension preclude MAOIs?", a: "Risk of **hypertensive crisis** if tyramine-rich foods are eaten." },
+  { id: "p1-04", tag: "Drug cautions", q: "Which combination with MAOIs must never be given, and why?", a: "**Opioids**: the combination can cause **cardiovascular collapse**." },
+  { id: "p1-05", tag: "Drug cautions", q: "What test should precede tricyclics or lithium in suspected cardiac disease?", a: "An **ECG**." },
+  { id: "p1-06", tag: "Drug cautions", q: "Which eye condition contraindicates anticholinergic drugs?", a: "**Glaucoma.**" },
+  { id: "p1-07", tag: "Drug cautions", q: "Which patients should avoid anticholinergic drugs because of urinary retention?", a: "Men with **prostatic hypertrophy (prostatism)**." },
+  { id: "p1-08", tag: "Side effects", q: "Which antipsychotic causes retrograde ejaculation and, above 800 mg/day, impaired vision?", a: "**Thioridazine.**" },
+  { id: "p1-09", tag: "Side effects", q: "Which triad suggests lithium toxicity?", a: "**Polyuria, polydipsia and diarrhea.**" },
+  { id: "p1-10", tag: "Side effects", q: "What may mouth twitching or tongue movements mean in a patient on antipsychotics?", a: "Early, potentially **reversible tardive dyskinesia**; monitor with the **AIMS**." },
+  { id: "p1-11", tag: "Side effects", q: "Which drug causes a dry cough, and which causes transient blue-tinged vision?", a: "Dry cough: **ACE inhibitors**. Blue vision: **sildenafil** and similar drugs." },
+  { id: "p1-12", tag: "Side effects", q: "Which medication classes can cause depression or impaired mentation, per the medical history section?", a: "Several **antihypertensives** cause depression; **digitalis** can reach toxic levels at therapeutic doses; OTC products can cause **anticholinergic delirium**." },
+  { id: "p1-13", tag: "Assessment", q: "What should be measured routinely given medication effects?", a: "**Vital signs, weight, waist circumference, BMI and height**, plus the **AIMS** on antipsychotics." },
+  { id: "p1-14", tag: "Assessment", q: "What should be recorded about past medication trials?", a: "Dose and duration (was it **adequate**?), response, side effects, adherence and reason for stopping." },
+  { id: "p1-15", tag: "Assessment", q: "What should be documented before starting drugs with sexual side effects?", a: "A **baseline** of sexual function." },
+  { id: "p1-16", tag: "Assessment", q: "Which pupillary findings point to which substances?", a: "**Pinpoint** pupils: opioids. **Dilated**: anticholinergics and hallucinogens. Dilated and fixed with dry skin: **atropine-like toxicity**." },
+  { id: "p1-17", tag: "Assessment", q: "Which psychiatric symptoms should especially raise suspicion of medication toxicity?", a: "**Visual hallucinations, distortions and illusions.**" },
+  { id: "p1-18", tag: "Consent", q: "What must medication recommendations include?", a: "Possible medications, the risks and benefits of **no medication**, alternatives, and **informed consent**." }
+]

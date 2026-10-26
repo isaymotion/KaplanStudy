@@ -1,0 +1,80 @@
+({
+hy: [
+  { id: "hy2-comm", topic: "Communication disorders", items: [
+    "Language delay affects up to ~**7% of 5-year-olds**; every child needs an **audiogram**.",
+    "Language disorder: test scores well below **nonverbal IQ**; DSM-5 includes acquired forms.",
+    "Expressive only: comprehension **intact**; mixed: comprehension **below age** and the child may seem deaf.",
+    "Mixed disorder: ~half have speech sound disorder, ~half reading disorder, ≥one-third ADHD; worse prognosis.",
+    "50–80% of **late talkers** catch up during preschool; treatment usually waits until delays persist.",
+    "Language disorder vs ASD: the child with language disorder **wants friends** and plays symbolically.",
+    "Speech sound disorder errors from worst to mildest: **omission > substitution > distortion**.",
+    "Late sounds most often wrong: **r, sh, th, f, z, l, ch**; vowels spared.",
+    "Most outgrow speech sound disorder by **third grade**; recovery rare after **8**.",
+    "Dysarthria: drooling, abnormal chewing or swallowing, slow speech; less likely to remit.",
+    "Stuttering onset peaks **2–3½ and 5–7**; 90% by 7; males **3–4:1**; 65–80% remit.",
+    "Stuttering disappears when **singing**, reading aloud or talking to pets.",
+    "Early intervention makes full resolution **7 times** more likely; **Lidcombe** is parent-delivered operant therapy.",
+    "Adults who still stutter: **40–60%** have social anxiety disorder.",
+    "Cluttering: rapid jerky speech, speaker **unaware**; not a DSM-5 disorder.",
+    "Social (pragmatic) communication disorder requires that restricted, repetitive behaviors were **never** present; rarely diagnosed before **4**."
+  ] }
+],
+dx: [
+  { id: "d2-cm01", tag: "Language", q: "What are the four domains of language competence?", a: "**Phonology, grammar, semantics and pragmatics**." },
+  { id: "d2-cm02", tag: "Language", q: "What defines language disorder on testing?", a: "Standardized **expressive or receptive** language scores markedly below **nonverbal IQ** and age expectations." },
+  { id: "d2-cm03", tag: "Language", q: "How do expressive and mixed receptive–expressive deficits differ in comprehension?", a: "Expressive only: comprehension **within normal limits**. Mixed: comprehension **markedly below** age level." },
+  { id: "d2-cm04", tag: "Language", q: "What test does every child with a speech or language disorder need?", a: "An **audiogram** to rule out hearing loss." },
+  { id: "d2-cm05", tag: "Language", q: "How can a child with mixed receptive–expressive deficits be mistaken for deaf?", a: "They respond to **environmental sounds** but not to **spoken language**." },
+  { id: "d2-cm06", tag: "Language", q: "What share of late-talking toddlers catch up in the preschool years?", a: "About **50–80%**." },
+  { id: "d2-cm07", tag: "Language", q: "Which comorbidities are typical of mixed receptive–expressive deficits?", a: "About **half** have speech sound disorder, about **half** reading disorder, and at least **one-third** ADHD." },
+  { id: "d2-cm08", tag: "Language", q: "How does language disorder differ from autism spectrum disorder?", a: "Children with language disorder use gesture and symbolic play and are **motivated to make friends**; ASD impairs social relatedness and play." },
+  { id: "d2-cm09", tag: "Language", q: "What distinguishes acquired aphasia in a child?", a: "**Normal early language** with loss after head trauma or a neurologic disorder such as seizures (Landau–Kleffner)." },
+  { id: "d2-cm10", tag: "Language", q: "What imaging finding is reported in language disorders?", a: "Reduced **left–right asymmetry** in perisylvian and planum temporale regions (sometimes reversed)." },
+  { id: "d2-cm11", tag: "Speech", q: "What excludes a diagnosis of speech sound disorder?", a: "A known **structural or neurologic** cause: cerebral palsy, cleft palate, hearing loss, brain injury." },
+  { id: "d2-cm12", tag: "Speech", q: "Rank speech sound errors by severity.", a: "**Omissions** most severe, then **substitutions**, then **distortions**." },
+  { id: "d2-cm13", tag: "Speech", q: "Which sounds are most often misarticulated?", a: "Late-acquired sounds: **r, sh, th, f, z, l, ch**; vowels are not affected." },
+  { id: "d2-cm14", tag: "Speech", q: "What are the lateral slip and the palatal lisp?", a: "Distortions of s: the lateral slip gives a **whistling** s; the palatal lisp makes s sound like **sh**." },
+  { id: "d2-cm15", tag: "Speech", q: "By when do most children outgrow speech sound disorder, and when is recovery unlikely?", a: "Most by **third grade**; spontaneous recovery is rare after **8 years**." },
+  { id: "d2-cm16", tag: "Speech", q: "Which signs point to dysarthria rather than speech sound disorder?", a: "**Drooling**, slow or uncoordinated movement, abnormal chewing or swallowing, poor tongue movement and slow speech." },
+  { id: "d2-cm17", tag: "Stuttering", q: "What are the core features of stuttering?", a: "Sound or syllable **repetitions, prolongations**, broken words, **blocks** and pauses, often with tension, blinks or grimaces." },
+  { id: "d2-cm18", tag: "Stuttering", q: "When does stuttering usually begin?", a: "Between 18 months and 9 years, with peaks at **2–3½** and **5–7** years; 90% by age 7." },
+  { id: "d2-cm19", tag: "Stuttering", q: "In which situations does stuttering often disappear?", a: "**Singing, reading aloud**, and talking to pets or objects." },
+  { id: "d2-cm20", tag: "Stuttering", q: "Describe phase 4 of stuttering.", a: "Late adolescence and adulthood: **fearful anticipation**, avoidance of words and situations, word substitution and circumlocution." },
+  { id: "d2-cm21", tag: "Stuttering", q: "How is normal preschool dysfluency told from early stuttering?", a: "Normally dysfluent children are **at ease**; stutterers are tense, with part-word repetitions and prolongations." },
+  { id: "d2-cm22", tag: "Stuttering", q: "How does cluttering differ from stuttering?", a: "Cluttering is rapid, jerky, dysrhythmic speech and the speaker is **unaware** of it." },
+  { id: "d2-cm23", tag: "Stuttering", q: "Which psychiatric disorder is common in adults who still stutter?", a: "**Social anxiety disorder**, in about 40–60%." },
+  { id: "d2-cm24", tag: "Pragmatic", q: "What four deficits are required for social (pragmatic) communication disorder?", a: "Social uses of communication (greeting, sharing), **adapting to listener and context**, **conversational rules**, and understanding the **implicit** (inference, humor)." },
+  { id: "d2-cm25", tag: "Pragmatic", q: "When should ASD be diagnosed instead of social (pragmatic) communication disorder?", a: "Whenever restricted, repetitive behaviors are present **now or in the history**." },
+  { id: "d2-cm26", tag: "Pragmatic", q: "How does social anxiety disorder differ from social (pragmatic) communication disorder?", a: "In social anxiety the skills **exist** but are not used in feared settings; in pragmatic disorder they are **absent in every setting**." },
+  { id: "d2-cm27", tag: "Pragmatic", q: "At what age is social (pragmatic) communication disorder usually diagnosable?", a: "Rarely **before 4**; mild cases may not show until **adolescence**." }
+],
+cs: [
+  { id: "c2-cm01", tag: "Language", q: "An 18-month-old says no words but points to familiar objects when named, follows simple commands, makes good eye contact and enjoys peek-a-boo. Hearing is normal. What fits best?", choices: ["Autism spectrum disorder", "Expressive language deficits", "Mixed receptive–expressive deficits", "Selective mutism", "Intellectual disability"], answer: 1, why: "Comprehension and social engagement are intact while expressive language lags: the expressive picture." },
+  { id: "c2-cm02", tag: "Language", q: "A 2-year-old does not point to everyday objects or follow simple commands and responds to a door slam but not to her name being spoken. Motor and play skills are normal. What is the next step?", choices: ["Reassure that she will catch up", "Audiogram and comprehensive speech-language evaluation", "Start a stimulant", "Diagnose selective mutism", "MRI first"], answer: 1, why: "Possible mixed receptive–expressive deficits; hearing must be checked with an audiogram, then standardized receptive and expressive testing." },
+  { id: "c2-cm03", tag: "Language", q: "Parents of a healthy 2½-year-old 'late talker' with normal comprehension ask whether therapy should start now. What does the chapter suggest?", choices: ["Immediate intensive therapy is essential", "Many such children catch up; treatment is usually started if the delay persists past the preschool years", "Start an SSRI", "Therapy is never helpful", "Refer for genetic testing"], answer: 1, why: "50–80% of late talkers catch up and early intervention effects are modest, so expressive treatment usually begins if delays persist." },
+  { id: "c2-cm04", tag: "Speech", q: "A 6-year-old says 'wabbit' for rabbit and 'fum' for thumb; language and hearing are normal. What type of error is this?", choices: ["Omission", "Substitution", "Distortion", "Addition", "Dysarthria"], answer: 1, why: "Replacing one phoneme with another is a substitution, the middle level of severity." },
+  { id: "c2-cm05", tag: "Speech", q: "A child with unclear speech drools, chews and swallows abnormally, and speaks slowly with poor tongue movement. What is most likely?", choices: ["Speech sound disorder", "Dysarthria", "Stuttering", "Cluttering", "Social (pragmatic) communication disorder"], answer: 1, why: "These signs point to dysarthria from a structural or neurologic cause, which is excluded from speech sound disorder and remits less often." },
+  { id: "c2-cm06", tag: "Speech", q: "A 9-year-old still distorts r and l. When is spontaneous recovery unlikely, and what follows?", choices: ["Recovery is likely until 15; wait", "Spontaneous recovery is rare after 8, so speech therapy is indicated", "Only surgery helps", "Speech sound disorder always persists", "Medication is first line"], answer: 1, why: "Most outgrow it by third grade; recovery is rare after age 8, so persistent errors should be treated." },
+  { id: "c2-cm07", tag: "Stuttering", q: "A 4-year-old has repetitions and prolongations, looks tense when speaking, and blinks during blocks. Which treatment is evidence based and delivered by parents?", choices: ["Lidcombe Program", "Haloperidol", "Psychoanalysis", "Delayed auditory feedback", "Waiting until adolescence"], answer: 0, why: "The Lidcombe Program is an operant, parent-delivered program supervised by a speech therapist; early intervention greatly improves resolution." },
+  { id: "c2-cm08", tag: "Stuttering", q: "A 24-year-old who has stuttered since childhood avoids phone calls and meetings, substitutes words and fears speaking. What comorbidity should be assessed?", choices: ["Social anxiety disorder", "Schizophrenia", "ADHD only", "Conversion disorder", "Dementia"], answer: 0, why: "40–60% of adults with persistent stuttering have social anxiety disorder; CBT or an SSRI may be added." },
+  { id: "c2-cm09", tag: "Stuttering", q: "A boy speaks in rapid, jerky spurts that are hard to follow but seems unaware of any problem. What is this?", choices: ["Stuttering", "Cluttering", "Selective mutism", "Dysarthria", "Expressive language disorder"], answer: 1, why: "Cluttering is erratic, dysrhythmic speech with little awareness; stutterers become aware of their difficulty." },
+  { id: "c2-cm10", tag: "Pragmatic", q: "A 9-year-old with good vocabulary and grammar misses jokes, talks to toddlers as to adults, interrupts and ignores cues to change topic. There has never been any repetitive behavior or restricted interest. What is the diagnosis?", choices: ["Autism spectrum disorder", "Social (pragmatic) communication disorder", "Social anxiety disorder", "Language disorder", "ADHD only"], answer: 1, why: "Social communication deficits without any history of restricted, repetitive behaviors define social (pragmatic) communication disorder." },
+  { id: "c2-cm11", tag: "Pragmatic", q: "The same picture is seen in a 10-year-old whose parents report intense lining up of toys and rigid routines at age 3. Which diagnosis applies?", choices: ["Social (pragmatic) communication disorder", "Autism spectrum disorder", "OCD", "No diagnosis", "Stereotypic movement disorder"], answer: 1, why: "If restricted, repetitive behaviors are present in the history, autism spectrum disorder is diagnosed even if they are no longer visible." }
+],
+ph: [
+  { id: "p2-cm01", tag: "Stuttering", q: "When is medication used for stuttering?", a: "Not for stuttering itself; an **SSRI** (or CBT) treats comorbid anxiety or depressive disorders." }
+],
+fd: [
+  { id: "f2-cm01", tag: "Language", q: "What does pragmatics require of a listener?", a: "Grasping the **speaker's intention** and the social context, not just literal meaning." },
+  { id: "f2-cm02", tag: "Language", q: "How many words do children typically understand at 18 months?", a: "Up to about **150** (and use up to about 20)." },
+  { id: "f2-cm03", tag: "Language", q: "What are mediated language interventions?", a: "A speech-language professional teaches **parents or teachers** to deliver therapeutic language techniques." },
+  { id: "f2-cm04", tag: "Language", q: "Why are early reading skills a key goal for children with mixed language deficits?", a: "Rudimentary reading **protects** against academic and social consequences of falling behind." },
+  { id: "f2-cm05", tag: "Speech", q: "Contrast the phonologic and traditional approaches to speech sound disorder.", a: "Phonologic: guided practice for **many patterned errors** (final consonant deletion, cluster reduction). Traditional: feedback on placement for **a few** substitutions or distortions." },
+  { id: "f2-cm06", tag: "Speech", q: "How common is speech sound disorder across childhood?", a: "About **3%** of preschoolers, 2% at 6–7 years and **0.5%** in late adolescence; boys 2–3:1." },
+  { id: "f2-cm07", tag: "Stuttering", q: "What supports the cybernetic (feedback) model of stuttering?", a: "**White noise** reduces stuttering, and **delayed auditory feedback** produces stuttering in normal speakers." },
+  { id: "f2-cm08", tag: "Stuttering", q: "What is the semantogenic theory of stuttering?", a: "Stuttering is a **learned response** to normal early childhood dysfluencies." },
+  { id: "f2-cm09", tag: "Stuttering", q: "What EEG finding is reported in males who stutter?", a: "**Right**-hemispheric α-suppression (nonstutterers show left)." },
+  { id: "f2-cm10", tag: "Stuttering", q: "How familial is stuttering?", a: "Strongly: for a father who stutters, about **20% of sons** and 10% of daughters also stutter." },
+  { id: "f2-cm11", tag: "Stuttering", q: "Does anxiety cause stuttering?", a: "**No** evidence it causes it, but stressful situations **worsen** it." }
+]
+})

@@ -1,0 +1,20 @@
+({
+"c215-01": ["", "Quazepam is long acting and causes daytime impairment.", "Zolpidem CR lasts the whole night and impairs morning driving.", "Flurazepam has a metabolite lasting over 100 hours.", "Eszopiclone 3 mg lasts too long for a 3 a.m. dose."],
+"c215-02": ["Triazolam is very short acting and causes rebound anxiety.", "Melatonin at noon would not help sleep maintenance.", "Zaleplon is too short for sleep maintenance.", "Ramelteon is for sleep onset.", ""],
+"c215-03": ["30 mg is an abuse-level dose.", "12.5 mg CR is above the recommended start for women.", "10 mg is no longer the recommended start for women.", "", "20 mg is far too high."],
+"c215-04": ["Continuing is unsafe after a complex sleep behavior.", "", "A higher dose raises the risk.", "Zaleplon carries the same boxed warning.", "An SSRI does not address the behavior and may prolong hallucinations."],
+"c215-05": ["Sertraline toxicity does not explain nighttime hallucinations after zolpidem.", "Nothing suggests alcohol withdrawal.", "The timing points to the drug combination.", "She is not taking ramelteon.", ""],
+"c215-06": ["The cause is enzyme induction, not tolerance.", "Food delays but does not abolish the effect.", "Zaleplon is a hypnotic.", "", "Carbamazepine lowers rather than raises zaleplon."],
+"c215-07": ["", "2 mg is too high with a strong CYP3A4 inhibitor.", "6 mg exceeds any eszopiclone dose.", "3 mg is too high with ketoconazole.", "It can be used at 1 mg."],
+"c215-08": ["", "Eszopiclone does not cause insomnia.", "Tolerance did not develop over 6 months in trials.", "Tablets are swallowed whole.", "Fat, not protein, is the issue."],
+"c215-09": ["Barbiturates carry high abuse potential.", "Zolpidem at 20 mg risks dependence and next-day impairment.", "", "Triazolam is a benzodiazepine with misuse risk.", "Alprazolam has high misuse risk."],
+"c215-10": ["There is a major interaction.", "Ramelteon is not serotonergic.", "The interaction raises ramelteon, not lowers fluvoxamine.", "QT prolongation is not the concern.", ""],
+"c215-11": ["Hypothyroidism does not explain the timing.", "She is not taking zolpidem.", "", "This is not a normal melatonin effect.", "Pregnancy should be checked but is not certain."],
+"c215-12": ["Shift work disorder is an off-label use.", "", "Omeprazole does not interact meaningfully.", "This is the approved indication.", "Jet lag is an off-label use."],
+"c215-13": ["After midnight is too late for sleep onset.", "Taking it on waking would shift rhythms the wrong way.", "", "Noon is not the suggested time.", "Breakfast is not the suggested time."],
+"c215-14": ["Gummies contain melatonin, not serotonin.", "", "Supplements are not regulated as drugs.", "Melatonin is not FDA approved for any use.", "They do contain melatonin, often more than labeled."],
+"c215-15": ["Zaleplon is a hypnotic, not a nightmare treatment.", "Ramelteon does not suppress nightmares.", "Clonidine is not the section's drug.", "Flurazepam does not treat PTSD nightmares.", ""],
+"c215-16": ["Doubling risks hypotension.", "The diuretic can continue.", "", "Leaving the dose unchanged risks hypotension.", "Sildenafil adds to hypotension."],
+"c215-17": ["Orexin antagonists can cause cataplexy-like symptoms rather than treat cataplexy.", "Suvorexant is not a GABA agonist.", "It is contraindicated in narcolepsy.", "", "It is not a stimulant."],
+"c215-18": ["The AASM did not make trazodone first line.", "There is no such recommendation.", "The guideline addresses trazodone.", "The AASM suggested against it.", ""]
+})

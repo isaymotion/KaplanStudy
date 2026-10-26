@@ -1,0 +1,22 @@
+[
+  { id: "f1-47", tag: "Medical care", q: "Why has physical health monitoring become central in psychiatry?", a: "Widespread **metabolic syndrome** and **shorter life expectancy** among psychiatric patients, driven by smoking, substances, diet, obesity and drug side effects." },
+  { id: "f1-48", tag: "Medical care", q: "What two goals does physical health monitoring serve?", a: "Treating **existing illness** and protecting current health from **future impairment**." },
+  { id: "f1-49", tag: "Imaging basics", q: "What separates structural from functional imaging?", a: "**Structural** (x-ray, CT, MRI) shows anatomy; **functional** (PET, SPECT, fMRI, MRS) maps biochemistry or blood flow." },
+  { id: "f1-50", tag: "Imaging basics", q: "Why does contrast enhance tumors and inflammation?", a: "The **blood–brain barrier** breaks down in inflammation or never forms in tumors, letting contrast accumulate." },
+  { id: "f1-51", tag: "Imaging basics", q: "What is the one thing CT shows better than MRI?", a: "**Calcification**, which may be invisible on MRI." },
+  { id: "f1-52", tag: "MRI physics", q: "What is the physical basis of MRI?", a: "**Nuclear magnetic resonance**: odd-numbered nuclei (mainly **hydrogen**) align in the field, are tipped by a radiofrequency pulse and emit a signal as they realign." },
+  { id: "f1-53", tag: "MRI physics", q: "Why is fat bright on T1 and CSF bright on T2?", a: "Hydrogen in fat realigns quickly (favored by short T1 pulses); hydrogen in water realigns slowly (favored by the longer T2 pulses and collection)." },
+  { id: "f1-54", tag: "MRI physics", q: "What does the proton density sequence add?", a: "It equalizes CSF and brain signal so changes **next to the ventricles** can be seen." },
+  { id: "f1-55", tag: "Functional imaging", q: "What does fMRI actually measure?", a: "**Blood flow** (BOLD signal from oxygenated hemoglobin), not neuronal activity directly." },
+  { id: "f1-56", tag: "Functional imaging", q: "Why is fMRI resolution limited?", a: "The area of increased blood flow exceeds the active neurons by about **1–2 cm**, so activity 5 mm apart blurs together." },
+  { id: "f1-57", tag: "Functional imaging", q: "Why does PET have better resolution than SPECT?", a: "Positron annihilation emits **two photons 180° apart**, giving detectors more signal; SPECT emits a **single** photon." },
+  { id: "f1-58", tag: "Functional imaging", q: "Why does FDG accumulate in active brain regions?", a: "It is a glucose analog taken up like glucose but **not metabolized**, so it is trapped where metabolism is highest." },
+  { id: "f1-59", tag: "Functional imaging", q: "What limits xenon-133 SPECT?", a: "It measures blood flow only on the **brain surface**, missing cortical–subcortical activity." },
+  { id: "f1-60", tag: "Functional imaging", q: "Which molecules can proton MRS measure, and which can it not?", a: "NAA, creatine, choline, glutamate, glutamine, lactate, myoinositol (and GABA); **biogenic amines** like dopamine are too dilute." },
+  { id: "f1-61", tag: "Development", q: "What do PET studies show about brain glucose use in childhood?", a: "Adult pattern by **1 year**; cortical use then **exceeds** adult levels until about **9 years**, declining to adult levels by the late teens." },
+  { id: "f1-62", tag: "Research", q: "What did PET show about true versus false recollection?", a: "The **hippocampus** was active in both; the **auditory cortex** only for words actually heard; the frontal lobes engaged when judging truth." },
+  { id: "f1-63", tag: "Research", q: "What fMRI finding is reported during auditory hallucinations?", a: "Activation of the **primary auditory cortex** and higher auditory areas, the same regions used when hearing speech." },
+  { id: "f1-64", tag: "Research", q: "What are the rates of brain volume loss in prodromal Alzheimer disease versus normal aging?", a: "Up to **5% per year** versus about **0.1% per year**." },
+  { id: "f1-65", tag: "Research", q: "What happens to cortical GABA during recovery from alcohol dependence (MRS)?", a: "Normal in acute withdrawal, then **declines** with recovery, possibly below levels in healthy people with long sobriety." },
+  { id: "f1-66", tag: "Electrophysiology", q: "What does polysomnography record?", a: "EEG, ECG, oxygen saturation, respiration, temperature, **EMG** and **EOG**." }
+]

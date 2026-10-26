@@ -1,0 +1,23 @@
+[
+  { id: "p1-19", tag: "Overdose", q: "What acetaminophen level signals hepatotoxicity risk, and what is the antidote?", a: "**>140 mcg/mL at 4 hours** after ingestion (no prior liver disease); give **acetylcysteine** promptly. Heavy drinkers are especially vulnerable." },
+  { id: "p1-20", tag: "Overdose", q: "Above what salicylate level do most patients become symptomatic, and with what?", a: "Above **40 mg/dL**: acid–base disturbance, tachypnea, **tinnitus**, nausea, vomiting; severe cases hyperthermia, altered mental status, pulmonary edema." },
+  { id: "p1-21", tag: "Clozapine", q: "Summarize the clozapine level landmarks.", a: "Morning **trough**; about **100** minimum threshold; at least **350** for refractory schizophrenia; seizures and side effects rise above **1,200** or doses **>600 mg/day**." },
+  { id: "p1-22", tag: "Clozapine", q: "What should happen if clozapine causes moderate to severe leukopenia?", a: "**Interrupt** treatment; the patient may be retreated with clozapine in the future." },
+  { id: "p1-23", tag: "Lithium", q: "At what levels does lithium toxicity appear?", a: "Can begin **>1.2 mEq/L**, common **>1.4 mEq/L**; elderly or debilitated patients may be toxic below 1.2." },
+  { id: "p1-24", tag: "Lithium", q: "List the main lithium monitoring concerns from this chapter.", a: "Narrow therapeutic index (levels), **polyuria/nephrogenic DI**, **creatinine clearance**, impaired clearance with high BUN, **T-wave changes** and sinus node dysfunction (ECG), pregnancy test." },
+  { id: "p1-25", tag: "Valproate", q: "What baseline and ongoing tests go with valproate?", a: "Baseline **LFTs** (transaminases may sit up to 3× normal), **pregnancy test** and contraception counseling, blood counts (leukopenia, thrombocytopenia), **ammonia** if lethargic; watch for pancreatitis." },
+  { id: "p1-26", tag: "Carbamazepine", q: "What laboratory problems does carbamazepine cause?", a: "Rare **aplastic anemia**, leukopenia, thrombocytopenia (baseline CBC); **hyponatremia** or SIADH; teratogenic (spina bifida, finger anomalies)." },
+  { id: "p1-27", tag: "Carbamazepine", q: "What are the signs of carbamazepine toxicity?", a: "Nausea, vomiting, urinary retention, **ataxia**, confusion, drowsiness, agitation, **nystagmus**; at very high levels arrhythmias, seizures, respiratory depression." },
+  { id: "p1-28", tag: "MAOIs", q: "How are MAOIs monitored?", a: "**Blood pressure** at baseline and during treatment (orthostasis, rare hypertensive crisis) and periodic **LFTs**; drug levels are not useful." },
+  { id: "p1-29", tag: "Tricyclics", q: "What should be checked before starting a tricyclic?", a: "CBC, electrolytes, LFTs and often an **ECG** (PR, QRS, QTc); ECG especially if over 40 or cardiac disease." },
+  { id: "p1-30", tag: "QTc", q: "Which antipsychotics in this chapter carry dose-related QTc prolongation, and when is ziprasidone stopped?", a: "**Ziprasidone** and **thioridazine**; stop ziprasidone if QTc is persistently **>500 ms**." },
+  { id: "p1-31", tag: "QTc", q: "When is ziprasidone contraindicated?", a: "Known **QTc prolongation** (including congenital long QT), **recent acute MI**, or **uncompensated heart failure**." },
+  { id: "p1-32", tag: "NMS", q: "How is neuroleptic malignant syndrome treated?", a: "**Stop the neuroleptic**, hydrate, give muscle relaxants and provide supportive nursing care." },
+  { id: "p1-33", tag: "Teratogens", q: "Before which psychotropics is a pregnancy test commonly obtained?", a: "**Lithium, carbamazepine and valproate**, which are associated with congenital anomalies." },
+  { id: "p1-34", tag: "SIADH", q: "Which psychotropics can cause SIADH?", a: "**Phenothiazines, butyrophenones, carbamazepine and oxcarbazepine**." },
+  { id: "p1-35", tag: "Prolactin", q: "Why do antipsychotics raise prolactin?", a: "They block **dopamine D2 receptors in the pituitary**, increasing prolactin synthesis and release." },
+  { id: "p1-36", tag: "Liver", q: "Which psychotropic class is noted for raising alkaline phosphatase?", a: "The **phenothiazines**." },
+  { id: "p1-37", tag: "Folate", q: "Which anticonvulsant lowers folate?", a: "**Phenytoin** (also oral contraceptives/estrogen and alcohol)." },
+  { id: "p1-38", tag: "Brain levels", q: "What did MRS show about brain lithium and fluoxetine?", a: "Brain lithium is about **half** the plasma level in depression and euthymia but **exceeds** it in mania; fluoxetine takes about **6 months** to peak in brain at about **20×** serum." },
+  { id: "p1-39", tag: "Receptor occupancy", q: "What do PET receptor studies show about haloperidol and atypical antipsychotics?", a: "Haloperidol blocks almost **100% of D2** receptors; atypicals block **5-HT2 as well as D2** (serotonin–dopamine antagonists)." }
+]

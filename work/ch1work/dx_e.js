@@ -1,0 +1,23 @@
+[
+  { id: "d1-166", tag: "Geriatric", q: "Why should a cognitively impaired older patient still be interviewed alone?", a: "To protect privacy and to elicit **suicidal thoughts or paranoid ideation** that may not be voiced in front of family or staff." },
+  { id: "d1-167", tag: "Geriatric", q: "What is benign senescent forgetfulness?", a: "Minor age-associated lapses (forgetting names, misplacing objects) **of no clinical significance**." },
+  { id: "d1-168", tag: "Geriatric", q: "Which marital-history finding signals high risk in an older patient?", a: "Loss of a spouse **within the past year**." },
+  { id: "d1-169", tag: "Geriatric", q: "What is the most common reason older adults give for considering suicide?", a: "**Loneliness**." },
+  { id: "d1-170", tag: "Geriatric", q: "Which factors combine to indicate high suicide risk in an older patient with suicidal thoughts?", a: "**Alcohol abuse, living alone, recent death of a spouse, physical illness and somatic pain**." },
+  { id: "d1-171", tag: "Geriatric", q: "What is witzelsucht and what does it localize to?", a: "Making puns and jokes and laughing at them; **frontal lobe** dysfunction." },
+  { id: "d1-172", tag: "Geriatric", q: "What is dysprosody and its usual localization?", a: "Inability to convey emotion through intonation; **dominant lobe** dysfunction." },
+  { id: "d1-173", tag: "Geriatric", q: "A hallucinating older patient is disoriented during the episodes. What does this suggest?", a: "An **organic** condition." },
+  { id: "d1-174", tag: "Geriatric", q: "Define anosognosia, atopognosia and prosopagnosia.", a: "Denial of **illness**; denial of a **body part**; inability to recognize **faces**." },
+  { id: "d1-175", tag: "Geriatric", q: "What bedside test separates Broca aphasia?", a: "Comprehension is intact but speech is nonfluent and telegraphic; the patient cannot pronounce **\"Methodist Episcopalian\"**." },
+  { id: "d1-176", tag: "Geriatric", q: "What is ideomotor apraxia?", a: "Inability to **demonstrate the use** of simple objects such as a key or a match." },
+  { id: "d1-177", tag: "Geriatric", q: "What may be an early sign of dementia in thought?", a: "Loss of **abstract thinking**, so thinking becomes concrete or literal." },
+  { id: "d1-178", tag: "Geriatric", q: "What can make a hard-of-hearing patient look psychotic?", a: "Being mistakenly classified as **paranoid or suspicious**." },
+  { id: "d1-179", tag: "Geriatric", q: "Rank the significance of disorientation to person, place and time.", a: "**Person** most significant, then **place**, then **time**." },
+  { id: "d1-180", tag: "Geriatric", q: "Which memory deteriorates first in cognitive disorders?", a: "**Recent memory**." },
+  { id: "d1-181", tag: "Geriatric", q: "Distinguish retrograde from anterograde amnesia.", a: "Retrograde = loss for events **before** the event; anterograde = loss **after** it." },
+  { id: "d1-182", tag: "Geriatric", q: "What is the MMSE used for, and what is its maximum?", a: "Detecting impairment, following course and monitoring treatment (not diagnosis); maximum **30**." },
+  { id: "d1-183", tag: "Geriatric", q: "Which WAIS-R part is more sensitive to brain damage?", a: "The **performance** part." },
+  { id: "d1-184", tag: "Geriatric", q: "Why does the Geriatric Depression Scale exclude somatic items?", a: "Somatic complaints **confound** depression ratings in older, medically ill patients." },
+  { id: "d1-185", tag: "Geriatric", q: "Which medical conditions may first present with psychiatric symptoms in older adults?", a: "Infections, metabolic and electrolyte disturbances, **myocardial infarction, stroke**, and Parkinson disease (months before motor signs)." },
+  { id: "d1-186", tag: "Geriatric", q: "Which drug classes cause depression, cognitive impairment, delirium and seizures in older patients?", a: "**Antihypertensives** (depression), **sedatives** (cognition), **anticholinergics** (delirium), **neuroleptics** (seizures)." }
+]

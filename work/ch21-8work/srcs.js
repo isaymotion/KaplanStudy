@@ -1,0 +1,23 @@
+[
+  ["LiverTox: Tacrine", "LiverTox: Tacrine (NIH)", "https://www.ncbi.nlm.nih.gov/books/NBK547868/"],
+  ["Galantamine prescribing information", "Label: galantamine (DailyMed)", "DM:galantamine"],
+  ["rivastigmine prescribing information", "Label: rivastigmine (DailyMed)", "DM:rivastigmine"],
+  ["Memantine prescribing information", "Label: memantine (DailyMed)", "DM:memantine"],
+  ["Namenda XR prescribing information", "Drugs.com: Namenda XR prescribing information", "https://www.drugs.com/pro/namenda-xr.html"],
+  ["Alzforum: donepezil", "Alzforum: donepezil (Aricept)", "https://alzforum.org/node/1915"],
+  ["US clears Exelon for Parkinson", "PharmaTimes: US clears Exelon for Parkinson's dementia (2006)", "https://pharmatimes.com/?p=17708"],
+  ["Reminyl renamed in USA", "PharmaTimes: Reminyl renamed in USA (2005)", "https://pharmatimes.com/?p=16063"],
+  ["FDA approves new Alzheimer's medication, December 29, 2014", "Psychiatric News: FDA approves Namzaric (2014)", "https://alert.psychnews.org/2014/12/fda-approves-new-alzheimers-medication.html"],
+  ["Adlarity approval history", "Drugs.com: Adlarity approval history", "https://www.drugs.com/history/adlarity.html"],
+  ["Biogen discontinues Aduhelm", "Pharmaceutical Commerce: Biogen discontinues Aduhelm (2024)", "https://www.pharmaceuticalcommerce.com/view/biogen-discontinues-maligned-alzheimer-disease-treatment-aduhelm"],
+  ["FDA converts novel Alzheimer's disease treatment to traditional approval", "FDA: lecanemab traditional approval (July 2023)", "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval"],
+  ["FDA approves subcutaneous lecanemab", "HCPLive: subcutaneous lecanemab approved (Aug 2025)", "https://www.hcplive.com/view/fda-approves-subcutaneous-lecanemab-irmb-leqembi-for-early-alzheimer-disease"],
+  ["FDA approves updated label for donanemab", "NeurologyLive: donanemab label update (July 2025)", "https://www.neurologylive.com/view/fda-approves-updated-label-alzheimer-therapy-donanemab-lower-aria-e-risk"],
+  ["FDA clears first blood test to help diagnose Alzheimer disease", "HMP Global: first Alzheimer blood test cleared (May 2025)", "https://www.hmpgloballearningnetwork.com/site/pcn/news/fda-clears-first-blood-test-help-diagnose-alzheimer-disease"],
+  ["guideline on blood-based biomarker tests", "Patient Care: Alzheimer's Association blood biomarker guideline (2025)", "https://www.patientcareonline.com/view/alzheimer-s-association-releases-first-clinical-guideline-on-use-of-blood-based-biomarker-tests"],
+  ["Practice guideline update summary: mild cognitive impairment", "AAN guideline: mild cognitive impairment (2018), PubMed", "https://pubmed.ncbi.nlm.nih.gov/29282327/"],
+  ["agitation symptoms associated with dementia due to Alzheimer's disease", "BioSpace: brexpiprazole approved for Alzheimer agitation (2023)", "https://www.biospace.com/fda-approves-first-drug-to-treat-agitation-symptoms-associated-with-dementia-due-to-alzheimer-s-disease"],
+  ["Lecanemab prescribing information", "Label: lecanemab (DailyMed)", "DM:lecanemab"],
+  ["Donanemab prescribing information", "Label: donanemab (DailyMed)", "DM:donanemab"],
+  ["Donepezil prescribing information", "Label: donepezil (DailyMed)", "DM:donepezil"]
+]

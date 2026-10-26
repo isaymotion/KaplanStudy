@@ -1,0 +1,22 @@
+[
+  { id: "f1-01", tag: "Medical screening", q: "What proportion of psychiatric patients have associated physical disorders?", a: "**24–60 percent.** In a survey of 2,090 clinic patients, **43 percent**, with nearly half undiagnosed by referrers." },
+  { id: "f1-02", tag: "Medical screening", q: "In the 2,090-patient survey, how many diabetes cases were found versus known before referral?", a: "**69** found; only **12** known." },
+  { id: "f1-03", tag: "Medical screening", q: "What did a study of 1,000 medical patients find about unexplained complaints?", a: "In **75 percent** no cause was found; a psychological basis was assumed in **10 percent** of those." },
+  { id: "f1-04", tag: "Medical screening", q: "What does “medical clearance” imply, and why is it problematic?", a: "That **no medical condition** explains the presentation; the concept is **ambiguous**." },
+  { id: "f1-05", tag: "Occupational", q: "Which occupational exposures cause psychiatric pictures?", a: "**Mercury**: psychosis-like complaints. **Lead** (smelting, moonshine whiskey): a cognitive disorder." },
+  { id: "f1-06", tag: "Neurology", q: "List neurologic conditions from the head review of systems that can present psychiatrically.", a: "Brain tumors (personality or cognitive change), subdural hematoma, **boxers’ dementia**, subarachnoid hemorrhage, **normal-pressure hydrocephalus**, temporal arteritis, Paget disease." },
+  { id: "f1-07", tag: "Neurology", q: "What is the triad of normal-pressure hydrocephalus?", a: "**Dementia, shuffling gait and urinary incontinence.**" },
+  { id: "f1-08", tag: "Endocrine", q: "Which endocrine disorder mimics anxiety, and how is it diagnosed?", a: "**Pheochromocytoma**; raised **urinary catecholamines**." },
+  { id: "f1-09", tag: "Physical signs", q: "Match the signs: moon facies and buffalo hump; exophthalmos; puffy bloated face with hoarse voice.", a: "**Cushing syndrome; hyperthyroidism; hypothyroidism.**" },
+  { id: "f1-10", tag: "Physical signs", q: "What gait suggests early Parkinson disease?", a: "Walking **without arm swing** and turning rigidly like a **toy soldier**." },
+  { id: "f1-11", tag: "Physical signs", q: "Which grooming lapse suggests a cognitive disorder?", a: "**Mismatched** socks, stockings or shoes." },
+  { id: "f1-12", tag: "Physical signs", q: "Which voice suggests Parkinson disease, and which hypothyroidism?", a: "Parkinson: **weak, monotonous**. Hypothyroidism: **slow, low-pitched, hoarse**." },
+  { id: "f1-13", tag: "Physical signs", q: "What does early easy fatigability of speech or a drooping eyelid suggest?", a: "**Myasthenia gravis.**" },
+  { id: "f1-14", tag: "Physical signs", q: "Which smells suggest medical disease?", a: "**Diabetic acidosis, uremia, hepatic coma**; urine from neurologic bladder dysfunction; adult sweat in **precocious puberty**." },
+  { id: "f1-15", tag: "GU", q: "Why should men avoid ejaculation before a PSA test, and for how long?", a: "Orgasm causes prostatic contractions that can falsely **raise PSA**; avoid for **7–10 days**." },
+  { id: "f1-16", tag: "GU", q: "What can be the first sign of AIDS in a psychiatric setting?", a: "Gradual **mental confusion progressing to dementia**." },
+  { id: "f1-17", tag: "Menstrual", q: "What is pseudocyesis?", a: "**False pregnancy** with complete cessation of menses." },
+  { id: "f1-18", tag: "Interpretation", q: "How should incidental neurologic findings be handled?", a: "Separate **incidental** from **causative** findings; atrophy and dementia correlate loosely, and symptoms may be emotionally amplified." },
+  { id: "f1-19", tag: "Records", q: "Which elements must every inpatient record include (Table 1-8)?", a: "Legal admission documents, identifying data, referral source and responsible clinician, diagnoses, examination and test reports, the **written plan of care**, signed **progress notes**, conference summaries, dated **medication orders**, closing summary and referrals." },
+  { id: "f1-20", tag: "Records", q: "What are personal notes under laws such as New York’s?", a: "A practitioner’s **speculations, impressions and reminders**, kept by the clinician and not disclosed to anyone, **including the patient**." }
+]

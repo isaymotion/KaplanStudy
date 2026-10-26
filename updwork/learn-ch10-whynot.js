@@ -1,0 +1,22 @@
+({
+"c10-pt01": ["PTSD requires symptoms lasting more than 1 month; it has been 10 days.", "There are no psychotic symptoms.", "Adjustment disorder applies when criteria for a trauma disorder are not met.", "The symptoms are trauma linked, not unexpected panic attacks.", ""],
+"c10-pt02": ["", "GAD is worry about many everyday matters, not trauma intrusions.", "Her symptoms go beyond fear of one situation.", "Adjustment disorder is used when trauma disorder criteria are not met.", "Acute stress disorder lasts at most 1 month; it has been 2 months."],
+"c10-pt03": ["\"Acute\" is not a DSM-5 PTSD specifier.", "He has no dissociative symptoms described.", "", "Chronic is not the DSM-5 specifier for late onset.", "He has symptoms, so he is not in remission."],
+"c10-pt04": ["", "Veteran status does not change the exposure criterion.", "Media exposure is specifically excluded.", "Sleep loss is irrelevant to the exposure criterion.", "Duration does not make media exposure qualify."],
+"c10-pt05": ["Nothing suggests feigning.", "", "Personality disorder is not the first concern after a head injury.", "Nothing suggests mania.", "Head injury sustained in the trauma must be evaluated first."],
+"c10-pt06": ["Lithium does not target nightmares.", "", "Stimulants would worsen sleep.", "Bupropion does not treat nightmares.", "Benzodiazepines lack evidence in PTSD."],
+"c10-pt07": ["Typical antipsychotics are not first line.", "Stimulants are not PTSD treatments.", "Lithium has no strong evidence.", "Benzodiazepines lack evidence and may be relatively contraindicated.", ""],
+"c10-pt08": ["Insomnia can be treated.", "Antihistamines are not the preferred choice.", "Long-term benzodiazepines lack evidence in PTSD.", "", "Alcohol worsens PTSD and sleep."],
+"c10-pt09": ["EMDR pairs recall with sensory input, not graded in vivo exposure.", "Supportive therapy does not use structured exposure.", "Present-centered therapy avoids the trauma and focuses on current problems.", "", "Interpersonal therapy focuses on relationships, not exposure."],
+"c10-pt10": ["Psychoanalysis does not target overgeneralized beliefs this way.", "", "Group therapy alone is not the specific technique.", "ECT has no role.", "Present-centered therapy focuses on current problems, not beliefs about the trauma."],
+"c10-pt11": ["Longer duration predicts a worse outcome.", "Comorbidity worsens prognosis.", "Prior trauma is a risk factor.", "Rapid, not gradual, onset is favorable.", ""],
+"c10-pt12": ["", "Middle-aged adults cope better than the very young and very old.", "Young adults cope better than young children.", "Athletes are not singled out.", "Age matters: the very young and very old fare worse."],
+"c10-pt13": ["", "One of the two perceptions is listed.", "A human cause (internal locus) is not the listed vulnerability.", "Religious attribution is not the listed factor.", "They are not equal."],
+"c10-ad01": ["", "Job loss is not a trauma qualifying for PTSD.", "His distress and impairment exceed a normal reaction.", "He does not have enough symptoms for major depression.", "Persistent depressive disorder needs 2 years."],
+"c10-ad02": ["She has no anxiety.", "She is not depressed.", "", "Refusing treatment is not a conduct disturbance in this sense.", "There is no emotional disturbance with conduct."],
+"c10-ad03": ["ECT is not indicated.", "Couples therapy alone ignores the suicide risk.", "", "Antipsychotics have no role.", "An overdose must not be dismissed."],
+"c10-ad04": ["Conduct disorder requires a longer prior pattern.", "Nothing suggests mania.", "", "ADHD begins in childhood and is not stressor linked.", "Antisocial personality requires age 18 and a prior conduct disorder."],
+"c10-ad05": ["The view ignores that the response is pathologic.", "Most patients are treated as outpatients.", "Psychotherapy, not medication, is the treatment of choice.", "", "Most recover within months."],
+"c10-ad06": ["", "Antidepressants are not the primary treatment.", "Brief medication can help specific symptoms.", "Stimulants have no role.", "Antipsychotics are not routinely indicated."],
+"c10-ad07": ["Expected grief is not adjustment disorder.", "There was no traumatic exposure.", "Her symptoms do not meet major depression.", "", "Bereavement alone does not cause PTSD."]
+})

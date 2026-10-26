@@ -1,0 +1,175 @@
+import json
+cls={"id":"stimulants","label":"Stimulants and ADHD drugs","singular":"stimulant or ADHD drug","chapter":"ch21-6",
+ "intro":"Methylphenidates block dopamine and norepinephrine reuptake; amphetamines release them; modafinil and armodafinil promote wakefulness with less activation; atomoxetine and the newer nonstimulants treat ADHD without abuse potential.",
+ "groups":[{"id":"mph","label":"Methylphenidates","short":"Methylphenidates"},{"id":"amph","label":"Amphetamines","short":"Amphetamines"},{"id":"wake","label":"Wakefulness-promoting agents","short":"Wake agents"},{"id":"nonstim","label":"Nonstimulant ADHD drugs","short":"Nonstimulants"},{"id":"anorectic","label":"Anorectic sympathomimetics","short":"Anorectics"}],
+ "profile":[["abuse","Misuse potential"],["appetite","Appetite loss"],["insomnia","Insomnia"],["cardio","Heart rate and BP rise"],["interact","Drug interactions"]],
+ "lowFilters":[["abuse","Low misuse potential"],["insomnia","Little insomnia"],["interact","Few interactions"]],
+ "indications":{"adhd":"ADHD","narcolepsy":"Narcolepsy sleepiness","cataplexy":"Cataplexy","osa":"Sleepiness in obstructive sleep apnea","shift":"Shift work sleep disorder","bed":"Binge-eating disorder","obesity":"Obesity (short term)","depression":"Depression augmentation or apathy (off-label)","fatigue":"Fatigue in medical illness (off-label)"}}
+D=[]
+def add(**k):
+    k.setdefault("cls","stimulants");k.setdefault("chapter","ch21-6");k.setdefault("pk",[]);k.setdefault("updates",[]);k.setdefault("interactions",[]);k.setdefault("pearls",[]);D.append(k)
+BW={"year":"2023","title":"Boxed warning: misuse, abuse and addiction","text":"May 2023: a consistent boxed warning for all prescription stimulants on **misuse, abuse, addiction and overdose**; assess risk before prescribing, monitor, and tell patients **never to share**.","source":"FDA Drug Safety Communication on prescription stimulants, May 2023"}
+PSY={"year":"2019","title":"Psychosis risk","text":"In patients aged 13 to 25, new-onset psychosis was rare but about **twice as common with amphetamine** as with methylphenidate.","source":"Moran LV et al., psychosis with methylphenidate or amphetamine in ADHD, New England Journal of Medicine, 2019"}
+GROW={"year":"2017","title":"Growth","text":"MTA follow-up: consistent stimulant users were about **2.5 cm shorter** as adults; track height and weight.","source":"Swanson JM et al., young adult outcomes in the MTA follow-up, Journal of Child Psychology and Psychiatry, 2017"}
+MECH={"field":"mechanism","title":"Correction: mechanism","text":"Methylphenidate mainly **blocks the dopamine and norepinephrine transporters**; amphetamines mainly **release** dopamine and norepinephrine. The book groups both as releasers.","source":"Ritalin and Adderall prescribing information"}
+STIM_SE={"common":["Stomach pain, **reduced appetite**, weight loss","**Insomnia**, anxiety, irritability","Raised **heart rate and BP**, palpitations","Headache"],"serious":["Misuse, diversion and addiction (boxed warning)","**Tics** and dyskinesias","Psychosis or mania at high doses; paranoid psychosis with chronic misuse","Arrhythmias; caution with cardiovascular disease","Seizures; overdose with hyperthermia"]}
+STIM_MON=["Cardiac history and BP and pulse before and during treatment","Height and weight in children","Tics, sleep, appetite and mood","Signs of misuse or diversion"]
+STIM_INT=["**MAOIs**: hypertensive crisis (contraindicated within 14 days).","Additive BP effects with other sympathomimetics.","May reduce the effect of antihypertensives."]
+POP=[["Pregnancy","Avoid, especially in the first trimester (book)."],["Lactation","Dextroamphetamine and methylphenidate enter breast milk."],["Older and medically ill adults","Used for apathy and depression; watch BP and heart rate."]]
+add(id="methylphenidate",name="Methylphenidate",brands=["Ritalin","Ritalin SR","Ritalin LA","Concerta","Methylin","Daytrana"],group="mph",sec="s216-pk",book=True,
+ summary="The usual first ADHD drug: acts in 15 to 30 minutes, IR half-life 2 to 3 hours; many forms from IR to 12-hour Concerta; also narcolepsy, depression augmentation and apathy.",
+ ind=["adhd","narcolepsy","depression","fatigue"],mechanism="Book: indirect sympathomimetic releasing dopamine and norepinephrine. Current understanding: mainly a **dopamine and norepinephrine reuptake inhibitor**.",
+ indications={"approved":["ADHD (age 6 and older)","Narcolepsy (IR and SR forms)"],"other":["Treatment-resistant depression (augmentation)","Depression or apathy in older or medically ill patients","Fatigue in MS, cancer, HIV","Poststroke apathy and brain injury"]},
+ forms="IR tablets 5, 10, 20 mg; SR 20 mg; ER (Concerta) 18, 27, 36, 54 mg; chewables, solution, transdermal patch",
+ dose={"start":"IR 5 to 10 mg (from 2.5 mg); Concerta 18 mg","titration":"IR every 3 to 4 hours (8 a.m., noon, 4 p.m.)","range":"5 to 60 mg a day; up to 1 mg/kg","max":"Children 80 mg; adults 90 mg (book); Concerta 54 mg children, 72 mg adolescents and adults (label)","notes":["Concerta once at 8 a.m."]},
+ half="IR 2 to 3 hours (peak 1 to 2 hours); SR about double; Concerta designed for 12 hours",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,populations=POP,
+ pearls=["About 70% of nonresponders to methylphenidate respond to an amphetamine.","May worsen tics in one-third; most resolve as the dose wears off."],
+ profile={"abuse":"H","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="Blocks **DAT and NET** (book: releaser).",dose="IR **5 to 10 mg** two or three times daily; up to 1 mg/kg; Concerta **18 to 54 (72) mg**.",se="Appetite loss, insomnia, tics, BP rise.",mon="BP, pulse, height, weight, tics, misuse."),
+ clues=["the stimulant usually tried first for ADHD, with an IR half-life of 2 to 3 hours"],
+ updates=[MECH,{"field":"dose","title":"Label dose check","text":"**Concerta** goes up to **72 mg** a day in adolescents and adults (54 mg in children 6 to 12).","source":"Concerta, Focalin, Strattera and Vyvanse prescribing information"},PSY,GROW,BW])
+add(id="dexmethylphenidate",name="Dexmethylphenidate",brands=["Focalin","Focalin XR"],group="mph",sec="s216-dose",book=True,
+ summary="The active d-isomer of methylphenidate: half the mg dose, peak about 3 hours, twice daily IR or once-daily XR.",
+ ind=["adhd"],mechanism="d-threo enantiomer of methylphenidate; dopamine and norepinephrine reuptake inhibitor.",
+ indications={"approved":["ADHD (age 6 and older)"],"other":[]},forms="IR tablets 2.5, 5, 10 mg; XR capsules 5 to 40 mg",
+ dose={"start":"5 mg a day","titration":"—","range":"5 to 20 mg","max":"20 mg (book, IR)","notes":["Twice daily IR."]},half="Peak about 3 hours",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,populations=POP,
+ profile={"abuse":"H","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="**d-isomer** of methylphenidate (DAT/NET blocker).",dose="Start **5 mg**; 5 to 20 mg IR.",se="As methylphenidate.",mon="BP, pulse, growth, misuse."),
+ clues=["the d-isomer of methylphenidate, dosed at about half the mg"],
+ updates=[{"field":"forms","title":"Label detail","text":"**Focalin** IR is a **tablet**; **Focalin XR** is a capsule, with label maximums of 30 mg (children) and 40 mg (adults).","source":"Concerta, Focalin, Strattera and Vyvanse prescribing information"},BW])
+add(id="serdexmethylphenidate",name="Serdexmethylphenidate–dexmethylphenidate",brands=["Azstarys"],group="mph",sec="s216-newer",book=False,
+ summary="Once-daily capsule combining IR dexmethylphenidate with serdexmethylphenidate, a prodrug converted gradually in the lower gut (2021).",
+ ind=["adhd"],mechanism="Prodrug of dexmethylphenidate plus immediate-release dexmethylphenidate.",indications={"approved":["ADHD (age 6 and older)"],"other":[]},forms="Capsules",
+ dose={"start":"Per label, once each morning","titration":"Weekly","range":"—","max":"—","notes":["Schedule II."]},half="Extended (prodrug)",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,
+ profile={"abuse":"M","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="**Prodrug** of dexmethylphenidate plus IR dexmethylphenidate.",dose="Once daily in the morning.",se="As methylphenidate.",mon="As stimulants."),
+ clues=["the methylphenidate prodrug combination approved in 2021"],
+ updates=[{"year":"2021","title":"Approval","text":"Approved March 2021 for ADHD from age 6; not in the 12th edition.","source":"KemPharm announcement, March 2021; Azstarys prescribing information"},BW])
+add(id="amphetamine",name="Mixed amphetamine salts",brands=["Adderall","Adderall XR","Mydayis"],group="amph",sec="s216-pk",book=True,
+ summary="About 75% dextro- and 25% levoamphetamine; half-life about 6 hours; for ADHD and narcolepsy; releases dopamine and norepinephrine.",
+ ind=["adhd","narcolepsy","depression"],mechanism="Releases **dopamine and norepinephrine** (reverses transporters and VMAT2); weak reuptake and MAO inhibition.",
+ indications={"approved":["ADHD","Narcolepsy (IR)"],"other":["Depression augmentation; apathy in medical illness"]},forms="IR tablets; XR capsules",
+ dose={"start":"5 to 10 mg","titration":"Once or twice daily","range":"ADHD 20 to 30 mg; sleepiness 5 to 60 mg","max":"Children 40 mg; adults 60 mg","notes":[]},
+ half="About 6 hours (peak 2 to 3 hours)",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT+["Urinary acidifiers lower and alkalinizers raise amphetamine levels."],populations=POP,
+ profile={"abuse":"H","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="**Releases** DA and NE.",dose="Start **5 to 10 mg**; ADHD 20 to 30 mg; max 40 (children), 60 (adults).",se="Appetite loss, insomnia, BP rise; higher psychosis risk than methylphenidate.",mon="BP, pulse, growth, misuse."),
+ clues=["the stimulant that is about 75% dextro- and 25% levoamphetamine"],updates=[MECH,PSY,GROW,BW])
+add(id="dextroamphetamine",name="Dextroamphetamine",brands=["Dexedrine","Zenzedi","ProCentra"],group="amph",sec="s216-ind",book=True,
+ summary="About twice as potent as methylphenidate per mg, lasting 6 to 8 hours; ADHD, narcolepsy; 5 mg test dose for pseudodementia.",
+ ind=["adhd","narcolepsy","depression"],mechanism="Releases dopamine and norepinephrine.",
+ indications={"approved":["ADHD","Narcolepsy"],"other":["Depression augmentation; pseudodementia test dose (5 mg)","Brain injury and poststroke apathy"]},forms="Tablets; ER capsules; oral solution",
+ dose={"start":"5 to 10 mg (from 2.5 mg)","titration":"Once or twice daily","range":"2.5 to 40 mg; up to 0.5 mg/kg","max":"Children 40 mg; adults 60 mg","notes":[]},
+ half="About 6 hours; effect 6 to 8 hours",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,populations=POP,
+ profile={"abuse":"H","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="**Releases** DA and NE.",dose="**2.5 to 40 mg**; up to 0.5 mg/kg.",se="Appetite loss, insomnia, BP rise.",mon="BP, pulse, growth, misuse."),
+ clues=["the stimulant about twice as potent per mg as methylphenidate, used as a 5 mg test for pseudodementia"],updates=[PSY,BW])
+add(id="lisdexamfetamine",name="Lisdexamfetamine",brands=["Vyvanse"],group="amph",sec="s216-pk",book=True,
+ summary="L-lysine–d-amphetamine prodrug activated by red blood cell enzymes: smooth once-daily action and lower abuse potential; 30 to 70 mg.",
+ ind=["adhd","bed"],mechanism="**Prodrug**: red blood cell enzymes cleave lysine, releasing dextroamphetamine gradually.",
+ indications={"approved":["ADHD (age 6 and older and adults)","Moderate to severe binge-eating disorder in adults (post-publication)"],"other":[]},forms="Capsules 10 to 70 mg; chewable tablets",
+ dose={"start":"30 mg each morning","titration":"10 or 20 mg about weekly","range":"30 to 70 mg","max":"70 mg","notes":["Avoid afternoon doses; with or without food.","Vyvanse 30/50/70 mg ≈ Adderall 10/20/30 mg ≈ Dexedrine 7.5/15/22.5 mg."]},
+ half="Gradual release; extended action",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,populations=POP,
+ profile={"abuse":"M","appetite":"H","insomnia":"H","cardio":"M","interact":"L"},
+ drill=dict(mech="**Prodrug** cleaved in red blood cells to dextroamphetamine.",dose="Start **30 mg** AM; by 10 to 20 mg weekly; max **70 mg**.",se="Insomnia if taken late; appetite loss.",mon="BP, pulse, growth."),
+ clues=["the lysine-linked amphetamine prodrug activated by red blood cell enzymes"],
+ updates=[{"field":"indications","title":"Binge-eating disorder","text":"Also approved for moderate to severe **binge-eating disorder** in adults (50 to 70 mg); not for weight loss.","source":"Concerta, Focalin, Strattera and Vyvanse prescribing information"},PSY,BW])
+add(id="methamphetamine",name="Methamphetamine",brands=["Desoxyn"],group="amph",sec="s216-dose",book=True,
+ summary="Schedule II amphetamine rarely prescribed: ADHD 20 to 25 mg, maximum 45 mg; not generally used for sleepiness.",
+ ind=["adhd"],mechanism="Releases dopamine and norepinephrine.",indications={"approved":["ADHD"],"other":[]},forms="Tablets 5 mg",
+ dose={"start":"5 to 10 mg","titration":"—","range":"20 to 25 mg","max":"45 mg","notes":[]},half="—",effects=STIM_SE,monitoring=STIM_MON,interactions=STIM_INT,populations=POP,
+ profile={"abuse":"H","appetite":"H","insomnia":"H","cardio":"H","interact":"L"},
+ drill=dict(mech="Releases DA and NE.",dose="Start 5 to 10 mg; 20 to 25 mg; max **45 mg**.",se="High misuse potential.",mon="BP, pulse, misuse."),
+ clues=["the Schedule II amphetamine sold as Desoxyn, maximum 45 mg"],updates=[BW])
+add(id="modafinil",name="Modafinil",brands=["Provigil"],group="wake",sec="s216-pk",book=True,
+ summary="Schedule IV wakefulness agent for narcolepsy, shift work and sleep apnea sleepiness: as good as amphetamines with less activation; 200 mg each morning, max 400 mg.",
+ ind=["narcolepsy","osa","shift","fatigue","depression"],mechanism="Unknown in the book: activates **hypocretin (orexin)** neurons, α1-adrenergic effects (blunted by prazosin), some norepinephrine reuptake blockade; now thought to act partly through **dopamine transporter** blockade.",
+ indications={"approved":["Excessive sleepiness in narcolepsy","Shift work sleep disorder","Obstructive sleep apnea (residual sleepiness)"],"other":["Fatigue in MS","Depression augmentation","Wakefulness in pilots and military personnel"]},forms="Tablets 100, 200 mg",
+ dose={"start":"200 mg each morning (100 mg with hepatic impairment)","titration":"Some add 100 to 200 mg in the afternoon","range":"200 to 400 mg","max":"400 mg (600 to 1,200 mg used safely; side effects above 400)","notes":[]},
+ half="—",effects={"common":["Headache, nausea, nervousness, insomnia"],"serious":["Serious rash including Stevens–Johnson syndrome (label)","Psychiatric symptoms (label)"]},
+ monitoring=["Rash","BP in cardiovascular disease"],interactions=["Induces **CYP3A4**: lowers **hormonal contraceptive** effectiveness (label)."],
+ pearls=["Less attentiveness and irritability than amphetamines; role in ADHD unproven."],
+ profile={"abuse":"L","appetite":"L","insomnia":"M","cardio":"L","interact":"M"},
+ drill=dict(mech="Unclear: **orexin** activation, α1 effects, DAT blockade.",dose="**200 mg** each morning; max **400 mg**.",se="Headache; rare serious rash.",mon="Rash; contraception."),
+ clues=["the Schedule IV wakefulness drug approved for narcolepsy, shift work and sleep apnea"],
+ updates=[{"field":"interactions","title":"Label detail: rash and contraception","text":"Labels warn of **serious rash** (including Stevens–Johnson syndrome) and reduced **hormonal contraceptive** effectiveness during and for a month after treatment.","source":"Provigil and Nuvigil prescribing information"}])
+add(id="armodafinil",name="Armodafinil",brands=["Nuvigil"],group="wake",sec="s216-dose",book=True,
+ summary="R-enantiomer of modafinil with similar effects; 50 to 250 mg a day; Schedule IV.",
+ ind=["narcolepsy","osa","shift"],mechanism="R-enantiomer of modafinil.",indications={"approved":["Excessive sleepiness in narcolepsy, shift work sleep disorder and obstructive sleep apnea"],"other":[]},forms="Tablets 50, 150, 200, 250 mg",
+ dose={"start":"50 to 150 mg","titration":"—","range":"150 to 250 mg","max":"250 mg","notes":[]},half="—",
+ effects={"common":["Headache, nausea, dizziness, insomnia"],"serious":["Serious rash (label)"]},interactions=["CYP3A4 induction: hormonal contraceptives less effective (label)."],
+ profile={"abuse":"L","appetite":"L","insomnia":"M","cardio":"L","interact":"M"},
+ drill=dict(mech="**R-enantiomer** of modafinil.",dose="**50 to 250 mg** a day.",se="Headache, insomnia.",mon="Rash; contraception."),
+ clues=["the R-enantiomer of modafinil"],
+ updates=[{"field":"interactions","title":"Label detail: rash and contraception","text":"As with modafinil: serious rash warnings and reduced hormonal contraceptive effectiveness.","source":"Provigil and Nuvigil prescribing information"}])
+add(id="solriamfetol",name="Solriamfetol",brands=["Sunosi"],group="wake",sec="s216-newer",book=False,
+ summary="Dopamine and norepinephrine reuptake inhibitor approved in 2019 for sleepiness in narcolepsy and obstructive sleep apnea; Schedule IV.",
+ ind=["narcolepsy","osa"],mechanism="**Dopamine and norepinephrine reuptake inhibitor**.",indications={"approved":["Excessive sleepiness in narcolepsy and obstructive sleep apnea"],"other":[]},forms="Tablets 75, 150 mg",
+ dose={"start":"Narcolepsy 75 mg; sleep apnea 37.5 mg, each morning","titration":"Every 3 or more days","range":"37.5 to 150 mg","max":"150 mg","notes":["Not with MAOIs."]},half="About 7 hours",
+ effects={"common":["Headache, nausea, decreased appetite, anxiety, insomnia"],"serious":["BP and heart rate rise"]},monitoring=["BP"],interactions=["Contraindicated with MAOIs."],
+ profile={"abuse":"L","appetite":"M","insomnia":"M","cardio":"M","interact":"L"},
+ drill=dict(mech="**DNRI**.",dose="37.5 to 150 mg each morning.",se="Headache, appetite loss, BP rise.",mon="BP."),
+ clues=["the DNRI approved in 2019 for sleepiness in narcolepsy and sleep apnea"],
+ updates=[{"year":"2019","title":"Approval","text":"Approved March 2019; not in the 12th edition.","source":"Sunosi and Wakix prescribing information"}])
+add(id="pitolisant",name="Pitolisant",brands=["Wakix"],group="wake",sec="s216-newer",book=False,
+ summary="Histamine H3 antagonist/inverse agonist approved in 2019 for sleepiness and cataplexy in narcolepsy; not a controlled substance.",
+ ind=["narcolepsy","cataplexy"],mechanism="**Histamine H3 receptor antagonist/inverse agonist**: increases brain histamine release.",indications={"approved":["Excessive sleepiness and cataplexy in narcolepsy (adults; sleepiness in children 6 and older since 2024)"],"other":[]},forms="Tablets 4.45, 17.8 mg",
+ dose={"start":"8.9 mg each morning","titration":"Weekly to 17.8 mg, then up to 35.6 mg","range":"17.8 to 35.6 mg","max":"35.6 mg (17.8 mg in CYP2D6 poor metabolizers)","notes":[]},half="About 20 hours",
+ effects={"common":["Insomnia, nausea, anxiety, headache"],"serious":["**QT prolongation**"]},monitoring=["QT with other QT-prolonging drugs"],interactions=["Reduces **hormonal contraceptive** effectiveness.","CYP2D6 inhibitors raise it."],
+ profile={"abuse":"N","appetite":"L","insomnia":"M","cardio":"L","interact":"M"},
+ drill=dict(mech="**H3 antagonist/inverse agonist**.",dose="8.9 mg → 17.8 → up to **35.6 mg**.",se="Insomnia, nausea; QT prolongation.",mon="QT."),
+ clues=["the H3 inverse agonist for sleepiness and cataplexy in narcolepsy"],
+ updates=[{"year":"2019","title":"Approval","text":"Approved 2019 (cataplexy 2020; children 2024); not in the 12th edition.","source":"Sunosi and Wakix prescribing information"}])
+ATX_SW={"year":"2005","title":"Boxed warning: suicidal thoughts","text":"Suicidal thinking in children and adolescents (about 0.4% versus none on placebo); monitor closely early and after dose changes.","source":"Strattera prescribing information"}
+add(id="atomoxetine",name="Atomoxetine",brands=["Strattera"],group="nonstim",sec="s216-atx",book=True,
+ summary="First nonstimulant for ADHD: selective norepinephrine reuptake inhibitor, no abuse potential, CYP2D6 metabolism, rare liver injury; effect builds over weeks.",
+ ind=["adhd"],mechanism="Selective presynaptic **norepinephrine transporter** inhibitor.",
+ indications={"approved":["ADHD in children, adolescents and adults"],"other":["Cognition in schizophrenia","Adjunct to antidepressants"]},forms="Capsules 10, 18, 25, 40, 60, 80, 100 mg",
+ dose={"start":"0.5 mg/kg (up to 70 kg); 40 mg (over 70 kg and adults)","titration":"After 3 days to 1.2 mg/kg or 80 mg; adults up to 100 mg after 2 to 4 more weeks","range":"1.2 mg/kg; 80 to 100 mg","max":"1.4 mg/kg or 100 mg, whichever is less","notes":["Once in the morning or split morning and late afternoon."]},
+ half="About 5 hours (peak 1 to 2 hours); 98% protein bound",
+ effects={"common":["Abdominal discomfort, **low appetite**, weight loss","Sexual dysfunction, dizziness, irritability, mood swings","Small BP and heart rate rises"],"serious":["**Suicidal thoughts** in youth (boxed)","Rare **severe liver injury**"]},
+ monitoring=["Suicidality early in treatment","Jaundice or liver tests if symptoms","BP and pulse"],interactions=["**CYP2D6**: fluoxetine, paroxetine, bupropion and poor metabolizers raise exposure about fivefold.","Contraindicated with **MAOIs** (or within 2 weeks)."],
+ pearls=["No abuse potential: suits substance use disorders.","Contraindicated in narrow-angle glaucoma."],
+ profile={"abuse":"N","appetite":"M","insomnia":"L","cardio":"L","interact":"H"},
+ drill=dict(mech="Selective **NET** inhibitor.",dose="**0.5 → 1.2 mg/kg**; adults **40 → 80 → 100 mg**.",se="GI upset, appetite loss; liver injury; suicidality.",mon="Suicidality, jaundice, BP."),
+ clues=["the first nonstimulant ADHD drug, a selective norepinephrine reuptake inhibitor metabolized by CYP2D6"],
+ updates=[ATX_SW,{"field":"forms","title":"Label detail","text":"Atomoxetine is supplied as **capsules**.","source":"Concerta, Focalin, Strattera and Vyvanse prescribing information"}])
+add(id="viloxazine",name="Viloxazine ER",brands=["Qelbree"],group="nonstim",sec="s216-newer",book=False,
+ summary="Nonstimulant norepinephrine reuptake inhibitor for ADHD (children 2021, adults 2022); strong CYP1A2 inhibitor; suicidality warning.",
+ ind=["adhd"],mechanism="Norepinephrine reuptake inhibitor with serotonergic effects.",indications={"approved":["ADHD (age 6 to 17, 2021; adults, 2022)"],"other":[]},forms="ER capsules 100, 150, 200 mg",
+ dose={"start":"Children 100 mg (6 to 11) or 200 mg (12 to 17); adults 200 mg","titration":"Weekly","range":"100 to 400 mg (children); 200 to 600 mg (adults)","max":"400 mg children; 600 mg adults","notes":["Capsules can be opened onto applesauce."]},half="About 7 hours",
+ effects={"common":["Somnolence, decreased appetite, fatigue, nausea, insomnia, irritability"],"serious":["**Suicidal thoughts** (boxed)","BP and heart rate rise"]},
+ interactions=["Strong **CYP1A2** inhibitor: avoid with **theophylline**; caution with caffeine, clozapine, tizanidine.","Contraindicated with MAOIs."],
+ profile={"abuse":"N","appetite":"M","insomnia":"L","cardio":"L","interact":"H"},
+ drill=dict(mech="**NRI** (nonstimulant).",dose="Children 100 to 400 mg; adults 200 to 600 mg once daily.",se="Somnolence; suicidality warning.",mon="Suicidality; CYP1A2 drugs."),
+ clues=["the nonstimulant ADHD drug that strongly inhibits CYP1A2"],
+ updates=[{"year":"2021–2022","title":"Approval","text":"Approved April 2021 (ages 6 to 17) and 2022 (adults); not in the 12th edition.","source":"Qelbree prescribing information; Supernus announcements, 2021 and 2022"}])
+A2_SE={"common":["**Sedation**, fatigue, dizziness","Low BP and heart rate"],"serious":["**Rebound hypertension** if stopped abruptly","Syncope"]}
+A2_UP={"field":"indications","title":"Extended-release forms for ADHD","text":"Extended-release **guanfacine** (Intuniv) and **clonidine** (Kapvay) are approved for ADHD in ages **6 to 17**, alone or added to a stimulant; taper to stop.","source":"Intuniv and Kapvay prescribing information"}
+add(id="guanfacine-er",name="Guanfacine ER",brands=["Intuniv"],group="nonstim",sec="s216-newer",book="list",
+ summary="α2A agonist listed by the book as an ADHD alternative; extended-release form approved for ages 6 to 17, alone or with stimulants; sedation and rebound hypertension.",
+ ind=["adhd"],mechanism="Selective **α2A-adrenergic agonist**.",indications={"approved":["ADHD (age 6 to 17), alone or adjunct to stimulants"],"other":["Tics; stimulant-induced tics (book)"]},forms="ER tablets 1, 2, 3, 4 mg",
+ dose={"start":"1 mg once daily","titration":"By 1 mg weekly","range":"1 to 4 mg (up to 7 mg in adolescents)","max":"7 mg","notes":["Do not crush; taper by 1 mg every 3 to 7 days."]},half="About 17 hours",
+ effects=A2_SE,monitoring=["BP and heart rate"],interactions=["CYP3A4 inhibitors raise and inducers lower levels."],
+ profile={"abuse":"N","appetite":"L","insomnia":"N","cardio":"L","interact":"M"},
+ drill=dict(mech="**α2A agonist**.",dose="1 mg, up by 1 mg weekly to 4 (7) mg.",se="Sedation, hypotension, bradycardia; rebound on stopping.",mon="BP, pulse."),
+ clues=["the extended-release α2A agonist approved for ADHD"],updates=[A2_UP])
+add(id="clonidine-er",name="Clonidine ER",brands=["Kapvay"],group="nonstim",sec="s216-newer",book="list",
+ summary="α2 agonist listed by the book for ADHD, tics and stimulant insomnia; extended-release form approved for ages 6 to 17.",
+ ind=["adhd"],mechanism="**α2-adrenergic agonist**.",indications={"approved":["ADHD (age 6 to 17), alone or adjunct to stimulants"],"other":["Stimulant-induced insomnia, rebound and tics (book)"]},forms="ER tablets 0.1 mg",
+ dose={"start":"0.1 mg at bedtime","titration":"By 0.1 mg weekly, split twice daily","range":"0.1 to 0.4 mg","max":"0.4 mg","notes":["Taper by 0.1 mg every 3 to 7 days."]},half="—",
+ effects=A2_SE,monitoring=["BP and heart rate"],
+ profile={"abuse":"N","appetite":"L","insomnia":"N","cardio":"L","interact":"L"},
+ drill=dict(mech="**α2 agonist**.",dose="0.1 mg at bedtime, up weekly to 0.4 mg divided.",se="Sedation, hypotension; rebound on stopping.",mon="BP, pulse."),
+ clues=["the extended-release α2 agonist dosed twice daily for ADHD"],updates=[A2_UP])
+add(id="phentermine",name="Phentermine",brands=["Adipex-P"],group="anorectic",sec="s216-ind",book="list",
+ summary="The most used anorectic sympathomimetic (Schedule IV): short-term weight loss limited by tolerance; alone it lacks fenfluramine's valvular and pulmonary risks.",
+ ind=["obesity"],mechanism="Sympathomimetic amine releasing norepinephrine (appetite suppression).",indications={"approved":["Short-term treatment of obesity"],"other":[]},forms="Tablets and capsules",
+ dose={"start":"Per label","titration":"—","range":"—","max":"—","notes":["Tolerance to appetite suppression within weeks."]},half="—",
+ effects={"common":["Insomnia, dry mouth, tachycardia, raised BP"],"serious":["Misuse"]},interactions=["MAOIs contraindicated."],
+ profile={"abuse":"M","appetite":"H","insomnia":"M","cardio":"M","interact":"L"},
+ drill=dict(mech="Sympathomimetic anorectic.",dose="Per label, short term.",se="Insomnia, BP rise; tolerance.",mon="BP, weight."),
+ clues=["the most used stimulant for weight loss, half of the withdrawn fen-phen combination"])
+out="/* Drug reference: stimulants and ADHD drugs. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 21.6, unless a field sits inside an `updates` entry (post-publication information or a correction, with its source). Profile levels: N none or minimal, L low, M moderate, H high. */\n"
+out+="KS.drugClasses = (KS.drugClasses || []).concat(["+json.dumps(cls,ensure_ascii=False,indent=1)+"]);\n\n"
+out+="KS.drugs = (KS.drugs || []).concat([\n"+",\n".join(json.dumps(d,ensure_ascii=False) for d in D)+"\n]);\n"
+open('/home/claude/kaplanstudy/data/drugs/stimulants.js','w').write(out); print(len(D))
