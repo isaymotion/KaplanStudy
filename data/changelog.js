@@ -13,6 +13,22 @@
  */
 KS.changelog = [
   {
+    id: 55,
+    date: "2026-10-26",
+    title: "Learning tools for Chapter 4",
+    items: [
+      { type: "feature", ch: "ch04", text: "Chapter 4 (substance-related and addictive disorders) now has Check yourself questions in all 53 sections, a pre-test and post-test, wrong-answer explanations for all 86 cases, board blueprint tags and a visual summary comparing naltrexone, acamprosate and disulfiram. Every chapter and section in the app now has the full set of learning tools.", href: "#/c/ch04/guide", link: "Open the study guide" }
+    ]
+  },
+  {
+    id: 54,
+    date: "2026-10-26",
+    title: "Learning tools for Chapter 3",
+    items: [
+      { type: "feature", ch: "ch03", text: "Chapter 3 (neurocognitive disorders) now has Check yourself questions in all 37 sections, a pre-test and post-test, wrong-answer explanations for all 85 cases, board blueprint tags and a visual summary of delirium and dementia side by side.", href: "#/c/ch03/guide", link: "Open the study guide" }
+    ]
+  },
+  {
     id: 53,
     date: "2026-10-26",
     title: "Learning tools for Chapter 2",
