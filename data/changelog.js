@@ -13,6 +13,16 @@
  */
 KS.changelog = [
   {
+    id: 59,
+    date: "2026-10-28",
+    title: "Confidence ratings",
+    items: [
+      { type: "feature", text: "Exams, quizzes, drills and pre- and post-tests now ask how sure you are after you pick an answer: Guessed, Unsure or Sure (keys 1 to 3). It is optional, and you can turn it off on the exam page.", href: "#/exam", link: "Open exam mode" },
+      { type: "feature", text: "Results show your score at each confidence level, the answers you were sure of but got wrong (misconceptions to fix first) and the right answers you only guessed, each with its own review list." },
+      { type: "feature", text: "Weak topics now lists topics with confident errors first and counts a right answer you marked Guessed as not yet learned.", href: "#/weak", link: "Open Weak topics" }
+    ]
+  },
+  {
     id: 58,
     date: "2026-10-27",
     title: "Clinical tools, Report an error and review card types",

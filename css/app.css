@@ -1519,3 +1519,24 @@ body.tts-on .site-foot { padding-bottom: calc(80px + env(safe-area-inset-bottom,
 .tl-table { max-width: 760px; margin-top: 4px; }
 .tl-table summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
 @media print { .g-tools { display: none; } }
+
+/* ---------- confidence ratings (exams and quizzes) ---------- */
+.conf { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 0; padding: 10px 12px; border: 1px solid var(--rule); border-radius: var(--r-md); background: var(--surface); }
+.conf__q { font: 600 .9rem/1.3 var(--sans); margin-right: 4px; }
+.conf__b { font: 600 .88rem/1 var(--sans); display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
+.conf__b kbd { font: 600 .7rem/1 var(--sans); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 5px; color: var(--ink-3); }
+.conf__b:hover { border-color: var(--focus); }
+.conf__b.is-on { color: #fff; }
+.conf__b.is-on kbd { color: inherit; border-color: currentColor; }
+.conf__b--g.is-on { background: var(--bad); border-color: var(--bad); }
+.conf__b--u.is-on { background: var(--m-dx); border-color: var(--m-dx); }
+.conf__b--s.is-on { background: var(--good); border-color: var(--good); }
+.conf__hint { flex-basis: 100%; font-size: .8rem; color: var(--ink-3); }
+.conf-tag { font: 600 .78rem/1 var(--sans); margin-left: 8px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-2); vertical-align: middle; }
+.conf-res__tips { margin: 0 0 12px; padding-left: 1.2em; }
+.conf-res__tips li { margin: 4px 0; }
+.weak-blind__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.weak-blind__list li { padding: 12px 14px; border: 1px solid var(--bad); border-radius: var(--r-md); background: var(--surface); }
+@media (max-width: 560px) { .conf__q { flex-basis: 100%; } }
+[data-theme="dark"] .conf__b.is-on { color: #10121F; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .conf__b.is-on { color: #10121F; } }
