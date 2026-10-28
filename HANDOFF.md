@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-27, after release 58 (`3b9c435`): **Clinical tools** (6 rating scales, 4 calculators), **Report an error** and **daily-review card types**. Release 57 (`cf090c5`) added Weak topics and the Resident handout. The learning-layer backfill is complete. **The section 7 feature list is now fully built; next work is unbuilt chapters (recipe B).** Update the status table and next steps at the end of every unit.
+Last updated 2026-10-28, after release 59 (`64c5c31`): **confidence ratings** in exams and quizzes. Release 58 (`3b9c435`) added Clinical tools, Report an error and daily-review card types; 57 added Weak topics and the Resident handout. The learning-layer backfill is complete; next work is unbuilt chapters (recipe B). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -80,6 +80,7 @@ python3 -m http.server 8124 >/dev/null 2>&1 &      # e2e needs a server; confirm
 python3 /home/claude/tools/learn/e2e.py | tail -1  # expect "ERRORS []"
 python3 /home/claude/tools/learn/e2e_weak.py | tail -1  # Weak topics + handout; expect "ERRORS []"
 python3 /home/claude/tools/learn/e2e_tools.py | tail -2  # Clinical tools, report link, card types; expect "FAILS []" and "ERRORS []"
+python3 /home/claude/tools/learn/e2e_conf.py | tail -2   # Confidence ratings; expect "FAILS []" and "ERRORS []"
 ```
 After changing tools, copy them back into the dev-tools worktree, then commit and push `dev-tools`.
 
@@ -93,12 +94,13 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 
-Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3b9c435`. The last commits on `main` are `cf090c5` (release 57) and `3b9c435` (release 58). The latest changelog id is **58**, and `sw.js` VERSION is `'2026-10-clinical-tools'`.
+Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3b9c435`. The last commits on `main` are `cf090c5` (release 57) and `3b9c435` (release 58). The latest changelog id is **59**, and `sw.js` VERSION is `'2026-10-confidence'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
 |---|---|---|---|
 | Weak topics dashboard | `#/weak` | 57 | `renderWeak`/`weakData` in `js/app.js`. Topic = chapter + card tag. Pools kept exams and quizzes (pre-tests and unanswered items left out), flashcard ratings (Again = miss) and open mistakes. Ranked once a topic has 3 tries (`WEAK_MIN`); roll-ups by chapter and ABPN domain; "Drill" starts an untimed `kind:'quiz'` exam of up to 20 of the topic's cases. Linked from Home tools and the Mistakes page. |
+| Confidence ratings | exam run, results, `#/exam/review/<id>/blind\|lucky`, `#/weak` | 59 | `CONF`, `confOn`, `isLucky`, `isBlind`, `confResults` in `js/app.js`. Item field `s` ('g'/'u'/'s'), shown after an answer is picked when `ex.conf` (from `examPrefs.conf`, default on). Weak topics counts guessed-right as a miss and lists sure-but-wrong topics first. Flashcards do not ask (Again/Hard already carry it). |
 | SRS review counter | — | 57 | `srsNext` now stores `n` (total reviews). `srsTries(s)` falls back to `r + l` for older records; backup merge uses it. |
 | Clinical tools hub | `#/tools`, `#/tools/<id>` | 58 | `js/tools.js` (`KS.toolsModule`, loaded like `drugs.js`; in `index.html`, `sw.js` CORE). Data: `data/tools/scales.js` (`KS.scales`) and `data/tools/calcs.js` (`KS.calcs`), both in `KS.extraFiles`. Nothing entered is saved. Hub also links the Stahl and DSM-5-TR companion apps. Guides show "Clinical tools for this chapter" chips (`chapterTools` in `app.js`, from each tool's `chapters`). |
 | Rating scales | `phq9`, `gad7`, `aims`, `ciwa`, `cows`, `cssrs` | 58 | Generic scale renderer: items/opts/bands/flags; custom rules `RULES.cssrs` and `RULES.aims`. C-SSRS: Columbia primary-care response protocol (items 4, 5 and item 6 within 3 months → consultation + precautions; items 1–3 and older item 6 → referral). CIWA-Ar bands ASAM 2020 (<10, 10–18, ≥19). AIMS Schooler–Kane (one area ≥3 or two ≥2). PHQ-9 item 9 and positive C-SSRS show NCMH 1553 / 0919-057-1553 / 0917-899-8727. COWS shows bands only; buprenorphine start thresholds left to local protocol (no guideline figure verified). |
@@ -108,8 +110,8 @@ Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Feature list: done.** Releases 57 and 58 built every item from the Oct 28 reminder. Possible follow-ups only if the user asks: more scales (for example YMRS, which needs a licence check, or the MoCA, which is not free), a confidence rating before the answer in daily review, Tagalog versions of the scales.
-2. Use changelog id **59** for the next release. Pull `main` first, because a parallel chat may have used it.
+1. **Feature list: done.** Releases 57 and 58 built every item from the Oct 28 reminder. Possible follow-ups only if the user asks: more scales (for example YMRS, which needs a licence check, or the MoCA, which is not free), confidence ratings in flashcard daily review (exams and quizzes have them since release 59), Tagalog versions of the scales.
+2. Use changelog id **60** for the next release. Pull `main` first, because a parallel chat may have used it.
 3. Unbuilt chapters (16, 17, 18, 20, ...): recipe B, then recipe A. Check first which ones the parallel chat has done.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
