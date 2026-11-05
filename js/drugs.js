@@ -170,7 +170,7 @@
         '<p class="dnote">' + esc(BOOK_NOTE) + ' Side-effect levels summarize the book’s descriptions and Table 21-12; a dash means the book does not rate it.</p>' +
         '</div>';
       A.setView('drugs', html, null, { keepScroll: A.viewKey() === 'drugs' });
-      document.title = 'Drugs — K&S Study Companion';
+      document.title = 'Drugs — Kaplan Study';
       var listEl = A.main().querySelector('#dlist');
       function draw() {
         var shown = inClassOrder(DRUGS.filter(function (d) { return matches(d, p); }));
@@ -263,7 +263,7 @@
         '<nav class="dpager" aria-label="Other drugs in this group">' + (prev ? '<a href="#/drugs/' + prev.id + '">‹ ' + esc(prev.name) + '</a>' : '<span></span>') + (next ? '<a href="#/drugs/' + next.id + '">' + esc(next.name) + ' ›</a>' : '<span></span>') + '</nav>' +
         '<p class="dnote">' + esc(BOOK_NOTE) + '</p></div>';
       A.setView('drug:' + d.id, html);
-      document.title = d.name + ' — Drugs — K&S Study Companion';
+      document.title = d.name + ' — Drugs — Kaplan Study';
       var body = A.main().querySelector('.dbody');
       if (body) A.linkTerms(body, { skip: '.update' });
     }
@@ -318,7 +318,7 @@
         (table || '<div class="empty"><h2>Pick drugs to compare</h2><p>Tap two to four names above.</p></div>') +
         '<p class="dnote">' + esc(BOOK_NOTE) + '</p></div>';
       A.setView('compare', html, null, { keepScroll: A.viewKey() === 'compare' });
-      document.title = 'Compare drugs — K&S Study Companion';
+      document.title = 'Compare drugs — Kaplan Study';
       var m = A.main();
       function go(list) { location.hash = '#/drugs/compare/' + list.join(','); }
       m.querySelector('#cm-cls').addEventListener('change', function (e) { store.set('cmpPrefs', { cls: e.target.value, group: '' }); renderCompare(sel.join(',')); });
@@ -364,7 +364,7 @@
         '</div><span class="deck-bar__count">' + plural(keys.length, 'card') + '</span></div>' +
         '<div class="tally" id="tally"></div><div id="card-area" aria-live="polite"></div>' + A.kbdHelp(false) + '</div>';
       A.setView('drill:' + scope, html);
-      document.title = 'Drug drill — K&S Study Companion';
+      document.title = 'Drug drill — Kaplan Study';
       var m = A.main(), tally = m.querySelector('#tally'), player;
       function start() {
         if (player) player.destroy();
@@ -540,7 +540,7 @@
       var html = '<div class="wrap page upd-page"><header class="page__head"><h1>Post-publication updates</h1><p>Approvals, label changes and guideline updates since the 12th edition, gathered from the study guides and drug pages. Each one names its source and appears in a dashed box wherever it is discussed.</p></header>' +
         (ups.length ? body : '<div class="empty"><h2>No updates yet</h2></div>') + '</div>';
       A.setView('updates', html);
-      document.title = 'Post-publication updates — K&S Study Companion';
+      document.title = 'Post-publication updates — Kaplan Study';
     }
 
     /* ---------- search entries ---------- */

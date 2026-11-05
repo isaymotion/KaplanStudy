@@ -54,7 +54,7 @@
           return '<a class="tool" href="' + esc(c.url) + '" target="_blank" rel="noopener"><span class="tool__name">' + esc(c.name) + ' <span aria-hidden="true">↗</span></span><span class="tool__meta">' + esc(c.blurb) + '</span></a>';
         }).join('') + '</div></section></div>';
       A.setView('tools', html);
-      document.title = 'Clinical tools — K&S Study Companion';
+      document.title = 'Clinical tools — Kaplan Study';
     }
 
     /* ---------- rating scales ----------
@@ -99,7 +99,7 @@
         '<div class="empty__actions"><button class="btn btn--solid" type="button" id="sc-copy">Copy result</button><button class="btn" type="button" id="sc-reset">Clear answers</button></div>' +
         (s.note ? '<p class="tl-note">' + fmt(s.note) + '</p>' : '') + sourcesHTML(s) + '</div>';
       A.setView('tool:' + s.id, html);
-      document.title = s.short + ' — K&S Study Companion';
+      document.title = s.short + ' — Kaplan Study';
       var root = A.main(), out = root.querySelector('#sc-result');
       function scored() { return s.items.filter(function (it) { return it.score !== false && visible(s, it, ans); }); }
       function compute() {
@@ -303,7 +303,7 @@
       var html = '<div class="wrap page tool-page calc-page">' + head(c) + '<div id="calc-body"></div>' +
         (c.note ? '<p class="tl-note">' + fmt(c.note) + '</p>' : '') + sourcesHTML(c) + '</div>';
       A.setView('tool:' + c.id, html);
-      document.title = c.short + ' — K&S Study Companion';
+      document.title = c.short + ' — Kaplan Study';
       eng(c, A.main().querySelector('#calc-body'), { esc: esc, fmt: fmt, plural: plural, copy: copyText, tone: toneClass });
     }
 

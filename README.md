@@ -1,6 +1,6 @@
-# Kaplan & Sadock Study Companion
+# Kaplan Study (Kaplan & Sadock Study Companion)
 
-Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 60.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -61,9 +61,12 @@ Across all chapters:
   - *Which personality disorder?* (Chapter 19): enduring pattern versus medical change or an episode of another disorder, then cluster and core style, with the age rule for antisocial personality disorder and the OCPD versus OCD distinction.
 
 - **Text size and read aloud** (the *Aa* button in the top bar): four text sizes, saved per device, and a read-aloud speed. The speaker beside any study-guide section reads from there to the end of the chapter (and *Listen* on a high-yield page reads the list), highlighting each paragraph, with pause, back, skip and stop. It uses the device's built-in voice and works offline.
-- **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right) step through the pages visited in this session.
+- **Back and forward buttons** in the top bar (also Alt+Left and Alt+Right, ignored while typing) step through the pages visited in this session. Going back or forward returns you to where you had scrolled; following a link opens the new page at the top.
+- **Menu**: a docked sidebar on screens 1100px and wider (hide it with the sidebar button next to it), a slide-in drawer from ☰ or the tab bar's *Menu* on phones and tablets. It lists Start, every chapter (keeping the study mode you are in), the study tools and the app pages (backup, What's new, About).
+- **Theme**: the top-bar button cycles match device, light and dark; the About page has the same setting along with language and text size.
+- **Language**: English or Tagalog for the menus and controls (About page). The Tagalog interface strings are a draft; the study content stays in English.
 
-Progress (review schedule, mistakes, bookmarks, exam history, teaching sessions, settings) is saved in the browser on each device. **Back up progress** (`#/progress`, linked in the footer) exports it to a file and imports it on another device: *Merge* keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions, *Replace* swaps everything, and *Undo last import* restores the device to just before. The home page reminds people with 30 or more reviewed cards to back up once a month.
+Progress (review schedule, mistakes, bookmarks, exam history, teaching sessions, settings) is saved in the browser on each device. The **backup panel** in the footer of every page exports everything the app saves to a file (on an installed phone app it opens the share sheet) and imports it on another device, after a confirmation, with *Undo last import*. **Back up progress** (`#/progress`) shows the counts and adds *Import and merge*, which keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions. Backup files made by earlier versions (`ks-progress-YYYY-MM-DD.json`) still import. The home page reminds people with 30 or more reviewed cards to back up once a month.
 
 For educators:
 
@@ -77,11 +80,11 @@ For educators:
   - **Session summary**: *End session* (or Finish on the last case) opens a summary with the overall score, score by topic (weakest first) and by chapter, and the questions under 60% with the room's vote spread and the explanation. *Present the ones to revisit* starts a new session from them; *Print or save as PDF* and *Copy as text* are included. The last 10 sessions are kept in the browser and listed on the setup page.
   - Mark the group's answer with a click or A to E, reveal with Space, move with the arrow keys, F toggles full screen, Esc closes. Teaching mode never affects review schedules or mistakes.
 - **Shareable quizzes**: in Exam mode, choose chapters, board domains, the number of questions and timing, then *Share as a quiz link*. The link (and its QR code, drawn on the device, with a download button) gives everyone the same questions in the same order with the same answer order. Exam results also have *Share these questions*. Answers stay on each resident's device.
-- **What's new** (`#/whats-new`, linked in the footer): new chapters, features and corrections. Residents see a notice on the home page and an *Updated* tag on affected chapters until they open the page.
+- **What's new** (`#/whats-new`, in the menu and the footer): new chapters, features and corrections, each with its version number. Residents see a notice on the home page and an *Updated* tag on affected chapters until they open the page.
 
 **Chapter navigator**: each chapter page has previous and next buttons and a chapter menu beside *All chapters*. Switching keeps the current mode (study guide, high yield or the same flashcard deck), and the `[` and `]` keys step between chapters.
 
-Also included: light and dark themes, keyboard shortcuts, offline support after the first visit, and installability as an app on phones and desktops.
+Also included: match-device, light and dark themes, keyboard shortcuts, offline support after the first visit, and installability as an app on phones and desktops.
 
 ## Chapters
 
@@ -117,6 +120,10 @@ Also included: light and dark themes, keyboard shortcuts, offline support after 
 | 21.11 | Nutritional Supplements and Medical Foods | 14 | 46 | 68 (plus generated drug drills) |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
+## Upgrading from version 59 (October 2026)
+
+Progress is kept: nothing to do. The storage keys (`ks:v1:`) are unchanged; the theme saved by the old light/dark button becomes the starting theme, and *What's new* shows only the design refresh as new. Old backup files still import.
+
 ## Publish on GitHub Pages
 
 1. Create a new repository on GitHub and upload everything in this folder (keep the folder structure, including the empty `.nojekyll` file).
@@ -129,15 +136,18 @@ There is no build step and no dependencies. To preview locally, open `index.html
 ## Folder structure
 
 ```
-index.html              App shell
-css/app.css             Styles (light and dark themes)
+index.html              App shell: top bar, menu (sidebar/drawer), tab bar, footer with backup panel
+css/app.css             Styles: shared isaymotion tokens (palette.py hue 235) plus Kaplan's study-mode colours
 js/app.js               Router, study guide, high yield, flashcards and spaced repetition,
                         daily review, exam, mistakes, glossary, diagnostic helpers, search
 data/chapters.js        Chapter registry and list of shared data files
 data/glossary/          Glossary (g1–g4: book glossary; g5: chapter-defined terms and aliases)
 data/helpers.js         Diagnostic helper decision trees
 data/lookalikes.js      Look-alike comparison pages
-data/changelog.js       What's new entries
+data/app-meta.js        App name, version, repo, attribution; the (hidden) Other apps list
+data/changelog.js       What's new entries (window.APP_CHANGELOG, semver)
+data/strings.js         Menu and control wording, English and Tagalog (draft)
+data/hospital.js        Shared hospital and program details (same file in every isaymotion app)
 data/ch01/ … data/ch09/ Chapter content
   guide.js              Study guide
   highyield.js          High-yield topics
@@ -150,20 +160,20 @@ js/qr.js                QR code encoder for shareable quizzes (loaded on demand)
 icons/                  App icons (PNG sizes, maskable versions, favicon) and the home page image
 manifest.webmanifest    Install metadata
 tools/validate-learning.js  Checks every chapter's learning layer and reports coverage (Node)
-sw.js                   Offline cache
+sw.js                   Offline cache (cache names start with kaplan-study-)
 ```
 
 ## Adding a chapter
 
 1. Create `data/chNN/` with the same seven files as `data/ch19/`, following the same data shapes. Every new chapter ships with a complete `learning.js`: a reason for every wrong choice of every clinical case, two or three checks for every guide section, a chosen pre-test and any visual summaries; add look-alike pages for the chapter's commonly confused conditions to `data/lookalikes.js`.
 2. Add an entry to `KS.manifest` in `data/chapters.js` (id, number, title, short title, one-sentence summary, file list).
-3. Change `VERSION` in `sw.js` so returning users get the new content.
+3. Add the new files to `CORE` in `sw.js` and bump its `VERSION` so returning users get the new content.
 
 Run `node tools/validate-learning.js --strict chNN` before publishing: it checks every explanation lines up with its choices, every section has checks and every look-alike link exists.
 
 Search, the home page, daily review, exam mode and the chapter navigation pick up the new chapter automatically.
 
-Add an entry to the top of `data/changelog.js` for every release, with the next `id` number. Give items a `ch` field to tag the chapter as updated, and an `href` to link to what changed. Use `type: "correction"` for corrections so residents can go straight to the corrected content.
+Add an entry to the top of `data/changelog.js` for every release with the next version (`{ version, date, title, items }`), then set the same version in `data/app-meta.js` and `VERSION` in `sw.js`, and the month in *Latest version* (footer in `index.html`, `data/app-meta.js`, this README). Give items a `ch` field to tag the chapter as updated, and an `href` to link to what changed. Use `type: "correction"` for corrections so residents can go straight to the corrected content.
 
 To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to `data/glossary/g5-chapter-terms.js`. To add a diagnostic helper, append a decision tree to `KS.helpers` in `data/helpers.js` (nodes with options that point to another node or to `r:<result>`); the helpers page lists it automatically.
 
@@ -177,7 +187,7 @@ To add glossary terms a chapter defines, append `[term, definition, "Ch NN"]` to
 
 ## Attribution
 
-App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com
+App created by Isabella Navarro, MD. Latest version November 2026. isaymotion@gmail.com
 
 An independent study aid built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition. Not affiliated with or endorsed by the publisher. The underlying textbook is copyrighted, so consider who has access to the published site. Always confirm doses and prescribing details against current product labeling.
 

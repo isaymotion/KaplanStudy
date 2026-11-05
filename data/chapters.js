@@ -195,6 +195,5 @@ KS.extraFiles = [
   'data/drugs/sideeffect.js',
   'data/drugs/supplement.js',
   'data/tools/scales.js',
-  'data/tools/calcs.js',
-  'data/changelog.js'
+  'data/tools/calcs.js'
 ];

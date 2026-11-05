@@ -1,4 +1,6 @@
-/* Kaplan & Sadock Study Companion — app logic (no build step, no dependencies). */
+/* Kaplan Study (Kaplan & Sadock Study Companion) — app logic (no build step, no dependencies).
+   The shell (theme, text size, back/forward with Alt+arrows and scroll restoration, docked menu / drawer,
+   tab bar, backup panel, language hook) follows the isaymotion starter; everything else is Kaplan's own. */
 (function () {
   'use strict';
 
@@ -18,6 +20,26 @@
     },
     del: function (k) { try { localStorage.removeItem(PREFIX + k); } catch (e) {} }
   };
+
+  /* ---------- app identity (data/app-meta.js) ---------- */
+  var META = window.APP_META || {};
+  var CHANGELOG = window.APP_CHANGELOG || [];
+  var APP_NAME = META.name || 'Kaplan Study';
+  var APP_LINKS = window.APP_LINKS || [];
+
+  /* ---------- language: 'en' (default) or 'tl'. Shell UI strings live in data/strings.js ---------- */
+  var STRINGS = window.STRINGS || {};
+  var lang = store.get('lang', 'en') === 'tl' ? 'tl' : 'en';
+  function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function t(key) {
+    var s = STRINGS[lang] && has(STRINGS[lang], key) ? STRINGS[lang][key] : null;
+    if (typeof s !== 'string' || !s) s = STRINGS.en && has(STRINGS.en, key) ? STRINGS.en[key] : null;
+    return typeof s === 'string' && s ? s : key;
+  }
+  function tf(key, vars) { return t(key).replace(/\{(\w+)\}/g, function (m, k) { return vars && has(vars, k) ? String(vars[k]) : m; }); }
+  function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\[\[(.+?)\]\]/g, '<kbd>$1</kbd>'); }   // **bold** and [[key]] in strings
+  function locale() { return lang === 'tl' ? 'fil' : undefined; }
+  function pad2(n) { return String(n).padStart(2, '0'); }
 
   /* ---------- modes ---------- */
   var MODES = [
@@ -393,6 +415,7 @@
 
   /* ---------- router ---------- */
   var view = { key: null, focus: null, cleanup: null };
+  var scrollMemo = {}, scrollKey = location.hash || '#/', fromHistory = false, scrollPending = false, pendingRestore = null;
 
   function parts() {
     var h = location.hash.replace(/^#\/?/, '');
@@ -406,14 +429,22 @@
     view.key = key;
     view.focus = focusFn || null;
     main.innerHTML = html;
-    if (!(opts && opts.keepScroll)) window.scrollTo(0, 0);
+    if (!(opts && opts.keepScroll)) {
+      // Back/forward: put the page back where it was (once, for the first view this navigation renders).
+      if (pendingRestore !== null) { var y = pendingRestore; pendingRestore = null; window.scrollTo(0, y); requestAnimationFrame(function () { window.scrollTo(0, y); }); }
+      else window.scrollTo(0, 0);
+    }
     var modes = main.querySelector('.modes'), act = modes && modes.querySelector('.is-active');
     if (act && modes.scrollWidth > modes.clientWidth) modes.scrollLeft = act.offsetLeft - (modes.clientWidth - act.offsetWidth) / 2;
     markNav();
   }
 
   function route() {
-    closeSuggest();
+    closeSuggest(); closeDrawer();
+    scrollMemo[scrollKey] = window.scrollY;                 // the page we are leaving
+    scrollKey = location.hash || '#/';
+    pendingRestore = fromHistory && has(scrollMemo, scrollKey) ? scrollMemo[scrollKey] : null;
+    fromHistory = false;
     var p = parts();
     if (!p.length) return renderHome();
     switch (p[0]) {
@@ -440,6 +471,7 @@
         return renderTeachSetup();
       case 'progress': return renderProgress();
       case 'whats-new': return renderNews();
+      case 'about': return renderAbout();
       case 'all-highyield': return renderAllHighYield();
       case 'quiz': return renderQuiz(p);
       case 'compare': return p[1] === 'ch' ? renderCompareList(p[2]) : p[1] ? renderCompare(p[1]) : renderCompareList();
@@ -458,24 +490,17 @@
 
   function renderMissing() {
     setView('missing', '<div class="wrap empty" style="margin-top:48px"><h2>That page is not in the app</h2><p>The link may point to a chapter that has not been added yet.</p><a class="btn btn--solid" href="#/">Go to all chapters</a></div>');
-    document.title = 'Not found — Kaplan & Sadock Study Companion';
+    document.title = 'Not found — ' + APP_NAME;
   }
 
-  /* ---------- site navigation ---------- */
-  function markNav() {
-    var p = parts()[0] || '';
-    document.querySelectorAll('.sitenav a').forEach(function (a) {
-      var on = a.getAttribute('data-nav') === p;
-      a.classList.toggle('is-active', on);
-      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
-    });
-  }
+  /* ---------- site navigation: the menu (docked sidebar / drawer) and the tab bar ---------- */
+  function markNav() { buildNav(); }
   function updateNavBadges() {
     if (CARD_LIST.length) { var s = dueSummary('all'); var n = s.due + s.newToday; document.querySelectorAll('[data-badge="review"]').forEach(function (b) { b.textContent = n; b.hidden = !n; }); }
-    var nw = document.querySelector('[data-badge="news"]');
-    if (nw && KS.changelog) { var u = unseenNews().length; nw.textContent = u; nw.hidden = !u; }
-    var m = document.querySelector('[data-badge="mistakes"]');
-    if (m) { var k = mistakeKeys().length; m.textContent = k; m.hidden = !k; }
+    var u = unseenNews().length;
+    document.querySelectorAll('[data-badge="news"]').forEach(function (b) { b.textContent = u; b.hidden = !u; });
+    var k = mistakeKeys().length;
+    document.querySelectorAll('[data-badge="mistakes"]').forEach(function (b) { b.textContent = k; b.hidden = !k; });
   }
 
   /* ---------- home ---------- */
@@ -582,7 +607,7 @@
         '<div><h3>Review a little every day</h3><p>Do the day’s due cards, sit a timed exam each week, and clear your mistakes pile. Progress stays on this device.</p></div>' +
       '</div></section>';
     setView('home', html);
-    document.title = 'Kaplan & Sadock Study Companion';
+    document.title = APP_NAME;
     var bl = main.querySelector('#backup-later');
     if (bl) bl.addEventListener('click', function () { store.set('backupNudge', Date.now()); var n = main.querySelector('#backup-nudge'); if (n) n.remove(); });
   }
@@ -744,7 +769,7 @@
         '</div>' +
       '</div>';
     setView(key, html, focusTarget);
-    document.title = 'Ch ' + ch.number + ' study guide — K&S Study Companion';
+    document.title = 'Ch ' + ch.number + ' study guide — Kaplan Study';
     main.querySelectorAll('.reading__intro, .objectives, .g-sec').forEach(function (s) { if (DRUG) DRUG.link(s); linkTerms(s); });
 
     // bookmark ribbons, read aloud, pre/post-test
@@ -793,7 +818,7 @@
   }
   /* "Report an error": opens the reader's mail app with the section, its link and the app release filled in. */
   var REPORT_TO = 'isaymotion@gmail.com';
-  function appRelease() { var c = (KS.changelog || [])[0]; return c ? 'release ' + c.id + ' (' + c.date + ')' : 'unknown release'; }
+  function appRelease() { var c = CHANGELOG[0]; return c ? 'version ' + c.version + ' (' + c.date + ')' : 'unknown release'; }
   function reportLink(ch, s, n) {
     var where = 'Chapter ' + ch.number + '.' + n + ', ' + plain(s.title);
     var link = location.origin + location.pathname + '#/c/' + ch.id + '/guide/' + s.id;
@@ -944,7 +969,7 @@
       : '<p class="muted">Comparisons are being added chapter by chapter.</p>') +
       '</div>';
     setView('compare', html);
-    document.title = 'Look-alikes — K&S Study Companion';
+    document.title = 'Look-alikes — Kaplan Study';
     if (!all.length) return;
     var sel = main.querySelector('#cmp-ch'), q = main.querySelector('#cmp-q'), status = main.querySelector('#la-status'), go = main.querySelector('#la-all');
     function shown() {
@@ -1000,7 +1025,7 @@
       b.addEventListener('click', function () { laPdf([c], b.getAttribute('data-la-one') === '1', laPrefs().paper, c.id, main.querySelector('#la-status'), c.title); });
     });
     main.querySelectorAll('.compare').forEach(function (s) { if (DRUG) DRUG.link(s); linkTerms(s); });
-    document.title = c.title + ' — K&S Study Companion';
+    document.title = c.title + ' — Kaplan Study';
   }
 
   /* ---------- high yield ---------- */
@@ -1020,7 +1045,7 @@
         '<div class="hy-grid">' + topics + '</div>' +
       '</div>';
     setView(key, html, focusTarget);
-    document.title = 'Ch ' + ch.number + ' high yield — K&S Study Companion';
+    document.title = 'Ch ' + ch.number + ' high yield — Kaplan Study';
     main.querySelectorAll('.hy-topic').forEach(function (t) { if (DRUG) DRUG.link(t); linkTerms(t, { skip: 'strong' }); });
     var page = main.querySelector('.hy-page');
     var toggle = main.querySelector('#hy-quiz');
@@ -1268,7 +1293,7 @@
         '<div id="card-area" aria-live="polite"></div>' + kbdHelp(deck.key === 'cases') +
       '</div>';
     setView(key, html, null, { keepScroll: view.key === key });
-    document.title = 'Ch ' + ch.number + ' ' + deck.label.toLowerCase() + ' — K&S Study Companion';
+    document.title = 'Ch ' + ch.number + ' ' + deck.label.toLowerCase() + ' — Kaplan Study';
     var tally = main.querySelector('#tally');
     var player;
     function start() {
@@ -1339,7 +1364,7 @@
       '</div><span class="deck-bar__count">' + plural(due.length, 'due card') + ', ' + plural(fresh.length, 'new card') + '</span></div>' +
       '<div id="card-area" aria-live="polite"></div>' + kbdHelp(true) + '</div>';
     setView('review:' + scope, html);
-    document.title = 'Daily review — K&S Study Companion';
+    document.title = 'Daily review — Kaplan Study';
     var player = Player(main.querySelector('#card-area'), {
       queue: queue, consume: true, mode: 'srs', source: true,
       done: function (stats) {
@@ -1402,7 +1427,7 @@
         : '<div class="empty"><span class="empty__ribbon">' + RIBBON + '</span><h2>No bookmarks yet</h2><p>Tap the ribbon beside any section title in a study guide to save it here.</p><div class="empty__actions"><a class="btn btn--solid" href="' + (last && last.ch ? '#/c/' + last.ch + '/guide' : '#/c/' + KS.manifest[0].id + '/guide') + '">Open a study guide</a></div></div>') +
       '</div>';
     setView('bookmarks', html, null, { keepScroll: view.key === 'bookmarks' });
-    document.title = 'Bookmarks — K&S Study Companion';
+    document.title = 'Bookmarks — Kaplan Study';
     main.querySelectorAll('[data-unbm]').forEach(function (b) {
       b.addEventListener('click', function () {
         delete BOOKMARKS[b.getAttribute('data-unbm')]; saveBookmarks();
@@ -1431,7 +1456,7 @@
         : '<div class="empty"><h2>No mistakes yet</h2><p>Cases you get wrong will collect here so you can come back to them.</p><div class="empty__actions"><a class="btn btn--solid" href="#/exam">Take a practice exam</a><a class="btn" href="#/review">Daily review</a></div></div>') +
       '</div>';
     setView('mistakes', html);
-    document.title = 'Mistakes — K&S Study Companion';
+    document.title = 'Mistakes — Kaplan Study';
     if (!keys.length) return;
     var queue = shuffle(keys.slice());
     var player = Player(main.querySelector('#card-area'), {
@@ -1555,7 +1580,7 @@
         '</div>';
     }
     setView('weak', html);
-    document.title = 'Weak topics — K&S Study Companion';
+    document.title = 'Weak topics — Kaplan Study';
     var more = main.querySelector('#wk-more');
     if (more) more.addEventListener('click', function () { renderWeak(!showAll); });
     main.querySelectorAll('[data-drill]').forEach(function (b) {
@@ -1638,7 +1663,7 @@
       '<div class="empty__actions"><button class="btn btn--solid" type="button" id="qz-start">Start quiz</button><button class="btn" type="button" id="qz-share">Share link or QR code</button></div>' +
       '<div id="qz-panel"></div></div>';
     setView('quiz:' + p.join('/'), html);
-    document.title = qz.title + ' — K&S Study Companion';
+    document.title = qz.title + ' — Kaplan Study';
     main.querySelector('#qz-start').addEventListener('click', function () {
       startExam({ keys: qz.keys, timed: qz.timed, kind: 'quiz', chapters: chaptersOf(qz.keys), seed: qz.seed + 1, quiz: { t: qz.title, link: location.href } });
     });
@@ -1715,7 +1740,7 @@
         }).join('') + '</tbody></table></div></section>' : '') +
       '</div>';
     setView('exam', html);
-    document.title = 'Exam — K&S Study Companion';
+    document.title = 'Exam — Kaplan Study';
     var form = main.querySelector('#ex-form');
     function read() {
       var sel = Array.prototype.map.call(form.querySelectorAll('input[name=ch]:checked'), function (i) { return i.value; });
@@ -1767,7 +1792,7 @@
       '<div class="exam-grid"><div class="exam-q" id="ex-q" aria-live="polite"></div><nav class="exam-nav" aria-label="Questions"><p class="exam-nav__title">Questions</p><div id="ex-nav" class="exam-nav__grid"></div>' +
         '<p class="exam-nav__key"><span class="dot dot--answered"></span>Answered <span class="dot dot--flag"></span>Flagged</p></nav></div></div>';
     setView('exam-run', html);
-    document.title = 'Exam in progress — K&S Study Companion';
+    document.title = 'Exam in progress — Kaplan Study';
     function save() { store.set('exam', ex); }
     function confRow(it) {
       if (!ex.conf || it.a == null) return '';
@@ -1894,7 +1919,7 @@
       '<section class="results-sec"><h2>Score by chapter</h2><div class="table-wrap"><table class="score-table"><thead><tr><th scope="col">Chapter</th><th scope="col">Correct</th><th scope="col">Score</th></tr></thead><tbody>' + rows(byCh, false) + '</tbody></table></div></section>' +
       '</div>';
     setView('exam-results:' + id, html);
-    document.title = 'Exam results — K&S Study Companion';
+    document.title = 'Exam results — Kaplan Study';
     main.querySelector('#ex-reshare').addEventListener('click', function () {
       sharePanel(main.querySelector('#ex-reshare-box'), ex.quiz && ex.quiz.link ? { keys: items.map(function (x) { return x.k; }), timed: ex.timed, title: ex.quiz.t, fixed: ex.quiz.link } :
         { keys: items.map(function (x) { return x.k; }), timed: ex.timed, title: ex.kind === 'pre' || ex.kind === 'post' ? 'Chapter quiz' : 'Exam questions' });
@@ -1959,7 +1984,7 @@
       '</div>';
     setView('exam-review:' + id + which + n, html);
     linkTerms(main.querySelector('.review-q'), { skip: '.choice, .verdict, .exam-q__meta' });
-    document.title = 'Exam review — K&S Study Companion';
+    document.title = 'Exam review — Kaplan Study';
   }
 
   /* ---------- glossary engine ----------
@@ -2110,7 +2135,7 @@
     var vkey = 'glossary';
     if (view.key !== vkey) {
       setView(vkey, html);
-      document.title = 'Glossary — K&S Study Companion';
+      document.title = 'Glossary — Kaplan Study';
       var q = main.querySelector('#gl-q'), count = main.querySelector('#gl-count');
       function filter() {
         var v = q.value.trim().toLowerCase(), shown = 0;
@@ -2152,7 +2177,7 @@
         return '<li><a class="tool" href="#/helpers/' + h.id + '"><span class="tool__name">' + esc(h.title) + '</span><span class="tool__meta">' + esc(h.summary) + '</span>' + (ch ? '<span class="tool__ch">Chapter ' + ch.number + '</span>' : '') + '</a></li>';
       }).join('') + '</ul></div>';
     setView('helpers', html);
-    document.title = 'Diagnostic helpers — K&S Study Companion';
+    document.title = 'Diagnostic helpers — Kaplan Study';
   }
   function renderHelper(id) {
     var h = helperBy(id);
@@ -2162,7 +2187,7 @@
       '<div class="helper__grid"><div id="hp-main" aria-live="polite"></div><aside class="trail" aria-label="Your reasoning"><h2>Reasoning so far</h2><ol id="hp-trail"></ol><p class="trail__empty" id="hp-empty">Your answers and what they rule in or out will appear here.</p></aside></div>' +
       '<p class="helper__caution">' + esc(h.caution) + '</p></div>';
     setView('helper:' + id, html);
-    document.title = h.title + ' — K&S Study Companion';
+    document.title = h.title + ' — Kaplan Study';
     var area = main.querySelector('#hp-main'), trail = main.querySelector('#hp-trail'), empty = main.querySelector('#hp-empty');
     function current() { if (!path.length) return h.start; return path[path.length - 1].to; }
     function drawTrail() {
@@ -2215,7 +2240,7 @@
     a4: { label: 'A4', w: '186mm', h: '262mm', page: 'A4', margin: '12mm' },
     letter: { label: 'Letter', w: '7.5in', h: '9.55in', page: 'letter', margin: '0.5in' }
   };
-  var ATTRIBUTION = 'App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com';
+  var ATTRIBUTION = META.attribution || 'App created by Isabella Navarro, MD. Latest version November 2026. isaymotion@gmail.com';
 
   function renderHandout(ch) {
     if (!(ch.highYield || []).length) return renderMissing();
@@ -2249,7 +2274,7 @@
       '<div class="sheet-frame" id="ho-frame"><div class="sheets" id="ho-sheets"></div></div>' +
       '</div>';
     setView('handout:' + ch.id, html);
-    document.title = 'Ch ' + ch.number + ' handout — K&S Study Companion';
+    document.title = 'Ch ' + ch.number + ' handout — Kaplan Study';
     document.body.classList.add('print-handout');
     var pageStyle = document.createElement('style');
     pageStyle.id = 'page-size';
@@ -2462,7 +2487,7 @@
       : '') +
     '</div>';
     setView('all-highyield', html);
-    document.title = 'All high-yield summaries — K&S Study Companion';
+    document.title = 'All high-yield summaries — Kaplan Study';
     var status = main.querySelector('#ahy-status');
     var clsStatus = main.querySelector('#ahy-cls-status');
     main.querySelectorAll('input[name=paper]').forEach(function (i) {
@@ -2759,7 +2784,7 @@
       '</div>' + pastHtml +
       '<section class="teach-list"><h2 id="t-count"></h2><ol id="t-list"></ol></section></div>';
     setView('teach', html);
-    document.title = 'Teaching mode — K&S Study Companion';
+    document.title = 'Teaching mode — Kaplan Study';
     function read() {
       prefs.scope = main.querySelector('#t-scope').value;
       prefs.kind = main.querySelector('#t-kind').value;
@@ -2821,7 +2846,7 @@
     /* Questions are voted on before the reveal; recall items are rated after it. */
     function votable() { return voting && (mcq ? !st.revealed : st.revealed); }
     setView('teach-run', '<div class="teach" id="teach" role="region" aria-label="Teaching mode"></div>');
-    document.title = 'Teaching mode — K&S Study Companion';
+    document.title = 'Teaching mode — Kaplan Study';
     document.body.classList.add('is-teaching');
     var box = main.querySelector('#teach');
 
@@ -2989,7 +3014,7 @@
 
   /* ---------- presenter window: live counts, vote entry and private notes ---------- */
   function renderTeachPresenter() {
-    document.title = 'Presenter view — K&S Study Companion';
+    document.title = 'Presenter view — Kaplan Study';
     document.body.classList.add('is-presenter');
     setView('teach-presenter', '<div class="wrap page presenter" id="presenter"></div>');
     var box = main.querySelector('#presenter');
@@ -3097,7 +3122,7 @@
         '<button class="btn btn--solid" type="button" id="ho-print">Print or save as PDF</button></div>' +
       body + '<footer class="ho-foot">' + esc(ATTRIBUTION) + '</footer></div>';
     setView('teach-handout:' + rec.id + (all ? ':all' : ''), html);
-    document.title = 'Session takeaways — K&S Study Companion';
+    document.title = 'Session takeaways — Kaplan Study';
     main.querySelector('#ho-print').addEventListener('click', function () { try { window.print(); } catch (x) {} });
   }
 
@@ -3106,7 +3131,7 @@
     list.forEach(function (r) { if (String(r.id) === String(id) || (!id && !rec)) rec = r; });
     if (!rec) {
       setView('teach-summary', '<div class="wrap empty" style="margin-top:48px"><h2>No session to summarize</h2><p>Finish a teaching session and its summary appears here.</p><a class="btn btn--solid" href="#/teach">Teaching mode</a></div>');
-      document.title = 'Session summary — K&S Study Companion';
+      document.title = 'Session summary — Kaplan Study';
       return;
     }
     var kind = rec.kind, sm = summarize(rec), voting = isVoting(kind), mcq = kind === 'mcq', noun = KIND_NOUN[kind] || 'item', okWord = mcq ? 'on the correct answer' : 'knew it';
@@ -3164,7 +3189,7 @@
     }
     html += '</div>';
     setView('teach-summary:' + rec.id, html);
-    document.title = 'Session summary — K&S Study Companion';
+    document.title = 'Session summary — Kaplan Study';
     linkTerms(main, {});
     var again = main.querySelector('#ts-again');
     if (again) again.addEventListener('click', function () {
@@ -3194,13 +3219,14 @@
      this device (keeping the more advanced record of each card) or replaces everything, and a snapshot taken
      just before makes the last import undoable. */
   var BACKUP_FORMAT = 'ks-study-companion-progress';
-  var BACKUP_TYPES = { srs: 'o', mistakes: 'o', bookmarks: 'o', examHistory: 'a', teachSessions: 'a', newToday: 'o', seenNews: 'n', hyQuiz: 'b', reviewPrefs: 'o', examPrefs: 'o', deckPrefs: 'o', teachPrefs: 'o', handoutPrefs: 'o', glLinks: 'b', theme: 's', prepost: 'o', textSize: 's', ttsRate: 's', laPrefs: 'o' };
+  var BACKUP_TYPES = { srs: 'o', mistakes: 'o', bookmarks: 'o', examHistory: 'a', teachSessions: 'a', newToday: 'o', seenNews: 'v', hyQuiz: 'b', reviewPrefs: 'o', examPrefs: 'o', deckPrefs: 'o', teachPrefs: 'o', handoutPrefs: 'o', glLinks: 'b', theme: 's', prepost: 'o', textSize: 's', ttsRate: 's', laPrefs: 'o' };
   var BACKUP_KEYS = Object.keys(BACKUP_TYPES);
   function typeOk(v, t) {
     if (t === 'o') return v && typeof v === 'object' && !Array.isArray(v);
     if (t === 'a') return Array.isArray(v);
     if (t === 'n') return typeof v === 'number' && isFinite(v);
     if (t === 'b') return typeof v === 'boolean';
+    if (t === 'v') return (typeof v === 'number' && isFinite(v)) || (typeof v === 'string' && /^\d+\.\d+\.\d+$/.test(v));
     return typeof v === 'string';
   }
   function makeBackup() {
@@ -3253,7 +3279,7 @@
       if (all.length) out[key] = all.slice(0, cap);
     }
     union('examHistory', 'id', 20); union('teachSessions', 'id', 10);
-    if (cur.seenNews !== undefined || inc.seenNews !== undefined) out.seenNews = Math.max(cur.seenNews || 0, inc.seenNews || 0);
+    var sv = newerVersion(cur.seenNews, inc.seenNews); if (sv !== undefined) out.seenNews = sv;
     var nt = cur.newToday || inc.newToday; if (nt) out.newToday = nt;
     ['hyQuiz', 'reviewPrefs', 'examPrefs', 'deckPrefs', 'teachPrefs', 'handoutPrefs', 'glLinks', 'theme'].forEach(function (k) { if (out[k] === undefined && inc[k] !== undefined) out[k] = inc[k]; });
     return out;
@@ -3263,94 +3289,239 @@
     ['teach', 'teachLive', 'teachCmd', 'exam'].forEach(function (k) { store.del(k); });
   }
 
+  /* Companion footer panel (starter): Export writes every ks:v1: key as raw strings
+     ({app:'kaplan-study', format:1, exported, data:{key: rawString}}); Import accepts that file AND the progress file
+     made by earlier versions ({format:'ks-study-companion-progress', version:1, data:{key: value}}), always with a
+     confirm and a one-step undo. The Progress page keeps its counts and the Merge option for old and new files. */
+  var BK_APP = 'kaplan-study', BK_UNDO = BK_APP + ':undo-import';
+  var BK_SKIP = { hist: 1 };                                   // session-only, never backed up
+  function bkCollect() {
+    var data = {};
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(PREFIX) === 0 && !BK_SKIP[k.slice(PREFIX.length)]) data[k.slice(PREFIX.length)] = localStorage.getItem(k);
+      }
+    } catch (e) {}
+    return data;
+  }
+  function bkReplace(data) {
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k && k.indexOf(PREFIX) === 0 && !BK_SKIP[k.slice(PREFIX.length)]) keys.push(k); }
+    keys.forEach(function (k) { localStorage.removeItem(k); });
+    Object.keys(data).forEach(function (k) { localStorage.setItem(PREFIX + k, data[k]); });
+  }
+  function bkParsed(data) {   // raw-string map -> values, for counting
+    var o = {};
+    Object.keys(data || {}).forEach(function (k) { try { o[k] = JSON.parse(data[k]); } catch (e) {} });
+    return o;
+  }
+  function bkSummary(data) {
+    var c = backupCounts(bkParsed(data));
+    if (c.cards || c.mistakes || c.bookmarks || c.exams) return tf('backup.progress', { cards: c.cards, mistakes: c.mistakes, bookmarks: c.bookmarks, exams: c.exams });
+    var n = Object.keys(data || {}).filter(function (k) { return k !== 'lastBackup' && k !== 'lastExport' && k !== 'seenNews' && k !== 'navCollapsed'; }).length;
+    return n ? tf(n === 1 ? 'backup.item1' : 'backup.itemN', { n: n }) : t('backup.nothing');
+  }
+  /* An old-format progress file -> the current raw-string map. Keys the old file does not carry keep this device's values. */
+  function bkFromOld(text) {
+    var res = readBackup(text);
+    if (!res || !Object.keys(res.data).length) return null;
+    var data = bkCollect();
+    BACKUP_KEYS.forEach(function (k) { delete data[k]; });
+    Object.keys(res.data).forEach(function (k) { data[k] = JSON.stringify(res.data[k]); });
+    ['lang', 'navCollapsed', 'lastBackup', 'lastExport'].forEach(function (k) { if (data[k] === undefined) delete data[k]; });
+    return { exported: res.exported, data: data };
+  }
+  function bkDate(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    return d.toLocaleDateString(locale(), { year: 'numeric', month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString(locale(), { hour: 'numeric', minute: '2-digit' });
+  }
+  function bkStatus(msg, isErr) {
+    var el = document.getElementById('bk-status');
+    if (el) { el.textContent = msg || ''; el.classList.toggle('is-error', !!isErr); }
+    var mirror = document.getElementById('pg-msg');      // the Progress page shows the same message
+    if (mirror) { mirror.textContent = msg || ''; mirror.classList.toggle('pg-bad', !!isErr); }
+  }
+  function bkPaint() {
+    var meta = document.getElementById('bk-meta'), un = document.getElementById('bk-undo');
+    var last = store.get('lastBackup', null) || (store.get('lastExport', null) ? new Date(store.get('lastExport', 0)).toISOString() : null);
+    if (meta) meta.textContent = tf('backup.onDevice', { summary: bkSummary(bkCollect()) }) + ' ' + (last && bkDate(last) ? tf('backup.lastExported', { date: bkDate(last) }) : t('backup.notExported'));
+    var hasUndo = false;
+    try { hasUndo = !!localStorage.getItem(BK_UNDO); } catch (e) {}
+    if (un) un.hidden = !hasUndo;
+    var pu = document.getElementById('pg-undo-wrap');
+    if (pu) pu.hidden = !hasUndo;
+  }
+  function bkExport() {
+    var now = new Date();
+    store.set('lastBackup', now.toISOString());
+    store.set('lastExport', now.getTime());                  // the home-page backup reminder reads this
+    var data = bkCollect();
+    var payload = { app: BK_APP, format: 1, exported: now.toISOString(), attribution: ATTRIBUTION, summary: bkSummary(data), data: data };
+    var name = BK_APP + '-backup-' + now.getFullYear() + '-' + pad2(now.getMonth() + 1) + '-' + pad2(now.getDate()) + '.json';
+    var json = JSON.stringify(payload, null, 1);
+    var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+    var file = null;
+    try { file = new File([json], name, { type: 'application/json' }); } catch (e) {}
+    if (standalone && file && navigator.canShare && navigator.canShare({ files: [file] })) {
+      // Installed apps on phones cannot always download files; the share sheet can save to Files or send it on.
+      navigator.share({ files: [file], title: tf('backup.shareTitle', { app: APP_NAME }) }).then(function () {
+        bkStatus(t('backup.shared')); bkPaint();
+      }).catch(function () { bkStatus(t('backup.exportCancelled')); });
+      return;
+    }
+    var url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    var a = document.createElement('a');
+    a.href = url; a.download = name; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+    bkStatus(tf('backup.saved', { name: name }));
+    bkPaint();
+  }
+  /* Reads a file and returns { exported, data } (raw-string map, new or converted old format) or null. */
+  function bkRead(text) {
+    var p;
+    try { p = JSON.parse(text); } catch (e) { return null; }
+    if (p && p.format === BACKUP_FORMAT) return bkFromOld(text);
+    var ok = p && p.app === BK_APP && p.data && typeof p.data === 'object' && !Array.isArray(p.data) &&
+      Object.keys(p.data).every(function (k) { return typeof p.data[k] === 'string' && k.length < 80; });
+    if (ok) Object.keys(p.data).forEach(function (k) { try { JSON.parse(p.data[k]); } catch (e) { ok = false; } });
+    return ok ? { exported: p.exported, data: p.data } : null;
+  }
+  function bkSnapshot() { localStorage.setItem(BK_UNDO, JSON.stringify({ saved: new Date().toISOString(), data: bkCollect() })); }
+  function bkReload(msg) { bkStatus(msg); setTimeout(function () { location.reload(); }, 700); }
+  function bkImport(file) {
+    if (!file) return;
+    if (file.size > 8 * 1024 * 1024) { bkStatus(tf('backup.notBackup', { app: APP_NAME }), true); return; }
+    var reader = new FileReader();
+    reader.onerror = function () { bkStatus(t('backup.unreadable'), true); };
+    reader.onload = function () {
+      var p = bkRead(String(reader.result || ''));
+      if (!p) { bkStatus(tf('backup.notBackup', { app: APP_NAME }), true); return; }
+      var msg = tf('backup.confirmImport', { date: bkDate(p.exported) || t('backup.unknownDate'), backup: bkSummary(p.data), device: bkSummary(bkCollect()) });
+      if (!window.confirm(msg)) { bkStatus(t('backup.importCancelled')); return; }
+      try { bkSnapshot(); bkReplace(p.data); } catch (e) { bkStatus(t('backup.importFailed'), true); return; }
+      bkReload(t('backup.imported'));
+    };
+    reader.readAsText(file);
+  }
+  /* Progress page: Merge keeps the more advanced record of each card (Kaplan's merge), with the same undo. */
+  function bkMerge(p) {
+    var inc = bkParsed(p.data), safe = {};
+    BACKUP_KEYS.forEach(function (k) { if (inc[k] !== undefined && typeOk(inc[k], BACKUP_TYPES[k])) safe[k] = inc[k]; });
+    if (typeof inc.seenNews === 'string') safe.seenNews = inc.seenNews;
+    var cur = makeBackup().data;
+    var merged = mergeInto(cur, safe);
+    var sv = newerVersion(cur.seenNews, safe.seenNews);
+    if (sv !== undefined) merged.seenNews = sv;
+    try { bkSnapshot(); applyData(merged); } catch (e) { bkStatus(t('backup.importFailed'), true); return; }
+    bkReload('Merged. Reloading…');
+  }
+  function bkUndo() {
+    var snap; try { snap = JSON.parse(localStorage.getItem(BK_UNDO)); } catch (e) {}
+    if (!snap || !snap.data) { bkPaint(); return; }
+    if (!window.confirm(tf('backup.confirmUndo', { summary: bkSummary(snap.data) }))) return;
+    try { bkReplace(snap.data); localStorage.removeItem(BK_UNDO); } catch (e) { bkStatus(t('backup.undoFailed'), true); return; }
+    bkReload(t('backup.restored'));
+  }
+  (function initBackup() {
+    var ex = document.getElementById('bk-export'), fi = document.getElementById('bk-file'), un = document.getElementById('bk-undo');
+    if (!ex || !fi) return;
+    ex.addEventListener('click', bkExport);
+    fi.addEventListener('change', function () { bkImport(fi.files && fi.files[0]); fi.value = ''; });
+    if (un) un.addEventListener('click', bkUndo);
+    bkPaint();
+  })();
+
   function renderProgress() {
     var cur = makeBackup().data, c = backupCounts(cur);
-    var lastExp = store.get('lastExport', null), pre = store.get('preImport', null);
+    var last = store.get('lastBackup', null) || (store.get('lastExport', null) ? new Date(store.get('lastExport', 0)).toISOString() : null);
     var html = '<div class="wrap page progress-page">' +
-      '<header class="page__head"><h1>Back up your progress</h1><p>Your review schedule, mistakes, bookmarks, exam results, teaching sessions and settings are saved in this browser only. Export them to a file to keep a copy or to move to a new phone or computer, then import the file there.</p></header>' +
+      '<header class="page__head"><h1>Back up your progress</h1><p>Your review schedule, mistakes, bookmarks, exam results, teaching sessions and settings are saved in this browser only. Export them to a file to keep a copy or to move to a new phone or computer, then import the file there. The same buttons are in the footer of every page.</p></header>' +
       '<section class="results-sec"><h2>On this device</h2><div class="table-wrap"><table class="score-table"><tbody>' +
         '<tr><th scope="row">Flashcards reviewed</th><td>' + c.cards + '</td></tr><tr><th scope="row">Mistakes to revisit</th><td>' + c.mistakes + '</td></tr>' +
         '<tr><th scope="row">Bookmarked sections</th><td>' + c.bookmarks + '</td></tr><tr><th scope="row">Exams kept</th><td>' + c.exams + '</td></tr>' +
         '<tr><th scope="row">Teaching sessions kept</th><td>' + c.sessions + '</td></tr></tbody></table></div></section>' +
-      '<section class="results-sec"><h2>Export</h2><p class="muted">' + (lastExp ? 'Last backup: ' + fmtDate(lastExp) + '.' : 'You have not backed up on this device yet.') + '</p>' +
-        '<div class="empty__actions"><button class="btn btn--solid" type="button" id="pg-export">Download backup file</button></div></section>' +
-      '<section class="results-sec"><h2>Import</h2><p class="muted">Choose a backup file made by this app. Nothing changes until you pick Merge or Replace.</p>' +
-        '<input type="file" id="pg-file" accept=".json,application/json" class="pg-file"><div id="pg-preview" role="status" aria-live="polite"></div></section>' +
-      (pre ? '<section class="results-sec"><h2>Undo</h2><p class="muted">The last import was on ' + fmtDate(pre.at) + '. This puts this device back the way it was just before.</p><div class="empty__actions"><button class="btn" type="button" id="pg-undo">Undo last import</button></div></section>' : '') +
+      '<section class="results-sec"><h2>Export</h2><p class="muted">' + (last && bkDate(last) ? 'Last backup: ' + esc(bkDate(last)) + '.' : 'You have not backed up on this device yet.') + '</p>' +
+        '<div class="empty__actions" style="justify-content:flex-start"><button class="btn btn--solid" type="button" id="pg-export">Export backup</button></div></section>' +
+      '<section class="results-sec"><h2>Import</h2><p class="muted">Choose a backup file made by this app (new or older versions). <b>Replace</b> swaps this device’s progress for the file’s; <b>Merge</b> keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions. Nothing changes until you confirm, and you can undo it.</p>' +
+        '<input type="file" id="pg-file" accept=".json,application/json" class="sr-only"><div class="empty__actions" style="justify-content:flex-start"><button class="btn" type="button" id="pg-replace">Import and replace</button><button class="btn" type="button" id="pg-merge">Import and merge</button></div></section>' +
+      '<section class="results-sec" id="pg-undo-wrap" hidden><h2>Undo</h2><p class="muted">This puts this device back the way it was just before the last import.</p><div class="empty__actions" style="justify-content:flex-start"><button class="btn" type="button" id="pg-undo">Undo last import</button></div></section>' +
+      '<p id="pg-msg" role="status" aria-live="polite"></p>' +
       '</div>';
     setView('progress', html);
-    document.title = 'Back up progress — K&S Study Companion';
-    var prev = main.querySelector('#pg-preview');
-    main.querySelector('#pg-export').addEventListener('click', function () {
-      var b = makeBackup(), name = 'ks-progress-' + new Date().toISOString().slice(0, 10) + '.json';
-      try {
-        var url = URL.createObjectURL(new Blob([JSON.stringify(b)], { type: 'application/json' }));
-        var a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click();
-        setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 500);
-        store.set('lastExport', Date.now());
-        toast('Backup saved as ' + esc(name) + '.');
-      } catch (e) { toast('Could not create the backup file in this browser.'); }
-    });
-    function finish(msg) { toast(msg); setTimeout(function () { location.hash = '#/'; location.reload(); }, 900); }
-    main.querySelector('#pg-file').addEventListener('change', function (ev) {
-      var f = ev.target.files && ev.target.files[0];
+    document.title = 'Back up progress — ' + APP_NAME;
+    var fi = main.querySelector('#pg-file'), mode = 'replace';
+    main.querySelector('#pg-export').addEventListener('click', bkExport);
+    main.querySelector('#pg-replace').addEventListener('click', function () { mode = 'replace'; fi.value = ''; fi.click(); });
+    main.querySelector('#pg-merge').addEventListener('click', function () { mode = 'merge'; fi.value = ''; fi.click(); });
+    main.querySelector('#pg-undo').addEventListener('click', bkUndo);
+    fi.addEventListener('change', function () {
+      var f = fi.files && fi.files[0];
       if (!f) return;
-      if (f.size > 8 * 1024 * 1024) { prev.innerHTML = '<p class="pg-bad">That file is too large to be a progress backup.</p>'; return; }
+      if (mode === 'replace') { bkImport(f); return; }
       var rd = new FileReader();
+      rd.onerror = function () { bkStatus(t('backup.unreadable'), true); };
       rd.onload = function () {
-        var res = readBackup(String(rd.result || ''));
-        if (!res || !Object.keys(res.data).length) { prev.innerHTML = '<p class="pg-bad">That file is not a progress backup from this app, so nothing was changed.</p>'; return; }
-        var n = backupCounts(res.data), when = res.exported ? fmtDate(res.exported) : 'an unknown date';
-        prev.innerHTML = '<p>Backup from <b>' + esc(when) + '</b>: ' + plural(n.cards, 'reviewed card') + ', ' + plural(n.mistakes, 'mistake') + ', ' + plural(n.bookmarks, 'bookmark') + ', ' + plural(n.exams, 'exam') + ', ' + plural(n.sessions, 'teaching session') + '.' + (res.skipped ? ' ' + plural(res.skipped, 'unreadable entry', 'unreadable entries') + ' skipped.' : '') + '</p>' +
-          '<div class="empty__actions"><button class="btn btn--solid" type="button" id="pg-merge">Merge into this device</button><button class="btn" type="button" id="pg-replace">Replace this device’s progress</button></div>' +
-          '<p class="muted">Merge keeps the more advanced record of each card and combines mistakes, bookmarks, exams and sessions. Replace discards what is on this device first.</p>';
-        function snapshot() { store.set('preImport', { at: Date.now(), data: makeBackup().data }); }
-        prev.querySelector('#pg-merge').addEventListener('click', function () { snapshot(); applyData(mergeInto(makeBackup().data, res.data)); finish('Merged. Reloading.'); });
-        var rb = prev.querySelector('#pg-replace');
-        rb.addEventListener('click', function () {
-          if (!rb.getAttribute('data-sure')) { rb.setAttribute('data-sure', '1'); rb.textContent = 'Tap again to replace everything'; return; }
-          snapshot(); applyData(res.data); finish('Replaced. Reloading.');
-        });
+        var p = bkRead(String(rd.result || ''));
+        if (!p) { bkStatus(tf('backup.notBackup', { app: APP_NAME }), true); return; }
+        if (!window.confirm('Merge the backup from ' + (bkDate(p.exported) || t('backup.unknownDate')) + ' (' + bkSummary(p.data) + ') into this device (' + bkSummary(bkCollect()) + ')?\n\nYou can undo this from the footer.')) { bkStatus(t('backup.importCancelled')); return; }
+        bkMerge(p);
       };
-      rd.onerror = function () { prev.innerHTML = '<p class="pg-bad">That file could not be read.</p>'; };
       rd.readAsText(f);
     });
-    var ub = main.querySelector('#pg-undo');
-    if (ub) ub.addEventListener('click', function () { var p = store.get('preImport', null); if (!p) return; applyData(p.data); store.del('preImport'); finish('Restored. Reloading.'); });
+    bkPaint();
   }
 
   /* ---------- what's new ---------- */
-  var NEWS_TYPES = { chapter: 'New chapter', feature: 'New feature', correction: 'Correction', update: 'Update' };
-  function newsList() { return (KS.changelog || []).slice().sort(function (a, b) { return b.id - a.id; }); }
-  function latestNewsId() { var l = newsList(); return l.length ? l[0].id : 0; }
-  function seenNewsId() {
+  var NEWS_TYPES = { chapter: 'New chapter', feature: 'New feature', correction: 'Correction', update: 'Update', content: 'Content' };
+  function verNum(v) {   // '12.0.0' -> 12000000; an old integer id n (earlier versions) -> n.0.0
+    if (typeof v === 'number' && isFinite(v)) return v * 1e6;
+    var m = /^(\d+)\.(\d+)\.(\d+)$/.exec(String(v == null ? '' : v));
+    return m ? (+m[1]) * 1e6 + (+m[2]) * 1e3 + (+m[3]) : -1;
+  }
+  function verStr(v) { return typeof v === 'number' ? v + '.0.0' : String(v); }
+  function newerVersion(a, b) {
+    if (a === undefined && b === undefined) return undefined;
+    if (a === undefined) return verStr(b);
+    if (b === undefined) return verStr(a);
+    return verNum(a) >= verNum(b) ? verStr(a) : verStr(b);
+  }
+  function newsList() { return CHANGELOG.slice().sort(function (a, b) { return verNum(b.version) - verNum(a.version); }); }
+  function latestNewsVersion() { var l = newsList(); return l.length ? String(l[0].version) : ''; }
+  /* seenNews: the newest version the resident has seen. Earlier versions stored the integer id of the newest entry;
+     ids became versions 1:1 (id n = n.0.0), so an old integer means "seen up to n.0.0". */
+  function seenNewsVersion() {
     var s = store.get('seenNews', null);
-    if (s != null) return s;
-    // First visit with this feature: returning residents (who already have progress) see everything
-    // after the original release as new; brand-new visitors start fully up to date.
+    if (typeof s === 'number' && isFinite(s)) { s = verStr(Math.floor(s)); store.set('seenNews', s); }
+    if (typeof s === 'string' && verNum(s) >= 0) return s;
+    // First visit with no record: returning residents (who already have progress) see everything after the
+    // original release as new; brand-new visitors start fully up to date.
     var returning = store.get('last', null) || Object.keys(SRS).length;
-    s = returning ? 1 : latestNewsId();
+    s = returning ? '1.0.0' : latestNewsVersion();
     store.set('seenNews', s);
     return s;
   }
-  function unseenNews() { var seen = seenNewsId(); return newsList().filter(function (e) { return e.id > seen; }); }
+  function unseenNews() { var seen = verNum(seenNewsVersion()); return newsList().filter(function (e) { return verNum(e.version) > seen; }); }
   function updatedChapters() {
     var out = {};
     unseenNews().forEach(function (e) { e.items.forEach(function (it) { if (it.ch) out[it.ch] = true; }); });
     return out;
   }
   function fmtNewsDate(d) {
-    try { var p = d.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }); } catch (e) { return d; }
+    try { var p = d.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(locale(), { month: 'long', day: 'numeric', year: 'numeric' }); } catch (e) { return d; }
   }
   function renderNews() {
-    var seen = seenNewsId();
+    var seen = verNum(seenNewsVersion());
     var list = newsList();
     var html = '<div class="wrap page news">' +
       '<header class="page__head"><h1>What’s new</h1><p>New chapters, features and corrections, newest first. Entries marked <span class="news__new">New</span> were added since your last visit; corrections link straight to the changed content so you know what to revisit.</p></header>' +
       list.map(function (e) {
-        return '<article class="news__entry' + (e.id > seen ? ' is-new' : '') + '"><div class="news__date"><time datetime="' + esc(e.date) + '">' + fmtNewsDate(e.date) + '</time>' + (e.id > seen ? '<span class="news__new">New</span>' : '') + '</div>' +
+        var isNew = verNum(e.version) > seen;
+        return '<article class="news__entry' + (isNew ? ' is-new' : '') + '"><div class="news__date"><time datetime="' + esc(e.date) + '">' + fmtNewsDate(e.date) + '</time><span class="news__ver">' + esc(tf('news.version', { v: e.version })) + '</span>' + (isNew ? '<span class="news__new">' + esc(t('news.new')) + '</span>' : '') + '</div>' +
           '<div class="news__body"><h2>' + esc(e.title) + '</h2>' + (e.summary ? '<p>' + fmt(e.summary) + '</p>' : '') +
-          '<ul>' + e.items.map(function (it) {
+          '<ul>' + (e.items || []).map(function (it) {
             var ch = it.ch && chapter(it.ch);
             return '<li><span class="news__type news__type--' + esc(it.type) + '">' + esc(NEWS_TYPES[it.type] || 'Update') + '</span>' +
               '<span class="news__text">' + fmt(it.text) + (ch && plain(it.text).indexOf('Chapter ' + ch.number) < 0 ? ' <span class="muted">(Chapter ' + ch.number + ')</span>' : '') + (it.href ? ' <a href="' + esc(it.href) + '">' + esc(it.link || 'Open') + '</a>' : '') + '</span></li>';
@@ -3359,8 +3530,8 @@
       (list.some(function (e) { return e.items.some(function (it) { return it.type === 'correction'; }); }) ? '' : '<p class="news__note">No corrections have been needed so far. If one is made, it will be listed here with a link to the corrected content.</p>') +
       '</div>';
     setView('news', html);
-    document.title = 'What’s new — K&S Study Companion';
-    store.set('seenNews', latestNewsId());
+    document.title = t('nav.whatsNew') + ' — ' + APP_NAME;
+    store.set('seenNews', latestNewsVersion());
     updateNavBadges();
   }
 
@@ -3468,7 +3639,7 @@
       (q && !res.length ? '<div class="empty"><h2>No matches</h2><p>Try a shorter word or a drug name, for example \u201cclozapine\u201d, \u201cerotomanic\u201d or \u201cP300\u201d.</p></div>' : '') +
       '</div>';
     setView('search:' + q, html);
-    document.title = (q ? q + ' — ' : '') + 'Search — K&S Study Companion';
+    document.title = (q ? q + ' — ' : '') + 'Search — Kaplan Study';
     var list = main.querySelector('#results');
     function draw() {
       var shown = res.filter(function (e) { return filter === 'all' || kindGroup(e.kind) === filter; }).slice(0, 250);
@@ -3551,78 +3722,198 @@
     }
   });
 
-  /* ---------- chapters and tools menu ---------- */
+  /* ---------- menu: docked sidebar on desktop (>=1100px, collapsible), drawer on phones and tablets ----------
+     Groups: Start, Chapters (every chapter, keeping the study mode you are in), Study tools, App.
+     The "Other apps" group is built from APP_LINKS only when window.SHOW_OTHER_APPS is true (data/app-meta.js). */
+  var sidenav = document.getElementById('sidenav');
+  var backdrop = document.getElementById('nav-backdrop');
+  var menuBtn = document.getElementById('menu-btn');
+  var tabMenu = document.getElementById('tab-menu');
+  var ICONS = {
+    home: '<path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/>',
+    news: '<path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
+    review: '<rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 3h8"/>',
+    exam: '<circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 2M9.5 3h5"/>',
+    mistakes: '<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.01"/>',
+    weak: '<path d="M4 20h16M7 16v-4M12 16V8M17 16v-7"/>',
+    bookmark: '<path d="M6.5 3.5h11v17l-5.5-4.5-5.5 4.5z"/>',
+    pill: '<rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-35 12 12)"/><path d="M9.3 8.1l5.2 7.6"/>',
+    book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M8 7h7"/>',
+    helper: '<path d="M5 4h6v6H5zM13 14h6v6h-6zM8 10v4a2 2 0 0 0 2 2h3"/>',
+    compare: '<rect x="3.5" y="5" width="7" height="14" rx="1.5"/><rect x="13.5" y="5" width="7" height="14" rx="1.5"/>',
+    tools: '<path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h3"/>',
+    update: '<path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/>',
+    teach: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+    pdf: '<path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h6M9 17h4"/>',
+    save: '<path d="M12 3v11m0 0l-4-4m4 4l4-4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>',
+    external: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'
+  };
+  function icon(name, cls) {
+    return '<svg class="' + (cls || 'nav-ico') + '" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[name] || ICONS.book) + '</svg>';
+  }
+  /* {tkey, href, icon, group, key (first route segment, for the active state), badge} */
+  var NAV = [
+    { tkey: 'nav.home', href: '#/', icon: 'home', group: 'Start', key: '' },
+    { tkey: 'nav.review', href: '#/review', icon: 'review', group: 'Study tools', key: 'review', badge: 'review' },
+    { tkey: 'nav.exam', href: '#/exam', icon: 'exam', group: 'Study tools', key: 'exam' },
+    { tkey: 'nav.mistakes', href: '#/mistakes', icon: 'mistakes', group: 'Study tools', key: 'mistakes', badge: 'mistakes' },
+    { tkey: 'nav.weak', href: '#/weak', icon: 'weak', group: 'Study tools', key: 'weak' },
+    { tkey: 'nav.bookmarks', href: '#/bookmarks', icon: 'bookmark', group: 'Study tools', key: 'bookmarks' },
+    { tkey: 'nav.drugs', href: '#/drugs', icon: 'pill', group: 'Study tools', key: 'drugs' },
+    { tkey: 'nav.glossary', href: '#/glossary', icon: 'book', group: 'Study tools', key: 'glossary' },
+    { tkey: 'nav.helpers', href: '#/helpers', icon: 'helper', group: 'Study tools', key: 'helpers' },
+    { tkey: 'nav.compare', href: '#/compare', icon: 'compare', group: 'Study tools', key: 'compare' },
+    { tkey: 'nav.tools', href: '#/tools', icon: 'tools', group: 'Study tools', key: 'tools' },
+    { tkey: 'nav.updates', href: '#/updates', icon: 'update', group: 'Study tools', key: 'updates' },
+    { tkey: 'nav.teach', href: '#/teach', icon: 'teach', group: 'Study tools', key: 'teach' },
+    { tkey: 'nav.allHighYield', href: '#/all-highyield', icon: 'pdf', group: 'Study tools', key: 'all-highyield' },
+    { tkey: 'nav.progress', href: '#/progress', icon: 'save', group: 'App', key: 'progress' },
+    { tkey: 'nav.whatsNew', href: '#/whats-new', icon: 'news', group: 'App', key: 'whats-new', badge: 'news' },
+    { tkey: 'nav.about', href: '#/about', icon: 'info', group: 'App', key: 'about' }
+  ];
+  var NAV_GROUPS = { Start: 'nav.start', Chapters: 'nav.chapters', 'Study tools': 'nav.studyTools', App: 'nav.app' };
+  function isDrawerMode() { return window.matchMedia('(max-width: 1099px)').matches; }
+  function setMenuExpanded(v) { [menuBtn, tabMenu].forEach(function (b) { if (b) b.setAttribute('aria-expanded', v ? 'true' : 'false'); }); }
+  function openDrawer() {
+    if (!isDrawerMode()) return;
+    buildNav();
+    document.body.classList.add('drawer-open');
+    backdrop.hidden = false;
+    setMenuExpanded(true);
+    var cur = sidenav.querySelector('.nav-item--ch.is-active');
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'center' });
+    var target = sidenav.querySelector('.sidenav__close');
+    setTimeout(function () { if (target) target.focus({ preventScroll: true }); }, 60);
+  }
+  function closeDrawer() {
+    if (!document.body.classList.contains('drawer-open')) return;
+    document.body.classList.remove('drawer-open');
+    backdrop.hidden = true;
+    setMenuExpanded(false);
+  }
+  if (menuBtn) menuBtn.addEventListener('click', function () { openDrawer(); });
+  if (tabMenu) tabMenu.addEventListener('click', function () { if (document.body.classList.contains('drawer-open')) closeDrawer(); else openDrawer(); });
+  document.getElementById('nav-close').addEventListener('click', function () { closeDrawer(); if (menuBtn) menuBtn.focus(); });
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('drawer-open')) { closeDrawer(); if (menuBtn) menuBtn.focus(); } });
+  sidenav.addEventListener('click', function (e) { var a = e.target.closest('a'); if (a && a.getAttribute('href') === location.hash) closeDrawer(); });
+  var collapseBtn = document.getElementById('collapse-btn');   // desktop: hide/show the docked sidebar
+  function labelCollapse() {
+    var c = document.documentElement.classList.contains('nav-collapsed');
+    collapseBtn.setAttribute('aria-label', t(c ? 'sidebar.show' : 'sidebar.hide'));
+    collapseBtn.setAttribute('title', t(c ? 'sidebar.show' : 'sidebar.hide'));
+  }
+  collapseBtn.addEventListener('click', function () {
+    var c = !document.documentElement.classList.contains('nav-collapsed');
+    document.documentElement.classList.toggle('nav-collapsed', c);
+    store.set('navCollapsed', c); labelCollapse(); setTopVar();
+  });
+  labelCollapse();
+  /* APP_LINKS minus this app's own entry. Menu only: never tiles, search or tabs. */
+  function otherApps() {
+    if (!window.SHOW_OTHER_APPS) return [];   // off until she is ready to interlink the apps (data/app-meta.js)
+    var me = String(META.repo || '').toLowerCase();
+    return APP_LINKS.filter(function (a) {
+      if (!a || !a.name || !/^https?:\/\//i.test(String(a.href || ''))) return false;
+      var slug = String(a.href).replace(/[?#].*$/, '').replace(/\/+$/, '').split('/').pop().toLowerCase();
+      return !me || slug !== me;
+    });
+  }
+  function navGroupHTML(label, items) {
+    return '<div class="nav-group"><div class="nav-label">' + esc(label) + '</div><ul>' + items + '</ul></div>';
+  }
+  function buildNav() {
+    var body = document.getElementById('sidenav-body');
+    if (!body) return;
+    var key = parts()[0] || '';
+    var cm = /^#\/c\/([\w-]+)\/(?:cards\/)?([\w-]+)/.exec(location.hash || '');
+    var curCh = cm ? cm[1] : null, mode = (cm && modeBy(cm[2])) || MODES[0];
+    function item(n) {
+      var on = n.key === key && !(n.key === '' && curCh);
+      return '<li><a class="nav-item' + (on ? ' is-active' : '') + '" href="' + esc(n.href) + '"' + (on ? ' aria-current="page"' : '') + '>' + icon(n.icon) + '<span>' + esc(t(n.tkey)) + '</span>' +
+        (n.badge ? '<span class="badge' + (n.badge === 'mistakes' ? ' badge--warn' : '') + '" data-badge="' + esc(n.badge) + '" hidden></span>' : '') + '</a></li>';
+    }
+    function group(g) { return NAV.filter(function (n) { return n.group === g; }).map(item).join(''); }
+    var chs = (KS.manifest || []).slice();   // data/chapters.js lists chapters in book order (21.0, 21.1 ... 21.10, 21.11)
+    var chItems = chs.map(function (c) {
+      var on = c.id === curCh;
+      return '<li><a class="nav-item nav-item--ch' + (on ? ' is-active' : '') + '" href="' + modeHref(c, mode) + '"' + (on ? ' aria-current="page"' : '') + '><span class="nav-num">' + esc(c.number) + '</span><span><span class="sr-only">' + esc(tf('nav.chapterN', { n: c.number })) + ': </span>' + esc(c.short || c.title) + '</span></a></li>';
+    }).join('');
+    var html = navGroupHTML(t(NAV_GROUPS.Start), group('Start')) +
+      navGroupHTML(t(NAV_GROUPS.Chapters), chItems) +
+      navGroupHTML(t(NAV_GROUPS['Study tools']), group('Study tools')) +
+      navGroupHTML(t(NAV_GROUPS.App), group('App'));
+    var others = otherApps();
+    if (others.length) {
+      html += navGroupHTML(t('nav.otherApps'), others.map(function (a) {
+        return '<li><a class="nav-item" href="' + esc(a.href) + '" target="_blank" rel="noopener">' + icon('external') + '<span>' + esc(a.name) + '</span><span class="sr-only"> ' + esc(t('nav.newTab')) + '</span></a></li>';
+      }).join(''));
+    }
+    var st = sidenav.scrollTop;
+    body.innerHTML = html;
+    sidenav.scrollTop = st;
+    var tabKey = key || 'home';
+    document.querySelectorAll('.tabbar [data-tab]').forEach(function (tb) {
+      if (tb.tagName !== 'A') return;
+      var on = tb.getAttribute('data-tab') === tabKey;
+      tb.classList.toggle('is-active', on);
+      if (on) tb.setAttribute('aria-current', 'page'); else tb.removeAttribute('aria-current');
+    });
+    updateNavBadges();
+  }
+
+  /* ---------- theme: match device / light / dark (no data-theme attribute = match device) ----------
+     Earlier versions stored "light" or "dark" under the same key; it is read as the starting value. */
+  var THEME_COLOR = { light: '#1C226E', dark: '#0E0F20' };
+  var THEME_ICONS = {
+    auto: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>',
+    dark: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+    light: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+  };
+  var darkMQ = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function getTheme() {
+    var cur = store.get('theme', 'auto');
+    return cur === 'light' || cur === 'dark' ? cur : 'auto';
+  }
+  function applyTheme(mode) {
+    var root = document.documentElement;
+    if (mode === 'light' || mode === 'dark') root.setAttribute('data-theme', mode); else root.removeAttribute('data-theme');
+    var dark = mode === 'dark' || (mode !== 'light' && darkMQ && darkMQ.matches);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', dark ? THEME_COLOR.dark : THEME_COLOR.light);
+    var btn = document.getElementById('theme-btn');
+    if (btn) {
+      var label = tf('theme.label', { name: t('theme.' + mode) });
+      btn.innerHTML = THEME_ICONS[mode];
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+    }
+    var radios = document.querySelectorAll('input[name="theme"]');   // the Theme segment on the About page
+    for (var j = 0; j < radios.length; j++) radios[j].checked = radios[j].value === mode;
+  }
+  function setTheme(mode) {
+    if (mode !== 'light' && mode !== 'dark') mode = 'auto';
+    if (mode === 'auto') store.del('theme'); else store.set('theme', mode);
+    applyTheme(mode);
+  }
+  applyTheme(getTheme());
   (function () {
-    var btn = document.getElementById('menu-btn'), panel = document.getElementById('menu-panel'), scrim = document.getElementById('menu-scrim');
-    if (!btn || !panel) return;
-    function currentMode() {
-      var m = /^#\/c\/(ch\d+)\/(?:cards\/)?([\w-]+)/.exec(location.hash || '');
-      return m ? { ch: m[1], mode: modeBy(m[2]) } : { ch: null, mode: null };
-    }
-    function build() {
-      var cur = currentMode(), mode = cur.mode || MODES[0];
-      var list = (KS.manifest || []).slice().sort(function (a, b) { return a.number - b.number; });
-      var tools = document.querySelector('.sitenav');
-      var toolsHtml = tools ? '<div class="menu-panel__tools"><h2>Study tools</h2>' + Array.prototype.map.call(tools.querySelectorAll('a'), function (a) {
-        return '<a href="' + a.getAttribute('href') + '">' + a.innerHTML.replace(/ data-nav="[^"]*"/g, '') + '</a>';
-      }).join('') + '</div>' : '';
-      var html = '<a href="#/"><span class="mn-num" aria-hidden="true">\u2302</span><span class="mn-ch">All chapters (home)</span></a>' + toolsHtml + '<h2>Chapters</h2>' +
-        list.map(function (c) {
-          return '<a href="' + modeHref(c, mode) + '"' + (c.id === cur.ch ? ' class="is-current" aria-current="page"' : '') + '><span class="mn-num">' + c.number + '</span><span class="mn-ch">' + esc(c.short || c.title) + '</span></a>';
-        }).join('');
-      html += '<h2>More</h2><a href="#/teach"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Teaching mode</span></a><a href="#/tools"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Clinical tools</span></a><a href="#/weak"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Weak topics</span></a><a href="#/all-highyield"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">All high-yield (PDF)</span></a><a href="#/whats-new"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">What\u2019s new</span></a><a href="#/updates"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Post-publication updates</span></a><a href="#/progress"><span class="mn-num" aria-hidden="true"></span><span class="mn-ch">Back up progress</span></a>';
-      panel.innerHTML = html;
-    }
-    function open() {
-      build(); panel.hidden = false; scrim.hidden = false; btn.setAttribute('aria-expanded', 'true');
-      var c = panel.querySelector('.is-current'); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'center' });
-    }
-    function close(focus) {
-      if (panel.hidden) return;
-      panel.hidden = true; scrim.hidden = true; btn.setAttribute('aria-expanded', 'false');
-      if (focus) btn.focus();
-    }
-    btn.addEventListener('click', function () { if (panel.hidden) open(); else close(); });
-    scrim.addEventListener('click', function () { close(); });
-    panel.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(true); });
-    window.addEventListener('hashchange', function () { close(); });
+    var btn = document.getElementById('theme-btn');
+    if (btn) btn.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme') || 'auto';
+      setTheme({ auto: 'light', light: 'dark', dark: 'auto' }[cur]);
+    });
+    function onDeviceChange() { applyTheme(document.documentElement.getAttribute('data-theme') || 'auto'); }
+    if (darkMQ) { if (darkMQ.addEventListener) darkMQ.addEventListener('change', onDeviceChange); else if (darkMQ.addListener) darkMQ.addListener(onDeviceChange); }
   })();
 
-  /* ---------- theme ---------- */
-  var themeBtn = document.getElementById('theme');
-  function currentTheme() {
-    var t = document.documentElement.getAttribute('data-theme');
-    if (t) return t;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function labelTheme() { themeBtn.setAttribute('aria-label', currentTheme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); }
-  themeBtn.addEventListener('click', function () {
-    var next = currentTheme() === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    store.set('theme', next);
-    labelTheme();
-  });
-  labelTheme();
-
-
-  /* ---------- boot ---------- */
-  /* Keep the top bar usable at every width and text size: when the search box gets too narrow,
-     first hide the brand name, then shorten the links, then move the study-tool links into the menu. */
-  function fitTopbar() {
-    var root = document.documentElement, q = document.querySelector('.search');
-    root.classList.remove('nav-nobrand', 'nav-compact', 'nav-tight');
-    if (!q || window.innerWidth < 1080) return;
-    var steps = ['nav-nobrand', 'nav-compact', 'nav-tight'];
-    for (var i = 0; i < steps.length; i++) {
-      if (q.getBoundingClientRect().width >= 80) return;
-      root.classList.add(steps[i]);
-    }
-  }
-  function setTopVar() { fitTopbar(); document.documentElement.style.setProperty('--top', headerH() + 'px'); }
+  /* ---------- header height -> --top ---------- */
+  function setTopVar() { document.documentElement.style.setProperty('--top', headerH() + 'px'); }
   window.addEventListener('resize', setTopVar);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(setTopVar);
   setTopVar();
+
   /* ---------- back and forward buttons ----------
      Each history entry the app visits is stamped with its position (history.state.ksIdx), so the
      buttons know whether there is an in-app page behind or ahead of the current one. */
@@ -3657,6 +3948,26 @@
     if (f) f.addEventListener('click', function () { if (!f.disabled) history.forward(); });
   })();
 
+  /* Alt+Left / Alt+Right (ignored while typing in a field, and with other modifiers) */
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    var typing = tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable;
+    if (e.altKey && !typing && !e.ctrlKey && !e.metaKey && !e.shiftKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+      e.preventDefault();
+      if (e.key === 'ArrowLeft') history.back(); else history.forward();
+    }
+  });
+
+  /* Scroll restoration: only on back/forward (popstate with a stamped entry), otherwise each page opens at the top.
+     route() reads the remembered position; setView() applies it after rendering. */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('scroll', function () {
+    if (scrollPending) return;
+    scrollPending = true;
+    setTimeout(function () { scrollPending = false; scrollMemo[scrollKey] = window.scrollY; }, 120);
+  }, { passive: true });
+  window.addEventListener('popstate', function (e) { fromHistory = !!(e.state && typeof e.state.ksIdx === 'number'); });
+
   window.addEventListener('hashchange', function () { syncHist(); route(); });
   function savePdf(blob, name) {
     var file = null;
@@ -3671,82 +3982,135 @@
     } else save();
   }
 
-  /* ---------- display settings: text size and read-aloud speed ---------- */
-  var TEXT_SIZES = [['90', 'Smaller'], ['100', 'Default'], ['112.5', 'Larger'], ['125', 'Largest']];
-  var TTS_RATES = [['0.8', '0.8\u00d7'], ['1', '1\u00d7'], ['1.2', '1.2\u00d7'], ['1.5', '1.5\u00d7'], ['1.8', '1.8\u00d7']];
+  /* ---------- text size (Aa panel, starter) plus Kaplan's read-aloud speed ---------- */
+  var TEXT_SIZES = [['90', 'textsize.smaller'], ['100', 'textsize.default'], ['112.5', 'textsize.larger'], ['125', 'textsize.largest']];   // [value, strings key]
+  var TTS_RATES = [['0.8', '0.8×'], ['1', '1×'], ['1.2', '1.2×'], ['1.5', '1.5×'], ['1.8', '1.8×']];
+  function syncSizeRadios(v) {   // the text-size segment on the About page
+    var radios = document.querySelectorAll('input[name="aboutTextSize"]');
+    for (var i = 0; i < radios.length; i++) radios[i].checked = radios[i].value === v;
+  }
   function applyTextSize(v) {
-    var ok = TEXT_SIZES.some(function (t) { return t[0] === v; });
+    var ok = TEXT_SIZES.some(function (z) { return z[0] === v; });
     document.documentElement.style.fontSize = ok && v !== '100' ? v + '%' : '';
     setTopVar();
   }
   (function () {
-    var btn = document.getElementById('display-btn');
+    var btn = document.getElementById('textSizeBtn');
     if (!btn) return;
     var panel = document.createElement('div');
-    panel.className = 'display-panel'; panel.id = 'display-panel'; panel.hidden = true;
-    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Text size and read aloud');
+    panel.className = 'text-size-panel'; panel.id = 'textSizePanel'; panel.hidden = true;
+    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', t('textsize.button'));
     document.body.appendChild(panel);
     function build() {
-      var cur = store.get('textSize', '100'), rate = store.get('ttsRate', '1');
-      panel.innerHTML = '<p class="display-panel__title">Text size</p><div class="seg seg--full">' + TEXT_SIZES.map(function (t, i) {
-        return '<label><input type="radio" name="ts" value="' + t[0] + '"' + (cur === t[0] ? ' checked' : '') + '><span style="font-size:' + (0.82 + i * 0.1) + 'rem">' + t[1] + '</span></label>';
+      var cur = String(store.get('textSize', '100')), rate = store.get('ttsRate', '1');
+      panel.setAttribute('aria-label', t('textsize.button'));
+      panel.innerHTML = '<p class="text-size-panel__title">' + esc(t('textsize.title')) + '</p><div class="seg">' + TEXT_SIZES.map(function (z, i) {
+        return '<label><input type="radio" name="textSize" value="' + z[0] + '"' + (cur === z[0] ? ' checked' : '') + '><span style="font-size:' + (0.82 + i * 0.1).toFixed(2) + 'rem">' + esc(t(z[1])) + '</span></label>';
       }).join('') + '</div>' +
-      (TTS.ok ? '<p class="display-panel__title">Read-aloud speed</p><div class="seg seg--full">' + TTS_RATES.map(function (t) {
-        return '<label><input type="radio" name="tr" value="' + t[0] + '"' + (rate === t[0] ? ' checked' : '') + '><span>' + t[1] + '</span></label>';
-      }).join('') + '</div><p class="display-panel__note">Tap the speaker beside any study-guide section, or Listen on a high-yield page, to hear it read aloud. It uses your device\u2019s built-in voice and works offline.</p>' :
-        '<p class="display-panel__note">Read aloud is not available in this browser.</p>');
+      (TTS.ok ? '<p class="text-size-panel__title">' + esc(t('textsize.rate')) + '</p><div class="seg">' + TTS_RATES.map(function (z) {
+        return '<label><input type="radio" name="ttsRate" value="' + z[0] + '"' + (rate === z[0] ? ' checked' : '') + '><span>' + z[1] + '</span></label>';
+      }).join('') + '</div><p class="text-size-panel__note">' + esc(t('textsize.ttsNote')) + '</p>' :
+        '<p class="text-size-panel__note">' + esc(t('textsize.ttsNone')) + '</p>');
     }
     function open() { build(); panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); var f = panel.querySelector('input:checked'); if (f) f.focus(); }
     function close() { if (panel.hidden) return; panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
     btn.addEventListener('click', function (e) { e.stopPropagation(); if (panel.hidden) open(); else close(); });
     panel.addEventListener('change', function (e) {
-      if (e.target.name === 'ts') { store.set('textSize', e.target.value); applyTextSize(e.target.value); }
-      if (e.target.name === 'tr') { store.set('ttsRate', e.target.value); TTS.rateChanged(); }
+      if (e.target.name === 'textSize') { store.set('textSize', e.target.value); applyTextSize(e.target.value); syncSizeRadios(e.target.value); }
+      if (e.target.name === 'ttsRate') { store.set('ttsRate', e.target.value); TTS.rateChanged(); }
     });
-    document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) close(); });
+    document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { close(); btn.focus(); } });
     window.addEventListener('hashchange', close);
   })();
 
-  /* ---------- bottom tab bar: markers, actions and auto-hide on scroll ---------- */
-  (function () {
-    var bar = document.getElementById('tabbar'), body = document.body, menuBtn = document.getElementById('menu-btn');
-    if (!bar) return;
-    var tabs = bar.querySelectorAll('[data-tab]');
-    function mark() {
-      var p = (location.hash.replace(/^#\/?/, '').split('/')[0]) || 'home';
-      Array.prototype.forEach.call(tabs, function (t) {
-        if (t.tagName !== 'A') return;
-        var on = t.getAttribute('data-tab') === p;
-        t.classList.toggle('is-active', on);
-        if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
-      });
-    }
-    bar.addEventListener('click', function (e) {
-      var t = e.target.closest && e.target.closest('button[data-tab]');
-      if (!t) return;
-      if (t.getAttribute('data-tab') === 'menu' && menuBtn) menuBtn.click();
-      else if (t.getAttribute('data-tab') === 'search') { var q = document.getElementById('q'); if (q) { window.scrollTo(0, 0); q.focus(); } }
-    });
-    var last = 0, ticking = false, DOWN = 10, UP = 6, EDGE = 80;
-    function show() { body.classList.remove('tabbar-hidden'); }
-    function menuOpen() { return menuBtn && menuBtn.getAttribute('aria-expanded') === 'true'; }
+  /* ---------- bottom tab bar (<=1099px): Search focuses the search box, Menu opens the drawer; hides on scroll down ---------- */
+  (function initTabbar() {
+    var ts = document.getElementById('tab-search');
+    if (ts) ts.addEventListener('click', function () { closeDrawer(); window.scrollTo(0, 0); qInput.focus(); });
+    var lastY = window.scrollY, hold = 0, ticking = false;
+    // Guard both: classList.add/remove rewrite the attribute even when nothing changes,
+    // which would re-fire the MutationObserver below forever.
+    function show() { if (document.body.classList.contains('tabbar-hidden')) document.body.classList.remove('tabbar-hidden'); }
+    function hide() { if (!document.body.classList.contains('tabbar-hidden')) document.body.classList.add('tabbar-hidden'); }
     function update() {
       ticking = false;
-      var y = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      if (y < EDGE || max - y < EDGE || menuOpen() || body.classList.contains('is-teaching')) { show(); last = y; return; }
-      var d = y - last;
-      if (d > DOWN) { body.classList.add('tabbar-hidden'); last = y; }
-      else if (d < -UP) { show(); last = y; }
+      var y = window.scrollY, dy = y - lastY, max = document.documentElement.scrollHeight - window.innerHeight;
+      var a = document.activeElement;
+      var typing = !!(a && a.matches && a.matches('input, textarea, select'));
+      if (Date.now() < hold || document.body.classList.contains('drawer-open') || document.body.classList.contains('is-teaching') || typing || y < 80 || y > max - 80) { show(); lastY = y; }
+      else if (dy > 10) { hide(); lastY = y; }
+      else if (dy < -6) { show(); lastY = y; }
     }
-    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener('hashchange', function () { last = 0; show(); mark(); });
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('hashchange', function () { hold = Date.now() + 700; show(); });
     document.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches('input, textarea, select')) show(); });
-    if (menuBtn) menuBtn.addEventListener('click', show);
-    window.addEventListener('resize', function () { last = window.pageYOffset || 0; });
-    mark();
+    new MutationObserver(function () { if (document.body.classList.contains('drawer-open')) show(); }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   })();
+
+  /* ---------- About: version, settings (language, theme, text size), tips ---------- */
+  function segGroup(name, label, opts, cur) {   // opts: [[value, label], ...]; radios inside the shared .seg control
+    return '<fieldset class="setting"><legend>' + esc(label) + '</legend><div class="seg">' + opts.map(function (o) {
+      return '<label><input type="radio" name="' + esc(name) + '" value="' + esc(o[0]) + '"' + (cur === o[0] ? ' checked' : '') + '><span>' + esc(o[1]) + '</span></label>';
+    }).join('') + '</div></fieldset>';
+  }
+  function renderAbout() {
+    var sizes = TEXT_SIZES.map(function (z) { return [z[0], t(z[1])]; });
+    var html = '<div class="wrap page about-page"><header class="page__head"><h1>' + esc(t('nav.about')) + '</h1><p>' + esc(META.tagline || '') + '</p></header>' +
+      '<div class="prose"><p><strong>' + esc(APP_NAME) + '</strong> · ' + esc(t('about.version')) + ' ' + esc(META.version || '') + '</p>' +
+        '<p>Study guides, high-yield reviews and flashcards for psychiatry residents, built chapter by chapter from Kaplan &amp; Sadock’s Synopsis of Psychiatry, 12th edition. An independent study aid, not affiliated with or endorsed by the publisher. Progress is saved only in this browser; use the backup panel in the footer to keep a copy.</p>' +
+        '<p>' + esc(ATTRIBUTION) + '</p></div>' +
+      '<h2>' + esc(t('about.settings')) + '</h2><div class="card">' +
+        segGroup('lang', t('about.language'), [['en', t('about.langEn')], ['tl', t('about.langTl')]], lang) +
+        segGroup('theme', t('theme.title'), [['auto', t('theme.auto')], ['light', t('theme.light')], ['dark', t('theme.dark')]], getTheme()) +
+        segGroup('aboutTextSize', t('textsize.title'), sizes, String(store.get('textSize', '100'))) +
+      '</div>' +
+      '<h2>' + esc(t('about.tips')) + '</h2><div class="card"><ul class="prose" style="margin:0;padding-left:1.2em">' +
+        [1, 2, 3, 4, 5, 6].map(function (i) { return '<li>' + rich(t('about.tip' + i)) + '</li>'; }).join('') +
+      '</ul></div></div>';
+    setView('about', html);
+    document.title = t('nav.about') + ' — ' + APP_NAME;
+  }
+  main.addEventListener('change', function (e) {   // About > Settings
+    if (view.key !== 'about') return;
+    var n = e.target && e.target.name, v = e.target && e.target.value;
+    if (n === 'lang') { setLang(v); var again = main.querySelector('input[name="lang"]:checked'); if (again) again.focus(); }
+    else if (n === 'theme') setTheme(v);
+    else if (n === 'aboutTextSize') { store.set('textSize', v); applyTextSize(v); }
+  });
+
+  /* ---------- language switching: static markup (data-i18n / data-i18n-attr in index.html), then re-render ---------- */
+  function applyStatic() {
+    document.documentElement.setAttribute('lang', lang);
+    var els = document.querySelectorAll('[data-i18n]'), i, v;
+    for (i = 0; i < els.length; i++) { v = t(els[i].getAttribute('data-i18n')); if (v !== els[i].getAttribute('data-i18n')) els[i].textContent = v; }
+    els = document.querySelectorAll('[data-i18n-attr]');
+    for (i = 0; i < els.length; i++) {
+      var pairs = els[i].getAttribute('data-i18n-attr').split(';');
+      for (var j = 0; j < pairs.length; j++) {
+        var at = pairs[j].indexOf(':'), key = pairs[j].slice(at + 1);
+        if (at > 0 && t(key) !== key) els[i].setAttribute(pairs[j].slice(0, at), t(key));
+      }
+    }
+    var brand = document.querySelector('.brand');
+    if (brand) brand.setAttribute('aria-label', tf('brand.home', { name: APP_NAME }));
+    var panel = document.getElementById('textSizePanel');
+    if (panel) panel.setAttribute('aria-label', t('textsize.button'));
+    labelCollapse();
+    applyTheme(getTheme());
+  }
+  function setLang(l) {
+    lang = l === 'tl' ? 'tl' : 'en';
+    store.set('lang', lang);
+    applyStatic();
+    bkPaint();
+    var panel = document.getElementById('textSizePanel');
+    if (panel && !panel.hidden) { panel.hidden = true; var tb = document.getElementById('textSizeBtn'); if (tb) tb.setAttribute('aria-expanded', 'false'); }
+    var y = window.scrollY;
+    view.key = null; route(); window.scrollTo(0, y);   // re-render the current view and the menu in the new language
+  }
+  applyStatic();
+  buildNav();
 
   var DRUG = null, TOOLS = null;
   loadAll().then(function () {
@@ -3762,7 +4126,7 @@
     }
     if (KS.toolsModule) TOOLS = KS.toolsModule({ esc: esc, fmt: fmt, plural: plural, toast: toast, setView: setView, main: function () { return main; }, chapter: chapter, renderMissing: renderMissing });
     indexCards();
-    updateNavBadges();
+    buildNav();
     route();
     setTopVar();
   }).catch(function (err) {
