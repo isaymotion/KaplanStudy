@@ -1,0 +1,91 @@
+({
+hy: [
+  { id: "hy2313-01", topic: "Mentalizing and the theory of MBT", items: [
+    "Mentalizing = understanding own and others' actions through **mental states**",
+    "Mental states named: **thoughts, feelings, wishes and desires**",
+    "Plain-language definition: attentiveness to **thinking and feeling in self and others**",
+    "Mental states influence behavior **whether in or out of awareness**",
+    "Critical capacity 1: sensing own actions as **coherently shaped by mental states**",
+    "Critical capacity 2: **differentiating oneself psychologically** from others",
+    "Personality disorder = **reduced mentalizing** capacity",
+    "Mentalizing breaks down most at moments of **interpersonal (relational) stress**",
+    "MBT was developed for **borderline personality disorder**",
+    "Mentalizing is first acquired in the **attachment process**",
+    "The therapy relationship helps **reappraise outside relationships**",
+    "Social function goal covers **jobs, schooling, volunteering and social life**"
+  ] },
+  { id: "hy2313-02", topic: "MBT technique and alliance", items: [
+    "MBT format: **group and individual** treatment",
+    "Strong affect in session leads to **limited or failing** mentalizing",
+    "Sessional intervention trajectory step 1: **empathy and validation**",
+    "Step 2: **clarification, exploration** and, if needed, **challenge**",
+    "Step 3: structured, gentle **expansion of mentalizing**",
+    "Early focus: what happens **here and now** in session",
+    "Later focus: **core attachment relationships**, including with the clinician",
+    "MBT-Introductory group length: **10 to 12 sessions**",
+    "The introductory group is a **psychoeducational** intervention",
+    "Introductory group topics include **managing emotions** and **personality disorder**",
+    "Assessment identifies **nonmentalizing cycles** and the **mentalizing profile**",
+    "Formulation is **shared** and must be **understood by the patient**",
+    "Typical relational fear in the formulation: **abandonment**",
+    "Activated attachment system leads to **maladaptive attachment strategies**",
+    "Table 23-17: vulnerabilities, agreed formulation, **risk profile and crisis plan**, **short- and long-term goals**",
+    "Patient's own aims **come first** unless they undermine treatment",
+    "**Shared responsibility** is at the core of MBT's effectiveness"
+  ] },
+  { id: "hy2313-03", topic: "Indications and contraindications for MBT", items: [
+    "MBT is **effective for severe BPD**",
+    "Early study patients had **serious suicide attempts**, **hospital admission for risk** or **self-harm**",
+    "Trials included **men and women** with **high comorbidity**",
+    "Comorbid multiple personality disorders, including **antisocial**, did **preferentially better**",
+    "Clinical fit: **marked interpersonal problems** rooted in mentalizing and attachment",
+    "MBT is **generic** with a **low-demand protocol**",
+    "Training is open to a **range of professionals**",
+    "**Psychosis** (nonattachment mentalizing problems) may not benefit",
+    "If psychosis does benefit, the **mechanism of change** is likely **different**",
+    "Simple phobia or uncomplicated depression: a more direct method such as **CBT**",
+    "Single BPD diagnosis: **structured clinical management** may work equally well",
+    "Complex BPD (more than one personality disorder) is **more likely to require MBT**"
+  ] }
+],
+dx: [
+  { id: "d2313-ma01", tag: "MBT", q: "For which disorder was MBT developed?", a: "**Borderline personality disorder (BPD)**." },
+  { id: "d2313-ma02", tag: "MBT", q: "What specific problem does MBT target?", a: "The patient's **mentalizing vulnerabilities**, understood in the context of the **attachment process**." },
+  { id: "d2313-ma03", tag: "MBT", q: "When do people with a personality disorder most often lose mentalizing?", a: "At moments of **interpersonal (relational) stress**, when they lose **cognitive and emotional coherence**." },
+  { id: "d2313-ma04", tag: "MBT", q: "Which life areas fall under MBT's goal of improving social function?", a: "**Jobs**, **schooling**, **volunteering**, **social life** and other constructive pursuits." },
+  { id: "d2313-mt01", tag: "Technique", q: "Name the three steps of the sessional intervention trajectory in order.", a: "**Empathy and validation**; **clarification, exploration and, if needed, challenge**; a structured, gentle **expansion of mentalizing**." },
+  { id: "d2313-mt02", tag: "Technique", q: "How long is the MBT-Introductory group and what does it cover?", a: "**10 to 12 sessions**; topics are **attachment**, **mentalizing**, **managing emotions**, **personality disorder** and how **treatment** works." },
+  { id: "d2313-mt03", tag: "Technique", q: "What are the four elements of alliance building in MBT (Table 23-17)?", a: "Mentalizing vulnerabilities in an **understandable form**; an **agreed formulation**; the **risk profile and crisis management**; **short- and long-term goals**." },
+  { id: "d2313-mt04", tag: "Technique", q: "What does the MBT assessment include?", a: "The **mentalizing vulnerabilities and profile**, **nonmentalizing cycles**, and a **shared formulation** of attachment patterns and areas vulnerable to **emotional dysregulation**." },
+  { id: "d2313-mt05", tag: "Indications", q: "Describe the patients in the early MBT studies.", a: "**Severe BPD**: serious **suicide attempts**, **psychiatric admission for risk** and/or **acting on self-harm**; **men and women**; **high comorbidity**." },
+  { id: "d2313-mt06", tag: "Indications", q: "Which BPD patients did preferentially better in MBT than in comparison treatment?", a: "Those carrying **several personality disorder diagnoses**, **antisocial** among them." },
+  { id: "d2313-mt07", tag: "Indications", q: "Why may patients with psychosis not benefit from MBT?", a: "Their mentalizing problems arise from **nonattachment contexts**; any gain probably comes through a **different mechanism of change**." },
+  { id: "d2313-mt08", tag: "Indications", q: "What may suit a patient with a single BPD diagnosis as well as MBT?", a: "**Structured clinical management**." }
+],
+cs: [
+  { id: "c2313-ma01", tag: "MBT", q: "A 26-year-old woman with BPD talks calmly about her sister. When her partner cancels a date, she becomes convinced he hates her and cannot consider any other reason. Which concept from MBT best explains the shift?", choices: ["Loss of mentalizing under interpersonal stress", "A role transition in the interpersonal sense", "Learned helplessness after repeated loss", "A conditioned fear response to rejection", "Primary process thinking breaking through"], answer: 0, why: "People with personality disorder lose cognitive and emotional coherence, and mentalizing, especially at moments of relational stress (s2313-mbt)." },
+  { id: "c2313-ma02", tag: "MBT", q: "A resident in Bataan asks why MBT spends so much time on attachment when it is a treatment for mentalizing. Which answer is most accurate?", choices: ["Attachment is a separate comorbidity treated in parallel", "Attachment explains medication response", "Attachment is assessed only to rule out psychosis", "Attachment determines the length of the introductory group", "Attachment is the developmental context in which mentalizing is first acquired"], answer: 4, why: "MBT targets mentalizing vulnerabilities in light of the attachment process, where people first acquire mentalizing (s2313-mbt)." },
+  { id: "c2313-ma03", tag: "MBT", q: "A 31-year-old man in MBT says he slammed a door 'for no reason.' The therapist helps him notice that he had felt humiliated just before. Which mentalizing capacity is the therapist strengthening?", choices: ["Inhibiting all strong emotion", "Memorizing distorted thoughts for homework", "Replacing feelings with rational rules", "Experiencing his own behavior as organized by mental states", "Tolerating exposure to a feared object"], answer: 3, why: "A critical part of mentalizing is sensing one's own actions as coherently shaped by mental states, including states outside awareness (s2313-mbt)." },
+  { id: "c2313-ma04", tag: "MBT", q: "A 24-year-old woman with BPD has stabilized in MBT. She and her clinician are now setting longer-range goals. Which goal fits the MBT model most closely?", choices: ["Complete abstinence from all relationships", "Full recall of early childhood memories", "Returning to part-time work or study", "Stopping all contact with the clinician", "Reaching a target score on a symptom scale"], answer: 2, why: "Patient and clinician should consider a goal of improving social function, including work, education, voluntary work and social activity (s2313-mbt)." },
+  { id: "c2313-mt01", tag: "Technique", q: "A 29-year-old woman becomes tearful and angry in an MBT session while describing a fight with her mother. Her thinking becomes rigid. What should the clinician do first?", choices: ["Challenge her interpretation directly", "Offer empathy and validation about the problem", "Interpret her transference to the clinician", "Assign a thought record for homework", "End the session to avoid escalation"], answer: 1, why: "The sessional intervention trajectory starts with empathy and validation, before clarification, exploration, challenge and expansion of mentalizing (s2313-tech)." },
+  { id: "c2313-mt02", tag: "Technique", q: "A 35-year-old man is about to start MBT. The team wants him to understand mentalizing, attachment and emotion management, and to know the method and focus of treatment, before therapy proper begins. What is the best next step?", choices: ["Enroll him in a 10 to 12 session MBT-Introductory group", "Start medication first", "Begin individual sessions at once", "Refer him for CBT", "Schedule a family meeting"], answer: 0, why: "The MBT-Introductory group, lasting 10 to 12 sessions, is a psychoeducational intervention covering these areas; it builds the alliance and the formulation (s2313-tech)." },
+  { id: "c2313-mt03", tag: "Technique", q: "A 22-year-old woman in MBT wants the goal of therapy to be getting her ex-partner back by any means, and refuses to discuss her own reactions. How should goal setting proceed?", choices: ["Adopt her goal because the patient's aims always win", "Set goals without her input", "Develop goals jointly, since her aim here runs against the treatment process", "Defer goals until after termination", "Let the group decide her goals"], answer: 2, why: "Goals are set jointly; the patient's own aims come first unless they undermine the treatment process (s2313-tech)." },
+  { id: "c2313-mt04", tag: "Technique", q: "During MBT assessment, a 28-year-old woman and her clinician map that fear of abandonment sets off clinging, then angry accusations, in her relationships. Which step of MBT is this?", choices: ["Building a shared formulation of attachment patterns", "Exposure and response prevention", "Interpreting a dream", "Role-play of a role dispute", "Medication review"], answer: 0, why: "Assessment yields a shared formulation that names relational fears, such as abandonment, which trigger maladaptive attachment strategies (s2313-tech)." },
+  { id: "c2313-mt05", tag: "Indications", q: "A 40-year-old man has a specific phobia of driving and no other psychiatric history. He asks about MBT. Which treatment approach is most consistent with the source?", choices: ["MBT, as it suits all mentalizing problems", "A more direct approach such as CBT", "Structured clinical management for BPD", "MBT-Introductory group alone", "Long-term group MBT"], answer: 1, why: "Simpler problems, for example phobias or uncomplicated depression, may be better served by a direct method like CBT (s2313-tech)." },
+  { id: "c2313-mt06", tag: "Indications", q: "Two patients with BPD are referred. One has BPD alone. The other has BPD plus antisocial and avoidant personality disorders and prior hospitalization for suicide risk. Which statement is best supported?", choices: ["Neither is a candidate for MBT", "Both need MBT equally", "The patient with several personality disorders is more likely to require MBT", "The patient with BPD alone is more likely to require MBT", "Antisocial traits exclude MBT"], answer: 2, why: "Complex presentations with more than one personality disorder are more likely to require MBT; for a single BPD diagnosis, structured clinical management may work equally well. Patients with comorbid antisocial personality disorder gained more from MBT than from comparison treatment (s2313-tech)." },
+  { id: "c2313-mt07", tag: "Indications", q: "A 33-year-old woman with schizophrenia has trouble reading others' intentions. A colleague suggests MBT. What is the most accurate comment?", choices: ["MBT is the treatment of choice for her", "She may not benefit, and any benefit would likely work by a different mechanism", "MBT is contraindicated because it is high-demand", "MBT will work exactly as it does in BPD", "Only CBT has been tested in psychosis"], answer: 1, why: "Mentalizing problems rooted in nonattachment contexts such as psychosis may not respond to MBT; any gain probably works through another mechanism (s2313-tech)." }
+],
+ph: [],
+fd: [
+  { id: "f2313-ma01", tag: "MBT", q: "Define mentalizing.", a: "The social cognitive ability to understand one's own and others' actions in terms of **mental states** (thoughts, feelings, wishes, desires)." },
+  { id: "f2313-ma02", tag: "MBT", q: "What are the two critical capacities within mentalizing?", a: "Sensing one's actions as **coherently shaped by mental states**, and **differentiating oneself psychologically** from others." },
+  { id: "f2313-ma03", tag: "MBT", q: "Do mental states outside awareness influence behavior, in the MBT view?", a: "**Yes**: beliefs, wishes, feelings and thoughts influence behavior **whether in or out of awareness**." },
+  { id: "f2313-ma04", tag: "MBT", q: "How does MBT link outside relationships and the therapy relationship?", a: "Outside relationships **inform** the treatment relationship, and the treatment relationship is used to **reappraise** outside relationships." },
+  { id: "f2313-ma05", tag: "MBT", q: "What kind of mentalizing does MBT aim to extend?", a: "**Explicit**, **reflective**, **cognitive**, **internally focused** mentalizing." },
+  { id: "f2313-ma06", tag: "MBT", q: "How does the focus of MBT shift as mentalizing improves?", a: "From what happens **here and now** in session to **core attachment relationships**, with the clinician and key figures, then to revising **distorted representations**." },
+  { id: "f2313-mt01", tag: "Technique", q: "What is the sessional intervention trajectory?", a: "MBT's **structured process** within a session: **empathy and validation**, then **clarification/exploration/challenge**, then **expanding mentalizing**." },
+  { id: "f2313-mt02", tag: "Technique", q: "What does MBT say lies at the core of its effectiveness?", a: "**Sharing responsibility** for the therapeutic process between patient and clinician." },
+  { id: "f2313-mt03", tag: "Technique", q: "Does the need for authentic curiosity about minds apply only to the patient?", a: "**No**: it applies to the **clinician as much as the patient**." },
+  { id: "f2313-mt04", tag: "Indications", q: "What two design features make MBT a generic, accessible treatment?", a: "A **low-demand treatment protocol** and training open to a **range of professionals**." }
+]
+})
