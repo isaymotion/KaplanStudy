@@ -5446,5 +5446,204 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "psytx",
+  "chapter": "ch23-10",
+  "title": "Which psychotherapy? (all of Chapter 23)",
+  "summary": "A last-step guide across sections 23.1 to 23.14: answer a few questions about the main problem to see which psychotherapy the chapter points to, with links to the detailed helpers.",
+  "caution": "A teaching aid built from Kaplan & Sadock Chapter 23, not a treatment algorithm. Real choices combine methods, often with medication, and follow the patient's preferences, safety, access and current guidelines.",
+  "start": "rel",
+  "nodes": {
+    "rel": {
+      "q": "Is the main problem in a couple or family relationship, or a family living with a member's serious mental illness?",
+      "options": [
+        {
+          "label": "Couple or family conflict",
+          "to": "r:family",
+          "note": "Interactions are the target."
+        },
+        {
+          "label": "Family of a person with schizophrenia, bipolar disorder or other serious illness",
+          "to": "r:psyed",
+          "note": "Knowledge, coping and relapse signs."
+        },
+        {
+          "label": "No, the problem is mainly the individual's",
+          "to": "bpd",
+          "note": "Go on."
+        }
+      ]
+    },
+    "bpd": {
+      "q": "Is it borderline personality disorder with self-harm, suicidality or emotional storms?",
+      "options": [
+        {
+          "label": "Yes, with chronic self-injury or parasuicide",
+          "to": "r:dbt",
+          "note": "Skills and a treatment hierarchy."
+        },
+        {
+          "label": "Yes, with relationships failing when feelings run high",
+          "to": "r:mbt",
+          "note": "Mentalizing breaks down under strong affect."
+        },
+        {
+          "label": "No",
+          "to": "dep",
+          "note": "Go on."
+        }
+      ]
+    },
+    "dep": {
+      "q": "Is the main problem depression?",
+      "options": [
+        {
+          "label": "Yes, and it is tied to grief, a role dispute, a role transition or isolation",
+          "to": "r:ipt",
+          "note": "Current relationships."
+        },
+        {
+          "label": "Yes, with negative thinking or withdrawal from activities",
+          "to": "r:cbt",
+          "note": "Thoughts and behavior."
+        },
+        {
+          "label": "No",
+          "to": "anx",
+          "note": "Go on."
+        }
+      ]
+    },
+    "anx": {
+      "q": "Is it anxiety, a phobia or OCD?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:behav",
+          "note": "Exposure-based work."
+        },
+        {
+          "label": "No: long-standing conflicts, and the patient wants insight",
+          "to": "r:dyn",
+          "note": "Exploratory work."
+        }
+      ]
+    }
+  },
+  "results": {
+    "family": {
+      "label": "Family or couples therapy",
+      "dx": "Family and couples therapy (23.4)",
+      "line": "Treat the relationship system; conjoint therapy is the most common couples format.",
+      "points": [
+        "Screen for contraindications to couples work, such as threatened violence or severe paranoid psychosis.",
+        "For a step-by-step choice, open the helper \"Which psychodynamic or relational approach?\"."
+      ],
+      "link": {
+        "ch": "ch23-4",
+        "sec": "s234-family",
+        "label": "Family therapy"
+      }
+    },
+    "psyed": {
+      "label": "Psychoeducation (with family work)",
+      "dx": "Psychoeducation (23.14)",
+      "line": "Teaches the illness, treatment, prognosis, coping and problem solving; in schizophrenia a Cochrane review found better adherence and fewer relapses.",
+      "points": [
+        "Individual or group; brief within other care, or a structured program over weeks or months.",
+        "Information alone is not psychoeducation: add skills and resources."
+      ],
+      "link": {
+        "ch": "ch23-14",
+        "sec": "s2314-psyed",
+        "label": "Psychoeducation"
+      }
+    },
+    "dbt": {
+      "label": "Dialectical behavior therapy",
+      "dx": "DBT (23.5)",
+      "line": "Linehan's skills-based treatment for chronically self-injuring patients with BPD.",
+      "points": [
+        "Skills group, individual therapy, brief telephone coaching and a consultation team.",
+        "Life-threatening behavior is always addressed first."
+      ],
+      "link": {
+        "ch": "ch23-5",
+        "sec": "s235-modes",
+        "label": "DBT modes"
+      }
+    },
+    "mbt": {
+      "label": "Mentalization-based treatment",
+      "dx": "MBT (23.13)",
+      "line": "Group and individual treatment that restores the capacity to understand one's own and others' minds when strong feelings make it fail.",
+      "points": [
+        "Begins with a 10 to 12 session MBT-Introductory group (psychoeducation) and an agreed formulation.",
+        "Effective in severe BPD; may not help mentalizing problems that come from psychosis.",
+        "Since the book: 5 months of MBT did as well as 14 months in a 2023 trial."
+      ],
+      "link": {
+        "ch": "ch23-13",
+        "sec": "s2313-tech",
+        "label": "MBT techniques and indications"
+      }
+    },
+    "ipt": {
+      "label": "Interpersonal therapy",
+      "dx": "IPT (23.10)",
+      "line": "Time-limited (usually 12 to 20 sessions) treatment built for major depression, linking mood to current relationships.",
+      "points": [
+        "Pick one or two problem areas: grief, role dispute, role transition or interpersonal deficits.",
+        "Three phases: initial, intermediate and termination.",
+        "Since the book: a 2024 patient-level meta-analysis found IPT and antidepressants similar at the end of treatment."
+      ],
+      "link": {
+        "ch": "ch23-10",
+        "sec": "s2310-areas",
+        "label": "IPT problem areas"
+      }
+    },
+    "cbt": {
+      "label": "Cognitive therapy or behavioral activation",
+      "dx": "Cognitive therapy (23.7) / behavioral activation (23.8)",
+      "line": "Test automatic thoughts and assumptions, and schedule rewarding activities.",
+      "points": [
+        "About 6 to 12 sessions for uncomplicated depression or anxiety.",
+        "Combined with medication when needed: combination outperformed either alone in a large network meta-analysis."
+      ],
+      "link": {
+        "ch": "ch23-7",
+        "sec": "s237-didactic",
+        "label": "Cognitive therapy"
+      }
+    },
+    "behav": {
+      "label": "Behavior therapy",
+      "dx": "Exposure-based behavior therapy (23.8)",
+      "line": "Exposure in some form: desensitization, graded exposure, flooding, participant modeling, or ERP for OCD.",
+      "points": [
+        "For a step-by-step choice, open the helper \"Which behavioral or cognitive technique?\"."
+      ],
+      "link": {
+        "ch": "ch23-8",
+        "sec": "s238-expo",
+        "label": "Exposure methods"
+      }
+    },
+    "dyn": {
+      "label": "Psychodynamic psychotherapy",
+      "dx": "Psychoanalytic or brief dynamic therapy (23.1, 23.2)",
+      "line": "Classic analysis, expressive or supportive psychotherapy, or a brief dynamic school, depending on ego strength, motivation and focus.",
+      "points": [
+        "For a step-by-step choice, open the helper \"Which psychodynamic or relational approach?\"."
+      ],
+      "link": {
+        "ch": "ch23-1",
+        "sec": "s231-scope",
+        "label": "The psychoanalytic continuum"
+      }
+    }
+  }
 }
 ]);

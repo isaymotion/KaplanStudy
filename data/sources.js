@@ -4,6 +4,12 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 23.10 to 23.14, November 2026 */
+    { m: "Cohen ZD et al., Comparative efficacy of interpersonal", label: "Cohen ZD et al., Psychol Med 2024 (IPT vs antidepressants, IPD meta-analysis)", url: "https://doi.org/10.1017/S0033291724001788" },
+    { m: "Hu G, Han B, Gains H, Jia Y", label: "Hu G et al., Int J Clin Health Psychol 2024 (narrative therapy meta-analysis)", url: "https://doi.org/10.1016/j.ijchp.2024.100520" },
+    { m: "Cuijpers P et al., A network meta-analysis", label: "Cuijpers P et al., World Psychiatry 2020 (network meta-analysis)", url: "https://doi.org/10.1002/wps.20701" },
+    { m: "Juul S et al., Short-Term versus Long-Term", label: "Juul S et al., Psychother Psychosom 2023 (MBT-RCT)", url: "https://doi.org/10.1159/000534289" },
+    { m: "Levrat V, Favre S", label: "Levrat V et al., Front Psychiatry 2023 (psychoeducation in bipolar disorder)", url: "https://doi.org/10.3389/fpsyt.2023.1320654" },
     /* Chapter 23.5 to 23.9, November 2026 */
     { m: "Practice Guideline for the Treatment of Patients With Borderline Personality Disorder, 2024", label: "APA Practice Guideline for Borderline Personality Disorder (2024)", url: "https://psychiatryonline.org/doi/10.1176/appi.books.9780890428009.apapgpersondisorder02" },
     { m: "Westwood SJ et al.", label: "Westwood SJ et al., JAMA Psychiatry 2025 (neurofeedback for ADHD)", url: "https://doi.org/10.1001/jamapsychiatry.2024.3702" },

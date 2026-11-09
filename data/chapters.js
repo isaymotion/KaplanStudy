@@ -227,6 +227,26 @@ KS.manifest = [
     summary: 'History and definition of hypnosis, hypnotizability as a trait, induction, and indications and contraindications, with a 2024 umbrella review of the evidence.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch23-10', number: '23.10', title: 'Interpersonal Therapy', short: 'IPT',
+    summary: 'Klerman and Weissman\'s IPT: the three phases (Table 23-13), the four problem areas of grief, interpersonal deficits, role disputes and role transitions (Table 23-14), and group IPT (Table 23-15), with a 2024 comparison with antidepressants.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-11', number: '23.11', title: 'Narrative Psychotherapy', short: 'Narrative therapy',
+    summary: 'Narrative psychotherapy and narrative psychiatry: stories, metaphor, plot and character, and future directions, with early meta-analytic evidence.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-12', number: '23.12', title: 'Combined Psychotherapy and Pharmacotherapy', short: 'Combined therapy',
+    summary: 'Indications, one versus two clinicians (Table 23-16), communication, the linkage phenomenon, adherence and education, attribution theory, and combined treatment by disorder, with a network meta-analysis for depression.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-13', number: '23.13', title: 'Mentalization-Based Treatment', short: 'MBT',
+    summary: 'Mentalizing and MBT: aims, techniques, alliance building (Table 23-17), indications and contraindications, with a 2023 trial of short versus long MBT.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-14', number: '23.14', title: 'Psychoeducational Interventions', short: 'Psychoeducation',
+    summary: 'What psychoeducation includes, how it is delivered, and the evidence in schizophrenia, bipolar disorder and depression.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

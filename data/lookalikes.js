@@ -812,5 +812,81 @@ KS.lookalikes = [
       "label": "Participant modeling"
     }
   ]
+},
+{
+  "id": "structured-therapies",
+  "title": "DBT, cognitive therapy, IPT and MBT compared",
+  "summary": "Four structured psychotherapies from Chapter 23: who built them, for whom, what they target and how they run.",
+  "items": [
+    "DBT (23.5)",
+    "Cognitive therapy (23.7)",
+    "IPT (23.10)",
+    "MBT (23.13)"
+  ],
+  "rows": [
+    [
+      "Developed by",
+      "**Marsha Linehan**",
+      "**Aaron T. Beck**",
+      "**Klerman and Weissman** (1970s)",
+      "Not named in the section"
+    ],
+    [
+      "Built for",
+      "Chronically **self-injuring** patients with **BPD**",
+      "**Depression** (cognitive theory of depression)",
+      "**Major depressive disorder**",
+      "**BPD**, especially severe"
+    ],
+    [
+      "Core target",
+      "Emotion dysregulation; skills deficits",
+      "**Automatic thoughts**, assumptions and schemas",
+      "**Current relationships**: grief, role dispute, role transition, deficits",
+      "**Mentalizing** that fails under strong affect"
+    ],
+    [
+      "Format and length",
+      "Skills group, individual therapy, phone coaching, consultation team",
+      "Short course of about **6 to 12** sessions when uncomplicated",
+      "**12 to 20** sessions over 4 to 5 months, three phases",
+      "Group and individual; starts with a **10 to 12** session introductory group"
+    ],
+    [
+      "Signature method",
+      "Balance of acceptance and change; treatment hierarchy",
+      "Thought record; testing thoughts; activity scheduling",
+      "Link mood changes to interpersonal events",
+      "Restore mentalizing in the session; agreed formulation"
+    ]
+  ],
+  "keys": [
+    "**Self-harm in BPD with a skills group and phone coaching** means DBT.",
+    "**Grief, role dispute or role transition** as the focus means IPT.",
+    "**Automatic thoughts and the cognitive triad** mean cognitive therapy.",
+    "**Understanding minds when feelings run high** means MBT."
+  ],
+  "links": [
+    {
+      "ch": "ch23-5",
+      "sec": "s235-dbt",
+      "label": "DBT"
+    },
+    {
+      "ch": "ch23-7",
+      "sec": "s237-model",
+      "label": "Cognitive therapy"
+    },
+    {
+      "ch": "ch23-10",
+      "sec": "s2310-intro",
+      "label": "IPT"
+    },
+    {
+      "ch": "ch23-13",
+      "sec": "s2313-mbt",
+      "label": "MBT"
+    }
+  ]
 }
 ];

@@ -1,0 +1,300 @@
+/* Chapter 23.10 learning layer: wrong-answer explanations (aligned with each case's choices; "" for the correct one), end-of-section checks, pre-test, board-domain overrides and visual summaries.
+   Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 23.10, and the post-publication updates in this chapter. */
+KS.add("ch23-10", "learning", {
+ "pretest": [
+  "c2310-ii01",
+  "c2310-ii05",
+  "c2310-ip04",
+  "c2310-ia02",
+  "c2310-ia06",
+  "c2310-ia10",
+  "c2310-ig03",
+  "c2310-ig07"
+ ],
+ "domains": {},
+ "whyNot": {
+  "c2310-ii01": [
+   "Ellis and Lazarus are not the pair credited with IPT; the guide names Klerman and Weissman as its creators.",
+   "Beck and Burns are not the developers of IPT; the guide credits Klerman and Weissman in the 1970s.",
+   "",
+   "Fonagy and Bateman are not named as IPT's creators; the guide credits Klerman and Weissman.",
+   "White and Epston are not the authors of IPT; the guide credits Klerman and Weissman."
+  ],
+  "c2310-ii02": [
+   "Hypnoanalysis is not the time-limited, relationship-focused therapy the guide describes; IPT fits her five-month limit.",
+   "An 18-month course exceeds the roughly five months she can commit to, whereas IPT runs 12 to 20 sessions over 4 to 5 months.",
+   "Open-ended psychoanalysis has no fixed endpoint, but IPT sets a fixed number of sessions at the start.",
+   "",
+   "Long-term supportive therapy with no end date conflicts with her time limit; IPT is time-limited."
+  ],
+  "c2310-ii03": [
+   "Nothing in the guide says relationships become irrelevant once medication starts; IPT rests on relationships shaping illness and treatment response.",
+   "",
+   "Unresolved oedipal conflict is not the IPT rationale; IPT looks at present relationships rather than unconscious conflict.",
+   "Correcting cognitive distortions is not what explains the marriage focus; IPT links symptoms to current relationship events.",
+   "IPT does not reconstruct childhood; it works on current relationships, so reliving trauma is not its rationale."
+  ],
+  "c2310-ii04": [
+   "",
+   "Exploring her earliest memory is not IPT's approach; IPT focuses on present relationships and her current events.",
+   "A thought record is not described as an IPT task; her material is about interpersonal events and mood.",
+   "Interpreting transference is not the task described here; the key move is linking relationship events to mood changes.",
+   "Session 8 falls in the intermediate phase, so moving to termination would be premature."
+  ],
+  "c2310-ii05": [
+   "The section gives no evidence that IPT is harmful in eating disorders; it simply describes an application there.",
+   "The section reports no effect sizes or trial results, so claiming large effects for all uses is unsupported.",
+   "IPT was developed for major depressive disorder, not schizophrenia.",
+   "The section describes both individual and group IPT and gives no outcome data, so it does not show IPT works only in groups.",
+   ""
+  ],
+  "c2310-ip01": [
+   "Behavioral activation is not the technique described; giving permission and responsibility to recover is the sick role.",
+   "",
+   "Role-play is not what is happening; she is being given a diagnosis and an explanation of her role while ill.",
+   "The interpersonal inventory reviews important relationships; it does not involve explaining expectations of illness.",
+   "Communication analysis examines how she communicates; this stem is about the role of being ill, not her communication."
+  ],
+  "c2310-ip02": [
+   "",
+   "Free association is not an IPT procedure; the therapist is asking directly about relationships and episode onsets.",
+   "The midtreatment meeting belongs to group IPT between sessions 10 and 11, not to a session 3 review of relationships.",
+   "The interpersonal formulation ties symptoms to a problem area; this review of relationships and precipitants is the inventory.",
+   "A termination review comes at the end, whereas session 3 is in the initial phase."
+  ],
+  "c2310-ip03": [
+   "Switching to group IPT does nothing to resolve the disagreement about the problem area.",
+   "Adding a second therapist does not address the lack of agreement on the focus.",
+   "Starting dispute strategies anyway ignores that the patient must agree with the area before the work phase.",
+   "Ending therapy is unnecessary; the task is to reach agreement on a problem area.",
+   ""
+  ],
+  "c2310-ip04": [
+   "IPT has a fixed number of sessions, so offering indefinite extension goes against its structure.",
+   "Calling it childhood resistance is not IPT's approach; IPT frames ending as a possible time of grief.",
+   "Ignoring the feeling skips the explicit discussion of ending that the termination phase calls for.",
+   "Referring him on at once does not fit termination, which involves discussing the end and consolidating gains.",
+   ""
+  ],
+  "c2310-ip05": [
+   "Engagement is a group-therapy stage in the first sessions, not the time for relapse planning.",
+   "",
+   "The initial phase is for assessing and choosing a problem area, not planning for relapse after therapy.",
+   "The intermediate phase is for working on the chosen problem area, not preparing for life after therapy.",
+   "Pregroup is a group-IPT meeting before the group begins, not the final sessions of individual therapy."
+  ],
+  "c2310-ip06": [
+   "Sessions 1 to 5 make up the initial phase.",
+   "Sessions 16 to 20 make up the termination phase.",
+   "Sessions 10 to 11 is the timing of the group midtreatment meeting, not the intermediate phase.",
+   "",
+   "Sessions 3 to 5 fall within the initial phase."
+  ],
+  "c2310-ia01": [
+   "The sick role is an initial-phase technique, not a problem area.",
+   "A role dispute involves conflict with a significant other, which the stem does not describe.",
+   "",
+   "Interpersonal deficits describe social impoverishment, but her depression followed a death.",
+   "A role transition involves a change of role, whereas her difficulty follows bereavement."
+  ],
+  "c2310-ia02": [
+   "Reviewing assets of the new role is a role-transition strategy, not a grief one.",
+   "Increasing disharmony is for a role dispute at impasse, not for bereavement.",
+   "Noting patterns with the therapist is a strategy for interpersonal deficits, not grief.",
+   "Recontracting at the midtreatment meeting is a group-IPT step and not a grief strategy.",
+   ""
+  ],
+  "c2310-ia03": [
+   "A role dispute needs conflict with a significant other, which he does not describe.",
+   "",
+   "Grief would require a loss by death, which the stem does not mention.",
+   "An area does apply: his lack of close friends and distance fit interpersonal deficits.",
+   "A role transition would involve a change of role, which the stem does not describe."
+  ],
+  "c2310-ia04": [
+   "Assigning the sick role is an initial-phase step and does not use her in-session pattern.",
+   "Mourning an old role belongs to role transitions, not deficits.",
+   "Ignoring it would waste useful data; for deficits the therapist names in-session patterns.",
+   "",
+   "Increasing disharmony is for a role dispute at impasse, not deficits."
+  ],
+  "c2310-ia05": [
+   "",
+   "Deficits describe past social impoverishment, but her problem is conflict with her husband.",
+   "Grief requires a loss by death, which the stem does not describe.",
+   "A role transition involves a change of role, whereas hers is an ongoing conflict.",
+   "Dissolution means the relationship is ending, but both still argue and want change."
+  ],
+  "c2310-ia06": [
+   "Assisting mourning and adaptation fits dissolution, when the relationship is ending.",
+   "",
+   "Reconstructing a relationship with the deceased is a grief strategy.",
+   "Building a new support system is a role-transition strategy.",
+   "Calming the parties suits renegotiation, but here talks have stopped."
+  ],
+  "c2310-ia07": [
+   "Referring for couples therapy is not the IPT task described, and the conflict is with a business partner.",
+   "Increasing disharmony is for impasse, but this dispute has already ended in a decision to separate.",
+   "Calming parties to renegotiate fits renegotiation, not a relationship that is ending.",
+   "A new hobby alone is too narrow; at dissolution the therapist helps with mourning and adaptation.",
+   ""
+  ],
+  "c2310-ia08": [
+   "Interpersonal deficits describe long-standing social impoverishment, which the stem does not describe.",
+   "Grief is for bereavement, and retirement is listed under role transitions.",
+   "",
+   "The sick role is an initial-phase technique, not a problem area.",
+   "A role dispute needs conflict with a significant other, which the stem does not describe."
+  ],
+  "c2310-ia09": [
+   "",
+   "Reducing social isolation is a goal for interpersonal deficits, not her move and new job.",
+   "Reconstructing a relationship with someone who died is a grief goal.",
+   "Increasing disharmony with a partner is a role-dispute strategy.",
+   "Avoiding discussion of the old role runs against the goal of mourning and accepting its loss."
+  ],
+  "c2310-ia10": [
+   "Grief over her mother is the tempting dramatic loss, but the binge eating began after the move, not with that death.",
+   "Grief over her father also does not match when her symptoms began.",
+   "Her trouble began with a specific move that cost her friends, which fits a transition better than interpersonal deficits.",
+   "",
+   "The dispute with her son is a real issue but only a secondary area, since the move marked the onset."
+  ],
+  "c2310-ia11": [
+   "It is not the primary area; the move-related role transition was the main focus.",
+   "Setting limits with her son is a role-dispute strategy, not a grief strategy.",
+   "Adding a secondary area is allowed and is not a violation of IPT focus.",
+   "Her difficulty with her son is a conflict over roles rather than deficits.",
+   ""
+  ],
+  "c2310-ig01": [
+   "Twelve to twenty members is far above the recommended six to nine.",
+   "Three to four members is below the recommended six to nine.",
+   "",
+   "The guide recommends one or two leaders, so having none is wrong.",
+   "Ten to fifteen members with three leaders exceeds both the recommended size and the one or two leaders."
+  ],
+  "c2310-ig02": [
+   "Avoiding individual problem areas is wrong; focusing on each patient's own areas is the hallmark of group IPT.",
+   "Group IPT includes three individual meetings, so it does not need none.",
+   "",
+   "The group is not meant to replace outside friendships, which members are told to keep working on.",
+   "Group IPT lasts about 20 sessions over 5 months, not over two years."
+  ],
+  "c2310-ig03": [
+   "The posttreatment meeting comes within a week after the last session, not before the group.",
+   "Engagement is a group stage in sessions 1 to 2, not a 2-hour individual meeting beforehand.",
+   "",
+   "The midtreatment meeting falls between sessions 10 and 11, after the group has started.",
+   "A termination session is at the end of the group, not before joining."
+  ],
+  "c2310-ig04": [
+   "Skipping the midtreatment meeting has no bearing on her using the group as a social circle.",
+   "",
+   "Using group members as a social circle is not the main goal; the aim is to change outside relationships.",
+   "The guide does not call for leaving; the therapist reinforces keeping the work on outside relationships.",
+   "Group IPT seldom focuses on intragroup relationships unless tied to a member's problem area."
+  ],
+  "c2310-ig05": [
+   "Work is sessions 6 to 15, but this is session 2 with anxious members seeking structure.",
+   "Impasse is a stage of a role dispute, not a stage of group development.",
+   "Differentiation is sessions 3 to 5, so it is too late for session 2.",
+   "",
+   "Termination is sessions 16 to 20, far from session 2."
+  ],
+  "c2310-ig06": [
+   "The posttreatment meeting comes after the group ends, not in session 4.",
+   "Banning discussion does not fit; the therapist helps members see their reactions in light of outside differences.",
+   "Reassigning problem areas without discussion is not what differentiation calls for.",
+   "",
+   "Grieving the end of the group belongs to termination, not session 4."
+  ],
+  "c2310-ig07": [
+   "",
+   "Having the group vote is not part of group IPT; the therapist keeps focus on her problem area.",
+   "Making the tension the focus of several sessions is what other interactive groups might do, not group IPT.",
+   "Stopping the group is unnecessary for a tension unrelated to her problem area.",
+   "Interpreting it as transference is not the group IPT approach; intragroup process is seldom the focus."
+  ],
+  "c2310-ig08": [
+   "",
+   "Engagement is sessions 1 to 2 and is not an individual review of progress.",
+   "Differentiation is sessions 3 to 5, before this meeting.",
+   "The pregroup meeting happens before the group starts.",
+   "The posttreatment meeting is within a week after the last session."
+  ],
+  "c2310-ig09": [
+   "Extending the group by 20 sessions is not what the guide recommends; the course is about 20 sessions.",
+   "",
+   "Organizing reunions is the opposite of the advice to use termination to say goodbye.",
+   "Ignoring the proposal wastes the chance to use termination for formally saying goodbye.",
+   "Asking them to keep it secret is not part of the guide's recommended response."
+  ],
+  "c2310-ig10": [
+   "The pregroup meeting occurs before the group begins.",
+   "Engagement is a group stage in sessions 1 to 2, not an individual meeting after the last session.",
+   "",
+   "Termination session 16 is within the group, not after the last session.",
+   "The midtreatment meeting is between sessions 10 and 11, not after the group ends."
+  ]
+ },
+ "checks": {
+  "s2310-intro": [
+   {
+    "q": "Who created interpersonal psychotherapy (IPT), and when?",
+    "a": "**Gerald Klerman and Myrna Weissman** created it in the **1970s**."
+   },
+   {
+    "q": "What is the usual length of an IPT course?",
+    "a": "Usually **12 to 20 sessions** over **4 to 5 months**."
+   },
+   {
+    "q": "Name the four IPT problem areas.",
+    "a": "**Grief, role disputes, role transitions and interpersonal deficits**."
+   }
+  ],
+  "s2310-phases": [
+   {
+    "q": "Which sessions make up the initial, intermediate and termination phases of individual IPT?",
+    "a": "Initial **1 to 5**, intermediate **6 to 15**, termination **16 to 20**."
+   },
+   {
+    "q": "What does the sick role give the patient?",
+    "a": "**Permission to recover and responsibility to recover**."
+   },
+   {
+    "q": "What must happen before the work phase begins?",
+    "a": "The patient must **agree with the problem area and agree to work on it**."
+   }
+  ],
+  "s2310-areas": [
+   {
+    "q": "Which IPT problem area covers complicated bereavement?",
+    "a": "**Grief**."
+   },
+   {
+    "q": "What is the IPT strategy at the impasse stage of a role dispute?",
+    "a": "**Increase disharmony** so negotiation reopens."
+   },
+   {
+    "q": "How should the problem area be chosen, as in the case of Ms. G?",
+    "a": "Choose the area linked to **the onset and maintenance of current symptoms**, not simply the most dramatic loss."
+   }
+  ],
+  "s2310-group": [
+   {
+    "q": "What are the length, size and leadership of group IPT?",
+    "a": "**20 sessions over 5 months**, **6 to 9 members**, **1 or 2 leaders**."
+   },
+   {
+    "q": "What are the three individual meetings in group IPT?",
+    "a": "**Pregroup, midgroup and postgroup**."
+   },
+   {
+    "q": "How should members treat the group in IPT?",
+    "a": "As an **interpersonal laboratory** to change outside relationships, not as a **stand-in social circle**."
+   }
+  ]
+ },
+ "visuals": []
+});

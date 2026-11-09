@@ -13,6 +13,59 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "68.0.0",
+    "date": "2026-11-10",
+    "title": "Chapter 23 complete: sections 23.10 to 23.14",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch23-10",
+        "text": "New section 23.10, Interpersonal Therapy: origins, the three phases (Table 23-13), the four problem areas (Table 23-14) and group IPT (Table 23-15), with 32 clinical cases.",
+        "href": "#/c/ch23-10/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-11",
+        "text": "New section 23.11, Narrative Psychotherapy: metaphor, plot and character, and narrative psychiatry, with 16 clinical cases.",
+        "href": "#/c/ch23-11/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-12",
+        "text": "New section 23.12, Combined Psychotherapy and Pharmacotherapy: indications, one versus two clinicians (Table 23-16), the linkage phenomenon, adherence, attribution theory and combined treatment by disorder, with 24 clinical cases.",
+        "href": "#/c/ch23-12/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-13",
+        "text": "New section 23.13, Mentalization-Based Treatment: mentalizing, techniques, alliance building (Table 23-17), indications and contraindications, with 11 clinical cases.",
+        "href": "#/c/ch23-13/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-14",
+        "text": "New section 23.14, Psychoeducational Interventions: components, formats and evidence by disorder, with 6 clinical cases.",
+        "href": "#/c/ch23-14/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "update",
+        "ch": "ch23-10",
+        "text": "Updates since the book: IPT versus antidepressants (2024), narrative therapy meta-analysis (2024), combined treatment for depression (network meta-analysis), short versus long MBT (2023 trial) and psychoeducation in bipolar disorder (2024 review)."
+      },
+      {
+        "type": "feature",
+        "text": "Chapter 23 is now complete (23.1 to 23.14). New decision helper \"Which psychotherapy? (all of Chapter 23)\" and a look-alike comparing DBT, cognitive therapy, IPT and MBT.",
+        "href": "#/helpers/psytx",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "67.0.0",
     "date": "2026-11-09",
     "title": "Chapter 23 continued: sections 23.5 to 23.9 (DBT to hypnosis)",

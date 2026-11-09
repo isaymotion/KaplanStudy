@@ -702,7 +702,18 @@ KS.glossary = (KS.glossary || []).concat([
   ["aversion therapy", "Pairing an unwanted behavior with a noxious stimulus so that the behavior becomes less likely.", "Ch 23.8"],
   ["token economy", "Operant program in which patients earn tokens for target behaviors and exchange them for rewards.", "Ch 23.8"],
   ["behavioral activation", "Structured scheduling of activities that bring the patient back into contact with rewarding contingencies, used for depression.", "Ch 23.8"],
-  ["self-hypnosis", "Inducing the hypnotic state in oneself, often taught to patients after hypnosis with a clinician.", "Ch 23.9"]
+  ["self-hypnosis", "Inducing the hypnotic state in oneself, often taught to patients after hypnosis with a clinician.", "Ch 23.9"],
+  ["interpersonal therapy", "Klerman and Weissman's time-limited treatment (usually 12 to 20 sessions) built for major depression; it links mood to current relationships and works on one or two problem areas.", "Ch 23.10"],
+  ["role dispute", "In IPT, a conflict in which patient and a significant other hold different expectations of their relationship.", "Ch 23.10"],
+  ["role transition", "In IPT, a life change (such as a new job, divorce, retirement or illness) that the patient has trouble adapting to.", "Ch 23.10"],
+  ["interpersonal deficits", "In IPT, a pattern of social isolation or unsatisfying relationships, used as the focus when no other problem area fits.", "Ch 23.10"],
+  ["narrative psychotherapy", "Therapy that works with the stories patients tell about their lives, using metaphor, plot and character to help them revise those stories.", "Ch 23.11"],
+  ["narrative psychiatry", "Psychiatric practice that attends to the patient's story alongside diagnosis and treatment.", "Ch 23.11"],
+  ["linkage phenomenon", "A patient's tendency, usually within a positive transference, to tie the effect of a medication to the therapist, for example by carrying a pill as a reminder of the therapist.", "Ch 23.12"],
+  ["attribution theory", "The study of how people explain the causes of behavior; in combined treatment, how a patient credits change to the drug or to his or her own efforts.", "Ch 23.12"],
+  ["split transference", "In treatment shared by two clinicians, the patient's casting of one as all good and the other as all bad.", "Ch 23.12"],
+  ["mentalizing", "Understanding one's own and other people's behavior in terms of mental states such as feelings, wishes and beliefs; the target of MBT.", "Ch 23.13"],
+  ["psychoeducation", "Teaching patients and families about an illness, its treatment and prognosis, together with coping, problem-solving and communication skills.", "Ch 23.14"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1037,5 +1048,11 @@ KS.glossaryAliases = {
   "thought records": "thought record",
   "implosion": "flooding",
   "token economies": "token economy",
-  "exposure hierarchy": "graded exposure"
+  "exposure hierarchy": "graded exposure",
+  "interpersonal psychotherapy": "interpersonal therapy",
+  "role disputes": "role dispute",
+  "role transitions": "role transition",
+  "narrative therapy": "narrative psychotherapy",
+  "psychoeducational interventions": "psychoeducation",
+  "mentalising": "mentalizing"
 };

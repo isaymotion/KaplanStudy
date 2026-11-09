@@ -1,0 +1,19 @@
+/* Chapter 23.11 diagnosis cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 23.11. */
+KS.add("ch23-11", "diagnosis", [
+  {"id":"d2311-na01","tag":"Narrative","q":"How does a psychiatric interview typically begin, from a narrative point of view?","a":"With an **open-ended** question that **invites a story** (for example, \"What brings you here?\")."},
+  {"id":"d2311-na02","tag":"Narrative","q":"What do patients usually include when telling the story of their problem?","a":"When it **began**, what **caused** it, how it **causes difficulty**, and what **problem-solving** they have tried."},
+  {"id":"d2311-na03","tag":"Narrative","q":"A patient says, \"I have no idea why I'm here; my family sent me.\" Is this still a narrative?","a":"Yes. The reply to the opening question **always involves a story**, even if it is rudimentary or confused."},
+  {"id":"d2311-na04","tag":"Practice","q":"What is the major shared task of narrative medicine and narrative psychotherapy?","a":"**Listening well** and forming an **empathic connection** with what the patient tells."},
+  {"id":"d2311-na05","tag":"Practice","q":"How does narrative understanding differ from a diagnostic formulation?","a":"It goes beyond a **causal explanation** or a **categorical label** and grasps the **uniqueness** of the whole person in their context."},
+  {"id":"d2311-na06","tag":"Practice","q":"Besides helping their practice, why should doctors be trained in narrative reading and writing, according to Charon?","a":"To help them bear the **stress and trauma** that clinical work brings."},
+  {"id":"d2311-ne01","tag":"Technique","q":"What two dimensions does plot add to metaphor?","a":"It **brings together heterogeneous elements** and organizes experience of **time** (**temporal perception**)."},
+  {"id":"d2311-ne02","tag":"Technique","q":"What is the critical function of plot in a narrative?","a":"**Narrative synthesis**: joining many separate events into a **single intelligible story**, even when they seem incongruous."},
+  {"id":"d2311-ne03","tag":"Technique","q":"What are the two temporal orders a plot creates?","a":"A **discrete series of incidents** (infinite nows) and the arrangement of those nows into a **humanly manageable** experience."},
+  {"id":"d2311-ne04","tag":"Technique","q":"How does narrative identity resolve the essentialist versus nonessentialist tension?","a":"It allows **continuity over time** and **relative stability** of self **without an essential core**."},
+  {"id":"d2311-np01","tag":"Practice","q":"From a narrative view, what do cognitive, psychodynamic, feminist, humanistic, expressive and spiritual therapies have in common?","a":"They all **reauthor** (rework) the patient's opening story so a **new story** emerges."},
+  {"id":"d2311-np02","tag":"Practice","q":"What does the reauthored story give the patient?","a":"**More flexibility** in understanding the **past** and **fresh strategies** for the **future**."},
+  {"id":"d2311-np03","tag":"Practice","q":"Does taking a narrative turn mean abandoning biologic psychiatry?","a":"No. It corrects **overreliance** on biologic models without **antipsychiatry** and without discarding **bioscience** or other skills."},
+  {"id":"d2311-np04","tag":"Practice","q":"Which contemporary movement does narrative psychotherapy join in making care client-focused and collaborative?","a":"The **recovery movement**."},
+  {"id":"d2311-np05","tag":"Practice","q":"A patient feels a therapy does not fit them. What is the narrative stance?","a":"They are **likely right** and another approach may work better, but **judgment** is needed because therapy can be slow; it comes down to **judgment, wisdom, and trial and error**."},
+  {"id":"d2311-np06","tag":"Practice","q":"What helps a clinician build a repertoire of narrative frames?","a":"**Biography, autobiography and literature**; the **more stories** known, the better the chance of finding a fitting frame."}
+]);
