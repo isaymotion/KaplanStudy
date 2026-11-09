@@ -149,7 +149,7 @@ Totals: **1,273/1,273 cases and 761/761 sections**, with all tests passing on `7
 - The remote says "repository moved" on push. It is harmless (it redirects to `isaymotion/KaplanStudy`).
 - **The design refresh renamed controls.** `e2e.py` now uses `#textSizeBtn` and `input[name=textSize]`; `e2e_tools.py` accepts "version" in the report link. If a later redesign breaks a selector, fix the test, not the app.
 - `fulltest.py` `CHS` had missed Chapter 15; it now lists 15, 16 and 17. Check it when adding a chapter.
-- Fixing a case stem or `why` after the learning layer exists: edit both the work file and `data/chNN/cards-cases.js` directly. Rebuilding reshuffles nothing if the seed is unchanged, but editing the built file avoids any risk to the whyNot alignment.
+- Fixing a case stem or `why` after the learning layer exists: edit both the work file and `data/chNN/cards-cases.js` directly. Do not rebuild for this: the build reshuffles choices, which could break the whyNot alignment.
 - **Push access:** cloning works without attaching the repo, but pushing does not (git proxy 403). Claude cannot attach the repo with push access on its own initiative; the request is blocked. At the start of a session, ask the user to say "Add isaymotion/KaplanStudy to this session with push access", then call `add_repo` with `access: "push"`. If a clone already exists at `/home/claude/kaplanstudy`, keep it; do not re-clone.
 - The first Bash call of a session may be refused with "the classifier gave no verdict"; repeating the identical call once works.
 - The local test server can stop between turns. If `curl localhost:8124` does not return 200, restart it and rerun e2e.
