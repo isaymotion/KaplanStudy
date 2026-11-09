@@ -4,6 +4,11 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 23.1 to 23.4 (psychotherapy), November 2026 */
+    { m: "Leichsenring F et al., The status of psychodynamic", label: "Leichsenring F et al., World Psychiatry 2023 (umbrella review)", url: "https://doi.org/10.1002/wps.21104" },
+    { m: "Wienicke FJ et al.", label: "Wienicke FJ et al., Clin Psychol Rev 2023 (IPD meta-analysis)", url: "https://doi.org/10.1016/j.cpr.2023.102269" },
+    { m: "Online group psychotherapy: a systematic review", label: "Andrews K et al., Community Ment Health J 2024", url: "https://doi.org/10.1007/s10597-024-01304-4" },
+    { m: "Practice Guideline for the Treatment of Patients With Schizophrenia, 3rd ed.", label: "APA Practice Guideline for Schizophrenia, 3rd ed. (2020)", url: "https://psychiatryonline.org/doi/10.1176/appi.focus.18402" },
     /* Chapter 22 (other somatic therapies), November 2026 */
     { m: "83 FR 66103", label: "Federal Register: FDA final order reclassifying ECT devices (Dec 2018)", url: "https://www.govinfo.gov/content/pkg/FR-2018-12-26/html/2018-27809.htm" },
     { m: "Ketamine versus ECT for nonpsychotic", label: "Anand A et al., NEJM 2023 (ELEKT-D, PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/37224232/" },

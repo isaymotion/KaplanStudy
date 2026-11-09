@@ -5057,5 +5057,201 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "psymode",
+  "chapter": "ch23-1",
+  "title": "Which psychodynamic or relational approach?",
+  "summary": "Answer a few questions about the patient and the problem to see which approach sections 23.1 to 23.4 point to: couples or family therapy, supportive, brief dynamic, classic analysis or expressive psychotherapy.",
+  "caution": "A teaching aid built from Kaplan & Sadock sections 23.1 to 23.4, not a treatment algorithm. Real choices are blended, mix modalities, and depend on the patient's wishes, safety, access and current guidelines.",
+  "start": "rel",
+  "nodes": {
+    "rel": {
+      "q": "Is the main problem in a couple or a family relationship?",
+      "options": [
+        {
+          "label": "Yes: conflict between partners",
+          "to": "cpl",
+          "note": "Communication or role problems between two people."
+        },
+        {
+          "label": "Yes: a family pattern, or a family coping with an ill member",
+          "to": "r:family",
+          "note": "Interactions among family members."
+        },
+        {
+          "label": "No: the problem is mainly within the individual",
+          "to": "sup",
+          "note": "Go on to the individual approaches."
+        }
+      ]
+    },
+    "cpl": {
+      "q": "Is any of these present: severe psychosis (especially paranoid), a threat of domestic violence, a partner who truly wants a divorce, or a spouse who refuses out of anxiety or fear?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:cplno",
+          "note": "Contraindications to couples therapy."
+        },
+        {
+          "label": "No",
+          "to": "r:couples",
+          "note": "No listed contraindication."
+        }
+      ]
+    },
+    "sup": {
+      "q": "Is the patient in an acute crisis, psychotic or latently psychotic, severely character-disordered, cognitively or physically vulnerable, or unmotivated for depth work?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:supportive",
+          "note": "Poor ego strength or high risk of decompensation."
+        },
+        {
+          "label": "No",
+          "to": "brief",
+          "note": "Consider the exploratory approaches."
+        }
+      ]
+    },
+    "brief": {
+      "q": "Does the patient have one circumscribed focus, high motivation for change (not only symptom relief) and a good response to a trial interpretation, with no serious suicide attempts, acute psychosis, severe depression or incapacitating chronic obsessional symptoms?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:brief",
+          "note": "Fits the brief dynamic schools' selection criteria."
+        },
+        {
+          "label": "No, or the problems are broad and long-standing",
+          "to": "cls",
+          "note": "Consider longer exploratory work."
+        }
+      ]
+    },
+    "cls": {
+      "q": "Does the patient meet the analytic prerequisites: high motivation, psychological mindedness, a capacity for relationships, ego strength, at least average intelligence, a stable life with no major upheaval, and only neurosis or mild character pathology?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:classic",
+          "note": "Higher-functioning, analyzable patient."
+        },
+        {
+          "label": "Not fully: mild to moderate ego weakening, but can form an alliance",
+          "to": "r:expressive",
+          "note": "Neurotic conflicts or nonpsychotic character disorders, including narcissistic and borderline."
+        }
+      ]
+    }
+  },
+  "results": {
+    "family": {
+      "label": "Family therapy",
+      "dx": "Family therapy (23.4)",
+      "line": "Family therapy targets the interactions among family members; for a family with a member who has a major psychiatric disorder, the psychoeducational approach is the one the section describes as most effective.",
+      "points": [
+        "Do pretreatment work on fears of blame; a member's refusal may hide collusion with a parent's anxiety.",
+        "Sessions are usually no more than once a week and may last up to 2 hours.",
+        "Since the book: the APA 2020 schizophrenia guideline suggests (2B) family interventions for patients in contact with family."
+      ],
+      "link": {
+        "ch": "ch23-4",
+        "sec": "s234-family",
+        "label": "Family therapy and its indications"
+      }
+    },
+    "couples": {
+      "label": "Couples therapy",
+      "dx": "Couples (marital) therapy (23.4)",
+      "line": "Communication problems are the main indication; conjoint therapy is the most common format.",
+      "points": [
+        "Look at the whole relationship before treating one complaint.",
+        "Formats range from individual and concurrent or collaborative work to conjoint, four-way and couples groups.",
+        "Therapy does not guarantee the marriage survives; divorce therapy may follow."
+      ],
+      "link": {
+        "ch": "ch23-4",
+        "sec": "s234-couples",
+        "label": "Couples therapy"
+      }
+    },
+    "cplno": {
+      "label": "Couples therapy is contraindicated for now",
+      "dx": "Contraindication to couples therapy (23.4)",
+      "line": "Severe (especially paranoid) psychosis, a threat of domestic violence, a genuine wish for divorce, or a spouse who refuses out of anxiety or fear are listed contraindications.",
+      "points": [
+        "Address safety first when violence is threatened.",
+        "Consider individual treatment for the partner who is ill or seeking help."
+      ],
+      "link": {
+        "ch": "ch23-4",
+        "sec": "s234-couples",
+        "label": "Contraindications"
+      }
+    },
+    "supportive": {
+      "label": "Supportive psychotherapy",
+      "dx": "Supportive psychotherapy (23.1)",
+      "line": "For poor ego strength or a high risk of decompensation: strengthen defenses, relieve symptoms and restore equilibrium, face to face, with adjuncts such as medication or hospitalization as needed.",
+      "points": [
+        "Free association, genetic interpretation and the couch are contraindicated.",
+        "Dependency needs are partly met while working toward legitimate independence.",
+        "It may serve as a prelude to exploratory work in an unmotivated patient."
+      ],
+      "link": {
+        "ch": "ch23-1",
+        "sec": "s231-supp",
+        "label": "Supportive psychotherapy"
+      }
+    },
+    "brief": {
+      "label": "Brief psychodynamic psychotherapy",
+      "dx": "Brief dynamic therapy (23.2)",
+      "line": "Time-limited (typically 10 to 12 sessions) treatment around one focus; the four schools differ in length, focus and technique.",
+      "points": [
+        "Malan: about 20 sessions (30 for a trainee), early transference interpretation.",
+        "Mann: exactly 12 sessions on one central issue; separation as a maturational event.",
+        "Davanloo: flexible foci and active confrontation; Sifneos: anxiety-provoking questions, an oedipal focus, no transference neurosis."
+      ],
+      "link": {
+        "ch": "ch23-2",
+        "sec": "s232-intro",
+        "label": "Brief psychodynamic psychotherapy"
+      }
+    },
+    "classic": {
+      "label": "Classic psychoanalysis",
+      "dx": "Psychoanalysis (23.1)",
+      "line": "Four to five sessions a week on the couch for several years, aiming at structural change through free association and analysis of the transference neurosis.",
+      "points": [
+        "Postpone major life decisions until they are analyzed.",
+        "Contraindicated during a major life crisis, with antisocial personality or with a close tie to the analyst.",
+        "Age is no bar: patients remain analyzable into their 60s or 70s."
+      ],
+      "link": {
+        "ch": "ch23-1",
+        "sec": "s231-process",
+        "label": "Indications and prerequisites"
+      }
+    },
+    "expressive": {
+      "label": "Expressive psychoanalytic psychotherapy",
+      "dx": "Expressive psychotherapy (23.1)",
+      "line": "Face to face, one to three times a week, aiming at self-awareness and better object relations through the here and now.",
+      "points": [
+        "Interpret negative transference early; leave positive transference alone unless it blocks progress.",
+        "Borderline patients need technical variations.",
+        "Deep or frequent interpretation can disorganize fragile patients."
+      ],
+      "link": {
+        "ch": "ch23-1",
+        "sec": "s231-expr",
+        "label": "Expressive psychotherapy"
+      }
+    }
+  }
 }
 ]);

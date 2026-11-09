@@ -654,5 +654,86 @@ KS.lookalikes = [
       { ch: "ch22", sec: "s22-tms", label: "Transcranial magnetic stimulation" },
       { ch: "ch22", sec: "s22-vns", label: "Vagus nerve stimulation" }
     ]
-  }
+  },
+{
+  "id": "brief-dyn-schools",
+  "title": "The four schools of brief psychodynamic psychotherapy",
+  "summary": "How Malan, Mann, Davanloo and Sifneos differ in setting, length, selection, focus and technique (section 23.2).",
+  "items": [
+    "Malan (brief focal)",
+    "Mann (time-limited)",
+    "Davanloo (short-term dynamic)",
+    "Sifneos (STAPP)"
+  ],
+  "rows": [
+    [
+      "Origin",
+      "**Balint** team, **Tavistock Clinic**, London, 1950s",
+      "**Boston University**, early 1970s",
+      "**McGill University**",
+      "**Massachusetts General Hospital** (Harvard), 1950s"
+    ],
+    [
+      "Length",
+      "About **20** sessions (**30** for a trainee); never more than **40**",
+      "Exactly **12** sessions",
+      "Not fixed in the section",
+      "Not fixed in the section"
+    ],
+    [
+      "Selection",
+      "Explicit criteria; **high motivation** predicts success; response to trial interpretation",
+      "**Less explicit** criteria; excludes severe depression and **acute psychosis**",
+      "Ego-function assessment; response to interpretation; includes **severe, long-standing** neurotic problems",
+      "Seven criteria, including a **circumscribed chief complaint** and motivation for **change**, not just relief"
+    ],
+    [
+      "Focus",
+      "A **circumscribed** focus",
+      "One **central issue**",
+      "**Oedipal, non-oedipal or several** foci",
+      "Usually an **oedipal** focus; pregenital issues sidestepped"
+    ],
+    [
+      "Signature technique",
+      "**Early transference interpretation** (including negative) linked to the parents; fixed end date",
+      "Early **positive transference**; the ending as a **maturational** separation",
+      "**Active** confrontation of defenses; corrective experience in the transference made so by **interpretation**",
+      "Repeated **anxiety-provoking questions**; avoid a **transference neurosis** at all costs"
+    ]
+  ],
+  "keys": [
+    "**Exactly 12 sessions** means Mann.",
+    "**Anxiety-provoking questioning** and an oedipal focus mean Sifneos.",
+    "A technique for **incapacitating OCD and phobias** means Davanloo.",
+    "**High motivation** was the feature Malan found invariably linked to success."
+  ],
+  "links": [
+    {
+      "ch": "ch23-2",
+      "sec": "s232-intro",
+      "label": "Brief dynamic therapy compared"
+    },
+    {
+      "ch": "ch23-2",
+      "sec": "s232-malan",
+      "label": "Malan"
+    },
+    {
+      "ch": "ch23-2",
+      "sec": "s232-mann",
+      "label": "Mann"
+    },
+    {
+      "ch": "ch23-2",
+      "sec": "s232-davanloo",
+      "label": "Davanloo"
+    },
+    {
+      "ch": "ch23-2",
+      "sec": "s232-sifneos",
+      "label": "Sifneos"
+    }
+  ]
+}
 ];

@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 65.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 66.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -123,6 +123,10 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 21.10 | Drugs Used to Treat the Side Effects of Psychotropic Drugs | 17 | 43 | 67 (plus generated drug drills) |
 | 21.11 | Nutritional Supplements and Medical Foods | 14 | 46 | 68 (plus generated drug drills) |
 | 22 | Other Somatic Therapies | 21 | 350 | 384 |
+| 23.1 | Psychoanalysis and Psychoanalytic Psychotherapy | 8 | 127 | 144 |
+| 23.2 | Brief Psychodynamic Psychotherapy | 6 | 59 | 58 |
+| 23.3 | Group Psychotherapy, Combined Individual and Group Psychotherapy, and Psychodrama | 8 | 63 | 85 |
+| 23.4 | Family Therapy and Couples Therapy | 5 | 65 | 65 |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Upgrading from version 59 (October 2026)

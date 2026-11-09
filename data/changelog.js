@@ -13,6 +13,52 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "66.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 23 begins: sections 23.1 to 23.4 (psychotherapy)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch23-1",
+        "text": "New section 23.1, Psychoanalysis and Psychoanalytic Psychotherapy: classic, expressive and supportive modes on one continuum (Table 23-1), the analytic process and stages (Table 23-2), patient prerequisites (Table 23-3), the setting and rules, expressive and supportive techniques and the corrective emotional experience, with 56 clinical cases.",
+        "href": "#/c/ch23-1/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-2",
+        "text": "New section 23.2, Brief Psychodynamic Psychotherapy: the Malan, Mann, Davanloo and Sifneos schools compared, with 26 clinical cases.",
+        "href": "#/c/ch23-2/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-3",
+        "text": "New section 23.3, Group Psychotherapy, Combined Individual and Group Psychotherapy, and Psychodrama: orientations (Table 23-4), selection and preparation, therapeutic factors (Table 23-5), inpatient and self-help groups, combined therapy, psychodrama and ethical issues, with 38 clinical cases.",
+        "href": "#/c/ch23-3/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-4",
+        "text": "New section 23.4, Family Therapy and Couples Therapy: indications, consultation and interviewing, the schools of family therapy (Table 23-6), modified techniques, and the types, indications, contraindications and goals of couples therapy, with 27 clinical cases.",
+        "href": "#/c/ch23-4/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "update",
+        "ch": "ch23-1",
+        "text": "Updates since the book: the 2023 umbrella review of psychodynamic therapy (23.1), a 2023 patient-level meta-analysis of short-term psychodynamic therapy for depression (23.2), online group therapy (23.3) and the APA 2020 guideline on family interventions in schizophrenia (23.4)."
+      },
+      {
+        "type": "feature",
+        "text": "New decision helper \"Which psychodynamic or relational approach?\" and a look-alike comparing the four schools of brief dynamic therapy. Every case has explanations for the wrong answers, and every section has end-of-section checks.",
+        "href": "#/helpers/psymode",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "65.0.0",
     "date": "2026-11-09",
     "title": "Chapter 22: Other Somatic Therapies",

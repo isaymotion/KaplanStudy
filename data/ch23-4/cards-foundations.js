@@ -1,0 +1,17 @@
+/* Chapter 23.4 foundations cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 23.4. */
+KS.add("ch23-4", "foundations", [
+  {"id":"f234-fa01","tag":"Family therapy","q":"What alternative name has been suggested for family therapy, and what does it imply?","a":"**Systemically sensitive therapy**; it reflects a **worldview** in which every problem has **interactional components**."},
+  {"id":"f234-fa02","tag":"Family therapy","q":"Which fields have studied families and informed family therapy?","a":"Mental health, plus **sociology, anthropology, group dynamics, evolutionary biology, ethnicity and race**."},
+  {"id":"f234-ft01","tag":"Family therapy","q":"What two facts give the family interview its unique quality?","a":"The family's **history and dynamics are already established**, and members **live together and depend on one another**, so session content is **known to all**."},
+  {"id":"f234-fs01","tag":"Schools","q":"Name the key people of the structural school and its core concepts.","a":"**Aponte, Minuchin, Szapocznik**; **boundaries, hierarchies, coalitions and alliances, complementarity, engagement-enmeshment**."},
+  {"id":"f234-fs02","tag":"Schools","q":"Name the key people of MRI brief therapy and its core concepts.","a":"**Jackson, Weakland, Watzlawick**; difficulties versus problems, **symptom as communication**, **first- and second-order change**."},
+  {"id":"f234-fs03","tag":"Schools","q":"Name the key people and core concepts of transgenerational therapy.","a":"**Boszormenyi-Nagy, Framo, Roberto-Forman**; **invisible loyalties, ledgers and debts, family mourning, personal authority**; technique **multidirected partiality**."},
+  {"id":"f234-fs04","tag":"Schools","q":"Core concepts of psychodynamic-psychoanalytic family therapy and its founders?","a":"**Object relations, projective identification, splitting, scapegoating**; **Ackerman, Dicks, Sager, Jill and David Scharff**."},
+  {"id":"f234-fs05","tag":"Schools","q":"Core concepts and figures of the experiential-humanistic school?","a":"**Communication styles (placater, blamer)**, **psychotherapy of the absurd**, **attachment theory**; **Satir, Whitaker, Johnson and Greenberg**."},
+  {"id":"f234-fs06","tag":"Schools","q":"Key figures and concepts of the feminist school?","a":"**Goldner, Hare-Mustin, Carter**; raising **gender consciousness** and the hidden effect of **gender**; more a **set of issues** than a technique."},
+  {"id":"f234-fs07","tag":"Schools","q":"Key figures and concepts of the behavioral/cognitive-behavioral school?","a":"**Alexander, Jacobson, Baucom, Patterson**; **functional analysis**, **social learning theory**, communication and problem solving, **attributional style**."},
+  {"id":"f234-fs08","tag":"Schools","q":"Key figures and concepts of the integrative and strategic schools?","a":"Integrative: **Gurman, Pinsof, Snyder, Walsh**; **eclecticism**. Strategic: **Erickson, Haley, Madanes, Keim**; **power and control**, **family life cycle**."},
+  {"id":"f234-fm01","tag":"Family therapy","q":"What is reframing also called?","a":"**Positive connotation**."},
+  {"id":"f234-fc01","tag":"Couples therapy","q":"Define concurrent versus collaborative individual couples therapy.","a":"**Concurrent**: both partners see the **same therapist**. **Collaborative**: each sees a **different therapist**."},
+  {"id":"f234-fc02","tag":"Couples therapy","q":"Who developed the roundtable interview?","a":"**William Masters and Virginia Johnson**, for rapid treatment of **sexually dysfunctional couples**."}
+]);

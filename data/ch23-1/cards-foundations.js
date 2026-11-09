@@ -1,0 +1,28 @@
+/* Chapter 23.1 foundations cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., section 23.1. */
+KS.add("ch23-1", "foundations", [
+  {"id":"f231-pa01","tag":"Psychoanalysis","q":"Who founded psychoanalysis, and why is it called \"classic\" or \"orthodox\"?","a":"**Sigmund Freud**; the labels distinguish it from later variants called **psychoanalytic psychotherapy**."},
+  {"id":"f231-pa02","tag":"Psychoanalysis","q":"On what theory is psychoanalysis based?","a":"**Sexual repression**; it traces **unfulfilled infantile libidinal wishes** in unconscious memories."},
+  {"id":"f231-pa03","tag":"Psychoanalysis","q":"What is psychoanalysis still considered unsurpassed at?","a":"Uncovering the **meaning and motivation** behind behavior, above all its **unconscious** elements."},
+  {"id":"f231-pp01","tag":"Psychoanalysis","q":"Name Freud's three processes of analysis and their meanings.","a":"**Recollection** (remembering), **repetition** (reliving), **working through** (gaining insight)."},
+  {"id":"f231-pp02","tag":"Psychoanalysis","q":"In repetition, what role does the analyst take?","a":"A **projected parent**, a fantasized object with whom the patient reproduces unresolved childhood feelings."},
+  {"id":"f231-pp03","tag":"Psychoanalysis","q":"What is working through?","a":"An **affective and cognitive integration** of repressed memories made conscious, gradually freeing the patient from neurosis."},
+  {"id":"f231-pg01","tag":"Psychoanalysis","q":"What is a transference neurosis?","a":"The stage-two neurosis that **substitutes for the actual neurosis**, centered on an irrational, regressive attachment to the **analyst**."},
+  {"id":"f231-pg02","tag":"Psychoanalysis","q":"Who is credited with Tables 23-1 to 23-3 and the analytic vignettes?","a":"**T. Byram Karasu**, M.D. (the Ms. M vignette also with **S. R. Karasu**, M.D.)."},
+  {"id":"f231-pt01","tag":"Technique","q":"Why is psychoanalysis dyadic, in Freudian theory?","a":"Neurosis is **intrapsychic**: instinctual impulses within the person seek **discharge**, so conflicts must be resolved internally."},
+  {"id":"f231-pt02","tag":"Technique","q":"What schedule did Freud originally use?","a":"**6 days a week**, **1 hour** each; now **4 or 5** sessions of the **50-minute hour**."},
+  {"id":"f231-pt03","tag":"Technique","q":"What is the fundamental rule?","a":"**Free association**: tell the analyst everything that comes to mind, however disagreeable, trivial or nonsensical."},
+  {"id":"f231-pt04","tag":"Technique","q":"What does the rule of abstinence refer to?","a":"**Frustration of the patient's emotional wishes** toward the analyst, not corporal or sexual abstinence; Freud advised a state of **renunciation**."},
+  {"id":"f231-pt05","tag":"Technique","q":"Why did Freud believe analysis must take a long time?","a":"**Profound mental change occurs slowly**, mirroring the fluid time sense of unconscious processes."},
+  {"id":"f231-ei01","tag":"Expressive","q":"What is psychoanalytic psychotherapy in its narrowest sense?","a":"Reliance on **insight-oriented methods** alone."},
+  {"id":"f231-ei02","tag":"Expressive","q":"What four terms describe expressive techniques?","a":"**Insight-oriented**, **uncovering**, **evocative**, **interpretive**."},
+  {"id":"f231-ei03","tag":"Supportive","q":"What four terms describe supportive techniques?","a":"**Relationship-oriented**, **suggestive**, **suppressive**, **repressive**."},
+  {"id":"f231-ei04","tag":"Expressive","q":"Are expressive and supportive techniques sharply distinct?","a":"No; despite seeming **antithetical**, their distinctions are **not absolute**."},
+  {"id":"f231-ei05","tag":"Expressive","q":"How do expressive goals differ from psychoanalysis regarding structural change?","a":"Expressive therapy **modifies** the aim of **major structural change** in ego and defenses to fit the **patient's limitations**."},
+  {"id":"f231-et01","tag":"Expressive","q":"What is the general limitation shared by expressive therapy and psychoanalysis?","a":"**Emotional integration of cognitive awareness**."},
+  {"id":"f231-si01","tag":"Supportive","q":"What is the historical foundation of supportive psychotherapy?","a":"**18th-century moral treatment**: humane, kind care **free from mechanical restraints**; it **predates scientific psychiatry**."},
+  {"id":"f231-si02","tag":"Supportive","q":"Where does supportive therapy place its etiologic emphasis?","a":"Attention goes to **external** happenings instead of **intrapsychic** ones: **environmental and interpersonal stressors** acting on a **severely damaged self**."},
+  {"id":"f231-si03","tag":"Supportive","q":"Why is supportive therapy rarely contraindicated?","a":"Because **some support is implicitly present in every form of therapy**."},
+  {"id":"f231-st01","tag":"Supportive","q":"What is the corrective emotional experience?","a":"The therapist behaves **differently from a destructive parent**, sometimes **neutralizing or reversing** effects of parental mistakes; described by **Franz Alexander**."},
+  {"id":"f231-st02","tag":"Supportive","q":"From which approaches does the corrective emotional experience draw?","a":"From **both psychoanalysis and psychoanalytic psychotherapy**."},
+  {"id":"f231-st03","tag":"Supportive","q":"Why may supportive therapy be viewed as more mundane than depth approaches?","a":"Much of it addresses **practical everyday realities** and the **external environment**."}
+]);

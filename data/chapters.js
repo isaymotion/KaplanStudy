@@ -191,6 +191,22 @@ KS.manifest = [
     summary: 'Electroconvulsive therapy (history, mechanism, indications, pretreatment workup, anesthesia, electrode placement, stimulus dosing, seizure monitoring, course and adverse effects), the newer brain stimulation methods (TMS, tDCS, CES, MST, VNS) and psychiatric neurosurgery (lesion procedures and deep brain stimulation), with post-publication updates on FDA device rulings and clearances, ketamine versus ECT and DBS trials, plus two corrections to the book.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch23-1', number: '23.1', title: 'Psychoanalysis and Psychoanalytic Psychotherapy', short: 'Psychoanalysis',
+    summary: 'Classic psychoanalysis (process, indications, prerequisites, stages, setting, rules and limits) and psychoanalytic psychotherapy in its expressive and supportive modes, compared on one clinical continuum, with the corrective emotional experience and an update on the evidence base.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-2', number: '23.2', title: 'Brief Psychodynamic Psychotherapy', short: 'Brief dynamic therapy',
+    summary: 'The four classic schools of brief dynamic therapy (Malan, Mann, Davanloo and Sifneos): selection criteria, the focus, the time limit, confrontation and anxiety-provoking techniques, and results, with newer evidence for depression.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-3', number: '23.3', title: 'Group Psychotherapy, Combined Individual and Group Psychotherapy, and Psychodrama', short: 'Group therapy and psychodrama',
+    summary: 'Group orientations compared, patient selection and preparation, size, frequency and composition, the therapeutic factors, the therapist\'s role, inpatient and self-help groups, combined therapy, psychodrama and ethical issues, with an update on online groups.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-4', number: '23.4', title: 'Family Therapy and Couples Therapy', short: 'Family and couples therapy',
+    summary: 'Indications, consultation and interviewing, the schools of family and couple therapy, family group and social network therapy, paradox and reframing, and the types, indications, contraindications and goals of couples therapy, with the APA guideline on family interventions.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

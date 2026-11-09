@@ -654,7 +654,36 @@ KS.glossary = (KS.glossary || []).concat([
   ["deep brain stimulation", "Stimulation of a deep brain target through implanted electrodes connected to a chest pulse generator; nonablative and adjustable, used for severe OCD and studied in depression.", "Ch 22"],
   ["anterior cingulotomy", "A stereotactic lesion procedure in the anterior cingulate cortex (Brodmann areas 24 and 32) for refractory major depression or OCD; the most common in North America.", "Ch 22"],
   ["anterior capsulotomy", "A lesion procedure in the anterior limb of the internal capsule for refractory OCD, depression and anxiety disorders, by thermocoagulation or Gamma Knife radiosurgery.", "Ch 22"],
-  ["prefrontal lobotomy", "A freehand operation of the 1930s to 1950s cutting white matter between the prefrontal cortex and the rest of the brain; abandoned because of frontal lobe syndromes and other harms.", "Ch 22"]
+  ["prefrontal lobotomy", "A freehand operation of the 1930s to 1950s cutting white matter between the prefrontal cortex and the rest of the brain; abandoned because of frontal lobe syndromes and other harms.", "Ch 22"],
+  ["transference neurosis", "In analysis, the patient's intense, regressive attachment to the analyst that comes to stand in for the original neurosis and is then worked through.", "Ch 23.1"],
+  ["free association", "The patient's basic rule in analysis: say whatever comes to mind without censoring it; pauses and stoppages are as meaningful as content.", "Ch 23.1"],
+  ["evenly suspended attention", "The analyst's counterpart to free association: impartial, nonselective attention to everything the patient says.", "Ch 23.1"],
+  ["rule of abstinence", "In analysis, frustrating the emotional wishes the patient directs at the analyst so that they keep driving the work; not sexual abstinence.", "Ch 23.1"],
+  ["working through", "The gradual emotional and intellectual integration of insight into repressed material until it changes behavior.", "Ch 23.1"],
+  ["expressive psychotherapy", "The insight-oriented (exploratory) mode of psychoanalytic psychotherapy for mild to moderate ego weakening: face to face, focused on current relationships and the here and now.", "Ch 23.1"],
+  ["supportive psychotherapy", "Psychotherapy that strengthens defenses, relieves symptoms and restores equilibrium in patients with poor ego strength, without aiming at structural change.", "Ch 23.1"],
+  ["holding environment", "A safe, protective therapeutic atmosphere in which the therapist acts as a temporary auxiliary ego for a fragile patient.", "Ch 23.1"],
+  ["corrective emotional experience", "Franz Alexander's term for the therapist responding differently from a harmful parent, so that the patient can partly undo the effects of early experience.", "Ch 23.1"],
+  ["brief focal psychotherapy", "Malan's brief dynamic therapy from the Tavistock Clinic: about 20 sessions around a circumscribed focus with early transference interpretation.", "Ch 23.2"],
+  ["time-limited psychotherapy", "Mann's brief dynamic therapy of exactly 12 sessions around one central issue, using the ending as a maturational separation.", "Ch 23.2"],
+  ["short-term anxiety-provoking psychotherapy", "Sifneos's brief dynamic therapy (STAPP): an oedipal focus, anxiety-provoking questions and confrontation, and avoidance of a transference neurosis.", "Ch 23.2"],
+  ["therapeutic factors", "The processes through which group therapy helps, such as cohesion, universalization, altruism, catharsis and consensual validation; cohesion is thought most tied to outcome.", "Ch 23.3"],
+  ["universalization", "In group therapy, the realization that one is not alone and that others share similar problems.", "Ch 23.3"],
+  ["consensual validation", "Harry Stack Sullivan's term for checking one's perceptions against those of others to correct distortions.", "Ch 23.3"],
+  ["group cohesion", "The sense of belonging and working together in a group; the therapeutic factor thought most strongly related to good outcome.", "Ch 23.3"],
+  ["alternate session", "A group meeting held without the therapist, alternating with regular sessions.", "Ch 23.3"],
+  ["marathon group", "A time-extended group meeting continuously for 12 to 72 hours; risky for patients with a weak ego structure.", "Ch 23.3"],
+  ["combined therapy", "Individual and group psychotherapy given together, usually by the same therapist; in couples work, several formats used together or in sequence.", "Ch 23.3"],
+  ["psychodrama", "Jacob Moreno's method in which a protagonist enacts conflicts on a stage with a director, auxiliary egos and the group.", "Ch 23.3"],
+  ["auxiliary ego", "In psychodrama, a person who represents someone in the protagonist's life or acts as the protagonist.", "Ch 23.3"],
+  ["role reversal", "A psychodrama technique in which the protagonist takes the role of a significant other while someone else plays the protagonist.", "Ch 23.3"],
+  ["genogram", "A diagram of a family across at least three generations, used especially in Bowen family systems therapy.", "Ch 23.4"],
+  ["differentiation of self", "Bowen's term for the ability to keep a separate, balanced self within the emotional pull of the family.", "Ch 23.4"],
+  ["reframing", "Relabeling a negative behavior in a more positive or protective light; also called positive connotation.", "Ch 23.4"],
+  ["social network therapy", "Group sessions that bring a disturbed patient together with the people in his or her social community.", "Ch 23.4"],
+  ["family group therapy", "Treatment of several families together in one group so that they can share problems and compare coping.", "Ch 23.4"],
+  ["conjoint therapy", "Couples therapy in which one or two therapists see both partners in joint sessions; the most common method.", "Ch 23.4"],
+  ["divorce therapy", "Continued sessions in which a couple works through separation and divorce when the marriage proves nonviable.", "Ch 23.4"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -972,5 +1001,14 @@ KS.glossaryAliases = {
   "pavor nocturnus": "sleep terror",
   "sleep start": "hypnic jerk",
   "sleep starts": "hypnic jerk",
-  "cheyne–stokes breathing": "cheyne–stokes respiration"
+  "cheyne–stokes breathing": "cheyne–stokes respiration",
+  "stapp": "short-term anxiety-provoking psychotherapy",
+  "fundamental rule": "free association",
+  "positive connotation": "reframing",
+  "marital therapy": "conjoint therapy",
+  "alternate sessions": "alternate session",
+  "auxiliary egos": "auxiliary ego",
+  "genograms": "genogram",
+  "psychodramas": "psychodrama",
+  "therapeutic factor": "therapeutic factors"
 };
