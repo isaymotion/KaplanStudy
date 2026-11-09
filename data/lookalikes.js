@@ -452,6 +452,51 @@ KS.lookalikes = [
     ]
   },
   {
+    id: "theft-ddx",
+    title: "Kleptomania and other reasons people steal",
+    summary: "Six reasons a person takes things without paying, and how to tell them apart.",
+    items: ["Kleptomania", "Ordinary shoplifting", "Antisocial stealing", "Psychotic stealing", "Dementia", "Malingering"],
+    rows: [
+      ["What drives it", "An **irresistible urge**; the act itself, not the object", "**Kicks** and the goods", "**Personal gain**", "Mood elevation or depression, **delusions** or **command hallucinations**", "**Forgetfulness**, not intent", "Avoiding punishment by **claiming** kleptomania"],
+      ["Planning", "**Unplanned**, done alone", "Often in **pairs or small groups**", "**Premeditated**; may get others to steal", "Follows the psychosis", "None; leaves without paying", "Planned theft"],
+      ["The object", "**Not needed**, often of little value; given away, returned or hidden", "Wanted", "Valued", "Variable", "Whatever was in hand", "Wanted"],
+      ["Feelings", "Tension before, **relief** after; guilt may follow", "No disorder", "Guilt and remorse **lacking** or insincere", "Part of the illness", "Unaware", "Variable"],
+      ["Violence", "No; **no anger or vengeance**", "Rare", "Threats or **violence** to avoid capture", "Possible", "No", "Variable"],
+      ["Diagnosis", "Kleptomania", "None (most shoplifters are teens and young adults)", "Antisocial personality or conduct disorder", "Mania, psychotic depression or schizophrenia", "Neurocognitive disorder", "Malingering"]
+    ],
+    keys: [
+      "Ask what the person did with the item: kleptomania means stealing **unneeded** things that are often **given away, returned or hidden**.",
+      "Kleptomania excludes theft out of **anger or vengeance**, or better explained by **conduct disorder, mania or antisocial personality disorder**.",
+      "Only **4 to 24 percent** of people arrested for shoplifting have kleptomania.",
+      "A clever person with antisocial traits may **claim** kleptomania: that is malingering."
+    ],
+    links: [
+      { ch: "ch18", sec: "s18-klepto", label: "Kleptomania" },
+      { ch: "ch18", sec: "s18-ddx-kp", label: "Differential diagnosis of kleptomania and pyromania" }
+    ]
+  },
+  {
+    id: "firesetting-ddx",
+    title: "Pyromania and other reasons people set fires",
+    summary: "Six reasons a person sets a fire: only one is pyromania.",
+    items: ["Pyromania", "Child's curiosity", "Arson or extremism", "Conduct disorder or ASPD", "Psychosis or mania", "Impaired judgment"],
+    rows: [
+      ["What drives it", "**Tension** before, **pleasure or relief** after; fascination with fire", "Normal **exploration** with matches and lighters", "**Profit**, hiding a crime, **sociopolitical** ideology", "**Deliberate** act for profit, sabotage or **retaliation**", "**Delusions or hallucinations**", "Failure to **appreciate consequences**"],
+      ["Failure to resist an impulse?", "**Yes**", "No", "No", "No", "No", "No"],
+      ["Clues", "Repeated fires, false alarms, **interest in firefighting**, leaves clues", "Young child, no pattern of harm", "Clear motive and **gain**", "Other rule-breaking and aggression", "Psychotic or manic symptoms on examination", "**Dementia**, **intellectual disability** or **intoxication**"],
+      ["Diagnosis", "Pyromania", "None", "None (a crime)", "Conduct disorder or antisocial personality disorder", "The psychotic or mood disorder", "The underlying condition"]
+    ],
+    keys: [
+      "Pyromania needs fire setting that is **deliberate, purposeful and repeated**, with no gain or other motive.",
+      "Most fire setters are not pyromaniacs: **60 percent** of US fire setters are adolescents, and few meet criteria.",
+      "Treat any **child's fire setting** seriously, with family therapy, as treatment and prevention rather than punishment."
+    ],
+    links: [
+      { ch: "ch18", sec: "s18-pyro", label: "Pyromania" },
+      { ch: "ch18", sec: "s18-ddx-kp", label: "Differential diagnosis of kleptomania and pyromania" }
+    ]
+  },
+  {
     id: "sleep-night-events",
     title: "Night terrors, nightmares, RBD and nocturnal seizures",
     summary: "Four causes of frightening or violent events at night: which stage of sleep, and what is remembered?",

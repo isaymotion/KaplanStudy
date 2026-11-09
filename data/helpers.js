@@ -4164,5 +4164,390 @@ KS.helpers = (KS.helpers || []).concat([
         }
       }
     }
+  },
+{
+  "id": "impdx",
+  "chapter": "ch18",
+  "title": "Which impulse-control disorder?",
+  "summary": "Start from the repeated act (aggressive outbursts, stealing or fire setting), rule out the common mimics, then check the core features to reach intermittent explosive disorder, kleptomania, pyromania or another explanation.",
+  "caution": "A teaching aid built from Chapter 18, not a substitute for a full history, mental status examination and medical workup. These are diagnoses of exclusion, and all three are underreported because the behavior is often illegal.",
+  "start": "main",
+  "nodes": {
+    "main": {
+      "q": "What is the repeated act?",
+      "help": "Ask what happens before (tension, provocation), during and after (relief, pleasure, regret).",
+      "options": [
+        {
+          "label": "Aggressive outbursts: verbal or physical aggression, or damaging property",
+          "to": "ied1",
+          "note": "Repeated aggression."
+        },
+        {
+          "label": "Stealing",
+          "to": "th1",
+          "note": "Repeated stealing."
+        },
+        {
+          "label": "Setting fires",
+          "to": "fs1",
+          "note": "Repeated fire setting."
+        }
+      ]
+    },
+    "ied1": {
+      "q": "Do the outbursts happen only during intoxication, or with psychosis, mania, epilepsy, a brain tumor, a degenerative or endocrine disease, or personality change from a medical condition?",
+      "help": "Use the history, mental status examination, urine drug screen, blood chemistry and, where indicated, MRI.",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:iedmimic",
+          "note": "Another disorder explains the aggression."
+        },
+        {
+          "label": "No, or not found",
+          "to": "ied2",
+          "note": "No primary medical, substance or psychotic cause."
+        }
+      ]
+    },
+    "ied2": {
+      "q": "Is aggression a constant, pervasive part of the person's behavior rather than discrete outbursts?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:pervasive",
+          "note": "Aggression is pervasive, not episodic."
+        },
+        {
+          "label": "No: discrete outbursts, calm in between",
+          "to": "ied3",
+          "note": "Episodic, discrete outbursts."
+        }
+      ]
+    },
+    "ied3": {
+      "q": "Was there a single episode of violence with dissociation and claimed amnesia?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:amok",
+          "note": "A single dissociative violent episode."
+        },
+        {
+          "label": "No",
+          "to": "ied4",
+          "note": "Not a single dissociative episode."
+        }
+      ]
+    },
+    "ied4": {
+      "q": "Is the person older than 6, with outbursts out of proportion to the provocation, either about twice a week for 3 months without damage, or at least 3 damaging outbursts in a year?",
+      "help": "Outbursts start quickly, usually last under 30 minutes and are followed by regret. One episode is never enough.",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:ied",
+          "note": "Meets the DSM-5 frequency and age rules."
+        },
+        {
+          "label": "No",
+          "to": "r:iednot",
+          "note": "Does not meet the frequency or age rules."
+        }
+      ]
+    },
+    "th1": {
+      "q": "Is the stealing done for gain or with planning, with others, out of anger or revenge, or with threats or violence?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:gaintheft",
+          "note": "Motivated, planned or angry stealing."
+        },
+        {
+          "label": "No",
+          "to": "th2",
+          "note": "No gain, planning, partners or anger."
+        }
+      ]
+    },
+    "th2": {
+      "q": "Does the stealing come from psychosis or mania, acute intoxication, or forgetfulness in dementia?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:sectheft",
+          "note": "Another condition drives the stealing."
+        },
+        {
+          "label": "No",
+          "to": "th3",
+          "note": "No psychotic, toxic or cognitive cause."
+        }
+      ]
+    },
+    "th3": {
+      "q": "Are the stolen items unneeded (often given away, returned or hidden), with tension before the theft and relief or gratification after?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:klepto",
+          "note": "The act, not the object, is the goal."
+        },
+        {
+          "label": "No",
+          "to": "r:theftnot",
+          "note": "The core features of kleptomania are missing."
+        }
+      ]
+    },
+    "fs1": {
+      "q": "Is this a young child playing with matches, lighters or fire out of curiosity?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:childfire",
+          "note": "Normal exploration in a young child."
+        },
+        {
+          "label": "No",
+          "to": "fs2",
+          "note": "Not a young child's curiosity."
+        }
+      ]
+    },
+    "fs2": {
+      "q": "Is there a motive: money, sabotage or political ideology, hiding a crime, anger or revenge?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:arson",
+          "note": "The fire serves a motive."
+        },
+        {
+          "label": "No",
+          "to": "fs3",
+          "note": "No apparent motive."
+        }
+      ]
+    },
+    "fs3": {
+      "q": "Is the fire set in response to delusions or hallucinations, in mania, or because dementia, intellectual disability or intoxication impairs judgment?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:secfire",
+          "note": "Another condition explains the fire setting."
+        },
+        {
+          "label": "No",
+          "to": "fs4",
+          "note": "No psychotic or cognitive cause."
+        }
+      ]
+    },
+    "fs4": {
+      "q": "Has the person set fires deliberately on more than one occasion, with tension before, fascination with fire, and pleasure or relief after?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:pyro",
+          "note": "The core features of pyromania are present."
+        },
+        {
+          "label": "No",
+          "to": "r:fireno",
+          "note": "The core features of pyromania are missing."
+        }
+      ]
+    }
+  },
+  "results": {
+    "iedmimic": {
+      "label": "Consider",
+      "dx": "The underlying disorder, not intermittent explosive disorder",
+      "line": "Diagnose intermittent explosive disorder only after these causes are ruled out as the primary cause.",
+      "points": [
+        "Intoxication with alcohol, barbiturates, hallucinogens or amphetamines can cause outbursts.",
+        "In schizophrenia, violence follows delusions or hallucinations; in mania, the mental status examination shows the diagnosis.",
+        "Late-life worsening suggests heightened organic impairment."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-ied",
+        "label": "Differential diagnosis of intermittent explosive disorder"
+      }
+    },
+    "pervasive": {
+      "label": "Consider",
+      "dx": "Conduct disorder or antisocial personality disorder",
+      "line": "In these disorders aggression is a pervasive, consistent feature, not a set of discrete outbursts.",
+      "points": [
+        "Conduct disorder is covered in Chapter 2 and antisocial personality disorder in Chapter 19.",
+        "Borderline personality disorder is another mimic, and also a common comorbidity."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-ied",
+        "label": "Differential diagnosis of intermittent explosive disorder"
+      }
+    },
+    "amok": {
+      "label": "Consider",
+      "dx": "Amok",
+      "line": "A culture-bound syndrome, described mainly in Southeast Asia: a single episode of acute violence with prominent dissociation and claimed amnesia.",
+      "points": [
+        "Intermittent explosive disorder needs repeated episodes."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-ied",
+        "label": "Differential diagnosis of intermittent explosive disorder"
+      }
+    },
+    "ied": {
+      "label": "Likely",
+      "dx": "Intermittent explosive disorder",
+      "line": "Discrete, disproportionate outbursts that remit quickly, with regret afterward and no aggression in between.",
+      "points": [
+        "More than 80 percent have another disorder: screen for substance use, mood, anxiety, PTSD and personality disorders, and ask about self-harm.",
+        "Treatment works best when medication and psychotherapy are combined; SSRIs, trazodone and buspirone reduce impulsivity and aggression.",
+        "Avoid benzodiazepines (disinhibition) and drugs that lower the seizure threshold."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ied",
+        "label": "Intermittent explosive disorder"
+      }
+    },
+    "iednot": {
+      "label": "Not yet",
+      "dx": "Intermittent explosive disorder is not established",
+      "line": "One discrete episode does not justify the diagnosis, and the person must be older than 6 (or at a comparable developmental level).",
+      "points": [
+        "Keep a record of further episodes and reassess."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ied",
+        "label": "Intermittent explosive disorder"
+      }
+    },
+    "gaintheft": {
+      "label": "Consider",
+      "dx": "Ordinary shoplifting, conduct disorder or antisocial personality disorder",
+      "line": "Kleptomania excludes theft out of anger or vengeance, and theft that is planned, done with others or done for gain.",
+      "points": [
+        "Most shoplifters are teenagers and young adults stealing in groups for kicks and goods, without a disorder.",
+        "Antisocial stealing is premeditated, may involve violence to escape, and lacks real guilt.",
+        "Someone who steals for gain and then claims kleptomania is malingering."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "sectheft": {
+      "label": "Consider",
+      "dx": "Stealing secondary to another condition",
+      "line": "Psychotic stealing follows abnormal mood, command hallucinations or delusions; in dementia the person forgets to pay.",
+      "points": [
+        "Kleptomania has been reported after head trauma, frontal lobe lesions and with insulinoma, so new stealing in later life calls for a medical look."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "klepto": {
+      "label": "Likely",
+      "dx": "Kleptomania",
+      "line": "Recurrent failure to resist the impulse to steal unneeded objects, with tension before and relief after, without anger or vengeance.",
+      "points": [
+        "Screen for depression, anxiety, alcohol use disorder, bulimia nervosa and suicide risk.",
+        "Insight-oriented therapy suits motivated patients; behavior therapies have worked even without motivation.",
+        "Naltrexone has the best drug evidence, including a 2009 placebo-controlled trial; escitalopram showed no benefit."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-klepto",
+        "label": "Kleptomania"
+      }
+    },
+    "theftnot": {
+      "label": "Consider",
+      "dx": "Not kleptomania",
+      "line": "Without unneeded objects and the tension and relief cycle, look again at motive, malingering and ordinary shoplifting.",
+      "points": [],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "childfire": {
+      "label": "Consider",
+      "dx": "Normal curiosity",
+      "line": "Many young children are fascinated by matches, lighters and fire as part of exploring their environment.",
+      "points": [
+        "Repeated fire setting by a child still needs to be taken very seriously, with family involvement."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "arson": {
+      "label": "Consider",
+      "dx": "Arson, sabotage, or fire setting in conduct disorder or antisocial personality disorder",
+      "line": "A fire set for profit, sabotage, ideology, concealment or revenge is a deliberate act, not a failure to resist an impulse.",
+      "points": [],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "secfire": {
+      "label": "Consider",
+      "dx": "Fire setting secondary to another condition",
+      "line": "Treat the psychotic or mood disorder, or the cause of impaired judgment.",
+      "points": [],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-ddx-kp",
+        "label": "Differential diagnosis of kleptomania and pyromania"
+      }
+    },
+    "pyro": {
+      "label": "Likely",
+      "dx": "Pyromania",
+      "line": "Deliberate, purposeful fire setting on more than one occasion, driven by tension and fascination, with pleasure or relief after and no other motive.",
+      "points": [
+        "Ask about false alarms and interest in firefighting.",
+        "Screen for alcohol and marijuana use, mood disorders and suicidal thoughts.",
+        "No treatment is proven; CBT is the most promising, and supervision to prevent another fire is essential."
+      ],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-pyro",
+        "label": "Pyromania"
+      }
+    },
+    "fireno": {
+      "label": "Consider",
+      "dx": "Not pyromania",
+      "line": "Fantasies of fire are not enough, and DSM-5 requires more than one deliberate fire.",
+      "points": [],
+      "link": {
+        "ch": "ch18",
+        "sec": "s18-pyro",
+        "label": "Pyromania"
+      }
+    }
   }
+}
 ]);

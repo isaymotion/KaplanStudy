@@ -620,7 +620,15 @@ KS.glossary = (KS.glossary || []).concat([
   ["metoidioplasty", "Surgery for transgender men that frees the clitoris, enlarged by testosterone, from its ligament and adds length and girth.", "Ch 17"],
   ["phalloplasty", "Surgical creation of a penis, usually with donor skin from elsewhere; expensive, multistage and of limited function.", "Ch 17"],
   ["vaginoplasty", "Surgery for transgender women that removes the testes, forms a clitoris from penile tissue and creates a vagina.", "Ch 17"],
-  ["brain organization theory", "The hypothesis that prenatal sex hormones masculinize or feminize the brain, for example the hypothalamus; its role in gender behavior is unsettled.", "Ch 17"]
+  ["brain organization theory", "The hypothesis that prenatal sex hormones masculinize or feminize the brain, for example the hypothalamus; its role in gender behavior is unsettled.", "Ch 17"],
+  ["impulse-control disorder", "A failure to resist an urge to do something harmful, usually with mounting tension before the act, relief or pleasure during it, and often remorse after; DSM-5 examples are intermittent explosive disorder, kleptomania and pyromania.", "Ch 18"],
+  ["intermittent explosive disorder", "Recurrent, discrete outbursts of verbal or physical aggression grossly out of proportion to the provocation, usually lasting under 30 minutes, with no aggression between episodes; diagnosed only from age 6.", "Ch 18"],
+  ["pyromania", "Repeated, deliberate fire setting driven by tension before and pleasure or relief after, with fascination with fire and no gain, revenge or other motive.", "Ch 18"],
+  ["arson", "Deliberate fire setting for a motive such as profit, sabotage, revenge or hiding a crime; unlike pyromania it is not a failure to resist an impulse.", "Ch 18"],
+  ["amok", "A culture-bound syndrome, described mainly in Southeast Asia, of a single episode of sudden violent behavior followed by amnesia, with prominent dissociation.", "Ch 18"],
+  ["5-HIAA", "5-hydroxyindoleacetic acid, the main serotonin metabolite; low cerebrospinal fluid levels are linked to impulsive aggression and violent suicide attempts.", "Ch 18"],
+  ["MHPG", "3-methoxy-4-hydroxyphenylglycol, a norepinephrine metabolite; low levels have been reported in pyromania.", "Ch 18"],
+  ["contingency management", "A behavioral treatment that gives planned rewards or consequences for target behaviors; used for explosive aggression and substance use.", "Ch 18"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -904,7 +912,11 @@ KS.glossaryAliases = {
   "glp-1 agonist": "GLP-1 receptor agonist",
   "glp-1 agonists": "GLP-1 receptor agonist",
   "glp-1 receptor agonists": "GLP-1 receptor agonist",
-  "impulse control disorders": "impulse control disorder (dopamine agonist)",
+  "impulse control disorders": "impulse-control disorder",
+  "impulse-control disorders": "impulse-control disorder",
+  "impulse control disorder": "impulse-control disorder",
+  "5-hydroxyindoleacetic acid": "5-HIAA",
+  "3-methoxy-4-hydroxyphenylglycol": "MHPG",
   "nutritional supplement": "dietary supplement",
   "dshea": "dietary supplement",
   "phytomedicinal": "phytomedicine",

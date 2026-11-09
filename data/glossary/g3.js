@@ -48,7 +48,7 @@ KS.glossary = (KS.glossary || []).concat([
   ["jamais vu", "A false sense of unfamiliarity with a situation one has actually experienced before."],
   ["jargon aphasia", "Aphasia in which the patient produces invented nonsense words."],
   ["judgment", "Weighing choices against one’s values to select an action. Intact when the choice fits reality and mature adult standards; impaired when it is maladaptive, impulsive or driven by immediate gratification."],
-  ["kleptomania", "A pathologic compulsion to steal."],
+  ["kleptomania", "A recurrent failure to resist the impulse to steal objects that are not needed for personal use or money, with tension before the theft and relief after; not done out of anger or vengeance.", "Ch 18"],
   ["la belle indifférence", "An inappropriately calm, unconcerned attitude toward one’s own disability; may be seen in conversion disorder."],
   ["labile affect", "Rapid, abrupt changes in emotional expression unrelated to external stimuli."],
   ["labile mood", "Mood oscillating between euphoria and depression or anxiety."],

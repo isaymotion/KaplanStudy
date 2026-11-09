@@ -119,6 +119,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
   {
+    id: 'ch18', number: 18, title: 'Disruptive, Impulse-Control, and Conduct Disorders', short: 'Impulse-control disorders',
+    summary: 'Intermittent explosive disorder, kleptomania and pyromania: the impulse cycle, DSM-5 and ICD-10 criteria, workup, impulses versus compulsions, differential diagnosis, comorbidity, course, treatment, epidemiology and etiology, with post-publication updates on ICD-11, the pyromania criteria and controlled trials of fluoxetine and naltrexone.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  {
     id: 'ch19', number: 19, title: 'Personality Disorders', short: 'Personality disorders',
     summary: 'The ten personality disorders in three clusters: presentation, DSM-5 and ICD-10 criteria, differential diagnosis, comorbidity, course, epidemiology and treatment (including DBT, MBT and TFP), personality change due to a medical condition, target-symptom pharmacotherapy, defenses and temperament, with post-publication updates on ICD-11 and borderline personality disorder.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

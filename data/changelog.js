@@ -13,6 +13,36 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "63.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 18: Disruptive, Impulse-Control, and Conduct Disorders",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch18",
+        "text": "New chapter: intermittent explosive disorder, kleptomania and pyromania. The impulse cycle, DSM-5 and ICD-10 criteria (Tables 18-1 to 18-3), workup, impulses versus compulsions, differential diagnosis, comorbidity, course, treatment, epidemiology and etiology, with 111 clinical cases, explanations for every wrong answer and end-of-section checks.",
+        "href": "#/c/ch18/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "update",
+        "ch": "ch18",
+        "text": "Post-publication updates: ICD-11's impulse control disorders group (intermittent explosive disorder now named, 6C73), gaming disorder in DSM-5-TR versus ICD-11, and placebo-controlled trials of fluoxetine for intermittent explosive disorder and naltrexone for kleptomania."
+      },
+      {
+        "type": "correction",
+        "ch": "ch18",
+        "text": "Table 18-3 lists one or more fires for pyromania in DSM-5; DSM-5 requires fire setting on more than one occasion. A correction box sits under the table.",
+        "href": "#/c/ch18/guide/s18-pyro",
+        "link": "See the correction"
+      },
+      {
+        "type": "feature",
+        "text": "New decision helper (Which impulse-control disorder?), look-alike comparisons for stealing and for fire setting, and 8 new glossary terms. The glossary's kleptomania entry now matches the chapter (an impulse, not a compulsion)."
+      }
+    ]
+  },
+  {
     "version": "62.0.0",
     "date": "2026-11-09",
     "title": "Chapter 17: Gender Dysphoria, Gender Identity, and Related Conditions",

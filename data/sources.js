@@ -4,6 +4,12 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 18 (impulse-control disorders), November 2026 */
+    { m: "Impulse control disorders (6C70 to 6C7Z)", label: "WHO ICD-11: Impulse control disorders (6C70 to 6C7Z)", url: "https://icd.who.int/browse/2024-01/mms/en#826065555" },
+    { m: "6C73 Intermittent explosive disorder", label: "WHO ICD-11: 6C73 intermittent explosive disorder", url: "https://icd.who.int/browse/2024-01/mms/en#295017661" },
+    { m: "Internet Gaming (patients and families page)", label: "American Psychiatric Association: Internet gaming", url: "https://www.psychiatry.org/patients-families/internet-gaming" },
+    { m: "Coccaro EF, Lee RJ, Kavoussi RJ", label: "Coccaro et al. 2009: fluoxetine in intermittent explosive disorder", url: "https://www.psychiatrist.com/jcp/double-blind-randomized-placebo-controlled-trial-fluoxetine/" },
+    { m: "naltrexone in kleptomania", label: "Grant et al. 2009: naltrexone in kleptomania (trial record)", url: "https://clinicaltrials.gov/study/NCT00332579" },
     /* Chapter 17 (gender dysphoria), November 2026 */
     { m: "HA60 Gender incongruence of adolescence or adulthood", label: "WHO ICD-11: Gender incongruence (HA60, HA61)", url: "https://icd.who.int/browse/2024-01/mms/en#90875286" },
     { m: "DSM-5-TR fact sheet: Gender Dysphoria", label: "APA DSM-5-TR fact sheet: Gender Dysphoria (PDF)", url: "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-GenderDysphoria.pdf" },

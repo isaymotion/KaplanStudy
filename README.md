@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 62.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 63.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -107,6 +107,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 15 | Sleep–Wake Disorders | 40 | 157 | 196 |
 | 16 | Human Sexuality and Sexual Dysfunctions | 42 | 204 | 190 |
 | 17 | Gender Dysphoria, Gender Identity, and Related Conditions | 13 | 62 | 82 |
+| 18 | Disruptive, Impulse-Control, and Conduct Disorders | 15 | 241 | 327 |
 | 19 | Personality Disorders | 19 | 65 | 66 |
 | 21.0 | Principles of Psychopharmacology | 23 | 87 | 106 |
 | 21.1 | Antipsychotics | 20 | 92 | 101 (plus generated drug drills) |
