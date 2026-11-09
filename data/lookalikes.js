@@ -400,6 +400,33 @@ KS.lookalikes = [
     source: "Nicolussi S et al., clinical relevance of St. John's wort drug interactions revisited, British Journal of Pharmacology, 2020; CDC MMWR, eosinophilia-myalgia syndrome and L-tryptophan-containing products, November 1989"
   },
   {
+    id: "ejaculation-orgasm",
+    title: "Premature, delayed or retrograde ejaculation and orgasmic anhedonia",
+    summary: "Four complaints about ejaculation and orgasm in men: what happens, what causes it, and how it is coded.",
+    items: ["Premature (early) ejaculation", "Delayed ejaculation", "Retrograde ejaculation", "Orgasmic anhedonia"],
+    rows: [
+      ["What happens", "Ejaculates within about **1 minute** of penetration, before he wishes", "Ejaculates with great difficulty, or **not at all**, in partnered sex", "Orgasm occurs but semen passes **back into the bladder**: a **dry orgasm**", "Ejaculation occurs but **no pleasure** or sensation of orgasm is felt"],
+      ["With masturbation", "Often similar", "Usually **normal**", "Also dry", "Also unfelt"],
+      ["Typical cause", "Shorter nerve latency, or **conditioning** and anxiety", "**Antidepressants**, heavy pornography use, psychodynamic conflict, OCD", "**Always organic**: genitourinary surgery or **anticholinergic** drugs such as phenothiazines", "**Extreme guilt** with dissociation; rule out sacral or cephalic lesions"],
+      ["Clue", "Severity by seconds: mild 30 s to 1 min, moderate 15 to 30 s, severe under 15 s", "Lifelong form suggests severe psychopathology; acquired form suggests relationship trouble", "**Milky urine** after orgasm; pleasure is kept", "Body works, pleasure is missing"],
+      ["Coding", "Premature (early) ejaculation", "Delayed ejaculation", "Due to a medical condition or medication", "**Other specified sexual dysfunction**"],
+      ["Management", "**Squeeze** or **stop-start**; SSRIs, tricyclics or topical anesthetics if behavioral methods fail", "Treat the cause; extravaginal ejaculation first, then gradual entry; switch an antidepressant if needed", "Reassure (harmless); review drugs", "Psychotherapy for guilt after organic causes are excluded"]
+    ],
+    keys: [
+      "Ask whether **semen comes out**: a dry orgasm with milky urine is retrograde ejaculation, which is always organic.",
+      "Ask whether the problem also occurs with **masturbation**: delayed ejaculation usually does not.",
+      "A new problem soon after an **SSRI or venlafaxine** points to a drug cause.",
+      "Sex therapy has been **most successful** in premature ejaculation."
+    ],
+    links: [
+      { ch: "ch16", sec: "s16-pe", label: "Premature (early) ejaculation" },
+      { ch: "ch16", sec: "s16-de", label: "Delayed ejaculation" },
+      { ch: "ch16", sec: "s16-med-other", label: "Dyspareunia, desire, ejaculation and orgasm problems due to medical conditions" },
+      { ch: "ch16", sec: "s16-other-spec", label: "Orgasmic anhedonia, premature female orgasm and postcoital headache" },
+      { ch: "ch16", sec: "s16-techniques", label: "Specific techniques and exercises" }
+    ]
+  },
+  {
     id: "sleep-night-events",
     title: "Night terrors, nightmares, RBD and nocturnal seizures",
     summary: "Four causes of frightening or violent events at night: which stage of sleep, and what is remembered?",

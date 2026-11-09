@@ -13,6 +13,34 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "61.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 16: Human Sexuality and Sexual Dysfunctions",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch16",
+        "text": "New chapter: the sex history; desire, arousal, erectile, orgasm, ejaculation and genito-pelvic pain disorders; dysfunction from medical illness and drugs; PDE-5 inhibitors, hormones, devices and sex therapy; the paraphilic disorders; compulsive sexual behavior; and normal sexuality and the sexual response cycle. 42 sections, 204 high-yield facts and 190 cards, with a pre-test, wrong-answer explanations for all 50 cases, end-of-section checks and a drug heatmap.",
+        "href": "#/c/ch16/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "update",
+        "ch": "ch16",
+        "text": "Post-publication updates: ICD-11's sexual health chapter and compulsive sexual behaviour disorder, the ISSM premature ejaculation definition, dapoxetine, testosterone for postmenopausal low desire, bremelanotide, the WFSBP 2020 paraphilia drug algorithm and current disorders of sex development terms."
+      },
+      {
+        "type": "correction",
+        "ch": "ch16",
+        "text": "Corrected the book's age rules for voyeuristic disorder (at least 18) and pedophilic disorder (at least 16 and 5 years older), which its tables print as exclusions."
+      },
+      {
+        "type": "feature",
+        "text": "New diagnostic helper, \"Which sexual dysfunction?\", and a look-alike comparison of premature, delayed and retrograde ejaculation and orgasmic anhedonia. 34 new glossary terms."
+      }
+    ]
+  },
+  {
     "version": "60.0.0",
     "date": "2026-11-05",
     "title": "Design refresh",

@@ -3851,5 +3851,318 @@ KS.helpers = (KS.helpers || []).concat([
       shift: { label: "Most likely", dx: "Circadian rhythm sleep–wake disorder, shift work type", line: "Insomnia when trying to sleep and sleepiness at work, worse with frequent rotation and unshifted weekends.", points: ["The 3 to 5 AM low point is when sleep-related accidents cluster.", "Modafinil is the only drug approved for shift work sleepiness; timed light helps reset the clock.", "Strongly linked to psychiatric and medical comorbidity."], link: { ch: "ch15", sec: "s15-circ-shift", label: "Shift work, jet lag and unspecified types" } },
       jetlag: { label: "Consider", dx: "Jet lag disorder (ICSD-3; not in DSM-5)", line: "Rapid travel across several time zones forces a phase advance or delay.", points: ["One or two time zones are usually tolerated; adjusting to 8 hours can take 4 or more days.", "Eastward travel needs a phase advance and is harder for night owls.", "Timed light exposure helps travelers."], link: { ch: "ch15", sec: "s15-circ-shift", label: "Shift work, jet lag and unspecified types" } }
     }
+  },
+  {
+    "id": "sexdx",
+    "chapter": "ch16",
+    "title": "Which sexual dysfunction?",
+    "summary": "Start from the main complaint (desire, arousal or erection, orgasm or ejaculation, pain with penetration, or an unusual focus of arousal), rule out drugs, medical illness and other psychiatric causes, then use onset, pattern and distress to reach the DSM-5 diagnosis.",
+    "caution": "A teaching aid built from Chapter 16, not a substitute for a full sex history (Table 16-1), a medication review and a physical examination. Every DSM-5 sexual dysfunction needs symptoms for about 6 months and marked distress; record lifelong or acquired and generalized or situational.",
+    "start": "main",
+    "nodes": {
+      "main": {
+        "q": "What is the main complaint?",
+        "help": "Ask first about onset (lifelong or acquired), then whether it happens in most situations or only with certain partners or settings.",
+        "options": [
+          {
+            "label": "Low interest in sex or few sexual thoughts",
+            "to": "cause",
+            "note": "A desire or interest problem."
+          },
+          {
+            "label": "Difficulty getting or keeping an erection",
+            "to": "cause",
+            "note": "An erection problem."
+          },
+          {
+            "label": "Little arousal or pleasure in a woman",
+            "to": "cause",
+            "note": "An interest or arousal problem in a woman."
+          },
+          {
+            "label": "Orgasm or ejaculation is delayed, absent, too early or not felt",
+            "to": "cause",
+            "note": "An orgasm or ejaculation problem."
+          },
+          {
+            "label": "Pain, fear or muscle tightening with penetration",
+            "to": "cause",
+            "note": "A pain or penetration problem."
+          },
+          {
+            "label": "Arousal depends on an unusual object, act or nonconsenting person",
+            "to": "para",
+            "note": "Consider a paraphilic disorder rather than a dysfunction."
+          }
+        ]
+      },
+      "cause": {
+        "q": "Could a drug, substance or medical condition fully explain it?",
+        "help": "Review every prescribed and recreational drug (Tables 16-10, 16-12, 16-13) and the medical causes (Table 16-9). Men older than 60 most likely have an organic cause.",
+        "options": [
+          {
+            "label": "It began soon after a drug was started or changed, or with intoxication or withdrawal",
+            "to": "r:subst",
+            "note": "A substance or medication is the likely cause."
+          },
+          {
+            "label": "Diabetes, vascular, neurologic or endocrine disease, pelvic surgery, or gynecologic pathology",
+            "to": "r:medical",
+            "note": "A medical condition may explain the problem."
+          },
+          {
+            "label": "It occurs only during a depressive or other psychiatric illness",
+            "to": "r:psych",
+            "note": "The problem is mostly due to another mental disorder."
+          },
+          {
+            "label": "None of these",
+            "to": "kind",
+            "note": "Drugs, medical illness and other mental disorders are reasonably excluded."
+          }
+        ]
+      },
+      "kind": {
+        "q": "Which pattern fits best?",
+        "options": [
+          {
+            "label": "A man with few or no sexual fantasies or desire",
+            "to": "r:mhsdd"
+          },
+          {
+            "label": "A woman with 3 or more of: low interest, few thoughts, little initiation or receptiveness, little pleasure or sensation",
+            "to": "r:fsiad"
+          },
+          {
+            "label": "Erections fail, but morning, spontaneous or masturbatory erections are good",
+            "to": "r:ed_psych"
+          },
+          {
+            "label": "Erections fail in all settings, including on waking and with masturbation",
+            "to": "r:medical"
+          },
+          {
+            "label": "A woman with delayed, absent or weak orgasm after adequate stimulation",
+            "to": "r:fod"
+          },
+          {
+            "label": "A man who ejaculates with great difficulty, or not at all, in partnered sex",
+            "to": "r:de"
+          },
+          {
+            "label": "A man who ejaculates within about 1 minute of penetration, before he wishes",
+            "to": "r:pe"
+          },
+          {
+            "label": "Ejaculation occurs but orgasm is not felt, or a headache follows sex",
+            "to": "r:other"
+          },
+          {
+            "label": "Pain, fear of penetration or pelvic floor tightening",
+            "to": "r:gppd"
+          }
+        ]
+      },
+      "para": {
+        "q": "Has the person acted on the urges, or do they cause marked distress or impairment, for 6 months or more?",
+        "options": [
+          {
+            "label": "Yes",
+            "to": "r:paraphilic",
+            "note": "A paraphilic disorder may be present."
+          },
+          {
+            "label": "No: occasional experimentation, and typical erotic stimuli still work",
+            "to": "r:interest",
+            "note": "This is a paraphilic interest or experimentation, not a disorder."
+          }
+        ]
+      }
+    },
+    "results": {
+      "subst": {
+        "label": "Consider",
+        "dx": "Substance/medication-induced sexual dysfunction",
+        "line": "The disturbance must be predominant and begin soon after intoxication, withdrawal, or starting or changing a drug.",
+        "points": [
+          "SSRIs and venlafaxine most often delay orgasm; antipsychotics mainly impair ejaculation; trazodone rarely causes priapism.",
+          "A drug cause is not partner specific, not lifelong and fades when the drug is stopped (Table 16-13).",
+          "Options: wait for tolerance, switch class (for example to bupropion), or add an antidote such as cyproheptadine."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-psychdrugs",
+          "label": "Antipsychotics, antidepressants and lithium"
+        }
+      },
+      "medical": {
+        "label": "Consider",
+        "dx": "Sexual dysfunction due to a medical condition",
+        "line": "20 to 50 percent of erectile disorder is organic, and an organic cause is most likely after 60.",
+        "points": [
+          "Diabetes is the largest single cause in the book's figures.",
+          "Tests include nocturnal penile tumescence, Doppler flow, pudendal nerve latency, glucose, hormones, prolactin and thyroid function.",
+          "Retrograde ejaculation always has an organic cause."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-ed-med",
+          "label": "Erectile disorder due to a medical condition"
+        }
+      },
+      "psych": {
+        "label": "Diagnose",
+        "dx": "The underlying mental disorder only",
+        "line": "If the sexual problem is mostly due to another psychiatric disorder, diagnose only that disorder.",
+        "points": [
+          "Depression itself lowers libido and causes anhedonia.",
+          "Sexual function may improve as the depression lifts."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-overview",
+          "label": "What a sexual dysfunction is"
+        }
+      },
+      "mhsdd": {
+        "label": "Likely",
+        "dx": "Male hypoactive sexual desire disorder",
+        "line": "Deficient or absent sexual fantasies and desire for 6 months or more, with marked distress.",
+        "points": [
+          "Separate low desire from low activity: fantasies may be intact.",
+          "Look for hostility toward the partner, a failing relationship, long abstinence or desire used as a defense."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-mhsdd",
+          "label": "Male hypoactive sexual desire disorder"
+        }
+      },
+      "fsiad": {
+        "label": "Likely",
+        "dx": "Female sexual interest/arousal disorder",
+        "line": "At least 3 symptoms in most sexual experiences for 6 months or more, with marked distress.",
+        "points": [
+          "Normal lubrication does not exclude it: lack of pleasure is enough.",
+          "Check stimulation, menopause, drugs and marital discord, the commonest cause in one study."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-fsiad",
+          "label": "Female sexual interest/arousal disorder"
+        }
+      },
+      "ed_psych": {
+        "label": "Likely",
+        "dx": "Erectile disorder, psychological cause",
+        "line": "Good spontaneous, morning or masturbatory erections make an organic cause negligible and spare costly tests.",
+        "points": [
+          "Specify lifelong, acquired or situational.",
+          "Look for performance anxiety, anger at the partner and fear."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-ed-cause",
+          "label": "Erectile disorder: psychological causes and the history"
+        }
+      },
+      "fod": {
+        "label": "Likely",
+        "dx": "Female orgasmic disorder",
+        "line": "Marked delay, absence or reduced intensity of orgasm for 6 months or more, with marked distress.",
+        "points": [
+          "Lifelong: never an orgasm by any means. Acquired: at least one before, even in a dream.",
+          "Directed masturbation, sometimes with a vibrator, is the main technique."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-fod",
+          "label": "Female orgasmic disorder"
+        }
+      },
+      "de": {
+        "label": "Likely",
+        "dx": "Delayed ejaculation",
+        "line": "Rare with masturbation; seen mainly in partnered sex.",
+        "points": [
+          "Ask about antidepressants and heavy pornography use first.",
+          "Lifelong forms suggest severe psychopathology; acquired forms often reflect relationship trouble."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-de",
+          "label": "Delayed ejaculation"
+        }
+      },
+      "pe": {
+        "label": "Likely",
+        "dx": "Premature (early) ejaculation",
+        "line": "Mild 30 seconds to 1 minute, moderate 15 to 30 seconds, severe under 15 seconds after penetration.",
+        "points": [
+          "Squeeze or stop-start techniques: sex therapy works best here.",
+          "SSRIs, tricyclics or topical anesthetics if behavioral methods fail."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-pe",
+          "label": "Premature (early) ejaculation"
+        }
+      },
+      "other": {
+        "label": "Code",
+        "dx": "Other specified sexual dysfunction",
+        "line": "Orgasmic anhedonia and postcoital headache are coded here.",
+        "points": [
+          "Rule out sacral or cephalic lesions in orgasmic anhedonia.",
+          "Postcoital headache: consider migraine or cluster headache triggered by coitus."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-other-spec",
+          "label": "Orgasmic anhedonia, premature female orgasm and postcoital headache"
+        }
+      },
+      "gppd": {
+        "label": "Likely",
+        "dx": "Genito-pelvic pain/penetration disorder",
+        "line": "Difficulty with penetration, pain, fear of pain, or pelvic floor tension, for 6 months or more.",
+        "points": [
+          "Rule out somatic causes and poor lubrication first.",
+          "Graduated dilators and physiotherapy; address fear, trauma and the relationship."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-gppd",
+          "label": "The DSM-5 category"
+        }
+      },
+      "paraphilic": {
+        "label": "Consider",
+        "dx": "A paraphilic disorder",
+        "line": "Match the focus of arousal to exhibitionistic, voyeuristic, frotteuristic, pedophilic, masochism, sadism, fetishistic or transvestic disorder, or other specified paraphilic disorder.",
+        "points": [
+          "Patients often have 3 to 5 paraphilias.",
+          "When others are at risk, plan external controls; drugs and CBT reduce drive and behavior."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-para-def",
+          "label": "What a paraphilic disorder is"
+        }
+      },
+      "interest": {
+        "label": "Not a disorder",
+        "dx": "Paraphilic interest or experimentation",
+        "line": "DSM-5 requires acting on the urges or marked distress or impairment.",
+        "points": [
+          "Occasional, novel experimentation in a person who still responds to typical stimuli is not a disorder."
+        ],
+        "link": {
+          "ch": "ch16",
+          "sec": "s16-para-def",
+          "label": "What a paraphilic disorder is"
+        }
+      }
+    }
   }
 ]);

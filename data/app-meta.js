@@ -3,7 +3,7 @@ window.APP_META = {
   name: 'Kaplan Study',
   short: 'Kaplan',
   tagline: 'Synopsis of Psychiatry companion',
-  version: '60.0.0',
+  version: '61.0.0',
   repo: 'KaplanStudy',
   attribution: 'App created by Isabella Navarro, MD. Latest version November 2026. isaymotion@gmail.com'
 };

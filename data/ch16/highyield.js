@@ -1,0 +1,285 @@
+/* Chapter 16 high yield (bold text becomes a blank in "Hide key facts" mode). Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 16. */
+KS.add("ch16", "highYield", [
+  {
+    "id": "hy16-ov",
+    "topic": "Defining and assessing sexual dysfunction",
+    "items": [
+      "Sexual dysfunction = inability to **respond to sexual stimulation**, or **pain** during the sexual act.",
+      "ICD-10: inability \"to **participate in a sexual relationship** as he or she would wish.\"",
+      "DSM-5 lists **ten** sexual dysfunction diagnoses, including **other specified** and **unspecified**.",
+      "Diagnose a sexual dysfunction only when it is a **significant part** of the clinical picture.",
+      "If more than one dysfunction is present, **diagnose them all**.",
+      "Dysfunctions can be **lifelong or acquired**, and **generalized or situational**.",
+      "DSM-5 grades severity by the patient's **distress**: mild, moderate or severe.",
+      "If fully due to a medical condition, substance or drug, give the **medical** or **substance-induced** diagnosis.",
+      "If the problem is mostly due to an underlying psychiatric disorder, diagnose **only the underlying disorder**.",
+      "Dysfunctions are **self-perpetuating** because of **performance anxiety**.",
+      "The functional partner often feels **deprived, angry or inadequate**.",
+      "Ask whether the sexual problem came **before** or **after** relationship difficulties.",
+      "A sex history (Table 16-1) has **seven** headings and is taken with **open-ended questions**.",
+      "Questions about **masturbation and fantasies** are among the most sensitive for patients."
+    ]
+  },
+  {
+    "id": "hy16-da",
+    "topic": "Desire, arousal and erectile disorders",
+    "items": [
+      "Male hypoactive sexual desire disorder lasts about **6 months** or more.",
+      "Lifelong male low desire: the man has **never** had many spontaneous erotic thoughts.",
+      "Low spontaneous desire in a woman is **not** a disorder if the encounter then **triggers desire**.",
+      "Low desire affects **2 percent** of men aged 16 to 44.",
+      "Desire problems: **6 percent** at ages 18 to 24 and **40 percent** at ages 66 to 74.",
+      "Some men confuse low desire with **low activity**; their fantasies are intact.",
+      "Desire needs **drive, self-esteem, accepting oneself as sexual, an appropriate partner and a good nonsexual relationship**.",
+      "Female interest and arousal were merged because women often feel desire **with or after** arousal.",
+      "Female interest/arousal disorder needs **3 or more** symptoms during most sexual experiences.",
+      "Subjective arousal correlates **poorly** with genital lubrication.",
+      "**Antihistaminic and anticholinergic** drugs reduce vaginal lubrication.",
+      "Acquired female interest/arousal disorder: most common cause in one study was **marital discord**.",
+      "Erectile disorder was once called **impotence**.",
+      "Acquired erectile disorder: **10 to 20 percent** of men; lifelong: about **1 percent** under age 35.",
+      "Erectile disorder is the chief complaint of **more than 50 percent** of men treated for sexual disorders.",
+      "**Spontaneous, morning or masturbatory** erections make an organic cause unlikely."
+    ]
+  },
+  {
+    "id": "hy16-or",
+    "topic": "Orgasm and ejaculation disorders",
+    "items": [
+      "Female orgasmic disorder is also called **inhibited female orgasm** or **anorgasmia**.",
+      "Female orgasmic disorder and delayed ejaculation both need symptoms for **6 months** or more and **marked distress** (Tables 16-5, 16-6).",
+      "Female orgasmic disorder needs at least **1** symptom during **most** sexual encounters (Table 16-5).",
+      "**Lifelong** female orgasmic disorder means **never** an orgasm by any stimulation; **acquired** means at least one orgasm before, even in a **dream**.",
+      "Clitoral and vaginal orgasms are **physiologically identical**.",
+      "Overall prevalence of female orgasmic disorder is about **30 percent**.",
+      "Heritability of difficulty reaching orgasm: **34 percent** with intercourse, **45 percent** with masturbation.",
+      "Delayed ejaculation is rarely a problem with **masturbation**; it shows up in **partnered** sex.",
+      "Delayed ejaculation prevalence is about **5 percent**, lower than premature ejaculation or erectile disorder.",
+      "Two suggested reasons for more delayed ejaculation in clinics: **antidepressant** use and **Internet pornography**.",
+      "**Lifelong** delayed ejaculation suggests severe psychopathology; **acquired** often reflects a relationship problem.",
+      "Delayed ejaculation is more common in men with **OCD**; **ADHD** can contribute through distractibility.",
+      "Premature ejaculation: ejaculation within about **1 minute** of penetration.",
+      "Premature ejaculation severity: mild **30 s to 1 min**, moderate **15 to 30 s**, severe **under 15 s**.",
+      "Premature ejaculation is the chief complaint of **35 to 40 percent** of men treated for sexual disorders, but would fit only **1 to 3 percent** under DSM-5 timing.",
+      "Two groups of premature ejaculators: **shorter nerve latency** (physiologic) and **psychogenic/conditioned**.",
+      "Orgasmic anhedonia (no felt orgasm, ejaculation intact) is coded as **other specified sexual dysfunction**; psychiatric cause is **extreme guilt** with dissociation.",
+      "**Postcoital headache** is throbbing, occipital or frontal, cause unknown, and also coded as **other specified sexual dysfunction**."
+    ]
+  },
+  {
+    "id": "hy16-pn",
+    "topic": "Genito-pelvic pain/penetration disorder",
+    "items": [
+      "DSM-5 merged **dyspareunia** and **vaginismus** into genito-pelvic pain/penetration disorder.",
+      "Four complaints: difficulty having **intercourse**, genito-pelvic **pain**, **fear** of pain or penetration, **pelvic floor tension**.",
+      "ICD-10 names: **nonorganic vaginismus** and **nonorganic dyspareunia** (Table 16-8).",
+      "Needs **6 months** or more and **one or more** symptoms.",
+      "Dyspareunia is genital pain **before, during or after** intercourse; about **5 percent** of North American women report it.",
+      "Dyspareunia is mostly attributed to **dynamic factors**; chronic pelvic pain is common after **rape or childhood sexual abuse**.",
+      "Dyspareunia reports rise **after menopause** and **postpartum** (the latter usually temporary).",
+      "Vaginismus is spasm of the **outer third** of the vagina.",
+      "**Complete** vaginismus allows no penetration, not even the smallest **tampon**.",
+      "Vaginismus is **less prevalent** than female orgasmic disorder and most often affects **highly educated**, high socioeconomic women.",
+      "Causes of vaginismus: rape, anticipated pain, strict **religious** upbringing, relationship abuse, childhood **surgical or dental** pain."
+    ]
+  },
+  {
+    "id": "hy16-me",
+    "topic": "Medical causes of sexual dysfunction",
+    "items": [
+      "**20 to 50 percent** of men with erectile disorder have an organic basis.",
+      "Organic cause is more likely in men **older than 50** and most likely in men **older than 60**.",
+      "After **castration**, erection can still occur through a reflex arc via the **sacral cord erectile center**, fired by inner thigh stimulation.",
+      "**Nocturnal penile tumescence** is erection during sleep, generally with **REM** sleep.",
+      "Doppler flowmeter and penile plethysmograph both assess blood flow in the **internal pudendal artery**.",
+      "**Pudendal nerve latency** time tests the nerve supply.",
+      "Invasive tests (**penile arteriography, infusion cavernosonography, radioactive xenon penography**) are only for candidates for **vascular reconstructive surgery**.",
+      "About **30 percent** of female genital surgeries cause temporary dyspareunia.",
+      "**30 to 40 percent** of women with dyspareunia in sex therapy clinics have pelvic pathology.",
+      "**Vulvar vestibulitis** causes chronic vulvar pain; **interstitial cystitis** causes pain most intense after orgasm.",
+      "**Peyronie disease** (sclerotic penile plaques with curvature) is the usual organic cause of dyspareunia in men.",
+      "**Retrograde ejaculation** always has an organic cause: semen passes back into the bladder.",
+      "Female orgasm can be impaired by **hypothyroidism, diabetes mellitus and primary hyperprolactinemia**.",
+      "In women on MAOIs, the orgasm problem disappeared after **16 to 18 weeks** despite an unchanged dose."
+    ]
+  },
+  {
+    "id": "hy16-dr",
+    "topic": "Drugs and sexual function",
+    "items": [
+      "Substance-induced dysfunction: sexual disturbance must be **predominant** and occur soon after intoxication, withdrawal or medication change.",
+      "**Opioids** and sedatives nearly always **depress desire**.",
+      "Men on stimulants go through two stages: **prolonged erection without ejaculation**, then **gradual loss of erection**.",
+      "**Alcohol** lowers testosterone in men but can slightly raise it in women.",
+      "Chronic alcohol use impairs liver breakdown of estrogens in men, causing **feminization and gynecomastia**.",
+      "Prolonged **cannabis** use depresses testosterone.",
+      "**Methaqualone** had no real basis for its reputation as a sexual enhancer.",
+      "Antipsychotics are mainly **dopamine antagonists** that also block adrenergic and cholinergic receptors.",
+      "Antipsychotic **dry orgasm** with milky urine afterward is startling but **harmless**.",
+      "Antipsychotics rarely cause **priapism**; the list includes risperidone, clozapine and molindone.",
+      "**Trazodone** priapism is attributed to **alpha-1 adrenergic antagonism**.",
+      "Tricyclics with the fewest anticholinergic effects (e.g. **desipramine**) cause the fewest sexual effects.",
+      "**Clomipramine**, **selegiline** and **bupropion** may increase sex drive.",
+      "**Venlafaxine and SSRIs** lower drive and impair orgasm in both sexes through increased serotonin.",
+      "**Cyproheptadine** and **methylphenidate** may reverse SSRI sexual effects.",
+      "**Amantadine** may reverse SSRI orgasmic dysfunction through dopaminergic effect.",
+      "**Fluoxetine** impairs ejaculation but not erection in Table 16-10.",
+      "**Tranylcypromine** can paradoxically stimulate sex, perhaps from amphetamine-like properties.",
+      "**Benzodiazepines** lower anxiety and can improve sex in anxiety-inhibited people; they may also lower libido.",
+      "Sexual dysfunction caused by a drug **disappears when the drug is stopped**."
+    ]
+  },
+  {
+    "id": "hy16-tx",
+    "topic": "Drug, hormone and device treatment",
+    "items": [
+      "Sexual symptoms often become **secondarily autonomous**, so **behavioral techniques** are usually added to treatment.",
+      "Sildenafil is a **nitric oxide enhancer** that increases blood inflow to the penis.",
+      "Sildenafil starts to work in about **1 hour**, lasts up to **4 hours**, and needs **sexual stimulation**.",
+      "Common sildenafil adverse events: **headache, flushing, dyspepsia**.",
+      "Sildenafil with **organic nitrates** can cause sudden, sometimes fatal **hypotension**.",
+      "Sildenafil fails in about **50 percent** of men after **radical prostate surgery** or with longstanding **insulin-dependent diabetes**.",
+      "Rare sildenafil harms: **NAION** (more likely with cardiovascular risk) and exceedingly rare **hearing loss**.",
+      "In women, sildenafil gives **lubrication** but **not desire**.",
+      "**Tadalafil** has the longest half-life (**17.5 h**) and duration (**36 h**), and **no delay** after a high-fat meal.",
+      "**Avanafil** has the shortest duration of action (**6 h**).",
+      "**CYP3A4** is the major enzyme for all the PDE-5 inhibitors in Table 16-14.",
+      "Oral **phentolamine** and **apomorphine** are for men with **minimal** erectile dysfunction. Phentolamine causes hypotension and tachycardia; apomorphine causes **nausea and sweating**.",
+      "**Alprostadil** (injected or transurethral **MUSE**) works **locally** and needs **no sexual stimulation**. Erection in **2 to 3 minutes**, up to **1 hour**.",
+      "Alprostadil hazards: **priapism** and **sclerosis of penile veins**. MUSE users may feel **burning**.",
+      "Women: **flibanserin** is FDA approved for **desire**; **vaginal phentolamine** and **alprostadil cream** target arousal.",
+      "**Yohimbine** and **ginseng**: aphrodisiac effect **not confirmed**. The American Urologic Association does not recommend yohimbine for organic ED.",
+      "**Androgens** raise sex drive when testosterone is low. Women risk **irreversible virilization**; men risk **hypertension and prostatic enlargement**.",
+      "**Leriche syndrome** (distal aortic disease) causes **loss of erection during thrusting**. Treat with **less thrusting** and the **woman-superior** position."
+    ]
+  },
+  {
+    "id": "hy16-st",
+    "topic": "Sex therapy and psychological treatment",
+    "items": [
+      "**Dual-sex therapy** was developed by **Masters and Johnson**. The **couple (dyad)** is treated.",
+      "The keystone of dual-sex therapy is the **roundtable session** with a **male and female therapy team**.",
+      "At first the therapist **prohibits intercourse** and all sexual play beyond the prescribed exercises.",
+      "**Sensate focus** builds awareness of touch, sight, sound and smell without performance pressure.",
+      "**Spectatoring** is watching oneself during sex. Fantasy and **mindfulness** help reduce it.",
+      "Dual-sex therapy works best when there is **no other psychopathology**. **Severe marital discord** makes it harder.",
+      "**Desire disorders** need **longer, more intensive** therapy and have highly variable outcomes.",
+      "**Vaginismus** and **dyspareunia**: graduated **dilators**; physiotherapists can help relax perineal muscles.",
+      "**Squeeze technique** for premature ejaculation: squeeze the **coronal ridge** of the glans at the first sign of ejaculation.",
+      "**Stop-start** technique was developed by **James H. Semans**: stop stimulation, **no squeeze**.",
+      "**Circumcision** has **no bearing** on ejaculatory control. Sex therapy has been **most successful** in premature ejaculation.",
+      "**Delayed ejaculation**: **extravaginal ejaculation** first, then gradual vaginal entry; early exercises **forbid ejaculation**.",
+      "Lifelong female orgasmic disorder: **directed masturbation**, maybe with a **vibrator**; the **clitoral shaft** is the preferred site.",
+      "Behavior therapy uses a **hierarchy** and **systematic desensitization**, starting in **fantasy** with the least frightening item.",
+      "**Good prognosis**: regular practice, **attitude flexibility**, **younger** couples. **Poor**: **sadomasochistic or depressive** interaction, blame and projection.",
+      "**Group therapy** is not indicated with an uncooperative partner, **severe depression or psychosis**, or aversion to explicit material."
+    ]
+  },
+  {
+    "id": "hy16-pa",
+    "topic": "Paraphilic disorders: criteria and features",
+    "items": [
+      "A paraphilia is a sexual stimulus or act that departs from normal behavior but is **necessary for arousal and orgasm**.",
+      "DSM-5 calls a paraphilia a disorder only if the person **acts on it** or has **significant distress**.",
+      "The DSM-5 duration criterion for paraphilic disorders is **6 months or more**.",
+      "DSM-5 gives full criteria for **8** paraphilic disorders.",
+      "The **fantasy** is the pathognomonic element of a paraphilia.",
+      "Paraphilic sex is **ritualized or stereotyped** and uses degraded or **dehumanized** objects.",
+      "Paraphilic scripts may relieve anxiety, bind **aggression** or stabilize **identity**.",
+      "Occasional experimentation, such as an infrequent episode of bondage, is **not** a paraphilic disorder.",
+      "Exhibitionism: arousal from exposing the genitals to a **stranger**; in almost 100 percent of cases a **man** exposing to **women**.",
+      "Exhibitionism specifiers: exposing to **prepubertal children**, **physically mature** people, or **both**.",
+      "Voyeurism is also called **scopophilia**; it usually begins in **childhood**, and the charge when caught is usually **loitering**.",
+      "Voyeuristic disorder: DSM-5 requires the person to be **at least 18**.",
+      "Frotteurism: rubbing against a fully clothed nonconsenting person, often in **subways and buses**; the person is typically **passive and isolated**.",
+      "Fetishism focuses on **body-linked objects** or nongenital body parts; partialism is folded into **fetishistic disorder**.",
+      "Fetishistic disorder specifiers: **body part(s)**, **nonliving object(s)**, **other**.",
+      "Pedophilia: child under **14**; patient **16 or older** and **5 or more years older** than the child.",
+      "Pedophilia: **95 percent** of patients are heterosexual and **50 percent** had been drinking excessively at the time of the incident.",
+      "Sexual masochism: DSM-5 subtype **asphyxiophilia**; about **30 percent** also have sadistic fantasies.",
+      "Sexual sadism usually begins **before age 18**, and lust murder is its extreme form; **ICD-10** combines sadism and masochism as **sadomasochism**.",
+      "Transvestic disorder specifiers: **with fetishism** and **with autogynephilia**."
+    ]
+  },
+  {
+    "id": "hy16-pt",
+    "topic": "Paraphilias: course, treatment and etiology",
+    "items": [
+      "Poor prognosis: **early onset**, **frequent acts**, **lack of guilt** and a **substance use disorder**.",
+      "Better prognosis: **regular sexual activity** and **self-referral** rather than legal referral.",
+      "There are **5** psychiatric interventions for paraphilic disorders.",
+      "The 5 interventions are external control, **reduction of sexual drives**, treating **comorbid conditions**, **CBT** and **dynamic psychotherapy**.",
+      "Antiandrogens: **cyproterone acetate** in Europe and **medroxyprogesterone acetate** (Depo-Provera) in the United States; they lower **testosterone**.",
+      "Serotonergic agents such as **fluoxetine** have had **limited success**.",
+      "CBT components include social skills training, sex education, **cognitive restructuring** and **victim empathy**.",
+      "In **modified aversive behavior rehearsal**, the offender is videotaped acting out the paraphilia with a **mannequin**.",
+      "Good treatment predictors: a **single** paraphilia, **normal intelligence**, **no substance abuse**, no antisocial traits, and a **successful adult attachment**.",
+      "Pedophilia is the most common paraphilia among **legally identified** cases.",
+      "**10 to 20 percent** of children are molested by age 18, and **20 percent** of adult women have been targeted by exhibitionism or voyeurism.",
+      "More than **50 percent** of paraphilias begin before age **18**; patients often have **3 to 5** paraphilias.",
+      "Paraphilic behavior **peaks at ages 15 to 25**; DSM-5 reserves the diagnosis for age **18 and older**.",
+      "Learning theory: paraphilic fantasies begin **early** and are hidden, so repetition **conditions** arousal to them.",
+      "Psychoanalytic model: coping with anxiety about **castration** by the father and **separation** from the mother.",
+      "Penile plethysmography has **questionable validity** because some men can **suppress** erections."
+    ]
+  },
+  {
+    "id": "hy16-sa",
+    "topic": "Sex addiction and compulsivity",
+    "items": [
+      "Sex addiction is borrowed from the model of **substance addiction** and addictive behaviors such as **gambling**.",
+      "Addiction implies **psychological dependence**, **physical dependence** and a **withdrawal syndrome**.",
+      "**DSM-5** does **not** contain sex addiction; the concept remains controversial.",
+      "Core picture: life revolves around sex, **excessive time** spent, and **repeated failed attempts** to stop.",
+      "Guilt and remorse after the act do **not** prevent the next one.",
+      "Urges are worst during **stress** or when **angry, depressed or anxious**.",
+      "Hypersexual man masking **inferiority**: **Don Juanism**, also called **satyriasis**.",
+      "Similar condition in women: **nymphomania**; often with **female orgasmic disorder** and fear of losing love.",
+      "Most common comorbidity: **substance use disorders**, up to **80%**.",
+      "Self-help groups: **SA, SLAA, SAA** (12-step); add **AA or NA** if a substance disorder is present.",
+      "Drug options: **SSRIs** and **medroxyprogesterone acetate** (men); **cyproterone** is not available in the US."
+    ]
+  },
+  {
+    "id": "hy16-dv",
+    "topic": "Sexual development, identity and orientation",
+    "items": [
+      "The four psychosexual factors: **sexual identity, gender identity, sexual orientation, sexual behavior**.",
+      "**Sexual identity** = chromosomes, genitalia, hormones, gonads, secondary sex characteristics.",
+      "**Gender identity** = a person's sense of maleness or femaleness; firm by **2 to 3 years**.",
+      "All embryos, XX or XY, are **anatomically female** early in fetal life.",
+      "Male differentiation needs **fetal androgens** from about **week 6** to the **end of month 3**.",
+      "**SRY and SOX9** drive testis development; **WNT4** is needed for female müllerian ducts; **DAX1** acts in both sexes.",
+      "Exogenous androgens in a pregnant woman can masculinize the genitals of a **XX** fetus.",
+      "Most common female intersex disorder: **virilizing adrenal hyperplasia**.",
+      "**Turner** = **XO**; **Klinefelter** = **XXY**.",
+      "**Androgen insensitivity** is **X-linked recessive**: female-looking genitals, cryptorchid testes.",
+      "Current practice for ambiguous genitalia: let the child **develop with the ambiguity**, with a pediatrician, endocrinologist and psychiatrist supporting the family.",
+      "**Stoller**: gender is social, sex is biologic. **Money and Ehrhardt** defined gender role behavior.",
+      "The primary factor in achieving the gender role is **learning**.",
+      "Sexual orientation = object of sexual impulses: **opposite sex, same sex or both**; others say **asexual, polysexual, pansexual**."
+    ]
+  },
+  {
+    "id": "hy16-rc",
+    "topic": "Biology and the sexual response cycle",
+    "items": [
+      "**Orbitofrontal cortex** = emotions; **left anterior cingulate** = hormone control and arousal; **right caudate** = whether activity follows arousal.",
+      "Limbic stimulation (septum, preoptic area, fimbria, mammillary bodies, anterior thalamus) can cause **erection**.",
+      "In women, **fear and anxiety areas go quiet** during orgasm.",
+      "**Nucleus paragigantocellularis** drives spinal neurons to release **serotonin**, which **inhibits orgasm**.",
+      "**Dopamine** raises libido; **serotonin** inhibits sexual function.",
+      "**Oxytocin** is released with orgasm and reinforces pleasure.",
+      "Spinal sensory input: **pudendal, pelvic, hypogastric** nerves.",
+      "**Testosterone** raises libido in both sexes; **estrogen** is crucial for lubrication.",
+      "**Progesterone**, excess **prolactin** and excess **cortisol** mildly depress desire.",
+      "Masters and Johnson: **vasocongestion** and **myotonia**, then **detumescence** after orgasm.",
+      "Male erection begins in **10 to 30 s**; male orgasm lasts **3 to 5 s**; female orgasm lasts **3 to 15 s**.",
+      "Resolution takes **10 to 15 min**; without orgasm it takes **1/2 to 1 day**.",
+      "Men have a **refractory period**; women can have **multiple orgasms** (Figure 16-2, pattern A).",
+      "A woman's **subjective arousal** may not match her physical arousal; this **rarely** happens in men.",
+      "Masturbation: nearly **all men** and **three-fourths of women** (Kinsey); PSA test needs **7 days** without it.",
+      "Only **50%** of young women use contraception at first coitus."
+    ]
+  }
+]);

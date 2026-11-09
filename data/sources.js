@@ -4,6 +4,17 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 16 (sexuality), November 2026 */
+    { m: "DSM-5 (American Psychiatric Association, 2013)", label: "American Psychiatric Association: DSM-5", url: "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+    { m: "Disorders related to sexuality and gender identity in the ICD-11", label: "Reed GM et al., World Psychiatry 2016 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5032510/" },
+    { m: "ICD-11 MMS chapter 17", label: "WHO ICD-11: Conditions related to sexual health", url: "https://icd.who.int/browse/2024-01/mms/en#1376052646" },
+    { m: "second ISSM Ad Hoc Committee", label: "ISSM unified definition of premature ejaculation (2014)", url: "https://dspace.library.uu.nl/handle/1874/308464" },
+    { m: "dapoxetine on demand in Chinese men", label: "Peng J et al., Sex Med 2021 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8072166/" },
+    { m: "Dapoxetine for premature ejaculation, 2014", label: "Drug Ther Bull 2014 (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/24627135/" },
+    { m: "Global consensus position statement on the use of testosterone therapy for women", label: "Global consensus on testosterone for women, JCEM 2019 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6821450/" },
+    { m: "WFSBP) 2020 guidelines for the pharmacological treatment of paraphilic disorders", label: "WFSBP 2020 paraphilic disorders guideline (PDF)", url: "https://wfsbp.org/wp-content/uploads/2023/02/Thibaut_TG_Paraphilias_2020.pdf" },
+    { m: "6C72 Compulsive sexual behaviour disorder", label: "WHO ICD-11: 6C72 compulsive sexual behaviour disorder", url: "https://icd.who.int/browse/2024-01/mms/en#1630268048" },
+    { m: "Consensus statement on management of intersex disorders", label: "Lee PA et al., Pediatrics 2006", url: "https://publications.aap.org/pediatrics/article/118/2/e488/69211" },
     /* Clinical tools (rating scales and calculators), October 2026 */
     { m: 'Kroenke K, Spitzer RL, Williams JBW. The PHQ-9', label: 'PHQ-9 form (NIDA Common Data Elements)', url: 'https://cde.nida.nih.gov/system/files/PatientHealthQuestionnaire-9_2014Mar19.pdf' },
     { m: 'Columbia Lighthouse Project', label: 'C-SSRS for communities and healthcare (Columbia)', url: 'https://cssrs.columbia.edu/the-columbia-scale-c-ssrs/cssrs-for-communities-and-healthcare/' },
