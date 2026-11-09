@@ -1,0 +1,122 @@
+[
+ {
+  "section": "23.1",
+  "year": 2023,
+  "title": "Umbrella review: psychodynamic therapy as empirically supported treatment",
+  "fact": "An umbrella review judged psychodynamic therapy superior to inactive and active controls for target symptoms in common mental disorders, with about the same effect as other active therapies. The authors rated the evidence as high quality for depressive and somatic symptom disorders and moderate for anxiety and personality disorders. They conclude it meets criteria for an empirically supported treatment, while noting risk-of-bias limits similar to other psychotherapies.",
+  "source": "Leichsenring F, Abbass A, Heim N, Keefe JR, Kisely S, Luyten P, Rabung S. The status of psychodynamic psychotherapy as an empirically supported treatment for common mental disorders - an umbrella review based on updated criteria. World Psychiatry. 2023;22(2):286-304. doi:10.1002/wps.21104",
+  "url": "https://discovery-pp.ucl.ac.uk/id/eprint/10165349",
+  "confirmed": true,
+  "note": "Verified on UCL Discovery record (abstract). Publisher page, PubMed and PMC fetches failed, so the DOI link was not itself opened. Authors are mostly PDT-aligned; allegiance caveat worth keeping."
+ },
+ {
+  "section": "23.2",
+  "year": 2014,
+  "title": "Cochrane review: short-term psychodynamic psychotherapies for common mental disorders",
+  "fact": "The latest Cochrane version (2014) pooled trials of short-term psychodynamic therapy against mostly inactive controls and found benefits for general psychiatric symptoms, anxiety and depression at short term, with smaller effects at medium term. Long-term estimates for general symptoms were imprecise and not statistically significant. Effects on somatic symptoms were not significant at short term.",
+  "source": "Abbass AA, Kisely SR, Town JM, Leichsenring F, Driessen E, De Maat S, Gerber A, Dekker J, Rabung S, Rusalovska S, Crowe E. Short-term psychodynamic psychotherapies for common mental disorders. Cochrane Database Syst Rev. 2014 (published 1 July 2014). doi:10.1002/14651858.CD004687.pub4",
+  "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004687.pub4/information",
+  "confirmed": true,
+  "note": "Opened. Predates the 12th ed., so it is NOT new since the book; no newer Cochrane version was found. Page text lacked the authors' narrative conclusion; fact built from the pooled results only. Short-term SMDs: general -0.71, anxiety -0.64, depression -0.50 (confirmed on page)."
+ },
+ {
+  "section": "23.2",
+  "year": 2023,
+  "title": "IPD meta-analysis: short-term psychodynamic therapy for depression",
+  "fact": "An individual participant data meta-analysis of 11 of 13 identified randomized trials (771 participants) found short-term psychodynamic therapy reduced depressive symptoms more than control conditions after treatment (d about -0.62). Longer current depressive episodes were associated with greater benefit. The authors caution this moderator finding needs prospective confirmation.",
+  "source": "Wienicke FJ, Beutel ME, Zwerenz R, Brahler E, Fonagy P, Luyten P, et al. (29 authors; last author Driessen E). Efficacy and moderators of short-term psychodynamic psychotherapy for depression: a systematic review and meta-analysis of individual participant data. Clin Psychol Rev. 2023;101:102269. doi:10.1016/j.cpr.2023.102269",
+  "url": "https://cris.unibo.it/retrieve/84e325dc-592f-4151-a6f4-86ed1c21f0a9/1-s2.0-S0272735823000272-main.pdf",
+  "confirmed": true,
+  "note": "Opened the author-copy PDF (institutional repository). Full author list not seen beyond the first group; abbreviate with et al. in the app. PubMed record 36958077 appeared in search but its page did not load."
+ },
+ {
+  "section": "23.3",
+  "year": 2022,
+  "title": "Live group eHealth interventions for adult mental health (systematic review)",
+  "fact": "A systematic review of 21 randomized trials of live, professional-led group eHealth interventions found that all 8 videoconference-delivered trials reported improvements in mental health versus controls. Pooled effects were moderate for anxiety (d 0.60) and depression (d 0.60). Risk of bias was high in most studies and certainty of evidence low to very low, so conclusions should be cautious.",
+  "source": "Currie CL, Larouche R, Voss ML, Trottier M, Spiwak R, Higa E, Scott DR, Tallow T. Effectiveness of live health professional-led group eHealth interventions for adult mental health: systematic review of randomized controlled trials. J Med Internet Res. 2022;24(1):e27939. doi:10.2196/27939",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8790691",
+  "confirmed": true,
+  "note": "Opened via PMC. Not specific to psychotherapy groups only; most participants had physical health conditions."
+ },
+ {
+  "section": "23.3",
+  "year": 2024,
+  "title": "Online group psychotherapy: systematic review",
+  "fact": "A PRISMA-guided review of 33 papers found online groups were often more accessible, and cohesion can form online but may take longer and presence may feel weaker. Recommended practices include pre-group screening, co-facilitation, explicit group rules and attention to confidentiality and boundary issues. The authors note the evidence base on best practice and training is still incomplete.",
+  "source": "Andrews K, Ross D, Maroney TL. Online group psychotherapy: a systematic review. Community Ment Health J. 2024;60:1511-1531. doi:10.1007/s10597-024-01304-4",
+  "url": "https://link.springer.com/10.1007/s10597-024-01304-4",
+  "confirmed": true,
+  "note": "Opened. Mostly qualitative synthesis, not an efficacy meta-analysis."
+ },
+ {
+  "section": "23.3",
+  "year": 2020,
+  "title": "AGPA online group resources (no formal guideline found)",
+  "fact": "The American Group Psychotherapy Association hosts a page of online group therapy resources (articles, a telehealth how-to guide, e-learning). No dated formal practice guideline on video groups was found on that page.",
+  "source": "American Group Psychotherapy Association. Connecting Online (practice resources page). Accessed 2026-11-09.",
+  "url": "https://agpa.org/home/practice-resources/connecting-online",
+  "confirmed": false,
+  "note": "Page opened but it is a resource list with no dates and no guideline statement, so I did not set confirmed true. Suggest not using in the app, or only as a pointer."
+ },
+ {
+  "section": "23.3",
+  "year": 2020,
+  "title": "Group psychotherapy for anxiety disorders: meta-analysis",
+  "fact": "A meta-analysis of 57 randomized trials (3,656 participants) found group psychotherapy clearly better than no treatment for anxiety symptoms (g 0.92). It showed no significant difference versus individual therapy or medication, though the individual-therapy interval included zero. In head-to-head trials, researcher allegiance affected results.",
+  "source": "Psychother Res. 2020;30(8):965-982. Efficacy of group psychotherapy for anxiety disorders: a systematic review and meta-analysis. Epub 24 Feb 2020. doi:10.1080/10503307.2020.1729440 (author list not visible on page opened)",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32093586/",
+  "confirmed": true,
+  "note": "Opened. Published 2020, before the book's 2021 edition, so borderline as an update. Authors not seen: look them up before citing. Group vs individual for depression: only secondary mention (Cuijpers 2019, 155 studies, group CBT less effective) seen via Ferreira 2022 J Affect Disord doi:10.1016/j.jad.2022.04.134; primary Cuijpers paper not opened."
+ },
+ {
+  "section": "23.3",
+  "year": 2019,
+  "title": "Group vs individual CBT for depression (Cuijpers 2019, second-hand)",
+  "fact": "A 2019 meta-analysis of 155 studies reportedly found group CBT significantly less effective than individual CBT in direct comparisons, partly linked to dropout. This is reported second-hand and should not be used until the primary paper is opened.",
+  "source": "Cuijpers et al. 2019 as cited in Ferreira MG et al., J Affect Disord 2022;309:297-308, doi:10.1016/j.jad.2022.04.134",
+  "url": "https://ueaeprints.uea.ac.uk/id/eprint/84717/7/1_s2.0_S0165032722004785_main.pdf",
+  "confirmed": false,
+  "note": "Only the citing paper was opened. Primary source and exact citation not verified; predates 2021 anyway."
+ },
+ {
+  "section": "23.4",
+  "year": 2020,
+  "title": "APA schizophrenia guideline: family interventions",
+  "fact": "Statement 20 of the APA guideline reads that APA suggests (2B) that patients with schizophrenia who have ongoing contact with family receive family interventions. The '2' denotes a suggestion (less certain balance of benefit and harm) and 'B' moderate-strength supporting evidence. It is to be applied within a person-centered plan including evidence-based pharmacological and nonpharmacological treatments.",
+  "source": "APA Practice Guideline Writing Group (Keepers GA, Chair). The American Psychiatric Association Practice Guideline for the Treatment of Patients With Schizophrenia. Am J Psychiatry. 2020;177(9):868-872. doi:10.1176/appi.focus.18402 (Focus reprint; 3rd ed.)",
+  "url": "https://psychiatryonline.org/doi/10.1176/appi.focus.18402",
+  "confirmed": true,
+  "note": "Opened. Rating is 2B (a suggestion), not a 1-level recommendation. Issue number 9 is from memory of the journal, not seen on page; verify."
+ },
+ {
+  "section": "23.4",
+  "year": 2014,
+  "title": "NICE CG178: family intervention in psychosis and schizophrenia",
+  "fact": "NICE CG178 (2014) advises offering family intervention to families of people with psychosis or schizophrenia who live with or are in close contact with them. It should include the patient if practical, run for 3 months to 1 year with at least 10 planned sessions, and may be single-family or multi-family format.",
+  "source": "NICE. Psychosis and schizophrenia in adults: prevention and management. Clinical guideline CG178. 2014.",
+  "url": "https://www.nice.org.uk/Guidance/CG178/chapter/recommendations",
+  "confirmed": true,
+  "note": "Recommendations text confirmed. Current status (still active, updated or under review) NOT confirmed: the CG178 landing page failed to load and the recommendations page carries no status label. Check before stating 'current'. NICE QS80 statement 3 also confirmed: Family members of adults with psychosis or schizophrenia are offered family intervention (https://www.nice.org.uk/guidance/QS80/chapter/quality-statement-3-family-intervention)."
+ },
+ {
+  "section": "23.4",
+  "year": 2018,
+  "title": "NICE NG69 eating disorders: family involvement in adults",
+  "fact": "NICE NG69 has no family-therapy recommendation specific to adults; family therapy models are limited to children and young people. For adults with anorexia nervosa, MANTRA is recommended with family members or carers involved, and for adult bulimia nervosa, significant others may be involved in CBT-ED where appropriate.",
+  "source": "NICE. Eating disorders: recognition and treatment. NICE guideline NG69.",
+  "url": "https://www.nice.org.uk/guidance/NG69/chapter/Recommendations",
+  "confirmed": true,
+  "note": "Recommendations opened; no date or status shown on page. No NICE guidance on family therapy for adult depression was verified (search did not surface one). Publication date/status unverified."
+ },
+ {
+  "section": "23.4",
+  "year": 2010,
+  "title": "Cochrane review: family intervention for schizophrenia",
+  "fact": "The Cochrane review (53 randomized trials) found family intervention may reduce relapse (32 trials, n 2,981; RR 0.55, 95% CI 0.5 to 0.6; NNT 7). It may also improve medication adherence and reduce expressed emotion. The authors warn that poor methodological quality may overestimate the effects.",
+  "source": "Pharoah F, Mari JJ, Rathbone J, Wong W. Family intervention for schizophrenia. Cochrane Database Syst Rev. 2010;(12):CD000088. doi:10.1002/14651858.CD000088.pub3",
+  "url": "https://www.cochrane.org/evidence/CD000088_family-intervention-schizophrenia",
+  "confirmed": true,
+  "note": "Opened. Published 8 Dec 2010, predates the book. The page did not state whether a newer version exists, so 'latest version' is unconfirmed; check Cochrane Library directly."
+ }
+]

@@ -60,7 +60,7 @@ def main():
         cov = 1 - len(miss) / len(keys)
         if cov < thr:
             flagged += 1
-            print(f'[{cov:.0%}] {s[:220]}\n      missing: {", ".join(miss)}')
+            print(f'[{cov:.0%}] ' + (f'#{len(s)}ch: ' if os.environ.get('NOTEXT') else s[:220]+'\n      ') + f'missing: {", ".join(miss)}')
     nums = sorted(set(re.findall(r'(?<![\w.])\d+(?:\.\d+)?(?![\w.])', raw)), key=float)
     appnums = set(re.findall(r'\d+(?:\.\d+)?', app))
     lost = [n for n in nums if n not in appnums]
