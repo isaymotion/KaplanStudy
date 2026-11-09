@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-11-09, after release **66.0.0** (`c4002f5`): **Chapter 23, sections 23.1 to 23.4** (psychoanalysis, brief dynamic, group, family and couples therapy). Release 65.0.0 (`faaa740`) added Chapter 22, 64.0.0 (`0197ce2`) added Chapter 20, 63.0.0 (`cd90432`) Chapter 18, 62.0.0 (`76f2138`) added Chapter 17 and 61.0.0 (`ea101a2`) Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapter 23, sections 23.5 to 23.9 as release 67.0.0 (recipe B, then A; see section 7). Update the status table and next steps at the end of every unit.
+Last updated 2026-11-09, after release **67.0.0** (`4f88440`): **Chapter 23, sections 23.5 to 23.9** (DBT, biofeedback, cognitive therapy, behavior therapy, hypnosis). Release 66.0.0 (`c4002f5`) added 23.1 to 23.4, 65.0.0 (`faaa740`) added Chapter 22, 64.0.0 (`0197ce2`) added Chapter 20, 63.0.0 (`cd90432`) Chapter 18, 62.0.0 (`76f2138`) added Chapter 17 and 61.0.0 (`ea101a2`) Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapter 23, sections 23.10 to 23.14 as release 68.0.0 (recipe B, then A; see section 7). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -73,7 +73,7 @@ Last updated 2026-11-09, after release **66.0.0** (`c4002f5`): **Chapter 23, sec
 9. Add the learning layer with recipe A.
 10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
 
-Built so far: Chapters 1 to 20, 21.0 to 21.11, 22, 23.1 to 23.4 and 25.3. **Not yet built: 23.5 to 23.14, 24, 25 (except 25.3) and 26 to 34.** Chapter 21 is complete (21.0 to 21.11 are all its sections).
+Built so far: Chapters 1 to 20, 21.0 to 21.11, 22, 23.1 to 23.9 and 25.3. **Not yet built: 23.10 to 23.14, 24, 25 (except 25.3) and 26 to 34.** Chapter 21 is complete (21.0 to 21.11 are all its sections).
 
 **Contested topics** (Ch 17 set the pattern): write update boxes that attribute every position to the body that holds it, with dates, put differing positions side by side, add no verdict of the app's own, and end with "check current local rules and guidelines" where law differs by country. Keep the guide's own text to what the book says, attributed where the book takes a stance. Cut any agent line that goes beyond the book on a contested point (for example, claims about the reversibility of puberty blockers).
 
@@ -117,9 +117,10 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 18 | 111/111 | 15/15 | Complete (release 63.0.0; larger targets with Opus drafters and a coverage audit; 6 update boxes, helper `impdx`, look-alikes `theft-ddx` and `firesetting-ddx`) |
 | Ch 22 | 114/114 | 21/21 | Complete (release 65.0.0; 4 Opus drafters, Sonnet for research and the learning layer; 9 update boxes incl. 2 corrections (alfentanil units, device limit units); helper `ectfix`, look-alike `stim-methods`; chronology visual of somatic therapies) |
 | Ch 23.1 to 23.4 | 147/147 (56, 26, 38, 27) | 27/27 (8, 6, 8, 5) | Complete (release 66.0.0; 5 Opus drafters (23.1 in two halves), Sonnet for overlap rewording, research and the learning layer; 4 update boxes; helper `psymode`, look-alike `brief-dyn-schools`; visuals: 3 heatmaps (Tables 23-1, 23-4, couples types) and a chronology (23.2); 29 glossary terms) |
+| Ch 23.5 to 23.9 | 101/101 (10, 17, 19, 37, 18) | 20/20 (2, 3, 3, 8, 4) | Complete (release 67.0.0; 5 Opus drafters (23.5 with 23.6; 23.8 in two halves) that ran the overlap check themselves (0 runs), Sonnet for research and the learning layer (no whyNot shifts this time after an explicit alignment example in the prompt); 5 update boxes; helper `behtech`, look-alike `exposure-methods`; visuals: heatmap of exposure methods (23.8) and hypnosis chronology (23.9), none for 23.5 to 23.7; 19 glossary terms) |
 | Ch 20 | 104/104 | 18/18 | Complete (release 64.0.0; Opus drafters for the 4 chunks, Sonnet for the learning layer; 6 update boxes incl. 2 corrections; helper `focus20`, look-alike `feigned-ddx`, grief look-alike linked; chronology visual of grief classification) |
 
-Totals: **1,749/1,749 cases and 842/842 sections**, with all tests passing on `c4002f5`. Latest changelog version **66.0.0**; `sw.js` VERSION is `PREFIX + '66.0.0'`.
+Totals: **1,850/1,850 cases and 862/862 sections**, with all tests passing on `4f88440`. Latest changelog version **67.0.0**; `sw.js` VERSION is `PREFIX + '67.0.0'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
@@ -135,15 +136,15 @@ Totals: **1,749/1,749 cases and 842/842 sections**, with all tests passing on `c
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Chapter 23, Psychotherapy, continued.** Decided by the user (Nov 9): one manifest entry per section, ids `ch23-1` to `ch23-14` with `number: '23.1'` to `'23.14'`. **23.1 to 23.4 shipped in 66.0.0.** Remaining batches (PDF pages):
-   - **Release 67.0.0:** 23.5 dialectical behavior therapy (2401; the page also holds the last 239 words of 23.4, so start at the DBT heading), 23.6 biofeedback (2405), 23.7 cognitive therapy (2412), 23.8 behavior therapy (2421), 23.9 hypnosis (2435).
-   - **Release 68.0.0:** 23.10 interpersonal therapy (2442), 23.11 narrative psychotherapy (2456), 23.12 combined psychotherapy and pharmacotherapy (2461), 23.13 mentalization-based treatment (2471), 23.14 psychoeducational interventions (2474 to 2491).
-   - If a batch runs long, split it (a fourth release, 69.0.0).
+1. **Chapter 23, Psychotherapy, continued.** Decided by the user (Nov 9): one manifest entry per section, ids `ch23-1` to `ch23-14` with `number: '23.1'` to `'23.14'`. **23.1 to 23.4 shipped in 66.0.0 and 23.5 to 23.9 in 67.0.0.** Remaining batch (PDF pages):
+   - **Release 68.0.0:** 23.10 interpersonal therapy (2442; the page also holds the end of 23.9, so start at the INTERPERSONAL THERAPY heading), 23.11 narrative psychotherapy (2456), 23.12 combined psychotherapy and pharmacotherapy (2461), 23.13 mentalization-based treatment (2471), 23.14 psychoeducational interventions (2474 to 2491).
+   - If the batch runs long, split it (69.0.0).
+   - 67.0.0 shortcuts that worked: `tools/extract-ch23b.py` (page range edited) writes `pdfsrc/ch23b-all.txt`; cut sections by the line numbers of their all-caps `<b>` headings (the hypnosis heading needed a plain grep); put figure and image-table pages as PNGs in `pdfsrc/img-pNNNN.png` and name them in the JOB; tell drafters to run `overlap.py` themselves (they reached 0 runs, so no separate rewording pass was needed); build scripts for one-file sections are copies of `build_ch23-2.js`, for two-file sections of `build_ch23-1.js`; `work/ch23common/OUTLINE2.md` is the outline template.
    - How 66.0.0 was done (repeat it): extract the whole batch's page range once into `pdfsrc/ch23-all.txt`, cut per-section source files by heading line numbers (check the last page of each range: 23.4 ran onto page 2401), write `chNN-common/SPEC.md` + `OUTLINE.md` (one JOB per drafting agent, about 4,000 to 4,500 source words each), launch the Opus drafters in parallel, then the overlap rewording, then build with `build_ch23-N.js` (`SEED` fixed per section), then `patch_updates.js`, the coverage audit with `NOTEXT=1` (prints missing words only, no book text), registration, and recipe A.
    - Per section: id prefixes `s23N-`, `hy23N-`, `d23N-xx`, `c23N-xx`, `p23N-xx`, `f23N-xx` (N = section number without the dot, for example `2310` for 23.10). Register each section separately: manifest (after `ch23-4`), `sw.js`, `CHS` in `fulltest.py`, the `srcs-check.js` list, README rows.
-   - A helper and a look-alike per release: a "which psychotherapy?" helper in the last batch (extend or replace `psymode`), look-alikes comparing CBT, behavior therapy, DBT, IPT and MBT.
+   - A helper and a look-alike per release. Existing: `psymode` (66), `behtech` (67); look-alikes `brief-dyn-schools` (66), `exposure-methods` (67). For 68: a "which psychotherapy?" helper across all of Chapter 23 and a look-alike comparing IPT, MBT, CBT and DBT.
    - The PDF must be re-attached (section 10). Pull `main` first.
-2. Use changelog version **67.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
+2. Use changelog version **68.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
 3. The Ch 17 update boxes on minors describe a fast-moving area (UK PATHWAYS trial, Endocrine Society and AAP guideline updates in progress). Recheck them by web search when a later release touches Chapter 17, and add a correction entry to the changelog if anything changed.
 4. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
 
@@ -183,8 +184,9 @@ Totals: **1,749/1,749 cases and 842/842 sections**, with all tests passing on `c
 - A container restart can drop recent turns from view while files survive. Before rebuilding, run `git status` in the clone and check `/tmp/claude-0/.../tasks/` for earlier work.
 
 - **Content filter:** in this project the app's output filter blocked two turns (Nov 9) right after book text was printed or a book table was transcribed. Follow the copyright rules in section 2; if a block happens, stop and tell the user instead of retrying the same step.
+- **Approval prompts while the user is away:** some WebFetch targets (for example frontiersin.org) need the user's approval; if nobody answers, do not retry. Use WebSearch result snippets of the abstract to confirm the fact instead.
 - **Usage limits:** six parallel Sonnet agents hit the 5-hour usage limit mid-run (Nov 9). Their files were already written; resume a stopped agent with SendMessage after the reset rather than starting a new one, and check what it wrote first.
-- **whyNot shifts:** in 66.0.0 Sonnet agents wrote 7 arrays shifted by one position (blank in the wrong slot, each line one choice late). `/tmp/chkwn.js`-style checks catch the blank; to fix, move each line to the choice it discusses and put `""` at the answer. Read every case anyway: a shift with the blank landing correctly would pass the validator.
+- **whyNot alignment:** in 67.0.0 a prompt with an explicit example ("choices [A..E], answer 2 → [why A, why B, "", why D, why E]") gave no shifts; `/tmp/shiftchk.js`-style word-overlap checks flag lines that share no words with their own choice (mostly false positives, but quick to read). In 66.0.0 Sonnet agents wrote 7 arrays shifted by one position (blank in the wrong slot, each line one choice late). `/tmp/chkwn.js`-style checks catch the blank; to fix, move each line to the choice it discusses and put `""` at the answer. Read every case anyway: a shift with the blank landing correctly would pass the validator.
 - `dump.js` needs the manifest entry first: register the new section in `data/chapters.js` before dumping guides and cases.
 - `g5-chapter-terms.js`: when appending glossary terms, add a comma after the previous last entry; a missing comma is not a syntax error there (it parses as an index) and silently drops terms.
 
