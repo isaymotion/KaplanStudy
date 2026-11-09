@@ -4,6 +4,21 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 22 (other somatic therapies), November 2026 */
+    { m: "83 FR 66103", label: "Federal Register: FDA final order reclassifying ECT devices (Dec 2018)", url: "https://www.govinfo.gov/content/pkg/FR-2018-12-26/html/2018-27809.htm" },
+    { m: "Ketamine versus ECT for nonpsychotic", label: "Anand A et al., NEJM 2023 (ELEKT-D, PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/37224232/" },
+    { m: "K220177", label: "FDA 510(k) K220177: SAINT accelerated iTBS (2022)", url: "https://www.accessdata.fda.gov/cdrh_docs/pdf22/K220177.pdf" },
+    { m: "K231926", label: "FDA 510(k) K231926: TMS for depression ages 15 to 21 (2024)", url: "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231926.pdf" },
+    { m: "DEN170078", label: "FDA De Novo DEN170078: deep TMS for OCD (2018)", url: "https://www.accessdata.fda.gov/cdrh_docs/pdf17/DEN170078.pdf" },
+    { m: "THREE-D trial", label: "Blumberger DM et al., Lancet 2018 (THREE-D, PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/29726344/" },
+    { m: "P230024", label: "FDA premarket approval P230024: Flow FL-100 tDCS (2025)", url: "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P230024" },
+    { m: "84 FR 70003", label: "Federal Register: FDA final order on CES devices (Dec 2019)", url: "https://www.govinfo.gov/link/fr/84/70005" },
+    { m: "National Coverage Determination 160.18", label: "CMS NCD 160.18: vagus nerve stimulation", url: "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=230" },
+    { m: "H050003", label: "FDA humanitarian device exemption H050003: DBS for OCD (2009)", url: "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=375533" },
+    { m: "Holtzheimer PE et al., Lancet Psychiatry 2017", label: "Holtzheimer PE et al., Lancet Psychiatry 2017 (BROADEN)", url: "https://doi.org/10.1016/S2215-0366(17)30371-1" },
+    { m: "Dougherty DD et al., Biol Psychiatry 2015", label: "Dougherty DD et al., Biol Psychiatry 2015 (VC/VS DBS, PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/25726497/" },
+    { m: "Nguyen TT et al., Br J Anaesth 1997", label: "Nguyen TT et al., Br J Anaesth 1997 (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/9496217/" },
+    { m: "Krystal AD et al., ECT stimulus intensity", label: "Krystal AD et al., Am J Psychiatry 2000", url: "https://ajp.psychiatryonline.org/doi/abs/10.1176/appi.ajp.157.6.963" },
     /* Chapter 20 (other conditions that may be a focus of clinical attention), November 2026 */
     { m: "DSM-5-TR: overview of what's new and what's changed", label: "First MB et al., World Psychiatry 2022: DSM-5-TR overview (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9077590/" },
     { m: "WHO ICD-11 MMS chapter 24", label: "WHO ICD-11: Chapter 24, Factors influencing health status or contact with health services", url: "https://icd.who.int/browse/2024-01/mms/en#1249056269" },

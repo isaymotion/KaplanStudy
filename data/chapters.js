@@ -187,6 +187,10 @@ KS.manifest = [
     summary: 'Dietary supplements, medical foods and phytomedicines: DSHEA and medical food rules, supplements for cognition and mood, melatonin, L-methylfolate and N-acetylcysteine, St. John\'s wort, kava and other sedative, stimulant and toxic herbs, and the supplement history, with post-publication updates on ephedra, tianeptine, melatonin, St. John\'s wort interactions, kava, ginkgo, L-tryptophan, kratom 7-OH, ashwagandha and omega-3s.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch22', number: 22, title: 'Other Somatic Therapies', short: 'ECT, brain stimulation and neurosurgery',
+    summary: 'Electroconvulsive therapy (history, mechanism, indications, pretreatment workup, anesthesia, electrode placement, stimulus dosing, seizure monitoring, course and adverse effects), the newer brain stimulation methods (TMS, tDCS, CES, MST, VNS) and psychiatric neurosurgery (lesion procedures and deep brain stimulation), with post-publication updates on FDA device rulings and clearances, ketamine versus ECT and DBS trials, plus two corrections to the book.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

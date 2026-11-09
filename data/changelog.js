@@ -13,6 +13,35 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "65.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 22: Other Somatic Therapies",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch22",
+        "text": "New chapter: electroconvulsive therapy (history and Table 22-1, mechanism, indications and Table 22-2, pretreatment workup and concomitant drugs, anesthesia and muscle relaxants, electrode placement, stimulus dosing, seizure monitoring, course, maintenance and adverse effects), the newer brain stimulation methods (TMS with Table 22-3, tDCS, CES, MST, VNS and implanted cortical stimulation) and psychiatric neurosurgery (patient selection, the four lesion procedures, deep brain stimulation and outcomes), with 114 clinical cases, explanations for every wrong answer and end-of-section checks.",
+        "href": "#/c/ch22/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "correction",
+        "ch": "ch22",
+        "text": "Two corrections to the book: alfentanil is dosed in micrograms per kilogram, not \"2 to 9 mg/kg\", and the US ECT device limit is in millicoulombs (576 mC), not \"mCi\"."
+      },
+      {
+        "type": "update",
+        "ch": "ch22",
+        "text": "Post-publication updates: the FDA's 2018 reclassification of ECT devices, the ELEKT-D trial of ketamine versus ECT, TMS clearances from 2008 to 2024 (deep TMS, theta-burst, accelerated SAINT, adolescents), the 2025 approval of a tDCS device for depression, the 2019 CES classification, Medicare coverage of VNS, and DBS for OCD and the negative depression trials."
+      },
+      {
+        "type": "feature",
+        "ch": "ch22",
+        "text": "New helper (troubleshooting an ECT course) and a look-alike table comparing ECT, MST, rTMS, tDCS, CES and VNS."
+      }
+    ]
+  },
+  {
     "version": "64.0.0",
     "date": "2026-11-09",
     "title": "Chapter 20: Other Conditions that May be a Focus of Clinical Attention",

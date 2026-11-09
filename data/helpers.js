@@ -4859,5 +4859,203 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "ectfix",
+  "chapter": "ch22",
+  "title": "Troubleshooting an ECT course",
+  "summary": "Pick the problem (no seizure, a prolonged seizure, no improvement, confusion, or headache, nausea and soreness) to see the steps Chapter 22 gives, with the reasoning shown.",
+  "caution": "A teaching aid built from Chapter 22, not a substitute for local ECT protocols, the anesthesia team's judgment or current guidelines. Doses are as the chapter gives them; check local formularies.",
+  "start": "main",
+  "nodes": {
+    "main": {
+      "q": "What is the problem?",
+      "options": [
+        {
+          "label": "No seizure, or a seizure that is too short",
+          "to": "ns1",
+          "note": "Failure to induce an adequate seizure."
+        },
+        {
+          "label": "A seizure that will not stop",
+          "to": "r:prolonged",
+          "note": "Prolonged seizure."
+        },
+        {
+          "label": "The patient is not improving over the course",
+          "to": "r:noimprove",
+          "note": "Poor response to the course."
+        },
+        {
+          "label": "Confusion or memory problems",
+          "to": "r:confusion",
+          "note": "Cognitive adverse effects."
+        },
+        {
+          "label": "Headache, nausea or muscle soreness",
+          "to": "so1",
+          "note": "Other adverse effects."
+        }
+      ]
+    },
+    "ns1": {
+      "q": "Has enough time passed since the stimulus to be sure no seizure is starting?",
+      "help": "Seizure onset can be delayed 20 to 40 seconds after the stimulus. An effective seizure lasts at least 25 seconds; confirm it with EEG, EMG or the ankle-cuff method.",
+      "options": [
+        {
+          "label": "Not yet: under 20 to 40 seconds",
+          "to": "r:wait",
+          "note": "Onset may still be delayed."
+        },
+        {
+          "label": "Yes, and no adequate seizure followed",
+          "to": "r:noseizure",
+          "note": "No adequate seizure."
+        }
+      ]
+    },
+    "so1": {
+      "q": "Which complaint?",
+      "options": [
+        {
+          "label": "Headache",
+          "to": "r:headache",
+          "note": "Headache after ECT."
+        },
+        {
+          "label": "Nausea or vomiting",
+          "to": "r:nausea",
+          "note": "Nausea after ECT."
+        },
+        {
+          "label": "Muscle soreness",
+          "to": "r:soreness",
+          "note": "Muscle soreness after ECT."
+        }
+      ]
+    }
+  },
+  "results": {
+    "wait": {
+      "label": "Next step",
+      "dx": "Wait before restimulating",
+      "line": "Seizure onset is sometimes delayed 20 to 40 seconds after the stimulus.",
+      "points": [
+        "Watch for tonic-clonic movements or EEG or EMG seizure activity.",
+        "With unilateral ECT, keep at least one pair of EEG electrodes over the opposite hemisphere."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-seiz",
+        "label": "Induced seizures"
+      }
+    },
+    "noseizure": {
+      "label": "Steps",
+      "dx": "Failure to induce a seizure",
+      "line": "Up to four attempts at seizure induction can be tried during a course of treatment.",
+      "points": [
+        "Check electrode-to-skin contact.",
+        "Raise the stimulus intensity by 25 to 100 percent.",
+        "Change to an anesthetic that raises the seizure threshold less.",
+        "Hyperventilate the patient, which lowers the seizure threshold.",
+        "Consider caffeine sodium benzoate 500 to 2,000 mg IV, 5 to 10 minutes before the stimulus.",
+        "Review drugs that raise the threshold, such as benzodiazepines and lidocaine."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-seiz",
+        "label": "Induced seizures"
+      }
+    },
+    "prolonged": {
+      "label": "Steps",
+      "dx": "Prolonged seizure (more than 180 seconds) or status epilepticus",
+      "line": "Stop it with more barbiturate anesthetic or diazepam 5 to 10 mg IV, and intubate.",
+      "points": [
+        "An oral airway cannot keep ventilation adequate over a long apneic period.",
+        "Tardive seizures some time after treatment may occur in patients with seizure disorders; manage them as epilepsy.",
+        "Before ECT, theophylline is contraindicated and lithium is withdrawn because they can lengthen seizures."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-seiz",
+        "label": "Induced seizures"
+      }
+    },
+    "noimprove": {
+      "label": "Steps",
+      "dx": "Poor response to the ECT course",
+      "line": "If there is no improvement after 6 to 10 sessions, try bilateral placement and high-density treatment (three times the seizure threshold) before abandoning ECT.",
+      "points": [
+        "Stop at the maximal response: no further improvement after two consecutive treatments.",
+        "After a failed course, try medication again, even an agent that failed before.",
+        "Plan maintenance treatment, because ECT alone does not prevent relapse."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-course",
+        "label": "Number and spacing of treatments"
+      }
+    },
+    "confusion": {
+      "label": "Expect and manage",
+      "dx": "Postictal confusion, delirium or memory impairment",
+      "line": "Marked confusion occurs in up to 10 percent within 30 minutes of the seizure and can be treated with barbiturates and benzodiazepines.",
+      "points": [
+        "Delirium is worst after the first few treatments, with bilateral ECT and with neurologic disorders, and usually clears within days to a few weeks.",
+        "Memory impairment during the course is almost the rule; almost all patients are back to baseline by 6 months.",
+        "Twice-weekly treatment causes less memory impairment than thrice-weekly; right unilateral placement has a better cognitive profile.",
+        "Some memories of the period around the hospitalization may be lost for good."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-ae",
+        "label": "Adverse effects"
+      }
+    },
+    "headache": {
+      "label": "Treat",
+      "dx": "Post-ECT headache",
+      "line": "Give an NSAID in the recovery period; ketorolac 30 to 60 mg IV can be given as pretreatment for severe headache.",
+      "points": [
+        "Intractable headache: acetaminophen, tramadol or opioids, alone or combined.",
+        "Migrainous headache: sumatriptan 6 mg SC or 25 mg by mouth.",
+        "Avoid ergot compounds in pretreatment: they can worsen the cardiovascular changes of ECT."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-ae",
+        "label": "Adverse effects"
+      }
+    },
+    "nausea": {
+      "label": "Treat",
+      "dx": "Post-ECT nausea and vomiting",
+      "line": "Metoclopramide 10 mg IV or prochlorperazine 10 mg IV at the time of ECT.",
+      "points": [
+        "Ondansetron is an alternative when dopamine receptor antagonists cannot be used.",
+        "Opioid co-anesthetics such as alfentanil can add nausea."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-ae",
+        "label": "Adverse effects"
+      }
+    },
+    "soreness": {
+      "label": "Treat",
+      "dx": "Muscle soreness from succinylcholine",
+      "line": "Soreness comes from succinylcholine depolarization and is worst after the first session; treat it with mild analgesics, including NSAIDs.",
+      "points": [
+        "With routine muscle relaxants, fractures of long bones or vertebrae should not occur."
+      ],
+      "link": {
+        "ch": "ch22",
+        "sec": "s22-ect-ae",
+        "label": "Adverse effects"
+      }
+    }
+  }
 }
 ]);

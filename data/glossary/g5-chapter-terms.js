@@ -639,10 +639,30 @@ KS.glossary = (KS.glossary || []).concat([
   ["deprogramming", "Long-term treatment of former cult members or brainwashed people, with re-education and supportive psychotherapy, to restore psychological stability.", "Ch 20"],
   ["phase of life problem", "Distress tied to a life-cycle event or transition (school, marriage, parenthood, illness, caring for aged parents) without a mental disorder.", "Ch 20"],
   ["relational problem", "A pattern of interaction in a dyad, triad or family linked to significantly impaired functioning or symptoms in one or more members; a condition, not a mental disorder.", "Ch 20"],
-  ["triangulation", "A parent recruiting a child as an ally in conflict with the other parent.", "Ch 20"]
+  ["triangulation", "A parent recruiting a child as an ally in conflict with the other parent.", "Ch 20"],
+  ["electroconvulsive therapy", "Treatment that induces a generalized seizure with brief electrical pulses through the scalp, under general anesthesia and muscle relaxation; the fastest and most effective treatment for major depression.", "Ch 22"],
+  ["seizure threshold", "The stimulus intensity needed to produce a seizure; it varies about 40-fold between patients, is higher in men and older adults, and rises during a course of ECT.", "Ch 22"],
+  ["right unilateral ECT", "ECT with one electrode at the right frontotemporal position and one just right of the vertex (the d'Elia placement); fewer cognitive effects, but it needs a dose well above the seizure threshold.", "Ch 22"],
+  ["ultrabrief pulse", "An ECT stimulus pulse of about 0.5 milliseconds, shorter than the usual 1 to 2 millisecond brief pulse; used with right unilateral placement.", "Ch 22"],
+  ["multiple-monitored ECT", "Several ECT stimuli in one session, most often two bilateral stimuli within 2 minutes; it has the most frequent serious cognitive adverse effects.", "Ch 22"],
+  ["tardive seizure", "An extra seizure appearing some time after an ECT treatment, mainly in patients with a preexisting seizure disorder.", "Ch 22"],
+  ["transcranial magnetic stimulation", "A noninvasive treatment in which a scalp coil's changing magnetic field induces currents in the cortex; repeated pulses (rTMS) are used for depression.", "Ch 22"],
+  ["transcranial direct current stimulation", "A noninvasive method that passes a weak direct current (1 to 3 mA) across the scalp to polarize, rather than fire, cortical neurons.", "Ch 22"],
+  ["cranial electrical stimulation", "A noninvasive method that passes a weak alternating current (1 to 4 mA) through electrodes clipped to the earlobes.", "Ch 22"],
+  ["magnetic seizure therapy", "An investigational convulsive treatment that induces a more focal seizure with a high-output magnetic coil, aiming for ECT's efficacy with less amnesia.", "Ch 22"],
+  ["vagus nerve stimulation", "Intermittent electrical stimulation of the left cervical vagus nerve by an implanted pulse generator; an adjunct for chronic or recurrent treatment-resistant depression.", "Ch 22"],
+  ["deep brain stimulation", "Stimulation of a deep brain target through implanted electrodes connected to a chest pulse generator; nonablative and adjustable, used for severe OCD and studied in depression.", "Ch 22"],
+  ["anterior cingulotomy", "A stereotactic lesion procedure in the anterior cingulate cortex (Brodmann areas 24 and 32) for refractory major depression or OCD; the most common in North America.", "Ch 22"],
+  ["anterior capsulotomy", "A lesion procedure in the anterior limb of the internal capsule for refractory OCD, depression and anxiety disorders, by thermocoagulation or Gamma Knife radiosurgery.", "Ch 22"],
+  ["prefrontal lobotomy", "A freehand operation of the 1930s to 1950s cutting white matter between the prefrontal cortex and the rest of the brain; abandoned because of frontal lobe syndromes and other harms.", "Ch 22"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
+  "rtms": "transcranial magnetic stimulation",
+  "tdcs": "transcranial direct current stimulation",
+  "vns": "vagus nerve stimulation",
+  "dbs": "deep brain stimulation",
+  "lobotomy": "prefrontal lobotomy",
   "faking good": "dissimulation",
   "gender identity disorder": "gender dysphoria",
   "transgender people": "transgender",

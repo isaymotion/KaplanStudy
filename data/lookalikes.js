@@ -630,5 +630,29 @@ KS.lookalikes = [
       { ch: "ch20", sec: "s20-mal-dx", label: "Malingering: clues and motives" },
       { ch: "ch20", sec: "s20-mal-ddx", label: "Malingering: differential diagnosis" }
     ]
+  },
+  {
+    id: "stim-methods",
+    title: "ECT and the newer brain stimulation methods",
+    summary: "How the six stimulation treatments in Chapter 22 differ in energy, seizure, invasiveness and the evidence the chapter gives.",
+    items: ["ECT", "MST", "rTMS", "tDCS", "CES", "VNS"],
+    rows: [
+      ["Energy", "**Alternating** electrical current through the scalp", "**Magnetic** field from a high-output TMS device", "**Magnetic** pulses from a scalp coil", "**Direct** current, **1 to 3 mA**", "**Alternating** current, **1 to 4 mA**, earlobe clips", "Electrical pulses to the **left vagus nerve**"],
+      ["Seizure?", "**Yes**", "**Yes**", "No", "No (it **polarizes**, does not stimulate)", "No", "No (it is **anticonvulsant**)"],
+      ["Invasive or anesthesia?", "**General anesthesia** and **muscle relaxant**", "**General anesthesia** and **muscle relaxant**", "Noninvasive, **no anesthesia**", "Noninvasive", "Noninvasive", "**Implanted** pulse generator in the chest"],
+      ["Main risk named", "**Memory** effects; anesthesia", "Anesthesia and seizure; coil **noise** (earplugs)", "Unintended **seizure**", "**Tingling**, skin irritation", "Skin effects, **dizziness**", "**Voice alteration**, dyspnea, neck pain"],
+      ["Status in this chapter", "Most effective for **major depression**", "**Investigational**", "Lower effect size than ECT; **under study**", "**Early stages**", "Better than sham for **anxiety** in a meta-analysis", "Adjunct after **four or more** failed antidepressant trials; about **30 percent** respond at 1 year"]
+    ],
+    keys: [
+      "Only **ECT** and **MST** induce seizures; MST aims for ECT's efficacy with **less amnesia**.",
+      "**Magnetic** methods (TMS, MST) bypass the **impedance** of the scalp and skull, so they are more **focal**.",
+      "**tDCS** is the one method that **polarizes** rather than stimulates.",
+      "Device status has changed since the book: see the update boxes for **TMS**, **tDCS**, **CES**, **VNS** and **ECT**."
+    ],
+    links: [
+      { ch: "ch22", sec: "s22-nm", label: "Therapeutic neuromodulation" },
+      { ch: "ch22", sec: "s22-tms", label: "Transcranial magnetic stimulation" },
+      { ch: "ch22", sec: "s22-vns", label: "Vagus nerve stimulation" }
+    ]
   }
 ];

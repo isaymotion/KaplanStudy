@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 64.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 65.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -122,6 +122,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 21.9 | Drugs Used to Treat Sexual Disorders | 12 | 37 | 53 (plus generated drug drills) |
 | 21.10 | Drugs Used to Treat the Side Effects of Psychotropic Drugs | 17 | 43 | 67 (plus generated drug drills) |
 | 21.11 | Nutritional Supplements and Medical Foods | 14 | 46 | 68 (plus generated drug drills) |
+| 22 | Other Somatic Therapies | 21 | 350 | 384 |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Upgrading from version 59 (October 2026)
