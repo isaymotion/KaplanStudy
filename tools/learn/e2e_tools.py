@@ -91,7 +91,7 @@ with sync_playwright() as p:
         t = pg.locator('.g-tools').inner_text() if pg.locator('.g-tools').count() else ''
         check(f'{vw} Ch 4 guide links CIWA-Ar, COWS, benzo', 'CIWA-Ar' in t and 'COWS' in t and 'Benzodiazepine' in t, t)
         href = pg.locator('.g-report a').first.get_attribute('href')
-        check(f'{vw} report link is a pre-filled mailto', href.startswith('mailto:isaymotion@gmail.com?subject=') and 'Link%3A' in href and 'release' in href, href[:200])
+        check(f'{vw} report link is a pre-filled mailto', href.startswith('mailto:isaymotion@gmail.com?subject=') and 'Link%3A' in href and ('release' in href or 'version' in href), href[:200])
         check(f'{vw} one report link per section', pg.locator('.g-report').count() == pg.locator('.g-sec').count())
         pg.goto(B + '#/review'); pg.wait_for_selector('.rv-types')
         check(f'{vw} review has 4 card-type boxes, all on', pg.locator('[data-rvdeck]:checked').count() == 4)

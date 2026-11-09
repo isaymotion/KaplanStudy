@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-10-28, after release 59 (`64c5c31`): **confidence ratings** in exams and quizzes. Release 58 (`3b9c435`) added Clinical tools, Report an error and daily-review card types; 57 added Weak topics and the Resident handout. The learning-layer backfill is complete; next work is unbuilt chapters (recipe B). Update the status table and next steps at the end of every unit.
+Last updated 2026-11-09, after release **61.0.0** (`ea101a2`): **Chapter 16, Human Sexuality and Sexual Dysfunctions**, built from the PDF with its full learning layer. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: unbuilt chapters 17, 18, 20 and on (recipe B, then A). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -8,8 +8,9 @@ Last updated 2026-10-28, after release 59 (`64c5c31`): **confidence ratings** in
 - Vanilla JS SPA with a hash router (`index.html`, `js/app.js`, `sw.js`, `data/`).
 
 ## 2. Fixed rules
-- The attribution must stay exactly: `App created by Isabella Navarro, MD. Latest version October 2026. isaymotion@gmail.com`
-- In `sw.js`, keep `PREFIX = 'ks-companion-'` and only ever delete caches with that prefix. Bump `VERSION` (for example `PREFIX + '2026-10-<release-name>'`) with every release.
+- The attribution reads `App created by Isabella Navarro, MD. Latest version <Month YYYY>. isaymotion@gmail.com`. Keep the wording; update only the month, in `index.html` (footer), `data/app-meta.js` and `README.md`.
+- **Versions are semver since release 60.** Each release: add a changelog entry at the top of `data/changelog.js` with the next `version` (for example `"62.0.0"`), then set the same version in `data/app-meta.js` (`version`), `sw.js` (`VERSION = PREFIX + '62.0.0'`) and the first line of `README.md`.
+- In `sw.js`, the prefix is now `PREFIX = 'kaplan-study-'` (all isaymotion apps share one origin). Only ever delete caches with this app's prefix (or the old `ks-companion-`, which `OLD_PREFIX` clears).
 - Content is written in the app's own words; never paste book text.
 - **Corrections policy:** book content stays as the book says. Book errors and anything newer go in `update` boxes, each with a `source` that resolves in `data/sources.js`. Verify every post-publication fact by web search before writing it. Check questions may cite the update box (for example, "The book says none; since then lecanemab and donanemab...").
 - Style: plain, short sentences; **bold** key facts (bold becomes a blank in "Hide key facts" mode); "to" for ranges in prose.
@@ -18,7 +19,8 @@ Last updated 2026-10-28, after release 59 (`64c5c31`): **confidence ratings** in
 - The user prefers subagents for simpler drafting to save tokens; Claude keeps design, clinical content decisions and the final review.
 
 ## 3. Architecture and data formats
-- `data/chapters.js`: `KS.manifest` entries `{id, number, title, short, summary, files:['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations','learning']}`, plus `KS.extraFiles` (drug files, changelog).
+- `data/chapters.js`: `KS.manifest` entries `{id, number, title, short, summary, files:['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations','learning']}`. Chapter files load through the manifest; `KS.extraFiles` holds only shared data (glossary, helpers, drugs, tools).
+- Changelog items: `{type: chapter|feature|correction|update|content, text, ch?, href?, link?}`; `ch` tags that chapter "Updated" on the home page.
 - Data files call `KS.add(chId, key, value)`.
 - **Guide:** `{intro, objectives[], parts:[{title, sections:[{id, title, blocks[]}]}]}`. Block types:
   - `p {text}`
@@ -56,7 +58,19 @@ Last updated 2026-10-28, after release 59 (`64c5c31`): **confidence ratings** in
    - Fixes needed so far: pass 6, 5; pass 7, 7; pass 8, 11 across two chapters, including one swapped pair (c4-ha08), a borrowed figure (a morphine lethal dose quoted as nicotine's) and a check answer contradicting its update box.
 7. Add a changelog entry (next id) and bump the `sw.js` VERSION, then run the tests (section 5), commit and push `main`. Copy the two final updwork files to `devtools-wt/updwork/`, then commit and push `dev-tools`.
 
-**B. New chapter section** (needs the epub): copy the previous `build_<ch>.js`, write the work folder, build, then register it in `chapters.js`, `extraFiles`, `helpers.js`, `sources.js`, the glossary, `lookalikes.js`, the changelog, `README.md`, the `fulltest.py` CHS and routes, and `sw.js`. Then add its learning layer with recipe A. Built so far: Chapters 1–15, 19, 21.0–21.11 and 25.3. **Not yet built: 16, 17, 18, 20 and the rest of the book.** Another chat of the user's built Chapter 15 in parallel, so before building a chapter, pull `main` and check `data/chapters.js` to make sure it is not already done.
+**B. New chapter section** (needs the book: the epub or the PDF)
+1. Pull `main` and check `data/chapters.js`, because a parallel chat may have built the chapter.
+2. **Extract the text.** From the PDF: `pip install pymupdf --break-system-packages`, find the chapter's page range with `get_toc()`, extract with `page.get_text()`, and list headings by bold sans-serif spans. Some tables are images: extract them with `get_images()` / `Pixmap`, view them, and transcribe them yourself into bracketed notes in the source chunks. Figures likewise; check any figure description against the image.
+3. Split the text into about 6 chunks of 3,000 to 5,000 words in `/home/claude/chNNwork/src/`. Write `SPEC.md` (block types, style, card format) and `OUTLINE.md` (fixed section ids per work file); copy them from `work/ch16work/` and edit.
+4. **Draft with subagents:** one Sonnet agent per chunk writes `gN.js` (one part `{title, sections}` or several `{parts:[...]}`) and `cN.js` (`{hy, dx, cs, ph, fd}`). Give each agent distinct id prefixes **and distinct case prefixes across files** (Ch 16 had a `c16-dv` clash that the build caught as DUP).
+5. **Review every draft yourself** against the source (`node /home/claude/tools/show-work.js gN.js` prints a work file compactly). Grep every number. Watch for garbled book tables turned into wrong facts (Ch 16: the voyeurism and pedophilia age "exclusions").
+6. Research post-publication changes by web search; write them as `updates.js` (`{chapter, guide:[{sec, block:{year, title, text, source}}]}`) and add each source to `data/sources.js`.
+7. Copy the previous `build_<ch>.js` (handles `parts` arrays since `build_ch16.js`), set intro and objectives, build, then `node tools/patch_updates.js chNNwork/updates.js`. Try a few `SEED` values for an even answer spread and fix the best one in the script.
+8. Register: the manifest in `chapters.js`, the file list in `sw.js`, `CHS` in `fulltest.py`, the chapter list in `srcs-check.js` (`/tmp/srcs4.js`), a helper in `helpers.js`, a look-alike in `lookalikes.js`, glossary terms and aliases, the changelog and the README chapter row (sections, high-yield items, cards).
+9. Add the learning layer with recipe A.
+10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
+
+Built so far: Chapters 1 to 16, 19, 21.0 to 21.11 and 25.3. **Not yet built: 17, 18, 20 and the rest of the book.**
 
 **C. New app feature** (for the section 7 list)
 1. Read the relevant parts of `js/app.js` and the router first. Check that the feature does not already exist in some form.
@@ -93,8 +107,9 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 4 | 86/86 | 53/53 | Complete (pass 8) |
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
+| Ch 16 | 50/50 | 42/42 | Complete (release 61.0.0; built from the PDF with recipes B and A) |
 
-Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3b9c435`. The last commits on `main` are `cf090c5` (release 57) and `3b9c435` (release 58). The latest changelog id is **59**, and `sw.js` VERSION is `'2026-10-confidence'`.
+Totals: **1,243/1,243 cases and 748/748 sections**, with all tests passing on `ea101a2`. Latest changelog version **61.0.0**; `sw.js` VERSION is `PREFIX + '61.0.0'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
@@ -110,9 +125,9 @@ Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Feature list: done.** Releases 57 and 58 built every item from the Oct 28 reminder. Possible follow-ups only if the user asks: more scales (for example YMRS, which needs a licence check, or the MoCA, which is not free), confidence ratings in flashcard daily review (exams and quizzes have them since release 59), Tagalog versions of the scales.
-2. Use changelog id **60** for the next release. Pull `main` first, because a parallel chat may have used it.
-3. Unbuilt chapters (16, 17, 18, 20, ...): recipe B, then recipe A. Check first which ones the parallel chat has done.
+1. **Chapter 17** (Gender Dysphoria, Gender Identity, and Related Conditions; PDF pages 1741 to 1757) next, then 18 (Disruptive, Impulse-Control, and Conduct Disorders, from page 1758) and 20 (Other Conditions that May be a Focus of Clinical Attention, from page 1840): recipe B, then recipe A. Ch 16's s16-gender already points to Chapter 17 for gender issues. Pull `main` first and check which chapters a parallel chat has built.
+2. Use changelog version **62.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
+3. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
 - **"Kaplan backfill pass"**: the user asked to delete it on Oct 27. It did not appear in `list_triggers` (even with `include_completed`), so it was not deleted from here; it may be a scheduled task stored locally by the desktop app. The user was told to remove it there.
@@ -125,9 +140,11 @@ Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3
 - A glossary alias that equals an existing term makes validation error. Check `grep -i` first.
 - Foreground `sleep` is blocked; use background loops or Python waits.
 - WebFetch returns PROVENANCE_REQUIRED for some drugs.com dosage pages, and pubmed sometimes fails; use another page from search results.
-- `srcs4.js` prints 6 known `NO` lines (generic sources such as "DSM-5-TR (American Psychiatric Association, 2022)"). These are expected.
+- `srcs4.js` prints 6 known `NO` lines (generic sources such as "DSM-5-TR (American Psychiatric Association, 2022)"). These are expected. It only scans the chapters in its list: add each new chapter to that list (in `/tmp/srcs4.js` and `tools/srcs-check.js`). The generic "DSM-5 (American Psychiatric Association, 2013)" now links to the APA DSM page.
 - `gh` GraphQL is blocked; use `gh api repos/...` (REST).
 - The remote says "repository moved" on push. It is harmless (it redirects to `isaymotion/KaplanStudy`).
+- **The design refresh renamed controls.** `e2e.py` now uses `#textSizeBtn` and `input[name=textSize]`; `e2e_tools.py` accepts "version" in the report link. If a later redesign breaks a selector, fix the test, not the app.
+- `fulltest.py` `CHS` had missed Chapter 15; it now lists 15 and 16. Check it when adding a chapter.
 - **Push access:** cloning works without attaching the repo, but pushing does not (git proxy 403). Claude cannot attach the repo with push access on its own initiative; the request is blocked. At the start of a session, ask the user to say "Add isaymotion/KaplanStudy to this session with push access", then call `add_repo` with `access: "push"`. If a clone already exists at `/home/claude/kaplanstudy`, keep it; do not re-clone.
 - The first Bash call of a session may be refused with "the classifier gave no verdict"; repeating the identical call once works.
 - The local test server can stop between turns. If `curl localhost:8124` does not return 200, restart it and rerun e2e.
@@ -139,4 +156,4 @@ Totals: **1,193/1,193 cases and 706/706 sections**, with all tests passing on `3
 - A container restart can drop recent turns from view while files survive. Before rebuilding, run `git status` in the clone and check `/tmp/claude-0/.../tasks/` for earlier work.
 
 ## 10. Files to re-attach
-- The K&S Synopsis 12e epub: **only** for building new chapters (recipe B).
+- The K&S Synopsis 12e epub or PDF: **only** for building new chapters (recipe B). The PDF (`Kaplan___Sadock_s_Synopsis_of_Psychiatry__12th_Ed.pdf`) worked well for Chapter 16; PDF page numbers above refer to it.

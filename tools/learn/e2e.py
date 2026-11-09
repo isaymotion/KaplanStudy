@@ -66,10 +66,10 @@ with sync_playwright() as p:
     pg.goto(B+'#/search/look-alikes'); pg.wait_for_timeout(500)
     # text size
     pg.goto(B+'#/c/ch19/guide'); pg.wait_for_selector('.g-sec')
-    pg.locator('#display-btn').click(); pg.locator('input[name=ts][value="125"]').check(force=True)
+    pg.locator('#textSizeBtn').click(); pg.locator('input[name=textSize][value="125"]').check(force=True)
     print('font-size', pg.evaluate("getComputedStyle(document.documentElement).fontSize"))
     pg.reload(); pg.wait_for_selector('.g-sec'); print('font-size after reload', pg.evaluate("getComputedStyle(document.documentElement).fontSize"))
-    pg.locator('#display-btn').click(); pg.locator('input[name=ts][value="100"]').check(force=True)
+    pg.locator('#textSizeBtn').click(); pg.locator('input[name=textSize][value="100"]').check(force=True)
     # HY listen
     pg.goto(B+'#/c/ch19/high-yield'); pg.wait_for_selector('#hy-listen'); pg.evaluate('window.__spoken=[]'); pg.locator('#hy-listen').click(); pg.wait_for_timeout(300); print('hy spoken', len(pg.evaluate('window.__spoken')))
     # chapter without learning content still OK
