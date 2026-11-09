@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-11-09, after release **63.0.0** (`cd90432`): **Chapter 18, Disruptive, Impulse-Control, and Conduct Disorders**. Release 62.0.0 (`76f2138`) added Chapter 17 and 61.0.0 (`ea101a2`) Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapter 20 (recipe B, then A). Update the status table and next steps at the end of every unit.
+Last updated 2026-11-09, after release **64.0.0** (`0197ce2`): **Chapter 20, Other Conditions that May be a Focus of Clinical Attention**. Release 63.0.0 (`cd90432`) added Chapter 18, 62.0.0 (`76f2138`) added Chapter 17 and 61.0.0 (`ea101a2`) Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapter 22 (recipe B, then A). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -72,7 +72,7 @@ Last updated 2026-11-09, after release **63.0.0** (`cd90432`): **Chapter 18, Dis
 9. Add the learning layer with recipe A.
 10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
 
-Built so far: Chapters 1 to 19, 21.0 to 21.11 and 25.3. **Not yet built: 20 and the rest of the book.**
+Built so far: Chapters 1 to 20, 21.0 to 21.11 and 25.3. **Not yet built: 22 to 34 (except 25.3).** Chapter 21 is complete (21.0 to 21.11 are all its sections).
 
 **Contested topics** (Ch 17 set the pattern): write update boxes that attribute every position to the body that holds it, with dates, put differing positions side by side, add no verdict of the app's own, and end with "check current local rules and guidelines" where law differs by country. Keep the guide's own text to what the book says, attributed where the book takes a stance. Cut any agent line that goes beyond the book on a contested point (for example, claims about the reversibility of puberty blockers).
 
@@ -114,8 +114,9 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 16 | 50/50 | 42/42 | Complete (release 61.0.0; built from the PDF with recipes B and A) |
 | Ch 17 | 30/30 | 13/13 | Complete (release 62.0.0; 7 update boxes on a contested area; no helper, a look-alike instead) |
 | Ch 18 | 111/111 | 15/15 | Complete (release 63.0.0; larger targets with Opus drafters and a coverage audit; 6 update boxes, helper `impdx`, look-alikes `theft-ddx` and `firesetting-ddx`) |
+| Ch 20 | 104/104 | 18/18 | Complete (release 64.0.0; Opus drafters for the 4 chunks, Sonnet for the learning layer; 6 update boxes incl. 2 corrections; helper `focus20`, look-alike `feigned-ddx`, grief look-alike linked; chronology visual of grief classification) |
 
-Totals: **1,384/1,384 cases and 776/776 sections**, with all tests passing on `cd90432`. Latest changelog version **63.0.0**; `sw.js` VERSION is `PREFIX + '63.0.0'`.
+Totals: **1,488/1,488 cases and 794/794 sections**, with all tests passing on `0197ce2`. Latest changelog version **64.0.0**; `sw.js` VERSION is `PREFIX + '64.0.0'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
@@ -131,8 +132,8 @@ Totals: **1,384/1,384 cases and 776/776 sections**, with all tests passing on `c
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Chapter 20** (Other Conditions that May be a Focus of Clinical Attention, from PDF page 1840): recipe B with the larger targets and the coverage audit, then recipe A. Use subagents whenever appropriate (section 2). The chapter needs the PDF re-attached (section 10). Pull `main` first and check which chapters a parallel chat has built.
-2. Use changelog version **64.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
+1. **Chapter 22** (Other Somatic Therapies: ECT, other brain stimulation methods, neurosurgical treatments and deep brain stimulation; PDF pages 2294 to 2342): recipe B with the larger targets and the coverage audit, then recipe A. It is about 50 pages, so plan about 6 chunks. Expect many post-publication updates (device clearances, TMS protocols, DBS indications): verify each by web search against FDA or guideline pages. Use subagents whenever appropriate (section 2). The chapter needs the PDF re-attached (section 10). Pull `main` first and check which chapters a parallel chat has built.
+2. Use changelog version **65.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
 3. The Ch 17 update boxes on minors describe a fast-moving area (UK PATHWAYS trial, Endocrine Society and AAP guideline updates in progress). Recheck them by web search when a later release touches Chapter 17, and add a correction entry to the changelog if anything changed.
 4. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
 
@@ -163,8 +164,11 @@ Totals: **1,384/1,384 cases and 776/776 sections**, with all tests passing on `c
 - The guide can contain two different figures for one fact in different sections (for example, reversible dementia "about 15%" and "10 to 15%"). Don't ask the same check twice with different answers.
 - **Keep both copies of this doc in sync:** `claude/handoff.md` in the project and `HANDOFF.md` on `dev-tools`. The scheduled task reads the dev-tools copy; before pass 8, that copy was still stale at pass 5.
 
+- **Book table errors stay faithful; fix them in update boxes and in the callouts and cards.** Ch 20: Table 20-1 prints malingering as an example of nonadherence (DSM-5 lists them separately), and the bereavement section repeats the DSM-IV 2-month rule. Agents turned both into exam callouts and cards; grep the cards and callouts for any fact an update box corrects and reword them (the book's sentence in the guide stays).
+- `fulltest.py` phone run lists horizontal overflow on `#/drugs/drill*` and `#/compare*` routes (seen on 64.0.0; not Chapter 20 pages). It does not count as an error; check whether it predates 64.0.0 before changing anything.
+- Chapter 20 learning visual is a `chronology` built from verified update-box facts (no guide table suited a heatmap); the drafters' self-built tables were cut where rows did not pair (the religion table).
 - **Clinical numbers need primary sources.** Subagent research is a starting point; read the label or guideline page yourself for any threshold that drives an action (pass 58 caught a C-SSRS item 6 over-triage and unverified CIWA-Ar bands this way).
 - A container restart can drop recent turns from view while files survive. Before rebuilding, run `git status` in the clone and check `/tmp/claude-0/.../tasks/` for earlier work.
 
 ## 10. Files to re-attach
-- The K&S Synopsis 12e epub or PDF: **only** for building new chapters (recipe B). The PDF (`Kaplan___Sadock_s_Synopsis_of_Psychiatry__12th_Ed.pdf`) worked well for Chapters 16 to 18; PDF page numbers above refer to it. Needed for Chapter 20. Extracted text (`/home/claude/pdfsrc/`) is never committed.
+- The K&S Synopsis 12e epub or PDF: **only** for building new chapters (recipe B). The PDF (`Kaplan___Sadock_s_Synopsis_of_Psychiatry__12th_Ed.pdf`) worked well for Chapters 16 to 18; PDF page numbers above refer to it. Needed for Chapter 22. Extracted text (`/home/claude/pdfsrc/`) is never committed.
