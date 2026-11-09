@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-11-09, after release **61.0.0** (`ea101a2`): **Chapter 16, Human Sexuality and Sexual Dysfunctions**, built from the PDF with its full learning layer. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: unbuilt chapters 17, 18, 20 and on (recipe B, then A). Update the status table and next steps at the end of every unit.
+Last updated 2026-11-09, after release **62.0.0** (`76f2138`): **Chapter 17, Gender Dysphoria, Gender Identity, and Related Conditions**. Release 61.0.0 (`ea101a2`) added Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapters 18 and 20 (recipe B, then A). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -70,7 +70,9 @@ Last updated 2026-11-09, after release **61.0.0** (`ea101a2`): **Chapter 16, Hum
 9. Add the learning layer with recipe A.
 10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
 
-Built so far: Chapters 1 to 16, 19, 21.0 to 21.11 and 25.3. **Not yet built: 17, 18, 20 and the rest of the book.**
+Built so far: Chapters 1 to 17, 19, 21.0 to 21.11 and 25.3. **Not yet built: 18, 20 and the rest of the book.**
+
+**Contested topics** (Ch 17 set the pattern): write update boxes that attribute every position to the body that holds it, with dates, put differing positions side by side, add no verdict of the app's own, and end with "check current local rules and guidelines" where law differs by country. Keep the guide's own text to what the book says, attributed where the book takes a stance. Cut any agent line that goes beyond the book on a contested point (for example, claims about the reversibility of puberty blockers).
 
 **C. New app feature** (for the section 7 list)
 1. Read the relevant parts of `js/app.js` and the router first. Check that the feature does not already exist in some form.
@@ -108,8 +110,9 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 5–14, 19, 21.0–21.11, 25.3 | all | all | Complete (passes 1–5) |
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 | Ch 16 | 50/50 | 42/42 | Complete (release 61.0.0; built from the PDF with recipes B and A) |
+| Ch 17 | 30/30 | 13/13 | Complete (release 62.0.0; 7 update boxes on a contested area; no helper, a look-alike instead) |
 
-Totals: **1,243/1,243 cases and 748/748 sections**, with all tests passing on `ea101a2`. Latest changelog version **61.0.0**; `sw.js` VERSION is `PREFIX + '61.0.0'`.
+Totals: **1,273/1,273 cases and 761/761 sections**, with all tests passing on `76f2138`. Latest changelog version **62.0.0**; `sw.js` VERSION is `PREFIX + '62.0.0'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
@@ -125,9 +128,10 @@ Totals: **1,243/1,243 cases and 748/748 sections**, with all tests passing on `e
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Chapter 17** (Gender Dysphoria, Gender Identity, and Related Conditions; PDF pages 1741 to 1757) next, then 18 (Disruptive, Impulse-Control, and Conduct Disorders, from page 1758) and 20 (Other Conditions that May be a Focus of Clinical Attention, from page 1840): recipe B, then recipe A. Ch 16's s16-gender already points to Chapter 17 for gender issues. Pull `main` first and check which chapters a parallel chat has built.
-2. Use changelog version **62.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
-3. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
+1. **Chapter 18** (Disruptive, Impulse-Control, and Conduct Disorders; PDF pages 1758 to about 1839), then **Chapter 20** (Other Conditions that May be a Focus of Clinical Attention, from page 1840): recipe B, then recipe A. Chapter 18 is long; plan about 6 work files as for Chapter 16. Pull `main` first and check which chapters a parallel chat has built.
+2. Use changelog version **63.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
+3. The Ch 17 update boxes on minors describe a fast-moving area (UK PATHWAYS trial, Endocrine Society and AAP guideline updates in progress). Recheck them by web search when a later release touches Chapter 17, and add a correction entry to the changelog if anything changed.
+4. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
 
 ## 8. Scheduled tasks (manage only with the user's explicit say-so)
 - **"Kaplan backfill pass"**: the user asked to delete it on Oct 27. It did not appear in `list_triggers` (even with `include_completed`), so it was not deleted from here; it may be a scheduled task stored locally by the desktop app. The user was told to remove it there.
@@ -144,7 +148,8 @@ Totals: **1,243/1,243 cases and 748/748 sections**, with all tests passing on `e
 - `gh` GraphQL is blocked; use `gh api repos/...` (REST).
 - The remote says "repository moved" on push. It is harmless (it redirects to `isaymotion/KaplanStudy`).
 - **The design refresh renamed controls.** `e2e.py` now uses `#textSizeBtn` and `input[name=textSize]`; `e2e_tools.py` accepts "version" in the report link. If a later redesign breaks a selector, fix the test, not the app.
-- `fulltest.py` `CHS` had missed Chapter 15; it now lists 15 and 16. Check it when adding a chapter.
+- `fulltest.py` `CHS` had missed Chapter 15; it now lists 15, 16 and 17. Check it when adding a chapter.
+- Fixing a case stem or `why` after the learning layer exists: edit both the work file and `data/chNN/cards-cases.js` directly. Rebuilding reshuffles nothing if the seed is unchanged, but editing the built file avoids any risk to the whyNot alignment.
 - **Push access:** cloning works without attaching the repo, but pushing does not (git proxy 403). Claude cannot attach the repo with push access on its own initiative; the request is blocked. At the start of a session, ask the user to say "Add isaymotion/KaplanStudy to this session with push access", then call `add_repo` with `access: "push"`. If a clone already exists at `/home/claude/kaplanstudy`, keep it; do not re-clone.
 - The first Bash call of a session may be refused with "the classifier gave no verdict"; repeating the identical call once works.
 - The local test server can stop between turns. If `curl localhost:8124` does not return 200, restart it and rerun e2e.

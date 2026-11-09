@@ -1,0 +1,93 @@
+({
+hy: [
+ { id: "hy17-tx", topic: "Treatment: therapy, hormones and surgery", items: [
+  "Children with gender identity concerns receive **individual, family and group therapy** to explore gendered interests and identities.",
+  "Reparative or **conversion therapy** tries to change gender identity or sexual orientation and is called **unethical**.",
+  "Conversion therapy is contrary to **APA** position statements and **AACAP** practice guidelines.",
+  "In adolescents, the reaction to the **first signs of puberty** helps decide whether puberty blockers are considered.",
+  "Puberty blockers are **GnRH agonists** that temporarily block hormones leading to secondary sex characteristics.",
+  "GnRH agonists are also used in **precocious puberty** and are thought safe, but should be considered carefully.",
+  "For adults, hormones and surgery may **decrease depression** and improve quality of life.",
+  "A mental health provider who writes a letter for surgery or hormones acts as a **gatekeeper**.",
+  "**Informed consent models** at community clinics reduce the gatekeeper role.",
+  "Transgender men most often take **testosterone**, usually by injection every **week or every other week**.",
+  "Testosterone early changes: **acne, muscle mass, libido** up and **menses stop** within a few months.",
+  "Testosterone later changes: **deeper voice, body hair, clitoral enlargement**.",
+  "Testosterone monitoring: **hemoglobin/hematocrit, liver function, cholesterol, diabetes screen**.",
+  "Estrogen in transgender women: breasts usually do not exceed **cup size B**; wait **18 to 24 months** before augmentation.",
+  "Estrogen **does not change the voice**; many women seek voice coaching.",
+  "Estrogen plus **smoking** raises blood clot risk; check **prolactin** as prolactinoma is rare.",
+  "Estrogen treatment almost always causes **permanent sterility**, so reproductive counseling is essential.",
+  "**Top surgery** is the most common gender-related surgery; **bottom surgery** is less common."
+ ]},
+ { id: "hy17-ep", topic: "Epidemiology and etiology", items: [
+  "Most children with gender dysphoria are referred in **early grade school**; parents recall behaviors **before age 3**.",
+  "Referred boys under 12: **10 percent** want to be the other sex; referred girls: **5 percent**.",
+  "Referred children: **4 to 5 boys for each girl**; referred adolescents: **equal** sex ratio.",
+  "Many gender-nonconforming children **do not become** transgender adults.",
+  "European clinic prevalence: **1 in 11,000** assigned male and **1 in 30,000** assigned female.",
+  "DSM-5 prevalence: **0.005 to 0.014 percent** assigned male, **0.002 to 0.003 percent** assigned female.",
+  "Adult clinics: **3 to 5 male patients** per female patient.",
+  "Greater acceptance of assigned females acting as boys (**tomboys**) than assigned males acting as girls affects who is diagnosed.",
+  "Population-based speculation: **1 in 500** adults on a transgender spectrum.",
+  "The mammalian resting state is **female**; the **Y chromosome** triggers androgen and testes.",
+  "Gender identity depends more on **postnatal life events** than prenatal hormones.",
+  "No **candidate genes** are identified; twin case reports are mixed.",
+  "Transgender persons are likely to be **left-handed**; significance unknown.",
+  "Freud: gender identity problems arise from **oedipal triangle** conflicts."
+ ]}
+],
+dx: [
+ { id: "d17-ep01", tag: "Epidemiology", q: "When do most children with gender dysphoria come to clinical attention, and what do parents report about onset?", a: "In the **early grade school years**. Parents usually report cross-gender behaviors **before age 3**." },
+ { id: "d17-ep02", tag: "Epidemiology", q: "What percent of clinically referred boys and girls under 12 report wanting to be the other sex?", a: "**10 percent** of referred boys and **5 percent** of referred girls." },
+ { id: "d17-ep03", tag: "Epidemiology", q: "What is the sex ratio of children referred for gender dysphoria, and what likely contributes?", a: "**4 to 5 boys for each girl**, likely partly due to **societal stigma toward feminine boys**." },
+ { id: "d17-ep04", tag: "Epidemiology", q: "What is the sex ratio in referred adolescents?", a: "**Equal**." },
+ { id: "d17-ep05", tag: "Epidemiology", q: "What adult prevalence do European hormonal/surgical clinics report?", a: "**1 in 11,000** assigned male and **1 in 30,000** assigned female." },
+ { id: "d17-ep06", tag: "Epidemiology", q: "What prevalence range does DSM-5 report for adults?", a: "**0.005 to 0.014 percent** for assigned male and **0.002 to 0.003 percent** for assigned female." },
+ { id: "d17-ep07", tag: "Epidemiology", q: "What is the usual sex ratio in adult clinical centers, and which direction of dysphoria is more prevalent?", a: "**3 to 5 male patients for each female patient**; **male to female** dysphoria is more prevalent." },
+ { id: "d17-ep08", tag: "Epidemiology", q: "What is the speculated population-based estimate of adults on a transgender spectrum?", a: "**1 in 500**, based on population data rather than clinical data." }
+],
+cs: [
+ { id: "c17-tx01", tag: "Treatment", q: "A 7-year-old child assigned male at birth is referred for strong cross-gender interests. The parents ask about a program that promises to change the child's gender identity. Which is the most appropriate response?", choices: ["Individual, family and group therapy to explore gendered interests and identities", "Reparative (conversion) therapy to change gender identity", "Immediate gonadotropin-releasing hormone agonist treatment", "Testosterone therapy", "Referral for gender-related surgery"], answer: 0, why: "Treatment of children is individual, family and group therapy. Conversion therapy is contrary to APA statements and AACAP guidelines and is called unethical." },
+ { id: "c17-tx02", tag: "Treatment", q: "A 12-year-old child assigned female at birth is afraid and preoccupied as early breast development begins. The family wants time to think. Which medication class could be considered?", choices: ["Androgens", "Estrogen", "Selective serotonin reuptake inhibitors", "Gonadotropin-releasing hormone agonists", "Benzodiazepines"], answer: 3, why: "GnRH agonists temporarily block the hormones leading to secondary sex characteristics, giving time to reflect. The reaction to early puberty signs guides this decision. Since the book, evidence reviews and national policies on puberty blockers have diverged; see the update boxes in this section." },
+ { id: "c17-tx03", tag: "Treatment", q: "A 30-year-old transgender woman needs a letter from a mental health provider before surgery. The clinic she attends instead gives hormones after discussing risks and benefits with her. Which model is this?", choices: ["Reparative model", "Gatekeeper model", "Puberty-delay model", "Conversion model", "Informed consent model"], answer: 4, why: "Many community clinics use informed consent models for hormones, reducing the need for mental health providers to act as gatekeepers." },
+ { id: "c17-tx04", tag: "Treatment", q: "A 24-year-old transgender man avoids mental health care because of how earlier providers treated him. Which statement best explains this?", choices: ["Poor treatment and medicalization by mental health providers has reduced interest in care", "Hormone therapy makes psychotherapy unnecessary", "Transgender people never benefit from psychotherapy", "Surgery always worsens depression", "Letters from providers are never required"], answer: 0, why: "The history of poor treatment and medicalization has led to decreased interest in mental health care. Specialized providers are increasing engagement." },
+ { id: "c17-hm01", tag: "Hormones", q: "A 26-year-old transgender man starts weekly testosterone injections. Which change is expected within the first few months?", choices: ["Deepening of the voice", "Increased acne and cessation of menses", "Breast growth", "Decreased libido", "Loss of body hair"], answer: 1, why: "Initial changes are acne, muscle mass and libido increases and cessation of menses. Voice deepening and body hair are later, more permanent changes." },
+ { id: "c17-hm02", tag: "Hormones", q: "A transgender man on testosterone has a markedly raised hematocrit. For which complication is he at risk?", choices: ["Prolactinoma", "Silicone embolism", "Stroke", "Sterility from orchiectomy", "Precocious puberty"], answer: 2, why: "Testosterone can rarely raise red blood cell counts, which can lead to stroke. Hemoglobin/hematocrit is monitored." },
+ { id: "c17-hm03", tag: "Hormones", q: "A 32-year-old transgender woman on estrogen smokes a pack of cigarettes daily. Which risk is increased by this combination?", choices: ["Hypertrophic scarring", "Hair loss", "Blood clots", "Voice deepening", "Left-handedness"], answer: 2, why: "Estrogen combined with cigarette smoking increases the risk of blood clots, so smoking should be avoided." },
+ { id: "c17-hm04", tag: "Hormones", q: "A transgender woman on hormones for 8 months asks about breast augmentation and her voice. Which advice is correct?", choices: ["Voice will rise with estrogen; augment now", "Wait 18 to 24 months before augmentation; voice does not change with hormones", "Testosterone blockers will raise her voice; wait 6 months", "Augmentation is contraindicated forever; voice coaching is unavailable", "Breasts usually exceed cup size D; augment now"], answer: 1, why: "Experts recommend 18 to 24 months on hormones before augmentation. Testosterone from her earlier puberty has permanently altered the vocal cords, so voice coaching is often sought." },
+ { id: "c17-sg01", tag: "Surgery", q: "A transgender man wants a genital procedure in which the clitoris is freed from its ligament and lengthened with added tissue. Which procedure is this?", choices: ["Phalloplasty", "Scrotoplasty", "Orchiectomy", "Metoidioplasty", "Vaginoplasty"], answer: 3, why: "Metoidioplasty frees the clitoris, attaches it to the body and adds length and girth." },
+ { id: "c17-sg02", tag: "Surgery", q: "A transgender woman with limited funds wants to lower her androgen production cheaply, ideally in an office with local anesthetic. Which procedure fits?", choices: ["Vaginoplasty", "Orchiectomy", "Phalloplasty", "Facial feminization", "Metoidioplasty"], answer: 1, why: "Orchiectomy removes the testicles, can be done in-office with local anesthetic, and substantially decreases androgens." },
+ { id: "c17-sg03", tag: "Surgery", q: "Which is the most common gender-related surgery for both transgender men and transgender women?", choices: ["Phalloplasty", "Orchiectomy", "Vaginoplasty", "Scrotoplasty", "Top (chest) surgery"], answer: 4, why: "Top surgery, chest surgery, is the most common. Bottom surgery is less common." },
+ { id: "c17-sg04", tag: "Surgery", q: "A transgender woman who cannot afford surgery injected industrial-grade silicone without supervision. Which complication is most serious?", choices: ["Embolism from silicone blood clots", "Prolactinoma", "Polycythemia", "Voice deepening", "Increased libido"], answer: 0, why: "Unsupervised silicone injection can cause mutilation, infection and silicone blood clots leading to embolism and death." },
+ { id: "c17-ep01", tag: "Epidemiology", q: "A clinician reviews referred children under 12 for gender dysphoria. Which sex ratio is expected?", choices: ["Equal", "1 boy per 4 to 5 girls", "4 to 5 boys for each girl", "3 to 5 girls for each boy", "2 boys for each girl"], answer: 2, why: "Referred children show 4 to 5 boys for each girl, partly due to stigma toward feminine boys. Adolescents are equal." },
+ { id: "c17-ep02", tag: "Epidemiology", q: "Which statement about children with gender-nonconforming behavior is correct?", choices: ["All grow up to be transgender adults", "None grow up to be transgender adults", "Most transgender adults were identified as gender nonconforming in childhood", "Many do not grow up to be transgender adults", "Behaviors always begin after age 10"], answer: 3, why: "Many gender-nonconforming children do not become transgender adults, and many transgender adults were not identified as such in childhood." },
+ { id: "c17-ep03", tag: "Epidemiology", q: "Which factor helps explain why adult clinics see more people assigned male at birth than assigned female?", choices: ["Greater social acceptance of birth-assigned females dressing and behaving as boys", "Equal social acceptance of both", "Greater acceptance of birth-assigned males acting as girls", "Higher genetic penetrance in females", "Left-handedness"], answer: 0, why: "There is greater social acceptance of birth-assigned females behaving as boys (tomboys) than birth-assigned males acting as females." }
+],
+ph: [
+ { id: "p17-hm01", tag: "Hormones", q: "What hormone do transgender men most often take, and how is it given?", a: "**Testosterone**, usually by **injection every week or every other week**." },
+ { id: "p17-hm02", tag: "Hormones", q: "Name the initial changes with testosterone therapy.", a: "Increased **acne, muscle mass and libido**, and **cessation of menses** within the first few months." },
+ { id: "p17-hm03", tag: "Hormones", q: "Name the later, more permanent changes with testosterone.", a: "**Deepening of the voice, increased body hair, enlargement of the clitoris**." },
+ { id: "p17-hm04", tag: "Hormones", q: "Why check hemoglobin/hematocrit on testosterone?", a: "It can rarely **raise red blood cell counts**, which can lead to **stroke**." },
+ { id: "p17-hm05", tag: "Hormones", q: "Why obtain liver function, cholesterol and diabetes screening on testosterone?", a: "The **liver metabolizes** testosterone, and treatment may increase **lipid abnormalities and diabetes**." },
+ { id: "p17-hm06", tag: "Hormones", q: "Which hormones may transgender women take?", a: "**Estrogen, testosterone blockers or progesterone**, often in combination." },
+ { id: "p17-hm07", tag: "Hormones", q: "What body changes occur with these hormones in transgender women?", a: "**Softening of skin, fat redistribution, breast growth**; decreased sex drive, erections and ejaculation." },
+ { id: "p17-hm08", tag: "Hormones", q: "How large do breasts usually grow, and when can augmentation occur?", a: "Generally not beyond **cup size B**; augmentation after **18 to 24 months** on hormones." },
+ { id: "p17-hm09", tag: "Hormones", q: "What happens to body hair and voice with estrogen-based treatment?", a: "Body hair decreases **somewhat** (many use **electrolysis**); **voice does not change** (many seek voice coaching)." },
+ { id: "p17-hm10", tag: "Hormones", q: "Why should patients on estrogen avoid smoking?", a: "The combination increases the risk of **blood clots**." },
+ { id: "p17-hm11", tag: "Hormones", q: "What monitoring is done for transgender women on estrogen?", a: "**Blood pressure, liver function, cholesterol** and **prolactin** (rare **prolactinoma**)." },
+ { id: "p17-hm12", tag: "Hormones", q: "How are hormones related to fertility in both groups?", a: "Counseling is routine; testosterone may **affect** fertility, while estrogen almost always causes **permanent sterility**." }
+],
+fd: [
+ { id: "f17-et01", tag: "Etiology", q: "What is the resting state of tissue in mammals, and what changes it?", a: "**Female**. **Androgen**, set off by the **Y chromosome**, produces testes and male development." },
+ { id: "f17-et02", tag: "Etiology", q: "On what do maleness and masculinity depend?", a: "**Fetal and perinatal androgens**." },
+ { id: "f17-et03", tag: "Etiology", q: "What matters more for gender identity: prenatal hormones or postnatal events?", a: "**Postnatal life events** more than prenatal hormonal organization." },
+ { id: "f17-et04", tag: "Etiology", q: "What is brain organization theory?", a: "**Masculinization or feminization of the brain in utero**, with testosterone acting on areas like the **hypothalamus**; effect on behavior is controversial." },
+ { id: "f17-et05", tag: "Etiology", q: "What are the genetic findings in gender dysphoria?", a: "**No candidate genes** identified; chromosomal variations are uncommon; identical twin case reports are mixed." },
+ { id: "f17-et06", tag: "Etiology", q: "According to Freud, what causes gender identity problems?", a: "Conflicts in the **oedipal triangle**; interference with loving the opposite-sex parent and identifying with the same-sex parent." },
+ { id: "f17-tx01", tag: "Treatment", q: "What do puberty-blocking medications do?", a: "They **temporarily block** hormones leading to secondary sex characteristics, giving time to reflect." },
+ { id: "f17-tx02", tag: "Treatment", q: "Why is conversion therapy considered unethical?", a: "It tries to change gender identity or orientation and is **contrary to APA statements and AACAP guidelines**." },
+ { id: "f17-tx03", tag: "Treatment", q: "What is the WPATH SOC described as in the chapter?", a: "Recently **more flexible** and open to **informed consent models**." },
+ { id: "f17-tx04", tag: "Treatment", q: "Why is facial feminization important for many women?", a: "The face is used to recognize gender, so matching features aid **social interaction** and give **safety from harassment and violence**." }
+]
+})
