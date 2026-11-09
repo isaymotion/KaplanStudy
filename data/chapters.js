@@ -114,6 +114,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
   {
+    id: 'ch17', number: 17, title: 'Gender Dysphoria, Gender Identity, and Related Conditions', short: 'Gender dysphoria',
+    summary: 'Gender identity and the terms used; DSM-5 and ICD-10 gender dysphoria in children, adolescents and adults; differential diagnosis, course and comorbidity; psychotherapy, hormones and surgery; epidemiology and theories of causation, with post-publication updates on ICD-11, DSM-5-TR, WPATH SOC-8 and the changing evidence and policy on treating minors.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  {
     id: 'ch19', number: 19, title: 'Personality Disorders', short: 'Personality disorders',
     summary: 'The ten personality disorders in three clusters: presentation, DSM-5 and ICD-10 criteria, differential diagnosis, comorbidity, course, epidemiology and treatment (including DBT, MBT and TFP), personality change due to a medical condition, target-symptom pharmacotherapy, defenses and temperament, with post-publication updates on ICD-11 and borderline personality disorder.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

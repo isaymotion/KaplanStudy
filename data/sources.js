@@ -4,6 +4,21 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 17 (gender dysphoria), November 2026 */
+    { m: "HA60 Gender incongruence of adolescence or adulthood", label: "WHO ICD-11: Gender incongruence (HA60, HA61)", url: "https://icd.who.int/browse/2024-01/mms/en#90875286" },
+    { m: "DSM-5-TR fact sheet: Gender Dysphoria", label: "APA DSM-5-TR fact sheet: Gender Dysphoria (PDF)", url: "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-GenderDysphoria.pdf" },
+    { m: "summarized in JAMA, 2023", label: "JAMA guideline synopsis: WPATH SOC-8", url: "https://jamanetwork.com/journals/jama/fullarticle/2805345" },
+    { m: "WPATH SOC-8 FAQs", label: "WPATH SOC-8 frequently asked questions (PDF)", url: "https://app.wpath.org/media/cms/Documents/SOC%20v8/SOC-8%20FAQs%20-%20WEBSITE2.pdf" },
+    { m: "Cass Review final report, April 2024", label: "The Cass Review (independent review, England)", url: "https://cass.independent-review.uk/" },
+    { m: "Ban on puberty blockers in the UK made indefinite", label: "Pharmaceutical Journal, December 2024", url: "https://pharmaceutical-journal.com/article/news/ban-on-puberty-blockers-in-the-uk-made-indefinite" },
+    { m: "ISRCTN12491684", label: "PATHWAYS trial registration (ISRCTN12491684)", url: "https://www.isrctn.com/ISRCTN12491684" },
+    { m: "An update on the PATHWAYS trial", label: "Health Research Authority: update on the PATHWAYS trial", url: "https://www.hra.nhs.uk/about-us/news-updates/an-update-on-the-pathways-trial" },
+    { m: "Endocrine Treatment of Gender-Dysphoric/Gender-Incongruent Persons (2017)", label: "Endocrine Society 2017 guideline", url: "https://www.endocrine.org/GenderDysphoricCPG" },
+    { m: "Guidelines in Development", label: "Endocrine Society: guidelines in development", url: "https://www.endocrine.org/clinical-practice-guidelines/guidelines-in-development" },
+    { m: "Block J, BMJ 2023", label: "BMJ 2023: AAP reaffirms policy, orders evidence review", url: "https://www.bmj.com/content/382/bmj.p1877" },
+    { m: "KFF, HHS report on pediatric gender dysphoria", label: "KFF brief on the HHS report, May 2025", url: "https://www.kff.org/lgbtq/u-s-department-of-health-and-human-services-report-on-pediatric-gender-dysphoria-and-gender-conversion-efforts/" },
+    { m: "STAT News, Did the AMA change its position", label: "STAT News summary, February 2026", url: "https://cthosp.org/daily-news-clip/did-the-ama-change-its-position-on-surgery-for-transgender-minors/" },
+    { m: "AMA statement and March 2026 clarification", label: "RedState, March 2026 (quotes the AMA Board newsletter)", url: "https://redstate.com/ben-smith/2026/03/27/ama-said-it-agrees-on-sex-change-surgeries-for-kids-then-transitions-away-months-later-n2200681" },
     /* Chapter 16 (sexuality), November 2026 */
     { m: "DSM-5 (American Psychiatric Association, 2013)", label: "American Psychiatric Association: DSM-5", url: "https://www.psychiatry.org/psychiatrists/practice/dsm" },
     { m: "Disorders related to sexuality and gender identity in the ICD-11", label: "Reed GM et al., World Psychiatry 2016 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5032510/" },

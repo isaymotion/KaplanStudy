@@ -13,6 +13,29 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "62.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 17: Gender Dysphoria, Gender Identity, and Related Conditions",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch17",
+        "text": "New chapter: gender identity and the terms used; DSM-5 and ICD-10 gender dysphoria in children, adolescents and adults; differential diagnosis, course and comorbidity; psychotherapy, hormones and surgery; epidemiology and causes. 13 sections, 62 high-yield facts and 82 cards, with a pre-test, wrong-answer explanations for all 30 cases, end-of-section checks and a development timeline.",
+        "href": "#/c/ch17/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "update",
+        "ch": "ch17",
+        "text": "Post-publication updates: ICD-11 gender incongruence, DSM-5-TR wording, WPATH Standards of Care 8, Endocrine Society monitoring, and how evidence reviews and policies on puberty blockers and surgery in minors have changed since the book (Cass Review, UK restrictions and the PATHWAYS trial, the AAP, the US HHS review, and 2026 statements on surgery)."
+      },
+      {
+        "type": "feature",
+        "text": "Look-alike comparison of gender dysphoria, gender nonconformity, transvestic disorder, body dysmorphic disorder and psychosis. 18 new glossary terms."
+      }
+    ]
+  },
+  {
     "version": "61.0.0",
     "date": "2026-11-09",
     "title": "Chapter 16: Human Sexuality and Sexual Dysfunctions",

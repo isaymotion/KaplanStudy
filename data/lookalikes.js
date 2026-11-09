@@ -427,6 +427,31 @@ KS.lookalikes = [
     ]
   },
   {
+    id: "gender-ddx",
+    title: "Gender dysphoria, gender nonconformity, transvestic disorder, body dysmorphic disorder and psychosis",
+    summary: "Five situations in which someone talks about gender or wants to change gendered body parts: what drives it and what the diagnosis is.",
+    items: ["Gender dysphoria", "Gender nonconformity", "Transvestic disorder", "Body dysmorphic disorder", "Psychosis with gender content"],
+    rows: [
+      ["Core experience", "Marked **incongruence** between experienced and assigned gender", "Interests, dress or play typical of another gender, **content** with assigned gender", "Intense **sexual arousal** from cross-dressing", "A body part looks **abnormal or ugly**", "A **delusion** about being another gender"],
+      ["Gender identity", "Differs from the **assigned** gender", "Matches the assigned gender", "**Matches** the assigned gender", "Matches the assigned gender", "Part of the psychotic belief"],
+      ["Distress", "**Required** (DSM-5)", "Absent, or only in caregivers", "Required, or impairment", "From the perceived defect", "Variable"],
+      ["Clues", "Persistent statements; wish for **anatomical change**; distress at puberty", "Brief or no statements about being another gender", "Arousal and masturbation with cross-dressing; identity stable", "Focus on appearance, **not on gender**", "Other psychotic symptoms; concerns **fade with antipsychotic treatment**"],
+      ["Diagnosis", "Gender dysphoria (ICD-11: gender incongruence)", "None", "Transvestic disorder (Chapter 16)", "Body dysmorphic disorder", "The psychotic disorder"]
+    ],
+    keys: [
+      "Ask whether the person's **gender identity** differs from the assigned gender, and whether they are distressed by it.",
+      "Gender-nonconforming behavior alone is **not** a diagnosis; DSM-5 needs distress, and ICD-11 says behavior alone is not enough.",
+      "In transvestic disorder the identity matches the assigned gender and the driver is **sexual excitement**.",
+      "Gender content in psychosis is rare and **resolves with treatment** of the psychosis."
+    ],
+    links: [
+      { ch: "ch17", sec: "s17-ddx", label: "Differential diagnosis" },
+      { ch: "ch17", sec: "s17-dx-child", label: "Gender dysphoria in children" },
+      { ch: "ch17", sec: "s17-dx-adult", label: "Gender dysphoria in adolescents and adults" },
+      { ch: "ch16", sec: "s16-fetish", label: "Fetishism and transvestism" }
+    ]
+  },
+  {
     id: "sleep-night-events",
     title: "Night terrors, nightmares, RBD and nocturnal seizures",
     summary: "Four causes of frightening or violent events at night: which stage of sleep, and what is remembered?",
