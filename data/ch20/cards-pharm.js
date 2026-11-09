@@ -1,0 +1,17 @@
+/* Chapter 20 pharmacology cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 20. */
+KS.add("ch20", "pharm", [
+  {"id":"p20-md01","tag":"Malingering","q":"Which medications did the plaintiff in the dancing-injury vignette seek, and how?","a":"**Narcotic analgesics**, obtained from **multiple practitioners**, with at least one **forged prescription**."},
+  {"id":"p20-md02","tag":"Malingering","q":"Why might a prisoner malinger to obtain medications?","a":"For **personal use** or as **currency** to barter for **cigarettes, protection, or other inmate-provided favors**."},
+  {"id":"p20-at01","tag":"Antisocial behavior","q":"Have medications or other biologic treatments shown benefit in adult antisocial behavior?","a":"**No breakthroughs** with **biologic treatments, including medications**, have occurred."},
+  {"id":"p20-at02","tag":"Antisocial behavior","q":"Which prenatal substance exposures are linked to later antisocial behavior?","a":"Prenatal exposure to **alcohol and other drugs of abuse**; parents should be taught about **psychoactive substances** harming the **brains of growing fetuses**."},
+  {"id":"p20-at03","tag":"Antisocial behavior","q":"What public education message about alcohol may reduce crime?","a":"Alcohol's **releasing effect on violent behavior** and its contribution to **vehicular homicide**."},
+  {"id":"p20-ad01","tag":"Antisocial behavior","q":"In Table 20-3, how common were alcohol abuse and drug abuse among antisocial patients?","a":"**Alcohol abuse 72%**; **drug abuse 15%**."},
+  {"id":"p20-og01","tag":"Occupational","q":"What substance-related testing issue remains a workplace concern?","a":"**Mandatory testing** for **substance abuse** (**alcohol and other illegal substances**) and for **AIDS**."},
+  {"id":"p20-pl01","tag":"Adherence","q":"Name the causes of medication noncompliance listed in the chapter.","a":"**Discomforting side effects**, **expense**, **personal value judgments** and **denial of illness**, among many others."},
+  {"id":"p20-pl02","tag":"Adherence","q":"Why is medication noncompliance highlighted in psychiatry?","a":"It is a **significant concern** in psychiatry; it is coded separately only when **severe enough to warrant independent clinical attention**."},
+  {"id":"p20-pl03","tag":"Adherence","q":"Does a positive doctor–patient relationship ensure a patient takes medication?","a":"No. It helps **foster compliance**, but the patient may still be **reluctant** to follow the physician's advice."},
+  {"id":"p20-ri01","tag":"Relational","q":"Which caretaker substance factor raises the risk of elder abuse?","a":"Caretaking offspring with **substance abuse problems** are more likely to abuse aging parents (with **economic stress** and **no relief**)."},
+  {"id":"p20-pc01","tag":"Relational","q":"Why is family involvement emphasized for a substance-abusing child or adolescent?","a":"It is **crucial** to help **control drug-seeking behavior** and lets family members **verbalize frustration and anger**."},
+  {"id":"p20-rp01","tag":"Relational","q":"Which stress hormones rise with marital conflict, and in whom?","a":"Serum **epinephrine**, **norepinephrine**, and **corticotrophin**, in **both men and women**."},
+  {"id":"p20-rp02","tag":"Relational","q":"Which substance-related problem is among the most common emotional ills linked to physician stressors?","a":"**Substance abuse, including alcoholism**, alongside **depression**."}
+]);

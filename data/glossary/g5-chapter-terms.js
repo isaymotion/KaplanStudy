@@ -628,10 +628,22 @@ KS.glossary = (KS.glossary || []).concat([
   ["amok", "A culture-bound syndrome, described mainly in Southeast Asia, of a single episode of sudden violent behavior followed by amnesia, with prominent dissociation.", "Ch 18"],
   ["5-HIAA", "5-hydroxyindoleacetic acid, the main serotonin metabolite; low cerebrospinal fluid levels are linked to impulsive aggression and violent suicide attempts.", "Ch 18"],
   ["MHPG", "3-methoxy-4-hydroxyphenylglycol, a norepinephrine metabolite; low levels have been reported in pyromania.", "Ch 18"],
-  ["contingency management", "A behavioral treatment that gives planned rewards or consequences for target behaviors; used for explosive aggression and substance use.", "Ch 18"]
+  ["contingency management", "A behavioral treatment that gives planned rewards or consequences for target behaviors; used for explosive aggression and substance use.", "Ch 18"],
+  ["dissimulation", "Faking good: hiding or minimizing real symptoms, for example by a prisoner avoiding an open-ended ward stay or a parent in a custody dispute.", "Ch 20"],
+  ["partial malingering", "Deliberate exaggeration of symptoms of a real illness for gain.", "Ch 20"],
+  ["uncomplicated bereavement", "Normal grief after the death of a loved one, recorded as a condition that may be a focus of clinical attention, not a mental disorder.", "Ch 20"],
+  ["adult antisocial behavior", "Illegal or immoral activity in an adult with no mental disorder found after full assessment; a diagnosis of exclusion that antisocial personality disorder supersedes.", "Ch 20"],
+  ["glass elevator", "The faster rise of men up the career ladder in fields where they are underrepresented.", "Ch 20"],
+  ["acculturation", "Changing one's manner, customs and dress to adapt to a different culture; it usually leads to assimilation without conflict.", "Ch 20"],
+  ["culture shock", "Severe distress on suddenly finding oneself in an entirely alien culture, with conflict over which ways of life to keep; it can also follow moves within one's own country.", "Ch 20"],
+  ["deprogramming", "Long-term treatment of former cult members or brainwashed people, with re-education and supportive psychotherapy, to restore psychological stability.", "Ch 20"],
+  ["phase of life problem", "Distress tied to a life-cycle event or transition (school, marriage, parenthood, illness, caring for aged parents) without a mental disorder.", "Ch 20"],
+  ["relational problem", "A pattern of interaction in a dyad, triad or family linked to significantly impaired functioning or symptoms in one or more members; a condition, not a mental disorder.", "Ch 20"],
+  ["triangulation", "A parent recruiting a child as an ally in conflict with the other parent.", "Ch 20"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
+  "faking good": "dissimulation",
   "gender identity disorder": "gender dysphoria",
   "transgender people": "transgender",
   "puberty blocker": "puberty blockers",

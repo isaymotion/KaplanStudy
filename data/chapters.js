@@ -129,6 +129,11 @@ KS.manifest = [
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
   {
+    id: 'ch20', number: 20, title: 'Other Conditions that May be a Focus of Clinical Attention', short: 'Other conditions of clinical attention',
+    summary: 'Conditions that are not mental disorders but bring people to care: malingering and its differential, bereavement versus depression, occupational problems, adult antisocial behavior, religious or spiritual problems, acculturation and culture shock, prisoners of war and torture victims, phase of life problems, nonadherence and relational problems, with post-publication updates on DSM-5-TR, ICD-11, the bereavement exclusion and prolonged grief disorder.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  {
     id: 'ch21-0', number: '21.0', title: 'Principles of Psychopharmacology', short: 'Psychopharmacology principles',
     summary: 'How drugs are chosen, dosed and monitored: pharmacodynamics and kinetics, side effects, antidepressant suicidality, medication-induced movement disorders and NMS, overdose, treatment failure, withdrawal, combinations, special populations, off-label use and placebos.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

@@ -4549,5 +4549,315 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "focus20",
+  "chapter": "ch20",
+  "title": "Feigned symptoms or antisocial behavior: condition or disorder?",
+  "summary": "Work through symptoms that may be feigned (malingering, factitious disorder, conversion and the somatoform disorders) or repeated antisocial behavior (adult antisocial behavior and its mimics), with the reasoning shown.",
+  "caution": "A teaching aid built from Chapter 20, not a substitute for a full history, mental status examination and workup. Malingering and adult antisocial behavior are conditions, not mental disorders, and either can coexist with a real disorder.",
+  "start": "main",
+  "nodes": {
+    "main": {
+      "q": "What is the clinical question?",
+      "options": [
+        {
+          "label": "Symptoms or disability that the objective findings do not explain",
+          "to": "m1",
+          "note": "Possibly feigned or unexplained symptoms."
+        },
+        {
+          "label": "Repeated illegal or immoral behavior in an adult",
+          "to": "a1",
+          "note": "Repeated antisocial behavior."
+        }
+      ]
+    },
+    "m1": {
+      "q": "Does a genuine physical or psychiatric illness fully explain the symptoms?",
+      "help": "Clues to malingering: a medicolegal context (attorney referral), a gap between claimed disability and objective findings, poor cooperation with evaluation and treatment, and antisocial personality disorder.",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:real",
+          "note": "Actual illness explains the picture."
+        },
+        {
+          "label": "No, or only partly",
+          "to": "m2",
+          "note": "Illness does not fully explain the symptoms."
+        }
+      ]
+    },
+    "m2": {
+      "q": "Are the symptoms produced or exaggerated on purpose?",
+      "options": [
+        {
+          "label": "Yes, deliberately produced or exaggerated",
+          "to": "m3",
+          "note": "Conscious production or exaggeration."
+        },
+        {
+          "label": "No: genuine symptoms, sincerely blamed on the wrong cause",
+          "to": "r:misattrib",
+          "note": "Unintentional misattribution of genuine symptoms."
+        },
+        {
+          "label": "No: no conscious volition behind the symptoms",
+          "to": "m4",
+          "note": "No conscious volition."
+        }
+      ]
+    },
+    "m3": {
+      "q": "What does the person seem to want?",
+      "options": [
+        {
+          "label": "A tangible gain: money, avoiding duty, work or trial, drugs, admission or shelter",
+          "to": "r:malinger",
+          "note": "Motive is a tangible external gain."
+        },
+        {
+          "label": "To be a patient (the sick role), with no external gain",
+          "to": "r:factitious",
+          "note": "Motive is the sick role."
+        },
+        {
+          "label": "A real illness is present, but its symptoms are being overstated",
+          "to": "r:partial",
+          "note": "Exaggeration of existing symptoms."
+        }
+      ]
+    },
+    "m4": {
+      "q": "Is the person friendly, cooperative and clinging, welcoming tests and treatment ('searching for an answer'), with a hazy history?",
+      "help": "Table 20-2: the malingerer tends to be suspicious and aloof, avoids evaluation, refuses jobs that work around the disability, and gives an extremely detailed account.",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:conversion",
+          "note": "Profile fits conversion disorder (Table 20-2)."
+        },
+        {
+          "label": "No: suspicious, avoids evaluation, refuses work options, overly detailed story",
+          "to": "r:recheck",
+          "note": "Profile fits malingering better than conversion."
+        }
+      ]
+    },
+    "a1": {
+      "q": "Does the mental status examination show thought disorder, delusions or hallucinations, or does the behavior occur only in manic episodes (wanderlust, promiscuity, money trouble)?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:psych",
+          "note": "Psychotic or manic features."
+        },
+        {
+          "label": "No",
+          "to": "a2",
+          "note": "No psychosis or mania."
+        }
+      ]
+    },
+    "a2": {
+      "q": "Is the behavior driven mainly by substance dependence, or is there a neurologic cause?",
+      "help": "Ask whether the acts came before substance use or in unrelated episodes. Consider complex partial seizures, epilepsy and encephalitis; about 50 percent of aggressive criminals have abnormal EEGs. Order a full workup, including neuroimaging, when indicated.",
+      "options": [
+        {
+          "label": "Substance dependence explains it",
+          "to": "r:subst",
+          "note": "Behavior stems mainly from substance dependence."
+        },
+        {
+          "label": "A neurologic cause is found",
+          "to": "r:neuro",
+          "note": "Neurologic condition found."
+        },
+        {
+          "label": "Neither",
+          "to": "a3",
+          "note": "No substance or neurologic cause."
+        }
+      ]
+    },
+    "a3": {
+      "q": "Does the person meet criteria for antisocial personality disorder?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:aspd",
+          "note": "Meets antisocial personality disorder criteria."
+        },
+        {
+          "label": "No, and no other mental disorder is found",
+          "to": "r:aab",
+          "note": "No mental disorder after full assessment."
+        }
+      ]
+    }
+  },
+  "results": {
+    "real": {
+      "label": "Consider",
+      "dx": "The actual physical or psychiatric illness",
+      "line": "Telling malingering apart from real illness is the main challenge; when illness explains the picture, treat it.",
+      "points": [
+        "A real disorder and malingering are not mutually exclusive; recheck if the motive clues persist."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "misattrib": {
+      "label": "Most likely",
+      "dx": "Unintentional, dynamically driven misattribution",
+      "line": "Genuine symptoms are sincerely linked to the wrong cause; there is no deliberate deception.",
+      "points": [
+        "The chapter's example: real depression blamed on sexual harassment rather than on a narcissistic injury."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "malinger": {
+      "label": "Most likely",
+      "dx": "Malingering",
+      "line": "Deliberate falsification or exaggeration for a tangible secondary gain. It is a condition, not a mental disorder.",
+      "points": [
+        "Take a stance of clinical neutrality, then confront tactfully but firmly.",
+        "Explore more acceptable paths to the goal and assess coexisting disorders (antisocial, borderline, narcissistic personality disorders).",
+        "Abandon the interaction only if the person will engage on no terms other than manipulation."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-mgmt",
+        "label": "Malingering: management"
+      }
+    },
+    "factitious": {
+      "label": "Most likely",
+      "dx": "Factitious disorder",
+      "line": "Factitious disorder differs from malingering by motivation: the aim is the sick role, not a tangible gain.",
+      "points": [
+        "Unlike malingering, factitious disorder is a mental disorder."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "partial": {
+      "label": "Most likely",
+      "dx": "Partial malingering",
+      "line": "Exaggeration of symptoms of a real illness, often in a claim for gain.",
+      "points": [
+        "Treat the real illness and address the exaggeration with tactful confrontation."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "conversion": {
+      "label": "Most likely",
+      "dx": "Conversion disorder (or another somatoform disorder)",
+      "line": "No conscious volition; as in malingering, objective signs cannot account for the complaint, but the patient's stance differs (Table 20-2).",
+      "points": [
+        "Conversion patients welcome evaluation, accept work options and report gaps and vagaries in the history."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "recheck": {
+      "label": "Reconsider",
+      "dx": "Malingering",
+      "line": "Suspicion, avoidance of evaluation, refusal of work options and an overly exact story fit malingering in Table 20-2. Reassess whether the symptoms are deliberate.",
+      "points": [
+        "Look for the clues: medicolegal context, findings that do not match the claim, poor cooperation, antisocial personality disorder."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-mal-ddx",
+        "label": "Malingering: differential diagnosis"
+      }
+    },
+    "psych": {
+      "label": "Consider",
+      "dx": "Schizophrenia or bipolar I disorder (manic phase)",
+      "line": "Adult antisocial behavior is a diagnosis of exclusion; psychotic and manic features point to the underlying disorder.",
+      "points": [
+        "In schizophrenia the mental status examination shows thought disorder, delusions and hallucinations.",
+        "Mania can bring wanderlust, sexual promiscuity and financial trouble."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-aab-dx",
+        "label": "Adult antisocial behavior: diagnosis"
+      }
+    },
+    "subst": {
+      "label": "Consider",
+      "dx": "A substance use disorder",
+      "line": "Separate behavior due mainly to substance dependence from behavior that came before use or in unrelated episodes.",
+      "points": [
+        "Adult antisocial behavior is also associated with alcohol and other substance use."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-aab-dx",
+        "label": "Adult antisocial behavior: diagnosis"
+      }
+    },
+    "neuro": {
+      "label": "Consider",
+      "dx": "The neurologic condition (for example complex partial seizures, epilepsy or encephalitis)",
+      "line": "Once a neurologic disorder is clearly diagnosed, consider whether it is contributing to the behavior.",
+      "points": [
+        "A comprehensive neuropsychiatric assessment may reveal treatable impairments."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-aab-tx",
+        "label": "Adult antisocial behavior: etiology and treatment"
+      }
+    },
+    "aspd": {
+      "label": "Diagnose",
+      "dx": "Antisocial personality disorder",
+      "line": "When the criteria are met, antisocial personality disorder supersedes adult antisocial behavior.",
+      "points": [
+        "Antisocial personality disorder is covered in Chapter 19."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-aab-dx",
+        "label": "Adult antisocial behavior: diagnosis"
+      }
+    },
+    "aab": {
+      "label": "Most likely",
+      "dx": "Adult antisocial behavior",
+      "line": "Illegal or immoral activity with no mental disorder found after full assessment: a condition that may be a focus of clinical attention.",
+      "points": [
+        "Psychotherapy has not been effective; group approaches and therapeutic communities draw more interest.",
+        "Antisocial behavior tends to decrease after age 40, and recidivism falls in middle age."
+      ],
+      "link": {
+        "ch": "ch20",
+        "sec": "s20-aab-tx",
+        "label": "Adult antisocial behavior: treatment"
+      }
+    }
+  }
 }
 ]);

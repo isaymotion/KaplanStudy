@@ -4,6 +4,13 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 20 (other conditions that may be a focus of clinical attention), November 2026 */
+    { m: "DSM-5-TR: overview of what's new and what's changed", label: "First MB et al., World Psychiatry 2022: DSM-5-TR overview (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9077590/" },
+    { m: "WHO ICD-11 MMS chapter 24", label: "WHO ICD-11: Chapter 24, Factors influencing health status or contact with health services", url: "https://icd.who.int/browse/2024-01/mms/en#1249056269" },
+    { m: "QC30 Malingering", label: "WHO ICD-11: QC30 Malingering", url: "https://icd.who.int/browse/2024-01/mms/en#1136473465" },
+    { m: "6B42 Prolonged grief disorder", label: "WHO ICD-11: 6B42 Prolonged grief disorder", url: "https://icd.who.int/browse/2024-01/mms/en#1183832314" },
+    { m: "removal of the bereavement exclusion in the DSM-5", label: "Iglewicz et al., Curr Psychiatry Rep 2013 (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/24136623/" },
+    { m: "Income in the United States: 2025", label: "US Census Bureau: Income in the United States: 2025 (P60-289)", url: "https://www.census.gov/library/publications/2026/demo/p60-289.html" },
     /* Chapter 18 (impulse-control disorders), November 2026 */
     { m: "Impulse control disorders (6C70 to 6C7Z)", label: "WHO ICD-11: Impulse control disorders (6C70 to 6C7Z)", url: "https://icd.who.int/browse/2024-01/mms/en#826065555" },
     { m: "6C73 Intermittent explosive disorder", label: "WHO ICD-11: 6C73 intermittent explosive disorder", url: "https://icd.who.int/browse/2024-01/mms/en#295017661" },

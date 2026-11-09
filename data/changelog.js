@@ -13,6 +13,30 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "64.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 20: Other Conditions that May be a Focus of Clinical Attention",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch20",
+        "text": "New chapter: conditions that are not mental disorders but bring people to care. Malingering and its differential (Table 20-2), bereavement versus depression, occupational problems, adult antisocial behavior (Table 20-3), religious or spiritual problems and cults, acculturation and culture shock, prisoners of war and torture victims, phase of life problems, nonadherence and relational problems, with the full Table 20-1, 104 clinical cases, explanations for every wrong answer and end-of-section checks.",
+        "href": "#/c/ch20/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "update",
+        "ch": "ch20",
+        "text": "Post-publication updates: DSM-5 removed the 2-month bereavement exclusion; prolonged grief disorder in DSM-5-TR and ICD-11; DSM-5-TR codes for suicidal behavior and nonsuicidal self-injury; ICD-11 Chapter 24 and malingering (QC30); a correction to the last lines of Table 20-1; and 2025 US earnings figures."
+      },
+      {
+        "type": "feature",
+        "ch": "ch20",
+        "text": "New diagnostic helper (feigned symptoms or antisocial behavior: condition or disorder?) and a look-alike table for malingering, factitious disorder and conversion disorder. The grief look-alike now links to Chapter 20."
+      }
+    ]
+  },
+  {
     "version": "63.0.0",
     "date": "2026-11-09",
     "title": "Chapter 18: Disruptive, Impulse-Control, and Conduct Disorders",

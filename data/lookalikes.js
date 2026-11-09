@@ -203,7 +203,8 @@ KS.lookalikes = [
       { ch: "ch07", sec: "s7-bereavement", label: "Bereavement and grief" },
       { ch: "ch07", sec: "s7-mdd", label: "Major depressive disorder" },
       { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" },
-      { ch: "ch07", sec: "s7-other", label: "Other depressive disorders" }
+      { ch: "ch07", sec: "s7-other", label: "Other depressive disorders" },
+      { ch: "ch20", sec: "s20-bereave", label: "Bereavement as a condition of clinical attention" }
     ]
   },
   {
@@ -604,6 +605,30 @@ KS.lookalikes = [
       { ch: "ch15", sec: "s15-plmd", label: "Periodic limb movements and leg cramps" },
       { ch: "ch15", sec: "s15-move-other", label: "Drug-induced movement disorders" },
       { ch: "ch21-0", sec: "s210-park", label: "Parkinsonism, acute dystonia and akathisia" }
+    ]
+  },
+  {
+    id: "feigned-ddx",
+    title: "Malingering, factitious disorder and conversion disorder",
+    summary: "Three ways symptoms can outrun the findings, told apart by intent and motive.",
+    items: ["Malingering", "Partial malingering", "Factitious disorder", "Conversion disorder"],
+    rows: [
+      ["Symptoms produced on purpose?", "**Yes**, deliberately", "**Exaggerates** real symptoms", "**Yes**", "**No conscious volition**"],
+      ["Goal", "A **tangible gain** (money, avoiding duty, work or trial, drugs, shelter)", "A **tangible gain**", "The **sick role**", "None conscious"],
+      ["Stance in evaluation", "**Suspicious, uncooperative, aloof**; avoids tests, refuses treatment", "Variable", "Not described in this chapter", "**Friendly, cooperative, clinging**; welcomes tests, \"searching for an answer\""],
+      ["Story of onset", "**Extremely detailed and exacting**", "Variable", "Not described in this chapter", "**Gaps, inaccuracies and vagaries**"],
+      ["Work offered around the disability", "**Refuses**", "Variable", "Not described in this chapter", "**Accepts**"],
+      ["Mental disorder?", "**No**: a condition", "**No**: a condition, on top of real illness", "**Yes**", "**Yes**"]
+    ],
+    keys: [
+      "Motive separates the first three: **tangible gain** in malingering, the **sick role** in factitious disorder.",
+      "In both malingering and conversion disorder, **objective signs cannot account for the complaint**; Table 20-2 helps separate them.",
+      "A real disorder and malingering are **not mutually exclusive**.",
+      "Suspect malingering with a **medicolegal context**, a **gap between claim and findings**, **poor cooperation** and **antisocial personality disorder**."
+    ],
+    links: [
+      { ch: "ch20", sec: "s20-mal-dx", label: "Malingering: clues and motives" },
+      { ch: "ch20", sec: "s20-mal-ddx", label: "Malingering: differential diagnosis" }
     ]
   }
 ];
