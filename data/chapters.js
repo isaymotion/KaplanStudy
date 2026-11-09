@@ -207,6 +207,26 @@ KS.manifest = [
     summary: 'Indications, consultation and interviewing, the schools of family and couple therapy, family group and social network therapy, paradox and reframing, and the types, indications, contraindications and goals of couples therapy, with the APA guideline on family interventions.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch23-5', number: '23.5', title: 'Dialectical Behavior Therapy', short: 'DBT',
+    summary: 'Linehan\'s DBT for borderline personality disorder and beyond: the problem-behavior loop, five functions and four modes (skills group, individual therapy, telephone consultation, consultation team), team agreements and results, with the 2024 APA guideline.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-6', number: '23.6', title: 'Biofeedback', short: 'Biofeedback',
+    summary: 'Biofeedback theory and instruments, relaxation techniques, autogenic training, applied tension and applied relaxation, with indications, results and a recent neurofeedback meta-analysis.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-7', number: '23.7', title: 'Cognitive Therapy', short: 'Cognitive therapy',
+    summary: 'Beck\'s cognitive model and cognitive triad, structure of treatment, automatic thoughts, maladaptive assumptions, cognitive errors, behavioral techniques and indications, with the 2022 NICE depression guideline.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-8', number: '23.8', title: 'Behavior Therapy', short: 'Behavior therapy',
+    summary: 'Learning principles, systematic desensitization, graded exposure, flooding, participant modeling, virtual reality, assertiveness and social skills training, aversion therapy, EMDR, reinforcement and behavioral activation, with current PTSD guideline positions.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch23-9', number: '23.9', title: 'Hypnosis', short: 'Hypnosis',
+    summary: 'History and definition of hypnosis, hypnotizability as a trait, induction, and indications and contraindications, with a 2024 umbrella review of the evidence.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

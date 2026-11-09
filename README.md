@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 66.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 67.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -127,6 +127,11 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 23.2 | Brief Psychodynamic Psychotherapy | 6 | 59 | 58 |
 | 23.3 | Group Psychotherapy, Combined Individual and Group Psychotherapy, and Psychodrama | 8 | 63 | 85 |
 | 23.4 | Family Therapy and Couples Therapy | 5 | 65 | 65 |
+| 23.5 | Dialectical Behavior Therapy | 2 | 38 | 34 |
+| 23.6 | Biofeedback | 3 | 52 | 50 |
+| 23.7 | Cognitive Therapy | 3 | 65 | 55 |
+| 23.8 | Behavior Therapy | 8 | 108 | 104 |
+| 23.9 | Hypnosis | 4 | 57 | 49 |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Upgrading from version 59 (October 2026)

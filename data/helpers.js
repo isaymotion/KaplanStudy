@@ -5253,5 +5253,198 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "behtech",
+  "chapter": "ch23-8",
+  "title": "Which behavioral or cognitive technique?",
+  "summary": "Answer a few questions about the patient's main problem to see which method sections 23.5 to 23.9 point to: DBT, applied tension, ERP, flooding, graded exposure or desensitization, social skills training, or cognitive therapy and behavioral activation.",
+  "caution": "A teaching aid built from Kaplan & Sadock sections 23.5 to 23.9, not a treatment algorithm. Real plans combine methods and follow the patient's preferences, safety and current guidelines.",
+  "start": "bpd",
+  "nodes": {
+    "bpd": {
+      "q": "Is the main problem chronic self-injury or parasuicidal behavior in borderline personality disorder?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:dbt",
+          "note": "Emotion dysregulation with self-harm."
+        },
+        {
+          "label": "No",
+          "to": "blood",
+          "note": "Go on."
+        }
+      ]
+    },
+    "blood": {
+      "q": "Is it a blood or injury phobia in which the patient faints?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:tension",
+          "note": "Biphasic response: pressure rises, then drops."
+        },
+        {
+          "label": "No",
+          "to": "ocd",
+          "note": "Go on."
+        }
+      ]
+    },
+    "ocd": {
+      "q": "Are there obsessions with rituals (for example contamination and washing)?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:erp",
+          "note": "Obsessive-compulsive disorder."
+        },
+        {
+          "label": "No",
+          "to": "phobia",
+          "note": "Go on."
+        }
+      ]
+    },
+    "phobia": {
+      "q": "Is the anxiety set off by a clearly identifiable stimulus (a specific phobia or situation)?",
+      "options": [
+        {
+          "label": "Yes, and the patient wants the fastest route and is physically and psychologically robust",
+          "to": "r:flood",
+          "note": "No heart disease or fragile adaptation."
+        },
+        {
+          "label": "Yes, but intense anxiety would be risky or unacceptable",
+          "to": "r:graded",
+          "note": "A gradual approach."
+        },
+        {
+          "label": "No",
+          "to": "social",
+          "note": "Go on."
+        }
+      ]
+    },
+    "social": {
+      "q": "Is the problem a lack of social or assertive skills (for example in schizophrenia, social anxiety, or being unable to say no)?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:skills",
+          "note": "Skill deficit rather than a single feared object."
+        },
+        {
+          "label": "No: depression with negative thinking or withdrawal",
+          "to": "r:cog",
+          "note": "Mood disorder."
+        }
+      ]
+    }
+  },
+  "results": {
+    "dbt": {
+      "label": "Dialectical behavior therapy",
+      "dx": "DBT (23.5)",
+      "line": "Built by Marsha Linehan for chronically self-injuring patients with BPD; the psychosocial treatment with the strongest support in BPD.",
+      "points": [
+        "Four modes: skills group, individual therapy, brief telephone coaching and a weekly consultation team.",
+        "The team reviews life-threatening behavior first, then treatment-interfering, then quality-of-life behavior.",
+        "Since the book: the 2024 APA guideline recommends a structured psychotherapy for BPD, with medication only as a time-limited adjunct."
+      ],
+      "link": {
+        "ch": "ch23-5",
+        "sec": "s235-modes",
+        "label": "DBT modes"
+      }
+    },
+    "tension": {
+      "label": "Applied tension",
+      "dx": "Applied tension (23.6)",
+      "line": "The opposite of relaxation: tensing the large muscles raises blood pressure and prevents the faint in blood and injury phobia.",
+      "points": [
+        "Tense arms, legs and trunk for 10 to 15 seconds until the face feels warm, then release without relaxing.",
+        "Relaxation alone could worsen the drop in blood pressure."
+      ],
+      "link": {
+        "ch": "ch23-6",
+        "sec": "s236-relax",
+        "label": "Applied tension"
+      }
+    },
+    "erp": {
+      "label": "Exposure and response prevention",
+      "dx": "ERP (23.8)",
+      "line": "The first-choice behavioral treatment for OCD: face the feared cues and obsessions while rituals are blocked.",
+      "points": [
+        "Daily monitoring of rituals tracks progress.",
+        "Response prevention means blocking every behavior that lowers fear during exposure."
+      ],
+      "link": {
+        "ch": "ch23-8",
+        "sec": "s238-expo",
+        "label": "Exposure methods"
+      }
+    },
+    "flood": {
+      "label": "Flooding",
+      "dx": "Flooding (23.8)",
+      "line": "All-at-once exposure, usually in real life, kept up until the anxiety subsides; works best for specific phobias.",
+      "points": [
+        "Contraindicated when intense anxiety could harm the patient, such as heart disease or fragile psychological adaptation.",
+        "Leaving early reinforces both the anxiety and the avoidance.",
+        "Many patients refuse it because it is so uncomfortable."
+      ],
+      "link": {
+        "ch": "ch23-8",
+        "sec": "s238-expo",
+        "label": "Flooding"
+      }
+    },
+    "graded": {
+      "label": "Graded exposure or systematic desensitization",
+      "dx": "Graded exposure / desensitization (23.8)",
+      "line": "Climb a hierarchy step by step: in real life without relaxation (graded exposure) or in imagination paired with relaxation (Wolpe's systematic desensitization).",
+      "points": [
+        "Desensitization works by reciprocal inhibition and suits a clearly identifiable feared stimulus.",
+        "Participant modeling (watching or being accompanied by a fearless model) is another gradual option."
+      ],
+      "link": {
+        "ch": "ch23-8",
+        "sec": "s238-desens",
+        "label": "Systematic desensitization"
+      }
+    },
+    "skills": {
+      "label": "Social skills or assertiveness training",
+      "dx": "Social skills training (23.8)",
+      "line": "Breaks social behavior into skill areas, components and concrete steps that are practiced in role-play scenes.",
+      "points": [
+        "Used for patients with schizophrenia (negative symptoms) and depression, among others.",
+        "Assertiveness training covers limit setting with pushy people and commercial situations such as resisting a sales pitch or returning a faulty product."
+      ],
+      "link": {
+        "ch": "ch23-8",
+        "sec": "s238-social",
+        "label": "Social skills training"
+      }
+    },
+    "cog": {
+      "label": "Cognitive therapy or behavioral activation",
+      "dx": "Cognitive therapy / behavioral activation (23.7, 23.8)",
+      "line": "Cognitive therapy tests automatic thoughts and assumptions; behavioral activation reconnects the patient with rewarding activities.",
+      "points": [
+        "Activity scheduling with mastery and pleasure ratings starts early in cognitive therapy.",
+        "A short course of about 6 to 12 sessions suits uncomplicated depression or anxiety.",
+        "Since the book: NICE (2022) lists CBT and behavioural activation among first-line options for depression."
+      ],
+      "link": {
+        "ch": "ch23-7",
+        "sec": "s237-didactic",
+        "label": "Cognitive therapy techniques"
+      }
+    }
+  }
 }
 ]);

@@ -4,6 +4,12 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 23.5 to 23.9, November 2026 */
+    { m: "Practice Guideline for the Treatment of Patients With Borderline Personality Disorder, 2024", label: "APA Practice Guideline for Borderline Personality Disorder (2024)", url: "https://psychiatryonline.org/doi/10.1176/appi.books.9780890428009.apapgpersondisorder02" },
+    { m: "Westwood SJ et al.", label: "Westwood SJ et al., JAMA Psychiatry 2025 (neurofeedback for ADHD)", url: "https://doi.org/10.1001/jamapsychiatry.2024.3702" },
+    { m: "NICE guideline NG222", label: "NICE NG222, Depression in adults (2022)", url: "https://www.nice.org.uk/guidance/ng222" },
+    { m: "Schnurr PP et al.", label: "Schnurr PP et al., Ann Intern Med 2024 (VA/DoD PTSD guideline synopsis)", url: "https://doi.org/10.7326/M23-2757" },
+    { m: "Rosendahl J, Alldredge CT", label: "Rosendahl J et al., Front Psychol 2024 (hypnosis umbrella review)", url: "https://doi.org/10.3389/fpsyg.2023.1330238" },
     /* Chapter 23.1 to 23.4 (psychotherapy), November 2026 */
     { m: "Leichsenring F et al., The status of psychodynamic", label: "Leichsenring F et al., World Psychiatry 2023 (umbrella review)", url: "https://doi.org/10.1002/wps.21104" },
     { m: "Wienicke FJ et al.", label: "Wienicke FJ et al., Clin Psychol Rev 2023 (IPD meta-analysis)", url: "https://doi.org/10.1016/j.cpr.2023.102269" },

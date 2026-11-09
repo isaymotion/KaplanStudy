@@ -735,5 +735,82 @@ KS.lookalikes = [
       "label": "Sifneos"
     }
   ]
+},
+{
+  "id": "exposure-methods",
+  "title": "Exposure-based methods compared",
+  "summary": "How systematic desensitization, graded exposure, flooding, participant modeling and ERP differ (section 23.8).",
+  "items": [
+    "Systematic desensitization",
+    "Graded exposure",
+    "Flooding",
+    "Participant modeling",
+    "ERP"
+  ],
+  "rows": [
+    [
+      "Key idea",
+      "**Reciprocal inhibition**: relaxation suppresses anxiety (Wolpe)",
+      "Learn by doing that **no harm follows**",
+      "**Block escape** until anxiety extinguishes",
+      "**Imitate a fearless model**",
+      "Expose to cues and **block rituals**"
+    ],
+    [
+      "Relaxation training",
+      "**Yes**",
+      "No",
+      "No",
+      "No",
+      "No"
+    ],
+    [
+      "Hierarchy",
+      "**Yes**, imagined scenes",
+      "**Yes**, real life",
+      "**None**: worst first",
+      "Gradual, at the patient's pace",
+      "Graded or prolonged exposure"
+    ],
+    [
+      "Classic use",
+      "Phobias with a **clear stimulus**",
+      "Phobias",
+      "**Specific phobias**",
+      "Phobic children; **agoraphobia** (therapist accompanies)",
+      "**OCD** (first choice)"
+    ],
+    [
+      "Main caution",
+      "Needs a clearly identifiable stimulus",
+      "Slower",
+      "Contraindicated in **heart disease** or fragile adaptation; leaving early worsens fear",
+      "Needs a credible model",
+      "Every fear-lowering behavior must be blocked"
+    ]
+  ],
+  "keys": [
+    "**Relaxation plus imagined hierarchy** means systematic desensitization.",
+    "**Worst scene first, no escape** means flooding.",
+    "**Watching a calm peer** means participant modeling.",
+    "**Rituals blocked** means response prevention."
+  ],
+  "links": [
+    {
+      "ch": "ch23-8",
+      "sec": "s238-desens",
+      "label": "Systematic desensitization"
+    },
+    {
+      "ch": "ch23-8",
+      "sec": "s238-expo",
+      "label": "Graded exposure and flooding"
+    },
+    {
+      "ch": "ch23-8",
+      "sec": "s238-model",
+      "label": "Participant modeling"
+    }
+  ]
 }
 ];

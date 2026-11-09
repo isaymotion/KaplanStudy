@@ -13,6 +13,59 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "67.0.0",
+    "date": "2026-11-09",
+    "title": "Chapter 23 continued: sections 23.5 to 23.9 (DBT to hypnosis)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch23-5",
+        "text": "New section 23.5, Dialectical Behavior Therapy: Linehan's model, the problem-behavior loop (Figure 23-1), the five functions and four modes, consultation team agreements (Table 23-7) and results, with 10 clinical cases.",
+        "href": "#/c/ch23-5/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-6",
+        "text": "New section 23.6, Biofeedback: theory and instruments, relaxation techniques (Table 23-8), autogenic training (Table 23-9), applied tension and applied relaxation (Table 23-10), with 17 clinical cases.",
+        "href": "#/c/ch23-6/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-7",
+        "text": "New section 23.7, Cognitive Therapy: the cognitive model (Figure 23-2), automatic thoughts and assumptions, cognitive distortions (Figure 23-3, Table 23-11), the thought record (Figure 23-4) and indications, with 19 clinical cases.",
+        "href": "#/c/ch23-7/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-8",
+        "text": "New section 23.8, Behavior Therapy: history, systematic desensitization, graded exposure, flooding, participant modeling, virtual reality, assertiveness and social skills training (Table 23-12), aversion therapy, EMDR, reinforcement and behavioral activation, with 37 clinical cases.",
+        "href": "#/c/ch23-8/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch23-9",
+        "text": "New section 23.9, Hypnosis: history, hypnotizability, induction, indications and contraindications, with 18 clinical cases.",
+        "href": "#/c/ch23-9/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "update",
+        "ch": "ch23-5",
+        "text": "Updates since the book: the 2024 APA guideline for borderline personality disorder (23.5), a 2025 blinded-outcome meta-analysis of neurofeedback for ADHD (23.6), the 2022 NICE depression guideline (23.7), the 2023 VA/DoD PTSD guideline on EMDR and exposure (23.8) and a 2024 umbrella review of hypnosis (23.9)."
+      },
+      {
+        "type": "feature",
+        "text": "New decision helper \"Which behavioral or cognitive technique?\" and a look-alike comparing exposure-based methods. Every case has explanations for the wrong answers, and every section has end-of-section checks.",
+        "href": "#/helpers/behtech",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "66.0.0",
     "date": "2026-11-09",
     "title": "Chapter 23 begins: sections 23.1 to 23.4 (psychotherapy)",

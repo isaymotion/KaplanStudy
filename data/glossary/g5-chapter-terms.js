@@ -683,7 +683,26 @@ KS.glossary = (KS.glossary || []).concat([
   ["social network therapy", "Group sessions that bring a disturbed patient together with the people in his or her social community.", "Ch 23.4"],
   ["family group therapy", "Treatment of several families together in one group so that they can share problems and compare coping.", "Ch 23.4"],
   ["conjoint therapy", "Couples therapy in which one or two therapists see both partners in joint sessions; the most common method.", "Ch 23.4"],
-  ["divorce therapy", "Continued sessions in which a couple works through separation and divorce when the marriage proves nonviable.", "Ch 23.4"]
+  ["divorce therapy", "Continued sessions in which a couple works through separation and divorce when the marriage proves nonviable.", "Ch 23.4"],
+  ["biofeedback", "Recording a body function (muscle activity, brain waves, skin conductance or temperature) and feeding it back to the patient so that he or she learns to control it; based on operant conditioning.", "Ch 23.6"],
+  ["neurofeedback", "Biofeedback of brain electrical activity (EEG) used to train self-regulation of brain activity.", "Ch 23.6"],
+  ["progressive relaxation", "Edmund Jacobson's method of tensing and then releasing muscle groups in turn to reach deep relaxation.", "Ch 23.6"],
+  ["autogenic training", "A relaxation method in which the patient repeats self-statements on themes such as heaviness and warmth of the limbs.", "Ch 23.6"],
+  ["applied tension", "Tensing the large muscles to raise blood pressure and prevent fainting in blood and injury phobia; the opposite of relaxation.", "Ch 23.6"],
+  ["applied relaxation", "Öst's method of learning progressively quicker relaxation and then using it in everyday anxiety-provoking situations.", "Ch 23.6"],
+  ["automatic thoughts", "Quick, unbidden thoughts or images between an event and the emotional reaction to it; the first target of cognitive therapy.", "Ch 23.7"],
+  ["cognitive distortion", "A systematic error in thinking, such as catastrophizing, overgeneralizing or all-or-nothing thinking, that keeps negative emotions going.", "Ch 23.7"],
+  ["thought record", "A form on which the patient writes the situation, automatic thoughts, emotions and an alternative response, with belief ratings before and after.", "Ch 23.7"],
+  ["reciprocal inhibition", "Wolpe's principle that a response incompatible with anxiety, such as relaxation, suppresses it; the basis of systematic desensitization.", "Ch 23.8"],
+  ["graded exposure", "Exposure to a feared object or situation step by step up a real-life hierarchy, without relaxation training.", "Ch 23.8"],
+  ["flooding", "Exposure to the most feared situation all at once, without a hierarchy, until anxiety subsides; also called implosion when done in imagination.", "Ch 23.8"],
+  ["participant modeling", "A method in which the patient learns a new behavior by watching and then imitating a fearless model, often with the therapist alongside.", "Ch 23.8"],
+  ["response prevention", "Blocking the rituals or other fear-lowering behaviors during exposure, as in treatment of OCD.", "Ch 23.8"],
+  ["behavior rehearsal", "Role-playing a real-life problem in session, with the therapist observing and directing, before trying it outside.", "Ch 23.8"],
+  ["aversion therapy", "Pairing an unwanted behavior with a noxious stimulus so that the behavior becomes less likely.", "Ch 23.8"],
+  ["token economy", "Operant program in which patients earn tokens for target behaviors and exchange them for rewards.", "Ch 23.8"],
+  ["behavioral activation", "Structured scheduling of activities that bring the patient back into contact with rewarding contingencies, used for depression.", "Ch 23.8"],
+  ["self-hypnosis", "Inducing the hypnotic state in oneself, often taught to patients after hypnosis with a clinician.", "Ch 23.9"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1010,5 +1029,13 @@ KS.glossaryAliases = {
   "auxiliary egos": "auxiliary ego",
   "genograms": "genogram",
   "psychodramas": "psychodrama",
-  "therapeutic factor": "therapeutic factors"
+  "therapeutic factor": "therapeutic factors",
+  "jacobson relaxation": "progressive relaxation",
+  "automatic thought": "automatic thoughts",
+  "cognitive distortions": "cognitive distortion",
+  "cognitive errors": "cognitive distortion",
+  "thought records": "thought record",
+  "implosion": "flooding",
+  "token economies": "token economy",
+  "exposure hierarchy": "graded exposure"
 };
