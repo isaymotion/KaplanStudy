@@ -1,6 +1,6 @@
 # Handoff: Kaplan & Sadock Study Companion
 
-Last updated 2026-11-09, after release **62.0.0** (`76f2138`): **Chapter 17, Gender Dysphoria, Gender Identity, and Related Conditions**. Release 61.0.0 (`ea101a2`) added Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapters 18 and 20 (recipe B, then A). Update the status table and next steps at the end of every unit.
+Last updated 2026-11-09, after release **63.0.0** (`cd90432`): **Chapter 18, Disruptive, Impulse-Control, and Conduct Disorders**. Release 62.0.0 (`76f2138`) added Chapter 17 and 61.0.0 (`ea101a2`) Chapter 16. A parallel chat shipped release 60.0.0 (`c0f7fbd`, Nov 5): the **design refresh**, which also moved versions to semver and changed the cache prefix (section 2). Next work: Chapter 20 (recipe B, then A). Update the status table and next steps at the end of every unit.
 
 ## 1. Project and audience
 - A static, offline-capable study web app built from Kaplan & Sadock's *Synopsis of Psychiatry*, 12th ed., for psychiatry residents (Philippines; ABPN-style board prep). The owner is Isabella Navarro, MD.
@@ -62,15 +62,17 @@ Last updated 2026-11-09, after release **62.0.0** (`76f2138`): **Chapter 17, Gen
 1. Pull `main` and check `data/chapters.js`, because a parallel chat may have built the chapter.
 2. **Extract the text.** From the PDF: `pip install pymupdf --break-system-packages`, find the chapter's page range with `get_toc()`, extract with `page.get_text()`, and list headings by bold sans-serif spans. Some tables are images: extract them with `get_images()` / `Pixmap`, view them, and transcribe them yourself into bracketed notes in the source chunks. Figures likewise; check any figure description against the image.
 3. Split the text into about 6 chunks of 3,000 to 5,000 words in `/home/claude/chNNwork/src/`. Write `SPEC.md` (block types, style, card format) and `OUTLINE.md` (fixed section ids per work file); copy them from `work/ch16work/` and edit.
-4. **Draft with subagents:** one Sonnet agent per chunk writes `gN.js` (one part `{title, sections}` or several `{parts:[...]}`) and `cN.js` (`{hy, dx, cs, ph, fd}`). Give each agent distinct id prefixes **and distinct case prefixes across files** (Ch 16 had a `c16-dv` clash that the build caught as DUP).
+   **Larger targets (the user's choice from Ch 18 on):** sections of 350 to 900 words with at least 3 callouts (exam, pearl, caution); per chunk about 25 or more cases and 25 or more diagnosis cards, plus pharmacology and foundations cards where the chunk supports them; a comparison table wherever the book contrasts disorders; every book table reproduced cell by cell. The "Chapter 18 rules" block in `work/ch18work/SPEC.md` is the template. The user chose **Opus** drafting agents for Ch 18 (`model: "opus"`); keep using Opus for chapter drafts unless told otherwise.
+4. **Draft with subagents:** one agent per chunk (Opus, see above) writes `gN.js` (one part `{title, sections}` or several `{parts:[...]}`) and `cN.js` (`{hy, dx, cs, ph, fd}`). Give each agent distinct id prefixes **and distinct case prefixes across files** (Ch 16 had a `c16-dv` clash that the build caught as DUP).
 5. **Review every draft yourself** against the source (`node /home/claude/tools/show-work.js gN.js` prints a work file compactly). Grep every number. Watch for garbled book tables turned into wrong facts (Ch 16: the voyeurism and pedophilia age "exclusions").
 6. Research post-publication changes by web search; write them as `updates.js` (`{chapter, guide:[{sec, block:{year, title, text, source}}]}`) and add each source to `data/sources.js`.
+   **Coverage audit (mandatory since Ch 18):** after the build, run `python3 tools/coverage-audit.py /home/claude/pdfsrc/chNN-clean.txt /home/claude/kaplanstudy/data/chNN 0.6`, then again at `0.85`. It flags every book sentence whose content words are mostly missing from the built chapter and every book number that never appears. Read each flag: fill true gaps (add to the work files and rebuild) and ignore paraphrase misses and vignette color. Ch 18 had 3 flags at 0.6 (credit lines and one vignette detail) and no missing numbers. Also check that tables split across source chunks reach the right section: Ch 18's Table 18-3 fell in chunk 2 while its section was in chunk 1, and had to be added by hand.
 7. Copy the previous `build_<ch>.js` (handles `parts` arrays since `build_ch16.js`), set intro and objectives, build, then `node tools/patch_updates.js chNNwork/updates.js`. Try a few `SEED` values for an even answer spread and fix the best one in the script.
 8. Register: the manifest in `chapters.js`, the file list in `sw.js`, `CHS` in `fulltest.py`, the chapter list in `srcs-check.js` (`/tmp/srcs4.js`), a helper in `helpers.js`, a look-alike in `lookalikes.js`, glossary terms and aliases, the changelog and the README chapter row (sections, high-yield items, cards).
 9. Add the learning layer with recipe A.
 10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
 
-Built so far: Chapters 1 to 17, 19, 21.0 to 21.11 and 25.3. **Not yet built: 18, 20 and the rest of the book.**
+Built so far: Chapters 1 to 19, 21.0 to 21.11 and 25.3. **Not yet built: 20 and the rest of the book.**
 
 **Contested topics** (Ch 17 set the pattern): write update boxes that attribute every position to the body that holds it, with dates, put differing positions side by side, add no verdict of the app's own, and end with "check current local rules and guidelines" where law differs by country. Keep the guide's own text to what the book says, attributed where the book takes a stance. Cut any agent line that goes beyond the book on a contested point (for example, claims about the reversibility of puberty blockers).
 
@@ -111,8 +113,9 @@ After changing tools, copy them back into the dev-tools worktree, then commit an
 | Ch 15 | 50/50 | 40/40 | Complete (built with its learning layer in a parallel chat) |
 | Ch 16 | 50/50 | 42/42 | Complete (release 61.0.0; built from the PDF with recipes B and A) |
 | Ch 17 | 30/30 | 13/13 | Complete (release 62.0.0; 7 update boxes on a contested area; no helper, a look-alike instead) |
+| Ch 18 | 111/111 | 15/15 | Complete (release 63.0.0; larger targets with Opus drafters and a coverage audit; 6 update boxes, helper `impdx`, look-alikes `theft-ddx` and `firesetting-ddx`) |
 
-Totals: **1,273/1,273 cases and 761/761 sections**, with all tests passing on `76f2138`. Latest changelog version **62.0.0**; `sw.js` VERSION is `PREFIX + '62.0.0'`.
+Totals: **1,384/1,384 cases and 776/776 sections**, with all tests passing on `cd90432`. Latest changelog version **63.0.0**; `sw.js` VERSION is `PREFIX + '63.0.0'`.
 
 ### Features built (recipe C)
 | Feature | Route | Release | Notes |
@@ -128,8 +131,8 @@ Totals: **1,273/1,273 cases and 761/761 sections**, with all tests passing on `7
 | Resident handout | `#/teach/handout/<id>[/all]` | 57 | `renderTeachHandout`. From the session summary ("Resident handout"). Revisit items (or all polled) with answer, why and why-not lines, topic table; no per-choice vote counts. Chapter-case sessions list cases with teaching points. Uses `window.print()`. |
 
 ## 7. Next steps
-1. **Chapter 18** (Disruptive, Impulse-Control, and Conduct Disorders; PDF pages 1758 to about 1839), then **Chapter 20** (Other Conditions that May be a Focus of Clinical Attention, from page 1840): recipe B, then recipe A. Chapter 18 is long; plan about 6 work files as for Chapter 16. Pull `main` first and check which chapters a parallel chat has built.
-2. Use changelog version **63.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
+1. **Chapter 20** (Other Conditions that May be a Focus of Clinical Attention, from PDF page 1840): recipe B with the larger targets, Opus drafters and the coverage audit, then recipe A. Pull `main` first and check which chapters a parallel chat has built.
+2. Use changelog version **64.0.0** for the next release. Take it from the pulled `data/changelog.js`, not from this doc.
 3. The Ch 17 update boxes on minors describe a fast-moving area (UK PATHWAYS trial, Endocrine Society and AAP guideline updates in progress). Recheck them by web search when a later release touches Chapter 17, and add a correction entry to the changelog if anything changed.
 4. Feature follow-ups only if the user asks: more scales (YMRS needs a licence check; the MoCA is not free), confidence ratings in flashcard daily review, Tagalog versions of the scales.
 
@@ -148,7 +151,10 @@ Totals: **1,273/1,273 cases and 761/761 sections**, with all tests passing on `7
 - `gh` GraphQL is blocked; use `gh api repos/...` (REST).
 - The remote says "repository moved" on push. It is harmless (it redirects to `isaymotion/KaplanStudy`).
 - **The design refresh renamed controls.** `e2e.py` now uses `#textSizeBtn` and `input[name=textSize]`; `e2e_tools.py` accepts "version" in the report link. If a later redesign breaks a selector, fix the test, not the app.
-- `fulltest.py` `CHS` had missed Chapter 15; it now lists 15, 16 and 17. Check it when adding a chapter.
+- `fulltest.py` `CHS` had missed Chapter 15; it now lists 15 to 18. Check it when adding a chapter.
+- `fulltest.py` takes over 2 minutes now: run it in the background and wait for `errors:` in its output.
+- Agents copy the book's evidence wording ("open-label only") into callouts, tables and stems; after adding an update box that changes the evidence, grep the guide and cards for the old wording and align it (Ch 18 naltrexone).
+- `rsync` is not installed: copy work folders with `tar --exclude=./src`.
 - Fixing a case stem or `why` after the learning layer exists: edit both the work file and `data/chNN/cards-cases.js` directly. Do not rebuild for this: the build reshuffles choices, which could break the whyNot alignment.
 - **Push access:** cloning works without attaching the repo, but pushing does not (git proxy 403). Claude cannot attach the repo with push access on its own initiative; the request is blocked. At the start of a session, ask the user to say "Add isaymotion/KaplanStudy to this session with push access", then call `add_repo` with `access: "push"`. If a clone already exists at `/home/claude/kaplanstudy`, keep it; do not re-clone.
 - The first Bash call of a session may be refused with "the classifier gave no verdict"; repeating the identical call once works.
