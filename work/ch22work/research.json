@@ -1,0 +1,170 @@
+[
+ {
+  "item": "1a NeuroStar 2008",
+  "fact": "FDA De Novo DEN070003 (granted) and then NeuroStar TMS Therapy System 510(k) K083538 (SESE). Population: MDD patients who failed at least one antidepressant and are not currently on antidepressant therapy (adults).",
+  "date": "DEN070003 2008-10-07; K083538 2008-12-16",
+  "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm?ID=K083538",
+  "confirmed": true,
+  "note": "Date/number for K083538 read on FDA page. Population wording and De Novo date read on the fda.innolitics.com mirror (https://fda.innolitics.com/device/DEN070003), not FDA's own page (FDA DEN pages failed to load). Note: the first clearance was a De Novo in Oct 2008, K083538 followed in Dec 2008."
+ },
+ {
+  "item": "1b Deep TMS MDD",
+  "fact": "BrainsWay Deep TMS System 510(k) K122288 cleared for adults with MDD who failed to achieve satisfactory improvement from prior antidepressant in current episode.",
+  "date": "2013-01-07",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf12/K122288.pdf",
+  "confirmed": true,
+  "note": "Letter date Jan 7, 2013."
+ },
+ {
+  "item": "1c Deep TMS OCD",
+  "fact": "De Novo DEN170078 order dated Aug 16, 2018 (Class II, 21 CFR 882.5802, product code QCI), adjunct for adults with OCD. Follow-on 510(k) K183303 decided Mar 8, 2019.",
+  "date": "2018-08-16 (De Novo); 2019-03-08 (K183303)",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf17/DEN170078.pdf",
+  "confirmed": true,
+  "note": "K183303 letter read at https://www.accessdata.fda.gov/cdrh_docs/pdf18/K183303.pdf; FDA 510(k) page https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K183303. Federal Register 2019-04709 (84 FR, Mar 14 2019) classifies 882.5802 but did not mention OCD."
+ },
+ {
+  "item": "1d iTBS clearance 2018",
+  "fact": "First iTBS clearance read: MagVita TMS Therapy System w/ Theta Burst Stimulation (Tonica Elektronik/MagVenture), 510(k) K173620, adult MDD after failure of prior antidepressant, letter dated Aug 14, 2018.",
+  "date": "2018-08-14",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K173620.pdf",
+  "confirmed": true,
+  "note": "Did not check whether any other device was cleared for iTBS earlier; 'first' not verified."
+ },
+ {
+  "item": "1e THREE-D",
+  "fact": "Blumberger et al., Lancet 2018;391:1683-92. Randomised, multicentre, non-inferiority; 414 allocated (205 10 Hz rTMS, 209 iTBS); primary HRSD-17 change. HRSD-17 23.5->13.4 (10 Hz) vs 23.6->13.4 (iTBS); adjusted difference 0.103 (lower 95% CI -1.16), iTBS non-inferior (margin 2.25). Session ~3 min vs 37.5 min.",
+  "date": "2018-04-26 (online)",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29726344%20AND%20SRC:MED&resultType=core&format=json",
+  "confirmed": true,
+  "note": "Read via Europe PMC record of PMID 29726344 (PubMed and PMC blocked by captcha). Commentary at https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6026669/ agreed."
+ },
+ {
+  "item": "1f BrainsWay smoking cessation",
+  "fact": "BrainsWay Deep TMS cleared as aid in short-term smoking cessation for adults, 510(k) K200957. Original letter Aug 21, 2020; FDA page read is an administrative update letter dated Jun 2, 2021 (new product code).",
+  "date": "2020-08-21",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K200957.pdf",
+  "confirmed": true,
+  "note": "Original 2020 date is stated inside the 2021 letter."
+ },
+ {
+  "item": "1g SAINT / SNT",
+  "fact": "Magnus Neuromodulation System with SAINT Technology, 510(k) K220177, decision Sep 1, 2022 (not Aug). Adults with MDD who failed prior antidepressant in current episode. Protocol in 510(k): iTBS 10 sessions/day (~10 min each, 1,800 pulses, 90% MT), 5 days = 50 sessions, 90,000 pulses total, MRI-guided targeting. Predicate Nexstim NBT K182700.",
+  "date": "2022-09-01",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf22/K220177.pdf",
+  "confirmed": true,
+  "note": "Decision date also on https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K220177. Note: cleared for adults with MDD, not specified as treatment-resistant beyond failing one antidepressant."
+ },
+ {
+  "item": "1h SAINT RCT",
+  "fact": "Cole et al., Am J Psychiatry 2022: MADRS fell 62% after 5 days SAINT vs 14% sham (per secondary report).",
+  "date": "2022",
+  "url": "https://alert.psychnews.org/2022/09/fda-clears-novel-rapid-acting-tms.html",
+  "confirmed": false,
+  "note": "Secondary source (Psychiatric News); journal article not opened. Percentages (and remission 78.6% vs 13.3%, N=29 in the RCT) should be checked against Cole 2022 Am J Psychiatry before printing."
+ },
+ {
+  "item": "1i NeuroStar adolescents",
+  "fact": "K231926 NeuroStar Advanced Therapy System, adjunct for MDD in adolescents age 15-21; decision Mar 22, 2024. Applicant Neuronetics. Study population 12-21 but indication limited to 15-21 (only 10 patients aged 12-14). Evidence was real-world TrakStar data (1,169 adolescents per company release).",
+  "date": "2024-03-22",
+  "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231926.pdf",
+  "confirmed": true,
+  "note": "Age 15-21 and letter date read on FDA PDF. Study-population detail from innolitics mirror (https://fda.innolitics.com/device/K231926). The 1,169/78% figure from press release https://www.nasdaq.com/press-release/neurostarr-advanced-therapy-receives-fda-clearance-as-a-first-line-add-on-treatment (company, not FDA)."
+ },
+ {
+  "item": "2 ECT reclassification",
+  "fact": "Final order, 83 FR 66103 (Dec 26, 2018), Docket FDA-2014-N-1210, 21 CFR 882 (product code GXC), effective Dec 26, 2018. Class II with special controls: ECT for catatonia, or severe MDE associated with MDD or bipolar disorder, in patients age 13+ who are treatment-resistant OR require rapid response due to severity of psychiatric/medical condition. Remain Class III (PMA): schizophrenia, schizoaffective, schizophreniform, bipolar manic states; catatonia/severe MDE under age 13; and age 13+ not treatment-resistant and not needing rapid response. Proposed order had age 18 and no catatonia.",
+  "date": "2018-12-26 (FDA Brief says published Dec 21, effective Dec 26)",
+  "url": "https://www.govinfo.gov/content/pkg/FR-2018-12-26/html/2018-27809.htm",
+  "confirmed": true,
+  "note": "Read on govinfo FR page (first 100k chars; implementation section not read). FDA Brief https://www.fda.gov/news-events/fda-brief/fda-brief-fda-takes-action-ensure-regulation-electroconvulsive-therapy-devices-better-protects. A companion FR doc 2018-27768 (PMA requirement) exists; not opened."
+ },
+ {
+  "item": "3 ELEKT-D",
+  "fact": "Anand et al., NEJM 2023;388:2315-25 (online May 24, 2023). Open-label RCT, noninferiority, 403 randomized at 5 sites (200 ketamine, 203 ECT; 195 and 170 treated). Treatment-resistant MDD without psychosis. ECT 3x/week vs IV ketamine 0.5 mg/kg over 40 min 2x/week for 3 weeks. Primary: QIDS-SR16 response (>=50%). Response 55.4% ketamine vs 41.2% ECT, difference 14.2 pts (95% CI 3.9-24.2), noninferior (margin -10, P<0.001). ECT: decline in delayed verbal recall (HVLT-R mean change -9.7 vs -0.9) with gradual recovery; QoL similar; ECT musculoskeletal AEs, ketamine dissociation. NCT03113968.",
+  "date": "2023-05-24",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:37224232%20AND%20SRC:MED&resultType=core&format=json",
+  "confirmed": true,
+  "note": "Europe PMC record of PMID 37224232; NEJM site itself did not load. Ketamine at 0.5 mg/kg; ECT was right unilateral ultrabrief initial (not read from page - verify)."
+ },
+ {
+  "item": "4a VNS NCD",
+  "fact": "CMS NCD 160.18: coverage of FDA-approved VNS for TRD only under Coverage with Evidence Development, in a CMS-approved double-blind randomized placebo-controlled trial with >=1 year follow-up (may extend to prospective longitudinal study); non-covered outside CED. Services on/after Feb 15, 2019. Study criteria: MDE >=2 yr or >=4 episodes, 4 failed adequate treatments, stable meds 4 weeks, exclusions (psychosis, rapid-cycling bipolar, etc.); placebo group offered active VNS at end; replacement device covered for battery end-of-life/malfunction. Page shows 'older version' banner.",
+  "date": "2019-02-15",
+  "url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=230",
+  "confirmed": true,
+  "note": "Page flagged as possibly outdated; check MCD for newest version. Nonspecific: prior statement said 'at least four years' garbled in fetch - ignore."
+ },
+ {
+  "item": "4b RECOVER",
+  "fact": "Blinded 12-month unipolar cohort missed primary endpoint (MADRS response active vs sham, p<0.023 threshold) due to strong sham response; some secondaries significant. Announced June 6, 2024. Jan 13, 2026 Int J Neuropsychopharmacol (doi 10.1093/ijnp/pyaf080) 24-month open-label analysis of 214 actively-treated: ~69% response (>=30%) at 12 mo on at least one measure; 39 (>20%) in remission at 24 mo. Bipolar cohort ongoing as of 2024.",
+  "date": "2024-06-06; 2026-01-13",
+  "url": "https://www.businesswire.com/news/home/20240606200161/en",
+  "confirmed": true,
+  "note": "2024 result read on LivaNova press release (company). 2026 paper described in https://www.news-medical.net/news/20260113/Implanted-vagus-nerve-stimulation-device-offers-lasting-relief-for-severe-depression.aspx (secondary; journal not opened). Whether CMS has reconsidered the NCD after 2024 not verified."
+ },
+ {
+  "item": "5 CES final order",
+  "fact": "Final order 84 FR 70003 (Dec 20, 2019), Docket FDA-2014-N-1209, 21 CFR 882: CES for anxiety and insomnia = Class II with special controls (510(k)); CES for depression = Class III, PMA required (due Mar 19, 2020). Existing anxiety/insomnia devices had until Dec 21, 2020 for 510(k) amendment.",
+  "date": "2019-12-20",
+  "url": "https://www.federalregister.gov/documents/2019/12/20/2019-27295/neurological-devices-reclassification-of-cranial-electrotherapy-stimulator-devices-intended-to-treat",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "item": "6 tDCS depression",
+  "fact": "CONFIRMED but as PMA approval, not clearance: Flow Neuroscience FL-100, PMA P230024, decision Dec 8, 2025, product code JXK (cranial electrotherapy stimulator group; FDA lists it as a CES-type device for depression). Indication: moderate to severe MDD in current episode, monotherapy or adjunctive, age 18+, not treatment-refractory to medication. SSED: Empower RCT week 10 (mITT 87 active/86 sham): primary HDRS-17 difference 2.3 pts (p=0.012); MADRS change -11.3 vs -7.7; response 63.0% vs 31.6%; remission 57.5% vs 29.4% (MADRS secondary, nominal p). Unblinding: 77.6% active guessed correctly vs 40.7% sham. One supplement S001.",
+  "date": "2025-12-08",
+  "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P230024",
+  "confirmed": true,
+  "note": "SSED read at https://www.accessdata.fda.gov/cdrh_docs/pdf23/P230024B.pdf. Home-use. Press (yahoo) said 'cleared'; correct term is approved (PMA)."
+ },
+ {
+  "item": "7a DBS OCD HDE",
+  "fact": "Medtronic Activa/Reclaim DBS Therapy for OCD, HDE H050003; FDA page decision date 02/10/2009 (SSPB text and press cite Feb 19, 2009). Indication: bilateral stimulation of the anterior limb of the internal capsule, adjunct to medication and alternative to anterior capsulotomy, adults with chronic severe treatment-resistant OCD who failed at least 3 SSRIs. Evidence: 26 patients at 4 centers; 12-mo YBOCS reduction ~41%; 10 full responders (>=35% reduction) and 4 partial among n=21 at 12 months; randomized blinded phase 62% vs 8%. Serious AEs 42.3%. HDE status = probable benefit, not proven effectiveness.",
+  "date": "2009-02-10 (FDA DB) / 2009-02-19 (SSPB)",
+  "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=375533",
+  "confirmed": true,
+  "note": "Date discrepancy in sources; verify against approval order. SSPB: https://www.accessdata.fda.gov/cdrh_docs/pdf5/H050003b.pdf. IRB oversight condition (standard for HDE) not stated in summary read; not verified. Target is ALIC/VC, correct usage 'anterior limb of internal capsule'."
+ },
+ {
+  "item": "7b BROADEN",
+  "fact": "Holtzheimer et al., Lancet Psychiatry 2017;4(11):839-849. Multisite randomised sham-controlled SCC white-matter DBS for TRD (NCT00617162). 90 randomised (60 active, 30 sham) before futility analysis; response (>=40% reduction months 4-6) 20% (12/60) vs 17% (5/30), not significant. 6 months double-blind then open label. Trial stopped after futility analysis (stopping not confirmed on page read).",
+  "date": "2017-11-01",
+  "url": "https://www.medthority.com/journals/mood-disorders/subcallosal-cingulate-deep-brain-stimulation-for-treatment-resistant-depression--a-multisite--randomised--sham-controlled-trial-/",
+  "confirmed": true,
+  "note": "Abstract-level page on an aggregator; journal not opened. Early termination reported widely (e.g. neurocritic blog) but not confirmed on cited page."
+ },
+ {
+  "item": "7c RECLAIM",
+  "fact": "Dougherty et al., Biol Psychiatry 2015;78(4):240-248. Randomized sham-controlled, VC/VS DBS, N=30 TRD (15 active, 14 sham analysed), 16-wk controlled phase; response (>=50% MADRS) 20% vs 14.3%, not significant; open-label response 20%, 26.7%, 23.3% at 12/18/24 months.",
+  "date": "2015",
+  "url": "https://einstein.elsevierpure.com/en/publications/a-randomized-sham-controlled-trial-of-deep-brain-stimulation-of-t",
+  "confirmed": true,
+  "note": "Note: this is a 2015 pre-2016 paper; page is institutional repository abstract. Trial name 'RECLAIM' not on page."
+ },
+ {
+  "item": "7d DBS depression approval/breakthrough",
+  "fact": "Abbott announced FDA Breakthrough Device designation for its DBS system in treatment-resistant depression on Jul 12, 2022; pivotal study (named TRANSCEND per caller) initiated. No FDA approval of DBS for depression found. No FDA breakthrough record opened.",
+  "date": "2022-07-12",
+  "url": "https://www.medtechdive.com/news/abbott-breakthrough-deep-brain-stimulation-depression/627134/",
+  "confirmed": false,
+  "note": "Trade press only; page did not mention TRANSCEND, N, or target. TRANSCEND results/status in 2026 NOT verified. FDA database not queried."
+ },
+ {
+  "item": "8 MST",
+  "fact": "No FDA approval or clearance for MST found; UT Southwestern release (Jan 21, 2025) says findings could bring MST closer to FDA approval. Trial: MST vs ECT for TRD, N=73 (38 ECT, 35 MST); ~50% response each; ECT caused cognitive declines in nearly all domains, MST none; autobiographical memory consistency declined less with MST. Journal: Biol Psychiatry Cogn Neurosci Neuroimaging. This appears to be the confirmatory efficacy trial (NCT03191058) but link not confirmed.",
+  "date": "2025-01-21",
+  "url": "https://www.utsouthwestern.edu/newsroom/articles/year-2025/jan-experimental-depression-treatment.html",
+  "confirmed": false,
+  "note": "Press release only; article not opened. clinicaltrials.gov page returned no content. 'CREST-MST' name not found; do not cite. Check the Biol Psychiatry CNNI article for details."
+ },
+ {
+  "item": "9 ECT guidelines",
+  "fact": "APA Resource Document 2019 'Reclassification of ECT Devices' (approved by Joint Reference Committee Feb 2019) summarises the FDA order. No documented guideline change on ultrabrief RUL or other items was verified.",
+  "date": "2019",
+  "url": "https://www.psychiatry.org/Psychiatrists/Search-Directories-Databases/Resource-Documents/2019/Reclassification-of-ECT-Devices",
+  "confirmed": false,
+  "note": "Only the APA resource doc was confirmed; it is about device reclassification, not technique. CANMAT 2023 / other guideline pages failed to load (captcha). Item left unverified."
+ }
+]

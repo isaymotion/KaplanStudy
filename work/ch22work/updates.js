@@ -1,0 +1,32 @@
+({
+chapter: "ch22",
+guide: [
+ { sec: "s22-ect-anes", block: { year: 1997, title: "Correction: alfentanil is dosed in micrograms",
+   text: "The anesthesia text gives alfentanil as **2 to 9 mg/kg IV**. Alfentanil is a potent opioid dosed in **micrograms per kilogram**; a milligram-per-kilogram dose would be about **a thousand times** too high. ECT studies combining it with a reduced dose of methohexital or propofol used about **10 to 25 micrograms per kilogram**, and found **longer seizures**.",
+   source: "Nguyen TT et al., Br J Anaesth 1997;79:801; Dinwiddie SH, Isenberg KE, Convulsive Therapy 1995;11:170" } },
+ { sec: "s22-ect-elec", block: { year: 2000, title: "Correction: the US device limit is in millicoulombs",
+   text: "The text gives the US ECT device limit as \"504 to 576 mCi\". The unit is the **millicoulomb (mC)**, a unit of electrical **charge** (mCi would be millicuries, a unit of radioactivity). The FDA limit on US devices is **576 mC**; one common device delivers at most **504 mC**. Outside the United States, higher limits are allowed: the Royal College of Psychiatrists has recommended up to **1,200 mC**.",
+   source: "Krystal AD et al., ECT stimulus intensity: are present ECT devices too limited? Am J Psychiatry 2000;157:963" } },
+ { sec: "s22-ect-ind", block: { year: 2018, title: "FDA reclassified ECT devices",
+   text: "In **December 2018** the FDA moved ECT devices to **class II** for two uses: **catatonia**, and a **severe major depressive episode** in **major depressive disorder or bipolar disorder**, in patients **13 years and older** who are **treatment resistant** or **need a rapid response**. Other uses stay in **class III**: **schizophrenia, schizoaffective and schizophreniform disorder**, **bipolar mania**, patients **under 13**, and patients who are neither treatment resistant nor in need of a rapid response. This is a ruling on how the **devices** are regulated and labeled in the United States, not a clinical practice guideline; check current local rules and guidelines.",
+   source: "FDA final order, Federal Register 83 FR 66103 (December 26, 2018)" } },
+ { sec: "s22-ect-ind", block: { year: 2023, title: "Ketamine compared with ECT in a large trial",
+   text: "In the **ELEKT-D** trial (NEJM 2023), patients with **treatment-resistant major depression without psychosis** were randomized to **ketamine** or **ECT**. Ketamine was **noninferior**: response was **55.4 percent** with ketamine and **41.2 percent** with ECT. ECT was linked to a **decline in delayed verbal recall** that **gradually recovered**. The trial did not include **psychotic depression**.",
+   source: "Anand A et al., Ketamine versus ECT for nonpsychotic treatment-resistant major depression, N Engl J Med 2023" } },
+ { sec: "s22-tms", block: { year: 2024, title: "TMS devices and protocols cleared by the FDA",
+   text: "The first rTMS device for **major depression** (NeuroStar) was authorized in **2008**. **Deep TMS** with an **H-coil** (BrainsWay) was cleared for depression in **2013**, for **OCD** in **2018** and to aid **smoking cessation** in **2020**. **Intermittent theta-burst stimulation (iTBS)** was cleared in **2018**; in the **THREE-D** trial (414 patients, Lancet 2018) it was **noninferior to 10-Hz rTMS**. In **2022** the FDA cleared an **accelerated, MRI-targeted iTBS** protocol (SAINT): **10 sessions a day for 5 days** (**50 sessions**, **90,000 pulses**) to the **left dorsolateral prefrontal cortex**, for adults whose depression has not improved with antidepressants in the current episode. In **2024** a TMS device was cleared for depression in patients aged **15 to 21**.",
+   source: "FDA De Novo DEN070003 and 510(k) records K122288, DEN170078, K200957, K173620, K220177 and K231926; Blumberger DM et al., THREE-D trial, Lancet 2018" } },
+ { sec: "s22-tdcs", block: { year: 2025, title: "First FDA-approved tDCS device for depression",
+   text: "In **December 2025** the FDA approved (premarket approval) the **Flow FL-100**, a transcranial direct current stimulation headset, for **moderate to severe major depressive disorder** in adults **18 and older** who are **not treatment refractory** to medication, used **alone or added to** other treatment. The FDA reviewed it under the regulatory group for cranial electrotherapy stimulators intended to treat depression.",
+   source: "FDA premarket approval P230024 (Flow FL-100), December 8, 2025" } },
+ { sec: "s22-ces", block: { year: 2019, title: "FDA classification of CES devices",
+   text: "A **2019** FDA final order placed CES devices intended for **anxiety and/or insomnia** in **class II** (prescription devices with special controls). CES devices intended for **depression** stay in **class III** and need **premarket approval**; the FDA found the evidence for depression the **weakest** of the three uses.",
+   source: "FDA final order, Federal Register 84 FR 70003 (December 20, 2019)" } },
+ { sec: "s22-vns", block: { year: 2019, title: "US Medicare coverage of VNS for depression",
+   text: "Since **February 2019**, US Medicare covers VNS for **treatment-resistant depression** only under **coverage with evidence development**: the patient must be enrolled in an approved **clinical study** that collects outcome data.",
+   source: "CMS National Coverage Determination 160.18, Vagus Nerve Stimulation (2019)" } },
+ { sec: "s22-dbs", block: { year: 2017, title: "DBS: OCD device exemption and negative depression trials",
+   text: "In **2009** the FDA allowed DBS of the **anterior limb of the internal capsule** for **severe, treatment-resistant OCD** in adults under a **humanitarian device exemption** (for patients who have failed at least **three SSRIs**). For **depression**, two **sham-controlled** trials did not show a significant benefit: **ventral capsule/ventral striatum** DBS (response **20 percent** versus **14.3 percent** with sham, 2015) and **subcallosal cingulate** DBS (BROADEN: **20 percent** versus **17 percent**, 2017).",
+   source: "FDA humanitarian device exemption H050003 (Reclaim DBS for OCD, 2009); Dougherty DD et al., Biol Psychiatry 2015; Holtzheimer PE et al., Lancet Psychiatry 2017" } }
+]
+})
