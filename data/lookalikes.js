@@ -1101,5 +1101,110 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 27"
+},
+{
+  "id": "forensic-pairs",
+  "title": "Forensic terms that are easily confused",
+  "summary": "Paired terms from Chapter 28 that examiners like to contrast: privilege and confidentiality, warn and protect, foreseeable and preventable, informal and voluntary admission, opinion and finding, and competence to stand trial and criminal responsibility.",
+  "items": [
+    "First term",
+    "Second term",
+    "How to tell them apart"
+  ],
+  "rows": [
+    [
+      "Privilege vs confidentiality",
+      "**Privilege**: the **patient's legal right** to keep communications out of **court**",
+      "**Confidentiality**: the clinician's **ethical duty** to keep patient information secret everywhere",
+      "Ask whether a court or subpoena is involved, and remember only the **patient** can waive privilege"
+    ],
+    [
+      "Duty to warn vs duty to protect",
+      "**Tarasoff I**: **warn** the intended victim",
+      "**Tarasoff II**: take reasonable steps to **protect**; a warning is one option",
+      "A warning alone is usually **not enough**"
+    ],
+    [
+      "Foreseeable vs preventable",
+      "**Foreseeable**: a legal, common-sense judgment that harm could be anticipated",
+      "**Preventable**: the harm could have been stopped",
+      "In hindsight many suicides look preventable that were **not foreseeable**"
+    ],
+    [
+      "Informal vs voluntary admission",
+      "**Informal**: general hospital model, no written application",
+      "**Voluntary**: the patient **applies in writing**",
+      "Both may leave, even **against medical advice**"
+    ],
+    [
+      "Temporary vs involuntary admission",
+      "**Temporary**: **one physician**, usually up to **15 days**",
+      "**Involuntary**: **two physicians**, commonly **60 days**, then board review",
+      "Count the physicians and the days"
+    ],
+    [
+      "Right to treatment vs right to refuse",
+      "**Rouse** and **Wyatt**: confinement must come with **treatment**",
+      "**O'Connor**, **Rennie**, **Rogers**: limits on confinement and on **forced treatment**",
+      "Refusal stands except in an **emergency**"
+    ],
+    [
+      "Opinion vs finding of competence",
+      "**Opinion**: what the psychiatrist gives",
+      "**Finding**: only a **judge's ruling**",
+      "No one is incompetent until a **court** says so; commitment is not incompetence"
+    ],
+    [
+      "Malpractice vs informed consent claim",
+      "**Malpractice**: needs an **expert** to show departure from the standard",
+      "**Consent claim**: **no expert** needed; a good result is no defense",
+      "Ask whether the complaint is about **how** it was done or **what was disclosed**"
+    ],
+    [
+      "Competence to stand trial vs criminal responsibility",
+      "**Competence** (Dusky): the mind **now**",
+      "**Responsibility** (insanity tests): the mind **at the time of the act**",
+      "Check which point in time the question asks about"
+    ],
+    [
+      "M'Naghten vs American Law Institute test",
+      "**M'Naghten**: did not **know** the act or its wrongfulness",
+      "**ALI**: lacked **substantial capacity** to appreciate or to **conform**",
+      "ALI adds control and softens 'know' to 'appreciate'"
+    ]
+  ],
+  "keys": [
+    "**Privilege** belongs to the **patient**; **confidentiality** is the doctor's duty.",
+    "**Tarasoff I** is **1974** (warn) and **Tarasoff II** is **1976** (protect); the book prints later years.",
+    "Most rules in Chapter 28 are **US law**; see the update boxes for the Philippine rules."
+  ],
+  "links": [
+    {
+      "ch": "ch28",
+      "sec": "s28-priv",
+      "label": "Privilege"
+    },
+    {
+      "ch": "ch28",
+      "sec": "s28-violent",
+      "label": "Tarasoff and the duty to protect"
+    },
+    {
+      "ch": "ch28",
+      "sec": "s28-hosp",
+      "label": "Procedures of admission"
+    },
+    {
+      "ch": "ch28",
+      "sec": "s28-capacity",
+      "label": "Capacity and competence"
+    },
+    {
+      "ch": "ch28",
+      "sec": "s28-resp2",
+      "label": "Insanity standards compared"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 28"
 }
 ];

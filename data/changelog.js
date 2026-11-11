@@ -13,6 +13,45 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "72.0.0",
+    "date": "2026-11-11",
+    "title": "Chapter 28: Forensic and legal issues",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch28",
+        "text": "New Chapter 28, Forensic and Legal Issues: malpractice and the 4 Ds, split treatment, privilege and confidentiality, suicidal and violent patients (Tarasoff), admission procedures, rights to treatment and to refuse it, seclusion and restraint (Tables 28-2 and 28-3), informed consent, custody, capacity, competence to stand trial, the insanity standards and HIPAA, with 76 clinical cases.",
+        "href": "#/c/ch28/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "correction",
+        "ch": "ch28",
+        "text": "Correction boxes fix dates and names the book prints wrongly: Tarasoff I (1974) and II (1976), O'Connor v. Donaldson (1975), Rogers v. Okin, Jaffee v. Redmond, and the Dahmer plea (January 13, 1992). Cards use the corrected facts.",
+        "href": "#/c/ch28/guide/s28-violent",
+        "link": "See the Tarasoff correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch28",
+        "text": "Updates: the 1984 federal insanity test and Kahler v. Kansas (2020); Madison v. Alabama (2019) on competence to be executed; the military psychotherapist-patient privilege; current US time limits for seclusion and restraint orders; HIPAA time limits and the 2024 rule on substance use records; and treatment for tardive dyskinesia."
+      },
+      {
+        "type": "update",
+        "ch": "ch28",
+        "text": "Philippine law boxes: the Mental Health Act (RA 11036) on consent, emergency treatment and confidentiality; insanity under Article 12 of the Revised Penal Code and People v. Paña (2020); wills under the Civil Code; custody under Article 213 of the Family Code; and privilege under the 2019 Rules on Evidence.",
+        "href": "#/c/ch28/guide/s28-resp2",
+        "link": "See the insanity box"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which insanity standard fits?, and a look-alike table of forensic terms that are easily confused (privilege and confidentiality, warn and protect, opinion and finding).",
+        "href": "#/helpers/insanity28",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "71.0.0",
     "date": "2026-11-11",
     "title": "Chapters 26 and 27: Level of care; ethics and professionalism",

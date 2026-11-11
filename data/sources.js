@@ -4,6 +4,20 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 28, November 2026 */
+    { m: "Executive Order 13140, 1999 Amendments to the Manual for Courts-Martial", label: "Executive Order 13140 (Military Rule of Evidence 513), Federal Register, October 12, 1999", url: "https://www.govinfo.gov/content/pkg/FR-1999-10-12/html/99-26670.htm" },
+    { m: "Keepers GA et al., The American Psychiatric Association practice guideline for the treatment of patients with schizophrenia", label: "APA practice guideline for schizophrenia, executive summary (Am J Psychiatry 2020)", url: "https://psychiatryonline.org/doi/10.1176/appi.focus.18402" },
+    { m: "Tarasoff v. Regents of Univ. of California, 17 Cal.3d 425", label: "Weinstock R et al., Back to the past in California: the Tarasoff duty (J Am Acad Psychiatry Law 2006), on the 1974 and 1976 decisions", url: "https://jaapl.org/content/34/4/523" },
+    { m: "National Conference of State Legislatures, Mental health professionals' duty to warn", label: "NCSL, Mental health professionals' duty to warn (state table)", url: "https://www.ncsl.org/health/mental-health-professionals-duty-to-warn" },
+    { m: "Rogers v. Okin, 478 F. Supp. 1342", label: "Rogers v. Okin, 478 F. Supp. 1342 (D. Mass. 1979)", url: "https://law.justia.com/cases/federal/district-courts/FSupp/478/1342/1899607/" },
+    { m: "US Code of Federal Regulations, 42 CFR 482.13(e)", label: "42 CFR 482.13, Patient's rights (eCFR)", url: "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-B/section-482.13" },
+    { m: "Family Code of the Philippines (Executive Order No. 209, 1987)", label: "Family Code of the Philippines (Lawphil)", url: "https://lawphil.net/executive/execord/eo1987/eo_209_1987.html" },
+    { m: "Civil Code of the Philippines (Republic Act No. 386, 1949)", label: "Civil Code of the Philippines (Lawphil)", url: "https://lawphil.net/statutes/repacts/ra1949/ra_386_1949.html" },
+    { m: "Madison v. Alabama, 586 U.S.", label: "Madison v. Alabama (2019), Cornell Legal Information Institute", url: "https://www.law.cornell.edu/supremecourt/text/17-7505" },
+    { m: "United Press International, Dahmer changes plea to guilty", label: "UPI archive, Dahmer changes plea to guilty (January 13, 1992)", url: "https://www.upi.com/Archives/1992/01/13/Dahmer-changes-plea-to-guilty/4481695278800/" },
+    { m: "Kahler v. Kansas, 589 U.S.", label: "Kahler v. Kansas (2020), Cornell Legal Information Institute", url: "https://www.law.cornell.edu/supremecourt/text/18-6135" },
+    { m: "People v. Paña, G.R. No. 214444", label: "People v. Paña, G.R. No. 214444 (Lawphil)", url: "https://lawphil.net/judjuris/juri2020/nov2020/gr_214444_2020.html" },
+    { m: "US Department of Health and Human Services, Confidentiality of substance use disorder (SUD) patient records", label: "42 CFR Part 2 final rule, Federal Register, February 16, 2024", url: "https://www.federalregister.gov/documents/2024/02/16/2024-02544/confidentiality-of-substance-use-disorder-sud-patient-records" },
     /* Chapters 26 and 27, November 2026 */
     { m: "Sowers W et al., Best practices: level-of-care decision making", label: "Sowers W et al., Psychiatr Serv 2003 (LOCUS and CALOCUS)", url: "https://psychiatryonline.org/doi/abs/10.1176/appi.ps.54.11.1461" },
     { m: "Republic Act No. 11036, Mental Health Act", label: "Republic Act No. 11036, Mental Health Act (Philippine Judiciary E-Library)", url: "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/83255" },

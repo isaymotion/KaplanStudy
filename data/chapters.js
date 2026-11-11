@@ -274,6 +274,10 @@ KS.manifest = [
   { id: 'ch27', number: 27, title: 'Ethics and Professionalism', short: 'Ethics and professionalism',
     summary: 'Professional codes, the four ethical principles, sexual and nonsexual boundary violations, confidentiality, managed care duties, impaired physicians, trainees, the Physician Charter (Table 27-1), common ethical questions (Table 27-2) and military psychiatry, with updates on Philippine law, child-abuse reporting, case publication and military confidentiality.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch28', number: 28, title: 'Forensic and Legal Issues', short: 'Forensic psychiatry',
+    summary: 'Malpractice and the 4 Ds, negligent prescribing and split treatment, privilege and confidentiality, suicidal and violent patients (Tarasoff), admission procedures, rights to treatment and to refuse it, seclusion and restraint, informed consent, custody, capacity, competence to stand trial, the insanity standards and HIPAA, with corrections to case names and dates and notes on Philippine law.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

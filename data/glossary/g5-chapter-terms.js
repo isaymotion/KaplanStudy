@@ -753,7 +753,33 @@ KS.glossary = (KS.glossary || []).concat([
   ["double agentry", "A clinician's divided loyalty between the patient and a third party such as an employer, insurer or institution.", "Ch 27"],
   ["utilization review", "An insurer's or managed care organization's review of whether care is necessary and will be paid for.", "Ch 27"],
   ["in-camera review", "A judge's private review of records to decide which parts must be disclosed in a legal proceeding.", "Ch 27"],
-  ["ethical dilemma", "A clash between two ethical values or perspectives; contrast an ethical conflict, between personal wish and duty.", "Ch 27"]
+  ["ethical dilemma", "A clash between two ethical values or perspectives; contrast an ethical conflict, between personal wish and duty.", "Ch 27"],
+  ["forensic psychiatry", "The field that studies where psychiatry and the law meet; forensic means 'of the forum', the public court of ancient Rome.", "Ch 28"],
+  ["medical malpractice", "A tort (civil wrong) arising from a doctor's negligence; the plaintiff must prove duty, deviation, damage and direct causation.", "Ch 28"],
+  ["4 Ds", "The four elements of malpractice: duty, deviation from the standard of care, damage, and direct causation.", "Ch 28"],
+  ["intentional tort", "A civil wrong in which the wrongdoer means to cause harm or should have known harm was likely, such as battery, false imprisonment or fraud; usually not covered by malpractice insurance.", "Ch 28"],
+  ["split treatment", "Care divided between a psychiatrist who prescribes and a nonmedical therapist who does the psychotherapy; both can be sued when it fails.", "Ch 28"],
+  ["psychotherapist-patient privilege", "The patient's right to keep communications with a licensed psychotherapist out of court; recognized for US federal courts in Jaffee v. Redmond (1996).", "Ch 28"],
+  ["subpoena duces tecum", "A subpoena that orders a witness to appear and also to bring the relevant records and documents.", "Ch 28"],
+  ["circle of confidentiality", "The people who may share patient information without specific permission: the treating physician and staff, supervisors and consultants.", "Ch 28"],
+  ["duty to warn", "The duty set by Tarasoff I: a therapist who believes a patient may injure or kill someone should warn the intended victim.", "Ch 28"],
+  ["duty to protect", "The broader duty set by Tarasoff II: take reasonable steps, of which a warning is only one, to protect an identifiable person a patient threatens.", "Ch 28"],
+  ["foreseeability", "A legal, common-sense term for whether harm such as a suicide could reasonably have been anticipated; it does not mean the clinician could predict it.", "Ch 28"],
+  ["parens patriae", "'Father of his country': the doctrine that lets the state act as a surrogate parent for people who cannot care for themselves.", "Ch 28"],
+  ["habeas corpus", "A writ asking a court to decide at once whether a person, such as a hospitalized patient, is being held without due process of law.", "Ch 28"],
+  ["peonage", "The old practice of making state hospital patients do unpaid menial work for the institution.", "Ch 28"],
+  ["least restrictive alternative", "The principle that a patient is owed the least restrictive treatment that still achieves the needed clinical effect.", "Ch 28"],
+  ["mature minor rule", "A rule, where adopted, that lets minors consent to treatment in ordinary circumstances.", "Ch 28"],
+  ["emancipated minor", "A minor who lives as an adult and controls his or her own life, and so has an adult's rights to consent.", "Ch 28"],
+  ["testamentary capacity", "Competence to make a will: knowing the nature and extent of one's property, that one is making a bequest, and who one's natural beneficiaries are.", "Ch 28"],
+  ["durable power of attorney", "A document naming in advance a substitute decision maker who can act, without court proceedings, once the signer loses capacity.", "Ch 28"],
+  ["actus reus", "Voluntary conduct: the act itself, one of the two components of a crime.", "Ch 28"],
+  ["mens rea", "Evil intent, the guilty mind: the second component of a crime, and the one the insanity defense addresses.", "Ch 28"],
+  ["M'Naghten rule", "The 1843 English right-wrong test of insanity: because of mental disease the person did not know the nature and quality of the act or that it was wrong.", "Ch 28"],
+  ["irresistible impulse", "A 1922 addition to the insanity defense: the person acted under an impulse that mental disease made impossible to resist (the policeman-at-the-elbow test).", "Ch 28"],
+  ["Durham rule", "The 1954 product rule: no criminal responsibility if the unlawful act was the product of mental disease or defect; dropped in 1972.", "Ch 28"],
+  ["American Law Institute test", "The Model Penal Code insanity test: lacking substantial capacity to appreciate the wrongfulness of conduct or to conform it to the law.", "Ch 28"],
+  ["guilty but mentally ill", "An alternative verdict in some US states when insanity is pleaded; the person is still sentenced.", "Ch 28"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1115,5 +1141,15 @@ KS.glossaryAliases = {
   "boundary-crossing": "boundary crossing",
   "boundary violations": "boundary violation",
   "utilization reviewers": "utilization review",
-  "ethical dilemmas": "ethical dilemma"
+  "ethical dilemmas": "ethical dilemma",
+  "malpractice": "medical malpractice",
+  "four Ds": "4 Ds",
+  "intentional torts": "intentional tort",
+  "writ of habeas corpus": "habeas corpus",
+  "right-wrong test": "M'Naghten rule",
+  "product rule": "Durham rule",
+  "model penal code": "American Law Institute test",
+  "irresistible impulse test": "irresistible impulse",
+  "emancipated minors": "emancipated minor",
+  "Tarasoff duty": "duty to protect"
 };

@@ -6197,5 +6197,202 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "insanity28",
+  "chapter": "ch28",
+  "title": "Which insanity standard fits?",
+  "summary": "Work through a fact pattern to see which of the tests in Chapter 28 it would meet: M'Naghten, irresistible impulse, the American Law Institute test or the Durham product rule, and when the question is really competence to stand trial.",
+  "caution": "A teaching aid for the tests as Chapter 28 describes them (United States and English law). It is not legal advice. Each jurisdiction uses its own test: US federal courts changed theirs in 1984, and Philippine courts apply Article 12 of the Revised Penal Code and People v. Paña (see the update boxes).",
+  "start": "when",
+  "nodes": {
+    "when": {
+      "q": "Which point in time is the question about?",
+      "options": [
+        {
+          "label": "Now: can the person follow the proceedings and work with a lawyer?",
+          "to": "r:dusky",
+          "note": "The question concerns present abilities, not the time of the act."
+        },
+        {
+          "label": "The time of the act",
+          "to": "know",
+          "note": "Criminal responsibility looks back at the mind when the act was done."
+        }
+      ]
+    },
+    "know": {
+      "q": "Because of mental disease, did the person not know the nature and quality of the act, or not know it was wrong?",
+      "options": [
+        {
+          "label": "Yes, did not know",
+          "to": "r:mn",
+          "note": "A failure of knowing, the cognitive question."
+        },
+        {
+          "label": "No, knew what the act was and that it was wrong",
+          "to": "impulse",
+          "note": "Knew the act and its wrongfulness."
+        }
+      ]
+    },
+    "impulse": {
+      "q": "Did mental disease produce an impulse the person could not resist, even with a police officer standing by?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:imp",
+          "note": "A total loss of control from mental disease."
+        },
+        {
+          "label": "No, control was reduced but not absent",
+          "to": "subst",
+          "note": "Some control remained."
+        }
+      ]
+    },
+    "subst": {
+      "q": "Did mental disease or defect remove substantial capacity to appreciate wrongfulness or to conform conduct to the law?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:ali",
+          "note": "Substantial, not total, loss of appreciation or control."
+        },
+        {
+          "label": "No",
+          "to": "product",
+          "note": "Capacity was not substantially lost."
+        }
+      ]
+    },
+    "product": {
+      "q": "What links the mental condition to the act?",
+      "options": [
+        {
+          "label": "The act was a product of mental disease or defect",
+          "to": "r:durham",
+          "note": "Only a causal link to illness is shown."
+        },
+        {
+          "label": "The only sign of abnormality is repeated criminal or antisocial conduct",
+          "to": "r:none",
+          "note": "Repeated antisocial conduct alone."
+        },
+        {
+          "label": "Mentally ill, but no test is met",
+          "to": "r:gbmi",
+          "note": "Illness is present without meeting an insanity test."
+        }
+      ]
+    }
+  },
+  "results": {
+    "dusky": {
+      "label": "Competence to stand trial",
+      "dx": "Dusky test (not an insanity question)",
+      "line": "Trial competence is about the defendant's present abilities.",
+      "points": [
+        "Present ability to consult a lawyer with reasonable rational understanding.",
+        "A rational and factual understanding of the proceedings.",
+        "A person can be competent now and still plead insanity, or the reverse."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-trial",
+        "label": "Competence to stand trial"
+      }
+    },
+    "mn": {
+      "label": "M'Naghten rule",
+      "dx": "Right-wrong test (1843)",
+      "line": "Not guilty by reason of insanity if mental disease kept the person from knowing the act or its wrongfulness.",
+      "points": [
+        "The narrowest test: it asks only about knowing.",
+        "A delusion excuses only if the act would be justified were the delusion true.",
+        "Fact patterns that meet M'Naghten also meet the broader American Law Institute test."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp",
+        "label": "M'Naghten and irresistible impulse"
+      }
+    },
+    "imp": {
+      "label": "Irresistible impulse",
+      "dx": "Irresistible impulse test (1922)",
+      "line": "The person knew the act was wrong but mental disease made the impulse impossible to resist.",
+      "points": [
+        "Read strictly as the policeman-at-the-elbow law.",
+        "Adds a control question to M'Naghten's knowing question.",
+        "Helps only a small group of patients."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp",
+        "label": "Irresistible impulse"
+      }
+    },
+    "ali": {
+      "label": "American Law Institute test",
+      "dx": "Model Penal Code test (1962)",
+      "line": "Lack of substantial capacity to appreciate wrongfulness or to conform conduct to the law.",
+      "points": [
+        "Joins a knowing part (appreciate) with a control part (conform).",
+        "'Substantial' means the loss need not be total.",
+        "Adopted in United States v. Brawner (1972).",
+        "US federal courts dropped the conform-conduct part in 1984 (see the update)."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp2",
+        "label": "Model Penal Code test"
+      }
+    },
+    "durham": {
+      "label": "Durham rule",
+      "dx": "Product rule (1954)",
+      "line": "Not responsible if the unlawful act was the product of mental disease or defect.",
+      "points": [
+        "Judge Bazelon's rule, meant to open the door to full psychiatric testimony.",
+        "Confusion over product, disease and defect.",
+        "Dropped in 1972 for the American Law Institute test, so it would not succeed today where that test applies."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp2",
+        "label": "Durham rule"
+      }
+    },
+    "none": {
+      "label": "No insanity defense",
+      "dx": "Criminally responsible",
+      "line": "Repeated criminal or antisocial conduct alone is not a mental disease or defect.",
+      "points": [
+        "The American Law Institute test's second subsection excludes it.",
+        "Its purpose is to keep the sociopath or psychopath (antisocial personality disorder) responsible."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp2",
+        "label": "Model Penal Code test"
+      }
+    },
+    "gbmi": {
+      "label": "Guilty, or guilty but mentally ill",
+      "dx": "No insanity test met",
+      "line": "In some US states the jury may return guilty but mentally ill.",
+      "points": [
+        "The person is still sentenced.",
+        "Critics call it a verdict without a difference: treatment is open to all prisoners anyway.",
+        "Four outcomes are possible in these states: guilty, guilty but mentally ill, not guilty by reason of insanity, not guilty."
+      ],
+      "link": {
+        "ch": "ch28",
+        "sec": "s28-resp2",
+        "label": "Guilty but mentally ill"
+      }
+    }
+  }
 }
 ]);
