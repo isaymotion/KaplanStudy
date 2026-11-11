@@ -4,6 +4,21 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 29.2, November 2026 */
+    { m: "Hanks GW et al., Morphine and alternative opioids in cancer pain", label: "Hanks GW et al., Morphine and alternative opioids in cancer pain: the EAPC recommendations (Br J Cancer 2001)", url: "https://www.nature.com/articles/6691680" },
+    { m: "Lasheen W et al., The intravenous to oral relative milligram potency ratio", label: "Lasheen W et al., IV to oral morphine potency ratio during chronic dosing in cancer pain (Palliat Med 2010)", url: "https://doi.org/10.1177/0269216309346595" },
+    { m: "American Pain Society, Guideline for the management of cancer pain", label: "Drug Topics: APS unveils guideline for treatment of cancer pain (2005), on meperidine", url: "https://drugtopics.com/view/aps-unveils-guideline-treatment-cancer-pain" },
+    { m: "Dronabinol capsules prescribing information", label: "Dronabinol capsules prescribing information (DailyMed)", url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b60052fd-c0fd-4ec1-9774-81b3a48dbac5" },
+    { m: "Hospice Action Network, The Medicare hospice benefit", label: "Hospice Action Network, The Medicare hospice benefit (eligibility and benefit periods)", url: "https://hospiceactionnetwork.org/wp-content/uploads/Hospice-Benefit_FINAL.pdf" },
+    { m: "NHPCO, Medicare hospice benefit", label: "NHPCO, Medicare hospice benefit", url: "https://nhpco.org/?p=3077" },
+    { m: "HHS Office of Inspector General, Patient advance directives", label: "HHS OIG, Patient advance directives: early implementation experience (OEI-06-91-01130)", url: "https://webarchive.library.unt.edu/eot2008/20081007091514/http:/oig.hhs.gov/oei/reports/oei-06-91-01130.pdf" },
+    { m: "GAO, Patient Self-Determination Act (HEHS-95-135", label: "GAO, Patient Self-Determination Act: providers offer information on advance directives (HEHS-95-135, 1995)", url: "https://www.govinfo.gov/content/pkg/GAOREPORTS-HEHS-95-135/html/GAOREPORTS-HEHS-95-135.htm" },
+    { m: "National Academy for State Health Policy, POLST", label: "NASHP, POLST: state policy overview", url: "https://nashp.org/?p=13907" },
+    { m: "National POLST, National POLST Form", label: "National POLST Form: a portable medical order (2025)", url: "https://polst.org/wp-content/uploads/2026/01/National-POLST-Form.pdf" },
+    { m: "Republic Act No. 7170, Organ Donation Act of 1991", label: "Republic Act No. 7170, Organ Donation Act of 1991 (Lawphil)", url: "https://lawphil.net/statutes/repacts/ra1992/pdf/ra_7170_1992.pdf" },
+    { m: "Republic Act No. 11223, Universal Health Care Act", label: "Republic Act No. 11223, Universal Health Care Act (PhilHealth)", url: "https://www.philhealth.gov.ph/about_us/RA11223_UHC.pdf" },
+    { m: "Republic Act No. 11215, National Integrated Cancer Control Act", label: "Republic Act No. 11215, National Integrated Cancer Control Act (Senate)", url: "https://ldr.senate.gov.ph/sites/default/files/2022-03/ra%2011215.pdf" },
+    { m: "House of Representatives, House Bill 5436", label: "House Bill 5436, 19th Congress: palliative and hospice care bill", url: "https://docs.congress.hrep.online/legisdocs/basic_19/HB05436.pdf" },
     /* Chapter 29 (29.1 and 29.3), November 2026 */
     { m: "Greer DM et al., Pediatric and Adult Brain Death", label: "Greer DM et al., Pediatric and adult brain death/death by neurologic criteria consensus guideline (Neurology 2023)", url: "https://doi.org/10.1212/WNL.0000000000207740" },
     { m: "Lewis A, Perspectives of medical organizations", label: "Lewis A, Perspectives on revising the Uniform Determination of Death Act (Neurocrit Care 2023)", url: "https://doi.org/10.1007/s12028-023-01872-5" },

@@ -799,7 +799,26 @@ KS.glossary = (KS.glossary || []).concat([
   ["passive euthanasia", "Withholding heroic life-saving measures, as opposed to deliberately ending a life (active euthanasia).", "Ch 29.3"],
   ["active euthanasia", "Deliberately ending a patient's life; voluntary if the patient asked, involuntary if done without or against consent.", "Ch 29.3"],
   ["physician-assisted suicide", "A physician provides the means, such as a lethal prescription, which the patient takes by their own act; called medical aid in dying by supporters.", "Ch 29.3"],
-  ["Death with Dignity Act", "Oregon's 1994 ballot law, in effect since 1997, letting competent, terminally ill adults with 6 months or less obtain a lethal prescription under safeguards.", "Ch 29.3"]
+  ["Death with Dignity Act", "Oregon's 1994 ballot law, in effect since 1997, letting competent, terminally ill adults with 6 months or less obtain a lethal prescription under safeguards.", "Ch 29.3"],
+  ["Endicott substitution criteria", "A way to diagnose depression in the medically ill by replacing somatic symptoms that the illness may cause (appetite, sleep, fatigue, concentration) with psychological ones (tearfulness, social withdrawal, brooding, lack of reactivity).", "Ch 29.2"],
+  ["persistent vegetative state", "Severe brain damage with no awareness of self or surroundings, but with sleep-wake cycles and brainstem and autonomic functions preserved; unlike brain death, the person is alive.", "Ch 29.2"],
+  ["advance directive", "A document stating a person's wishes about medical care for when they cannot decide: a living will, a health care proxy, or DNR and DNI orders.", "Ch 29.2"],
+  ["living will", "An advance directive in which a competent person writes specific instructions about life-prolonging treatment, such as feeding tubes or artificial airways, for a time when they cannot communicate.", "Ch 29.2"],
+  ["health care proxy", "An advance directive naming a surrogate to make medical decisions as the patient would have wanted, if the patient loses capacity; also called a durable power of attorney for health care.", "Ch 29.2"],
+  ["do-not-resuscitate order", "An order (DNR) that cardiopulmonary resuscitation not be attempted; a DNI order forbids intubation.", "Ch 29.2"],
+  ["Patient Self-Determination Act", "US federal law (passed 1990, in effect December 1991) requiring facilities that take Medicare or Medicaid to inform patients of their right to refuse treatment, ask about advance directives and record them.", "Ch 29.2"],
+  ["POLST", "Portable medical orders for life-sustaining treatment, signed by a clinician for a seriously ill or frail patient, that travel with the patient across care settings in the United States.", "Ch 29.2"],
+  ["Quinlan case", "The 1976 New Jersey Supreme Court ruling that a person's right to refuse life-sustaining treatment survives incompetence; it spurred living will laws and hospital ethics committees.", "Ch 29.2"],
+  ["palliative care", "Care that relieves pain and other symptoms and supports patient and family when cure is no longer the aim; active, not abandonment.", "Ch 29.2"],
+  ["hospice", "A program of palliative care for the dying, often at home; founded in its modern form by Cicely Saunders (St. Christopher's, 1967). Under Medicare it requires a prognosis of 6 months or less.", "Ch 29.2"],
+  ["breakthrough pain", "A flare of pain despite scheduled analgesia, treated with extra (rescue) doses; frequent breakthrough doses mean the maintenance dose should rise.", "Ch 29.2"],
+  ["patient-controlled analgesia", "Self-administered opioid doses through a pump, which give better relief with less drug than staff-given doses.", "Ch 29.2"],
+  ["neuropathic pain", "Burning, dysesthetic pain with shock-like bursts from nerve injury, such as phantom limb pain; often needs adjuvants as well as opioids.", "Ch 29.2"],
+  ["visceral pain", "Deep, squeezing, poorly localized nociceptive pain from organs, which may be referred to the skin (for example diaphragm irritation felt in the shoulder).", "Ch 29.2"],
+  ["somatic pain", "Steady, aching, well-localized nociceptive pain, such as from bone metastases.", "Ch 29.2"],
+  ["cachexia", "Wasting with loss of weight and muscle, present in nearly every terminal illness.", "Ch 29.2"],
+  ["conspiracy of silence", "A pattern in which patient and family each avoid talking about dying to protect the other, leaving them isolated; family meetings can open the talk.", "Ch 29.2"],
+  ["equianalgesic dose", "The dose of one opioid or route giving the same pain relief as a reference dose of another, used when switching drugs or routes.", "Ch 29.2"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1179,5 +1198,18 @@ KS.glossaryAliases = {
   "anniversary reactions": "anniversary reaction",
   "medical aid in dying": "physician-assisted suicide",
   "assisted suicide": "physician-assisted suicide",
-  "Oregon Death with Dignity Act": "Death with Dignity Act"
+  "Oregon Death with Dignity Act": "Death with Dignity Act",
+  "Endicott criteria": "Endicott substitution criteria",
+  "vegetative state": "persistent vegetative state",
+  "advance directives": "advance directive",
+  "living wills": "living will",
+  "DNR order": "do-not-resuscitate order",
+  "do-not-intubate order": "do-not-resuscitate order",
+  "Portable Medical Orders": "POLST",
+  "Karen Ann Quinlan": "Quinlan case",
+  "palliative medicine": "palliative care",
+  "hospice care": "hospice",
+  "rescue dose": "breakthrough pain",
+  "PCA": "patient-controlled analgesia",
+  "equianalgesic": "equianalgesic dose"
 };

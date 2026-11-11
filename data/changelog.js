@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "74.0.0",
+    "date": "2026-11-11",
+    "title": "Chapter 29.2: Palliative care (Chapter 29 complete)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch29-2",
+        "text": "New section 29.2, Palliative Care: anxiety, depression (Endicott substitution criteria, Table 29-5) and delirium in advanced disease, physicians' reactions (Table 29-6), breaking bad news and informed consent, terminal care decisions (Tables 29-7 and 29-8), persistent vegetative state versus brain death, the Quinlan case, advance directives, caring for the family (Table 29-9), pain and opioids (Tables 29-10 and 29-11), end-of-life symptoms (Table 29-12), hospice, dying children and spiritual care, with 71 clinical cases. Chapter 29 is now complete.",
+        "href": "#/c/ch29-2/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "update",
+        "ch": "ch29-2",
+        "text": "Updates: current morphine conversion for repeated dosing (about 1:2 to 1:3) and why meperidine is avoided; the dronabinol label doses; Medicare hospice certification and benefit periods; POLST; and Philippine law on advance directives, the definition of death and palliative care (UHC Act, Cancer Control Act).",
+        "href": "#/c/ch29-2/guide/s292-pain",
+        "link": "See the opioid update"
+      },
+      {
+        "type": "correction",
+        "ch": "ch29-2",
+        "text": "Correction: the Patient Self-Determination Act was passed in 1990 and took effect on December 1, 1991. Several cells of the opioid table (Table 29-11) are flagged as likely misprints.",
+        "href": "#/c/ch29-2/guide/s292-ad",
+        "link": "See the correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch29-1",
+        "text": "Section 29.1 gains a box on the Philippine legal definition of death (Organ Donation Act, RA 7170).",
+        "href": "#/c/ch29-1/guide/s291-def",
+        "link": "See the box"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Pain in a dying patient: which type, which approach?, and a look-alike table of advance directives and end-of-life orders.",
+        "href": "#/helper/pain292",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "73.0.0",
     "date": "2026-11-11",
     "title": "Chapter 29.1 and 29.3: Death, bereavement, euthanasia and assisted suicide",

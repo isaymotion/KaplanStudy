@@ -6601,5 +6601,142 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "pain292",
+  "chapter": "ch29-2",
+  "title": "Pain in a dying patient: which type, which approach?",
+  "summary": "Work through the pain types in Table 29-10 and the treatment principles of Chapter 29.2 to choose a first approach.",
+  "caution": "A teaching aid for the principles in Chapter 29.2. It gives no doses. Several cells of Table 29-11 look misprinted; for repeated dosing current guidance uses a parenteral to oral morphine ratio of about 1:2 to 1:3, and meperidine is not recommended for cancer pain (see the update box). Use a current conversion table.",
+  "start": "quality",
+  "nodes": {
+    "quality": {
+      "q": "What is the pain like?",
+      "options": [
+        {
+          "label": "Steady, aching or gnawing, and the patient can point to it",
+          "to": "r:somatic",
+          "note": "Well-localized aching pain is somatic."
+        },
+        {
+          "label": "Deep, squeezing, hard to localize, maybe felt in the skin or shoulder",
+          "to": "r:visceral",
+          "note": "Poorly localized, referred pain is visceral."
+        },
+        {
+          "label": "Burning, with electric-shock bursts, after nerve injury",
+          "to": "r:neuro",
+          "note": "Dysesthetic, shock-like pain is neuropathic."
+        },
+        {
+          "label": "No medical cause found; psychological factors dominate",
+          "to": "r:psych",
+          "note": "Pure psychogenic pain is rare in cancer."
+        },
+        {
+          "label": "Pain control is good but the patient is delirious or hallucinating on opioids",
+          "to": "r:tox",
+          "note": "Opioid psychotoxicity calls for a switch."
+        },
+        {
+          "label": "The patient asks often for as-needed doses and is called drug-seeking",
+          "to": "r:sched",
+          "note": "As-needed dosing lets pain build up."
+        }
+      ]
+    }
+  },
+  "results": {
+    "somatic": {
+      "label": "Somatic nociceptive pain",
+      "dx": "For example bone metastases",
+      "line": "Opioids are the core treatment.",
+      "points": [
+        "Give analgesia on a schedule, with breakthrough doses.",
+        "Consider radiation for painful bone metastases.",
+        "Raise the maintenance dose if breakthrough doses are used often."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Types of pain"
+      }
+    },
+    "visceral": {
+      "label": "Visceral nociceptive pain",
+      "dx": "For example liver capsule or pleural pain",
+      "line": "Opioids work well; the pain may be referred.",
+      "points": [
+        "Diaphragm irritation can be felt in the shoulder.",
+        "Schedule doses and keep rescue doses available.",
+        "Palliative anticancer treatment may shrink the source."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Types of pain"
+      }
+    },
+    "neuro": {
+      "label": "Neuropathic pain",
+      "dx": "For example phantom limb pain",
+      "line": "Opioids plus adjuvants, which may be the mainstay.",
+      "points": [
+        "Adjuvants include antidepressants and gabapentin.",
+        "Sympathetically maintained pain is treated the same way.",
+        "Nerve blocks or epidural infusions are options."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Adjuvants"
+      }
+    },
+    "psych": {
+      "label": "Psychogenic contribution",
+      "dx": "Rare in pure form in cancer",
+      "line": "Look for organic pain that psychological factors amplify.",
+      "points": [
+        "Anxiety lowers the pain threshold.",
+        "Treat anxiety and depression alongside pain.",
+        "Do not withhold analgesia on the assumption pain is psychological."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Types of pain"
+      }
+    },
+    "tox": {
+      "label": "Opioid psychotoxicity",
+      "dx": "Delirium or hallucinations on opioids",
+      "line": "Switch to another opioid at a lowered dose.",
+      "points": [
+        "Drugs whose analgesia is shorter than their half-life accumulate.",
+        "Cross-tolerance is incomplete, so lower the dose at each switch.",
+        "Look for other causes of delirium too."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Opioid psychotoxicity"
+      }
+    },
+    "sched": {
+      "label": "Undertreated pain",
+      "dx": "Switch to scheduled dosing",
+      "line": "Scheduled maintenance doses with breakthrough doses control pain better.",
+      "points": [
+        "As-needed orders let pain build while the patient waits.",
+        "Frequent rescue use means the maintenance dose should rise.",
+        "Patient-controlled analgesia gives better relief with less drug."
+      ],
+      "link": {
+        "ch": "ch29-2",
+        "sec": "s292-pain",
+        "label": "Principles of treatment"
+      }
+    }
+  }
 }
 ]);

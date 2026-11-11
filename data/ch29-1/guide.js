@@ -172,6 +172,13 @@ KS.add("ch29-1", "guide", {
               "title": "The 1981 Act is still the US legal basis",
               "text": "In **2021** the **Uniform Law Commission** formed a committee to revise the **Uniform Determination of Death Act**, partly because the Act's wording ('all functions of the entire brain') does not match how brain death is tested. In **September 2023** the commission **paused** the work indefinitely because the groups involved could not agree. The 1981 text remains the model law, and it leaves the method to **accepted medical standards**. Rules on brain death differ between countries; check current local rules and guidelines.",
               "source": "Lewis A, Perspectives of medical organizations, organ procurement organizations, and advocacy organizations about revising the Uniform Determination of Death Act, Neurocrit Care 2023"
+            },
+            {
+              "type": "update",
+              "year": 1992,
+              "title": "Philippines: the legal definition of death",
+              "text": "The **Organ Donation Act of 1991** (RA 7170, approved January 7, 1992) defines death in the same two ways as the US Act: irreversible cessation of **circulatory and respiratory** functions, or of **all functions of the entire brain, including the brain stem**. When organs are to be taken for transplant, death must be diagnosed and certified separately by **two qualified physicians**, neither of whom is part of the transplant team. Check current local rules and guidelines.",
+              "source": "Republic Act No. 7170, Organ Donation Act of 1991 (Lawphil)"
             }
           ]
         },

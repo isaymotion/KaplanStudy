@@ -283,6 +283,10 @@ KS.manifest = [
     summary: 'Defining death and brain death, the psychological autopsy, Kübler-Ross stages, how children and adults face death, normal and anticipatory grief, complicated grief and its types, grief versus depression and PTSD, bereavement across the life cycle and grief therapy, with the 2023 brain death guideline and prolonged grief disorder.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch29-2', number: '29.2', title: 'Palliative Care', short: 'Palliative care',
+    summary: 'Anxiety, depression (Endicott criteria) and delirium in advanced disease, breaking bad news and informed consent, persistent vegetative state versus brain death, the Quinlan case, advance directives and DNR orders, family care and dying at home, pain and the opioid table, end-of-life symptoms, hospice, dying children and spiritual care, with current opioid, Medicare, POLST and Philippine law updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch29-3', number: '29.3', title: 'Euthanasia and Physician-Assisted Suicide', short: 'Euthanasia and assisted suicide',
     summary: 'Types of euthanasia, the arguments on each side, positions of professional bodies, Kevorkian, Oregon\'s law and data, the AMA\'s eight-step response to a request and the psychiatric view, with corrected dates and current law in the US, Canada, the UK and the Philippines.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

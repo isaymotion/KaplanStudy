@@ -1355,5 +1355,76 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 29.1"
+},
+{
+  "id": "eol-documents",
+  "title": "Advance directives and end-of-life orders",
+  "summary": "The documents and orders in Chapter 29.2 (US law), and POLST from the update box, side by side.",
+  "items": [
+    "What it is",
+    "Who signs or decides",
+    "Key point"
+  ],
+  "rows": [
+    [
+      "Living will",
+      "**Written instructions** about life-prolonging treatment for a time the patient cannot communicate",
+      "A **mentally competent** patient",
+      "Doctors **must follow** the specific instructions"
+    ],
+    [
+      "Health care proxy",
+      "Names a **surrogate** to decide when the patient cannot",
+      "The patient names the surrogate",
+      "The surrogate decides **as the patient would have wanted**"
+    ],
+    [
+      "DNR and DNI orders",
+      "Forbid **resuscitation** or **intubation** in extremis",
+      "A competent patient, in a living will or through the proxy",
+      "Narrow: about specific interventions"
+    ],
+    [
+      "POLST (update)",
+      "A **portable medical order** that travels across settings",
+      "A **clinician**, after talking with the patient or surrogate",
+      "For **serious illness or frailty**; complements, does not replace, a directive"
+    ],
+    [
+      "Patient Self-Determination Act",
+      "US law (passed **1990**, in effect **December 1991**)",
+      "Applies to facilities taking Medicare or Medicaid",
+      "**Inform, ask, record**"
+    ],
+    [
+      "Philippine Mental Health Act, sec. 9 (update)",
+      "A **notarized advance directive** on mental health treatment",
+      "The service user",
+      "Revocable by a new directive or notarized revocation"
+    ]
+  ],
+  "keys": [
+    "A **living will** gives instructions; a **proxy** names a person.",
+    "A **POLST** is a **medical order**, not an advance directive.",
+    "Raise directives **early**, while the patient is well, and say they **can be changed**."
+  ],
+  "links": [
+    {
+      "ch": "ch29-2",
+      "sec": "s292-ad",
+      "label": "Advance directives"
+    },
+    {
+      "ch": "ch29-2",
+      "sec": "s292-term",
+      "label": "Terminal care decisions"
+    },
+    {
+      "ch": "ch28",
+      "sec": "s28-capacity",
+      "label": "Durable power of attorney"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 29.2, with update boxes"
 }
 ];
