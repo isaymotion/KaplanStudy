@@ -13,6 +13,54 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "73.0.0",
+    "date": "2026-11-11",
+    "title": "Chapter 29.1 and 29.3: Death, bereavement, euthanasia and assisted suicide",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch29-1",
+        "text": "New section 29.1, Death, Dying, and Bereavement: defining death and brain death (Table 29-1), the psychological autopsy, Kübler-Ross stages, how children and adults face death, normal and anticipatory grief, complicated grief (Tables 29-2 and 29-3), grief versus depression and PTSD, phases of grief (Table 29-4), bereavement across the life cycle and grief therapy, with 56 clinical cases.",
+        "href": "#/c/ch29-1/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch29-3",
+        "text": "New section 29.3, Euthanasia and Physician-Assisted Suicide: types of euthanasia, the arguments on each side, positions of professional bodies, Kevorkian, Oregon's law (Table 29-13) and the AMA's eight-step approach (Table 29-14), with 19 clinical cases. Every position is attributed to whoever holds it.",
+        "href": "#/c/ch29-3/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "correction",
+        "ch": "ch29-3",
+        "text": "Correction boxes fix dates the book prints wrongly: Kevorkian's first assisted death (1990) and parole (2007), Vermont's law (2013), and Montana's route (a 2009 court ruling, not a statute). Cards use the corrected facts.",
+        "href": "#/c/ch29-3/guide/s293-pas",
+        "link": "See the corrections"
+      },
+      {
+        "type": "update",
+        "ch": "ch29-1",
+        "text": "Updates: the 2023 US brain death guideline for adults and children, the paused revision of the Uniform Determination of Death Act, prolonged grief disorder in DSM-5-TR and ICD-11, and the 2-month figures in Table 29-2.",
+        "href": "#/c/ch29-1/guide/s291-def",
+        "link": "See the brain death update"
+      },
+      {
+        "type": "update",
+        "ch": "ch29-3",
+        "text": "Updates on current law: aid in dying in 12 US states and DC by statute plus Montana; Oregon's 2023 removal of residency and its 2025 figures; Canada's MAID and Bill C-41 on mental illness; the England and Wales and Scotland bills; and the Philippines (Revised Penal Code art. 253, Mental Health Act advance directives).",
+        "href": "#/c/ch29-3/guide/s293-euth",
+        "link": "See the international update"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, After a loss: which picture fits?, and look-alike tables of grief patterns and of end-of-life acts that are easily confused. The grief and depression look-alike now links to section 29.1.",
+        "href": "#/helper/griefdx29",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "72.0.0",
     "date": "2026-11-11",
     "title": "Chapter 28: Forensic and legal issues",

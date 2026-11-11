@@ -278,6 +278,14 @@ KS.manifest = [
   { id: 'ch28', number: 28, title: 'Forensic and Legal Issues', short: 'Forensic psychiatry',
     summary: 'Malpractice and the 4 Ds, negligent prescribing and split treatment, privilege and confidentiality, suicidal and violent patients (Tarasoff), admission procedures, rights to treatment and to refuse it, seclusion and restraint, informed consent, custody, capacity, competence to stand trial, the insanity standards and HIPAA, with corrections to case names and dates and notes on Philippine law.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch29-1', number: '29.1', title: 'Death, Dying, and Bereavement', short: 'Death and bereavement',
+    summary: 'Defining death and brain death, the psychological autopsy, Kübler-Ross stages, how children and adults face death, normal and anticipatory grief, complicated grief and its types, grief versus depression and PTSD, bereavement across the life cycle and grief therapy, with the 2023 brain death guideline and prolonged grief disorder.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch29-3', number: '29.3', title: 'Euthanasia and Physician-Assisted Suicide', short: 'Euthanasia and assisted suicide',
+    summary: 'Types of euthanasia, the arguments on each side, positions of professional bodies, Kevorkian, Oregon\'s law and data, the AMA\'s eight-step response to a request and the psychiatric view, with corrected dates and current law in the US, Canada, the UK and the Philippines.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

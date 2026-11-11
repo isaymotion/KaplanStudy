@@ -6394,5 +6394,212 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "griefdx29",
+  "chapter": "ch29-1",
+  "title": "After a loss: which picture fits?",
+  "summary": "Work through the main questions in Chapter 29.1 to tell normal grief from anticipatory grief, anniversary reactions, the complicated grief types, major depression and PTSD after a violent death.",
+  "caution": "A teaching aid for the patterns Chapter 29.1 describes. It does not diagnose. Prolonged grief disorder now has its own criteria in DSM-5-TR (12 months after the death in adults) and ICD-11 (6 months); see the update boxes. Always ask about suicidal thoughts.",
+  "start": "when",
+  "nodes": {
+    "when": {
+      "q": "Has the death already happened?",
+      "options": [
+        {
+          "label": "No: a loved one is dying slowly",
+          "to": "r:antic",
+          "note": "Grief can start before the death."
+        },
+        {
+          "label": "Yes",
+          "to": "dep",
+          "note": "The questions below apply after a death."
+        }
+      ]
+    },
+    "dep": {
+      "q": "Are there worthlessness, active suicidal thoughts, marked psychomotor slowing, or low mood that does not depend on reminders?",
+      "options": [
+        {
+          "label": "Yes, one or more",
+          "to": "r:mdd",
+          "note": "These features are rare in ordinary grief."
+        },
+        {
+          "label": "No",
+          "to": "trauma",
+          "note": "The core depressive red flags are absent."
+        }
+      ]
+    },
+    "trauma": {
+      "q": "Was the death violent or unnatural (homicide, suicide, terrorism), with horror, intrusive images or hyperarousal?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:ptsd",
+          "note": "Violent deaths set off PTSD far more often than natural deaths."
+        },
+        {
+          "label": "No",
+          "to": "shape",
+          "note": "No trauma picture is present."
+        }
+      ]
+    },
+    "shape": {
+      "q": "What is the grief like?",
+      "options": [
+        {
+          "label": "Pangs tied to reminders, with warm memories and slow easing",
+          "to": "r:normal",
+          "note": "Reminder-bound pangs with positive feelings fit typical grief."
+        },
+        {
+          "label": "A brief return of grief around a date or age milestone",
+          "to": "r:anniv",
+          "note": "Dates and milestones can rekindle grief."
+        },
+        {
+          "label": "Hardly any grief when mourning was expected, with lasting denial",
+          "to": "r:delayed",
+          "note": "Grief is absent or held back."
+        },
+        {
+          "label": "Extraordinarily intense after a sudden death; usual coping fails",
+          "to": "r:hyper",
+          "note": "Intensity after a sudden loss points here."
+        },
+        {
+          "label": "Long-lasting, with bitterness and an idealized picture of the dead person",
+          "to": "r:chronic",
+          "note": "Bitterness and idealization over a long course."
+        }
+      ]
+    }
+  },
+  "results": {
+    "antic": {
+      "label": "Anticipatory grief",
+      "dx": "Grief before the death",
+      "line": "Grief that starts during a loved one's slow dying.",
+      "points": [
+        "It may soften the later loss.",
+        "It can bring early separation and withdrawal from the dying person.",
+        "It does not reliably lessen bereavement afterwards."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-grief",
+        "label": "Anticipatory grief"
+      }
+    },
+    "mdd": {
+      "label": "Consider major depressive disorder",
+      "dx": "Major depression after a loss",
+      "line": "DSM-5 removed the bereavement exclusion, so depression can be diagnosed after a death.",
+      "points": [
+        "Clues: feeling worthless or bad, suicidal ideation, retardation, mood independent of reminders, past or family history of depression.",
+        "Active suicidal thinking needs psychiatric assessment now.",
+        "Major depression in a dying or bereaved person is treatable; do not call it normal."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-cx",
+        "label": "Bereavement versus major depression"
+      }
+    },
+    "ptsd": {
+      "label": "Traumatic distress after a violent death",
+      "dx": "Screen for PTSD",
+      "line": "Homicide, suicide and terrorism deaths raise the risk of PTSD in survivors.",
+      "points": [
+        "Grief mixes with themes of violence, victimization and volition.",
+        "Treat the traumatic distress first.",
+        "Medication, psychotherapy and self-help groups all have a role."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-dep",
+        "label": "Bereavement and PTSD"
+      }
+    },
+    "normal": {
+      "label": "Normal grief",
+      "dx": "Uncomplicated bereavement",
+      "line": "Grief that comes in reminder-bound waves and slowly eases.",
+      "points": [
+        "Loneliness after losing a spouse can last years.",
+        "Social timetables are not clinical cutoffs.",
+        "A mild sleep aid may sometimes help; antidepressants are rarely needed."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-grief",
+        "label": "Normal grief"
+      }
+    },
+    "anniv": {
+      "label": "Anniversary reaction",
+      "dx": "Rekindled grief",
+      "line": "Grief that returns around the death date, holidays, birthdays or the age at which the person died.",
+      "points": [
+        "Usually milder and briefer each year.",
+        "May last hours or days.",
+        "Expected and usually self-limited."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-grief",
+        "label": "Anniversary reactions"
+      }
+    },
+    "delayed": {
+      "label": "Delayed grief",
+      "dx": "Complicated grief: delayed type",
+      "line": "Grief absent or inhibited when open mourning would be expected.",
+      "points": [
+        "Lasting denial is typical.",
+        "The course may later bring anger and guilt.",
+        "Follow up: complicated grief can herald major depression."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-cx",
+        "label": "Types of complicated grief"
+      }
+    },
+    "hyper": {
+      "label": "Hypertrophic grief",
+      "dx": "Complicated grief: hypertrophic type",
+      "line": "Unusually intense grief, most often after a sudden, unexpected death.",
+      "points": [
+        "Usual coping does not ease the anxiety.",
+        "Withdrawal is common and family stability may suffer.",
+        "It often lasts long but eases over time."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-cx",
+        "label": "Types of complicated grief"
+      }
+    },
+    "chronic": {
+      "label": "Chronic grief",
+      "dx": "Complicated grief: chronic type (consider prolonged grief disorder)",
+      "line": "The most common type of complicated grief.",
+      "points": [
+        "Bitterness and idealization of the dead person.",
+        "More likely after a close, ambivalent or dependent bond, or with little support.",
+        "If yearning or preoccupation persists with impairment 12 months after the death (DSM-5-TR adults), check the prolonged grief disorder criteria."
+      ],
+      "link": {
+        "ch": "ch29-1",
+        "sec": "s291-cx",
+        "label": "Types of complicated grief"
+      }
+    }
+  }
 }
 ]);

@@ -4,6 +4,20 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 29 (29.1 and 29.3), November 2026 */
+    { m: "Greer DM et al., Pediatric and Adult Brain Death", label: "Greer DM et al., Pediatric and adult brain death/death by neurologic criteria consensus guideline (Neurology 2023)", url: "https://doi.org/10.1212/WNL.0000000000207740" },
+    { m: "Lewis A, Perspectives of medical organizations", label: "Lewis A, Perspectives on revising the Uniform Determination of Death Act (Neurocrit Care 2023)", url: "https://doi.org/10.1007/s12028-023-01872-5" },
+    { m: "NPR, A trenchant moment with Kevorkian", label: "NPR, A trenchant moment with Kevorkian (June 3, 2007)", url: "https://www.npr.org/2007/06/03/10682253/a-trenchant-moment-with-kevorkian" },
+    { m: "NPR, Jack Kevorkian, assisted suicide advocate, dies at 83", label: "NPR, Jack Kevorkian, assisted suicide advocate, dies at 83 (June 3, 2011)", url: "https://www.npr.org/2011/06/03/136917033/jack-kevorkian-assisted-suicide-advocate-dies-at-83" },
+    { m: "Compassion & Choices, States or territories where medical aid in dying is authorized", label: "Compassion & Choices, States or territories where medical aid in dying is authorized (dates of passage and effect)", url: "https://compassionandchoices.org/resource/states-or-territories-where-medical-aid-in-dying-is-authorized" },
+    { m: "Oregon Legislature, Staff measure summary, HB 2279", label: "Oregon Legislature, staff measure summary, HB 2279 (2023): repeal of the residency requirement", url: "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/MeasureAnalysisDocument/75715" },
+    { m: "CNN, Medical aid in dying fast facts", label: "CNN, Medical aid in dying fast facts (2026)", url: "https://www.cnn.com/us/medical-aid-in-dying-fast-facts" },
+    { m: "Oregon Health Authority, Oregon Death with Dignity Act 2025 Data Summary", label: "Oregon Health Authority, Oregon Death with Dignity Act 2025 Data Summary (April 2026)", url: "https://www.oregon.gov/oha/ph/providerpartnerresources/evaluationresearch/deathwithdignityact/Documents/year28.pdf" },
+    { m: "Department of Justice Canada, Canada's medical assistance in dying (MAID) law", label: "Department of Justice Canada, Canada's medical assistance in dying (MAID) law", url: "https://www.justice.gc.ca/eng/cj-jp/ad-am/bk-di.html" },
+    { m: "CBC News, Ottawa tables new MAID legislation", label: "CBC News, Ottawa tables new MAID legislation, Bill C-41 (October 2026)", url: "https://www.cbc.ca/news/politics/ottawa-maid-legislation-9.7397903" },
+    { m: "UK Parliament, Lords concludes debate on Terminally Ill Adults Bill", label: "UK Parliament, Lords concludes debate on Terminally Ill Adults Bill (April 27, 2026)", url: "https://www.parliament.uk/business/news/2025/nov-2025/terminally-ill-adults-end-of-life-bill-lords-committee-stage/" },
+    { m: "Hansard, Terminally Ill Adults (End of Life) Bill, House of Commons, 11 September 2026", label: "Hansard, Terminally Ill Adults (End of Life) Bill, House of Commons, 11 September 2026", url: "https://hansard.parliament.uk/commons/2026-09-11/debates/4C64BB03-23BC-41DF-8837-50F7BD082F9C/TerminallyIllAdults(EndOfLife)Bill" },
+    { m: "Revised Penal Code (Act No. 3815), Article 253", label: "Revised Penal Code of the Philippines (Act No. 3815), WIPO Lex record", url: "https://www.wipo.int/wipolex/en/legislation/details/3465" },
     /* Chapter 28, November 2026 */
     { m: "Executive Order 13140, 1999 Amendments to the Manual for Courts-Martial", label: "Executive Order 13140 (Military Rule of Evidence 513), Federal Register, October 12, 1999", url: "https://www.govinfo.gov/content/pkg/FR-1999-10-12/html/99-26670.htm" },
     { m: "Keepers GA et al., The American Psychiatric Association practice guideline for the treatment of patients with schizophrenia", label: "APA practice guideline for schizophrenia, executive summary (Am J Psychiatry 2020)", url: "https://psychiatryonline.org/doi/10.1176/appi.focus.18402" },

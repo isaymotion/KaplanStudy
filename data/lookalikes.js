@@ -204,7 +204,8 @@ KS.lookalikes = [
       { ch: "ch07", sec: "s7-mdd", label: "Major depressive disorder" },
       { ch: "ch07", sec: "s7-pdd", label: "Persistent depressive disorder" },
       { ch: "ch07", sec: "s7-other", label: "Other depressive disorders" },
-      { ch: "ch20", sec: "s20-bereave", label: "Bereavement as a condition of clinical attention" }
+      { ch: "ch20", sec: "s20-bereave", label: "Bereavement as a condition of clinical attention" },
+      { ch: "ch29-1", sec: "s291-cx", label: "Bereavement versus major depression (Table 29-2)" }
     ]
   },
   {
@@ -1206,5 +1207,153 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 28"
+},
+{
+  "id": "eol-acts",
+  "title": "End-of-life acts that are easily confused",
+  "summary": "Chapter 29.3 separates several acts at the end of life. Each row gives what the act is and who decides; the positions held on each are contested and are attributed in the chapter.",
+  "items": [
+    "What happens",
+    "Who acts and who decides",
+    "Key distinction"
+  ],
+  "rows": [
+    [
+      "Passive euthanasia",
+      "**Heroic** life-saving measures are **withheld**",
+      "The care team, ideally at the patient's or proxy's request",
+      "Nothing is done to cause death; treatment is not started"
+    ],
+    [
+      "Withdrawing treatment at a competent patient's request",
+      "Life support is **stopped** because the patient refuses it",
+      "A **mentally competent** patient decides; the doctor must honor it",
+      "The WMA treats honoring a refusal as **not unethical**"
+    ],
+    [
+      "Palliative treatment that may shorten life",
+      "Drugs are given to **relieve suffering**; death may follow",
+      "The physician, with consent",
+      "Death is **not the goal** and is **not intended**"
+    ],
+    [
+      "Physician-assisted suicide",
+      "The physician supplies the means, such as a **lethal prescription**",
+      "The **patient** performs the final act",
+      "Legal only where a law or court allows it (see the update boxes)"
+    ],
+    [
+      "Voluntary active euthanasia",
+      "The physician **deliberately ends** the patient's life at the patient's request",
+      "The **physician** performs the act",
+      "The book's US bodies (AMA, APA) call it illegal and unethical"
+    ],
+    [
+      "Involuntary euthanasia",
+      "Life is ended **without or against** the patient's consent",
+      "Someone other than the patient decides",
+      "Condemned in the chapter, including by the American Association of Suicidology"
+    ]
+  ],
+  "keys": [
+    "Ask **who performs the final act**: the patient (assisted suicide) or the physician (active euthanasia).",
+    "Ask **whether death is intended**: relief of suffering that may shorten life is not assisted suicide.",
+    "Law differs by country and state: see the update boxes for the United States, Canada, the United Kingdom and the Philippines."
+  ],
+  "links": [
+    {
+      "ch": "ch29-3",
+      "sec": "s293-euth",
+      "label": "Types of euthanasia"
+    },
+    {
+      "ch": "ch29-3",
+      "sec": "s293-pas",
+      "label": "Physician-assisted suicide"
+    },
+    {
+      "ch": "ch29-3",
+      "sec": "s293-req",
+      "label": "Responding to requests"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 29.3"
+},
+{
+  "id": "grief-types",
+  "title": "Normal and complicated grief patterns",
+  "summary": "The grief patterns described in Chapter 29.1, side by side.",
+  "items": [
+    "Core features",
+    "Typical setting",
+    "Watch for"
+  ],
+  "rows": [
+    [
+      "Normal grief",
+      "Reminder-bound **pangs**, positive feelings alongside, slow easing",
+      "Any loss",
+      "**Loneliness** can last years; not a disorder"
+    ],
+    [
+      "Anticipatory grief",
+      "Grief **before** the death",
+      "A loved one's **slow dying**",
+      "Early **withdrawal** from the dying person"
+    ],
+    [
+      "Anniversary reaction",
+      "Grief **rekindled** for hours or days",
+      "Death date, holidays, reaching the **age** of the deceased",
+      "Usually milder each year"
+    ],
+    [
+      "Chronic grief",
+      "The **most common** complicated type; **bitterness**, **idealization**",
+      "Close, ambivalent or **dependent** bond; little support",
+      "Prolonged grief disorder (see the update box)"
+    ],
+    [
+      "Hypertrophic grief",
+      "**Extraordinarily intense**; coping fails; withdrawal",
+      "**Sudden, unexpected** death",
+      "Family disruption"
+    ],
+    [
+      "Delayed grief",
+      "Grief **absent or inhibited**; lasting **denial**",
+      "Expected mourning does not appear",
+      "Later **anger and guilt**"
+    ],
+    [
+      "Traumatic bereavement",
+      "Chronic **and** hypertrophic: yearning, **intrusive images**, avoidance plus preoccupation",
+      "Past psychiatric illness; a bond that defined the survivor's identity",
+      "PTSD after violent deaths"
+    ]
+  ],
+  "keys": [
+    "Complicated grief types are **descriptive** in DSM-5 and may herald **major depression**.",
+    "Worthlessness, suicidal ideation and retardation point to **major depression**, not grief.",
+    "DSM-5-TR and ICD-11 now name **prolonged grief disorder**; see the update box in s291-cx."
+  ],
+  "links": [
+    {
+      "ch": "ch29-1",
+      "sec": "s291-grief",
+      "label": "Normal grief"
+    },
+    {
+      "ch": "ch29-1",
+      "sec": "s291-cx",
+      "label": "Complicated grief"
+    },
+    {
+      "ch": "ch29-1",
+      "sec": "s291-dep",
+      "label": "Grief, depression and PTSD"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 29.1"
 }
 ];

@@ -779,7 +779,27 @@ KS.glossary = (KS.glossary || []).concat([
   ["irresistible impulse", "A 1922 addition to the insanity defense: the person acted under an impulse that mental disease made impossible to resist (the policeman-at-the-elbow test).", "Ch 28"],
   ["Durham rule", "The 1954 product rule: no criminal responsibility if the unlawful act was the product of mental disease or defect; dropped in 1972.", "Ch 28"],
   ["American Law Institute test", "The Model Penal Code insanity test: lacking substantial capacity to appreciate the wrongfulness of conduct or to conform it to the law.", "Ch 28"],
-  ["guilty but mentally ill", "An alternative verdict in some US states when insanity is pleaded; the person is still sentenced.", "Ch 28"]
+  ["guilty but mentally ill", "An alternative verdict in some US states when insanity is pleaded; the person is still sentenced.", "Ch 28"],
+  ["brain death", "Irreversible loss of all functions of the whole brain, brainstem included; legal death in the United States under the 1981 standard, even if the heart is kept beating.", "Ch 29.1"],
+  ["Uniform Determination of Death Act", "The 1981 US model law: death is irreversible loss of circulation and breathing, or of all whole-brain function, judged by accepted medical standards.", "Ch 29.1"],
+  ["psychological autopsy", "Reconstruction after a death, through interviews with relatives, friends and doctors, of a person's history and mental state, to judge whether mental illness was present or how the person died.", "Ch 29.1"],
+  ["K\u00fcbler-Ross stages", "Five common reactions to learning one is dying: shock and denial, anger, bargaining, depression and acceptance; not a fixed order.", "Ch 29.1"],
+  ["near-death experience", "A report, after coming close to death, of leaving the body, a tunnel, light and meeting the dead; felt as real and often followed by less fear of death.", "Ch 29.1"],
+  ["anticipatory grief", "Grief that begins before a death, during a loved one's slow dying; it can soften the loss or bring early withdrawal.", "Ch 29.1"],
+  ["anniversary reaction", "Grief rekindled by a date or milestone, such as the death anniversary, a holiday, or reaching the age at which the person died.", "Ch 29.1"],
+  ["grief work", "The process by which a survivor redefines the relationship with the person who died and forms lasting new ties.", "Ch 29.1"],
+  ["complicated grief", "Grief that departs from the usual course, such as chronic, hypertrophic or delayed grief; may herald major depression.", "Ch 29.1"],
+  ["chronic grief", "The most common type of complicated grief: long-lasting, with bitterness and idealization, often after a dependent bond or with little support.", "Ch 29.1"],
+  ["hypertrophic grief", "Unusually intense grief, most often after a sudden, unexpected death, in which ordinary coping fails.", "Ch 29.1"],
+  ["delayed grief", "Grief that is absent or inhibited when mourning would be expected, with lasting denial; it may surface later with anger and guilt.", "Ch 29.1"],
+  ["traumatic bereavement", "Grief that is both chronic and intense, with yearning, intrusive images of the death and avoidance mixed with preoccupation.", "Ch 29.1"],
+  ["persistent complex bereavement disorder", "DSM-5's draft diagnosis for disabling grief (12 months in adults, 6 in children), in the further-study section; replaced by prolonged grief disorder in DSM-5-TR.", "Ch 29.1"],
+  ["prolonged grief disorder", "DSM-5-TR (2022) and ICD-11 diagnosis for grief that persists with yearning or preoccupation and impairment: at least 12 months after the death in DSM-5-TR adults, 6 months in ICD-11.", "Ch 29.1"],
+  ["euthanasia", "From the Greek for 'good death': allowing, hastening or causing the death of a person with a terminal condition, meant to relieve suffering.", "Ch 29.3"],
+  ["passive euthanasia", "Withholding heroic life-saving measures, as opposed to deliberately ending a life (active euthanasia).", "Ch 29.3"],
+  ["active euthanasia", "Deliberately ending a patient's life; voluntary if the patient asked, involuntary if done without or against consent.", "Ch 29.3"],
+  ["physician-assisted suicide", "A physician provides the means, such as a lethal prescription, which the patient takes by their own act; called medical aid in dying by supporters.", "Ch 29.3"],
+  ["Death with Dignity Act", "Oregon's 1994 ballot law, in effect since 1997, letting competent, terminally ill adults with 6 months or less obtain a lethal prescription under safeguards.", "Ch 29.3"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1151,5 +1171,13 @@ KS.glossaryAliases = {
   "model penal code": "American Law Institute test",
   "irresistible impulse test": "irresistible impulse",
   "emancipated minors": "emancipated minor",
-  "Tarasoff duty": "duty to protect"
+  "Tarasoff duty": "duty to protect",
+  "brain-death": "brain death",
+  "Kubler-Ross stages": "Kübler-Ross stages",
+  "stages of dying": "Kübler-Ross stages",
+  "near-death experiences": "near-death experience",
+  "anniversary reactions": "anniversary reaction",
+  "medical aid in dying": "physician-assisted suicide",
+  "assisted suicide": "physician-assisted suicide",
+  "Oregon Death with Dignity Act": "Death with Dignity Act"
 };
