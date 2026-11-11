@@ -5826,5 +5826,211 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "clref",
+  "chapter": "ch25-1",
+  "title": "Working through a C-L referral",
+  "summary": "Start from the problem the medical team is calling about and follow section 25.1 to the first questions and steps: suicide risk, depression, agitation, hallucinations, insomnia, confusion, refusal of treatment or symptoms with no physical basis.",
+  "caution": "A teaching aid built from section 25.1 and its update boxes, not a substitute for a full consultation. Every referral still needs a full history, mental status and cognitive exam, and a talk with the referring team.",
+  "start": "q",
+  "nodes": {
+    "q": {
+      "q": "What is the main problem the team is calling about?",
+      "options": [
+        {
+          "label": "Suicidal statements or an attempt",
+          "to": "r:suicide",
+          "note": "Safety comes first."
+        },
+        {
+          "label": "Low mood without suicidal thoughts",
+          "to": "r:dep",
+          "note": "Common on medical wards."
+        },
+        {
+          "label": "Agitation",
+          "to": "r:agit",
+          "note": "Look for a cause before sedating."
+        },
+        {
+          "label": "Hallucinations",
+          "to": "hall",
+          "note": "Timing matters."
+        },
+        {
+          "label": "Insomnia",
+          "to": "r:sleep",
+          "note": "Pattern points to the cause."
+        },
+        {
+          "label": "Confusion or disorientation",
+          "to": "r:conf",
+          "note": "Think delirium first."
+        },
+        {
+          "label": "Refusing a procedure or not adhering",
+          "to": "r:refuse",
+          "note": "Look at the relationship and at capacity."
+        },
+        {
+          "label": "Symptoms with no physical cause found",
+          "to": "r:somatic",
+          "note": "Consider four conditions."
+        }
+      ]
+    },
+    "hall": {
+      "q": "Is the patient a heavy drinker, with tremor and confusion a few days into the admission?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:dts",
+          "note": "Withdrawal timing fits."
+        },
+        {
+          "label": "No",
+          "to": "r:hallother",
+          "note": "Other causes."
+        }
+      ]
+    }
+  },
+  "results": {
+    "suicide": {
+      "label": "Suicide risk in a medical inpatient",
+      "dx": "Suicide attempt or threat (25.1)",
+      "line": "Medically ill people have higher suicide rates. Assess risk and keep the patient safe.",
+      "points": [
+        "High-risk factors: previous attempt, man over 45, alcohol use, no social support, catastrophic or painful illness.",
+        "If risk is present: transfer to a psychiatric unit or 24-hour nursing care (constant observation).",
+        "Treat depression and pain."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Common C-L problems"
+      }
+    },
+    "dep": {
+      "label": "Depression on a medical ward",
+      "dx": "Depression (25.1)",
+      "line": "Assess suicide risk in every depressed patient; an antidepressant can be started if needed.",
+      "points": [
+        "Check drug-drug interactions and liver function first.",
+        "Decide together with the primary physician.",
+        "Remember that depression worsens cardiac, diabetic and stroke outcomes."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-tx",
+        "label": "Treatments in psychosomatic medicine"
+      }
+    },
+    "agit": {
+      "label": "Agitation",
+      "dx": "Agitation (25.1)",
+      "line": "Usually from a cognitive disorder or withdrawal from opioids, alcohol or sedative-hypnotics.",
+      "points": [
+        "Ask about command hallucinations or paranoid ideas.",
+        "Rule out a toxic drug reaction.",
+        "Antipsychotics may help severe agitation; physical restraint only as a last resort.",
+        "Since the book: in dementia, antipsychotics carry a boxed warning on mortality."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Common C-L problems"
+      }
+    },
+    "dts": {
+      "label": "Probable delirium tremens",
+      "dx": "Hallucinations from alcohol withdrawal (25.1)",
+      "line": "Delirium tremens is a common cause of hallucinations on general wards.",
+      "points": [
+        "The book times it 3 to 4 days after admission; it usually starts 48 to 96 hours after the last drink.",
+        "Give thiamine; do not delay glucose if the patient is hypoglycemic.",
+        "Treat as a medical emergency."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Hallucinations"
+      }
+    },
+    "hallother": {
+      "label": "Other causes of hallucinations",
+      "dx": "Hallucinations (25.1)",
+      "line": "Consider ICU sensory isolation, delirium, schizophrenia, brief psychotic disorder and neurocognitive disorders.",
+      "points": [
+        "Formication (bugs on the skin) suggests cocaine.",
+        "Psychotic disorders often respond to antipsychotics."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Hallucinations"
+      }
+    },
+    "sleep": {
+      "label": "Insomnia in hospital",
+      "dx": "Sleep-wake problems (25.1)",
+      "line": "Pain is a common cause; treating it often fixes the insomnia.",
+      "points": [
+        "Early morning waking suggests depression; trouble falling asleep suggests anxiety.",
+        "Keep early substance withdrawal in mind."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Sleep-wake disorders"
+      }
+    },
+    "conf": {
+      "label": "Confusion: look for delirium and its cause",
+      "dx": "Confusion (25.1)",
+      "line": "Delirium is the most common cause of confusion in hospital. Look for an urgent medical cause.",
+      "points": [
+        "Use Table 25-2: metabolic, systemic, CNS and drug causes.",
+        "Benzodiazepines can worsen confusion; low-dose antipsychotics may help marked agitation.",
+        "Add a clock, a radio and open curtains when sensory deprivation plays a part."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-delirium",
+        "label": "Urgent causes of delirium"
+      }
+    },
+    "refuse": {
+      "label": "Refusal or nonadherence",
+      "dx": "Noncompliance or refusal to consent (25.1)",
+      "line": "Look at the doctor-patient relationship and at the patient's fears first.",
+      "points": [
+        "Negative transference is a common cause; fear often eases with education and reassurance.",
+        "Cognitive disorders are the leading cause of impaired judgment in inpatients.",
+        "Capacity for the specific decision is a clinical judgment; competence is decided by a court."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "Refusal to consent"
+      }
+    },
+    "somatic": {
+      "label": "Symptoms with no physical basis",
+      "dx": "No physiologic basis for symptoms (25.1)",
+      "line": "Consider conversion, somatization, factitious disorder and malingering.",
+      "points": [
+        "Glove-and-stocking anesthesia with autonomic signs: conversion (functional neurological symptom disorder).",
+        "Wanting to stay in hospital: factitious disorder.",
+        "Obvious external gain such as compensation: malingering."
+      ],
+      "link": {
+        "ch": "ch25-1",
+        "sec": "s251-problems",
+        "label": "No physiologic basis"
+      }
+    }
+  }
 }
 ]);

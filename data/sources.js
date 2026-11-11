@@ -4,6 +4,19 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 25.1 and 25.2, November 2026 */
+    { m: "US FDA news release, FDA approves first drug to treat agitation", label: "US FDA news release, brexpiprazole for agitation in Alzheimer dementia (May 2023)", url: "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease" },
+    { m: "Appelbaum PS, Assessment of patients' competence", label: "Appelbaum PS, N Engl J Med 2007 (assessing capacity to consent)", url: "https://pubmed.ncbi.nlm.nih.gov/?term=Appelbaum+%22Assessment+of+patients%27+competence+to+consent+to+treatment%22+2007" },
+    { m: "MedlinePlus (US National Library of Medicine), Delirium tremens", label: "MedlinePlus, Delirium tremens", url: "https://medlineplus.gov/ency/article/000766.htm" },
+    { m: "Devlin JW et al., Clinical practice guidelines for the prevention and management of pain", label: "Devlin JW et al., Crit Care Med 2018 (SCCM PADIS guideline)", url: "https://doi.org/10.1097/CCM.0000000000003299" },
+    { m: "Schabelman E, Kuo D, Glucose before thiamine", label: "Schabelman E, Kuo D, J Emerg Med 2012 (glucose before thiamine review)", url: "https://doi.org/10.1016/j.jemermed.2011.05.076" },
+    { m: "Goodwin PJ et al., The effect of group psychosocial support", label: "Goodwin PJ et al., N Engl J Med 2001 (group support and survival in metastatic breast cancer)", url: "https://doi.org/10.1056/NEJMoa011871" },
+    { m: "Garnett MF, Zehner AM, Changes in suicide rates", label: "NCHS Data Brief No. 572 (2026), US suicide rates 2023 to 2024", url: "https://www.cdc.gov/nchs/products/databriefs/db572.htm" },
+    { m: "US Centers for Disease Control and Prevention, Classic Creutzfeldt-Jakob disease", label: "CDC, Classic Creutzfeldt-Jakob disease", url: "https://www.cdc.gov/prions/cjd/" },
+    { m: "Alzheimer's Association, Revised criteria for diagnosis and staging", label: "Alzheimer's Association, revised diagnostic and staging criteria (2024)", url: "https://www.alz.org/news/2024/revised-alzheimers-diagnostic-staging-criteria" },
+    { m: "World Health Organization, Abuse of older people", label: "WHO fact sheet, Abuse of older people (2024)", url: "https://www.who.int/en/news-room/fact-sheets/detail/elder-abuse" },
+    { m: "Livingston G et al., Dementia prevention, intervention, and care: 2024", label: "Livingston G et al., Lancet 2024 (Lancet Commission on dementia)", url: "https://doi.org/10.1016/S0140-6736(24)01296-0" },
+    { m: "American Geriatrics Society 2023 updated AGS Beers Criteria", label: "AGS Beers Criteria 2023, J Am Geriatr Soc", url: "https://doi.org/10.1111/jgs.18372" },
     /* Chapter 24.1 and 24.2, November 2026 */
     { m: "de Winter L et al., Who benefits from individual placement", label: "de Winter L et al., Epidemiol Psychiatr Sci 2022 (IPS meta-analysis)", url: "https://doi.org/10.1017/S2045796022000300" },
     { m: "Vita A et al., Effectiveness, core elements", label: "Vita A et al., JAMA Psychiatry 2021 (cognitive remediation meta-analysis)", url: "https://doi.org/10.1001/jamapsychiatry.2021.0620" },

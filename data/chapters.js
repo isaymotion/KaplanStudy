@@ -255,6 +255,14 @@ KS.manifest = [
     summary: 'Genetic counseling in psychiatry: definition, genes and environment in complex disorders (Table 24-2), family history and pedigrees (Figures 24-1 and 24-2), the steps of counseling (Table 24-3), risk communication, psychosocial support and the ethics of testing, with updates on genome studies, APOE testing and genetic discrimination law.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch25-1', number: '25.1', title: 'Consultation-Liaison Psychiatry', short: 'C-L psychiatry',
+    summary: 'Consultation-liaison psychiatry (psychosomatic medicine): history, clinical problems (Table 25-1), evaluation and treatment in the medically ill, common referral problems, ICU and dialysis units, urgent causes of delirium (Table 25-2), surgery, transplantation and psycho-oncology, with updates on capacity, ICU delirium, thiamine and the group-therapy survival trials.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch25-2', number: '25.2', title: 'Geriatric Psychiatry', short: 'Geriatric psychiatry',
+    summary: 'Mental disorders of late life: assessment (Table 25-3), dementia and reversible look-alikes (Table 25-4), depression and the Geriatric Depression Scale (Table 25-5), psychosis, anxiety, substance use, sleep, suicide, syncope (Table 25-6), hearing loss, elder abuse, bereavement, prescribing and psychotherapy, with updates on suicide data, Alzheimer criteria and treatments, and the Beers Criteria.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

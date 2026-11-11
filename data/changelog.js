@@ -13,6 +13,50 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "70.0.0",
+    "date": "2026-11-11",
+    "title": "Chapter 25: Consultation-liaison and geriatric psychiatry",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch25-1",
+        "text": "New section 25.1, Consultation-Liaison Psychiatry: history and names, clinical problems (Table 25-1), evaluation and treatment in the medically ill, common referral problems, ICU and dialysis units, urgent causes of delirium (Table 25-2), surgery, transplantation and psycho-oncology, with 46 clinical cases.",
+        "href": "#/c/ch25-1/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch25-2",
+        "text": "New section 25.2, Geriatric Psychiatry: assessment (Table 25-3), dementia and reversible look-alikes (Table 25-4), late-life depression and the Geriatric Depression Scale, psychosis, anxiety, substance use, sleep, suicide, syncope (Table 25-6), hearing loss, elder abuse, bereavement, prescribing and psychotherapy, with 45 clinical cases.",
+        "href": "#/c/ch25-2/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "correction",
+        "ch": "ch25-2",
+        "text": "The book says all human prion diseases come from PRNP mutations; that applies only to the inherited forms (sporadic CJD, about 85%, has no known cause). A correction box explains this.",
+        "href": "#/c/ch25-2/guide/s252-dementia",
+        "link": "See the correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch25-1",
+        "text": "Updates in 25.1: capacity versus competence, delirium tremens timed from the last drink, ICU delirium guidelines (PADIS 2018 and 2025), thiamine and glucose, the boxed warning on antipsychotics in dementia and brexpiprazole, and the failed replication of the group-therapy survival result in breast cancer."
+      },
+      {
+        "type": "update",
+        "ch": "ch25-2",
+        "text": "Updates in 25.2: current US suicide rates in late life, new Alzheimer criteria and anti-amyloid treatments, WHO elder abuse figures, hearing loss as a dementia risk factor, and the 2023 Beers Criteria (including meclizine and once-daily dosing)."
+      },
+      {
+        "type": "feature",
+        "text": "Chapter 25 is now complete (25.1 to 25.3). New decision helper \"Working through a C-L referral\" and a look-alike comparing delirium, dementia and depression-related cognitive dysfunction.",
+        "href": "#/helpers/clref",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "69.0.0",
     "date": "2026-11-11",
     "title": "Chapter 24: Psychiatric rehabilitation and genetic counseling",

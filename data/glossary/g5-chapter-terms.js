@@ -727,7 +727,20 @@ KS.glossary = (KS.glossary || []).concat([
   ["pedigree", "A family medical history drawn as a diagram with standard symbols, used to assess the likely cause of a disorder and recurrence risk.", "Ch 24.2"],
   ["proband", "The affected person through whom a family comes to clinical attention in a genetic study or counseling.", "Ch 24.2"],
   ["polygenic risk score", "A single number summing the small effects of many common variants on risk for a trait; a research tool with no current clinical use in psychiatry.", "Ch 24.2"],
-  ["velocardiofacial syndrome", "The 22q11.2 deletion syndrome; features vary within families and include cleft palate, heart defects, learning problems and a high risk of psychosis.", "Ch 24.2"]
+  ["velocardiofacial syndrome", "The 22q11.2 deletion syndrome; features vary within families and include cleft palate, heart defects, learning problems and a high risk of psychosis.", "Ch 24.2"],
+  ["consultation-liaison psychiatry", "The psychiatric specialty that cares for mental illness in medically ill patients in general hospital and other medical settings; formerly called psychosomatic medicine.", "Ch 25.1"],
+  ["psycho-oncology", "The study of how cancer affects psychological functioning and of how psychological and behavioral factors relate to cancer risk and survival.", "Ch 25.1"],
+  ["dialysis dementia", "A rare syndrome after many years of hemodialysis with memory loss, disorientation, dystonia and seizures, most likely from aluminum toxicity; now uncommon because dialysate aluminum is controlled.", "Ch 25.1"],
+  ["decision-making capacity", "A clinical judgment that a patient can make one specific decision: communicate a choice, understand the information, appreciate its meaning for them, and reason about options. Competence, by contrast, is a legal finding.", "Ch 25.1"],
+  ["depression-related cognitive dysfunction", "Cognitive impairment caused by depression in older adults, with variable attention, frequent \"I don't know\" answers and better cued than free recall; once called pseudodementia.", "Ch 25.2"],
+  ["paraphrenia", "An older term for a late-onset disorder with persecutory delusions developing over years, without dementia; sometimes viewed as a variant of schizophrenia starting after 60.", "Ch 25.2"],
+  ["late-onset schizophrenia", "Schizophrenia beginning after age 45; more common in women and more often with prominent paranoid features.", "Ch 25.2"],
+  ["presbycusis", "Age-related hearing loss; affects about 30% of people over 65 and 50% over 75, and can mimic cognitive impairment.", "Ch 25.2"],
+  ["Geriatric Depression Scale", "A yes/no screening questionnaire for depression in older adults; the short form has 15 items, and a score above 5 suggests probable depression.", "Ch 25.2"],
+  ["advanced sleep phase", "A circadian pattern of falling asleep early in the evening and waking in the early morning; common in older adults, especially without daily routines.", "Ch 25.2"],
+  ["elder abuse", "An act or omission that harms or threatens the health or welfare of an older person: physical, psychological, sexual, financial abuse or neglect.", "Ch 25.2"],
+  ["Boston Naming Test", "A neuropsychological test of word retrieval in which the person names pictured objects.", "Ch 25.2"],
+  ["Trail Making Test", "A paper-and-pencil test of processing speed (Part A, connecting numbers) and set-shifting or executive function (Part B, alternating numbers and letters).", "Ch 25.2"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1077,5 +1090,11 @@ KS.glossaryAliases = {
   "pedigrees": "pedigree",
   "polygenic risk scores": "polygenic risk score",
   "VCF syndrome": "velocardiofacial syndrome",
-  "22q11.2 deletion syndrome": "velocardiofacial syndrome"
+  "22q11.2 deletion syndrome": "velocardiofacial syndrome",
+  "C-L psychiatry": "consultation-liaison psychiatry",
+  "psychosomatic medicine": "consultation-liaison psychiatry",
+  "psychooncology": "psycho-oncology",
+  "Trailmaking": "Trail Making Test",
+  "GDS": "Geriatric Depression Scale",
+  "elder mistreatment": "elder abuse"
 };

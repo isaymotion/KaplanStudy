@@ -960,5 +960,70 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 24.2; ISPG Genetic Testing Statement (2019); LEQEMBI US prescribing information"
+},
+{
+  "id": "late-life-cognition",
+  "title": "Delirium, dementia or depression in an older adult",
+  "summary": "Three causes of poor cognition in late life that are easily confused, compared on onset, attention, testing behavior and what to do first (sections 25.1 and 25.2).",
+  "items": [
+    "Delirium",
+    "Neurodegenerative dementia",
+    "Depression-related cognitive dysfunction"
+  ],
+  "rows": [
+    [
+      "Onset and course",
+      "**Acute**, fluctuating; often the only sign of a medical problem",
+      "**Gradual**, progressive, generally irreversible",
+      "Follows the **mood** change; tends to improve when depression is treated"
+    ],
+    [
+      "Attention",
+      "Markedly impaired",
+      "Consistently poor on testing, as part of global deficits",
+      "**Variable** from moment to moment"
+    ],
+    [
+      "Pattern of deficits",
+      "Global confusion, disorientation",
+      "**Global** and consistently poor; language problems and confabulation more likely",
+      "Patchy; answers **\"I don't know\"**; free recall poor but **cued recognition** better"
+    ],
+    [
+      "Common clues",
+      "New drug, infection, metabolic change, withdrawal, silent MI or stroke",
+      "Female sex, family history, age; behavior problems; delusions in up to 75%",
+      "Widowhood, chronic illness, somatic complaints, early morning waking; GDS score above 5"
+    ],
+    [
+      "First step",
+      "**Find and treat the cause** (Table 25-2)",
+      "Exclude **reversible** look-alikes (Table 25-4)",
+      "Treat the **depression**, then retest cognition"
+    ]
+  ],
+  "keys": [
+    "**Delirium** is a medical emergency until a cause is found.",
+    "About **10 to 15%** of patients who seem demented have a treatable condition, depression above all.",
+    "**25 to 50%** of people with dementia are also depressed, so the two can coexist."
+  ],
+  "links": [
+    {
+      "ch": "ch25-1",
+      "sec": "s251-delirium",
+      "label": "Urgent causes of delirium"
+    },
+    {
+      "ch": "ch25-2",
+      "sec": "s252-dementia",
+      "label": "Dementia and reversible look-alikes"
+    },
+    {
+      "ch": "ch25-2",
+      "sec": "s252-depress",
+      "label": "Depression in late life"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., sections 25.1 and 25.2"
 }
 ];
