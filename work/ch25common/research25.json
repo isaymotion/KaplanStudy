@@ -1,0 +1,182 @@
+[
+ {
+  "topic": "Subspecialty renamed Consultation-Liaison Psychiatry",
+  "section": "25.1",
+  "fact": "In April 2018 the Academy of Psychosomatic Medicine became the Academy of Consultation-Liaison Psychiatry after 64 years under the old name. The ABMS and ABPN changed the subspecialty name to consultation-liaison psychiatry at nearly the same time. Older texts, including parts of this book, may still say psychosomatic medicine.",
+  "year": 2018,
+  "source_title": "What's in a name? ACLP name history (Academy of Consultation-Liaison Psychiatry)",
+  "url": "https://clpsychiatry.org/about-aclp/aclp-name/",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "SCCM PADIS 2018: no antipsychotics for ICU delirium",
+  "section": "25.1",
+  "fact": "The 2018 SCCM guideline on pain, agitation/sedation, delirium, immobility and sleep disruption recommended against using haloperidol or atypical antipsychotics to treat delirium in adult ICU patients. It cited a placebo-controlled trial (n=566) in which haloperidol and ziprasidone did not reduce delirium duration, ventilator time, length of stay or death. The page read did not state the prevention recommendation, so only the treatment recommendation is confirmed.",
+  "year": 2018,
+  "source_title": "Devlin JW et al. Clinical Practice Guidelines for ... Pain, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU (Crit Care Med 2018;46(9):e825-e873), as cited by icudelirium.org",
+  "url": "https://www.icudelirium.org/medical-professionals/delirium/management-of-delirium-in-the-icu",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "SCCM PADIS 2025 focused update",
+  "section": "25.1",
+  "fact": "The February 2025 focused update added anxiety as a topic and found insufficient evidence to recommend benzodiazepines for ICU anxiety. It made no recommendation for or against antipsychotics versus usual care for delirium (low certainty). It conditionally suggests dexmedetomidine over propofol for sedation in ventilated adults, melatonin over none, and enhanced mobilization over usual care.",
+  "year": 2025,
+  "source_title": "A focused update to the clinical practice guidelines for ... pain, anxiety, agitation/sedation, delirium, immobility, and sleep disruption in adult patients in the ICU (Lewis K, Balas MC, Stollings JL et al.; Crit Care Med 2025;53(3):e711-e727), SCCM page",
+  "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/focused-update-padis-guideline",
+  "doi_or_pmid": "10.1097/CCM.0000000000006574",
+  "confirmed": true
+ },
+ {
+  "topic": "AID-ICU: haloperidol for ICU delirium",
+  "section": "25.1",
+  "fact": "In a blinded multicentre trial of 963 analysed ICU patients with delirium (18 European ICUs), IV haloperidol 2.5 mg three times daily did not significantly increase days alive and out of hospital at 90 days versus placebo (35.8 vs 32.9 days, P=0.22). 90-day mortality was lower with haloperidol (36.3% vs 43.3%) but this was a secondary outcome and fragile. Serious adverse reactions and QTc-related stopping did not differ significantly.",
+  "year": 2022,
+  "source_title": "Haloperidol for the Treatment of Delirium in ICU Patients (AID-ICU; Andersen-Ranberg et al., NEJM 2022), as summarised by The Bottom Line (secondary source; PubMed fetch failed)",
+  "url": "https://www.thebottomline.org.uk/summaries/aid-icu/",
+  "doi_or_pmid": "10.1056/NEJMoa2211868",
+  "confirmed": false
+ },
+ {
+  "topic": "4AT delirium screening accuracy",
+  "section": "25.1",
+  "fact": "A 2021 systematic review and meta-analysis of 17 studies (3,702 observations) found the 4AT had pooled sensitivity 0.88 and specificity 0.88 for delirium in older adults. Excluding stroke studies gave similar figures (0.86 and 0.89). It is a short bedside screen usable without special training, suited to wards and emergency departments.",
+  "year": 2021,
+  "source_title": "Diagnostic accuracy of the 4AT for delirium detection in older adults: systematic review and meta-analysis (Age Ageing 2021;50(3):733-743), University of Limerick repository record",
+  "url": "https://pure.ul.ie/en/publications/diagnostic-accuracy-of-the-4at-for-delirium-detection-in-older-ad/",
+  "doi_or_pmid": "10.1093/ageing/afaa224",
+  "confirmed": true
+ },
+ {
+  "topic": "AGS Beers Criteria 2023 psychotropic changes",
+  "section": "25.2",
+  "fact": "The 2023 AGS Beers Criteria (published in JAGS, May 2023) keep advice to avoid antipsychotics (except approved uses), benzodiazepines and Z-drugs in older adults, especially with dementia or delirium. New in 2023: opioids added to the delirium criterion, anticholinergics added to falls/fracture, skeletal muscle relaxants added to the 3-or-more CNS-active drugs criterion, and warfarin plus SSRIs added as an interaction. Non-psychiatric changes included no longer starting aspirin for primary prevention and caution with SGLT2 inhibitors.",
+  "year": 2023,
+  "source_title": "American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults (J Am Geriatr Soc 2023;71(7):2052-2081); full criteria PDF",
+  "url": "https://health.hawaii.gov/docd/files/2024/08/AGS-Beers-Criteria-2023.pdf",
+  "doi_or_pmid": "10.1111/jgs.18372",
+  "confirmed": true
+ },
+ {
+  "topic": "Brexpiprazole for Alzheimer agitation",
+  "section": "25.2",
+  "fact": "On 11 May 2023 the FDA approved brexpiprazole (Rexulti) for agitation associated with dementia due to Alzheimer disease, the first drug with this indication. Approval rested on two 12-week placebo-controlled trials; 2 mg and 3 mg improved the Cohen-Mansfield Agitation Inventory versus placebo. The class boxed warning on increased mortality in elderly patients with dementia-related psychosis remains.",
+  "year": 2023,
+  "source_title": "FDA approves first drug to treat agitation symptoms associated with dementia due to Alzheimer's disease (FDA press announcement)",
+  "url": "https://fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "Lecanemab traditional approval",
+  "section": "25.2",
+  "fact": "The FDA granted traditional (full) approval to lecanemab (Leqembi) in July 2023, after accelerated approval in January 2023. It is indicated for early Alzheimer disease (mild cognitive impairment or mild dementia) with confirmed amyloid pathology and is an anti-amyloid antibody given IV. The pages read did not give the Clarity AD effect size or ARIA details, so those are not included.",
+  "year": 2023,
+  "source_title": "Alzheimer's Association statement on FDA traditional approval of Leqembi; Practical Neurology report",
+  "url": "https://alz.org/news/2023/lecanemab-leqembi-traditional-fda-approval",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "Donanemab (Kisunla) approval",
+  "section": "25.2",
+  "fact": "The FDA approved donanemab (Kisunla) on 2 July 2024 for adults with early symptomatic Alzheimer disease (MCI or mild dementia) with confirmed amyloid pathology. In TRAILBLAZER-ALZ 2 (n=1,736) it slowed decline on the iADRS at 18 months by 22% overall and 35% in the less advanced group. Amyloid-related imaging abnormalities (ARIA) can be fatal; ApoE e4 homozygotes carry higher risk and MRI monitoring is required.",
+  "year": 2024,
+  "source_title": "Lilly's Kisunla (donanemab-azbt) approved by FDA for treatment of early symptomatic Alzheimer's disease (Eli Lilly news release)",
+  "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-kisunlatm-donanemab-azbt-approved-fda-treatment-early",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "Alzheimer's Association revised criteria (2024)",
+  "section": "25.2",
+  "fact": "Announced June 2024, the revised criteria define Alzheimer disease biologically, beginning before symptoms, rather than by clinical presentation alone. Abnormal Core 1 biomarkers (amyloid PET, CSF A\u03b242/40 and p-tau ratios, or accurate plasma p-tau217 assays) are sufficient to diagnose. A revised staging system was also introduced. Biomarker testing should be interpreted in clinical context.",
+  "year": 2024,
+  "source_title": "Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup (Jack CR Jr et al., Alzheimers Dement 2024), Alzheimer's Association news page",
+  "url": "https://alz.org/news/2024/revised-alzheimers-diagnostic-staging-criteria",
+  "doi_or_pmid": "10.1002/alz.13859",
+  "confirmed": true
+ },
+ {
+  "topic": "Lancet Commission 2024: 14 modifiable dementia risk factors",
+  "section": "25.2",
+  "fact": "The 2024 Lancet Commission lists 14 modifiable risk factors, adding high LDL cholesterol in midlife (about 7% of cases) and untreated vision loss in later life (about 2%) to the 12 from 2020. Together, addressing them could prevent or delay nearly half of dementia cases. Hearing loss remains among the factors.",
+  "year": 2024,
+  "source_title": "Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission (press release via EurekAlert, 31 July 2024)",
+  "url": "https://www.eurekalert.org/news-releases/1052982",
+  "doi_or_pmid": "10.1016/S0140-6736(24)01296-0",
+  "confirmed": true
+ },
+ {
+  "topic": "ACHIEVE: hearing intervention and cognitive decline",
+  "section": "25.2",
+  "fact": "ACHIEVE randomised 977 adults aged 70-84 with untreated hearing loss to hearing aids plus counselling or health education for 3 years. In the whole cohort there was no significant difference in cognitive change. In the prespecified higher-risk ARIC subgroup, decline was 48% smaller with the hearing intervention, so benefit is suggestive, not proven, for everyone.",
+  "year": 2023,
+  "source_title": "Hearing intervention versus health education control to reduce cognitive decline in older adults with hearing loss in the USA (ACHIEVE; Lin FR et al., Lancet 2023;402:786-797), PMC full text",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10529382",
+  "doi_or_pmid": "10.1016/S0140-6736(23)01406-X",
+  "confirmed": true
+ },
+ {
+  "topic": "US suicide rates in adults 75+ (CDC/NCHS)",
+  "section": "25.2",
+  "fact": "NCHS data show men aged 75 and over have the highest male suicide rate, 40.7 per 100,000 in 2023 and 40.1 in 2024 (the 2024 change was not significant). Rates in women 75+ are far lower (5.1 in 2023, 4.6 in 2024). The overall US age-adjusted rate fell from 14.1 (2023) to 13.7 (2024). The briefs did not report 85+ figures.",
+  "year": 2025,
+  "source_title": "Changes in Suicide Rates in the United States From 2023 to 2024 (NCHS Data Brief No. 572); also Data Brief 541 (2022 to 2023)",
+  "url": "https://www.cdc.gov/nchs/products/databriefs/db572.htm",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "WHO elder abuse prevalence",
+  "section": "25.2",
+  "fact": "The WHO fact sheet (15 June 2024) estimates 15.7% of people 60+ in community settings (about 1 in 6) experienced abuse in the past year; psychological abuse was commonest (11.6%), then financial (6.8%). In institutions, 64.2% of staff reported committing abuse in the past year, though data are scarce. Abuse reportedly rose during COVID-19.",
+  "year": 2024,
+  "source_title": "Abuse of older people (WHO fact sheet)",
+  "url": "https://www.who.int/en/news-room/fact-sheets/detail/elder-abuse",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "NCCN Distress Thermometer and Problem List",
+  "section": "25.1",
+  "fact": "The NCCN Distress Thermometer is a one-page, validated 0-10 screening tool paired with a problem list, forming a core part of the NCCN Distress Management guidelines for cancer patients. It screens for psychological, physical, social and spiritual concerns. A 2026 NCCN release says the current version is free in over 70 languages; the page read did not state the cutoff score.",
+  "year": 2026,
+  "source_title": "NCCN affirms commitment to cancer-related distress resources worldwide (NCCN news release, 20 May 2026)",
+  "url": "https://www.eurekalert.org/news-releases/1128853",
+  "doi_or_pmid": null,
+  "confirmed": true
+ },
+ {
+  "topic": "ASCO 2023 guideline on anxiety and depression in cancer",
+  "section": "25.1",
+  "fact": "The 2023 ASCO guideline update recommends stepped care matched to symptom severity, starting with education for all patients. First-line options include CBT, behavioral activation, mindfulness-based stress reduction, interpersonal therapy and structured physical activity. Medication is advised when these are unavailable or ineffective.",
+  "year": 2023,
+  "source_title": "Management of Anxiety and Depression in Adult Survivors of Cancer: ASCO Guideline Update (J Clin Oncol 2023), via Targeted Oncology (secondary; PubMed and ASCO pages not read)",
+  "url": "https://www.targetedonc.com/view/asco-guideline-update-for-anxiety-and-depression-released",
+  "doi_or_pmid": "10.1200/JCO.23.00293",
+  "confirmed": false
+ },
+ {
+  "topic": "OPTIMUM: treatment-resistant late-life depression",
+  "section": "25.2",
+  "fact": "The OPTIMUM trial (NEJM, March 2023) compared augmenting with aripiprazole or bupropion versus switching to bupropion in older adults with treatment-resistant depression. Aripiprazole augmentation gave the best remission and well-being outcomes, though it helped only about 30% of participants. Detailed figures and fall rates were not available on the page read.",
+  "year": 2023,
+  "source_title": "Antidepressant augmentation versus switch in treatment-resistant geriatric depression (NEJM 2023), University of Arizona news release (secondary)",
+  "url": "https://healthsciences.arizona.edu/news/releases/clinical-study-augmenting-medications-treatment-resistant-depression-older-adults-shows",
+  "doi_or_pmid": null,
+  "confirmed": false
+ },
+ {
+  "topic": "Early liver transplant for alcohol-related liver disease (6-month rule)",
+  "section": "25.1",
+  "fact": "A retrospective Johns Hopkins study of 163 liver transplants found that patients transplanted with under 6 months of abstinence had one-year survival and relapse-free survival similar to those with longer abstinence (94.1% vs 95.9% patient survival). This supports relaxing the fixed 6-month rule, but it is single-centre and retrospective. Formal society guidance on early transplant was not confirmed.",
+  "year": 2021,
+  "source_title": "Evaluation of early vs standard liver transplant for alcohol-associated liver disease (Herrick-Reynolds KM et al., JAMA Surg 2021;156(11):1026-1034), via The Hospitalist summary (secondary)",
+  "url": "https://www.the-hospitalist.org/hospitalist/article/34226/addiction-medicine/duration-of-abstinence-from-alcohol-prior-to-liver-transplantation-does-not-lead-to-increased-survival-in-patients-with-alcohol-related-liver-disease/",
+  "doi_or_pmid": null,
+  "confirmed": false
+ }
+]
