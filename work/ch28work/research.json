@@ -1,0 +1,263 @@
+[
+ {
+  "topic": "1 Insanity defense",
+  "fact": "Kahler v. Kansas: due process does not require a state to adopt a moral-incapacity (cannot tell right from wrong) insanity test; Kansas may limit the defense to the mens rea approach. The Court called the insanity defense a matter for state governance.",
+  "year": 2020,
+  "source_title": "Kahler v. Kansas, No. 18-6135 (Cornell LII)",
+  "url": "https://www.law.cornell.edu/supremecourt/text/18-6135",
+  "confirmed": true,
+  "note": "Decided March 23, 2020, Kagan majority, Breyer dissent."
+ },
+ {
+  "topic": "1 Competence to be executed",
+  "fact": "Madison v. Alabama: memory loss of the crime alone does not bar execution; what matters is rational understanding of why the State is executing. Dementia (not only psychosis) can bar execution if it removes that understanding. Remanded.",
+  "year": 2019,
+  "source_title": "Madison v. Alabama, No. 17-7505 (Cornell LII)",
+  "url": "https://www.law.cornell.edu/supremecourt/text/17-7505",
+  "confirmed": true,
+  "note": "Decided Feb 27, 2019."
+ },
+ {
+  "topic": "1 Later SCOTUS cases",
+  "fact": "T.M. v. University of Maryland Medical System Corp. (No. 25-197): 5-4, Rooker-Feldman bars a federal suit seeking to undo a state-court consent order, even while state review continues. Arose from an involuntary psychiatric commitment but does not decide legality of commitment or forced medication.",
+  "year": 2026,
+  "source_title": "T. M. v. University of Md. Medical System Corp. (Cornell LII)",
+  "url": "https://www.law.cornell.edu/supremecourt/text/25-197",
+  "confirmed": true,
+  "note": "Procedural, marginal relevance. Decided June 18, 2026. No new SCOTUS insanity or competency merits ruling found through search."
+ },
+ {
+  "topic": "1 Later SCOTUS cases",
+  "fact": "Hamm v. Smith (Alabama; intellectual disability and multiple IQ scores in Atkins claims) was dismissed without a merits ruling on May 21, 2026, leaving the lower-court bar to execution in place.",
+  "year": 2026,
+  "source_title": "Supreme Court dismisses Alabama death penalty mental disability case (Missouri Lawyers Media)",
+  "url": "https://molawyersmedia.com/2026/05/21/supreme-court-dismisses-alabama-death-penalty-mental-disability/",
+  "confirmed": true,
+  "note": "Secondary news source, not the Court's own order; intellectual disability, not psychiatric illness."
+ },
+ {
+  "topic": "2 HIPAA/records",
+  "fact": "Under the information-blocking rule, EHI is defined to exclude psychotherapy notes as defined in 45 CFR 164.501, so the psychotherapy-notes exception persists. Other clinical notes fall under the access rules unless a specific exception applies.",
+  "year": 2020,
+  "source_title": "45 CFR 171.102 (eCFR)",
+  "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-D/part-171/subpart-A/section-171.102",
+  "confirmed": true,
+  "note": "Rule finalised 2020; ONC FAQ says exclusion turns on the note's content meeting the HIPAA definition, not its title."
+ },
+ {
+  "topic": "2 HIPAA/records",
+  "fact": "Open-notes practice: under the Cures Act rule, providers must make clinical notes available to patients without delay unless an exception (e.g., preventing harm, privacy) applies; EHI scope broadened on Oct 6, 2022; psychotherapy notes remain excluded.",
+  "year": 2022,
+  "source_title": "Federal Open Notes Rule (Open Notes Labs)",
+  "url": "https://opennoteslabs.org/about/federal-open-notes-rule-open-notes-labs",
+  "confirmed": true,
+  "note": "Advocacy site, not official. Exact April 5, 2021 start date NOT confirmed on any page opened (page says only 'as of 2021')."
+ },
+ {
+  "topic": "2 HIPAA/records",
+  "fact": "ONC FAQ: whether a note counts as excluded psychotherapy notes depends on content meeting the HIPAA definition, not on the clinician type or note title.",
+  "year": 2022,
+  "source_title": "ONC FAQ: EHI definition exclusion for psychotherapy notes",
+  "url": "https://healthit.gov/faq/does-electronic-health-information-definitions-exclusion-psychotherapy-notes-apply-notes/",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "2 HIPAA/records",
+  "fact": "2024 final rule on 42 CFR Part 2 (SUD records) was published Feb 16, 2024 (89 FR 12472), effective April 16, 2024, with compliance required by Feb 16, 2026. It aligns Part 2 with HIPAA (single TPO consent), adds breach notification, civil penalties, and stronger limits on use in legal proceedings.",
+  "year": 2024,
+  "source_title": "Confidentiality of SUD Patient Records, Federal Register 2024-02544",
+  "url": "https://www.federalregister.gov/documents/2024/02/16/2024-02544/confidentiality-of-substance-use-disorder-sud-patient-records",
+  "confirmed": true,
+  "note": "HHS Part 2 page (https://www.hhs.gov/hipaa/for-professionals/special-topics/hipaa-part-2/index.html) also read and states compliance by Feb 16, 2026."
+ },
+ {
+  "topic": "2 HIPAA/records",
+  "fact": "2024 HIPAA reproductive health privacy rule: on June 18, 2025 the N.D. Texas (Purl v. HHS, No. 2:24-cv-00228-Z) vacated most of it. Only the Notice of Privacy Practices changes at 45 CFR 164.520(b)(1)(ii)(F)-(H) were vacated; the other NPP changes remain with a Feb 16, 2026 compliance date (per HHS page).",
+  "year": 2025,
+  "source_title": "HHS OCR: HIPAA Privacy Rule to Support Reproductive Health Care Privacy",
+  "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/reproductive-health/index.html",
+  "confirmed": true,
+  "note": "HHS page reported vacatur of 'most of' the rule; wording of the NPP carve-out should be re-read before quoting. Any appeal or later HHS action after the page snapshot not checked."
+ },
+ {
+  "topic": "3 Seclusion/restraint",
+  "fact": "42 CFR 482.13(e): order for violent/self-destructive behaviour limited to 4 hours (adults 18+), 2 hours (age 9-17), 1 hour (under 9), renewable to 24 hours total, then physician/LIP must see and reassess before a new order. Standing/PRN orders are prohibited.",
+  "year": 2006,
+  "source_title": "42 CFR 482.13 (eCFR)",
+  "url": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-B/section-482.13",
+  "confirmed": true,
+  "note": "Year is the original CMS rule (2006); current eCFR text read. Cannot confirm 'no change since 2021' from a change log; current text matches the older rule."
+ },
+ {
+  "topic": "3 Seclusion/restraint",
+  "fact": "One-hour face-to-face evaluation is required after restraint or seclusion starts for violent/self-destructive behaviour, done by a physician, other LIP, or a trained RN (RN must then consult the attending). State law may be stricter.",
+  "year": 2006,
+  "source_title": "42 CFR 482.13 (eCFR)",
+  "url": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-B/section-482.13",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "4 Tardive dyskinesia",
+  "fact": "FDA approved valbenazine (Ingrezza) for tardive dyskinesia on April 11, 2017 (first drug approved for TD).",
+  "year": 2017,
+  "source_title": "FDA approval letter NDA 209241 (Ingrezza)",
+  "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2017/209241Orig1s000ltr.pdf",
+  "confirmed": true,
+  "note": "Letter confirms approval and date; 'first drug' claim not on this page."
+ },
+ {
+  "topic": "4 Tardive dyskinesia",
+  "fact": "FDA label (Aug 2017) for deutetrabenazine (Austedo) lists tardive dyskinesia in adults as an indication, alongside Huntington chorea; it is a VMAT2 inhibitor.",
+  "year": 2017,
+  "source_title": "AUSTEDO prescribing information (FDA, 08/2017)",
+  "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209885lbl.pdf",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "4 Tardive dyskinesia",
+  "fact": "APA 2020 schizophrenia practice guideline Statement 14 recommends (grade 1B) a VMAT2 inhibitor for moderate to severe or disabling tardive dyskinesia. So 'no proven treatment' is outdated.",
+  "year": 2020,
+  "source_title": "APA Practice Guideline for Treatment of Patients With Schizophrenia (Focus reprint; Am J Psychiatry 2020;177:868-872)",
+  "url": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.18402",
+  "confirmed": true,
+  "note": "Statement 14/1B as reported by page-fetch tool while reading the page; no DOI is shown on the page text I received (the DOI in the URL is only the URL)."
+ },
+ {
+  "topic": "5 Duty to warn",
+  "fact": "NCSL table: 28 states mandatory, 16 permissive, 2 mixed (Delaware, Illinois), 1 unclear (Georgia), 3 no duty (Maine, North Carolina, North Dakota); DC permissive, Puerto Rico mandatory. Counts were tallied from the table by the fetch tool.",
+  "year": 2025,
+  "source_title": "NCSL: Mental Health Professionals' Duty to Warn",
+  "url": "https://www.ncsl.org/health/mental-health-professionals-duty-to-warn",
+  "confirmed": true,
+  "note": "Page gives no as-of date (statute-level dates only); counts are a tally of the table, not a figure the page states. Recount before publishing."
+ },
+ {
+  "topic": "5 Duty to warn",
+  "fact": "California Civil Code 43.92: no liability for failure to warn or protect unless the patient communicated a serious threat of physical violence against a reasonably identifiable victim; the duty is discharged by reasonable efforts to warn the victim and notify law enforcement.",
+  "year": 2022,
+  "source_title": "Cal. Civ. Code 43.92 (Justia, 2022 code)",
+  "url": "https://law.justia.com/codes/california/2022/code-civ/division-1/part-2/section-43-92/",
+  "confirmed": true,
+  "note": "Leginfo official page failed to load; Justia 2022 version read. Check for post-2022 amendment."
+ },
+ {
+  "topic": "6a RA 11036",
+  "fact": "Sec. 13 Exceptions to Informed Consent: only in psychiatric/neurologic emergencies or when decision-making capacity is impaired. (a) follow advance directive unless immediate serious harm; (b) only necessary treatment or restraint, only while emergency lasts; (c) ordered by attending professional, internal review board review within 15 days then every 15 days; (d) approved guidelines with criteria, documentation, external monitoring.",
+  "year": 2018,
+  "source_title": "Republic Act No. 11036 (Philippine Mental Health Act), Lawphil",
+  "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11036_2018.html",
+  "confirmed": true,
+  "note": "Sub-item letters from fetch-tool reading of the page; spot-check against print. There is no separate court-based involuntary admission procedure in the Act text I saw."
+ },
+ {
+  "topic": "6a RA 11036",
+  "fact": "Sec. 8: written informed consent is required before treatment, including restraint; all persons are presumed to have legal capacity regardless of condition.",
+  "year": 2018,
+  "source_title": "RA 11036, Lawphil",
+  "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11036_2018.html",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "6a RA 11036",
+  "fact": "Sec. 5 rights of service users: (g) care in least restrictive setting; (h) humane care, protection from solitary confinement; (l) confidentiality; (m) informed consent and its withdrawal; (p) private uncensored communication and visits at reasonable hours; (r) access to own clinical records (may be withheld if harmful); (s) notice of rights.",
+  "year": 2018,
+  "source_title": "RA 11036, Lawphil",
+  "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11036_2018.html",
+  "confirmed": true,
+  "note": "Letters for (g),(h),(l),(m),(p),(r) came from page-fetch summaries across two reads; verify letters before display. The Act has no seclusion time limits."
+ },
+ {
+  "topic": "6a RA 11036",
+  "fact": "Sec. 9 advance directive (signed, dated, notarized); Sec. 10 legal representative designated by notarized document (default order if none: spouse, adult children, parent, facility head, court-appointed); Sec. 11 supported decision making with up to three supporters; Sec. 12 internal review boards.",
+  "year": 2018,
+  "source_title": "RA 11036, Lawphil",
+  "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11036_2018.html",
+  "confirmed": true,
+  "note": "Default-order list of Sec. 10 is from one fetch summary only; verify."
+ },
+ {
+  "topic": "6a RA 11036 IRR",
+  "fact": "The IRR of RA 11036 was signed in January 2019 (news report dated Jan 22, 2019). I could NOT open the IRR text, so IRR rule numbers on involuntary admission, restraint and seclusion are unconfirmed.",
+  "year": 2019,
+  "source_title": "IRR for mental health law signed (GMA News)",
+  "url": "https://www.gmanetwork.com/news/news/nation/682376/irr-for-mental-health-law-signed/story/",
+  "confirmed": false,
+  "note": "Article does not discuss content. WHO MiNDbank lists the IRR (2019) with no text: https://extranet.who.int/mindbank/item/6881 . DOH-CHR JAO 2023-0001 (internal review boards) cites Sec. 12 of the Act."
+ },
+ {
+  "topic": "6b Insanity (PH)",
+  "fact": "RPC Art. 12(1): an imbecile or insane person is exempt from criminal liability unless acting in a lucid interval.",
+  "year": 1930,
+  "source_title": "Revised Penal Code, Act No. 3815, Art. 12 (Lawphil)",
+  "url": "https://lawphil.net/statutes/acts/act1930/act_3815_1930.html",
+  "confirmed": true,
+  "note": "Read via first fetch of page (Lawphil act1930 path)."
+ },
+ {
+  "topic": "6b Insanity (PH)",
+  "fact": "People v. Paña (G.R. No. 214444, Nov 17, 2020, En Banc): insanity must be present at the time of the act, medically proven, and the accused unable to appreciate the nature, quality or wrongfulness of the act; defense proves it by clear and convincing evidence. The Court revisits the older Formigones 'complete deprivation of intelligence' standard. Conviction for murder was affirmed (no acquittal).",
+  "year": 2020,
+  "source_title": "People v. Paña, G.R. No. 214444 (Lawphil)",
+  "url": "https://lawphil.net/judjuris/juri2020/nov2020/gr_214444_2020.html",
+  "confirmed": true,
+  "note": "Details per fetch-tool summary of the page; the exact wording of the new test and the proof standard should be checked against the decision before the app states them as quotations."
+ },
+ {
+  "topic": "6c Confinement (PH)",
+  "fact": "RPC Art. 12 (same article): an acquitted insane person who committed a felony is ordered confined in a hospital or asylum and may not leave without court permission.",
+  "year": 1930,
+  "source_title": "Revised Penal Code, Art. 12 (Lawphil)",
+  "url": "https://lawphil.net/statutes/acts/act1930/act_3815_1930.html",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "6d Testamentary capacity (PH)",
+  "fact": "Civil Code Arts. 796-800: anyone not barred may make a will (796); under 18 cannot (797); testator must be of sound mind at execution (798); sound mind needs understanding of property, natural objects of bounty, and the nature of the act, not perfect faculties (799); soundness is presumed, but if publicly known insane within a month before, proponent must prove a lucid interval (800).",
+  "year": 1949,
+  "source_title": "Civil Code of the Philippines, RA 386 (Lawphil)",
+  "url": "https://lawphil.net/statutes/repacts/ra1949/ra_386_1949.html",
+  "confirmed": true,
+  "note": "Read from offset 275000-375000 of the page."
+ },
+ {
+  "topic": "6e Child custody (PH)",
+  "fact": "Family Code Art. 213: after parental separation, the court decides parental authority considering all relevant considerations, with weight on the child's choice if over 7 unless that parent is unfit; a child under 7 stays with the mother unless the court finds compelling reasons otherwise. The article text does not use the phrase 'best interest'.",
+  "year": 1987,
+  "source_title": "Family Code, EO 209 (Lawphil)",
+  "url": "https://lawphil.net/executive/execord/eo1987/eo_209_1987.html",
+  "confirmed": true,
+  "note": "Best-interest standard is from other provisions and jurisprudence, not Art. 213; not opened here."
+ },
+ {
+  "topic": "6f Data Privacy (PH)",
+  "fact": "RA 10173 Sec. 3(l): sensitive personal information includes information about an individual's health; Sec. 13 prohibits processing it except in listed cases, including medical treatment by a medical practitioner or institution with adequate protection, and protecting life and health when the subject cannot consent.",
+  "year": 2012,
+  "source_title": "Data Privacy Act of 2012 (NPC copy)",
+  "url": "https://privacy.gov.ph/wp-content/uploads/2017/03/DPA-of-2012.pdf",
+  "confirmed": true,
+  "note": ""
+ },
+ {
+  "topic": "6g Privilege (PH)",
+  "fact": "2019 Rules on Evidence, Rule 130 Sec. 24(c): physician-patient privilege now expressly covers a 'psychotherapist' (licensed physician treating mental/emotional conditions, or a government-licensed psychologist), but the text says 'in a civil case'; covers confidential communications for diagnosis or treatment incl. addiction.",
+  "year": 2019,
+  "source_title": "2019 Amendments to the Revised Rules on Evidence (MTF Counsel PDF)",
+  "url": "https://mtfcounsel.com/wp-content/uploads/2021/01/Revised-Rules-on-Evidence.pdf",
+  "confirmed": true,
+  "note": "Unofficial copy of A.M. No. 19-08-15-SC; official Lawphil/SC page failed. Letter (c) per fetch summary; verify."
+ },
+ {
+  "topic": "6h Tarasoff (PH)",
+  "fact": "No Tarasoff-type duty to warn was found in Philippine statute. RA 11036 Sec. 5(l) lists confidentiality exceptions: required by law/court order, service user consent, life-threatening emergency where disclosure is necessary to prevent harm or injury, suspected child abuse of a minor, and cases against a mental health professional.",
+  "year": 2018,
+  "source_title": "RA 11036, Lawphil",
+  "url": "https://lawphil.net/statutes/repacts/ra2018/ra_11036_2018.html",
+  "confirmed": true,
+  "note": "The emergency exception is the nearest analogue; absence of a Philippine duty-to-warn case law was NOT systematically searched."
+ }
+]
