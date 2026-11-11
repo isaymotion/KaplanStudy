@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 70.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 71.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -142,6 +142,8 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 25.1 | Consultation-Liaison Psychiatry | 8 | 132 | 142 |
 | 25.2 | Geriatric Psychiatry | 8 | 157 | 161 |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
+| 26 | Level of Care | 5 | 63 | 52 |
+| 27 | Ethics and Professionalism | 11 | 168 | 173 |
 
 ## Upgrading from version 59 (October 2026)
 

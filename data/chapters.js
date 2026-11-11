@@ -266,6 +266,14 @@ KS.manifest = [
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch26', number: 26, title: 'Level of Care', short: 'Levels of care',
+    summary: 'How to match a patient to inpatient, partial hospital, intensive outpatient, outpatient or residential care (Table 26-1), voluntary and involuntary admission, length of stay and discharge planning, with updates on the LOCUS tool and the Philippine Mental Health Act.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch27', number: 27, title: 'Ethics and Professionalism', short: 'Ethics and professionalism',
+    summary: 'Professional codes, the four ethical principles, sexual and nonsexual boundary violations, confidentiality, managed care duties, impaired physicians, trainees, the Physician Charter (Table 27-1), common ethical questions (Table 27-2) and military psychiatry, with updates on Philippine law, child-abuse reporting, case publication and military confidentiality.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

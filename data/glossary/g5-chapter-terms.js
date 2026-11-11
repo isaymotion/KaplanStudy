@@ -740,7 +740,20 @@ KS.glossary = (KS.glossary || []).concat([
   ["advanced sleep phase", "A circadian pattern of falling asleep early in the evening and waking in the early morning; common in older adults, especially without daily routines.", "Ch 25.2"],
   ["elder abuse", "An act or omission that harms or threatens the health or welfare of an older person: physical, psychological, sexual, financial abuse or neglect.", "Ch 25.2"],
   ["Boston Naming Test", "A neuropsychological test of word retrieval in which the person names pictured objects.", "Ch 25.2"],
-  ["Trail Making Test", "A paper-and-pencil test of processing speed (Part A, connecting numbers) and set-shifting or executive function (Part B, alternating numbers and letters).", "Ch 25.2"]
+  ["Trail Making Test", "A paper-and-pencil test of processing speed (Part A, connecting numbers) and set-shifting or executive function (Part B, alternating numbers and letters).", "Ch 25.2"],
+  ["partial hospital", "A day program with hospital-type staffing for about 6 to 8 hours a day, usually 5 days a week; the patient goes home each evening.", "Ch 26"],
+  ["intensive outpatient treatment", "A structured outpatient program of about 3 to 4 hours a day on 1 to 4 days a week (roughly 6 to 12 hours weekly), mostly in groups.", "Ch 26"],
+  ["residential care", "A 24-hour, usually unlocked facility with less staffing than a ward, for people at non-imminent risk who cannot safely live independently.", "Ch 26"],
+  ["beneficence", "The ethical duty to act for the patient's good, grounded in the fiduciary relationship; applied through paternalism.", "Ch 27"],
+  ["nonmaleficence", "The ethical duty to avoid harm (primum non nocere), by action or inaction, including practicing only within one's training.", "Ch 27"],
+  ["paternalism", "Acting for a patient's good on the clinician's own judgment: weak when the patient's capacity for autonomous choice is impaired, strong when it is intact.", "Ch 27"],
+  ["boundary violation", "A step outside the treatment role that exploits the patient to serve the clinician's needs; harm is not required for it to be unethical.", "Ch 27"],
+  ["boundary crossing", "Any step outside the usual treatment role; not necessarily a violation unless it exploits the patient.", "Ch 27"],
+  ["fee splitting", "Paying or receiving a share of fees in return for patient referrals; unethical and illegal.", "Ch 27"],
+  ["double agentry", "A clinician's divided loyalty between the patient and a third party such as an employer, insurer or institution.", "Ch 27"],
+  ["utilization review", "An insurer's or managed care organization's review of whether care is necessary and will be paid for.", "Ch 27"],
+  ["in-camera review", "A judge's private review of records to decide which parts must be disclosed in a legal proceeding.", "Ch 27"],
+  ["ethical dilemma", "A clash between two ethical values or perspectives; contrast an ethical conflict, between personal wish and duty.", "Ch 27"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1096,5 +1109,11 @@ KS.glossaryAliases = {
   "psychooncology": "psycho-oncology",
   "Trailmaking": "Trail Making Test",
   "GDS": "Geriatric Depression Scale",
-  "elder mistreatment": "elder abuse"
+  "elder mistreatment": "elder abuse",
+  "partial hospitalization": "partial hospital",
+  "intensive outpatient program": "intensive outpatient treatment",
+  "boundary-crossing": "boundary crossing",
+  "boundary violations": "boundary violation",
+  "utilization reviewers": "utilization review",
+  "ethical dilemmas": "ethical dilemma"
 };

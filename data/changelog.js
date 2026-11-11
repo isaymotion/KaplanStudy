@@ -13,6 +13,45 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "71.0.0",
+    "date": "2026-11-11",
+    "title": "Chapters 26 and 27: Level of care; ethics and professionalism",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch26",
+        "text": "New Chapter 26, Level of Care: matching patients to inpatient, partial hospital, intensive outpatient, outpatient or residential care (Table 26-1), involuntary admission, length of stay and discharge planning, with 20 clinical cases.",
+        "href": "#/c/ch26/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch27",
+        "text": "New Chapter 27, Ethics and Professionalism: codes, the four principles, boundary violations, confidentiality, managed care, impaired physicians, trainees, the Physician Charter (Table 27-1), ethical questions and answers (Table 27-2) and military psychiatry, with 71 clinical cases.",
+        "href": "#/c/ch27/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "correction",
+        "ch": "ch27",
+        "text": "The book dates the Physician Charter to 2001 and credits the American Board of Internal Medicine alone; it was published in 2002 by the ABIM Foundation, the ACP-ASIM Foundation and the European Federation of Internal Medicine. A correction box explains this.",
+        "href": "#/c/ch27/guide/s27-charter",
+        "link": "See the correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch27",
+        "text": "Updates: the Philippine Mental Health Act (RA 11036) on consent, involuntary treatment and confidentiality; the LOCUS tool; child-abuse reporting on reasonable suspicion; written consent for publishing cases; and the US military's current presumption of confidentiality."
+      },
+      {
+        "type": "feature",
+        "text": "New decision helper \"Choosing a level of care\" and a look-alike on ethics terms that are easily confused (conflict and dilemma, weak and strong paternalism, crossing and violation, confidentiality and privilege).",
+        "href": "#/helpers/loc26",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "70.0.0",
     "date": "2026-11-11",
     "title": "Chapter 25: Consultation-liaison and geriatric psychiatry",

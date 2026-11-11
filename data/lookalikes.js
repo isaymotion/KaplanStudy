@@ -1025,5 +1025,81 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., sections 25.1 and 25.2"
+},
+{
+  "id": "ethics-pairs",
+  "title": "Ethics terms that are easily confused",
+  "summary": "Paired terms from Chapter 27 that boards like to contrast: conflict and dilemma, weak and strong paternalism, boundary crossing and violation, confidentiality and privilege, and the duties around an impaired colleague.",
+  "items": [
+    "First term",
+    "Second term",
+    "How to tell them apart"
+  ],
+  "rows": [
+    [
+      "Ethical conflict vs ethical dilemma",
+      "**Conflict**: what the psychiatrist **wants** against what is **right**",
+      "**Dilemma**: two **ethical values** against each other",
+      "Ask whether a personal wish is involved"
+    ],
+    [
+      "Weak vs strong paternalism",
+      "**Weak**: acting for a patient whose capacity for autonomous choice is **impaired**",
+      "**Strong**: acting for the patient's good although autonomy is **intact**",
+      "Ask whether the patient can choose autonomously"
+    ],
+    [
+      "Boundary crossing vs boundary violation",
+      "**Crossing**: any step outside the treatment role; may be harmless",
+      "**Violation**: a crossing that **exploits** the patient for the doctor's needs",
+      "Exploitation defines a violation; **harm is not required**"
+    ],
+    [
+      "Confidentiality vs privilege",
+      "**Confidentiality**: the **clinician's duty** not to tell third parties",
+      "**Privilege**: the **patient's right** to block disclosure in **court**",
+      "Ask who holds it and where it applies"
+    ],
+    [
+      "Legal vs ethical duty to report an impaired colleague",
+      "**Legal** duty: varies by US state",
+      "**Ethical** duty: **universal**",
+      "Report to the proper authority either way"
+    ],
+    [
+      "Treating vs monitoring an impaired physician",
+      "**Treating** psychiatrist provides care",
+      "**Independent** physician or group monitors fitness to work",
+      "Keep the two roles apart"
+    ]
+  ],
+  "keys": [
+    "**Beneficence** is applied through paternalism; choose the option that infringes autonomy least.",
+    "A **subpoena** does not release the whole record; ask for an **in-camera review**.",
+    "Most rules in Chapter 27 come from **US codes**; check the law and codes where you practice."
+  ],
+  "links": [
+    {
+      "ch": "ch27",
+      "sec": "s27-codes",
+      "label": "Codes: conflict and dilemma"
+    },
+    {
+      "ch": "ch27",
+      "sec": "s27-princ",
+      "label": "Basic ethical principles"
+    },
+    {
+      "ch": "ch27",
+      "sec": "s27-nonsex",
+      "label": "Boundary crossings and violations"
+    },
+    {
+      "ch": "ch27",
+      "sec": "s27-confid",
+      "label": "Confidentiality and privilege"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 27"
 }
 ];

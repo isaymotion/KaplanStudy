@@ -4,6 +4,13 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapters 26 and 27, November 2026 */
+    { m: "Sowers W et al., Best practices: level-of-care decision making", label: "Sowers W et al., Psychiatr Serv 2003 (LOCUS and CALOCUS)", url: "https://psychiatryonline.org/doi/abs/10.1176/appi.ps.54.11.1461" },
+    { m: "Republic Act No. 11036, Mental Health Act", label: "Republic Act No. 11036, Mental Health Act (Philippine Judiciary E-Library)", url: "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/83255" },
+    { m: "Medical Professionalism Project, Medical professionalism in the new millennium", label: "Medical Professionalism Project, Ann Intern Med 2002 (Physician Charter)", url: "https://doi.org/10.7326/0003-4819-136-3-200202050-00012" },
+    { m: "Child Welfare Information Gateway (US Children's Bureau), Mandatory reporters", label: "Child Welfare Information Gateway, Mandatory reporters of child abuse and neglect", url: "https://www.childwelfare.gov/" },
+    { m: "International Committee of Medical Journal Editors, Recommendations: Protection of research participants", label: "ICMJE Recommendations, Protection of research participants", url: "https://icmje.acponline.org/recommendations/browse/roles-and-responsibilities/protection-of-research-participants.html" },
+    { m: "US Department of Defense Instruction 6490.08", label: "DoD Instruction 6490.08 (September 6, 2023)", url: "https://keller.tricare.mil/Portals/65/6490_08.pdf" },
     /* Chapter 25.1 and 25.2, November 2026 */
     { m: "US FDA news release, FDA approves first drug to treat agitation", label: "US FDA news release, brexpiprazole for agitation in Alzheimer dementia (May 2023)", url: "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease" },
     { m: "Appelbaum PS, Assessment of patients' competence", label: "Appelbaum PS, N Engl J Med 2007 (assessing capacity to consent)", url: "https://pubmed.ncbi.nlm.nih.gov/?term=Appelbaum+%22Assessment+of+patients%27+competence+to+consent+to+treatment%22+2007" },

@@ -6032,5 +6032,170 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "loc26",
+  "chapter": "ch26",
+  "title": "Choosing a level of care",
+  "summary": "Answer questions about risk, cooperation, functioning and the home setting to see which level of care Chapter 26 points to: inpatient, partial hospital, intensive outpatient, outpatient or residential.",
+  "caution": "A teaching aid built from Chapter 26 and Table 26-1, not an admission protocol. Real decisions also depend on local services, the law where you practice and the patient's wishes; choose the least restrictive setting that is safe and likely to help.",
+  "start": "risk",
+  "nodes": {
+    "risk": {
+      "q": "Is there an imminent risk of harm to self or others, or can the patient not manage even basic activities of daily living?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:inpt",
+          "note": "Imminent risk or inability to manage basic ADLs."
+        },
+        {
+          "label": "No",
+          "to": "coop",
+          "note": "No imminent danger."
+        }
+      ]
+    },
+    "coop": {
+      "q": "Will the patient take part in treatment willingly?",
+      "options": [
+        {
+          "label": "No: no insight, refuses all care, and is deteriorating",
+          "to": "r:invol",
+          "note": "Cannot cooperate with any outpatient option."
+        },
+        {
+          "label": "Yes (including a court-ordered but willing patient)",
+          "to": "live",
+          "note": "Willing to take part."
+        }
+      ]
+    },
+    "live": {
+      "q": "Can the patient live safely at home, alone or with a caregiver's help?",
+      "options": [
+        {
+          "label": "No: functional limits are severe",
+          "to": "r:resid",
+          "note": "Cannot safely live independently."
+        },
+        {
+          "label": "Yes",
+          "to": "level",
+          "note": "Can live at home."
+        }
+      ]
+    },
+    "level": {
+      "q": "How much risk and dysfunction remain?",
+      "options": [
+        {
+          "label": "Moderate, non-imminent risk; moderate dysfunction; can be trusted alone in the evening",
+          "to": "r:php",
+          "note": "Needs near-hospital intensity by day."
+        },
+        {
+          "label": "No imminent risk; mild to moderate dysfunction; safe home without illness triggers",
+          "to": "r:iop",
+          "note": "Needs more than office visits."
+        },
+        {
+          "label": "Low risk; adequate function; motivated and likely to warn the clinician if worse",
+          "to": "r:opd",
+          "note": "Meets the outpatient requirements."
+        }
+      ]
+    }
+  },
+  "results": {
+    "inpt": {
+      "label": "Inpatient admission",
+      "dx": "Inpatient care (Chapter 26)",
+      "line": "The setting for imminent danger, inability to function, or treatment that cannot be given safely elsewhere.",
+      "points": [
+        "Staff 24 hours a day; usually locked; restraint or seclusion possible.",
+        "Voluntary or involuntary, under the law where you practice.",
+        "Goals are short term: resolve the crisis and step down.",
+        "Start discharge planning on day one."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-inpt",
+        "label": "Inpatient admission"
+      }
+    },
+    "invol": {
+      "label": "Consider involuntary inpatient admission",
+      "dx": "Involuntary hospitalization (Chapter 26)",
+      "line": "The inpatient unit is the only setting where a patient can be held against their will.",
+      "points": [
+        "The hold lasts only until the patient can again make reasonable decisions.",
+        "Follow the legal procedure: US state law in the book; in the Philippines, the Mental Health Act's safeguards and internal review board."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-inpt",
+        "label": "Voluntary and involuntary admission"
+      }
+    },
+    "resid": {
+      "label": "Residential care",
+      "dx": "Residential care (Chapter 26)",
+      "line": "A 24-hour, usually unlocked setting for non-imminent risk with severe functional limits.",
+      "points": [
+        "Less staffing and less frequent treatment than a ward.",
+        "Voluntary, or court-ordered but willing.",
+        "Aims at improvement and a step down, unlike a nursing home."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-resid",
+        "label": "Residential care"
+      }
+    },
+    "php": {
+      "label": "Partial hospital",
+      "dx": "Partial hospital treatment (Chapter 26)",
+      "line": "Close to hospital-level care for 6 to 8 hours a day, usually 5 days a week; the patient sleeps at home.",
+      "points": [
+        "Apply the evening test: can the patient be trusted alone overnight?",
+        "Usually lasts 1 to a few weeks, then steps down."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-partial",
+        "label": "Partial hospital and IOP"
+      }
+    },
+    "iop": {
+      "label": "Intensive outpatient treatment",
+      "dx": "Intensive outpatient treatment (Chapter 26)",
+      "line": "About 3 to 4 hours a day on 1 to 4 days, averaging 6 to 12 hours a week, mostly in groups.",
+      "points": [
+        "Check that the home is safe and free of illness triggers.",
+        "Usually lasts 1 to several weeks."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-partial",
+        "label": "Partial hospital and IOP"
+      }
+    },
+    "opd": {
+      "label": "Outpatient care",
+      "dx": "Outpatient care (Chapter 26)",
+      "line": "Office-based medication, psychotherapy or both; suits most psychiatric disorders.",
+      "points": [
+        "Weekly or more often in acute illness; less often as the patient improves.",
+        "Family can supply motivation during a relapse.",
+        "With long gaps between visits, agree on a plan to step up follow-up."
+      ],
+      "link": {
+        "ch": "ch26",
+        "sec": "s26-outpt",
+        "label": "Outpatient care"
+      }
+    }
+  }
 }
 ]);

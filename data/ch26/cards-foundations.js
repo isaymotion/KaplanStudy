@@ -1,0 +1,13 @@
+/* Chapter 26 foundations cards. Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 26. */
+KS.add("ch26", "foundations", [
+  {"id":"f26-li01","tag":"Level of care","q":"Where was most US care for serious mental illness given before the 1960s, and who received office therapy?","a":"In **hospitals**; office therapy went mainly to **\"neurotic\"** patients who could **pay for hourly sessions**, often several days a week."},
+  {"id":"f26-li02","tag":"Level of care","q":"What motivated the community mental health movement?","a":"**Social justice**, in the era of the **civil rights movement**; public hospitals gave **custodial** rather than rehabilitative care and **few patients improved**."},
+  {"id":"f26-li03","tag":"Level of care","q":"Who was Walter Barton?","a":"Then **medical director of the APA**; he argued the **federal government** must lead in developing alternatives to institutionalization."},
+  {"id":"f26-li04","tag":"Level of care","q":"What did the 1963 act do and who championed it?","a":"The **Mental Retardation Facilities and CMHC Construction Act** (**1963**), championed by **Kennedy**, began a **federal role** and funded **grants to states** for **local mental health centers** under **NIH** oversight."},
+  {"id":"f26-li05","tag":"Level of care","q":"Which president oversaw amendments that followed the 1963 act?","a":"**President Johnson**."},
+  {"id":"f26-li06","tag":"Level of care","q":"What was the outcome of the community mental health center program?","a":"Only **about half** of centers were built, funding was **chronically inadequate**; it succeeded more at **deinstitutionalization** than at **quality alternatives**."},
+  {"id":"f26-li07","tag":"Level of care","q":"How has managed care shaped levels of care?","a":"It favors the **least intensive level of care** and **lower-cost professionals** to save money."},
+  {"id":"f26-li08","tag":"Level of care","q":"How are most current treatment settings funded?","a":"Mostly by **grants and third-party payers**, though some require large **patient expenditures**; terms differ by **institution and region**."},
+  {"id":"f26-ln01","tag":"Inpatient","q":"What was the historical place of inpatient care, and what is it now?","a":"Once the **commonest** type of psychiatric treatment; now **reserved** for those who would be **unsafe** elsewhere or would **not benefit** from other settings."},
+  {"id":"f26-ln02","tag":"Inpatient","q":"Why do lengths of stay differ between places?","a":"**Regional practice**, and internationally the **health care system**, **economic resources** and other factors (Figure 26-1, OECD 2010)."}
+]);
