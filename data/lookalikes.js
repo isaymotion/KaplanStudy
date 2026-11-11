@@ -888,5 +888,77 @@ KS.lookalikes = [
       "label": "MBT"
     }
   ]
+},
+{
+  "id": "genetic-info-types",
+  "title": "Kinds of genetic risk information compared",
+  "summary": "Family history, rare large-effect variants, polygenic risk scores and APOE genotype: what each tells a patient and how far it can be used in psychiatric care (section 24.2 and its update boxes).",
+  "items": [
+    "Family history (pedigree)",
+    "Rare large-effect variant (e.g., 22q11.2 deletion)",
+    "Polygenic risk score",
+    "APOE ε4 genotype"
+  ],
+  "rows": [
+    [
+      "What it is",
+      "Diagnoses, onset ages and exposures in relatives, drawn as a **pedigree**",
+      "A single change with a **large effect**, such as a **copy number variant**",
+      "Sum of **many small-effect** common variants",
+      "Common variant of one gene"
+    ],
+    [
+      "How common as a cause",
+      "The usual starting point for **every** consultation",
+      "**Rare** in psychiatric disorders",
+      "Reflects the **usual** polygenic pattern",
+      "Raises risk of late-onset Alzheimer disease"
+    ],
+    [
+      "What it can tell",
+      "**Recurrence risk** as a **range**",
+      "A **diagnosis** that can explain illness, e.g., with signs of a rare syndrome",
+      "Group-level risk only; **cannot predict** an individual's illness",
+      "Cannot predict or confirm Alzheimer disease; flags **ARIA risk** on anti-amyloid drugs"
+    ],
+    [
+      "Clinical status",
+      "Core of genetic counseling",
+      "**Chromosomal microarray** is standard in developmental delay, intellectual disability and autism",
+      "**Research use only** (ISPG)",
+      "**Tested before** lecanemab or donanemab, after discussing implications"
+    ],
+    [
+      "Counseling point",
+      "Diagnoses in relatives must be **verified**; stigma hides history",
+      "Implications for **relatives** and other organ systems",
+      "Explain why a number from a company is not a diagnosis",
+      "Result also bears on **relatives'** risk"
+    ]
+  ],
+  "keys": [
+    "**Numbers from a family history** are given as a **range**, only to clients who want them.",
+    "**Psychosis with signs of a rare syndrome** or several affected relatives is where precision testing may help.",
+    "**A polygenic score** is not a clinical test in psychiatry yet.",
+    "**APOE testing** now has a treatment use, so it needs genetic counseling."
+  ],
+  "links": [
+    {
+      "ch": "ch24-2",
+      "sec": "s242-process",
+      "label": "Family history and risk communication"
+    },
+    {
+      "ch": "ch24-2",
+      "sec": "s242-genetics",
+      "label": "Genetics and psychiatric disorders"
+    },
+    {
+      "ch": "ch24-2",
+      "sec": "s242-testing",
+      "label": "Testing and ethics"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 24.2; ISPG Genetic Testing Statement (2019); LEQEMBI US prescribing information"
 }
 ];

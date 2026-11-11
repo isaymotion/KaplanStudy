@@ -713,7 +713,21 @@ KS.glossary = (KS.glossary || []).concat([
   ["attribution theory", "The study of how people explain the causes of behavior; in combined treatment, how a patient credits change to the drug or to his or her own efforts.", "Ch 23.12"],
   ["split transference", "In treatment shared by two clinicians, the patient's casting of one as all good and the other as all bad.", "Ch 23.12"],
   ["mentalizing", "Understanding one's own and other people's behavior in terms of mental states such as feelings, wishes and beliefs; the target of MBT.", "Ch 23.13"],
-  ["psychoeducation", "Teaching patients and families about an illness, its treatment and prognosis, together with coping, problem-solving and communication skills.", "Ch 23.14"]
+  ["psychoeducation", "Teaching patients and families about an illness, its treatment and prognosis, together with coping, problem-solving and communication skills.", "Ch 23.14"],
+  ["psychiatric rehabilitation", "Interventions that help people disabled by mental illness gain the skills and supports for ordinary adult roles (work, school, independent living, relationships) in settings they choose.", "Ch 24.1"],
+  ["supported employment", "A place-and-train vocational model: no readiness screening, no sheltered or prevocational steps, active help finding competitive work and ongoing support after hiring.", "Ch 24.1"],
+  ["individual placement and support", "The most studied, manualized form of supported employment (IPS), aimed at rapid placement in competitive jobs matched to the person's preferences.", "Ch 24.1"],
+  ["social skills training", "Teaching social behavior through instruction, modeling, role-play, feedback and reinforcement, usually in small groups; widely used in schizophrenia.", "Ch 24.1"],
+  ["social perception", "The ability to read social cues correctly (facial expression, voice, gesture, posture, verbal content and context); the first step in solving interpersonal problems.", "Ch 24.1"],
+  ["milieu therapy", "Treatment delivered by a team through the patient's time in a living, learning or working environment, with peer pressure carrying the unit's norms.", "Ch 24.1"],
+  ["cognitive remediation", "Training aimed at neurocognitive deficits such as attention, memory and executive function, especially in schizophrenia; distinct from cognitive-behavioral therapy for symptoms.", "Ch 24.1"],
+  ["proxemics", "The use of personal space and distance in social interaction; a nonverbal component of social skill.", "Ch 24.1"],
+  ["kinesics", "Body movement and gesture as a nonverbal component of social skill.", "Ch 24.1"],
+  ["genetic counseling", "Helping people understand and adapt to the medical, psychological and family implications of genetic contributions to disease: interpretation of histories, education and counseling.", "Ch 24.2"],
+  ["pedigree", "A family medical history drawn as a diagram with standard symbols, used to assess the likely cause of a disorder and recurrence risk.", "Ch 24.2"],
+  ["proband", "The affected person through whom a family comes to clinical attention in a genetic study or counseling.", "Ch 24.2"],
+  ["polygenic risk score", "A single number summing the small effects of many common variants on risk for a trait; a research tool with no current clinical use in psychiatry.", "Ch 24.2"],
+  ["velocardiofacial syndrome", "The 22q11.2 deletion syndrome; features vary within families and include cleft palate, heart defects, learning problems and a high risk of psychosis.", "Ch 24.2"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1054,5 +1068,14 @@ KS.glossaryAliases = {
   "role transitions": "role transition",
   "narrative therapy": "narrative psychotherapy",
   "psychoeducational interventions": "psychoeducation",
-  "mentalising": "mentalizing"
+  "mentalising": "mentalizing",
+  "psychosocial rehabilitation": "psychiatric rehabilitation",
+  "individual placement and support (IPS)": "individual placement and support",
+  "social skills groups": "social skills training",
+  "milieu programs": "milieu therapy",
+  "cognitive rehabilitation": "cognitive remediation",
+  "pedigrees": "pedigree",
+  "polygenic risk scores": "polygenic risk score",
+  "VCF syndrome": "velocardiofacial syndrome",
+  "22q11.2 deletion syndrome": "velocardiofacial syndrome"
 };

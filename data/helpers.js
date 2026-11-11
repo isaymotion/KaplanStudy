@@ -5645,5 +5645,186 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "rehab24",
+  "chapter": "ch24-1",
+  "title": "Which rehabilitation approach?",
+  "summary": "Answer a few questions about a patient's main functional goal or barrier to see which part of section 24.1 applies: supported employment, social skills training, social perception or problem-solving training, cognitive remediation, or a milieu or token economy program.",
+  "caution": "A teaching aid built from Kaplan & Sadock section 24.1, not a care plan. Real rehabilitation combines approaches and starts from the person's own goals and choices.",
+  "start": "florid",
+  "nodes": {
+    "florid": {
+      "q": "Is the patient currently floridly psychotic, with prominent positive symptoms and high distractibility?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:wait",
+          "note": "Skills learning is minimal at this stage."
+        },
+        {
+          "label": "No",
+          "to": "work",
+          "note": "Not acutely psychotic: ready to learn."
+        }
+      ]
+    },
+    "work": {
+      "q": "Is the main goal a paid, competitive job?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:se",
+          "note": "Readiness is not a gate."
+        },
+        {
+          "label": "No",
+          "to": "social",
+          "note": "Work is not the main goal now."
+        }
+      ]
+    },
+    "social": {
+      "q": "Is the main barrier in social interaction?",
+      "options": [
+        {
+          "label": "Yes: misreads or misses social cues; social events feel like a blur",
+          "to": "r:percep",
+          "note": "Receiving problem."
+        },
+        {
+          "label": "Yes: cannot work out what to do about an interpersonal problem",
+          "to": "r:solve",
+          "note": "Processing problem."
+        },
+        {
+          "label": "Yes: lacks specific behaviors (eye contact, starting a conversation, saying no)",
+          "to": "r:sst",
+          "note": "Expressive problem."
+        },
+        {
+          "label": "No",
+          "to": "cog",
+          "note": "Social skills are not the main barrier."
+        }
+      ]
+    },
+    "cog": {
+      "q": "Do attention, memory or executive deficits limit daily functioning?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:cr",
+          "note": "Neurocognitive target."
+        },
+        {
+          "label": "No: the need is a structured inpatient, day or partial hospital program",
+          "to": "r:milieu",
+          "note": "Setting-level approach."
+        }
+      ]
+    }
+  },
+  "results": {
+    "wait": {
+      "label": "Stabilize first, then train",
+      "dx": "Timing of skills training (24.1)",
+      "line": "Learning in skills training is slow or nearly absent during florid illness, so treat the acute episode first.",
+      "points": [
+        "Start or resume skills work once positive symptoms and distractibility settle.",
+        "Rehabilitation goals still come from the patient."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-percep",
+        "label": "Goals of skills training"
+      }
+    },
+    "se": {
+      "label": "Supported employment",
+      "dx": "Supported employment (24.1)",
+      "line": "Place, then train: help anyone who wants to work find a competitive job that fits their preferences and strengths, with ongoing support.",
+      "points": [
+        "No readiness screening and no sheltered or prevocational steps.",
+        "Part-time work counts.",
+        "The patient decides whether to tell the employer about the illness.",
+        "Since the book: in a 2022 meta-analysis of IPS, the best-studied form, about 49% got competitive jobs versus 28% with usual services."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-voc",
+        "label": "Vocational rehabilitation"
+      }
+    },
+    "percep": {
+      "label": "Social perception training",
+      "dx": "Social perception training (24.1)",
+      "line": "Train recognition of affect and social cues; perception is the first step in interpersonal problem solving.",
+      "points": [
+        "Self-questions help: what does this person want now, how much should I disclose, should I talk or listen?"
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-percep",
+        "label": "Social perception"
+      }
+    },
+    "solve": {
+      "label": "Six-step problem solving",
+      "dx": "Information-processing training (24.1)",
+      "line": "Teach a general, stepwise rule set the patient can apply to many interpersonal dilemmas.",
+      "points": [
+        "Attitude, define the problem, list options, choose one, plan and act, then review.",
+        "A structured routine is a crutch for what others do intuitively."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-percep",
+        "label": "Information-processing model"
+      }
+    },
+    "sst": {
+      "label": "Social skills training",
+      "dx": "Social skills training (24.1)",
+      "line": "Instruct, model, role-play, then give feedback and reinforcement, repeated until the response is adequate.",
+      "points": [
+        "Groups of six to eight; three to four role-play trials each.",
+        "Tailor targets to the level of impairment.",
+        "Expect only moderate generalization, to similar situations."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-skills",
+        "label": "Social skills training"
+      }
+    },
+    "cr": {
+      "label": "Cognitive remediation",
+      "dx": "Cognitive rehabilitation (24.1)",
+      "line": "Target neurocognitive deficits directly; newer antipsychotics improve test scores only modestly, with little real-world gain.",
+      "points": [
+        "Distinct from CBT, which targets psychotic symptoms.",
+        "Since the book: a 2021 meta-analysis of 130 trials found small to moderate gains in cognition and functioning, best when combined with psychosocial rehabilitation."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-milieu",
+        "label": "Cognitive rehabilitation"
+      }
+    },
+    "milieu": {
+      "label": "Milieu therapy or a token economy",
+      "dx": "Milieu therapy and token economy (24.1)",
+      "line": "A team-run living, learning or working environment where peer pressure carries the norms; a token economy adds points as generalized reinforcers.",
+      "points": [
+        "Token economies give the team consistent rules but need organizational support and extra resources."
+      ],
+      "link": {
+        "ch": "ch24-1",
+        "sec": "s241-milieu",
+        "label": "Milieu therapy"
+      }
+    }
+  }
 }
 ]);

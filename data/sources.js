@@ -4,6 +4,13 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 24.1 and 24.2, November 2026 */
+    { m: "de Winter L et al., Who benefits from individual placement", label: "de Winter L et al., Epidemiol Psychiatr Sci 2022 (IPS meta-analysis)", url: "https://doi.org/10.1017/S2045796022000300" },
+    { m: "Vita A et al., Effectiveness, core elements", label: "Vita A et al., JAMA Psychiatry 2021 (cognitive remediation meta-analysis)", url: "https://doi.org/10.1001/jamapsychiatry.2021.0620" },
+    { m: "National Society of Genetic Counselors' Definition Task Force", label: "NSGC Definition Task Force (Resta R et al.), J Genet Couns 2006", url: "https://doi.org/10.1007/s10897-005-9014-3" },
+    { m: "Trubetskoy V et al., Mapping genomic loci", label: "Trubetskoy V et al., Nature 2022 (PGC schizophrenia GWAS); ISPG statements", url: "https://doi.org/10.1038/s41586-022-04434-5" },
+    { m: "LEQEMBI (lecanemab-irmb) US prescribing information", label: "LEQEMBI US prescribing information (DailyMed)", url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d1ff786-e577-410a-a273-c4d7d0e4e975" },
+    { m: "Lewis ACF, Green RC, Prince AER", label: "Lewis ACF et al., Genet Med 2021 (genetic discrimination, GINA gaps, Florida law)", url: "https://doi.org/10.1038/s41436-020-01002-y" },
     /* Chapter 23.10 to 23.14, November 2026 */
     { m: "Cohen ZD et al., Comparative efficacy of interpersonal", label: "Cohen ZD et al., Psychol Med 2024 (IPT vs antidepressants, IPD meta-analysis)", url: "https://doi.org/10.1017/S0033291724001788" },
     { m: "Hu G, Han B, Gains H, Jia Y", label: "Hu G et al., Int J Clin Health Psychol 2024 (narrative therapy meta-analysis)", url: "https://doi.org/10.1016/j.ijchp.2024.100520" },

@@ -13,6 +13,45 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "69.0.0",
+    "date": "2026-11-11",
+    "title": "Chapter 24: Psychiatric rehabilitation and genetic counseling",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch24-1",
+        "text": "New section 24.1, Psychiatric Rehabilitation: supported employment, social skills training (Table 24-1), social perception and problem-solving training, milieu therapy, token economies, cognitive rehabilitation and ethics, with 21 clinical cases.",
+        "href": "#/c/ch24-1/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch24-2",
+        "text": "New section 24.2, Genetic Counseling: definitions, genes and environment (Table 24-2), family history and pedigrees (Figures 24-1 and 24-2), the steps of counseling (Table 24-3), risk communication, psychosocial support and the ethics of testing, with 19 clinical cases.",
+        "href": "#/c/ch24-2/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "correction",
+        "ch": "ch24-2",
+        "text": "The book calls the professional body the \"National Society of Genetic Counseling\"; it is the National Society of Genetic Counselors (NSGC). A correction box explains this.",
+        "href": "#/c/ch24-2/guide/s242-intro",
+        "link": "See the correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch24-1",
+        "text": "Updates since the book: IPS supported employment (2022 meta-analysis), cognitive remediation (2021 meta-analysis), large genome studies and polygenic scores (2022), APOE testing before anti-amyloid drugs, and the limits of genetic discrimination law."
+      },
+      {
+        "type": "feature",
+        "text": "Chapter 24 is complete (24.1 and 24.2). New decision helper \"Which rehabilitation approach?\" and a look-alike comparing family history, rare variants, polygenic scores and APOE testing.",
+        "href": "#/helpers/rehab24",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "68.0.0",
     "date": "2026-11-10",
     "title": "Chapter 23 complete: sections 23.10 to 23.14",

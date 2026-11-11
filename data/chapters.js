@@ -247,6 +247,14 @@ KS.manifest = [
     summary: 'What psychoeducation includes, how it is delivered, and the evidence in schizophrenia, bipolar disorder and depression.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   },
+  { id: 'ch24-1', number: '24.1', title: 'Psychiatric Rehabilitation', short: 'Rehabilitation',
+    summary: 'Aims and values of psychiatric rehabilitation, supported employment, social skills training (Table 24-1), social perception and problem-solving training, milieu therapy, token economies, cognitive rehabilitation and ethics, with updates on IPS and cognitive remediation.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch24-2', number: '24.2', title: 'Genetic Counseling', short: 'Genetic counseling',
+    summary: 'Genetic counseling in psychiatry: definition, genes and environment in complex disorders (Table 24-2), family history and pedigrees (Figures 24-1 and 24-2), the steps of counseling (Table 24-3), risk communication, psychosocial support and the ethics of testing, with updates on genome studies, APOE testing and genetic discrimination law.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
   { id: 'ch25-3', number: '25.3', title: 'Psychiatric Emergencies', short: 'Psychiatric emergencies',
     summary: 'Emergency evaluation and triage, medical versus psychiatric causes, suicidal, violent and psychotic patients, rape, emergency medication, restraint and disposition, the common emergencies table, and emergencies in children, with post-publication updates on suicide screening and safety planning, agitation guidance, restraint rules and corrected doses.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']

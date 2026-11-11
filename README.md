@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 68.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 69.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -137,6 +137,8 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 23.12 | Combined Psychotherapy and Pharmacotherapy | 4 | 62 | 66 |
 | 23.13 | Mentalization-Based Treatment | 2 | 41 | 33 |
 | 23.14 | Psychoeducational Interventions | 1 | 19 | 17 |
+| 24.1 | Psychiatric Rehabilitation | 5 | 62 | 58 |
+| 24.2 | Genetic Counseling | 5 | 51 | 55 |
 | 25.3 | Psychiatric Emergencies | 20 | 87 | 68 |
 
 ## Upgrading from version 59 (October 2026)
