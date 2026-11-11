@@ -1,0 +1,132 @@
+[
+ {
+  "topic": "ISPG genetic testing statement",
+  "section": "24.2",
+  "fact": "The International Society of Psychiatric Genetics statement (updated and approved 2019, earlier version 2017) says polygenic risk scores are research tools and are not recommended for clinical use. Chromosomal microarray is standard for developmental delay, intellectual disability and autism; for adults with psychiatric illness the committee did not reach consensus on routine CNV testing but saw value in atypical presentations or with ID, autism or medical syndromes. HLA-A/HLA-B testing is advised before carbamazepine or oxcarbazepine; other pharmacogenetic tests are inconclusive (CYP2D6/2C19 most useful after a failed or poorly tolerated drug). Direct-to-consumer testing is not recommended for medical purposes in patients or families.",
+  "year": 2019,
+  "source_title": "ISPG Genetic Testing Statement",
+  "url": "https://ispg.net/genetic-testing-statement/",
+  "doi_or_pmid": "",
+  "confirmed": true
+ },
+ {
+  "topic": "PGC schizophrenia GWAS 2022",
+  "section": "24.2",
+  "fact": "Trubetskoy and colleagues (Nature 2022; 604:502-508) reported a two-stage GWAS of up to 76,755 people with schizophrenia and 243,649 controls. It identified common-variant associations at 287 distinct genomic loci and implicated synaptic biology. Even so, polygenic scores from such studies remain research tools rather than diagnostic tests.",
+  "year": 2022,
+  "source_title": "Mapping genomic loci implicates genes and synaptic biology in schizophrenia",
+  "url": "https://digital.library.adelaide.edu.au/items/9418284b-3e41-4658-bd5c-c25c263ed1a6",
+  "doi_or_pmid": "",
+  "confirmed": false
+ },
+ {
+  "topic": "PGC bipolar disorder GWAS 2021",
+  "section": "24.2",
+  "fact": "A Nature Genetics 2021 GWAS (Mullins et al.) of 41,917 bipolar cases and 371,549 controls from 57 cohorts in Europe, North America and Australia found 64 risk loci, 33 of them new.",
+  "year": 2021,
+  "source_title": "NIMH: Genomic data from more than 41,000 people shed new light on bipolar disorder",
+  "url": "https://www.nimh.nih.gov/news/science-news/2021/genomic-data-from-more-than-41000-people-shed-new-light-on-bipolar-disorder",
+  "doi_or_pmid": "",
+  "confirmed": true
+ },
+ {
+  "topic": "PGC major depression trans-ancestry GWAS 2025",
+  "section": "24.2",
+  "fact": "The PGC Major Depressive Disorder Working Group (Cell 2025; 188:640-652) analysed 688,808 people with depression and 4,364,225 controls from diverse and admixed ancestries across 29 countries. It found 697 associations at 635 loci, 293 of them novel, showing how much larger and more diverse samples have expanded depression genetics.",
+  "year": 2025,
+  "source_title": "Trans-ancestry genome-wide study of depression identifies 697 associations implicating cell types and pharmacotherapies",
+  "url": "https://pure.amsterdamumc.nl/en/publications/trans-ancestry-genome-wide-study-of-depression-identifies-697-ass/",
+  "doi_or_pmid": "10.1016/j.cell.2024.12.002",
+  "confirmed": true
+ },
+ {
+  "topic": "Cognitive remediation meta-analysis",
+  "section": "24.1",
+  "fact": "Vita et al. (JAMA Psychiatry 2021;78:848-858) pooled 130 randomized trials (8,851 participants) of cognitive remediation in schizophrenia-spectrum disorders. Effects were small but significant on cognition (d=0.29) and on functioning (d=0.22). Better outcomes were linked to an active trained therapist, structured teaching of cognitive strategies, and integration with psychosocial rehabilitation; the authors argue it should be routine in guidelines.",
+  "year": 2021,
+  "source_title": "Effectiveness, core elements, and moderators of response of cognitive remediation for schizophrenia",
+  "url": "https://kclpure.kcl.ac.uk/portal/en/publications/effectiveness-core-elements-and-moderators-of-response-of-cogniti/",
+  "doi_or_pmid": "10.1001/jamapsychiatry.2021.0620",
+  "confirmed": true
+ },
+ {
+  "topic": "IPS supported employment meta-analysis",
+  "section": "24.1",
+  "fact": "de Winter et al. (Epidemiol Psychiatr Sci 2022) pooled 32 RCTs (7,665 participants) of Individual Placement and Support and found it improved employment rate, job duration and wages versus controls across subgroups. Effects were larger in severe mental illness and schizophrenia-spectrum disorders and smaller in common mental disorders and in European trials, possibly reflecting a welfare 'benefits trap'.",
+  "year": 2022,
+  "source_title": "Who benefits from individual placement and support? A meta-analysis",
+  "url": "https://www.cambridge.org/core/product/C02A4B3BC19271C9218BF94DF25F6A9B/core-reader",
+  "doi_or_pmid": "10.1017/S2045796022000300",
+  "confirmed": true
+ },
+ {
+  "topic": "APOE testing before lecanemab",
+  "section": "24.2",
+  "fact": "The Leqembi (lecanemab) label (revised 8/2025) carries a boxed warning and advises ApoE e4 testing before starting treatment to estimate ARIA risk, after discussing what results mean. In the label's Study 2, ARIA-E or ARIA-H occurred in 45% of e4 homozygotes, 19% of heterozygotes and 13% of noncarriers. Untested patients can still be treated, but homozygote status is then unknown, and the label notes no FDA-authorized ApoE e4 test is available.",
+  "year": 2025,
+  "source_title": "LEQEMBI (lecanemab-irmb) prescribing information",
+  "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761269s013lbl.pdf",
+  "doi_or_pmid": "",
+  "confirmed": true
+ },
+ {
+  "topic": "APOE testing before donanemab",
+  "section": "24.2",
+  "fact": "The Kisunla (donanemab-azbt) label, first approved in the US in 2024 and revised 8/2025, states ApoE e4 testing should be done before treatment to inform ARIA risk. Homozygotes have higher rates of symptomatic, serious and severe radiographic ARIA than heterozygotes or noncarriers. Treatment without testing is allowed but homozygote status cannot be determined.",
+  "year": 2025,
+  "source_title": "KISUNLA (donanemab-azbt) prescribing information",
+  "url": "https://uspl.lilly.com/kisunla/kisunla.html",
+  "doi_or_pmid": "",
+  "confirmed": true
+ },
+ {
+  "topic": "GINA gaps and US state life/LTC/disability laws",
+  "section": "24.2",
+  "fact": "GINA (2008) covers most health insurance and employment but not life, disability or long-term care insurance. By July 2020 only Maryland, Maine and Illinois had enacted limited non-health insurance protections, and Florida (effective 2020, applying to policies from 2021) became the first state to bar genetic information in life, long-term care and disability insurance, with an exception for use in a medical diagnosis.",
+  "year": 2021,
+  "source_title": "Long-awaited progress in addressing genetic discrimination in the United States (Genetics in Medicine)",
+  "url": "https://www.nature.com/articles/s41436-020-01002-y",
+  "doi_or_pmid": "10.1038/s41436-020-01002-y",
+  "confirmed": true
+ },
+ {
+  "topic": "Australia ban on genetic test results in life insurance",
+  "section": "24.2",
+  "fact": "Australia moved from an industry moratorium (2019, written into the Life Insurance Code of Practice in 2023) to legislation amending the Insurance Contracts Act 1984. Trade press reports the Senate passed the bill on 1 April 2026 and that the ban took effect on 8 October 2026 for life, TPD, trauma and income protection cover, with civil penalties up to about A$1.65 million. Existing disease, symptoms and family history may still be considered.",
+  "year": 2026,
+  "source_title": "Insurance Business Australia: genetic testing ban for life insurers now in force",
+  "url": "https://www.insurancebusinessmag.com/au/news/life-insurance/genetic-testing-ban-for-life-insurers-now-in-force-with-penalties-of-up-to-1-65m-593483.aspx",
+  "doi_or_pmid": "",
+  "confirmed": false
+ },
+ {
+  "topic": "Huntington disease predictive testing and digital result release",
+  "section": "24.2",
+  "fact": "Mocanu et al. (Eur J Hum Genet 2025) warn that automatic online release of predictive HD results can bypass established counselling safeguards. They recommend clinician-controlled release, keeping in-person result delivery and planned follow-up, and a pre-test checklist (how to handle an unexpected notification, contacts for the clinical team, advocacy group and crisis support).",
+  "year": 2025,
+  "source_title": "Predictive testing for Huntington's disease in a digital age; patient power with potential pitfalls",
+  "url": "https://openaccess.sgul.ac.uk/id/eprint/117169/1/s41431-025-01793-1.pdf",
+  "doi_or_pmid": "10.1038/s41431-025-01793-1",
+  "confirmed": true
+ },
+ {
+  "topic": "Psychiatric genetic counseling outcomes (symptoms, adherence)",
+  "section": "24.2",
+  "fact": "Morris et al. (Psychiatry Research 2021;296:113663) followed 109 adults with schizophrenia, schizoaffective or bipolar disorder using a within-subject design with two pre- and two post-counseling assessments. Psychotic symptoms fell after counseling among those most symptomatic at baseline, but medication adherence did not change and the study was underpowered. The paper cites earlier work showing improved empowerment and self-efficacy.",
+  "year": 2021,
+  "source_title": "Psychiatric genetic counseling for serious mental illness: impact on psychopathology and psychotropic medication adherence",
+  "url": "https://bcchr.ca/sites/default/files/group-translational-psychiatric-genetic-group/psychiatric-genetic-counseling-for-serious-mental-illness-impact-on-psychopathology-and-psychotropic-medication-adherence.pdf",
+  "doi_or_pmid": "10.1016/j.psychres.2020.113663",
+  "confirmed": true
+ },
+ {
+  "topic": "Psychiatric genetic counseling: empowerment and self-efficacy (older anchor study)",
+  "section": "24.2",
+  "fact": "A Vancouver specialist psychiatric genetic counseling clinic evaluation (Austin lab, Clinical Genetics 2014, title 'Evaluating a unique, specialist psychiatric genetic counseling clinic: uptake and impact') reported significantly higher empowerment and illness-management self-efficacy one month after counseling. Predates 2018 and was read only via a news summary, so treat as background.",
+  "year": 2014,
+  "source_title": "Psychiatric genetic counselling boosts individuals' capabilities (VCHRI)",
+  "url": "https://www.vchri.ca/feature-stories/articles/2015/08/22/psychiatric-genetic-counselling-boosts-individuals-capabilities",
+  "doi_or_pmid": "",
+  "confirmed": false
+ }
+]
