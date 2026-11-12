@@ -290,6 +290,14 @@ KS.manifest = [
   { id: 'ch29-3', number: '29.3', title: 'Euthanasia and Physician-Assisted Suicide', short: 'Euthanasia and assisted suicide',
     summary: 'Types of euthanasia, the arguments on each side, positions of professional bodies, Kevorkian, Oregon\'s law and data, the AMA\'s eight-step response to a request and the psychiatric view, with corrected dates and current law in the US, Canada, the UK and the Philippines.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch30', number: '30', title: 'Community Psychiatry', short: 'Community psychiatry',
+    summary: 'Public health and prevention (levels and Institute of Medicine categories), access to care, public agencies and the workforce, evidence-based adult and child community programs, the psychiatrist in multidisciplinary teams, systems of care and assertive community treatment, and the chronic illness care model, with 988, NCMH 1553, collaborative care and Philippine Mental Health Act updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch31', number: '31', title: 'Global and Cultural Issues in Psychiatry', short: 'Global psychiatry',
+    summary: 'Worldwide prevalence and burden, the treatment gap, mental health resources by WHO region, program development and its barriers, stigma, mental and physical illness, ethics and international declarations, and international organizations, with current WHO estimates and the Mental Health Atlas 2024.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

@@ -13,6 +13,54 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "75.0.0",
+    "date": "2026-11-12",
+    "title": "Chapters 30 and 31: Community psychiatry and global psychiatry",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch30",
+        "text": "New Chapter 30, Community Psychiatry: public health and prevention, access to care, public agencies and the workforce, evidence-based adult and child programs (Tables 30-1 and 30-2), the psychiatrist's roles, systems of care and assertive community treatment, and the chronic illness care model, with 62 clinical cases.",
+        "href": "#/c/ch30/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch31",
+        "text": "New Chapter 31, Global and Cultural Issues in Psychiatry: worldwide burden and DALYs (Tables 31-1 to 31-3), the treatment gap, resources by WHO region (Tables 31-4 to 31-6), program development, stigma, mental and physical illness, ethics and declarations, and international organizations, with 44 clinical cases.",
+        "href": "#/c/ch31/guide",
+        "link": "Open the chapter"
+      },
+      {
+        "type": "update",
+        "ch": "ch31",
+        "text": "Updates: WHO's 2022 and 2025 estimates (970 million in 2019; more than 1 billion now), the treatment gap, Mental Health Atlas 2024 resources and spending, and the Comprehensive Mental Health Action Plan 2013 to 2030.",
+        "href": "#/c/ch31/guide/s31-res",
+        "link": "See the Atlas update"
+      },
+      {
+        "type": "update",
+        "ch": "ch30",
+        "text": "Updates: the 988 Suicide & Crisis Lifeline and NCMH 1553, collaborative care billing in the United States, and community mental health under the Philippine Mental Health Act. A correction box notes that the Decade of the Brain was designated by Congress and the President, with NIMH and the Library of Congress running it.",
+        "href": "#/c/ch30/guide/s30-agency",
+        "link": "See the Philippine update"
+      },
+      {
+        "type": "correction",
+        "ch": "ch31",
+        "text": "Corrections: WHO has 194 member states; the World Health Report 2001 and New Understanding, New Hope are one report; the Lancet global mental health series (2007) and Commission (2018) are separate.",
+        "href": "#/c/ch31/guide/s31-orgs",
+        "link": "See the corrections"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which community program fits this person?, and a look-alike table of prevention levels and categories.",
+        "href": "#/helper/program30",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "74.0.0",
     "date": "2026-11-11",
     "title": "Chapter 29.2: Palliative care (Chapter 29 complete)",

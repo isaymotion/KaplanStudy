@@ -1426,5 +1426,66 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 29.2, with update boxes"
+},
+{
+  "id": "prevention-levels",
+  "title": "Levels and categories of prevention",
+  "summary": "Chapter 30 uses two schemes: the classic public health levels and the Institute of Medicine categories.",
+  "items": [
+    "Scheme",
+    "Who it targets",
+    "Example"
+  ],
+  "rows": [
+    [
+      "Primary prevention",
+      "Classic level",
+      "People without the disorder; prevents new cases",
+      "A school program against alcohol use and bullying"
+    ],
+    [
+      "Secondary prevention",
+      "Classic level",
+      "Early detection and treatment of cases",
+      "Screening and prompt treatment"
+    ],
+    [
+      "Tertiary prevention",
+      "Classic level",
+      "People with an established illness; reduces disability",
+      "Rehabilitation and chronic illness care"
+    ],
+    [
+      "Universal",
+      "Institute of Medicine",
+      "A whole population, regardless of risk",
+      "A media campaign on warning signs of depression"
+    ],
+    [
+      "Selective",
+      "Institute of Medicine",
+      "People at higher than average risk, without the disorder",
+      "A resilience group for a child of a parent with bipolar disorder"
+    ],
+    [
+      "Indicated",
+      "Institute of Medicine",
+      "People with early signs who do not meet full criteria",
+      "Coping skills for subthreshold depression"
+    ]
+  ],
+  "keys": [
+    "The Institute of Medicine categories all fall **before** a diagnosable disorder.",
+    "**Tertiary** prevention is about **disability** in an established illness.",
+    "The chapter places some early-symptom groups differently from the usual wording; follow the definitions in the section."
+  ],
+  "links": [
+    {
+      "ch": "ch30",
+      "sec": "s30-promo",
+      "label": "Health promotion and prevention"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 30"
 }
 ];

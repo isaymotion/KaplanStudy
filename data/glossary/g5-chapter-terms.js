@@ -818,7 +818,28 @@ KS.glossary = (KS.glossary || []).concat([
   ["somatic pain", "Steady, aching, well-localized nociceptive pain, such as from bone metastases.", "Ch 29.2"],
   ["cachexia", "Wasting with loss of weight and muscle, present in nearly every terminal illness.", "Ch 29.2"],
   ["conspiracy of silence", "A pattern in which patient and family each avoid talking about dying to protect the other, leaving them isolated; family meetings can open the talk.", "Ch 29.2"],
-  ["equianalgesic dose", "The dose of one opioid or route giving the same pain relief as a reference dose of another, used when switching drugs or routes.", "Ch 29.2"]
+  ["equianalgesic dose", "The dose of one opioid or route giving the same pain relief as a reference dose of another, used when switching drugs or routes.", "Ch 29.2"],
+  ["public psychiatry", "Psychiatry practiced for the public good, especially for disadvantaged people, whether in government programs or in not-for-profit and charity settings.", "Ch 30"],
+  ["universal prevention", "Institute of Medicine prevention category aimed at a whole population regardless of risk, such as a public education campaign.", "Ch 30"],
+  ["selective prevention", "Institute of Medicine prevention category for people at above-average risk who have no disorder, such as children of a parent with bipolar disorder.", "Ch 30"],
+  ["indicated prevention", "Institute of Medicine prevention category for people with early signs or symptoms who do not yet meet criteria for a disorder.", "Ch 30"],
+  ["tertiary prevention", "Classic public health level that reduces the disability of an established illness, for example through rehabilitation.", "Ch 30"],
+  ["illness management", "A recovery-oriented approach that helps people with serious mental illness work with clinicians, lower relapse risk and pursue their own goals.", "Ch 30"],
+  ["iron triangle", "The alliance of interest groups, legislators and agencies that builds separate categorical programs one at a time, fragmenting US services.", "Ch 30"],
+  ["assertive community treatment", "A team-based program (ACT) that delivers treatment, case management and practical support in the community, around the clock, to people with severe mental illness and repeated admissions.", "Ch 30"],
+  ["system of care", "A coordinated network of child-serving agencies with a child and family team that plans individualized care for children with serious emotional disturbance.", "Ch 30"],
+  ["chronic illness care model", "A primary care model for long-term conditions built on delivery system design, self-management support, decision support and clinical tracking systems.", "Ch 30"],
+  ["collaborative care", "Integrated care in which a primary care practitioner, a behavioral health care manager and a psychiatric consultant share responsibility for a caseload.", "Ch 30"],
+  ["multisystemic therapy", "An intensive home- and community-based program for youth with serious antisocial behavior that works across family, school, peers and neighborhood.", "Ch 30"],
+  ["multidimensional treatment foster care", "A program that trains and supports foster parents to provide a structured therapeutic home for youth who would otherwise be placed in institutions.", "Ch 30"],
+  ["disability-adjusted life year", "The DALY: one year of healthy life lost to early death or disability; the unit used to measure the global burden of disease.", "Ch 31"],
+  ["treatment gap", "The share of people with a mental disorder who need care but do not receive it; widest in low-income countries.", "Ch 31"],
+  ["Sheehan Disability Scale", "A brief self-rating of impairment in work, home, social life and close relationships, used to compare disability across disorders.", "Ch 31"],
+  ["stigma", "Negative attitudes and discrimination toward people with mental disorders; reduced most reliably by contact, also by education and protest.", "Ch 31"],
+  ["Project Atlas", "WHO's survey of mental health resources by country (policy, financing, services and workforce), published as the Mental Health Atlas.", "Ch 31"],
+  ["Madrid Declaration", "The World Psychiatric Association's ethical guidelines for psychiatric practice (1996), covering consent, confidentiality, third-party assessments and research.", "Ch 31"],
+  ["Declaration of Caracas", "The 1990 Pan American declaration calling for the restructuring of psychiatric care toward community-based services and protection of patients' rights.", "Ch 31"],
+  ["mhGAP", "WHO's Mental Health Gap Action Programme (since 2008), which helps non-specialist health workers treat priority conditions in low-resource settings.", "Ch 31"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1211,5 +1232,16 @@ KS.glossaryAliases = {
   "hospice care": "hospice",
   "rescue dose": "breakthrough pain",
   "PCA": "patient-controlled analgesia",
-  "equianalgesic": "equianalgesic dose"
+  "equianalgesic": "equianalgesic dose",
+  "ACT team": "assertive community treatment",
+  "universal prevention programs": "universal prevention",
+  "indicated interventions": "indicated prevention",
+  "selective interventions": "selective prevention",
+  "systems of care": "system of care",
+  "chronic care model": "chronic illness care model",
+  "collaborative care model": "collaborative care",
+  "DALYs": "disability-adjusted life year",
+  "DALY": "disability-adjusted life year",
+  "Mental Health Atlas": "Project Atlas",
+  "Mental Health Gap Action Programme": "mhGAP"
 };

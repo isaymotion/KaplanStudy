@@ -6738,5 +6738,242 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "program30",
+  "chapter": "ch30",
+  "title": "Which community program fits this person?",
+  "summary": "Work through the needs described in Chapter 30 and Tables 30-1 and 30-2 to pick an evidence-based community program.",
+  "caution": "A teaching aid for the programs in Chapter 30. Availability and names differ by country and service; the programs described are mainly from the United States. Base real referrals on a full assessment.",
+  "start": "age",
+  "nodes": {
+    "age": {
+      "q": "Is the person a child or adolescent, or an adult?",
+      "options": [
+        {
+          "label": "Adult",
+          "to": "adult",
+          "note": "Table 30-1 covers adult programs."
+        },
+        {
+          "label": "Child or adolescent",
+          "to": "child",
+          "note": "Table 30-2 covers child programs."
+        }
+      ]
+    },
+    "adult": {
+      "q": "What is the main need?",
+      "options": [
+        {
+          "label": "Severe mental illness, repeated admissions, needs help with daily life and crises at any hour",
+          "to": "r:act",
+          "note": "Round-the-clock team support in the community."
+        },
+        {
+          "label": "Repeated self-harm with emotion dysregulation",
+          "to": "r:dbt",
+          "note": "Studied in parasuicidal patients with borderline personality disorder."
+        },
+        {
+          "label": "Ambivalence about changing alcohol or drug use",
+          "to": "r:met",
+          "note": "Builds motivation from the person's own goals."
+        },
+        {
+          "label": "Sober, but wants to spot early warning signs of relapse",
+          "to": "r:rpt",
+          "note": "Targets the slide back toward use."
+        },
+        {
+          "label": "Needs everyday living skills and wants to manage symptoms",
+          "to": "r:skills",
+          "note": "Skills training for independent living."
+        }
+      ]
+    },
+    "child": {
+      "q": "What is the main need?",
+      "options": [
+        {
+          "label": "Serious antisocial behavior across home, school and neighborhood",
+          "to": "r:mst",
+          "note": "Works across all of the youth's environments."
+        },
+        {
+          "label": "Would otherwise be placed in an institution and needs a therapeutic home",
+          "to": "r:mtfc",
+          "note": "Trained foster parents provide a structured home."
+        },
+        {
+          "label": "PTSD after trauma, with a caregiver who can join therapy",
+          "to": "r:tfcbt",
+          "note": "Trauma-focused work with the caregiver involved."
+        },
+        {
+          "label": "Disruptive behavior at home and school",
+          "to": "r:pmt",
+          "note": "Parents and teachers learn behavior management."
+        },
+        {
+          "label": "Needs and agencies too many for one service to meet",
+          "to": "r:soc",
+          "note": "A coordinated system of care fits multi-agency needs."
+        }
+      ]
+    }
+  },
+  "results": {
+    "act": {
+      "label": "Assertive community treatment",
+      "dx": "ACT team",
+      "line": "A multidisciplinary team brings treatment and practical support to the person in the community.",
+      "points": [
+        "For severe mental illness with repeated admissions.",
+        "Help with housing, money, medication and crises.",
+        "Several US states fund ACT through case or bundled rates."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpa",
+        "label": "Adult programs (Table 30-1)"
+      }
+    },
+    "dbt": {
+      "label": "Dialectical behavior therapy",
+      "dx": "DBT",
+      "line": "Studied in parasuicidal patients with borderline personality disorder.",
+      "points": [
+        "Targets self-harm and emotion regulation.",
+        "Combines individual and skills work.",
+        "See Table 30-1 for its evaluation results."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpa",
+        "label": "Adult programs (Table 30-1)"
+      }
+    },
+    "met": {
+      "label": "Motivational enhancement therapy",
+      "dx": "MET",
+      "line": "Helps the person see how use clashes with their own goals.",
+      "points": [
+        "Shown to reduce addictive behaviors.",
+        "Works with ambivalence rather than against it.",
+        "Can lead into other treatment."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpa",
+        "label": "Adult programs (Table 30-1)"
+      }
+    },
+    "rpt": {
+      "label": "Relapse prevention therapy",
+      "dx": "Relapse prevention",
+      "line": "Teaches early warning signs and coping before a full relapse.",
+      "points": [
+        "For people already in recovery.",
+        "Plans for high-risk situations.",
+        "See Table 30-1."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpa",
+        "label": "Adult programs (Table 30-1)"
+      }
+    },
+    "skills": {
+      "label": "Social and independent living skills training",
+      "dx": "Skills training",
+      "line": "Builds daily living, social and symptom self-management skills.",
+      "points": [
+        "For adults with serious mental illness.",
+        "Supports recovery goals.",
+        "See Table 30-1."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpa",
+        "label": "Adult programs (Table 30-1)"
+      }
+    },
+    "mst": {
+      "label": "Multisystemic therapy",
+      "dx": "MST",
+      "line": "Intensive home- and community-based work across the youth's environments.",
+      "points": [
+        "Therapists with 24-hour backup, for up to about 6 months.",
+        "For serious antisocial behavior.",
+        "See Table 30-2."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpc",
+        "label": "Child programs (Table 30-2)"
+      }
+    },
+    "mtfc": {
+      "label": "Multidimensional treatment foster care",
+      "dx": "MTFC",
+      "line": "Trained, supported foster parents provide a structured therapeutic home.",
+      "points": [
+        "An alternative to institutional placement.",
+        "Close supervision and support of the foster family.",
+        "See Table 30-2."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpc",
+        "label": "Child programs (Table 30-2)"
+      }
+    },
+    "tfcbt": {
+      "label": "Trauma-focused cognitive-behavioral therapy",
+      "dx": "TF-CBT",
+      "line": "Symptom management and trauma processing with the caregiver involved.",
+      "points": [
+        "For PTSD after abuse or other trauma.",
+        "Disruptive behavior did not improve in trials.",
+        "See Table 30-2."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpc",
+        "label": "Child programs (Table 30-2)"
+      }
+    },
+    "pmt": {
+      "label": "Parent behavior and teacher classroom management training",
+      "dx": "Parent and teacher training",
+      "line": "Parents and teachers learn behavior management strategies, for example Incredible Years.",
+      "points": [
+        "For disruptive behavior at home and in class.",
+        "Works through the adults around the child.",
+        "See Table 30-2."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-ebpc",
+        "label": "Child programs (Table 30-2)"
+      }
+    },
+    "soc": {
+      "label": "System of care",
+      "dx": "Coordinated multi-agency care",
+      "line": "A consortium of agencies and a child and family team plan care together.",
+      "points": [
+        "Set expected outcomes for each intervention and track progress.",
+        "Needs matching commitment from state agencies.",
+        "See organized systems of care."
+      ],
+      "link": {
+        "ch": "ch30",
+        "sec": "s30-models",
+        "label": "Organized systems of care"
+      }
+    }
+  }
 }
 ]);

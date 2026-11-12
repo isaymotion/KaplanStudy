@@ -4,6 +4,19 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapters 30 and 31, November 2026 */
+    { m: "Council of State Governments Justice Center, New 988", label: "CSG Justice Center, New 988 Suicide and Crisis Lifeline marks first week since launch (July 2022)", url: "https://csg-erc.org/new-988-suicide-and-crisis-lifeline-marks-first-week-since-launch/" },
+    { m: "CMS Medicare Learning Network, Behavioral health integration services", label: "CMS MLN, Behavioral health integration services fact sheet (MLN909432)", url: "https://www.hhs.gov/guidance/sites/default/files/hhs-guidance-documents/MLN909432-BHI-Services-Fact-Sheet-2021-3_508_0.pdf" },
+    { m: "WHO, World mental health report: transforming mental health for all", label: "WHO, World mental health report: transforming mental health for all (2022)", url: "https://www.who.int/publications/i/item/9789240049338" },
+    { m: "WHO, Over a billion people living with mental health conditions", label: "WHO news release: Over a billion people living with mental health conditions (2 September 2025)", url: "https://www.who.int/news/item/02-09-2025-over-a-billion-people-living-with-mental-health-conditions-services-require-urgent-scale-up" },
+    { m: "WHO, Mental health: scaling up mental health care", label: "WHO, Mental health: scaling up mental health care", url: "https://www.who.int/health-topics/mental-health/scaling-up-mental-health-care" },
+    { m: "WHO, Mental Health Atlas 2024", label: "WHO, Mental Health Atlas 2024 (2025)", url: "https://iris.who.int/server/api/core/bitstreams/5897b3c7-2848-47a7-ba22-0a7902342a81/content" },
+    { m: "WHO, Comprehensive mental health action plan 2013-2030", label: "WHO, Comprehensive mental health action plan 2013-2030", url: "https://www.who.int/initiatives/mental-health-action-plan-2013-2030" },
+    { m: "Singh OP, Comprehensive Mental Health Action Plan 2013-2030", label: "Singh OP, Comprehensive Mental Health Action Plan 2013-2030: we must rise to the challenge (2021)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8522612" },
+    { m: "Institute of Medicine, Discovering the Brain (1992), Proclamation 6158", label: "Institute of Medicine, Discovering the Brain (1992): Proclamation 6158, Decade of the Brain", url: "https://www.nationalacademies.org/read/1785/chapter/13" },
+    { m: "Library of Congress, Project coordinator named for Decade of the Brain", label: "Library of Congress, Project coordinator named for Decade of the Brain (1995)", url: "https://webarchive.library.unt.edu/eot2008/20090112040042/http:/www.loc.gov/today/pr/1995/95-121.html" },
+    { m: "WHO, The World Health Report 2001: mental disorders affect one in four people", label: "WHO news release, The World Health Report 2001: mental disorders affect one in four people", url: "https://www.who.int/news/item/28-09-2001-the-world-health-report-2001-mental-disorders-affect-one-in-four-people" },
+    { m: "Patel V et al., The Lancet Commission on global mental health", label: "Patel V et al., The Lancet Commission on global mental health and sustainable development (Lancet 2018)", url: "https://doi.org/10.1016/S0140-6736(18)31612-X" },
     /* Chapter 29.2, November 2026 */
     { m: "Hanks GW et al., Morphine and alternative opioids in cancer pain", label: "Hanks GW et al., Morphine and alternative opioids in cancer pain: the EAPC recommendations (Br J Cancer 2001)", url: "https://www.nature.com/articles/6691680" },
     { m: "Lasheen W et al., The intravenous to oral relative milligram potency ratio", label: "Lasheen W et al., IV to oral morphine potency ratio during chronic dosing in cancer pain (Palliat Med 2010)", url: "https://doi.org/10.1177/0269216309346595" },
