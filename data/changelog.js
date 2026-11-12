@@ -13,6 +13,40 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "79.0.0",
+    "date": "2026-11-12",
+    "title": "Section 33.2: Neural Development and Neurogenesis",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-2",
+        "text": "New section 33.2: neurulation, proliferation and migration, developmental cell death, neural patterning, neuronal specification and miRNAs, growth factors (Table 33-1), migration disorders, the neurodevelopmental basis of schizophrenia and autism, and adult neurogenesis, with 109 cases.",
+        "href": "#/c/ch33-2/guide",
+        "link": "Open 33.2"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-2",
+        "text": "Updates: USPSTF folic acid advice (2023), DSM-5 autism spectrum disorder, CDC autism prevalence (1 in 31, 2022 data), the fate of schizophrenia candidate genes such as DISC1 and NRG1, and the adult neurogenesis debate.",
+        "href": "#/c/ch33-2/guide/s332-asd",
+        "link": "See autism updates"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-2",
+        "text": "Corrections: gastrulation forms three germ layers; glia and neurons are about 1:1, not 8:1; Dicer cuts the miRNA precursor and Argonaute carries out silencing in RISC; and early brain overgrowth in autism is subtle and limited to a subgroup.",
+        "href": "#/c/ch33-2/guide/s332-over",
+        "link": "See the corrections"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which neural tube or migration disorder?, and a look-alike table comparing axon guidance molecules.",
+        "href": "#/helper/migdx332",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "78.0.0",
     "date": "2026-11-12",
     "title": "Section 33.1: The Human Brain and Functional Neuroanatomy",

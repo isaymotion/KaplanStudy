@@ -1679,5 +1679,54 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Functional Neuroanatomy)"
+},
+{
+  "id": "axon-guidance332",
+  "title": "Axon guidance molecules compared",
+  "summary": "Four families of cues steer growing axons. Section 33.2 contrasts what kind of molecule each is and whether it attracts or repels.",
+  "items": [
+    "Type",
+    "Main action",
+    "Key example"
+  ],
+  "rows": [
+    [
+      "Cadherins",
+      "Region-specific adhesion molecules controlled by Pax6 and Emx2",
+      "Direct axonal pathfinding",
+      "Keep axons within their regional targets"
+    ],
+    [
+      "Ephrins and Eph receptors",
+      "Membrane-bound; Eph is the largest tyrosine kinase receptor family in the brain",
+      "Mostly repel",
+      "Topographic mapping"
+    ],
+    [
+      "Netrins",
+      "Soluble, secreted (for example by the floor plate)",
+      "Mainly attract",
+      "Draw interneuron axons across the midline"
+    ],
+    [
+      "Slit and Robo",
+      "Soluble ligand and its receptor",
+      "Repel",
+      "Control midline crossing and fasciculation"
+    ]
+  ],
+  "keys": [
+    "**Netrins** mainly **attract**; **Slit/Robo** and most **ephrins** **repel**.",
+    "**Ephrins** underlie **topographic maps**.",
+    "Guidance cues change axon **direction, speed and bundling**."
+  ],
+  "links": [
+    {
+      "ch": "ch33-2",
+      "sec": "s332-migrate",
+      "label": "Migration and outgrowth"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neural Development and Neurogenesis)"
 }
 ];

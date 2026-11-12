@@ -314,6 +314,10 @@ KS.manifest = [
   { id: 'ch33-1', number: '33.1', title: 'The Human Brain and Functional Neuroanatomy', short: 'Brain and neuroanatomy',
     summary: 'Chapter 33 opening: psychiatry and the human brain, endophenotypes, genes, environment and circuits, lessons from neurology; brain organization; somatosensory, visual, auditory, olfactory, taste and autonomic systems and their development; motor systems (basal ganglia, cerebellum, motor cortex); localization; language and aphasias; arousal, attention and memory; emotion, the limbic system, fear and aggression, frontal lobes; and neural development, with updates on DSM-5-TR and ICD-11, RDoC, gene counts, schizophrenia genetics, adult neurogenesis and corrections on localization and Huntington disease.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-2', number: '33.2', title: 'Neural Development and Neurogenesis', short: 'Neural development',
+    summary: 'Neurulation and regional differentiation, proliferative zones, radial and tangential migration, developmental cell death, neural patterning of the spinal cord and forebrain, neuronal specification and miRNAs, extracellular growth factors (Table 33-1), migration and process outgrowth, the neurodevelopmental basis of schizophrenia and autism, and adult neurogenesis, with updates on folic acid, schizophrenia candidate genes, DSM-5 autism, current autism prevalence, early brain overgrowth and the adult neurogenesis debate.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

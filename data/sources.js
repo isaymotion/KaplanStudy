@@ -4,6 +4,14 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 33.2, November 2026 */
+    { m: "USPSTF, Folic Acid Supplementation to Prevent Neural Tube Defects", label: "USPSTF: Folic acid to prevent neural tube defects (2023 reaffirmation, grade A)", url: "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication" },
+    { m: "StatPearls, Embryology, Gastrulation", label: "StatPearls: Embryology, Gastrulation", url: "https://www.statpearls.com/articlelibrary/viewarticle/22120/" },
+    { m: "The search for true numbers of neurons and glial cells", label: "von Bartheld CS et al., True numbers of neurons and glial cells in the human brain, J Comp Neurol 2016 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5063692/" },
+    { m: "Regulation of microRNA function in animals", label: "Gebert LFR, MacRae IJ, Regulation of microRNA function in animals, Nat Rev Mol Cell Biol 2019 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6546304/" },
+    { m: "Evaluating historical candidate genes for schizophrenia", label: "Farrell MS et al., Evaluating historical candidate genes for schizophrenia, Mol Psychiatry 2015", url: "https://doi.org/10.1038/mp.2015.16" },
+    { m: "ADDM Network, 16 sites, 2022", label: "CDC MMWR 2025: Autism prevalence, ADDM Network, 16 sites, 2022", url: "https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm" },
+    { m: "Compared to what? Early brain overgrowth in autism", label: "Raznahan A et al., Early brain overgrowth in autism and the perils of population norms, Biol Psychiatry 2013", url: "https://www.nimh.nih.gov/news/science-news/2013/skewed-norms-weaken-case-for-early-brain-overgrowth-in-autism" },
     /* Section 33.1, November 2026 */
     { m: "WHO ICD-11 in effect from 1 January 2022", label: "WHO: International Classification of Diseases (ICD-11 in effect from January 2022)", url: "https://www.who.int/standards/classifications/classification-of-diseases" },
     { m: "NIMH, About RDoC", label: "NIMH: About RDoC (Research Domain Criteria)", url: "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc" },

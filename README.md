@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 78.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 79.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -154,6 +154,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 32.2 | Adulthood | 9 | 160 | 197 |
 | 32.3 | Old Age | 6 | 118 | 159 |
 | 33.1 | The Human Brain and Functional Neuroanatomy | 18 | 318 | 359 |
+| 33.2 | Neural Development and Neurogenesis | 14 | 255 | 321 |
 
 ## Upgrading from version 59 (October 2026)
 

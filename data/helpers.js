@@ -7439,5 +7439,157 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "migdx332",
+  "chapter": "ch33-2",
+  "title": "Which neural tube or migration disorder?",
+  "summary": "Match a structural brain finding to the developmental step that failed and the genes or exposures section 33.2 links to it.",
+  "caution": "A teaching aid. Diagnosis rests on imaging, genetic testing and specialist review; many cases have no identified cause.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What is the main finding?",
+      "options": [
+        {
+          "label": "The neural tube did not close",
+          "to": "tube",
+          "note": "A neurulation failure at 3 to 4 weeks."
+        },
+        {
+          "label": "The brain surface is smooth, with few or no gyri",
+          "to": "liss",
+          "note": "Neurons failed to reach the cortex."
+        },
+        {
+          "label": "A band of gray matter sits in the white matter under the cortex",
+          "to": "r:dcx",
+          "note": "A 'double cortex' on imaging."
+        },
+        {
+          "label": "Nodules of gray matter line the lateral ventricles",
+          "to": "r:filamin",
+          "note": "Neurons never left the ventricular zone."
+        }
+      ]
+    },
+    "tube": {
+      "q": "Which end failed to close?",
+      "options": [
+        {
+          "label": "The head end",
+          "to": "r:anen",
+          "note": "Cranial neuropore."
+        },
+        {
+          "label": "The tail end",
+          "to": "r:sb",
+          "note": "Caudal neuropore."
+        }
+      ]
+    },
+    "liss": {
+      "q": "What does the cortex look like?",
+      "options": [
+        {
+          "label": "Thick and usually four-layered, smooth",
+          "to": "r:liss1",
+          "note": "Classical pattern."
+        },
+        {
+          "label": "Chaotic and poorly layered, partly pebbled, sometimes with muscle disease",
+          "to": "r:liss2",
+          "note": "Cobblestone pattern."
+        }
+      ]
+    }
+  },
+  "results": {
+    "anen": {
+      "label": "Anencephaly",
+      "dx": "Anencephaly",
+      "line": "Failure of neural tube closure at the head end.",
+      "points": [
+        "Happens at 3 to 4 weeks of gestation.",
+        "Risks the chapter names: retinoic acid skin products, anticonvulsants (especially valproic acid) and lack of folic acid.",
+        "Folic acid 0.4 to 0.8 mg daily before and in early pregnancy lowers risk (see the USPSTF box)."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-over",
+        "label": "Neurulation"
+      }
+    },
+    "sb": {
+      "label": "Spina bifida",
+      "dx": "Spina bifida",
+      "line": "Failure of neural tube closure at the tail end.",
+      "points": [
+        "Same timing and risk factors as anencephaly.",
+        "Folic acid supplementation lowers risk (see the USPSTF box)."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-over",
+        "label": "Neurulation"
+      }
+    },
+    "liss1": {
+      "label": "Classical (type I) lissencephaly",
+      "dx": "Classical lissencephaly",
+      "line": "Thick, usually four-layered smooth cortex because most neurons never reach their targets.",
+      "points": [
+        "LIS-1 mutations cause up to 60 percent of type I cases.",
+        "DCX mutations cause X-linked lissencephaly in males.",
+        "Cortex and hippocampus are hit hardest; cerebellum less so."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-migrate",
+        "label": "Lissencephaly"
+      }
+    },
+    "liss2": {
+      "label": "Cobblestone (type II) lissencephaly",
+      "dx": "Cobblestone lissencephaly",
+      "line": "Chaotic, poorly layered cortex with a partly pebbled surface.",
+      "points": [
+        "Caused by defects in enzymes that add mannose sugars to glycoproteins.",
+        "Seen with some congenital muscular dystrophies."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-migrate",
+        "label": "Lissencephaly"
+      }
+    },
+    "dcx": {
+      "label": "Subcortical band heterotopia (double cortex)",
+      "dx": "Double cortex",
+      "line": "Heterotopic neuron bands within the white matter, seen mainly in females with DCX mutations.",
+      "points": [
+        "Males with DCX mutations have X-linked lissencephaly.",
+        "Severe intellectual disability and epilepsy are common."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-migrate",
+        "label": "Migration genes"
+      }
+    },
+    "filamin": {
+      "label": "Periventricular nodular heterotopia",
+      "dx": "Periventricular nodular heterotopia",
+      "line": "Nodules of neurons that stayed beside the ventricles.",
+      "points": [
+        "Caused by mutations in filamin 1, an actin-linked protein."
+      ],
+      "link": {
+        "ch": "ch33-2",
+        "sec": "s332-migrate",
+        "label": "Migration genes"
+      }
+    }
+  }
 }
 ]);
