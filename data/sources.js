@@ -4,6 +4,17 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Sections 33.7 and 33.8, November 2026 */
+    { m: "Mathematical properties of the r2 measure of linkage disequilibrium", label: "VanLiere JM, Rosenberg NA, Mathematical properties of the r2 measure of linkage disequilibrium, Theor Popul Biol 2008 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2580747" },
+    { m: "Revisiting the genome-wide significance threshold", label: "Chen Z et al., Revisiting the genome-wide significance threshold for common variant GWAS, G3 2021 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8022962/" },
+    { m: "Estimation of significance thresholds for genomewide association scans", label: "Dudbridge F, Gusnanto A, Estimation of significance thresholds for genomewide association scans, Genet Epidemiol 2008 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2573032" },
+    { m: "New insights into the genetic etiology of Alzheimer", label: "Bellenguez C et al., New insights into the genetic etiology of Alzheimer's disease and related dementias, Nat Genet 2022", url: "https://doi.org/10.1038/s41588-022-01024-z" },
+    { m: "Familial Recurrence of Autism", label: "Ozonoff S et al., Familial Recurrence of Autism: Updates From the Baby Siblings Research Consortium, Pediatrics 2024 (UC Davis summary)", url: "https://health.ucdavis.edu/news/headlines/large-study-confirms-siblings-of-autistic-children-have-20-chance-of-autism-/2024/07" },
+    { m: "autism in a 5-country cohort", label: "NICHD: Bai D et al., genetic and environmental factors in autism, 5-country cohort, JAMA Psychiatry 2019", url: "https://www.nichd.nih.gov/newsroom/news/080119-autism" },
+    { m: "Rare coding variation provides insight into the genetic architecture", label: "Fu JM et al., Rare coding variation and the genetic architecture of autism, Nat Genet 2022", url: "https://doi.org/10.1038/s41588-022-01104-0" },
+    { m: "Re-evaluation of the linkage relationship between chromosome 11p", label: "Kelsoe JR et al., Re-evaluation of chromosome 11p linkage to bipolar disorder in the Old Order Amish, Nature 1989", url: "https://doi.org/10.1038/342238a0" },
+    { m: "Genomics yields biological and phenotypic insights into bipolar", label: "O'Connell KS et al. (PGC), Genomics yields biological and phenotypic insights into bipolar disorder, Nature 2025", url: "https://doi.org/10.1038/s41586-024-08468-9" },
+    { m: "Rare coding variants in 10 genes confer substantial risk", label: "NIMH 2022: Rare genetic variation in 10 genes substantially raises the risk for schizophrenia (SCHEMA, Nature)", url: "https://www.nimh.nih.gov/news/research-highlights/2022/rare-genetic-variation-in-10-genes-substantially-raise-the-risk-for-schizophrenia" },
     /* Sections 33.5 and 33.6, November 2026 */
     { m: "dexamethasone suppression test: an overview", label: "APA Task Force on Laboratory Tests in Psychiatry, The dexamethasone suppression test, Am J Psychiatry 1987", url: "https://psychiatryonline.org/doi/10.1176/ajp.144.10.1253" },
     { m: "Global Consensus Position Statement on the Use of Testosterone", label: "Davis SR et al., Global Consensus Position Statement on the Use of Testosterone Therapy for Women, 2019 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6821450" },

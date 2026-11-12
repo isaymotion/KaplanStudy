@@ -1,0 +1,167 @@
+/* Section 33.7 high yield (bold text becomes a blank in "Hide key facts" mode). Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 33 (Neurogenetics: methods). */
+KS.add("ch33-7", "highYield", [
+  {
+    "id": "hy337-01",
+    "topic": "Genetic epidemiology",
+    "items": [
+      "Modern genetics began with the **rediscovery of Mendel's** ideas around **1900**.",
+      "Mapping studies locate disease genes by their **chromosomal position**.",
+      "The two broad mapping approaches: **linkage** and **association** (Figure 33-29).",
+      "Mendelian trait: one-locus genotype is **necessary and sufficient**.",
+      "Psychiatric disorders are **etiologically complex** traits.",
+      "Incomplete penetrance: only **some carriers** show the phenotype.",
+      "Phenocopy: disease from **nongenetic** causes.",
+      "Locus heterogeneity: **different genes** in different families or populations.",
+      "Polygenic inheritance: risk rises when variants in **several genes act together**.",
+      "Family studies give only **indirect** evidence of heritability.",
+      "Relative risk (λ) = rate in **relatives of an affected person** / rate in the **general population**.",
+      "λ **above 1** suggests a genetic cause.",
+      "Comparing λ across relationships hints at the **mode of transmission**.",
+      "Pure genetic disorder: MZ concordance **100 percent**.",
+      "Pure genetic disorder: DZ concordance **25 percent** (recessive) or **50 percent** (dominant).",
+      "No genetic role: MZ and DZ concordance are **equal** (equal-environment assumption).",
+      "Twin studies of **autism, bipolar disorder and schizophrenia** suggest high heritability.",
+      "Heritability estimates vary mainly with **phenotype definition and ascertainment**."
+    ]
+  },
+  {
+    "id": "hy337-02",
+    "topic": "Recombination and linkage",
+    "items": [
+      "The two copies of each chromosome are called **homologs**.",
+      "Homologs **cross over** during **meiosis**.",
+      "Unlinked loci recombine at **50 percent** per meiosis.",
+      "Linked loci recombine **less often**, in proportion to **physical distance**.",
+      "A genetic marker is DNA at a **known location** that carries a **polymorphism**.",
+      "Mapping seeks marker alleles shared by affected people **more than chance** predicts.",
+      "Shared alleles from a common ancestor are **identical by descent (IBD)**.",
+      "The **recombination fraction (Θ)** quantifies how often loci recombine.",
+      "**1 percent** recombination = **1 centimorgan**.",
+      "1 cM spans about **1 megabase** of DNA on average.",
+      "Θ = **0.5** means unlinked; Θ = **0** means completely linked.",
+      "LOD = **logarithm of the odds**.",
+      "LOD uses the **base 10** log of the linked-versus-unlinked likelihood ratio.",
+      "The Θ giving the **highest LOD** is the most likely recombination fraction."
+    ]
+  },
+  {
+    "id": "hy337-03",
+    "topic": "Linkage disequilibrium and markers",
+    "items": [
+      "LD measures genetic distance in **populations**, not families.",
+      "Alleles in LD co-occur **more often than allele frequencies** predict.",
+      "Strong LD usually means loci are **very close** physically.",
+      "LD lets a typed subset of polymorphisms **infer genotypes** at nearby loci.",
+      "A **haplotype** is a cluster of alleles in LD inherited as one unit.",
+      "LD mapping infers **IBD sharing among unrelated people**.",
+      "**r2** and **D′** are two common LD measures.",
+      "A large **r2** means the alleles are in LD.",
+      "LD-based association is now the **preferred method** for **whole-genome screens**.",
+      "Association samples are limited only by **population size** and **disease frequency**.",
+      "Big samples matter most with **genetic heterogeneity** or **incomplete penetrance**.",
+      "Microsatellites are also called **STRs** or **SSLPs**.",
+      "SSLP repeat units are **2 to 4** base pairs long.",
+      "SNP = a **single base pair** change; the **most common** variant.",
+      "SNPs suit mapping: **genome-wide spread** and **high-throughput** typing.",
+      "Indels usually span **1 to 30** base pairs.",
+      "CNVs are **deletions or duplications**, from a few bp to **millions** of bp.",
+      "Large CNVs are hypothesized to affect **expression of nearby genes**."
+    ]
+  },
+  {
+    "id": "hy337-04",
+    "topic": "Pedigree and sib-pair analysis",
+    "items": [
+      "High-penetrance variants: **large** effect, **rare**, segregate in **families**.",
+      "High-penetrance variants are best mapped with **pedigree-based** approaches.",
+      "Low-penetrance variants: **weak** effect, **frequent**, sought in **population samples**.",
+      "Finding a high-penetrance variant usually gives insight into **pathobiology**.",
+      "Pedigree analysis uses **multigenerational** families.",
+      "Pedigree analysis yields a **LOD score** for every marker.",
+      "Its goal: show that a marker and a disease locus **cosegregate**.",
+      "Pedigree analysis first succeeded for Mendelian disorders such as **Huntington disease**.",
+      "Early pedigree loci for **Alzheimer disease** replicated (three loci).",
+      "Early pedigree loci for **bipolar disorder** and **schizophrenia** were false positives.",
+      "Main accepted reason for failure: studies were **drastically underpowered**.",
+      "Pedigree work now turns to mapping **quantitative trait loci (QTLs)**.",
+      "QTLs affect **continuously varying** traits and have **small** effects.",
+      "Siblings share about **50 percent** of their genomes IBD.",
+      "ASP linkage: affected sibs share a region **more than 50 percent** of the time.",
+      "ASP studies, like pedigree studies, favor genes of **large** effect.",
+      "Fixes for ASP power: a **two-tiered design** or a **larger sample**.",
+      "**NIMH** keeps sib-pair repositories for autism, Alzheimer disease, schizophrenia and bipolar disorder.",
+      "ASP design can add **epidemiologic** data to study **gene-environment interactions**."
+    ]
+  },
+  {
+    "id": "hy337-05",
+    "topic": "Association studies and statistics",
+    "items": [
+      "For small-effect loci, association beats linkage in **power**.",
+      "Linkage looks **within families**; association looks **within a population**.",
+      "Association mapping relies on **linkage disequilibrium** with the disease gene.",
+      "Two association designs: **case-control** and **family-based**.",
+      "Family-based designs usually study **trios**: mother, father, affected child.",
+      "Case-control is generally the **more powerful** design.",
+      "Case-control may be the sole workable design for **late-onset** traits such as **Alzheimer disease**.",
+      "Main case-control drawback: **population stratification**.",
+      "Family-based controls are the **nontransmitted** chromosomes.",
+      "Family-based designs are about **two-thirds** as powerful for the same number of affected people.",
+      "Older association studies tested markers in **candidate genes**.",
+      "**Millions of SNPs** plus cheap genotyping made **GWA** studies possible.",
+      "GWA studies seek **common variants** for **common diseases**.",
+      "Early GWA successes: **type 2 diabetes**, rheumatoid arthritis, inflammatory bowel disease.",
+      "Prior probability that two loci are linked: about **1:50**.",
+      "A LOD score of **3** equals odds of **1,000:1** favoring linkage.",
+      "Most **candidate gene** associations remain **unreplicated**.",
+      "Genome-wide significance should apply to **all initial** association studies.",
+      "Figure 33-30 plots expected **false positives** against the **LOD threshold**."
+    ]
+  },
+  {
+    "id": "hy337-06",
+    "topic": "Categorical phenotypes",
+    "items": [
+      "Most psychiatric mapping studies have used **categorical diagnoses** (DSM-5).",
+      "Criticism 1: diagnosis depends on **subjective clinical evaluation**.",
+      "Criticism 2: the **menu-based** system lets two patients share **few symptoms**.",
+      "Nonoverlapping symptom sets likely reflect **distinct etiologies**.",
+      "DSM categories are probably **etiologically heterogeneous** (Figure 33-31A).",
+      "Multi-diagnosis samples suit disorders seen as **one spectrum**, such as **mood disorders**.",
+      "Best estimate diagnosis uses **all available information** (records, interviews, videotapes).",
+      "Consensus diagnosis: **two or more** independent diagnosticians; disagreement means **not entered as affected**.",
+      "Early-onset Alzheimer disease (**before age 65**) segregated as **autosomal dominant**.",
+      "Narrowing by **age of onset, ethnicity, response to treatment, severity, comorbidity**.",
+      "Narrowing cost: **fewer affected subjects**, so **less power**.",
+      "Broadening example: add **major depressive disorder** to a **bipolar** study.",
+      "Stratified categories run from **narrow to broad**, testing linkage under each.",
+      "Supporters: stratifying **lowers false negatives**; critics: it **raises false positives**.",
+      "More models means more tests, so **stricter significance thresholds**.",
+      "Broad **psychosis susceptibility** may contribute to **severe bipolar disorder** and **schizophrenia**.",
+      "Bioinformatics on **medical records** found **pairwise correlations** across psychiatric, neurologic, autoimmune and infectious diseases."
+    ]
+  },
+  {
+    "id": "hy337-07",
+    "topic": "Endophenotypes and animal models",
+    "items": [
+      "Endophenotypes are **quantitative traits** thought to underlie a diagnosis.",
+      "Their genes may reveal the disorder's **biologic pathways**.",
+      "Useful endophenotype 1: **state-independent** with good **test-retest stability**.",
+      "Useful endophenotype 2: **heritable**.",
+      "Useful endophenotype 3: **differs** between patients and **unrelated controls**.",
+      "Continuous traits draw on **affected and unaffected** subjects, adding **power**.",
+      "Most current endophenotypes measure **brain structure and function**.",
+      "MRI morphometry heritability, as the chapter reports: **60 to 95 percent**.",
+      "Heritable MRI features include **total brain, cerebellar, amygdala and hippocampal volume**.",
+      "Brain features linked to schizophrenia or bipolar disorder show up in **family members** too.",
+      "Physiologic candidate endophenotype: **EEG patterns**.",
+      "**Pencil and paper** tests measure **neurocognition** and **temperament**.",
+      "Endophenotypes relate more easily to **animal model** traits than diagnoses do.",
+      "Proposed mood disorder endophenotype: **activity patterns** (circadian).",
+      "Fruit fly mapping from the **early 1970s** found **at least seven** clock genes, first ***period***.",
+      "Mouse mapping in the **early 1990s** found ***Clock***.",
+      "Clock-mutant mice: **hyperactivity** and **decreased sleep**, modified by **lithium**."
+    ]
+  }
+]);

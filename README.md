@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 81.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 82.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -159,6 +159,8 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 33.4 | Neurochemistry II: Neuropeptides and Novel Transmitters | 11 | 204 | 284 |
 | 33.5 | Psychoneuroendocrinology | 9 | 132 | 113 |
 | 33.6 | Immune System and Central Nervous System Interactions | 7 | 96 | 87 |
+| 33.7 | Neurogenetics I: Methods | 7 | 122 | 128 |
+| 33.8 | Neurogenetics II: Specific Disorders | 7 | 115 | 107 |
 
 ## Upgrading from version 59 (October 2026)
 

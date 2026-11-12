@@ -1867,5 +1867,69 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Immune System and CNS Interactions), with the update boxes in this entry"
+},
+{
+  "id": "psych-genetics338",
+  "title": "Genetics of four disorders: then and now",
+  "summary": "Section 33.8 describes the genetics of Alzheimer disease, autism, bipolar disorder and schizophrenia as they stood when the chapter was written. This table sets the chapter's key findings beside what later large studies showed.",
+  "items": [
+    "What the chapter describes",
+    "Main caution in the chapter",
+    "Later evidence (update boxes)"
+  ],
+  "rows": [
+    [
+      "Alzheimer disease",
+      "APP, PS-1 and PS-2 in early-onset families; apoE e4 and GAB2 in late-onset disease",
+      "e4 raises risk but does not determine illness; GAB2 effect sizes are provisional",
+      "75 risk loci (2022); APOE e4 testing before anti-amyloid antibodies"
+    ],
+    [
+      "Autism",
+      "High twin concordance, chromosomal aberrations, CNVs, de novo mutations; synaptic, migration and excitatory/inhibitory candidate genes",
+      "CNV findings preliminary; candidate genes equivocal",
+      "Prevalence about 1 in 31 (2022 data); sibling recurrence about 20 percent; 72 genes from sequencing at the strictest threshold, 185 at a looser one (2022)"
+    ],
+    [
+      "Bipolar disorder",
+      "Early X and chromosome 11 linkage, genome screens, chromosome 18, pooled analyses",
+      "Early linkage reports did not replicate",
+      "Amish linkage excluded (1989); 298 GWAS loci (2025)"
+    ],
+    [
+      "Schizophrenia",
+      "Linkage regions, dysbindin, DISC 1 and 2, neuregulin 1, mutant mice",
+      "Human association results equivocal",
+      "287 GWAS loci and 10 rare-variant genes (2022); candidate genes not supported"
+    ]
+  ],
+  "keys": [
+    "Genes of **large effect** were found first in **early-onset Alzheimer** families.",
+    "The early **linkage** reports in bipolar disorder and schizophrenia were **false positives** in underpowered studies.",
+    "Today's findings come from **very large** genome-wide and sequencing studies: hundreds of loci, each of **small effect**, plus a few rare genes of large effect."
+  ],
+  "links": [
+    {
+      "ch": "ch33-8",
+      "sec": "s338-adlate",
+      "label": "Late-onset Alzheimer disease"
+    },
+    {
+      "ch": "ch33-8",
+      "sec": "s338-aut",
+      "label": "Autism"
+    },
+    {
+      "ch": "ch33-8",
+      "sec": "s338-bp",
+      "label": "Bipolar disorder"
+    },
+    {
+      "ch": "ch33-8",
+      "sec": "s338-scz",
+      "label": "Schizophrenia"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neurogenetics), with the update boxes in this entry"
 }
 ];

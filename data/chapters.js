@@ -334,6 +334,14 @@ KS.manifest = [
   { id: 'ch33-6', number: '33.6', title: 'Immune System and Central Nervous System Interactions', short: 'Immune system and the CNS',
     summary: 'What the immune system does, conditioned immunosuppression, stress and immunity, and cytokine-driven sickness behavior; immune findings in depression, bipolar disorder, schizophrenia, autism, Alzheimer disease, HIV infection, multiple sclerosis and related disorders; and how antidepressants and psychosocial interventions affect immunity, with updates on anti-inflammatory trials, complement C4, vaccines and autism, and ME/CFS.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-7', number: '33.7', title: 'Neurogenetics I: Methods', short: 'Neurogenetics methods',
+    summary: 'Family, twin and adoption studies; recombination, linkage, LOD scores and linkage disequilibrium; SSLP, SNP and CNV markers; pedigree, sib-pair and association mapping and genome-wide significance; categorical and continuous phenotypes, endophenotypes and animal models, with a correction on the r2 and D-prime measures of linkage disequilibrium and the genome-wide significance threshold used today.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-8', number: '33.8', title: 'Neurogenetics II: Specific Disorders', short: 'Neurogenetics of disorders',
+    summary: 'The genetics of Alzheimer disease (APP, presenilins, APOE e4, GAB2), autism (heritability, chromosomal aberrations, CNVs, de novo mutations and synaptic, migration and excitatory/inhibitory pathways), bipolar disorder (early linkage reports, genome screens, chromosome 18, study power) and schizophrenia (candidate genes, mouse models), with updates from the large genome-wide and sequencing studies of 2019 to 2025.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

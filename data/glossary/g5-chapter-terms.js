@@ -953,7 +953,21 @@ KS.glossary = (KS.glossary || []).concat([
   ["sickness behavior","A cytokine-driven cluster of dysphoria, anhedonia, fatigue, social withdrawal, poor appetite, altered sleep, heightened pain and cognitive slowing seen with infection or chronic stress.","Ch 33.6"],
   ["maternal immune activation","An animal model in which an immune challenge to the pregnant mother, acting through interleukin 6, changes the behavior and gene transcription of the offspring.","Ch 33.6"],
   ["endogenous retroviruses","Retroviral sequences carried in every human genome that can alter the transcription of host genes; proposed as one route to schizophrenia.","Ch 33.6"],
-  ["acute-phase proteins","Proteins such as C-reactive protein and complement that rise with inflammation; found with amyloid plaques in Alzheimer disease.","Ch 33.6"]
+  ["acute-phase proteins","Proteins such as C-reactive protein and complement that rise with inflammation; found with amyloid plaques in Alzheimer disease.","Ch 33.6"],
+  ["LOD score","Logarithm of the odds: the base 10 log of how much more likely the data are if a marker and a disease locus are linked than if they are not; a score of 3 (1,000:1 odds) is the classic threshold for linkage.","Ch 33.7"],
+  ["recombination fraction","Theta; the proportion of meioses in which two loci are separated by crossing over, from 0 (completely linked) to 0.5 (unlinked).","Ch 33.7"],
+  ["centimorgan","Unit of genetic distance equal to 1 percent recombination; on average about 1 megabase of DNA in humans.","Ch 33.7"],
+  ["linkage disequilibrium","Nonrandom association of alleles at nearby loci across a population, so that they are inherited together more often than chance predicts; the basis of association mapping.","Ch 33.7"],
+  ["identical by descent","Describes alleles that two relatives carry because both inherited them from the same ancestor; full siblings share about half their genome this way.","Ch 33.7"],
+  ["affected sib-pair analysis","A linkage method that tests whether pairs of affected siblings share a genome region more often than the 50 percent expected by chance.","Ch 33.7"],
+  ["population stratification","Spurious association that arises when cases and controls differ in ancestry rather than in disease status; the main weakness of case-control designs.","Ch 33.7"],
+  ["genome-wide significance","The strict p value threshold used to call an association real after testing the whole genome; 5 × 10 to the minus 8 for common-variant studies today.","Ch 33.7"],
+  ["copy number variation","CNV; a deletion or duplication of a DNA segment ranging from a few base pairs to millions; rare and de novo CNVs contribute to autism and schizophrenia risk.","Ch 33.7"],
+  ["phenocopy","A case with the same phenotype as a genetic disorder but caused by something other than the gene under study; one reason psychiatric disorders are not simply Mendelian.","Ch 33.7"],
+  ["apolipoprotein E e4","The APOE allele on chromosome 19 that raises the risk of late-onset Alzheimer disease; it raises risk without determining illness, and its status now guides anti-amyloid treatment.","Ch 33.8"],
+  ["presenilin","PS-1 on chromosome 14 and PS-2 on chromosome 1; with APP, the genes whose dominant mutations cause familial early-onset Alzheimer disease.","Ch 33.8"],
+  ["de novo mutation","A genetic change present in a child but in neither parent; de novo variants confer substantial risk in a minority of autism cases.","Ch 33.8"],
+  ["genomic imprinting","Expression of a gene that depends on which parent it came from; in 15q11-13 a maternal defect gives Angelman syndrome and a paternal one Prader-Willi syndrome.","Ch 33.8"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

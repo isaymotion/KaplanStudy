@@ -8066,5 +8066,203 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "genedesign337",
+  "chapter": "ch33-7",
+  "title": "Which genetic study design fits the question?",
+  "summary": "Pick the study design that section 33.7 matches to a research question, from establishing heritability to mapping genes of large or small effect.",
+  "caution": "A teaching aid that simplifies. Real studies combine designs, and today's gene mapping in psychiatry relies mostly on very large genome-wide association and sequencing studies.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What do you want to learn?",
+      "options": [
+        {
+          "label": "Whether a disorder runs in families or is heritable at all",
+          "to": "herit",
+          "note": "Genetic epidemiology comes before any gene mapping."
+        },
+        {
+          "label": "Where in the genome a risk gene lies",
+          "to": "map",
+          "note": "The choice depends on the expected effect size of the gene."
+        },
+        {
+          "label": "How to define who counts as affected",
+          "to": "pheno",
+          "note": "Phenotype definition shapes the power of every mapping study."
+        }
+      ]
+    },
+    "herit": {
+      "q": "Which comparison?",
+      "options": [
+        {
+          "label": "Disease rates in relatives of patients versus the general population",
+          "to": "r:fam",
+          "note": "Gives the relative risk, lambda."
+        },
+        {
+          "label": "Concordance in identical versus fraternal twins",
+          "to": "r:twin",
+          "note": "Separates genetic from shared environmental influences, with assumptions."
+        },
+        {
+          "label": "Rates in biological versus adoptive relatives",
+          "to": "r:adopt",
+          "note": "Separates genes from the rearing environment."
+        }
+      ]
+    },
+    "map": {
+      "q": "What kind of gene and sample?",
+      "options": [
+        {
+          "label": "A rare gene of large effect segregating in large multigenerational families",
+          "to": "r:ped",
+          "note": "High-penetrance variants cosegregate within pedigrees."
+        },
+        {
+          "label": "Many affected sibling pairs, looking for shared regions",
+          "to": "r:asp",
+          "note": "Easier to collect than extended families."
+        },
+        {
+          "label": "Common variants of small effect across a population",
+          "to": "r:assoc",
+          "note": "Association is more powerful for small effects."
+        }
+      ]
+    },
+    "pheno": {
+      "q": "Which approach?",
+      "options": [
+        {
+          "label": "A DSM diagnosis, made reliably",
+          "to": "r:cat",
+          "note": "Still the mainstay of mapping studies."
+        },
+        {
+          "label": "A heritable trait that underlies the diagnosis, such as a brain measure",
+          "to": "r:endo",
+          "note": "Thought to be simpler in cause and easier to map."
+        }
+      ]
+    }
+  },
+  "results": {
+    "fam": {
+      "label": "Family study",
+      "dx": "Familial aggregation",
+      "line": "Compares the disease rate in relatives of an affected person with the population rate (relative risk, lambda).",
+      "points": [
+        "Shows that a disorder runs in families.",
+        "Cannot by itself separate genes from shared family environment."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-epi",
+        "label": "Genetic epidemiology"
+      }
+    },
+    "twin": {
+      "label": "Twin study",
+      "dx": "Heritability",
+      "line": "Higher concordance in MZ than in DZ pairs points to genetic influence.",
+      "points": [
+        "Assumes MZ and DZ pairs share equally similar environments.",
+        "For a purely genetic disorder, DZ concordance would be 25 or 50 percent depending on recessive or dominant inheritance."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-epi",
+        "label": "Genetic epidemiology"
+      }
+    },
+    "adopt": {
+      "label": "Adoption study",
+      "dx": "Genes versus rearing",
+      "line": "Compares illness in biological relatives, who share genes, with adoptive relatives, who share the environment.",
+      "points": [
+        "Helps separate inherited from environmental risk."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-epi",
+        "label": "Genetic epidemiology"
+      }
+    },
+    "ped": {
+      "label": "Pedigree linkage analysis",
+      "dx": "Genes of large effect",
+      "line": "Tests whether a marker and a disease locus cosegregate in multigenerational families, summarized by a LOD score.",
+      "points": [
+        "Found the early-onset Alzheimer genes.",
+        "Early bipolar and schizophrenia linkage reports were false positives in underpowered studies."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-ped",
+        "label": "Mapping strategies"
+      }
+    },
+    "asp": {
+      "label": "Affected sib-pair analysis",
+      "dx": "Shared regions in affected siblings",
+      "line": "Asks whether affected siblings share a region more than the 50 percent expected by chance.",
+      "points": [
+        "Like pedigree studies, best at finding genes of large effect.",
+        "Data repositories pool sib pairs from many sites."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-ped",
+        "label": "Mapping strategies"
+      }
+    },
+    "assoc": {
+      "label": "Association study",
+      "dx": "Variants of small effect",
+      "line": "Compares allele frequencies in cases and controls (or transmitted and untransmitted alleles in trios), using linkage disequilibrium.",
+      "points": [
+        "Case-control designs risk population stratification.",
+        "Genome-wide significance today is p < 5 × 10 to the minus 8 (see the update)."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-assoc",
+        "label": "Association studies"
+      }
+    },
+    "cat": {
+      "label": "Categorical phenotype",
+      "dx": "Diagnosis-based mapping",
+      "line": "Uses DSM diagnoses made with chosen criteria, trained clinicians and best-estimate or consensus procedures.",
+      "points": [
+        "Narrowing (for example early onset) or broadening the phenotype each has trade-offs.",
+        "Each extra diagnostic model is another statistical test."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-pheno",
+        "label": "Defining phenotypes"
+      }
+    },
+    "endo": {
+      "label": "Endophenotype",
+      "dx": "Trait-based mapping",
+      "line": "Uses a heritable, state-independent trait linked to the disorder, such as an MRI brain measure.",
+      "points": [
+        "Can be studied in animals too, as with circadian clock genes.",
+        "Endophenotypes are hypothesized, not proven, to be simpler to map."
+      ],
+      "link": {
+        "ch": "ch33-7",
+        "sec": "s337-endo",
+        "label": "Endophenotypes"
+      }
+    }
+  }
 }
 ]);

@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "82.0.0",
+    "date": "2026-11-13",
+    "title": "Sections 33.7 and 33.8: Neurogenetics",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-7",
+        "text": "New entry, Neurogenetics I: family, twin and adoption studies, linkage and LOD scores, linkage disequilibrium and markers, pedigree, sib-pair and association mapping, and phenotypes and endophenotypes, with 44 cases.",
+        "href": "#/c/ch33-7/guide",
+        "link": "Open Neurogenetics I"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch33-8",
+        "text": "New entry, Neurogenetics II: the genetics of Alzheimer disease, autism, bipolar disorder and schizophrenia, with 41 cases.",
+        "href": "#/c/ch33-8/guide",
+        "link": "Open Neurogenetics II"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-7",
+        "text": "Corrections: the chapter's description of the r2 and D-prime measures of linkage disequilibrium, and the genome-wide significance threshold used today (5 × 10 to the minus 8).",
+        "href": "#/c/ch33-7/guide/s337-ld",
+        "link": "See the corrections"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-8",
+        "text": "Updates: Alzheimer GWAS (2022) and anti-amyloid antibodies, autism prevalence, sibling recurrence, heritability and sequencing genes, the Amish bipolar re-analysis and the 2025 bipolar GWAS, and the SCHEMA schizophrenia genes (2022).",
+        "href": "#/c/ch33-8/guide/s338-aut",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for choosing a genetic study design, and a look-alike table comparing the genetics of four disorders then and now.",
+        "href": "#/helpers/genedesign337",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "81.0.0",
     "date": "2026-11-13",
     "title": "Sections 33.5 and 33.6: Psychoneuroendocrinology; Immune System and CNS Interactions",
