@@ -1,0 +1,11 @@
+{
+ "intro": "Neurogenetics asks how genes shape the brain and contribute to psychiatric illness. This first part covers the methods: how family, twin and adoption studies show that a trait is heritable (Figure 33-29); how recombination, linkage, LOD scores and linkage disequilibrium let researchers map a gene to a chromosome region; the kinds of genetic markers used; the main mapping strategies (pedigree analysis, affected sib-pair analysis and association studies) and the statistics that guard against false positives (Figure 33-30); and the problem of defining phenotypes, from categorical diagnoses to continuous traits, endophenotypes and animal models (Figure 33-31). Update boxes correct the chapter's account of the r2 and D-prime measures of linkage disequilibrium and give the genome-wide significance threshold used today.",
+ "objectives": [
+  "Explain what family, twin and adoption studies can and cannot show about heritability.",
+  "Describe recombination, genetic linkage, LOD scores and linkage disequilibrium, and how they allow gene mapping.",
+  "Compare the main genetic markers: SSLPs or STRs, SNPs and CNVs.",
+  "Compare pedigree analysis, affected sib-pair analysis and association studies, with their strengths and limits.",
+  "Explain why mapping studies need strict significance thresholds and replication.",
+  "Describe categorical and continuous phenotypes, endophenotypes and animal models in psychiatric genetics."
+ ]
+}

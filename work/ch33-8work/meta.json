@@ -1,0 +1,11 @@
+{
+ "intro": "The second part of the neurogenetics section applies the methods to four disorders. Alzheimer disease shows the path from rare early-onset families (APP and the presenilins) to common risk genes in late-onset disease (apolipoprotein E e4 and GAB2). Autism illustrates high heritability with complex inheritance, chromosomal aberrations, copy number variants and de novo mutations, and candidate pathways in synapse formation, cell migration and excitatory and inhibitory signaling (Figure 33-32). Bipolar disorder tells the cautionary story of early linkage reports that did not replicate and of efforts to improve study power, and schizophrenia closes with candidate genes and mouse models. Update boxes add the large genome-wide and sequencing studies that have since reshaped each field.",
+ "objectives": [
+  "Distinguish the genetics of early-onset familial and late-onset Alzheimer disease, including the role of APOE e4.",
+  "Summarize the twin, family, chromosomal and copy number evidence for genetic influences on autism.",
+  "Describe the candidate pathways implicated in autism and the genes the chapter names.",
+  "Explain why early linkage findings in bipolar disorder failed to replicate and how study power can be improved.",
+  "Describe the candidate genes and mouse models discussed for schizophrenia and their limits.",
+  "Summarize what later genome-wide and sequencing studies found for each disorder."
+ ]
+}
