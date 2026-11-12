@@ -1,0 +1,12 @@
+{
+ "intro": "Chapter 33 surveys the neurosciences that underlie psychiatry. This first part covers the human brain and functional neuroanatomy: why psychiatry still diagnoses by symptoms, endophenotypes, the human genome and the interplay of genes and environment, mental disorders as disorders of circuits and synapses, and lessons from neurology. It then works through brain organization; the somatosensory, visual, auditory, olfactory, taste and autonomic sensory systems and their development; hypnosis; the motor systems (basal ganglia, cerebellum, motor cortex, autonomic motor system and reflexes); localization of function; language and the aphasias; arousal and attention; memory systems; emotion and the limbic system, fear and aggression, and the limbic system in schizophrenia; frontal lobe function; and nervous system development, including neuronal migration and adult neurogenesis. Update boxes add DSM-5-TR and ICD-11, NIMH's RDoC framework, the current human gene count, recent schizophrenia genetics, the trial evidence on computer language training, and the debate over adult human neurogenesis.",
+ "objectives": [
+  "Explain why psychiatric diagnosis remains symptom-based, and define endophenotypes and their intended use.",
+  "Describe how genes, environment, circuits and synaptic regulation combine in mental disorders, and why a purely genetic diagnostic system is not yet possible.",
+  "Trace the main sensory pathways (somatosensory, visual, auditory, olfactory) and describe how each develops.",
+  "Distinguish the roles of the basal ganglia, cerebellum, motor cortex and autonomic motor system, and localize lesions from their signs.",
+  "Classify the aphasias and other disorders of language, attention and memory by the brain regions involved.",
+  "Describe the limbic system and frontal lobes in emotion, fear, aggression, executive function and schizophrenia.",
+  "Outline neural development, neuronal migration and the current evidence on adult neurogenesis."
+ ]
+}
