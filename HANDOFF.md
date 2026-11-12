@@ -52,7 +52,7 @@ Last updated 2026-11-12, after release **75.0.0** (`a914759`): **Chapters 30** (
 4. Merge everything with node into `updwork/learn-chNN-whynot.js` and `updwork/learn-chNN-rest.js` (`{domains, pretest, checks, visuals}`), then `node /home/claude/tools/learn/apply.js chNN` (it refuses on any misalignment or missing section).
 5. `node tools/validate-learning.js --strict chNN` must say `no errors`.
 6. **Clinical review (you, not an agent):**
-   - Print each case's stem and choices beside its whyNot text and read every line.
+   - Print each case's stem and choices beside its whyNot text and read every line: `cd /home/claude/kaplanstudy && node /home/claude/tools/checks/pw.js chNN 0 40 | cut -c1-200` (run from the repo; args are chapter id and case index range). To fix lines, copy `tools/checks/fixwn-template.js`, which rewrites a line in `learning.js` and in every updwork copy.
    - Grep the guide for every number or claim in the checks.
    - Check the chapter's `update` boxes, because an answer drawn from book text alone may be outdated.
    - Fix lines that state facts the stem does not give, contradict the guide, refer to a "list", imply unproven efficacy, or **sit on the wrong choice**. The validator only checks where the blank is, so two swapped wrong-answer strings pass it.
