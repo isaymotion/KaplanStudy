@@ -73,7 +73,7 @@ Last updated 2026-11-12, after release **75.0.0** (`a914759`): **Chapters 30** (
 9. Add the learning layer with recipe A.
 10. Copy `chNNwork` to `work/` on dev-tools **without `src/`**: the branch is public, and `src/` holds extracted book text.
 
-Built so far: Chapters 1 to 20, 21.0 to 21.11, 22, 23.1 to 23.14 (complete), 24.1 and 24.2 (complete) and 25.1 to 25.3 (complete), 26, 27, 28 and 29.1 to 29.3 (complete). **Not yet built: 30 to 34.** Chapter 21 is complete (21.0 to 21.11 are all its sections).
+Built so far: Chapters 1 to 20, 21.0 to 21.11, 22, 23.1 to 23.14 (complete), 24.1 and 24.2 (complete) and 25.1 to 25.3 (complete), 26, 27, 28, 29.1 to 29.3 (complete), 30 and 31. **Not yet built: 32 to 34.** Chapter 21 is complete (21.0 to 21.11 are all its sections).
 
 **Contested topics** (Ch 17 set the pattern): write update boxes that attribute every position to the body that holds it, with dates, put differing positions side by side, add no verdict of the app's own, and end with "check current local rules and guidelines" where law differs by country. Keep the guide's own text to what the book says, attributed where the book takes a stance. Cut any agent line that goes beyond the book on a contested point (for example, claims about the reversibility of puberty blockers).
 
