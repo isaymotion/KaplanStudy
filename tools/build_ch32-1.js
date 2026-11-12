@@ -1,8 +1,10 @@
 const fs=require('fs'), W='/home/claude/ch32-1work/', OUT='/home/claude/kaplanstudy/data/ch32-1/';
 const ev=f=>eval('('+fs.readFileSync(W+f,'utf8')+')');
 fs.mkdirSync(OUT,{recursive:true});
-const N=8;
+const N=9;
 const parts=[];for(let i=1;i<=N;i++){const g=ev('g'+i+'.js');if(g.parts)parts.push(...g.parts);else parts.push(g);}
+// 77.0.0: append the 32.1 leftover (end of the trafficking paragraph) to s321-adsexo
+if(fs.existsSync(W+'adsexo-add.js')){const add=ev('adsexo-add.js').blocks;const sec=parts.flatMap(p=>p.sections).find(x=>x.id==='s321-adsexo');sec.blocks.push(...add);}
 const cards=[];for(let i=1;i<=N;i++)cards.push(ev('c'+i+'.js'));
 const meta=JSON.parse(fs.readFileSync(W+'meta.json','utf8'));
 const guide={intro:meta.intro,objectives:meta.objectives,parts};

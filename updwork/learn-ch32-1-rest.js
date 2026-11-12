@@ -149,7 +149,10 @@
   "c321-ao02": "C",
   "c321-ao03": "C",
   "c321-ao04": "C",
-  "c321-ao05": "C"
+  "c321-ao05": "C",
+  "c321-ab01": "B",
+  "c321-ab02": "B",
+  "c321-ab03": "C"
  },
  "pretest": [
   "c321-pm05",
@@ -464,6 +467,16 @@
    {
     "q": "Under Philippine law, who is a child and does consent matter in trafficking for sexual exploitation?",
     "a": "A child is anyone **below 18**; recruitment is trafficking **whether or not the child consented**."
+   }
+  ],
+  "s321-body": [
+   {
+    "q": "In the survey of more than 500 adolescents, which was more common: tattoos or piercings outside the earlobe?",
+    "a": "**Piercings outside the earlobe** (about **27 percent**) were roughly **twice** as common as **tattoos** (about **13 percent**)."
+   },
+   {
+    "q": "Which history does a new tattoo or piercing in a teen make especially worth taking?",
+    "a": "**Substance use**: teens with body art more often report **gateway drugs** and having tried **hard drugs**, as a group-level link."
    }
   ]
  },
