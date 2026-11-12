@@ -1797,5 +1797,75 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neurophysiology and Neurochemistry)"
+},
+{
+  "id": "immune-psych336",
+  "title": "Immune findings across disorders",
+  "summary": "Section 33.6 reports immune changes in several disorders. This table sets the finding, what it is proposed to mean and what later trials showed side by side. All are associations, not proven causes.",
+  "items": [
+    "Immune finding the chapter reports",
+    "Proposed meaning",
+    "Later evidence (update boxes)"
+  ],
+  "rows": [
+    [
+      "Major depression",
+      "Inflammatory activation together with suppressed acquired immunity",
+      "Proinflammatory cytokines may link the two; cytokines can produce sickness behavior",
+      "Infliximab (2013): no overall benefit; possible benefit only with high CRP"
+    ],
+    [
+      "Bipolar disorder",
+      "Raised plasma inflammatory cytokines, most clearly in mania; lithium lowers several cytokines",
+      "Mania and depression share dexamethasone nonsuppression and high sympathetic activity",
+      "None added"
+    ],
+    [
+      "Schizophrenia",
+      "Raised cytokines; birth-season, epidemic, crowding and serologic clues to early infection",
+      "Prenatal or perinatal infection or an autoimmune process; virus searches mostly negative",
+      "Complement C4A linked to risk (2016); minocycline trial negative (2018)"
+    ],
+    [
+      "Autism",
+      "Immune abnormalities reported; relation to symptoms controversial",
+      "Cause, consequence or bystander: not yet separable",
+      "Danish cohort (2019) and WHO review (2025): no link with vaccines"
+    ],
+    [
+      "Alzheimer disease",
+      "Plaques carry complement and C-reactive protein; NSAID use negatively correlated in observational studies",
+      "Immune mechanisms may contribute; not primarily inflammatory",
+      "NSAID prevention trials negative (ADAPT, INTREPAD 2019)"
+    ]
+  ],
+  "keys": [
+    "Depression shows **both** immunosuppression and **inflammatory activation**.",
+    "Inflammatory markers may be **higher in mania** than in bipolar depression.",
+    "Anti-inflammatory trials so far (**infliximab, minocycline, NSAIDs**) have been **negative overall**."
+  ],
+  "links": [
+    {
+      "ch": "ch33-6",
+      "sec": "s336-mood",
+      "label": "Depression and bipolar disorder"
+    },
+    {
+      "ch": "ch33-6",
+      "sec": "s336-scz",
+      "label": "Schizophrenia and autism"
+    },
+    {
+      "ch": "ch33-6",
+      "sec": "s336-neuro",
+      "label": "Alzheimer disease and others"
+    },
+    {
+      "ch": "ch33-6",
+      "sec": "s336-tx",
+      "label": "Treatment and immunity"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Immune System and CNS Interactions), with the update boxes in this entry"
 }
 ];

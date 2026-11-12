@@ -7827,5 +7827,244 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "endo335",
+  "chapter": "ch33-5",
+  "title": "Could this psychiatric picture be endocrine?",
+  "summary": "Match a mood, anxiety or libido complaint to the endocrine condition that section 33.5 links with it.",
+  "caution": "A teaching aid, not a diagnostic tool. Endocrine causes are confirmed by history, examination and laboratory testing, and most patients with these symptoms have no endocrine disease.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What is the leading picture?",
+      "options": [
+        {
+          "label": "Low mood, apathy or fatigue",
+          "to": "low",
+          "note": "Several endocrine states present this way."
+        },
+        {
+          "label": "Anxiety, restlessness or elevated mood",
+          "to": "up",
+          "note": "Think thyroid first, then drugs and supplements."
+        },
+        {
+          "label": "Low libido or a sexual complaint",
+          "to": "lib",
+          "note": "Prolactin and the gonadal axis are the usual links."
+        },
+        {
+          "label": "Euphoria with anger and mood swings in someone using muscle-building drugs",
+          "to": "r:aas",
+          "note": "The controlled study found both positive and negative mood effects."
+        }
+      ]
+    },
+    "low": {
+      "q": "Which features go with it?",
+      "options": [
+        {
+          "label": "Raised cortisol, poor visual memory and planning; sometimes psychosis or suicidal thinking",
+          "to": "r:cush",
+          "note": "Cortisol excess affects mood in more than half of patients."
+        },
+        {
+          "label": "Marked fatigue, apathy, social withdrawal, poor sleep and concentration in adrenal insufficiency",
+          "to": "r:add",
+          "note": "The behavioral picture of too little glucocorticoid."
+        },
+        {
+          "label": "Fatigue, poor memory, irritability, low libido; puffy face, dry skin",
+          "to": "r:hypo",
+          "note": "The classic chronic hypothyroid picture."
+        },
+        {
+          "label": "Depressive symptoms that start in the luteal phase and clear a few days into menses",
+          "to": "r:pmdd",
+          "note": "Timing, not a hormone level, defines it."
+        },
+        {
+          "label": "Depression, anxiety, irritability and poor stress tolerance with high prolactin",
+          "to": "r:prl",
+          "note": "Symptoms track the prolactin level."
+        }
+      ]
+    },
+    "up": {
+      "q": "Which features go with it?",
+      "options": [
+        {
+          "label": "Anxiety, insomnia, weight loss, emotional lability, poor concentration",
+          "to": "r:hyper",
+          "note": "The usual hyperthyroid picture."
+        },
+        {
+          "label": "Mania soon after thyroid replacement corrected hypothyroidism quickly",
+          "to": "r:rapid",
+          "note": "Reported with rapid normalization."
+        },
+        {
+          "label": "New elation or agitation after starting an over-the-counter hormone supplement",
+          "to": "r:dhea",
+          "note": "Case reports link DHEA with mania."
+        }
+      ]
+    },
+    "lib": {
+      "q": "Which setting?",
+      "options": [
+        {
+          "label": "On a classical antipsychotic, with high prolactin",
+          "to": "r:prl",
+          "note": "Dopamine blockade removes the brake on prolactin."
+        },
+        {
+          "label": "Irregular periods with worry, fatigue, crying spells and mood swings",
+          "to": "r:peri",
+          "note": "Most menopausal complaints come in perimenopause."
+        }
+      ]
+    }
+  },
+  "results": {
+    "cush": {
+      "label": "Cushing syndrome",
+      "dx": "Cortisol excess",
+      "line": "Mood disturbance occurs in more than 50 percent of patients, and psychosis or suicidal thinking in more than 10 percent of those studied.",
+      "points": [
+        "Deficits in visual memory and higher cortical functions resemble those of major depressive disorder.",
+        "Lowering cortisol normalizes mood and mental status."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-hpa",
+        "label": "HPA axis"
+      }
+    },
+    "add": {
+      "label": "Addison disease",
+      "dx": "Adrenal insufficiency",
+      "line": "Apathy, social withdrawal, poor sleep and poor concentration, often with marked fatigue.",
+      "points": [
+        "Behavioral symptoms clear with glucocorticoid replacement, not with electrolyte replacement."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-hpa",
+        "label": "HPA axis"
+      }
+    },
+    "hypo": {
+      "label": "Hypothyroidism",
+      "dx": "Thyroid deficiency",
+      "line": "Fatigue, lower libido, memory impairment and irritability; severe cases show the puffy face, nonpitting swelling around the eyes and dry skin of myxedema.",
+      "points": [
+        "A secondary psychotic disorder can occur.",
+        "Subclinical hypothyroidism lacks the gross signs and is easy to miss."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-thy",
+        "label": "Thyroid axis"
+      }
+    },
+    "hyper": {
+      "label": "Hyperthyroidism",
+      "dx": "Thyroid excess",
+      "line": "Anxiety, insomnia, restlessness, irritability, emotional lability and weight loss; severe cases can reach delirium, mania or psychosis with paranoia.",
+      "points": [
+        "Some patients are instead slowed, apathetic and withdrawn.",
+        "Behavior usually normalizes when thyroid function does."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-thy",
+        "label": "Thyroid axis"
+      }
+    },
+    "rapid": {
+      "label": "Mania after rapid thyroid correction",
+      "dx": "Treatment-related mood change",
+      "line": "Manic symptoms have been reported when hypothyroidism is corrected rapidly.",
+      "points": [
+        "In episodic endocrine dysfunction, mood may rise and fall with thyroid level."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-thy",
+        "label": "Thyroid axis"
+      }
+    },
+    "pmdd": {
+      "label": "Premenstrual dysphoric disorder",
+      "dx": "Cycle-linked mood disorder",
+      "line": "Symptoms like major depression recur in most cycles, begin in the luteal phase and clear within a few days of menses.",
+      "points": [
+        "No definite abnormality of estrogen or progesterone levels has been shown.",
+        "Reduced serotonin uptake with the premenstrual fall in steroids tracks some symptoms."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-estro",
+        "label": "Estrogen and progesterone"
+      }
+    },
+    "peri": {
+      "label": "Perimenopause",
+      "dx": "Menopausal transition",
+      "line": "Worry, fatigue, crying spells, mood swings, reduced coping and lower libido are reported mostly in perimenopause.",
+      "points": [
+        "Studies suggest no rise in the incidence of major depressive disorder.",
+        "Hormone therapy is for symptoms; it has not been shown to prevent dementia (see the correction)."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-estro",
+        "label": "Estrogen and progesterone"
+      }
+    },
+    "prl": {
+      "label": "Hyperprolactinemia",
+      "dx": "High prolactin",
+      "line": "Depression, low libido, anxiety, irritability and poor stress tolerance; low testosterone in men.",
+      "points": [
+        "Classical antipsychotics raise prolactin by blocking tuberoinfundibular dopamine.",
+        "Symptoms usually improve as prolactin falls with treatment."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-prl",
+        "label": "Prolactin"
+      }
+    },
+    "dhea": {
+      "label": "Possible DHEA-induced mania",
+      "dx": "Supplement effect",
+      "line": "Several case reports describe mania that DHEA may have caused.",
+      "points": [
+        "Ask about over-the-counter hormone supplements.",
+        "Later consensus advice recommends against systemic DHEA for low desire in postmenopausal women (see the update)."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-dhea",
+        "label": "DHEA"
+      }
+    },
+    "aas": {
+      "label": "Anabolic-androgenic steroid effects",
+      "dx": "Steroid-related mood change",
+      "line": "A placebo-controlled study in normal subjects found euphoria, energy and sexual arousal together with irritability, anger, hostility and mood swings.",
+      "points": [
+        "Testosterone improves mood in hypogonadal men; extra testosterone does not help men with normal levels."
+      ],
+      "link": {
+        "ch": "ch33-5",
+        "sec": "s335-hpg",
+        "label": "Gonadal axis and testosterone"
+      }
+    }
+  }
 }
 ]);

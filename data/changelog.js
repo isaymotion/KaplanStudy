@@ -13,6 +13,54 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "81.0.0",
+    "date": "2026-11-13",
+    "title": "Sections 33.5 and 33.6: Psychoneuroendocrinology; Immune System and CNS Interactions",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-5",
+        "text": "New entry, Psychoneuroendocrinology: hormone secretion and classes, endocrine assessment, the HPA axis, testosterone and DHEA, estrogen and progesterone, thyroid, growth hormone, prolactin, melatonin, oxytocin and insulin, with 30 cases.",
+        "href": "#/c/ch33-5/guide",
+        "link": "Open Psychoneuroendocrinology"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch33-6",
+        "text": "New entry, Immune System and CNS Interactions: conditioned immunosuppression, stress and immunity, sickness behavior, immune findings in mood disorders, schizophrenia, autism, Alzheimer disease and other disorders, and treatment effects on immunity, with 27 cases.",
+        "href": "#/c/ch33-6/guide",
+        "link": "Open Immune System and CNS Interactions"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-5",
+        "text": "Correction: estrogen has not been shown to prevent dementia (WHIMS 2003, USPSTF 2022, FDA labeling changes of 2025 to 2026), and Premarin is estrogen alone.",
+        "href": "#/c/ch33-5/guide/s335-estro",
+        "link": "See the correction"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-5",
+        "text": "Updates: the dexamethasone suppression test is not a diagnostic test, testosterone for women has one evidence-based use (2019 consensus), and the larger intranasal insulin trial in Alzheimer disease was negative (2020).",
+        "href": "#/c/ch33-5/guide/s335-hpa",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-6",
+        "text": "Updates: infliximab in depression (2013), complement C4 and the negative minocycline trial in schizophrenia, later studies and agency statements on vaccines and autism, negative NSAID prevention trials in Alzheimer disease, and the 2015 ME/CFS criteria.",
+        "href": "#/c/ch33-6/guide/s336-scz",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for endocrine causes of psychiatric presentations, and a look-alike table of immune findings across disorders.",
+        "href": "#/helpers/endo335",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "80.0.0",
     "date": "2026-11-12",
     "title": "Sections 33.3 and 33.4: Neurophysiology and Neurochemistry",

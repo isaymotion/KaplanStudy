@@ -326,6 +326,14 @@ KS.manifest = [
   { id: 'ch33-4', number: '33.4', title: 'Neurochemistry II: Neuropeptides and Novel Transmitters', short: 'Neuropeptides and novel transmitters',
     summary: 'Neuropeptide biology (Tables 33-3 and 33-4), TRH, CRF and urocortins, oxytocin, vasopressin and neurotensin; nitric oxide and carbon monoxide; the endocannabinoid system (Table 33-5); eicosanoids and neurosteroids, with updates on CRF1 and NK1 antagonist trials, rimonabant, cannabidiol and the neurosteroid drugs for postpartum depression.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-5', number: '33.5', title: 'Psychoneuroendocrinology', short: 'Psychoneuroendocrinology',
+    summary: 'Hormone secretion and classes (Tables 33-6 and 33-7), developmental effects and endocrine assessment; the adrenal stress axis in depression, Cushing syndrome and Addison disease; gonadal steroids, testosterone and DHEA; estrogen, premenstrual dysphoric disorder and menopause; thyroid, growth hormone, prolactin, melatonin, oxytocin and insulin, with updates on estrogen and dementia, testosterone for women, the dexamethasone suppression test and intranasal insulin.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-6', number: '33.6', title: 'Immune System and Central Nervous System Interactions', short: 'Immune system and the CNS',
+    summary: 'What the immune system does, conditioned immunosuppression, stress and immunity, and cytokine-driven sickness behavior; immune findings in depression, bipolar disorder, schizophrenia, autism, Alzheimer disease, HIV infection, multiple sclerosis and related disorders; and how antidepressants and psychosocial interventions affect immunity, with updates on anti-inflammatory trials, complement C4, vaccines and autism, and ME/CFS.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

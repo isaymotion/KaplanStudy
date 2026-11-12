@@ -4,6 +4,22 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Sections 33.5 and 33.6, November 2026 */
+    { m: "dexamethasone suppression test: an overview", label: "APA Task Force on Laboratory Tests in Psychiatry, The dexamethasone suppression test, Am J Psychiatry 1987", url: "https://psychiatryonline.org/doi/10.1176/ajp.144.10.1253" },
+    { m: "Global Consensus Position Statement on the Use of Testosterone", label: "Davis SR et al., Global Consensus Position Statement on the Use of Testosterone Therapy for Women, 2019 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6821450" },
+    { m: "Estrogen plus progestin and the incidence of dementia", label: "Shumaker SA et al., WHIMS: estrogen plus progestin and dementia, JAMA 2003 (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/12771112/" },
+    { m: "Hormone Therapy in Postmenopausal Persons", label: "USPSTF: Hormone Therapy in Postmenopausal Persons, Primary Prevention of Chronic Conditions (November 2022)", url: "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/menopausal-hormone-therapy-preventive-medication" },
+    { m: "Hormone therapy safety (FDA labeling", label: "HHS Office on Women's Health: Hormone therapy safety (FDA labeling changes, 2025 to 2026)", url: "https://womenshealth.gov/menopause/hormone-therapy-safety" },
+    { m: "Intranasal Insulin for the Treatment of Mild Cognitive Impairment", label: "Craft S et al., Intranasal insulin for MCI and Alzheimer disease dementia (SNIFF), JAMA Neurol 2020", url: "https://doi.org/10.1001/jamaneurol.2020.1840" },
+    { m: "infliximab for treatment-resistant depression", label: "Raison CL et al., Infliximab for treatment-resistant depression, JAMA Psychiatry 2013", url: "https://doi.org/10.1001/2013.jamapsychiatry.4" },
+    { m: "Schizophrenia risk from complex variation of complement component 4", label: "NIMH, 2016: Schizophrenia's strongest known genetic risk deconstructed (Sekar et al., Nature)", url: "https://www.nimh.nih.gov/news/science-updates/2016/schizophrenias-strongest-known-genetic-risk-deconstructed" },
+    { m: "(BeneMin)", label: "Deakin B et al., BeneMin: minocycline for negative symptoms in recent-onset psychosis, Lancet Psychiatry 2018", url: "https://doi.org/10.1016/S2215-0366(18)30345-6" },
+    { m: "Measles, Mumps, Rubella Vaccination and Autism", label: "Hviid A et al., MMR vaccination and autism: a nationwide cohort study, Ann Intern Med 2019", url: "https://doi.org/10.7326/M18-2101" },
+    { m: "Global Advisory Committee on Vaccine Safety on vaccines and autism", label: "WHO, December 11, 2025: expert group reaffirms no link between vaccines and autism", url: "https://www.who.int/news/item/11-12-2025-who-expert-group-s-new-analysis-reaffirms-there-is-no-link-between-vaccines-and-autism" },
+    { m: "CDC webpage on vaccines and autism changed", label: "NPR, November 20, 2025: CDC webpage on vaccines and autism changed", url: "https://www.npr.org/sections/shots-health-news/2025/11/20/nx-s1-5615040/cdc-rfk-childhood-vaccines-autism" },
+    { m: "Alzforum, Therapeutics: Naproxen", label: "Alzforum Therapeutics: Naproxen (ADAPT and INTREPAD results)", url: "https://alzforum.org/node/1940" },
+    { m: "INTREPAD: A randomized trial of naproxen", label: "Meyer PF et al., INTREPAD: naproxen in presymptomatic Alzheimer disease, Neurology 2019", url: "https://doi.org/10.1212/WNL.0000000000007232" },
+    { m: "Beyond Myalgic Encephalomyelitis", label: "Institute of Medicine, Beyond Myalgic Encephalomyelitis/Chronic Fatigue Syndrome: Redefining an Illness (2015)", url: "https://www.nationalacademies.org/publications/19012" },
     /* Sections 33.3 and 33.4, November 2026 */
     { m: "Memantine (Namenda) FDA approval, October 2003", label: "Psychiatric News 2004: memantine approved October 2003 for moderate to severe Alzheimer disease", url: "https://psychnews.psychiatryonline.org/doi/10.1176/pn.39.6.0058" },
     { m: "FDA approves Spravato (esketamine) as first monotherapy", label: "Pharmacy Times, Jan 2025: esketamine approved as first monotherapy for treatment-resistant depression", url: "https://pharmacytimes.com/view/esketamine-receives-fda-approval-for-adults-with-treatment-resistant-depression" },
