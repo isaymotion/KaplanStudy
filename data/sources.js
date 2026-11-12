@@ -4,6 +4,24 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Sections 33.3 and 33.4, November 2026 */
+    { m: "Memantine (Namenda) FDA approval, October 2003", label: "Psychiatric News 2004: memantine approved October 2003 for moderate to severe Alzheimer disease", url: "https://psychnews.psychiatryonline.org/doi/10.1176/pn.39.6.0058" },
+    { m: "FDA approves Spravato (esketamine) as first monotherapy", label: "Pharmacy Times, Jan 2025: esketamine approved as first monotherapy for treatment-resistant depression", url: "https://pharmacytimes.com/view/esketamine-receives-fda-approval-for-adults-with-treatment-resistant-depression" },
+    { m: "D-cycloserine augmentation of exposure-based cognitive behavior therapy", label: "Mataix-Cols D et al., D-cycloserine augmentation of exposure-based CBT, JAMA Psychiatry 2017", url: "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2599177" },
+    { m: "StatPearls, Triptans", label: "StatPearls: Triptans (NCBI Bookshelf)", url: "https://www.ncbi.nlm.nih.gov/books/NBK554507/" },
+    { m: "StatPearls, Ondansetron", label: "StatPearls: Ondansetron (NCBI Bookshelf)", url: "https://www.ncbi.nlm.nih.gov/books/NBK499839/" },
+    { m: "FDA requests withdrawal of weight-loss drug Belviq", label: "Healio, Feb 2020: FDA requests withdrawal of lorcaserin (Belviq)", url: "https://www.healio.com/news/endocrinology/20200213/fda-requests-withdrawal-of-weightloss-drug-due-to-cancer-risk" },
+    { m: "Tegaserod (Zelnorm) withdrawn from US market", label: "Managed Healthcare Executive: Alfasigma withdraws Zelnorm (tegaserod)", url: "https://managedhealthcareexecutive.com/view/alfasigma-withdraws-zelnorm-from-market" },
+    { m: "StatPearls, Clonidine (NCBI Bookshelf)", label: "StatPearls: Clonidine (NCBI Bookshelf)", url: "https://www.ncbi.nlm.nih.gov/books/NBK459124/" },
+    { m: "FDA approves Cobenfy (xanomeline-trospium)", label: "Psychiatric Times, Sept 2024: FDA approves Cobenfy (xanomeline-trospium) for schizophrenia", url: "https://www.psychiatrictimes.com/view/fda-approves-cobenfy-for-schizophrenia" },
+    { m: "Wakix (pitolisant) prescribing information, DailyMed", label: "DailyMed: Wakix (pitolisant) label", url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8daa5562-824e-476c-9652-26ceef3d4b0e" },
+    { m: "Don't stress about CRF", label: "Spierling SR, Zorrilla EP, Don't stress about CRF: translational failures of CRF1 antagonists, Psychopharmacology 2017 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420464/" },
+    { m: "Lack of efficacy of the substance P (neurokinin1 receptor) antagonist aprepitant", label: "Keller M et al., Lack of efficacy of aprepitant in major depressive disorder, Biol Psychiatry 2006", url: "https://doi.org/10.1016/j.biopsych.2005.07.013" },
+    { m: "European Medicines Agency recommends suspension of the marketing authorisation of Acomplia", label: "EMA, Oct 2008: suspension of Acomplia (rimonabant)", url: "https://www.ema.europa.eu/en/news/european-medicines-agency-recommends-suspension-marketing-authorisation-acomplia" },
+    { m: "Meridia (sibutramine) market withdrawal", label: "FDA MedWatch, Oct 2010: Meridia (sibutramine) market withdrawal", url: "https://drugs.com/fda/meridia-sibutramine-market-due-risk-serious-cardiovascular-events-12831.html" },
+    { m: "FDA approves first drug comprised of an active ingredient derived from marijuana", label: "Pharmaceutical Technology, June 2018: FDA approves Epidiolex (cannabidiol)", url: "https://www.pharmtech.com/view/fda-approves-first-cannabidiol-based-drug" },
+    { m: "FDA approves first oral treatment for postpartum depression (zuranolone)", label: "Psychiatric Times, Aug 2023: FDA approves zuranolone for postpartum depression", url: "https://www.psychiatrictimes.com/view/fda-approves-first-oral-treatment-for-postpartum-depression-in-adults" },
+    { m: "Omega-3 fatty acids: ALA 18:3, EPA 20:5 and DHA 22:6", label: "NIH Office of Dietary Supplements: Omega-3 fatty acids, fact sheet for health professionals", url: "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/" },
     /* Section 33.2, November 2026 */
     { m: "USPSTF, Folic Acid Supplementation to Prevent Neural Tube Defects", label: "USPSTF: Folic acid to prevent neural tube defects (2023 reaffirmation, grade A)", url: "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication" },
     { m: "StatPearls, Embryology, Gastrulation", label: "StatPearls: Embryology, Gastrulation", url: "https://www.statpearls.com/articlelibrary/viewarticle/22120/" },

@@ -318,6 +318,14 @@ KS.manifest = [
   { id: 'ch33-2', number: '33.2', title: 'Neural Development and Neurogenesis', short: 'Neural development',
     summary: 'Neurulation and regional differentiation, proliferative zones, radial and tangential migration, developmental cell death, neural patterning of the spinal cord and forebrain, neuronal specification and miRNAs, extracellular growth factors (Table 33-1), migration and process outgrowth, the neurodevelopmental basis of schizophrenia and autism, and adult neurogenesis, with updates on folic acid, schizophrenia candidate genes, DSM-5 autism, current autism prevalence, early brain overgrowth and the adult neurogenesis debate.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-3', number: '33.3', title: 'Neurochemistry I: Monoamines and Amino Acid Transmitters', short: 'Monoamines and amino acids',
+    summary: 'Serotonin, dopamine, norepinephrine, histamine and acetylcholine systems; synthesis, storage, degradation and transporters; monoamine receptor subtypes (Table 33-2); glutamate, GABA and glycine with their receptors, plasticity and excitotoxicity; and amino acid transmitters in schizophrenia, anxiety, depression and alcoholism, with updates on memantine, esketamine, D-cycloserine, xanomeline-trospium and pitolisant.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-4', number: '33.4', title: 'Neurochemistry II: Neuropeptides and Novel Transmitters', short: 'Neuropeptides and novel transmitters',
+    summary: 'Neuropeptide biology (Tables 33-3 and 33-4), TRH, CRF and urocortins, oxytocin, vasopressin and neurotensin; nitric oxide and carbon monoxide; the endocannabinoid system (Table 33-5); eicosanoids and neurosteroids, with updates on CRF1 and NK1 antagonist trials, rimonabant, cannabidiol and the neurosteroid drugs for postpartum depression.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

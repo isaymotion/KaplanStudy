@@ -7591,5 +7591,241 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "rxclue333",
+  "chapter": "ch33-3",
+  "title": "Which receptor or pathway explains this drug effect?",
+  "summary": "Trace a common psychotropic effect or side effect to the receptor action or dopamine pathway that section 33.3 links to it.",
+  "caution": "A teaching aid that simplifies. Most psychotropics act at several receptors, and effects in a given patient depend on dose, other drugs and illness.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What kind of effect are you explaining?",
+      "options": [
+        {
+          "label": "A side effect of an antipsychotic",
+          "to": "ap",
+          "note": "D2 blockade in different pathways, plus other receptors."
+        },
+        {
+          "label": "Sleepiness or weight gain from a psychotropic",
+          "to": "sw"
+        },
+        {
+          "label": "A therapeutic action at a serotonin receptor",
+          "to": "ht"
+        },
+        {
+          "label": "Drowsiness from clonidine",
+          "to": "r:a2",
+          "note": "An antihypertensive also used in psychiatry."
+        }
+      ]
+    },
+    "ap": {
+      "q": "Which effect?",
+      "options": [
+        {
+          "label": "Stiffness, tremor or shuffling gait",
+          "to": "r:ns"
+        },
+        {
+          "label": "High prolactin, galactorrhea or missed periods",
+          "to": "r:th"
+        },
+        {
+          "label": "More apathy and poorer attention",
+          "to": "r:mc"
+        },
+        {
+          "label": "Fewer hallucinations and delusions (the wanted effect)",
+          "to": "r:ml"
+        }
+      ]
+    },
+    "sw": {
+      "q": "Which pattern?",
+      "options": [
+        {
+          "label": "Sedation together with weight gain",
+          "to": "r:h1"
+        },
+        {
+          "label": "Weight gain with high glucose or diabetes on an atypical antipsychotic",
+          "to": "r:c2"
+        }
+      ]
+    },
+    "ht": {
+      "q": "Which drug action?",
+      "options": [
+        {
+          "label": "Relief of an acute migraine attack",
+          "to": "r:tr"
+        },
+        {
+          "label": "Prevention of chemotherapy nausea",
+          "to": "r:on"
+        },
+        {
+          "label": "Anxiolytic effect of buspirone",
+          "to": "r:bu"
+        },
+        {
+          "label": "Hallucinations from LSD",
+          "to": "r:ha"
+        }
+      ]
+    }
+  },
+  "results": {
+    "ns": {
+      "label": "Nigrostriatal D2 blockade",
+      "dx": "Extrapyramidal effects",
+      "line": "Blocking D2 receptors in the substantia nigra to striatum pathway causes parkinsonism and other movement effects.",
+      "points": [
+        "The same pathway degenerates in Parkinson disease.",
+        "The chapter credits clozapine's low risk to relatively selective mesocortical effects."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-da",
+        "label": "Dopamine pathways"
+      }
+    },
+    "th": {
+      "label": "Tuberohypophyseal D2 blockade",
+      "dx": "Hyperprolactinemia",
+      "line": "Dopamine from the arcuate and paraventricular nuclei restrains pituitary prolactin; blocking it raises prolactin.",
+      "points": [
+        "Can cause galactorrhea in someone who is not pregnant."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-da",
+        "label": "Dopamine pathways"
+      }
+    },
+    "mc": {
+      "label": "Mesocortical D2 blockade",
+      "dx": "Worse negative and cognitive symptoms",
+      "line": "Blocking dopamine in the VTA to prefrontal pathway may worsen apathy, attention and working memory.",
+      "points": [
+        "This pathway supports working memory and attention."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-da",
+        "label": "Dopamine pathways"
+      }
+    },
+    "ml": {
+      "label": "Mesolimbic D2 blockade",
+      "dx": "Antipsychotic effect",
+      "line": "Blocking D2 receptors in the VTA to limbic pathway is the route by which positive symptoms improve.",
+      "points": [
+        "D2 affinity tracks antipsychotic potency across drugs."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-da",
+        "label": "Dopamine pathways"
+      }
+    },
+    "h1": {
+      "label": "H1 antagonism",
+      "dx": "Sedation and weight gain",
+      "line": "Sedation and weight gain from several antipsychotics and antidepressants are attributed to H1 blockade.",
+      "points": [
+        "H1 antagonists are also the classic allergy drugs.",
+        "H3 antagonism instead promotes wakefulness (pitolisant; see the update)."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec2",
+        "label": "Histamine receptors"
+      }
+    },
+    "c2": {
+      "label": "5-HT2C blockade (proposed)",
+      "dx": "Metabolic effects",
+      "line": "5-HT2C blockade may contribute to the weight gain and type 2 diabetes linked to atypical antipsychotics.",
+      "points": [
+        "5-HT2C knockout mice overeat and become obese.",
+        "The 5-HT2C agonist lorcaserin was withdrawn in 2020 (see the update)."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec",
+        "label": "Serotonin receptors"
+      }
+    },
+    "tr": {
+      "label": "5-HT1B/1D agonism",
+      "dx": "Triptans",
+      "line": "Triptans are 5-HT1B/1D agonists; the book's table labels them wrongly (see the correction).",
+      "points": [
+        "Agonism, not antagonism, is the mechanism."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec",
+        "label": "Serotonin receptors"
+      }
+    },
+    "on": {
+      "label": "5-HT3 antagonism",
+      "dx": "Ondansetron",
+      "line": "Ondansetron blocks the 5-HT3 receptor, a ligand-gated ion channel; the book's table labels it wrongly (see the correction).",
+      "points": [
+        "5-HT3 is the only ion-channel serotonin receptor."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec",
+        "label": "Serotonin receptors"
+      }
+    },
+    "bu": {
+      "label": "5-HT1A partial agonism",
+      "dx": "Buspirone",
+      "line": "Buspirone's anxiolytic and antidepressant properties are credited to partial agonism at 5-HT1A receptors.",
+      "points": [
+        "5-HT1A is also linked to antidepressant action and neurogenesis."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec",
+        "label": "Serotonin receptors"
+      }
+    },
+    "ha": {
+      "label": "5-HT2A agonism",
+      "dx": "Hallucinogens",
+      "line": "LSD and related hallucinogens act as agonists at 5-HT2A receptors.",
+      "points": [
+        "Atypical antipsychotics block 5-HT2A receptors."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec",
+        "label": "Serotonin receptors"
+      }
+    },
+    "a2": {
+      "label": "Alpha-2 agonism",
+      "dx": "Clonidine",
+      "line": "Clonidine stimulates alpha-2 receptors, lowering sympathetic outflow and blood pressure; the drowsiness is proposed to follow from this action.",
+      "points": [
+        "Alpha-2 agonists are antihypertensive; the book's table says otherwise (see the correction)."
+      ],
+      "link": {
+        "ch": "ch33-3",
+        "sec": "s333-rec2",
+        "label": "Adrenergic receptors"
+      }
+    }
+  }
 }
 ]);

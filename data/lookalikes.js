@@ -1728,5 +1728,74 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neural Development and Neurogenesis)"
+},
+{
+  "id": "novel-transmitters334",
+  "title": "Beyond the classic transmitters",
+  "summary": "Section 33.4 covers four kinds of signal that break the classic rules of synthesis, storage, receptors and clearance. This table sets them side by side.",
+  "items": [
+    "How it is made",
+    "Stored in vesicles?",
+    "Where it acts",
+    "How the signal ends"
+  ],
+  "rows": [
+    [
+      "Neuropeptides (TRH, CRF, oxytocin, neurotensin)",
+      "Cut from a large preprohormone after translation",
+      "Yes",
+      "Mostly G protein-coupled receptors",
+      "Peptidases cut them within minutes; no reuptake"
+    ],
+    [
+      "Gases (nitric oxide, carbon monoxide)",
+      "Made on demand by NOS from arginine, or by heme oxygenase from heme",
+      "No",
+      "Diffuse into cells; act inside them, for example on guanylyl cyclase",
+      "Short half-life; no reuptake or receptor"
+    ],
+    [
+      "Endocannabinoids (anandamide, 2-AG)",
+      "Made on demand from membrane lipids when calcium rises",
+      "No",
+      "CB1 on presynaptic terminals (retrograde); CB2 mainly on immune cells",
+      "Breakdown by FAAH (anandamide) or MAGL (2-AG)"
+    ],
+    [
+      "Neurosteroids (allopregnanolone, DHEA)",
+      "Made in the brain from cholesterol",
+      "No",
+      "Membrane receptors such as GABA-A and NMDA, besides classic steroid receptors",
+      "Metabolism"
+    ]
+  ],
+  "keys": [
+    "Only **neuropeptides** are packaged in **vesicles**; gases and endocannabinoids are made **on demand**.",
+    "**Endocannabinoids** signal **backward** across the synapse to quiet release.",
+    "**Allopregnanolone** strongly enhances **GABA-A**; brexanolone and zuranolone treat **postpartum depression** (see the update)."
+  ],
+  "links": [
+    {
+      "ch": "ch33-4",
+      "sec": "s334-npbio",
+      "label": "Neuropeptide life cycle"
+    },
+    {
+      "ch": "ch33-4",
+      "sec": "s334-no",
+      "label": "Nitric oxide"
+    },
+    {
+      "ch": "ch33-4",
+      "sec": "s334-ecb",
+      "label": "Endocannabinoids"
+    },
+    {
+      "ch": "ch33-4",
+      "sec": "s334-nster",
+      "label": "Neurosteroids"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neurophysiology and Neurochemistry)"
 }
 ];

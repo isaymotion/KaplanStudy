@@ -13,6 +13,61 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "80.0.0",
+    "date": "2026-11-12",
+    "title": "Sections 33.3 and 33.4: Neurophysiology and Neurochemistry",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-3",
+        "text": "New entry, Neurochemistry I: monoamine pathways (serotonin, dopamine, norepinephrine, histamine, acetylcholine), synthesis, transporters and receptors, glutamate, GABA and glycine, and their links to schizophrenia, anxiety, depression and alcoholism, with 71 cases.",
+        "href": "#/c/ch33-3/guide",
+        "link": "Open Neurochemistry I"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch33-4",
+        "text": "New entry, Neurochemistry II: neuropeptides (TRH, CRF and urocortins, oxytocin, vasopressin, neurotensin), nitric oxide, carbon monoxide, endocannabinoids, omega-3 fatty acids and neurosteroids, with 88 cases.",
+        "href": "#/c/ch33-4/guide",
+        "link": "Open Neurochemistry II"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-3",
+        "text": "Updates: esketamine (2019, monotherapy 2025), xanomeline-trospium (2024), pitolisant (2019), and the small effect of D-cycloserine with exposure therapy.",
+        "href": "#/c/ch33-3/guide/s333-aamood",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-4",
+        "text": "Updates: failed CRF1 and NK1 antagonist trials, the withdrawals of rimonabant and sibutramine, cannabidiol for epilepsy (2018), and brexanolone and zuranolone for postpartum depression.",
+        "href": "#/c/ch33-4/guide/s334-nster",
+        "link": "See the updates"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-3",
+        "text": "Corrections to Table 33-2 and the text: triptans are 5-HT1B/1D agonists, ondansetron is a 5-HT3 antagonist, alpha-2 agonists lower blood pressure, clozapine is atypical, memantine is approved for moderate to severe Alzheimer disease, and the later histories of lorcaserin and tegaserod.",
+        "href": "#/c/ch33-3/guide/s333-rec",
+        "link": "See the corrections"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-4",
+        "text": "Correction: EPA has 20 carbons and 5 double bonds, DHA 22 carbons and 6.",
+        "href": "#/c/ch33-4/guide/s334-eico",
+        "link": "See the correction"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which receptor or pathway explains this drug effect?, and a look-alike table comparing neuropeptides, gases, endocannabinoids and neurosteroids.",
+        "href": "#/helper/rxclue333",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "79.0.0",
     "date": "2026-11-12",
     "title": "Section 33.2: Neural Development and Neurogenesis",
