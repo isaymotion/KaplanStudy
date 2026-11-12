@@ -13,6 +13,40 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "78.0.0",
+    "date": "2026-11-12",
+    "title": "Section 33.1: The Human Brain and Functional Neuroanatomy",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-1",
+        "text": "New section 33.1, the opening of Chapter 33: psychiatry and the brain, endophenotypes, genes and circuits, brain organization, the sensory and motor systems, localization, language, attention, memory, emotion and the limbic system, the frontal lobes and neural development, with 119 clinical cases.",
+        "href": "#/c/ch33-1/guide",
+        "link": "Open 33.1"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-1",
+        "text": "Updates: DSM-5-TR and ICD-11, NIMH's RDoC framework, the 2022 schizophrenia genetics study (287 loci), and the debate over adult human neurogenesis from 2018 to the 2025 Science study.",
+        "href": "#/c/ch33-1/guide/s331-neurog",
+        "link": "See adult neurogenesis"
+      },
+      {
+        "type": "correction",
+        "ch": "ch33-1",
+        "text": "Corrections: humans have just under 20,000 protein-coding genes (not 25,000 or 30,000 to 40,000); primary somatosensory cortex is in the postcentral gyrus behind the central sulcus; face recognition is right-dominant and prosopagnosia follows right or bilateral damage; chorea, not rigidity, is the usual first motor sign of adult Huntington disease; and Fast ForWord-style training did not work in controlled trials.",
+        "href": "#/c/ch33-1/guide/s331-vis",
+        "link": "See the face recognition box"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which disorder of visual perception?, and a look-alike table comparing memory disorders.",
+        "href": "#/helper/visloc331",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "77.0.0",
     "date": "2026-11-12",
     "title": "Sections 32.2 and 32.3: Adulthood and Old Age",

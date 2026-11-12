@@ -1624,5 +1624,60 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., sections 32.1 to 32.3"
+},
+{
+  "id": "memory-disorders331",
+  "title": "Memory disorders compared",
+  "summary": "Section 33.1 uses classic patients and diseases to show which structures each kind of memory needs. Match the disorder to its main damage and its memory picture.",
+  "items": [
+    "Main damage",
+    "Memory picture",
+    "Other features"
+  ],
+  "rows": [
+    [
+      "H. M. (bilateral medial temporal removal)",
+      "Hippocampus and amygdala on both sides",
+      "Could not form new fact (declarative) memories; skill learning preserved",
+      "The classic case for declarative memory"
+    ],
+    [
+      "Korsakoff syndrome",
+      "Dorsal medial thalamic nucleus and mammillary bodies",
+      "Severe inability to form new memories; variable loss of remote memories",
+      "Thiamine deficiency, usually with chronic alcohol use"
+    ],
+    [
+      "Alzheimer disease",
+      "Parietal and temporal lobes first",
+      "Early memory loss",
+      "Impaired syntactical comprehension and visuospatial organization; personality change late"
+    ],
+    [
+      "Pick disease",
+      "Frontal lobes first",
+      "Memory relatively spared",
+      "Disinhibition and impaired language expression"
+    ],
+    [
+      "Parkinson disease",
+      "Nigrostriatal dopamine neurons",
+      "Procedural (skill) memory impaired",
+      "Deficit eased by levodopa"
+    ]
+  ],
+  "keys": [
+    "**Declarative** memory needs the **medial temporal lobe**; **procedural** memory needs **dopamine** circuits.",
+    "**Korsakoff** is a **diencephalic** amnesia; check **thiamine**.",
+    "**Frontal** degeneration changes behavior before memory; **Alzheimer** starts with memory."
+  ],
+  "links": [
+    {
+      "ch": "ch33-1",
+      "sec": "s331-mem",
+      "label": "Memory systems"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Functional Neuroanatomy)"
 }
 ];

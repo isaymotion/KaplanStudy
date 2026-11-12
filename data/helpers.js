@@ -7279,5 +7279,165 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "visloc331",
+  "chapter": "ch33-1",
+  "title": "Which disorder of visual perception?",
+  "summary": "Sort a patient who sees but cannot make sense of what they see into the focal-lesion syndromes section 33.1 describes, with the lesion site the chapter gives.",
+  "caution": "A teaching aid. New visual or perceptual symptoms need neurologic assessment and imaging; acute onset suggests stroke and is an emergency.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What is the main problem?",
+      "options": [
+        {
+          "label": "Cannot recognize familiar faces, but recognizes objects",
+          "to": "r:proso",
+          "note": "Face-specific loss."
+        },
+        {
+          "label": "Cannot recognize objects by sight",
+          "to": "obj",
+          "note": "Other senses still identify them."
+        },
+        {
+          "label": "Problems with color",
+          "to": "r:color",
+          "note": "Color perception, recognition or naming."
+        },
+        {
+          "label": "Is blind but insists they can see",
+          "to": "r:anton",
+          "note": "Denial of blindness."
+        },
+        {
+          "label": "Cannot reach accurately by sight, move the eyes on purpose, or see a scene as a whole",
+          "to": "r:balint",
+          "note": "Spatial integration failure."
+        },
+        {
+          "label": "Trouble writing, calculating, telling left from right and naming fingers",
+          "to": "r:gerst",
+          "note": "A four-part syndrome."
+        }
+      ]
+    },
+    "obj": {
+      "q": "Can the patient copy a drawing of the object?",
+      "options": [
+        {
+          "label": "No, cannot identify it or draw it",
+          "to": "r:apper",
+          "note": "Perception itself fails."
+        },
+        {
+          "label": "Yes, can draw it but cannot name it or show its use",
+          "to": "r:assoc",
+          "note": "Perception intact, meaning lost."
+        }
+      ]
+    }
+  },
+  "results": {
+    "proso": {
+      "label": "Prosopagnosia",
+      "dx": "Prosopagnosia",
+      "line": "Loss of face recognition with other objects still recognized.",
+      "points": [
+        "The chapter proposes a left-sided disconnection.",
+        "Current lesion studies point to right or bilateral occipitotemporal (fusiform) or anterior temporal damage (see the update box).",
+        "Patients often recognize people by voice."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Visual system"
+      }
+    },
+    "apper": {
+      "label": "Apperceptive visual agnosia",
+      "dx": "Apperceptive visual agnosia",
+      "line": "Cannot identify or draw items by sight while other senses work.",
+      "points": [
+        "Lesion site given: bilateral visual association areas.",
+        "Thought to be a failure of transmission from the higher visual pathway to association areas."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Disorders of visual perception"
+      }
+    },
+    "assoc": {
+      "label": "Associative visual agnosia",
+      "dx": "Associative visual agnosia",
+      "line": "Can draw an object but cannot name it or use it.",
+      "points": [
+        "Lesion site given: bilateral medial occipitotemporal.",
+        "May come with other visual problems."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Disorders of visual perception"
+      }
+    },
+    "color": {
+      "label": "Color syndromes",
+      "dx": "Color agnosia, color anomia or central achromatopsia",
+      "line": "Color agnosia: cannot recognize a color but can match it. Color anomia: cannot name a color but can point to it. Central achromatopsia: no color perception at all.",
+      "points": [
+        "The chapter ties loss of color perception to the dominant occipital lobe plus the splenium of the corpus callosum.",
+        "It does not give a separate site for each of the three."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Disorders of visual perception"
+      }
+    },
+    "anton": {
+      "label": "Anton syndrome",
+      "dx": "Anton syndrome",
+      "line": "Denial of blindness.",
+      "points": [
+        "Lesion site given: bilateral occipital.",
+        "Possibly from cut fibers used in self-assessment."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Disorders of visual perception"
+      }
+    },
+    "balint": {
+      "label": "Balint syndrome",
+      "dx": "Balint syndrome",
+      "line": "Optic ataxia, oculomotor apraxia and simultanagnosia.",
+      "points": [
+        "Lesion site given: bilateral parietooccipital.",
+        "Ties to the parietal 'where' stream."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "The Balint triad"
+      }
+    },
+    "gerst": {
+      "label": "Gerstmann syndrome",
+      "dx": "Gerstmann syndrome",
+      "line": "Agraphia, acalculia, right-left disorientation and finger agnosia.",
+      "points": [
+        "Lesion site given: the dominant parietal lobe."
+      ],
+      "link": {
+        "ch": "ch33-1",
+        "sec": "s331-vis",
+        "label": "Disorders of visual perception"
+      }
+    }
+  }
 }
 ]);

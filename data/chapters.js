@@ -310,6 +310,10 @@ KS.manifest = [
   { id: 'ch32-3', number: '32.3', title: 'Old Age', short: 'Old age',
     summary: 'Late adulthood: developmental tasks, demographics and longevity, biologic changes of aging by system, life expectancy by sex and race, exercise and diet, theories of aging and personality, ageism, chronic conditions, transference and countertransference, retirement, sexuality and long-term care, with current US figures, Medicare coverage and Philippine senior-citizen law.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-1', number: '33.1', title: 'The Human Brain and Functional Neuroanatomy', short: 'Brain and neuroanatomy',
+    summary: 'Chapter 33 opening: psychiatry and the human brain, endophenotypes, genes, environment and circuits, lessons from neurology; brain organization; somatosensory, visual, auditory, olfactory, taste and autonomic systems and their development; motor systems (basal ganglia, cerebellum, motor cortex); localization; language and aphasias; arousal, attention and memory; emotion, the limbic system, fear and aggression, frontal lobes; and neural development, with updates on DSM-5-TR and ICD-11, RDoC, gene counts, schizophrenia genetics, adult neurogenesis and corrections on localization and Huntington disease.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

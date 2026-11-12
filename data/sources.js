@@ -4,6 +4,20 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 33.1, November 2026 */
+    { m: "WHO ICD-11 in effect from 1 January 2022", label: "WHO: International Classification of Diseases (ICD-11 in effect from January 2022)", url: "https://www.who.int/standards/classifications/classification-of-diseases" },
+    { m: "NIMH, About RDoC", label: "NIMH: About RDoC (Research Domain Criteria)", url: "https://www.nimh.nih.gov/research/research-funded-by-nimh/rdoc/about-rdoc" },
+    { m: "The status of the human gene catalogue", label: "Amaral P et al., The status of the human gene catalogue, Nature 2023 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10575709/" },
+    { m: "Mapping genomic loci implicates genes and synaptic biology in schizophrenia", label: "Trubetskoy V et al. (PGC), Nature 2022: 287 schizophrenia loci", url: "https://doi.org/10.1038/s41586-022-04434-5" },
+    { m: "Fast ForWord language intervention program", label: "Strong GK et al., Fast ForWord meta-analysis, J Child Psychol Psychiatry 2011 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3061204/" },
+    { m: "Human hippocampal neurogenesis drops sharply in children", label: "Sorrells SF et al., Nature 2018: hippocampal neurogenesis in adults (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6179355/" },
+    { m: "Identification of proliferating neural progenitors in the adult human hippocampus", label: "Dumitru I et al., Science 2025: neural progenitors in the adult human hippocampus", url: "https://doi.org/10.1126/science.adu9575" },
+    { m: "StatPearls, Neuroanatomy, Somatosensory Cortex", label: "StatPearls: Neuroanatomy, Somatosensory Cortex (NCBI Bookshelf)", url: "https://pubmed.ncbi.nlm.nih.gov/32310375/" },
+    { m: "StatPearls, Neuroanatomy, Postcentral Gyrus", label: "StatPearls: Neuroanatomy, Postcentral Gyrus", url: "https://www.statpearls.com/point-of-care/27481" },
+    { m: "The 2024 Richardson Lecture: Prosopagnosia", label: "Barton JJS, The 2024 Richardson Lecture: Prosopagnosia, Can J Neurol Sci", url: "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C5044CE708B961866AC3E9BFECFF4001/S0317167124002956a.pdf/the-2024-richardson-lecture-prosopagnosia-a-classic-neurologic-deficit-meets-the-modern-era.pdf" },
+    { m: "Prosopagnosia: current perspectives", label: "Corrow SL et al., Prosopagnosia: current perspectives, Eye and Brain 2016 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5398751/" },
+    { m: "MedlinePlus Genetics, Huntington disease", label: "MedlinePlus Genetics: Huntington disease", url: "https://medlineplus.gov/genetics/condition/huntington-disease/" },
+    { m: "Huntington's disease: a clinical review", label: "Roos RAC, Huntington's disease: a clinical review, Orphanet J Rare Dis 2010", url: "https://ojrd.biomedcentral.com/articles/10.1186/1750-1172-5-40" },
     /* Sections 32.2 and 32.3, November 2026 */
     { m: "Health Affairs, MIPPA outpatient mental health cost-sharing study", label: "Health Affairs, MIPPA reductions in outpatient mental health cost sharing (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7745666" },
     { m: "Medicare.gov, Yearly Wellness visits", label: "Medicare.gov, Yearly Wellness visits", url: "https://www.medicare.gov/coverage/yearly-wellness-visits" },

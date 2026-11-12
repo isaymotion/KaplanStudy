@@ -878,7 +878,23 @@ KS.glossary = (KS.glossary || []).concat([
   ["old-old", "Gerontologists' term for people aged 75 and older.", "Ch 32.3"],
   ["ageism", "Robert Butler's term for discrimination against older people and negative stereotypes of old age.", "Ch 32.3"],
   ["integrity versus despair", "Erikson's final stage: looking back on life with acceptance, peace and wisdom, or with bitterness that it was too short and cannot be lived again.", "Ch 32.3"],
-  ["custodial care", "Help with daily activities such as bathing, dressing or eating when no skilled medical care is needed; Medicare does not pay for long-term custodial care.", "Ch 32.3"]
+  ["custodial care", "Help with daily activities such as bathing, dressing or eating when no skilled medical care is needed; Medicare does not pay for long-term custodial care.", "Ch 32.3"],
+  ["endophenotype", "An internal, measurable trait (neuropsychological, cognitive, imaging or physiologic) that lies between genes and a clinical syndrome and may involve fewer genes than the disorder itself.", "Ch 33.1"],
+  ["Research Domain Criteria (RDoC)", "NIMH research framework, begun in 2009, that studies dimensions of brain and behavioral function across diagnoses; not a clinical diagnostic system.", "Ch 33.1"],
+  ["Anton syndrome", "Cortical blindness with denial of the blindness, usually from bilateral occipital damage.", "Ch 33.1"],
+  ["Balint syndrome", "Optic ataxia, oculomotor apraxia and simultanagnosia, from bilateral parieto-occipital lesions.", "Ch 33.1"],
+  ["Gerstmann syndrome", "Agraphia, acalculia, right-left disorientation and finger agnosia, attributed to the dominant parietal lobe.", "Ch 33.1"],
+  ["central achromatopsia", "Total loss of color perception from a cortical lesion, with the eyes themselves normal.", "Ch 33.1"],
+  ["Papez circuit", "Loop linking the hippocampus, mammillary bodies, anterior thalamus and cingulate cortex, proposed as a circuit for emotion and later tied to memory.", "Ch 33.1"],
+  ["sensory homunculus", "The body map laid out along the primary somatosensory cortex, with hands, face and lips given the most cortex.", "Ch 33.1"],
+  ["prosody", "The emotional tone, rhythm and stress of speech; its perception and production depend on the right hemisphere.", "Ch 33.1"],
+  ["ballismus", "Sudden, violent, flinging limb movements, classically from a lesion of the subthalamic nucleus.", "Ch 33.1"],
+  ["declarative memory", "Memory for facts and events that can be consciously recalled; depends on the medial temporal lobe, including the hippocampus.", "Ch 33.1"],
+  ["procedural memory", "Memory for skills and habits shown in performance rather than recall; depends on basal ganglia and dopamine circuits.", "Ch 33.1"],
+  ["ocular dominance columns", "Alternating bands of visual cortex driven by one eye or the other; they form during a critical period and need normal input from both eyes.", "Ch 33.1"],
+  ["neuronal migration", "Movement of newborn neurons from where they are made to their final place in the developing brain; errors can cause heterotopias.", "Ch 33.1"],
+  ["adult neurogenesis", "Formation of new neurons after development, notably in the dentate gyrus of the hippocampus; its extent in adult humans is debated.", "Ch 33.1"],
+  ["Phineas Gage", "Railroad worker whose 1848 frontal lobe injury from an iron rod changed his personality, a classic case of frontal lobe syndrome.", "Ch 33.1"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1295,5 +1311,10 @@ KS.glossaryAliases = {
   "empty-nest": "empty-nest syndrome",
   "midlife crises": "midlife crisis",
   "generativity": "generativity versus stagnation",
-  "ego integrity": "integrity versus despair"
+  "ego integrity": "integrity versus despair",
+  "RDoC": "Research Domain Criteria (RDoC)",
+  "achromatopsia": "central achromatopsia",
+  "homunculus": "sensory homunculus",
+  "hemiballismus": "ballismus",
+  "Papez": "Papez circuit"
 };
