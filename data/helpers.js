@@ -6975,5 +6975,182 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "attach321",
+  "chapter": "ch32-1",
+  "title": "Which attachment pattern or disorder fits?",
+  "summary": "Work from a young child's caregiving history and behavior to the attachment pattern or DSM-5 disorder it suggests, using section 32.1 and its update boxes.",
+  "caution": "A teaching aid. Strange Situation patterns describe a research procedure, not a diagnosis. Diagnose reactive attachment disorder or disinhibited social engagement disorder only after a full assessment, and act on any concern about neglect or abuse.",
+  "start": "care",
+  "nodes": {
+    "care": {
+      "q": "What caregiving has the child had?",
+      "options": [
+        {
+          "label": "Ordinary, stable care by familiar caregivers",
+          "to": "reunion",
+          "note": "Look at the reunion behavior, as in Ainsworth's Strange Situation."
+        },
+        {
+          "label": "Severe neglect, institutional care or frequent changes of caregiver",
+          "to": "deprived",
+          "note": "DSM-5 attachment disorders need a history of insufficient care."
+        }
+      ]
+    },
+    "reunion": {
+      "q": "How does the child behave when the caregiver returns after a brief separation?",
+      "options": [
+        {
+          "label": "Was upset, seeks the caregiver, is comforted and goes back to play",
+          "to": "r:secure",
+          "note": "Uses the caregiver as a secure base."
+        },
+        {
+          "label": "Showed little distress and ignores or turns away from the caregiver",
+          "to": "r:avoidant",
+          "note": "Avoidance at reunion is the key sign."
+        },
+        {
+          "label": "Was distressed even before separation, clings yet resists comfort",
+          "to": "r:ambivalent",
+          "note": "Hard to soothe at reunion."
+        },
+        {
+          "label": "Contradictory or confused behavior, freezing, or fear of the caregiver",
+          "to": "r:disorganized",
+          "note": "No consistent strategy."
+        }
+      ]
+    },
+    "deprived": {
+      "q": "What is the main behavior with adults?",
+      "options": [
+        {
+          "label": "Withdrawn, rarely seeks or responds to comfort from caregivers",
+          "to": "r:rad",
+          "note": "Inhibited pattern."
+        },
+        {
+          "label": "Overly familiar with strangers, goes off with unfamiliar adults",
+          "to": "r:dsed",
+          "note": "Disinhibited pattern."
+        },
+        {
+          "label": "Global developmental lag, now in an adequate foster home",
+          "to": "r:deprivation",
+          "note": "Deprivation effects can improve with good care."
+        }
+      ]
+    }
+  },
+  "results": {
+    "secure": {
+      "label": "Secure attachment",
+      "dx": "Secure (Strange Situation)",
+      "line": "Explores from the caregiver as a secure base and is comforted at reunion.",
+      "points": [
+        "Linked to sensitive, responsive caregiving.",
+        "Fewer adjustment problems later.",
+        "See the Strange Situation update in s321-attach."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "avoidant": {
+      "label": "Insecure-avoidant attachment",
+      "dx": "Avoidant",
+      "line": "Little distress at separation and avoidance of the caregiver at reunion.",
+      "points": [
+        "Linked to rejecting care.",
+        "Table 32-8 describes this type differently; follow the update box.",
+        "Not a diagnosis by itself."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "ambivalent": {
+      "label": "Insecure-resistant (ambivalent) attachment",
+      "dx": "Ambivalent/resistant",
+      "line": "Clings yet resists comfort and is hard to soothe.",
+      "points": [
+        "Linked to inconsistent care.",
+        "Infant temperament may shape which insecure type appears.",
+        "Not a diagnosis by itself."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "disorganized": {
+      "label": "Disorganized/disoriented attachment",
+      "dx": "Disorganized (Main and Solomon, 1990)",
+      "line": "Contradictory, confused behavior with no consistent strategy.",
+      "points": [
+        "Common after abuse or with a frightening caregiver.",
+        "Ask about safety in the home.",
+        "Added after Ainsworth's three types."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "rad": {
+      "label": "Reactive attachment disorder",
+      "dx": "RAD (DSM-5)",
+      "line": "An inhibited, withdrawn child who rarely seeks comfort after insufficient care.",
+      "points": [
+        "Developmental age at least 9 months.",
+        "The DSM-IV inhibited subtype.",
+        "Assess for neglect and arrange stable care."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "dsed": {
+      "label": "Disinhibited social engagement disorder",
+      "dx": "DSED (DSM-5)",
+      "line": "Overly familiar behavior with unfamiliar adults after insufficient care.",
+      "points": [
+        "The DSM-IV disinhibited subtype, now a separate disorder.",
+        "Can occur even once attachments form.",
+        "Assess for neglect and arrange stable care."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    },
+    "deprivation": {
+      "label": "Effects of social deprivation",
+      "dx": "Deprivation effects (Spitz)",
+      "line": "Institutional care with few staff and high turnover delays development.",
+      "points": [
+        "Delay occurs even with good nutrition.",
+        "Development speeds up markedly in adequate foster or adoptive care.",
+        "Check for an attachment disorder as well."
+      ],
+      "link": {
+        "ch": "ch32-1",
+        "sec": "s321-attach",
+        "label": "Attachment"
+      }
+    }
+  }
 }
 ]);

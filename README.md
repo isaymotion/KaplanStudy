@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 75.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 76.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -150,6 +150,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 29.3 | Euthanasia and Physician-Assisted Suicide | 3 | 58 | 55 |
 | 30 | Community Psychiatry | 10 | 160 | 174 |
 | 31 | Global and Cultural Issues in Psychiatry | 8 | 121 | 130 |
+| 32.1 | Infant, Child, and Adolescent Development | 22 | 382 | 441 |
 
 ## Upgrading from version 59 (October 2026)
 

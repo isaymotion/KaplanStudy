@@ -4,6 +4,28 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 32.1, November 2026 */
+    { m: "Republic Act No. 9288, Newborn Screening Act", label: "DOH Administrative Order 2020-0052 on expanded newborn screening (cites RA 9288)", url: "https://law.upd.edu.ph/wp-content/uploads/2021/02/DOH-Administrative-Order-No-2020-0052.pdf" },
+    { m: "CDC, About Alcohol Use During Pregnancy", label: "CDC, About Alcohol Use During Pregnancy", url: "https://www.cdc.gov/alcohol-pregnancy/about/index.html" },
+    { m: "Neurobehavioral Disorder Associated With Prenatal Alcohol Exposure, Pediatrics 2016", label: "Hagan et al., ND-PAE, Pediatrics 2016 (CDC Stacks)", url: "https://stacks.cdc.gov/view/cdc/46331" },
+    { m: "Evidence-Informed Milestones for Developmental Surveillance Tools", label: "Zubler et al., Evidence-Informed Milestones, Pediatrics 2022 (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/35132439/" },
+    { m: "CDC, Developmental Monitoring and Screening", label: "CDC, Developmental Monitoring and Screening", url: "https://www.cdc.gov/act-early/about/developmental-monitoring-and-screening.html" },
+    { m: "Zeanah CH, Gleason MM", label: "Zeanah and Gleason, review of RAD and DSED (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4342270" },
+    { m: "Republic Act No. 12199", label: "Republic Act No. 12199, ECCD System Act (Lawphil)", url: "https://lawphil.net/statutes/repacts/ra2025/ra_12199_2025.html" },
+    { m: "Republic Act No. 10410, Early Years Act", label: "Republic Act No. 10410, Early Years Act of 2013 (Senate)", url: "https://legacy.senate.gov.ph/republic_acts/ra%2010410.pdf" },
+    { m: "Republic Act No. 11148", label: "Republic Act No. 11148, First 1,000 Days law (Senate)", url: "https://legacy.senate.gov.ph/republic_acts/ra%2011148.pdf" },
+    { m: "Births: Provisional Data for 2024", label: "CDC NCHS, U.S. Births Increase by 1% in 2024 (press release)", url: "https://www.cdc.gov/nchs/pressroom/nchs_press_releases/2025/20250423.htm" },
+    { m: "Dobbs v. Jackson Women's Health Organization", label: "Dobbs v. Jackson Women's Health Organization (SCOTUSblog)", url: "https://www.scotusblog.com/2022/06/supreme-court-overturns-constitutional-right-to-abortion/" },
+    { m: "Revised Penal Code of the Philippines (Act No. 3815), arts. 256", label: "Center for Reproductive Rights, Philippines abortion provisions (RPC arts. 256 to 259)", url: "https://reproductiverights.org/maps/provision/philippiness-abortion-provisions/" },
+    { m: "Republic Act No. 11648", label: "Inquirer, RA 11648 raising the age for statutory rape signed into law", url: "https://newsinfo.inquirer.net/1564575/bill-increasing-age-for-determining-statutory-rape-signed-into-law" },
+    { m: "NIDA, Reported use of most drugs remains low", label: "NIDA, Reported use of most drugs remains low among U.S. teens (Dec 2025)", url: "https://nida.nih.gov/news-events/news-releases/2025/12/reported-use-of-most-drugs-remains-low-among-us-teens" },
+    { m: "Republic Act No. 10627", label: "Republic Act No. 10627, Anti-Bullying Act of 2013 (Senate LDR)", url: "https://ldr.senate.gov.ph/legislative-issuance/republic-act-no-10627" },
+    { m: "Republic Act No. 11862", label: "Republic Act No. 11862, Expanded Anti-Trafficking in Persons Act of 2022 (Senate)", url: "https://legacy.senate.gov.ph/republic_acts/ra%2011862.pdf" },
+    { m: "WHO, Preterm birth (fact sheet", label: "WHO, Preterm birth (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/preterm-birth" },
+    { m: "Thomas A, Chess S, Birch HG", label: "Siegler et al., How Children Develop: temperament (Macmillan)", url: "https://digfir-published.macmillanusa.com/siegler4e/siegler4e_ch10_4.html" },
+    { m: "Ainsworth MDS et al., Patterns of Attachment", label: "Ainsworth, Bowlby and the Strange Situation, with Main and Solomon (Iowa State open textbook)", url: "https://iastate.pressbooks.pub/parentingfamilydiversity/chapter/bowlby-ainsworth/" },
+    { m: "Baumrind D, Parenting styles", label: "Baumrind's parenting styles and Maccoby and Martin (Iowa State open textbook)", url: "https://iastate.pressbooks.pub/parentingfamilydiversity/?p=304" },
+    { m: "Caldwell MF, Quantifying the decline", label: "Caldwell 2016, Quantifying the decline in juvenile sexual recidivism (DOI)", url: "https://doi.org/10.1037/law0000094" },
     /* Chapters 30 and 31, November 2026 */
     { m: "Council of State Governments Justice Center, New 988", label: "CSG Justice Center, New 988 Suicide and Crisis Lifeline marks first week since launch (July 2022)", url: "https://csg-erc.org/new-988-suicide-and-crisis-lifeline-marks-first-week-since-launch/" },
     { m: "CMS Medicare Learning Network, Behavioral health integration services", label: "CMS MLN, Behavioral health integration services fact sheet (MLN909432)", url: "https://www.hhs.gov/guidance/sites/default/files/hhs-guidance-documents/MLN909432-BHI-Services-Fact-Sheet-2021-3_508_0.pdf" },

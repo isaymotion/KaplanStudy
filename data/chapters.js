@@ -298,6 +298,10 @@ KS.manifest = [
   { id: 'ch31', number: '31', title: 'Global and Cultural Issues in Psychiatry', short: 'Global psychiatry',
     summary: 'Worldwide prevalence and burden, the treatment gap, mental health resources by WHO region, program development and its barriers, stigma, mental and physical illness, ethics and international declarations, and international organizations, with current WHO estimates and the Mental Health Atlas 2024.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch32-1', number: '32.1', title: 'Infant, Child, and Adolescent Development', short: 'Child and adolescent development',
+    summary: 'Prenatal development and exposures, infant reflexes and milestones, language and Piaget, temperament, attachment and Mahler, the toddler, preschool and school years, family factors and divorce, and adolescence (stages, maturation, sexuality, substances, violence and exploitation), with 2022 milestone checklists, DSM-5 attachment disorders and Philippine child-protection law updates.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

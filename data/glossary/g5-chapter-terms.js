@@ -839,7 +839,32 @@ KS.glossary = (KS.glossary || []).concat([
   ["Project Atlas", "WHO's survey of mental health resources by country (policy, financing, services and workforce), published as the Mental Health Atlas.", "Ch 31"],
   ["Madrid Declaration", "The World Psychiatric Association's ethical guidelines for psychiatric practice (1996), covering consent, confidentiality, third-party assessments and research.", "Ch 31"],
   ["Declaration of Caracas", "The 1990 Pan American declaration calling for the restructuring of psychiatric care toward community-based services and protection of patients' rights.", "Ch 31"],
-  ["mhGAP", "WHO's Mental Health Gap Action Programme (since 2008), which helps non-specialist health workers treat priority conditions in low-resource settings.", "Ch 31"]
+  ["mhGAP", "WHO's Mental Health Gap Action Programme (since 2008), which helps non-specialist health workers treat priority conditions in low-resource settings.", "Ch 31"],
+  ["allostasis", "Reaching stability despite adverse events, which arises when a particular environmental challenge meets a particular genetic background.", "Ch 32.1"],
+  ["synaptic pruning", "The removal of unused synapses during development, so that the connections that are used are kept and strengthened.", "Ch 32.1"],
+  ["Moro reflex", "The startle reflex of the newborn: the arms spread and extend when the infant is startled or the head drops back; normally gone by about 4 months.", "Ch 32.1"],
+  ["rooting reflex", "A newborn reflex in which the lips pucker in response to a touch around the mouth.", "Ch 32.1"],
+  ["postmaturity", "Birth 2 weeks or more after the expected date; the baby often has long nails, little lanugo, more scalp hair and is unusually alert.", "Ch 32.1"],
+  ["sensorimotor stage", "Piaget's first period (birth to 2 years), when infants learn through their senses and actions and develop object permanence.", "Ch 32.1"],
+  ["preoperational stage", "Piaget's period of about 2 to 7 years, with symbols, language and pretend play but not yet logical operations; thinking is egocentric.", "Ch 32.1"],
+  ["concrete operational stage", "Piaget's period of about 7 to 11 years, when children reason logically about concrete things and grasp conservation.", "Ch 32.1"],
+  ["formal operational stage", "Piaget's last period, from about 11 years, with abstract and hypothetical reasoning about all possibilities.", "Ch 32.1"],
+  ["object permanence", "Knowing that an object still exists when it is out of sight; develops during Piaget's sensorimotor period.", "Ch 32.1"],
+  ["egocentrism", "In Piaget's sense, the young child's difficulty seeing a situation from another person's point of view.", "Ch 32.1"],
+  ["goodness of fit", "How well a child's temperament matches the parents' expectations and caregiving style; a poor fit raises the risk of problems.", "Ch 32.1"],
+  ["slow-to-warm-up", "One of Thomas and Chess's temperament types (about 15 percent): low activity, withdraws from new things and adapts slowly but does adapt.", "Ch 32.1"],
+  ["secure base", "Ainsworth's term for the attachment figure from whom a child ventures out to explore and to whom it returns for comfort.", "Ch 32.1"],
+  ["stranger anxiety", "Fear and crying when an unfamiliar person approaches, first seen at about 26 weeks and well formed by about 32 weeks, even in the mother's arms.", "Ch 32.1"],
+  ["separation-individuation", "Mahler's process, over the first 2 to 5 years, by which the infant emerges from fusion with the mother into a separate self (normal autism, symbiosis, differentiation, practicing, rapprochement, object constancy).", "Ch 32.1"],
+  ["rapprochement", "Mahler's subphase at 18 to 24 months, when the toddler swings between independence and closeness, going off and returning to the mother for reassurance.", "Ch 32.1"],
+  ["object constancy", "In Mahler's scheme (2 to 5 years), the child's secure sense that the mother and other key people go on existing and caring when they are absent.", "Ch 32.1"],
+  ["good-enough mother", "Winnicott's term for a mother who meets the infant's needs well enough, without needing to be perfect.", "Ch 32.1"],
+  ["transitional object", "Winnicott's term for a comfort item, such as a blanket or soft toy, that helps the child bridge the move from the mother to independence.", "Ch 32.1"],
+  ["imaginary companion", "A pretend friend, common in children of about 3 to 10 years and usually harmless.", "Ch 32.1"],
+  ["menarche", "A girl's first menstrual period.", "Ch 32.1"],
+  ["sexual maturity rating", "The 1 to 5 staging of breast, genital and pubic hair development in puberty (Tanner stages); see Table 32-12.", "Ch 32.1"],
+  ["cyberbullying", "Bullying carried out through phones, the Internet or social media.", "Ch 32.1"],
+  ["disinhibited social engagement disorder", "DSM-5 disorder after insufficient care in which a child is overly familiar with unfamiliar adults; it was the disinhibited subtype of reactive attachment disorder in DSM-IV.", "Ch 32.1"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1243,5 +1268,13 @@ KS.glossaryAliases = {
   "DALYs": "disability-adjusted life year",
   "DALY": "disability-adjusted life year",
   "Mental Health Atlas": "Project Atlas",
-  "Mental Health Gap Action Programme": "mhGAP"
+  "Mental Health Gap Action Programme": "mhGAP",
+  "Tanner stages": "sexual maturity rating",
+  "Tanner stage": "sexual maturity rating",
+  "good-enough mothering": "good-enough mother",
+  "transitional objects": "transitional object",
+  "imaginary companions": "imaginary companion",
+  "DSED": "disinhibited social engagement disorder",
+  "synapse pruning": "synaptic pruning",
+  "startle reflex": "Moro reflex"
 };

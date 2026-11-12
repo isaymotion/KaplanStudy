@@ -13,6 +13,40 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "76.0.0",
+    "date": "2026-11-12",
+    "title": "Section 32.1: Infant, child, and adolescent development",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch32-1",
+        "text": "New section 32.1, Infant, Child, and Adolescent Development: prenatal development and exposures, infant milestones, language and Piaget, temperament, attachment and Mahler, the toddler, preschool and school years, family factors and divorce, and adolescence from normal turmoil to substance use, violence and exploitation, with 150 clinical cases.",
+        "href": "#/c/ch32-1/guide",
+        "link": "Open the section"
+      },
+      {
+        "type": "update",
+        "ch": "ch32-1",
+        "text": "Updates: the 2022 CDC and AAP milestone checklists and screening ages, alcohol in pregnancy and ND-PAE, DSM-5 attachment disorders, recent US teen birth and Monitoring the Future data, the Dobbs decision, and Philippine laws on newborn screening, early childhood care (RA 12199), sexual consent (RA 11648), bullying and trafficking.",
+        "href": "#/c/ch32-1/guide/s321-inf",
+        "link": "See the milestone update"
+      },
+      {
+        "type": "correction",
+        "ch": "ch32-1",
+        "text": "Corrections: preterm birth is before 37 weeks (the book prints 34), the slow-to-warm-up temperament type, standard Strange Situation patterns (Table 32-8 differs), Baumrind and Maccoby and Martin for parenting styles (the book credits Rutter), and low juvenile sexual reoffending rates.",
+        "href": "#/c/ch32-1/guide/s321-attach",
+        "link": "See the attachment correction"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Which attachment pattern or disorder fits?, and a look-alike table of Piaget and Mahler by age.",
+        "href": "#/helper/attach321",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "75.0.0",
     "date": "2026-11-12",
     "title": "Chapters 30 and 31: Community psychiatry and global psychiatry",

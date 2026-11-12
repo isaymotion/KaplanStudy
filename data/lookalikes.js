@@ -1487,5 +1487,83 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 30"
+},
+{
+  "id": "dev-stage-theories",
+  "title": "Piaget and Mahler by age",
+  "summary": "Section 32.1 uses two stage schemes for the early years: Piaget's cognitive periods and Mahler's separation-individuation. Match the age to each.",
+  "items": [
+    "Piaget (Table 32-5)",
+    "Mahler (Table 32-9)",
+    "Key sign"
+  ],
+  "rows": [
+    [
+      "Birth to 2 months",
+      "Sensorimotor",
+      "Normal autism",
+      "Sleep outweighs waking"
+    ],
+    [
+      "2 to 5 months",
+      "Sensorimotor",
+      "Symbiosis",
+      "Mother and infant felt as one unit"
+    ],
+    [
+      "5 to 10 months",
+      "Sensorimotor",
+      "Differentiation",
+      "Turns outward; senses being separate"
+    ],
+    [
+      "10 to 18 months",
+      "Sensorimotor",
+      "Practicing",
+      "Explores with new mobility"
+    ],
+    [
+      "18 to 24 months",
+      "Sensorimotor",
+      "Rapprochement",
+      "Goes off and returns for reassurance"
+    ],
+    [
+      "2 to 5 years",
+      "Preoperational (2 to 7)",
+      "Object constancy",
+      "Soothed that the mother exists when absent"
+    ],
+    [
+      "7 to 11 years",
+      "Concrete operational",
+      "(beyond Mahler's scheme)",
+      "Logic and conservation"
+    ],
+    [
+      "11 years on",
+      "Formal operational",
+      "(beyond Mahler's scheme)",
+      "Abstract reasoning"
+    ]
+  ],
+  "keys": [
+    "**Rapprochement** (18 to 24 months) is the back-and-forth toddler.",
+    "**Object constancy** (2 to 5 years) overlaps Piaget's **preoperational** period.",
+    "**Conservation** marks the **concrete operational** period."
+  ],
+  "links": [
+    {
+      "ch": "ch32-1",
+      "sec": "s321-piaget",
+      "label": "Piaget's stages"
+    },
+    {
+      "ch": "ch32-1",
+      "sec": "s321-mahler",
+      "label": "Mahler's subphases"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 32.1"
 }
 ];
