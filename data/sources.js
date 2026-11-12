@@ -4,6 +4,29 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Sections 32.2 and 32.3, November 2026 */
+    { m: "Health Affairs, MIPPA outpatient mental health cost-sharing study", label: "Health Affairs, MIPPA reductions in outpatient mental health cost sharing (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7745666" },
+    { m: "Medicare.gov, Yearly Wellness visits", label: "Medicare.gov, Yearly Wellness visits", url: "https://www.medicare.gov/coverage/yearly-wellness-visits" },
+    { m: "National Catholic Reporter (OSV News), Supreme Court declines Kim Davis", label: "NCR (OSV News), Supreme Court declines Kim Davis case seeking to overturn same-sex marriage ruling", url: "https://www.ncronline.org/news/supreme-court-declines-kim-davis-case-seeking-overturn-same-sex-marriage-ruling" },
+    { m: "House of Representatives, Committee on Population and Family Relations", label: "House of Representatives, Committee on Population and Family Relations: bills referred (20th Congress)", url: "https://www.congress.gov.ph/committees/view/primary-referal/?code=0512" },
+    { m: "Tan-Andal v. Andal, G.R. No. 196359", label: "Tan-Andal v. Andal, G.R. No. 196359, May 11, 2021 (Lawphil)", url: "https://lawphil.net/judjuris/juri2021/may2021/gr_196359_2021.html" },
+    { m: "ABS-CBN News, SC says psychological incapacity", label: "ABS-CBN News, SC says psychological incapacity in annulment a legal concept, not medical condition", url: "https://news.abs-cbn.com/news/05/12/21/sc-says-psychological-incapacity-in-annulment-a-legal-concept-not-medical-condition" },
+    { m: "CMS, Medicare Coverage of Skilled Nursing Facility Care", label: "CMS, Medicare Coverage of Skilled Nursing Facility Care (publication 10153)", url: "https://doi.nebraska.gov/sites/default/files/doc/10153-Medicare-Skilled-Nursing-Facility-Care%20%281%29.pdf" },
+    { m: "Obergefell v. Hodges", label: "NPR, Equal dignity: the impact of Obergefell v. Hodges (2025)", url: "https://whyy.org/npr-story/obergefell-legal-same-sex-marriage-us-map/" },
+    { m: "Rappler, FACT CHECK: Divorce remains illegal", label: "Rappler, FACT CHECK: Divorce remains illegal in the Philippines", url: "https://www.rappler.com/newsbreak/fact-check/divorce-remains-illegal-philippines/" },
+    { m: "VERA Files, FACT CHECK: Reel on divorce bill", label: "VERA Files, Reel on divorce bill approval in PH needs context", url: "https://verafiles.org/articles/fact-check-reel-on-divorce-bill-approval-in-ph-needs-context" },
+    { m: "US Census Bureau, Older Adults Outnumber Children", label: "US Census Bureau, Older Adults Outnumber Children in 11 States (2025)", url: "https://www.census.gov/newsroom/press-releases/2025/older-adults-outnumber-children.html" },
+    { m: "Mortality in the United States, 2024", label: "NCHS Data Brief 548, Mortality in the United States, 2024", url: "https://www.cdc.gov/nchs/products/databriefs/db548.htm" },
+    { m: "WHO, Global report on ageism", label: "Human Rights Watch summary of the WHO Global report on ageism (2021)", url: "https://www.hrw.org/news/2021/03/19/new-who-report-calls-out-global-impacts-ageism" },
+    { m: "Human Rights Watch, New WHO Report", label: "Human Rights Watch, New WHO Report Calls Out Global Impacts of Ageism", url: "https://www.hrw.org/news/2021/03/19/new-who-report-calls-out-global-impacts-ageism" },
+    { m: "Social Security Administration, full retirement age", label: "SSA, Retirement age by year of birth", url: "https://www.ssa.gov/benefits/retirement/planner/ageincrease.html" },
+    { m: "Republic Act No. 7641", label: "Republic Act No. 7641, Retirement Pay Law (Lawphil PDF)", url: "https://lawphil.net/statutes/repacts/ra1992/pdf/ra_7641_1992.pdf" },
+    { m: "Republic Act No. 9994", label: "Republic Act No. 9994, Expanded Senior Citizens Act of 2010 (Lawphil)", url: "https://lawphil.net/statutes/repacts/ra2010/ra_9994_2010.html" },
+    { m: "Republic Act No. 11916", label: "Republic Act No. 11916, social pension of indigent senior citizens (Senate)", url: "https://legacy.senate.gov.ph/republic_acts/ra%2011916.pdf" },
+    { m: "Republic Act No. 11982", label: "Republic Act No. 11982, Expanded Centenarians Act (Lawphil)", url: "https://lawphil.net/statutes/repacts/ra2024/ra_11982_2024.html" },
+    { m: "Loving v. Virginia, 388 U.S. 1", label: "Encyclopedia Virginia, Loving v. Virginia (June 12, 1967), full text", url: "https://encyclopediavirginia.org/primary-documents/loving-v-virginia-june-12-1967/" },
+    { m: "Encyclopedia Virginia, Loving v. Virginia", label: "Encyclopedia Virginia, Loving v. Virginia (June 12, 1967)", url: "https://encyclopediavirginia.org/primary-documents/loving-v-virginia-june-12-1967/" },
+    { m: "Mortality in the United States, 2013", label: "NCHS Data Brief 178, Mortality in the United States, 2013", url: "https://www.cdc.gov/nchs/products/databriefs/db178.htm" },
     /* Section 32.1, November 2026 */
     { m: "Republic Act No. 9288, Newborn Screening Act", label: "DOH Administrative Order 2020-0052 on expanded newborn screening (cites RA 9288)", url: "https://law.upd.edu.ph/wp-content/uploads/2021/02/DOH-Administrative-Order-No-2020-0052.pdf" },
     { m: "CDC, About Alcohol Use During Pregnancy", label: "CDC, About Alcohol Use During Pregnancy", url: "https://www.cdc.gov/alcohol-pregnancy/about/index.html" },

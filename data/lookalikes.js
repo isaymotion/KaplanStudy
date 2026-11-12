@@ -1565,5 +1565,64 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 32.1"
+},
+{
+  "id": "adult-erikson",
+  "title": "Erikson's adult stages",
+  "summary": "Sections 32.1 to 32.3 follow Erikson's last stages from adolescence to old age. Match each crisis to its age and to a good and a poor outcome.",
+  "items": [
+    "Stage",
+    "Good outcome",
+    "Poor outcome"
+  ],
+  "rows": [
+    [
+      "Adolescence",
+      "Identity versus role confusion",
+      "A firm sense of who one is",
+      "Identity diffusion"
+    ],
+    [
+      "Young adulthood",
+      "Intimacy versus isolation",
+      "Committed love and close bonds",
+      "Loneliness and shallow relationships"
+    ],
+    [
+      "Middle adulthood",
+      "Generativity versus stagnation",
+      "Guiding the next generation, creating, helping others",
+      "Self-centered stagnation, poorly prepared for old age"
+    ],
+    [
+      "Late adulthood",
+      "Integrity versus despair",
+      "Life review that ends in peace and wisdom",
+      "Bitterness that life was too short to live over"
+    ]
+  ],
+  "keys": [
+    "Having children does **not** ensure **generativity**; childless adults can be generative.",
+    "The **life review** is the route to **integrity**.",
+    "Each stage builds on the one before it."
+  ],
+  "links": [
+    {
+      "ch": "ch32-1",
+      "sec": "s321-adnorm",
+      "label": "Identity in adolescence"
+    },
+    {
+      "ch": "ch32-2",
+      "sec": "s322-midtr",
+      "label": "Generativity in midlife"
+    },
+    {
+      "ch": "ch32-3",
+      "sec": "s323-theory",
+      "label": "Integrity versus despair"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., sections 32.1 to 32.3"
 }
 ];

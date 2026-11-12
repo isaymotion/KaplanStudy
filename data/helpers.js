@@ -7152,5 +7152,132 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "midlife322",
+  "chapter": "ch32-2",
+  "title": "Midlife transition, crisis or something to treat?",
+  "summary": "Sort a middle-aged person's distress or sudden change into the patterns section 32.2 describes, and spot when it needs clinical assessment.",
+  "caution": "A teaching aid. Severe depression, heavy drinking or drug use, or any suicidal thinking needs a full assessment and treatment whatever the life stage; do not label it a normal midlife phase.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What best describes what is happening?",
+      "options": [
+        {
+          "label": "Taking stock of life and goals, with inner turmoil but no rash moves",
+          "to": "r:transition",
+          "note": "Reappraisal prompted by a sense that life is finite."
+        },
+        {
+          "label": "Sudden, drastic changes in work or marriage, made impulsively",
+          "to": "risk",
+          "note": "Impulsive action marks a true crisis."
+        },
+        {
+          "label": "Low mood starting as the youngest child prepares to leave home",
+          "to": "r:emptynest",
+          "note": "Timing tied to the child's departure."
+        },
+        {
+          "label": "Body changes of the menopausal years, or lower sexual function in a man",
+          "to": "r:climac",
+          "note": "Biologic change of middle adulthood."
+        }
+      ]
+    },
+    "risk": {
+      "q": "Are there signs of severe depression, more alcohol or drug use, or thoughts of suicide?",
+      "options": [
+        {
+          "label": "Yes",
+          "to": "r:assess",
+          "note": "These are clinical problems, not a phase."
+        },
+        {
+          "label": "No",
+          "to": "r:crisis",
+          "note": "Impulsive change without these signs."
+        }
+      ]
+    }
+  },
+  "results": {
+    "transition": {
+      "label": "Midlife transition",
+      "dx": "Normal midlife transition",
+      "line": "An intense reappraisal of life that stays mostly in thought.",
+      "points": [
+        "Most people keep their marriages and careers.",
+        "Changes, even a divorce or a new job, are made thoughtfully.",
+        "Support reflection; no specific treatment is needed."
+      ],
+      "link": {
+        "ch": "ch32-2",
+        "sec": "s322-climac",
+        "label": "Midlife transition and crisis"
+      }
+    },
+    "crisis": {
+      "label": "True midlife crisis",
+      "dx": "Midlife crisis",
+      "line": "A revolutionary turning point with a flurry of impulsive actions.",
+      "points": [
+        "Pleas to slow down usually go unheard.",
+        "The therapist often helps those left behind cope.",
+        "Keep watching for depression or substance use."
+      ],
+      "link": {
+        "ch": "ch32-2",
+        "sec": "s322-climac",
+        "label": "Midlife transition and crisis"
+      }
+    },
+    "emptynest": {
+      "label": "Empty-nest syndrome",
+      "dx": "Empty-nest syndrome",
+      "line": "Depression in some parents as the youngest child is about to leave.",
+      "points": [
+        "Most parents feel relief rather than stress.",
+        "Assess for a depressive disorder if symptoms are marked or lasting.",
+        "Link to s322-climac."
+      ],
+      "link": {
+        "ch": "ch32-2",
+        "sec": "s322-climac",
+        "label": "Empty-nest syndrome"
+      }
+    },
+    "climac": {
+      "label": "Climacterium",
+      "dx": "Climacterium",
+      "line": "Declining biologic function in middle age; the menopausal period in women, with no clear boundary in men.",
+      "points": [
+        "In women estrogen falls and menses change, then stop.",
+        "In men, lower testosterone may reduce erections and sexual activity.",
+        "Check for medical causes of new symptoms."
+      ],
+      "link": {
+        "ch": "ch32-2",
+        "sec": "s322-climac",
+        "label": "The climacterium"
+      }
+    },
+    "assess": {
+      "label": "Assess for a psychiatric disorder",
+      "dx": "Needs clinical assessment",
+      "line": "Severe depression or more alcohol or drug use can come with a midlife crisis but need treatment in their own right.",
+      "points": [
+        "Screen for depression and suicide risk.",
+        "Ask about alcohol and drug use.",
+        "Treat the disorder; do not call it a normal phase."
+      ],
+      "link": {
+        "ch": "ch32-2",
+        "sec": "s322-climac",
+        "label": "Midlife transition and crisis"
+      }
+    }
+  }
 }
 ]);

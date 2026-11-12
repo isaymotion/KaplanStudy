@@ -13,6 +13,61 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "77.0.0",
+    "date": "2026-11-12",
+    "title": "Sections 32.2 and 32.3: Adulthood and Old Age",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch32-2",
+        "text": "New section 32.2, Adulthood: young adult tasks, work, friendship, marriage and couples therapy, parenthood and adoption, midlife theories, the climacterium, midlife transition and crisis, the empty nest, divorce and custody, and adult maturity, with 71 clinical cases.",
+        "href": "#/c/ch32-2/guide",
+        "link": "Open 32.2"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch32-3",
+        "text": "New section 32.3, Old Age: developmental tasks, demographics, biology of aging, life expectancy, exercise and diet, theories of aging, ageism, chronic conditions, transference, retirement and long-term care, with 55 clinical cases.",
+        "href": "#/c/ch32-3/guide",
+        "link": "Open 32.3"
+      },
+      {
+        "type": "content",
+        "ch": "ch32-1",
+        "text": "Section 32.1 now ends with the rest of the trafficking paragraph and a new short section on tattoos and body piercing in adolescents, with 3 new cases.",
+        "href": "#/c/ch32-1/guide/s321-body",
+        "link": "See body modification"
+      },
+      {
+        "type": "update",
+        "ch": "ch32-2",
+        "text": "Updates: Obergefell, the Respect for Marriage Act and the 2025 Davis petition; the status of divorce bills in the Philippines; and Tan-Andal v. Andal (2021), which made psychological incapacity a legal rather than medical concept.",
+        "href": "#/c/ch32-2/guide/s322-divorce",
+        "link": "See the Philippine updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch32-3",
+        "text": "Updates: 2024 Census and NCHS figures (life expectancy 79.0), the WHO Global report on ageism, what Medicare covers today (mental health, prevention, nursing homes), and US and Philippine retirement and senior-citizen benefits.",
+        "href": "#/c/ch32-3/guide/s323-lifeexp",
+        "link": "See current life expectancy"
+      },
+      {
+        "type": "correction",
+        "ch": "ch32-2",
+        "text": "Corrections: 16 states, not 19, still banned interracial marriage when Loving v. Virginia was decided; NCHS 2013 life expectancy was 76.4 for men and 81.2 for women (the book prints 77.4 and 82.2).",
+        "href": "#/c/ch32-2/guide/s322-marr",
+        "link": "See the marriage section"
+      },
+      {
+        "type": "feature",
+        "text": "New helper, Midlife transition, crisis or something to treat?, and a look-alike table of Erikson's adult stages.",
+        "href": "#/helper/midlife322",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "76.0.0",
     "date": "2026-11-12",
     "title": "Section 32.1: Infant, child, and adolescent development",

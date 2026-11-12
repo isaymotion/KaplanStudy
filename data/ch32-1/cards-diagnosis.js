@@ -170,5 +170,9 @@ KS.add("ch32-1", "diagnosis", [
   {"id":"d321-ao03","tag":"Sexual offending and exploitation","q":"Which psychosocial deficits are most typical in teen sex offenders?","a":"**Low self-esteem**, **poor social skills**, **little assertiveness** and **weak school performance**."},
   {"id":"d321-ao04","tag":"Sexual offending and exploitation","q":"How do diagnoses differ between male and female adolescent sex offenders?","a":"Males: more **paraphilias** and **antisocial behavior**. Females: more **mood disorders** and **self-mutilation**."},
   {"id":"d321-ao05","tag":"Sexual offending and exploitation","q":"What background is typical of teens who enter prostitution?","a":"Usually **broken homes** (though a rising share come from **middle or upper-middle class** families), childhood **rape or abuse**, and **running away**, then being taken in by **pimps** and drug users."},
-  {"id":"d321-ao06","tag":"Sexual offending and exploitation","q":"What is the main medical risk for adolescent prostitutes?","a":"**AIDS**; up to **70 percent** have **HIV** in some studies."}
+  {"id":"d321-ao06","tag":"Sexual offending and exploitation","q":"What is the main medical risk for adolescent prostitutes?","a":"**AIDS**; up to **70 percent** have **HIV** in some studies."},
+  {"id":"d321-ab01","tag":"Body modification","q":"What share of adolescents in the general population have a tattoo?","a":"About **10 to 13 percent**."},
+  {"id":"d321-ab02","tag":"Body modification","q":"In the survey of more than 500 adolescents, how common were tattoos and non-earlobe piercings?","a":"Lifetime: **13.2 percent** reported one or more **tattoos**; **26.9 percent** reported one or more non-earlobe **piercings**."},
+  {"id":"d321-ab03","tag":"Body modification","q":"Which sex more often has tattoos and body piercings in adolescence?","a":"**Girls**, for both tattoos and piercings."},
+  {"id":"d321-ab04","tag":"Body modification","q":"Which substances are teens with a tattoo or piercing more likely to report?","a":"**Gateway drugs** (**cigarettes, alcohol, marijuana**) and having tried **hard drugs** (**cocaine, ecstasy, crystal methamphetamine**)."}
 ]);

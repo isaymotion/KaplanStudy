@@ -864,7 +864,21 @@ KS.glossary = (KS.glossary || []).concat([
   ["menarche", "A girl's first menstrual period.", "Ch 32.1"],
   ["sexual maturity rating", "The 1 to 5 staging of breast, genital and pubic hair development in puberty (Tanner stages); see Table 32-12.", "Ch 32.1"],
   ["cyberbullying", "Bullying carried out through phones, the Internet or social media.", "Ch 32.1"],
-  ["disinhibited social engagement disorder", "DSM-5 disorder after insufficient care in which a child is overly familiar with unfamiliar adults; it was the disinhibited subtype of reactive attachment disorder in DSM-IV.", "Ch 32.1"]
+  ["disinhibited social engagement disorder", "DSM-5 disorder after insufficient care in which a child is overly familiar with unfamiliar adults; it was the disinhibited subtype of reactive attachment disorder in DSM-IV.", "Ch 32.1"],
+  ["climacterium", "Older term for the stretch of middle adulthood marked by declining biologic function; in women it is the menopausal period, while in men it has no clear boundary.", "Ch 32.2"],
+  ["midlife transition", "An intense reappraisal of one's whole life in middle age, prompted by awareness that life is finite; mostly mental turmoil, with thoughtful rather than impulsive change.", "Ch 32.2"],
+  ["midlife crisis", "A major, revolutionary turning point in middle age with internal agitation and a flurry of impulsive actions, such as abrupt changes in work or marriage.", "Ch 32.2"],
+  ["empty-nest syndrome", "A depression some parents develop as the youngest child is about to leave home; most parents feel the departure as a relief.", "Ch 32.2"],
+  ["generativity versus stagnation", "Erikson's stage of middle adulthood: guiding the next generation or improving society, through children or through helping others, creativity and work.", "Ch 32.2"],
+  ["psychic divorce", "Bohannan's separation of letting go of the spouse as a love object, a grief reaction for the relationship that takes about 2 years to resolve.", "Ch 32.2"],
+  ["joint custody", "A custody arrangement in which each divorced parent has the child for equal time.", "Ch 32.2"],
+  ["split custody", "A custody arrangement in which siblings are divided, each parent keeping one or more of the children.", "Ch 32.2"],
+  ["senescence", "The aging process, a gradual decline in all body systems; from the Latin senescere, to grow old.", "Ch 32.3"],
+  ["young-old", "Gerontologists' term for people aged 65 to 74.", "Ch 32.3"],
+  ["old-old", "Gerontologists' term for people aged 75 and older.", "Ch 32.3"],
+  ["ageism", "Robert Butler's term for discrimination against older people and negative stereotypes of old age.", "Ch 32.3"],
+  ["integrity versus despair", "Erikson's final stage: looking back on life with acceptance, peace and wisdom, or with bitterness that it was too short and cannot be lived again.", "Ch 32.3"],
+  ["custodial care", "Help with daily activities such as bathing, dressing or eating when no skilled medical care is needed; Medicare does not pay for long-term custodial care.", "Ch 32.3"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
@@ -1276,5 +1290,10 @@ KS.glossaryAliases = {
   "imaginary companions": "imaginary companion",
   "DSED": "disinhibited social engagement disorder",
   "synapse pruning": "synaptic pruning",
-  "startle reflex": "Moro reflex"
+  "startle reflex": "Moro reflex",
+  "empty nest": "empty-nest syndrome",
+  "empty-nest": "empty-nest syndrome",
+  "midlife crises": "midlife crisis",
+  "generativity": "generativity versus stagnation",
+  "ego integrity": "integrity versus despair"
 };

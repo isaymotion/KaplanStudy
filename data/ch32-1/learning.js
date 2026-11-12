@@ -161,7 +161,10 @@ KS.add("ch32-1", "learning", {
   "c321-ao02": "C",
   "c321-ao03": "C",
   "c321-ao04": "C",
-  "c321-ao05": "C"
+  "c321-ao05": "C",
+  "c321-ab01": "B",
+  "c321-ab02": "B",
+  "c321-ab03": "C"
  },
  "whyNot": {
   "c321-pl01": [
@@ -1207,7 +1210,34 @@ KS.add("ch32-1", "learning", {
    "",
    "Celiac disease is not named as a risk for these youth; HIV infection is."
   ],
-  "c321-ao05": ["","Anorexia nervosa is not among the diagnoses commonly seen in adolescent sexual offenders.","Selective mutism is not among the diagnoses commonly found in adolescent sexual offenders; conduct disorder is.","Schizophrenia is not among the usual diagnoses in this group.","Delirium is not among the diagnoses commonly seen in adolescent sexual offenders."]
+  "c321-ao05": [
+   "",
+   "Anorexia nervosa is not among the diagnoses commonly seen in adolescent sexual offenders.",
+   "Selective mutism is not among the diagnoses commonly found in adolescent sexual offenders; conduct disorder is.",
+   "Schizophrenia is not among the usual diagnoses in this group.",
+   "Delirium is not among the diagnoses commonly seen in adolescent sexual offenders."
+  ],
+  "c321-ab01": [
+   "Homework hours do not tell you about the health risks that the body modification data point to.",
+   "Past ear infections have no link with tattoos or piercings in the survey data.",
+   "Sun exposure matters for skin health, but the section links body art with substance use, not skin cancer.",
+   "Sports position does not address the risk behavior that goes with tattoos and piercings.",
+   ""
+  ],
+  "c321-ab02": [
+   "",
+   "This gives the tattoo figure (13.2 percent) as the piercing figure, and the survey reported no 2 percent figure.",
+   "This reverses the two findings; piercings outside the earlobe were the more common one.",
+   "Neither figure matches the survey, which found piercings about twice as common as tattoos.",
+   "Only tattoos were near 13 percent; non-earlobe piercings were about twice that."
+  ],
+  "c321-ab03": [
+   "Being lured by a false job offer and made to sell sex for others is exploitation, not voluntary work.",
+   "",
+   "The account describes being brought in and made to sell sex for others, not an initiation into a gang.",
+   "She was brought to the country by others and is controlled by them, so this is not simple running away.",
+   "Being made to have sex with men for money by the people who brought her is not a dating relationship."
+  ]
  },
  "checks": {
   "s321-pre": [
@@ -1512,6 +1542,16 @@ KS.add("ch32-1", "learning", {
    {
     "q": "Under Philippine law, who is a child and does consent matter in trafficking for sexual exploitation?",
     "a": "A child is anyone **below 18**; recruitment is trafficking **whether or not the child consented**."
+   }
+  ],
+  "s321-body": [
+   {
+    "q": "In the survey of more than 500 adolescents, which was more common: tattoos or piercings outside the earlobe?",
+    "a": "**Piercings outside the earlobe** (about **27 percent**) were roughly **twice** as common as **tattoos** (about **13 percent**)."
+   },
+   {
+    "q": "Which history does a new tattoo or piercing in a teen make especially worth taking?",
+    "a": "**Substance use**: teens with body art more often report **gateway drugs** and having tried **hard drugs**, as a group-level link."
    }
   ]
  },

@@ -302,6 +302,14 @@ KS.manifest = [
   { id: 'ch32-1', number: '32.1', title: 'Infant, Child, and Adolescent Development', short: 'Child and adolescent development',
     summary: 'Prenatal development and exposures, infant reflexes and milestones, language and Piaget, temperament, attachment and Mahler, the toddler, preschool and school years, family factors and divorce, and adolescence (stages, maturation, sexuality, substances, violence and exploitation), with 2022 milestone checklists, DSM-5 attachment disorders and Philippine child-protection law updates.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch32-2', number: '32.2', title: 'Adulthood', short: 'Adulthood',
+    summary: 'Young and middle adulthood: developmental tasks, work, friendship, marriage (interracial and same-sex) and couples therapy, parenthood and adoption, midlife theories (Erikson, Vaillant, Colarusso and Nemiroff), the climacterium, midlife transition and crisis, the empty nest, divorce and custody, and adult maturity, with updates on US marriage law, Philippine divorce law and Tan-Andal v. Andal.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch32-3', number: '32.3', title: 'Old Age', short: 'Old age',
+    summary: 'Late adulthood: developmental tasks, demographics and longevity, biologic changes of aging by system, life expectancy by sex and race, exercise and diet, theories of aging and personality, ageism, chronic conditions, transference and countertransference, retirement, sexuality and long-term care, with current US figures, Medicare coverage and Philippine senior-citizen law.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

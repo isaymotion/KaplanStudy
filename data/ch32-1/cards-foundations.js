@@ -112,5 +112,7 @@ KS.add("ch32-1", "foundations", [
   {"id":"f321-au02","tag":"Adolescent substance use","q":"What is crystal methamphetamine also called, and what is its annual prevalence in 12th graders?","a":"**Ice**; about **2 percent**."},
   {"id":"f321-ao01","tag":"Sexual offending and exploitation","q":"What are the etiologic factors of juvenile sex offending?","a":"**Maltreatment**, **pornography exposure**, **substance abuse** and **aggressive role models**; childhood **physical abuse 25 to 50 percent** and **sexual abuse 10 to 80 percent**."},
   {"id":"f321-ao02","tag":"Sexual offending and exploitation","q":"Which youths who offend against children show high aggression and violence?","a":"A subgroup with more severe **personality or psychosexual disturbance**, such as **psychopathy** or **sexual sadism**."},
-  {"id":"f321-ao03","tag":"Sexual offending and exploitation","q":"How many people are smuggled into the United States yearly as \"sex slaves,\" and how are they lured?","a":"As many as **17,500**; with promises of a **better life and job**."}
+  {"id":"f321-ao03","tag":"Sexual offending and exploitation","q":"How many people are smuggled into the United States yearly as \"sex slaves,\" and how are they lured?","a":"As many as **17,500**; with promises of a **better life and job**."},
+  {"id":"f321-ab01","tag":"Body modification","q":"Since when have tattoos and body piercing become more common among adolescents?","a":"Since the **1980s**."},
+  {"id":"f321-ab02","tag":"Body modification","q":"Which drugs count as gateway drugs in the body modification data, and which as hard drugs?","a":"Gateway: **cigarettes, alcohol, marijuana**. Hard: **cocaine, ecstasy, crystal methamphetamine**."}
 ]);

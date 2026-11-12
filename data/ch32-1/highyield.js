@@ -513,5 +513,24 @@ KS.add("ch32-1", "highYield", [
       "Up to **70 percent** of teen prostitutes have **HIV** in some studies.",
       "Up to **17,500** people a year are smuggled into the US as **sex slaves**."
     ]
+  },
+  {
+    "id": "hy321-23",
+    "topic": "Body modification",
+    "items": [
+      "Tattoos and piercings in teens have risen since the **1980s**.",
+      "About **10 to 13 percent** of teens in the general population have a **tattoo**.",
+      "A survey covered **more than 500** adolescents.",
+      "In that survey, **13.2 percent** had ever had at least one **tattoo**.",
+      "In that survey, **26.9 percent** had ever had at least one **piercing** outside the earlobe.",
+      "The piercing figure **excludes the earlobe**.",
+      "Tattoos and piercings are both **more common in girls**.",
+      "Body modification is linked with **gateway drugs**: **cigarettes**, **alcohol**, **marijuana**.",
+      "It is also linked with **hard drugs**: **cocaine**, **ecstasy**, **crystal methamphetamine**.",
+      "Trafficked youth are lured by promises of **work or a better life**.",
+      "After arrival in the United States they are **made to sell sex**.",
+      "Traffickers make **thousands of dollars**; the victims get **little money**.",
+      "Trafficked youth are often **raped and abused**."
+    ]
   }
 ]);
