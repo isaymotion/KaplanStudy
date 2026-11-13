@@ -1,0 +1,12 @@
+{
+ "intro": "This entry completes section 34.1 with the biology of memory. It starts at the synapse, with plasticity in Aplysia, long-term potentiation and the brain systems behind simple associative learning, and moves to how the cortex organizes memory. It then turns to amnesia: the patients HM and EP, the medial temporal lobe and diencephalon, Korsakoff syndrome, what frontal damage adds (Table 34-6) and the pattern of retrograde amnesia. Next come the kinds of memory, declarative and nondeclarative (Table 34-7), priming, what neuroimaging shows and the role of sleep. The last part is clinical: how to assess memory at the bedside and with tests, how to tell neurologic from psychogenic amnesia, how memory becomes distorted, why adults cannot recall infancy, and what memory research says about the unconscious. Update boxes add the 2000 Nobel Prize for the Aplysia work, the identity of patient HM, today's sleep-stage names and the DSM-5 term for psychogenic amnesia.",
+ "objectives": [
+  "Describe short- and long-lasting synaptic plasticity, long-term potentiation and the role of NMDA and AMPA receptors.",
+  "Explain what the cases of HM and EP showed about the medial temporal lobe and declarative memory.",
+  "Distinguish anterograde from retrograde amnesia and describe temporally graded retrograde amnesia and consolidation.",
+  "Compare declarative and nondeclarative memory and name the brain structures tied to each type.",
+  "Outline a memory assessment and the test findings that separate left from right lesions and amnesia from depression.",
+  "Tell neurologic amnesia from psychogenic amnesia.",
+  "Explain memory distortion, infantile amnesia and the chapter's modern view of unconscious memory."
+ ]
+}
