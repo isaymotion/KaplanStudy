@@ -378,6 +378,10 @@ KS.manifest = [
   { id: 'ch34-7', number: '34.4b', title: 'Theories of Personality II: Freud, Ego Psychology, Defenses and Transference', short: 'Freud II: ego, defenses, transference',
     summary: 'The structural model of id, ego and superego, ego functions and autonomy, signal anxiety, the four classes of defense mechanisms, the classic theory of neuroses and analytic technique, and transference variants and mechanisms, with updates on the DSM-IV defense hierarchy and the removal of neurosis from DSM-III.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-8', number: '34.4c', title: 'Theories of Personality III: Erik Erikson and the Life Cycle', short: 'Erikson: the life cycle',
+    summary: 'Erik Erikson\'s life and psychohistories, the epigenetic principle, the eight psychosocial stages from trust versus mistrust to integrity versus despair with their virtues, the psychopathology tied to each stage and his approach to treatment, with updates on his later honors, Joan Erikson\'s ninth stage and current suicide rates by age.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

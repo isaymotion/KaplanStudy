@@ -4,6 +4,10 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 34.4 (Erikson), November 2026 */
+    { m: "Harvard University Department of Psychology: Erik Erikson", label: "Harvard University Department of Psychology: Erik Erikson (1902-1994), Psychosocial Theory of Human Development", url: "https://psychology.fas.harvard.edu/people/erik-erikson" },
+    { m: "The Life Cycle Completed: Extended Version", label: "Erikson EH, Erikson JM, The Life Cycle Completed: Extended Version, with new chapters on the ninth stage of development by Joan M. Erikson (W. W. Norton, 1997)", url: "https://search.worldcat.org/title/The-life-cycle-completed/oclc/35198742" },
+    { m: "CDC, Suicide Data and Statistics", label: "CDC, Suicide Data and Statistics (2023 data from CDC WONDER: highest rates at ages 85 and older; men about four times the rate of women)", url: "https://www.cdc.gov/suicide/facts/data.html" },
     /* Section 34.4 (Freud), November 2026 */
     { m: "Britannica: Sigmund Freud (born May 6, 1856", label: "Britannica: Sigmund Freud (born May 6, 1856, Freiberg, Moravia, now P\u0159\u00edbor; died September 23, 1939, London)", url: "https://www.britannica.com/biography/Sigmund-Freud" },
     { m: "Britannica: Bertha Pappenheim (Anna O)", label: "Britannica: Bertha Pappenheim (Anna O), including her stay at the Bellevue Sanatorium, Kreuzlingen, July to October 1882", url: "https://www.britannica.com/biography/Anna-O" },

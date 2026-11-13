@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 87.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 88.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -170,6 +170,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 34.3b | Sociocultural Sciences II: Transcultural Psychiatry and Culture-Bound Syndromes | 13 | 223 | 217 |
 | 34.4a | Theories of Personality I: Freud, from Dreams to the Psychosexual Stages | 7 | 130 | 138 |
 | 34.4b | Theories of Personality II: Freud, Ego Psychology, Defenses and Transference | 7 | 121 | 144 |
+| 34.4c | Theories of Personality III: Erik Erikson and the Life Cycle | 6 | 108 | 147 |
 
 ## Upgrading from version 59 (October 2026)
 

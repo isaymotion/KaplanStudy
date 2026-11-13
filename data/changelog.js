@@ -13,6 +13,33 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "88.0.0",
+    "date": "2026-11-14",
+    "title": "Section 34.4, part 2: Erikson (34.4c)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-8",
+        "text": "New entry 34.4c, Theories of Personality III: Erik Erikson and the Life Cycle: his life and psychohistories, the epigenetic principle, the eight psychosocial stages with their virtues, the psychopathology Erikson tied to each stage and his approach to treatment, with 43 cases.",
+        "href": "#/c/ch34-8/guide",
+        "link": "Open 34.4c"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-8",
+        "text": "Updates: Erikson's later honors and death, Joan Erikson's ninth stage of very old age (1997), and current US suicide rates by age (highest at 85 and older in 2023).",
+        "href": "#/c/ch34-8/guide/s348-later",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New look-alike table setting Erikson's psychosocial stages beside Freud's psychosexual stages.",
+        "href": "#/lookalikes/erikson-freud348",
+        "link": "Open the look-alike"
+      }
+    ]
+  },
+  {
     "version": "87.0.0",
     "date": "2026-11-14",
     "title": "Section 34.4, part 1: Freud (34.4a and 34.4b)",

@@ -1048,7 +1048,15 @@ KS.glossary = (KS.glossary || []).concat([
   ["altruistic surrender","A masochistic giving up of one's own needs for others, satisfied only through introjection; contrasted with mature altruism.","Ch 34.4b"],
   ["seduction hypothesis","Freud's early proposal that hysterical and obsessive-compulsive symptoms grew out of childhood sexual experiences.","Ch 34.4b"],
   ["mirror transference","In Kohut's terms, a narcissistic transference in which the analyst stands for or answers the patient's grandiose self.","Ch 34.4b"],
-  ["idealizing transference","In Kohut's terms, a narcissistic transference in which all strength is placed in the idealized analyst.","Ch 34.4b"]
+  ["idealizing transference","In Kohut's terms, a narcissistic transference in which all strength is placed in the idealized analyst.","Ch 34.4b"],
+  ["epigenetic principle","Erikson's idea, taken from embryology, that development moves through ordered stages, each of which must be resolved for later stages to go well.","Ch 34.4c"],
+  ["psychohistory","The study of a famous life against the history of its time, as in Erikson's books on Luther and Gandhi.","Ch 34.4c"],
+  ["identity crisis","Erikson's term for the normative struggle, typical at the end of adolescence, that comes before a firm sense of identity.","Ch 34.4c"],
+  ["role confusion","In Erikson's stage 5, failure to form a stable identity and a clear place in the world; also called identity diffusion.","Ch 34.4c"],
+  ["mutual regulation","Erikson's term for the two-way shaping between the growing child and the culture in ego development.","Ch 34.4c"],
+  ["distantiation","Erikson's term for readiness to reject, isolate or destroy people or forces felt to threaten one's own; the pathologic outcome of intimacy conflicts.","Ch 34.4c"],
+  ["pseudoengagement","In Erikson's account, settling for a narrow, technical involvement in work or relationships; a sign of failed generativity.","Ch 34.4c"],
+  ["ninth stage","Joan Erikson's proposed stage of very old age, in which the eight earlier crises are met again (1997).","Ch 34.4c"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

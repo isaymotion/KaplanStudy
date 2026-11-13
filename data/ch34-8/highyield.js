@@ -1,0 +1,147 @@
+/* Section 34.4, part III (34.4c), high yield (bold text becomes a blank in "Hide key facts" mode). Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 34. */
+KS.add("ch34-8", "highYield", [
+  {
+    "id": "hy348-01",
+    "topic": "Erikson's life and work",
+    "items": [
+      "Born **June 15, 1902**, in **Frankfurt, Germany**, of **Danish** parents; died **1994**.",
+      "His stepfather was **Theodor Homburger**, a German-Jewish **pediatrician**; for many years he went by **Erik Homburger**.",
+      "He never knew his **biologic father**; he called his parents' secrecy a **loving deceit**.",
+      "Erikson brought the term **identity crisis** into common use.",
+      "The chapter describes him as **a man of the borders**.",
+      "His theory grew from four roles: **teacher**, **child psychoanalyst**, **anthropologic field worker**, **biographer**.",
+      "First book: ***Childhood and Society*** (**1950**).",
+      "Psychohistories: ***Young Man Luther*** (**1958**) and ***Gandhi's Truth*** (**1969**).",
+      "***Life History and the Historical Moment*** (**1975**) explored the person and history together.",
+      "In **1927** **Peter Blos** invited him to teach in **Vienna**.",
+      "His analyst was **Anna Freud**; he trained at the **Vienna Psychoanalytic Institute** and as a **Montessori** teacher.",
+      "He married **Joan Mowat Serson** in **1929**.",
+      "**Hanns Sachs**, co-founder of ***Imago*** with **Otto Rank**, urged him to settle in **Boston**.",
+      "In Boston he was the city's **only child analyst**.",
+      "Anthropologists **Margaret Mead** and **Ruth Benedict** shaped his **cross-cultural** approach.",
+      "**1938**: studied **Sioux** children at **Pine Ridge**; **1939**: moved to **Berkeley** and studied the **Yurok**.",
+      "**1950**: left Berkeley over the **loyalty oath**; joined the **Austen Riggs Center**.",
+      "**1960**: Harvard professor; after retiring in **1970** (the chapter prints 1972), consultant at **Mount Zion Hospital**, San Francisco."
+    ]
+  },
+  {
+    "id": "hy348-02",
+    "topic": "The epigenetic principle",
+    "items": [
+      "**Epigenesis** is a term Erikson took from **embryology**.",
+      "Epigenetic principle: development proceeds in **sequential, clearly defined stages**.",
+      "Smooth later development needs each stage to be **satisfactorily resolved**.",
+      "An unresolved stage is reflected in **all subsequent stages**.",
+      "Failure can appear as **physical**, **cognitive**, **social** or **emotional** maladjustment.",
+      "Erikson **accepted** Freud's **instinctual development** and **infantile sexuality**.",
+      "He paired each Freudian stage with a **zone** and a **mode** of behavior.",
+      "Oral zone mode: **sucking** or **taking in**.",
+      "Anal zone mode: **holding on** and **letting go**.",
+      "Ego development also depends on **mutual regulation** between child and **culture and traditions**.",
+      "The **eight stages** of ego development are the **centerpiece** of his work (Table 34-16).",
+      "Physical, cognitive, instinctual and sexual changes trigger an **internal crisis**.",
+      "Resolution yields **growth** and **virtues**, or **psychosocial regression**.",
+      "Virtue = **inherent strength** (***Insight and Responsibility***).",
+      "Crisis = a **turning point**, not a catastrophe (***Identity: Youth and Crisis***)."
+    ]
+  },
+  {
+    "id": "hy348-03",
+    "topic": "Stages 1 to 4",
+    "items": [
+      "Stage 1, **trust vs. mistrust**, runs from birth to roughly **18 months**; its virtue is **hope**.",
+      "Erikson called the infant's first mode **incorporation**, with the social modality **to get**.",
+      "Teething and the pleasure of biting open the **active-incorporative mode** (second oral stage), with the modality **taking and holding on**.",
+      "Erikson tied trust to the **quality** of the mother-infant bond, not the amount of food or love.",
+      "**Introjection** and **projection** let the infant keep pleasure in and push pain out, giving a first sense of **ego identity**.",
+      "The social institution Erikson matched to stage 1 is **religion**.",
+      "**Aggravated development crisis**: Erikson's term for a derailment at one stage that distorts later ones.",
+      "Erikson linked failed basic trust to a later risk of **schizophrenia**-like withdrawal, emptiness in **depression** to **oral pessimism**, and **addictions** to oral incorporation.",
+      "Stage 2, **autonomy vs. shame and doubt**, runs from roughly 18 months to **3 years**; virtue **will**; modality **holding on and letting go**.",
+      "Control that is **too rigid or too early** may cause **regression or false progression** in the toddler.",
+      "Erikson rooted **law and order** and a sense of **justice** in stage 2.",
+      "Erikson linked stage 2 to **paranoiac fears**, **OCPD** (hold on vs. let go) and **OCD** (doubt over autonomy plus a harsh conscience).",
+      "Stage 3, **initiative vs. guilt**, runs from roughly 3 to **5 years**; virtue **purpose**; modality **being on the make**.",
+      "In stage 3 guilt is eased by **repression** and the building of a **superego**, at first harsh, later the base of **morality**.",
+      "Stage 3 failures in Erikson's view: **conversion disorder**, **inhibition**, **phobia**; overdriving may bring **psychosomatic** symptoms.",
+      "Stage 4, **industry vs. inferiority**, runs from roughly 5 to **13 years** (latency); virtue **competence**.",
+      "The **work principle** teaches the joy of finishing a task through steady effort (stage 4).",
+      "Stage 4 pathology is **less well defined**; it may be **conformist immersion** in work that stifles creativity.",
+      "Table 34-16 adapts **Insight and Responsibility (1964)** and **Identity: Youth and Crisis (1968)**."
+    ]
+  },
+  {
+    "id": "hy348-04",
+    "topic": "Stages 5 to 8",
+    "items": [
+      "Stage 5, **identity vs. role confusion**, runs from roughly 13 to **21 years**; virtue **fidelity**.",
+      "Erikson labeled the late-adolescent identity crisis **normative**, since it is **expected and typical**.",
+      "Failure of stage 5 is **identity diffusion** or **role confusion**: no sense of self and no clear place in the world.",
+      "Role confusion may show as **running away**, **criminality** or **overt psychosis**.",
+      "Defenses against role diffusion: **cliques or cults**, **folk heroes**, **intolerance of differences**, **falling in love**, **overidentification** with idealized figures.",
+      "**Vital Involvement in Old Age** was coauthored by Erik Erikson with **Joan Erikson** and **Helen Kivnick**; it calls fidelity the **cornerstone of identity**.",
+      "Table 34-16 stage 5 pathology: **delinquent behavior**, **borderline psychotic episodes**, **gender-related identity disorders**.",
+      "Stage 6, **intimacy vs. isolation**, runs from roughly 21 to **40 years** (table: the 20s); virtue **love**.",
+      "Erikson often cited Freud's **Lieben und arbeiten** (love and work) for stage 6.",
+      "Fear of **ego loss** in self-abandonment leads to **isolation and self-absorption**.",
+      "**Distantiation**: readiness to reject, isolate or destroy what seems dangerous to oneself; the pathologic outcome of **intimacy** conflicts.",
+      "Critics say Erikson's identity-before-intimacy sequence neglects **continued attachment** and **relationship-based identity** in **women**.",
+      "Stage 7, **generativity vs. stagnation**, runs from roughly 40 to **60 years**; virtue **care**.",
+      "Failed generativity: **pseudoengagement** in work, **stagnation**, escapes into **substance abuse** and **infidelities**.",
+      "Table 34-16 stage 7 pathology: **mid-life crisis** and **premature invalidism**.",
+      "Stage 8, **integrity vs. despair**, runs from roughly 60 years to **death**; virtue **wisdom**.",
+      "Failed integrity shows as **disgust** and **contempt**, which Erikson saw as masking **fear of death**.",
+      "Table 34-16 stage 8 pathology: **extreme alienation** and **despair**.",
+      "Enduring aspects of identity, stages 5 to 8: identity vs. **identity confusion**; **sexual polarization** vs. bisexual confusion; **leadership and followership** vs. abdication of responsibility; **ideologic commitment** vs. confusion of values."
+    ]
+  },
+  {
+    "id": "hy348-05",
+    "topic": "Psychopathology by stage",
+    "items": [
+      "Erikson proposed that **each stage** has its own pathological outcome when its crisis is **not mastered**",
+      "Signs of social trust in infants: easy **feeding**, deep **sleep**, **smiling**, overall **physiologic homeostasis**",
+      "Long separation in infancy may result in **hospitalism** or **anaclitic depression**",
+      "Later effects of mistrust named in the chapter: **dysthymic disorder**, depression, a sense of **hopelessness**",
+      "Reliance on **projection** after early mistrust predisposes to **paranoid or delusional disorders**",
+      "Basic mistrust contributes to **schizoid personality disorder** and, in the most severe cases, **schizophrenia**",
+      "Substance-dependent personalities are described as having strong **oral-dependency** needs and seeing people as **unreliable**",
+      "Autonomy stage nickname: the **terrible twos**",
+      "Shame and doubt winning over autonomy can produce **compulsive doubting** and obsessive **inflexibility**",
+      "Anal personality, the three P's: **parsimonious**, **punctual**, **perfectionistic**",
+      "Excessive shaming may open the door to **delinquent behavior**",
+      "Paranoid feeling of being **controlled** may begin in **autonomy versus shame and doubt**; with mistrust it seeds **persecutory delusions**",
+      "Initiative conflict shows as **hysterical denial** or **overcompensatory showing off**; hysteria has given way to **psychosomatic disease**",
+      "Excessive guilt is linked to **generalized anxiety disorder** and **phobias**; an unresolved oedipal conflict to **conversion disorder** or **specific phobia**",
+      "Inferiority in adults: severe **work inhibitions**, feelings of **inadequacy**, or a compensatory pursuit of **money, power, prestige**",
+      "Identity stage danger: **role diffusion**; key task is learning to **leave home** and live on one's own",
+      "Identity-stage disorders listed: **schizophreniform disorder**, **conduct disorder**, **gender identity disorder**, **disruptive behavior disorder**",
+      "Generativity stage runs from about **40 to 65** years; disorders there are **less clearly defined**",
+      "Late life: **anxiety disorders**, **hypochondriasis**, psychosomatic illness; suicide rate highest **over 65** (the chapter; in 2023 US data, highest at **85 and older**)"
+    ]
+  },
+  {
+    "id": "hy348-06",
+    "topic": "Treatment and technique",
+    "items": [
+      "No independent **Eriksonian school** exists like the **Freudian** and **Jungian** schools",
+      "Erikson's key requirement for therapy to work: **trust** between doctor and patient",
+      "The therapist, like a **good mother**, must be sensitive to needs and convey **personal trustworthiness**",
+      "For Erikson the analyst is **not a blank slate**",
+      "Tools for showing understanding: **empathetic listening** and **verbal assurances**, building a **positive transference**",
+      "Erikson's play materials: **dolls**, **blocks**, **vehicles**, **miniature furniture**",
+      "He began treating a child only after sharing an **evening meal** with **all of the family**",
+      "Play is both **diagnostically revealing** and **curative** in its own right; it is a function of the **ego**",
+      "Children play to **master reality**; adults play to **repair the past** and **redeem failures**",
+      "Erikson praised Freud's abandoning of **hypnosis** as a **moral choice**",
+      "Mutuality: healer and patient relate as **equals**, and the patient learns to be **self-observant**",
+      "Dreams: Erikson valued the **first association** and listened for a **central theme**",
+      "Primary therapeutic agent for Erikson: **interpretation**; method: **free-floating attention**",
+      "Four dimensions: **desire for cure**, **objectivity-participation**, **knowledge-participation**, **tolerance-indignation**",
+      "Therapists should offer both **prohibitions** and **permissions** and not overlook **current conflicts**",
+      "Unlike Freud, Erikson held that personality can change in **middle and late adulthood**",
+      "**Austen Riggs Center**, **Stockbridge, Massachusetts**: repository of Erikson's work",
+      "**Joan Erikson** created an activities program there as an **interpretation-free zone**"
+    ]
+  }
+]);
