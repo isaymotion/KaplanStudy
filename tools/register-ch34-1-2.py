@@ -3,9 +3,9 @@ import json
 def rw(p,f):
     s=open(p).read(); n=f(s); assert n!=s,p; open(p,'w').write(n)
 FILES="    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']"
-E1={'id':'ch34-1','number':'34.1','title':'Psychosocial Sciences I: Piaget, Attachment, and Learning Theory','short':'Piaget, attachment and learning',
+E1={'id':'ch34-1','number':'34.1a','title':'Psychosocial Sciences I: Piaget, Attachment, and Learning Theory','short':'Piaget, attachment and learning',
  'summary':'The four stages of Piaget and their use in psychiatry and psychotherapy; attachment theory, the phases of attachment, the Strange Situation and the effects of separation; Pavlovian conditioning, extinction and relapse, operant learning, schedules and theories of reinforcement, avoidance learning, learned helplessness and habits, with updates on infant object permanence, disorganized attachment, the DSM-5 attachment disorders, the inhibitory learning approach to exposure and D-cycloserine.'}
-E2={'id':'ch34-2','number':'34.1','title':'Psychosocial Sciences II: Biology of Memory','short':'Biology of memory',
+E2={'id':'ch34-2','number':'34.1b','title':'Psychosocial Sciences II: Biology of Memory','short':'Biology of memory',
  'summary':'Synaptic plasticity and long-term potentiation; cortical organization of memory; amnesia and the patients HM and EP; Korsakoff syndrome and frontal damage; retrograde amnesia and consolidation; declarative and nondeclarative memory, priming, neuroimaging and sleep; memory assessment; psychogenic amnesia, memory distortion and infantile amnesia, with updates on the identity of HM and current terms.'}
 def ent(e): return "  { id: '%s', number: '%s', title: '%s', short: '%s',\n    summary: '%s',\n%s\n  }"%(e['id'],e['number'],e['title'],e['short'],e['summary'],FILES)
 def man(s):
@@ -21,7 +21,7 @@ rw('data/app-meta.js',lambda s:s.replace("version: '83.0.0'","version: '84.0.0'"
 def readme(s):
     s=s.replace("Version 83.0.0","Version 84.0.0")
     a=[l for l in s.split("\n") if l.startswith("| 33.10 |")][0]+"\n"
-    return s.replace(a,a+"| 34.1 (I) | %s | %s | %s | %s |\n"%(E1['title'],*open('/tmp/ch341-counts').read().split())+"| 34.1 (II) | %s | %s | %s | %s |\n"%(E2['title'],*open('/tmp/ch342-counts').read().split()))
+    return s.replace(a,a+"| 34.1a | %s | %s | %s | %s |\n"%(E1['title'],*open('/tmp/ch341-counts').read().split())+"| 34.1b | %s | %s | %s | %s |\n"%(E2['title'],*open('/tmp/ch342-counts').read().split()))
 rw('README.md',readme)
 rw('/home/claude/fulltest.py',lambda s:s.replace("'ch33-10']","'ch33-10', 'ch34-1', 'ch34-2']",1))
 rw('/tmp/srcs4.js',lambda s:s.replace("'ch33-10']","'ch33-10','ch34-1','ch34-2']",1))
