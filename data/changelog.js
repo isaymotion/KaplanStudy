@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "83.0.0",
+    "date": "2026-11-13",
+    "title": "Sections 33.9 and 33.10: Applied Electrophysiology and Chronobiology",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch33-9",
+        "text": "New entry, Applied Electrophysiology: the 10-20 system and activation procedures, normal waking and sleep EEG, warning signs of a hidden medical cause, common abnormal patterns, EEG effects of drugs, EEG in medical and psychiatric disorders, and quantitative EEG and evoked potentials, with 34 cases.",
+        "href": "#/c/ch33-9/guide",
+        "link": "Open Applied Electrophysiology"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch33-10",
+        "text": "New entry, Chronobiology: the circadian clock and light, sleep regulation, advanced and delayed sleep phase disorders, seasonality and melatonin, aging and the clock, and circadian rhythms in drug treatment, with 29 cases. This completes Chapter 33.",
+        "href": "#/c/ch33-10/guide",
+        "link": "Open Chronobiology"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-9",
+        "text": "Updates: current sleep stage names, QEEG is not a diagnostic test for psychiatric disorders, clozapine and the EEG, and benign variants among the psychiatric EEG findings.",
+        "href": "#/c/ch33-9/guide/s339-qeeg",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch33-10",
+        "text": "Updates: the 2017 Nobel Prize for the molecular clock, and the current names and genetics of the sleep-wake phase disorders.",
+        "href": "#/c/ch33-10/guide/s3310-csd",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for reading what an EEG finding points to, and a look-alike table comparing advanced and delayed sleep phase.",
+        "href": "#/helpers/eegpattern339",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "82.0.0",
     "date": "2026-11-13",
     "title": "Sections 33.7 and 33.8: Neurogenetics",

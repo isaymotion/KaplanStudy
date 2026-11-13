@@ -918,7 +918,7 @@ body.is-teaching { overflow: hidden; }
 @media (min-width: 721px) { .teach-setup .exam-form .select select { min-width: 260px; width: auto; } }
 
 /* Long compound terms in headings wrap instead of widening the page on phones. */
-h1, h2, h3 { overflow-wrap: break-word; }
+h1, h2, h3 { overflow-wrap: anywhere; hyphens: auto; }
 
 /* ---------- bookmarks ---------- */
 .g-sec__head { display: flex; align-items: flex-start; gap: 14px; max-width: var(--measure); }

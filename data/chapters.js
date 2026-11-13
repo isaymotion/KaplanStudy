@@ -342,6 +342,14 @@ KS.manifest = [
   { id: 'ch33-8', number: '33.8', title: 'Neurogenetics II: Specific Disorders', short: 'Neurogenetics of disorders',
     summary: 'The genetics of Alzheimer disease (APP, presenilins, APOE e4, GAB2), autism (heritability, chromosomal aberrations, CNVs, de novo mutations and synaptic, migration and excitatory/inhibitory pathways), bipolar disorder (early linkage reports, genome screens, chromosome 18, study power) and schizophrenia (candidate genes, mouse models), with updates from the large genome-wide and sequencing studies of 2019 to 2025.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-9', number: '33.9', title: 'Applied Electrophysiology', short: 'Applied electrophysiology',
+    summary: 'Recording the EEG: the 10-20 system and activation procedures; the four waking waveforms and the sleep EEG; warning signs of a hidden medical cause (Table 33-8); common EEG abnormalities; EEG effects of medications and drugs; EEG changes in medical and psychiatric disorders; quantitative EEG and evoked potentials, with updates on QEEG for diagnosis and on clozapine and the EEG.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch33-10', number: '33.10', title: 'Chronobiology', short: 'Chronobiology',
+    summary: 'Circadian rhythms and the suprachiasmatic nucleus; light and entrainment; how the clock and sleep pressure regulate sleep; advanced and delayed sleep phase disorders and their genetics; seasonality and melatonin; seasonality in humans; aging and the clock; circadian rhythms and drug treatment, with updates on the 2017 Nobel Prize and current names and genetics of the phase disorders.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

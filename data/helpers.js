@@ -8264,5 +8264,191 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "eegpattern339",
+  "chapter": "ch33-9",
+  "title": "What does this EEG finding point to?",
+  "summary": "Match an EEG finding to what section 33.9 says it usually means, from nonspecific slowing to patterns that narrow the search for a medical cause.",
+  "caution": "A teaching aid that simplifies. An EEG finding is read together with the history and examination; the neurologist's or electroencephalographer's report decides what a tracing shows.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What kind of finding is it?",
+      "options": [
+        {
+          "label": "Slowing of the background rhythms",
+          "to": "slow",
+          "note": "Ask whether the slowing is diffuse or focal."
+        },
+        {
+          "label": "A distinctive waveform or discharge",
+          "to": "wave",
+          "note": "Some patterns point to particular causes."
+        },
+        {
+          "label": "More fast (beta) activity than expected",
+          "to": "r:beta",
+          "note": "Think first about medications."
+        }
+      ]
+    },
+    "slow": {
+      "q": "Where is the slowing?",
+      "options": [
+        {
+          "label": "Diffuse, across the whole recording",
+          "to": "r:diffuse",
+          "note": "The most common EEG abnormality."
+        },
+        {
+          "label": "Focal, over one region",
+          "to": "r:focal",
+          "note": "Points to one part of the brain."
+        }
+      ]
+    },
+    "wave": {
+      "q": "Which pattern?",
+      "options": [
+        {
+          "label": "Spikes or spike-wave discharges between attacks",
+          "to": "r:epi",
+          "note": "The interictal hallmark of epilepsy."
+        },
+        {
+          "label": "Brief runs of generalized triphasic waves",
+          "to": "r:tri",
+          "note": "A toxic-metabolic pattern."
+        },
+        {
+          "label": "Periodic discharges over one hemisphere",
+          "to": "r:pled",
+          "note": "Periodic lateralizing epileptiform discharges."
+        },
+        {
+          "label": "Generalized periodic sharp waves",
+          "to": "r:gpsw",
+          "note": "Seen after anoxia and in prion disease."
+        },
+        {
+          "label": "14 and 6 per second positive spikes",
+          "to": "r:benign",
+          "note": "See the update on benign variants."
+        }
+      ]
+    }
+  },
+  "results": {
+    "diffuse": {
+      "label": "Diffuse background slowing",
+      "dx": "Diffuse encephalopathy, cause not specified",
+      "line": "The most common abnormality; it says the brain is diffusely unwell, not why.",
+      "points": [
+        "Seen in encephalopathies of many causes and in dementia (Figure 33-35).",
+        "Look for the medical cause; the EEG does not name it."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "focal": {
+      "label": "Focal slowing",
+      "dx": "Localized dysfunction",
+      "line": "Points to localized parenchymal dysfunction and a focal seizure disorder.",
+      "points": [
+        "Found with structural lesions and focal fluid collections such as a hematoma.",
+        "A focal finding narrows the search to one region."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "epi": {
+      "label": "Epileptiform discharges",
+      "dx": "Seizure disorder",
+      "line": "The interictal hallmark of epilepsy, closely linked with seizure disorders in general.",
+      "points": [
+        "Spike or spike-wave discharges may be generalized, hemispheric or focal.",
+        "Activation procedures such as hyperventilation and sleep deprivation make them more likely to appear."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "tri": {
+      "label": "Triphasic waves",
+      "dx": "Toxic-metabolic encephalopathy",
+      "line": "About half of patients with triphasic waves have hepatic encephalopathy; the rest have another toxic-metabolic encephalopathy.",
+      "points": [
+        "Brief runs of generalized, synchronous waves."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "pled": {
+      "label": "Periodic lateralizing epileptiform discharges",
+      "dx": "Acute destructive lesion",
+      "line": "Point to an acute destructive cerebral lesion.",
+      "points": [
+        "Come with seizures, obtundation and focal signs on examination."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "gpsw": {
+      "label": "Generalized periodic sharp waves",
+      "dx": "Cerebral anoxia or Creutzfeldt-Jakob disease",
+      "line": "Seen most often after cerebral anoxia, and in about 90 percent of patients with Creutzfeldt-Jakob disease.",
+      "points": [
+        "In a rapidly progressive dementia this pattern raises the question of prion disease."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-abn",
+        "label": "EEG abnormalities"
+      }
+    },
+    "benign": {
+      "label": "14 and 6 per second positive spikes",
+      "dx": "A benign variant",
+      "line": "Table 33-12 ties them to borderline personality disorder, but they are a recognized benign variant found in many healthy people (see the update).",
+      "points": [
+        "Not a sign of any psychiatric disorder.",
+        "No EEG finding is used to diagnose a psychiatric disorder."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-dis",
+        "label": "EEG in medical and psychiatric disorders"
+      }
+    },
+    "beta": {
+      "label": "Increased beta activity",
+      "dx": "Medication effect",
+      "line": "Benzodiazepines raise beta activity (Table 33-10).",
+      "points": [
+        "Review the medication list before reading meaning into fast activity.",
+        "Clozapine is the antipsychotic most linked to slowing and epileptiform discharges (see the update)."
+      ],
+      "link": {
+        "ch": "ch33-9",
+        "sec": "s339-drug",
+        "label": "EEG changes with medications and drugs"
+      }
+    }
+  }
 }
 ]);

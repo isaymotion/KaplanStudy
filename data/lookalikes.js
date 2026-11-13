@@ -1931,5 +1931,64 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Neurogenetics), with the update boxes in this entry"
+},
+{
+  "id": "phase3310",
+  "title": "Advanced versus delayed sleep phase",
+  "summary": "Section 33.10 describes two circadian sleep disorders at opposite ends of the lark and owl spectrum. This table sets them side by side, with the current names and genetics from the update box.",
+  "items": [
+    "Advanced phase",
+    "Delayed phase"
+  ],
+  "rows": [
+    [
+      "Chapter's name",
+      "Advanced sleep phase syndrome (ASPS)",
+      "Delayed sleep phase syndrome (DSPS)"
+    ],
+    [
+      "Current name (ICSD-3-TR)",
+      "Advanced sleep-wake phase disorder",
+      "Delayed sleep-wake phase disorder"
+    ],
+    [
+      "Chronotype",
+      "Pathologic extreme of the morning lark",
+      "Linked to evening preference"
+    ],
+    [
+      "Sleep timing in the chapter",
+      "Familial form about 4 hours early: asleep about 7:30 PM, awake about 4:30 AM",
+      "Not detailed in the chapter"
+    ],
+    [
+      "Genetics in the chapter",
+      "Familial form autosomal dominant; hPER2 variant (serine to glycine) poorly phosphorylated by casein kinase I epsilon",
+      "hPER3 repeat-length polymorphism; shorter allele with evening preference"
+    ],
+    [
+      "Later evidence (update)",
+      "Other familial variants found, including in CSNK1D (2005)",
+      "PER3 link not consistently confirmed; a CRY1 variant found in familial cases (2017)"
+    ]
+  ],
+  "keys": [
+    "**Advanced** means sleepy and awake **too early**; **delayed** means **too late**.",
+    "The familial advanced form is **autosomal dominant**, with a **PER2** variant.",
+    "For the delayed form, the **PER3** association has **not held up consistently**; **CRY1** is the gene with the stronger family evidence."
+  ],
+  "links": [
+    {
+      "ch": "ch33-10",
+      "sec": "s3310-csd",
+      "label": "Circadian sleep disorders"
+    },
+    {
+      "ch": "ch33-10",
+      "sec": "s3310-clock",
+      "label": "The circadian clock"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 33 (Chronobiology), with the update boxes in this entry"
 }
 ];

@@ -967,7 +967,20 @@ KS.glossary = (KS.glossary || []).concat([
   ["apolipoprotein E e4","The APOE allele on chromosome 19 that raises the risk of late-onset Alzheimer disease; it raises risk without determining illness, and its status now guides anti-amyloid treatment.","Ch 33.8"],
   ["presenilin","PS-1 on chromosome 14 and PS-2 on chromosome 1; with APP, the genes whose dominant mutations cause familial early-onset Alzheimer disease.","Ch 33.8"],
   ["de novo mutation","A genetic change present in a child but in neither parent; de novo variants confer substantial risk in a minority of autism cases.","Ch 33.8"],
-  ["genomic imprinting","Expression of a gene that depends on which parent it came from; in 15q11-13 a maternal defect gives Angelman syndrome and a paternal one Prader-Willi syndrome.","Ch 33.8"]
+  ["genomic imprinting","Expression of a gene that depends on which parent it came from; in 15q11-13 a maternal defect gives Angelman syndrome and a paternal one Prader-Willi syndrome.","Ch 33.8"],
+  ["10-20 system","The international scheme for placing scalp EEG electrodes at 10 or 20 percent distances between skull landmarks; odd numbers mark the left side, even numbers the right and Z the midline.","Ch 33.9"],
+  ["activation procedure","A maneuver during an EEG, such as hyperventilation, photic stimulation or sleep deprivation, that makes abnormal discharges more likely to appear.","Ch 33.9"],
+  ["alpha rhythm","The 8 to 13 Hz rhythm that dominates the posterior waking EEG with the eyes closed and fades with drowsiness.","Ch 33.9"],
+  ["sleep spindle","A burst of about 14 Hz (sigma) activity on the EEG that marks entry into sleep; now a defining feature of stage N2.","Ch 33.9"],
+  ["triphasic waves","Brief runs of generalized synchronous waves on the EEG; about half of patients have hepatic encephalopathy and the rest another toxic-metabolic encephalopathy.","Ch 33.9"],
+  ["periodic lateralizing epileptiform discharges","PLEDs; periodic EEG discharges over one hemisphere that point to an acute destructive cerebral lesion.","Ch 33.9"],
+  ["quantitative EEG","QEEG; computer analysis of digitized EEG data compared with normative databases and shown as topographic maps; not a diagnostic test for psychiatric disorders.","Ch 33.9"],
+  ["evoked potential","The EEG response time-locked to a repeated sensory stimulus; abnormal in many conditions, so of limited use in differential diagnosis.","Ch 33.9"],
+  ["chronobiology","The study of biologic time and rhythms of all periods, from milliseconds to years.","Ch 33.10"],
+  ["zeitgeber","A time cue that resets the internal clock; the main one is the daily change between light and dark.","Ch 33.10"],
+  ["chronotype","A person's diurnal preference, from morning lark to night owl.","Ch 33.10"],
+  ["advanced sleep-wake phase disorder","A circadian rhythm sleep-wake disorder with sleep and waking hours earlier than desired; the chapter's advanced sleep phase syndrome. A familial form is autosomal dominant.","Ch 33.10"],
+  ["delayed sleep-wake phase disorder","A circadian rhythm sleep-wake disorder with sleep and waking hours later than desired; the chapter's delayed sleep phase syndrome.","Ch 33.10"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
