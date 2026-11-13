@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 85.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 86.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -166,6 +166,8 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 34.1a | Psychosocial Sciences I: Piaget, Attachment, and Learning Theory | 27 | 398 | 327 |
 | 34.1b | Psychosocial Sciences II: Biology of Memory | 16 | 252 | 201 |
 | 34.2 | Normality and Mental Health | 12 | 183 | 143 |
+| 34.3a | Sociocultural Sciences I: Sociobiology and Ethology | 7 | 132 | 111 |
+| 34.3b | Sociocultural Sciences II: Transcultural Psychiatry and Culture-Bound Syndromes | 13 | 223 | 217 |
 
 ## Upgrading from version 59 (October 2026)
 

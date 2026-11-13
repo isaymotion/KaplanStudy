@@ -2184,5 +2184,76 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 34.2 (Normality and Mental Health)"
+},
+{
+  "id": "animal-models344",
+  "title": "Animal models of psychopathology",
+  "summary": "Section 34.3a describes several ways researchers produced abnormal states in animals or volunteers to model human disorders. The table sets the main paradigms side by side.",
+  "items": [
+    "What was done",
+    "What was seen",
+    "Human condition it was used to model"
+  ],
+  "rows": [
+    [
+      "Experimental neurosis (Pavlov)",
+      "Dogs learned to tell a circle from an ellipse, then the shapes were made more and more alike",
+      "Severe, lasting agitation",
+      "Neurosis and anxiety"
+    ],
+    [
+      "Learned helplessness (Seligman)",
+      "Dogs received shocks they could not escape",
+      "They stopped trying to escape, and helplessness and apathy spread to other settings",
+      "Depression; the chapter calls it controversial, and its authors revised it in 2016 (see the update)"
+    ],
+    [
+      "Social isolation (Harlow)",
+      "Rhesus infants reared without a bond to a mother or peer",
+      "Self-clasping, fearfulness and abnormal social behavior; little recovery after long total isolation",
+      "Effects of the early social environment; peer therapy (Suomi) suggested some deficits can be reversed"
+    ],
+    [
+      "Separation",
+      "An existing bond with the caretaker is broken",
+      "Protest, then despair within about 48 hours; some show signs like those of depressed patients",
+      "Depression and anxiety"
+    ],
+    [
+      "Drug-induced syndromes",
+      "Reserpine, which depletes norepinephrine, or catecholamine-depleting drugs during separation",
+      "Behavior resembling major depressive disorder, reversed by antidepressants",
+      "Depression; the chapter calls such models too simple"
+    ],
+    [
+      "Sensory deprivation (Hebb)",
+      "Volunteers had sight, hearing and touch cut off for up to 7 days",
+      "More suggestibility; in some, anxiety, body illusions and vivid imagery",
+      "Brainwashing and states resembling psychosis"
+    ]
+  ],
+  "keys": [
+    "**Isolation** means a bond never forms; **separation** breaks a bond that already exists.",
+    "**Learned helplessness** and **separation** were both used as models of **depression**.",
+    "Animal findings stay **animal findings**: the chapter links them to people only as possibilities."
+  ],
+  "links": [
+    {
+      "ch": "ch34-4",
+      "sec": "s344-primate",
+      "label": "Primate development and deprivation"
+    },
+    {
+      "ch": "ch34-4",
+      "sec": "s344-expdis",
+      "label": "Experimental disorders"
+    },
+    {
+      "ch": "ch34-4",
+      "sec": "s344-sensdep",
+      "label": "Sensory deprivation"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.3 (Contributions from the Sociocultural Sciences)"
 }
 ];

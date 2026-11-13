@@ -8683,5 +8683,102 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "cbs345",
+  "chapter": "ch34-5",
+  "title": "Which cultural syndrome does this picture suggest?",
+  "summary": "Section 34.3b describes four syndromes long called culture-bound. This helper sorts a presentation into one of them from its main feature and setting.",
+  "caution": "A teaching aid, not a diagnosis. Ask the patient and family how they understand the problem, screen for suicide and violence risk, and look for a co-occurring psychiatric or medical disorder before settling on a cultural explanation.",
+  "start": "core",
+  "nodes": {
+    "core": {
+      "q": "What stands out most?",
+      "options": [
+        {
+          "label": "A sudden outburst of violence",
+          "to": "r:amok",
+          "note": "A violent frenzy points to amok."
+        },
+        {
+          "label": "A brief attack of shouting, crying, trembling or loss of control after upsetting news",
+          "to": "r:ataque",
+          "note": "An acute emotional attack tied to a family event fits ataque de nervios."
+        },
+        {
+          "label": "A change of identity attributed to a spirit or deity",
+          "to": "r:possess",
+          "note": "An outside identity taking over suggests possession trance."
+        },
+        {
+          "label": "Long-standing fatigue, weakness, poor concentration and vexation",
+          "to": "r:shenjing",
+          "note": "A gradual, chronic picture of exhaustion fits shenjing shuairuo."
+        }
+      ]
+    }
+  },
+  "results": {
+    "amok": {
+      "label": "Amok",
+      "dx": "Amok",
+      "line": "A dissociative episode: brooding after a perceived insult, then a sudden homicidal frenzy, ending in stupor or sleep with amnesia.",
+      "points": [
+        "The term comes from Malaysia; similar patterns are reported in Laos, the Philippines, Papua New Guinea, Polynesia, Puerto Rico and among the Navajo.",
+        "The chapter reports it mainly in men; survivors in Malaysia were often diagnosed with schizophrenia.",
+        "DSM-5 no longer lists amok among its cultural concepts of distress (see the update)."
+      ],
+      "link": {
+        "ch": "ch34-5",
+        "sec": "s345-amok",
+        "label": "Amok"
+      }
+    },
+    "ataque": {
+      "label": "Ataque de nervios",
+      "dx": "Ataque de nervios",
+      "line": "An attack of nerves, mainly reported among Latinos from the Caribbean, set off by a sudden upsetting event involving someone close.",
+      "points": [
+        "Uncontrollable shouting, crying, trembling and heat rising from the chest, sometimes aggression or dissociation.",
+        "Unlike panic disorder, most people feel better or relieved afterward, and the attack follows a clear trigger.",
+        "Strongly linked to suicidal ideation: make sure everyone is safe first."
+      ],
+      "link": {
+        "ch": "ch34-5",
+        "sec": "s345-ataque",
+        "label": "Ataque de nervios"
+      }
+    },
+    "possess": {
+      "label": "Possession syndrome",
+      "dx": "Possession syndrome (involuntary possession trance)",
+      "line": "An involuntary, distressing trance in which a spirit identity seems to take over, described in India and Sri Lanka.",
+      "points": [
+        "Usually starts with subacute conflict or stress; women outnumber men about 3 to 1; onset is usually between 15 and 35.",
+        "Voluntary, normative possession in religious life is not a disorder.",
+        "ICD-11 now has possession trance disorder (6B63) (see the update)."
+      ],
+      "link": {
+        "ch": "ch34-5",
+        "sec": "s345-possess",
+        "label": "Possession syndrome"
+      }
+    },
+    "shenjing": {
+      "label": "Shenjing shuairuo",
+      "dx": "Shenjing shuairuo",
+      "line": "Weakness of the nervous system: the Chinese form of neurasthenia, with a gradual onset over months to years.",
+      "points": [
+        "Fatigue, weakness, poor concentration and memory, sleep problems, headaches and fan nao (troubled vexation).",
+        "Often follows persistent work, family or social stress that is hard to escape.",
+        "Neurasthenia is not a category in DSM or ICD-11 (see the update)."
+      ],
+      "link": {
+        "ch": "ch34-5",
+        "sec": "s345-shenjing",
+        "label": "Shenjing shuairuo"
+      }
+    }
+  }
 }
 ]);

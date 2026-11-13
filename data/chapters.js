@@ -362,6 +362,14 @@ KS.manifest = [
   { id: 'ch34-3', number: '34.2', title: 'Normality and Mental Health', short: 'Normality and mental health',
     summary: 'What mental health is and how it differs from the absence of illness, through six models: above normal, maturity and the adult development tasks after Erikson, positive emotions, socioemotional intelligence, subjective well-being, and resilience with the healthy involuntary coping mechanisms, with updates on the history of autism, brain reward research, the limbic system, von Economo and mirror neurons, and the heritability of well-being.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-4', number: '34.3a', title: 'Sociocultural Sciences I: Sociobiology and Ethology', short: 'Sociobiology and ethology',
+    summary: 'Behavior through evolution and animal study: sociobiology and fitness, identical twins reared apart, the ethology of Lorenz, Tinbergen and von Frisch, primate isolation and separation, experimental disorders such as learned helplessness, and sensory deprivation, with updates on the 1973 Nobel Prize, fifty years of twin studies, the executive monkey study and the Korean War origin of brainwashing research.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-5', number: '34.3b', title: 'Sociocultural Sciences II: Transcultural Psychiatry and Culture-Bound Syndromes', short: 'Transcultural psychiatry',
+    summary: 'Culture, race and ethnicity in psychiatry: the cultural formulation, migration and acculturative stress, assessing immigrants and refugees, US ethnic differences and disparities in care, cross-cultural research, and amok, ataque de nervios, possession syndrome and shenjing shuairuo, with updates on the Cultural Formulation Interview, cultural concepts of distress, ICD-11 possession trance disorder and neurasthenia.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

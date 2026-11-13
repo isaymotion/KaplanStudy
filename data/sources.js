@@ -4,6 +4,16 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 34.3, November 2026 */
+    { m: "The Nobel Prize in Physiology or Medicine 1973", label: "NobelPrize.org: The Nobel Prize in Physiology or Medicine 1973 (von Frisch, Lorenz, Tinbergen)", url: "https://www.nobelprize.org/prizes/medicine/1973/summary/" },
+    { m: "Meta-analysis of the heritability of human traits based on fifty years of twin studies", label: "Polderman TJC et al., Meta-analysis of the heritability of human traits based on fifty years of twin studies, Nat Genet 2015;47:702-709", url: "https://www.nature.com/articles/ng.3285" },
+    { m: "Effects of coping behavior with and without a feedback signal", label: "Weiss JM, Effects of coping behavior with and without a feedback signal on stress pathology in rats, J Comp Physiol Psychol 1971;77:22-30", url: "https://scilit.com/publications/94274ff70d775535f9c8a9da8cf2c225" },
+    { m: "Wellcome Collection: the isolated mind", label: "Wellcome Collection: the isolated mind (Hebb, McGill and sensory deprivation research)", url: "https://wellcomecollection.org/articles/W1bwkyYAACUAqy10" },
+    { m: "APA: Cultural Formulation Interview", label: "American Psychiatric Association: DSM-5-TR online assessment measures, including the Cultural Formulation Interview and its supplementary modules", url: "https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures" },
+    { m: "Harvard Medical School: National Comorbidity Survey", label: "Harvard Medical School: National Comorbidity Survey (NCS, NCS-2, NCS-R, NCS-A)", url: "https://www.hcp.med.harvard.edu/ncs/" },
+    { m: "DSM-5 on Culture: A Significant Advance", label: "Foundation for Psychocultural Research: DSM-5 on Culture, A Significant Advance (Lewis-Fernandez on the glossary and the CFI)", url: "https://thefpr.org/?p=3458" },
+    { m: "possession trance disorder in ICD-10, ICD-11 and DSM-5", label: "Pietkiewicz IJ, Klosinska U, Tomalski R, A case of possession trance disorder with a 3-year follow-up, Front Psychiatry 2022 (PMC; table of ICD-10, ICD-11 and DSM-5 categories)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9199574/" },
+    { m: "6C20 Bodily distress disorder", label: "WHO ICD-11: 6C20 Bodily distress disorder", url: "https://icd.who.int/browse/2024-01/mms/en#767044268" },
     /* Section 34.2, November 2026 */
     { m: "Autistic Disturbances of Affective Contact (1943), by Leo Kanner", label: "Embryo Project Encyclopedia: Autistic Disturbances of Affective Contact (1943), by Leo Kanner", url: "https://embryo.asu.edu/pages/autistic-disturbances-affective-contact-1943-leo-kanner" },
     { m: "Positive reinforcement produced by electrical stimulation of septal area", label: "Olds J, Milner P, Positive reinforcement produced by electrical stimulation of septal area and other regions of rat brain, J Comp Physiol Psychol 1954;47(6):419-27", url: "https://pubmed.ncbi.nlm.nih.gov/13233369/" },

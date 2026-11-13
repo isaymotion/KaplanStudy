@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "86.0.0",
+    "date": "2026-11-13",
+    "title": "Section 34.3: Contributions from the Sociocultural Sciences (34.3a and 34.3b)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-4",
+        "text": "New entry 34.3a, Sociocultural Sciences I: Sociobiology and Ethology: evolution and behavior, twins reared apart, Lorenz, Tinbergen and von Frisch, primate deprivation studies, experimental disorders and sensory deprivation, with 35 cases.",
+        "href": "#/c/ch34-4/guide",
+        "link": "Open 34.3a"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch34-5",
+        "text": "New entry 34.3b, Sociocultural Sciences II: Transcultural Psychiatry and Culture-Bound Syndromes: the cultural formulation, migration and acculturation, ethnic differences and disparities in US care, research issues, and amok, ataque de nervios, possession syndrome and shenjing shuairuo, with 72 cases.",
+        "href": "#/c/ch34-5/guide",
+        "link": "Open 34.3b"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-4",
+        "text": "Updates: the 1973 prize was the Nobel Prize in Physiology or Medicine, fifty years of twin studies (Polderman 2015), the executive monkey study did not hold up, learned helplessness revised, and brainwashing fears came from the Korean War.",
+        "href": "#/c/ch34-4/guide/s344-ethol",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-5",
+        "text": "Updates: the Cultural Formulation Interview in DSM-5 and DSM-5-TR, cultural concepts of distress replacing culture-bound syndromes, possession trance disorder in ICD-11, neurasthenia in current classifications, and the name of the National Comorbidity Survey.",
+        "href": "#/c/ch34-5/guide/s345-cbs",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for telling four cultural syndromes apart, and a look-alike table of animal models of psychopathology.",
+        "href": "#/helpers/cbs345",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "85.0.0",
     "date": "2026-11-13",
     "title": "Section 34.2: Normality and Mental Health",

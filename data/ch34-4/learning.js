@@ -1,0 +1,442 @@
+/* Chapter 34.3a learning layer: wrong-answer explanations (aligned with each case's choices; "" for the correct one), end-of-section checks, pre-test, board-domain overrides and visual summaries.
+   Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 34.3a, and the post-publication updates in this chapter. */
+KS.add("ch34-4", "learning", {
+ "pretest": [
+  "c344-sb03",
+  "c344-tw02",
+  "c344-et01",
+  "c344-tf01",
+  "c344-tf05",
+  "c344-pd05",
+  "c344-ed04",
+  "c344-sd02"
+ ],
+ "domains": {
+  "c344-sb01": "B",
+  "c344-sb02": "B",
+  "c344-sb03": "B",
+  "c344-sb04": "B",
+  "c344-sb05": "B",
+  "c344-tw01": "B",
+  "c344-tw02": "B",
+  "c344-tw03": "B",
+  "c344-tw04": "B",
+  "c344-tw05": "B",
+  "c344-et01": "B",
+  "c344-et02": "B",
+  "c344-et03": "B",
+  "c344-et04": "B",
+  "c344-et05": "B",
+  "c344-tf01": "B",
+  "c344-tf02": "B",
+  "c344-tf03": "B",
+  "c344-tf04": "B",
+  "c344-tf05": "B",
+  "c344-pd01": "B",
+  "c344-pd02": "B",
+  "c344-pd03": "B",
+  "c344-pd04": "B",
+  "c344-pd05": "B",
+  "c344-ed01": "B",
+  "c344-ed02": "B",
+  "c344-ed03": "B",
+  "c344-ed04": "B",
+  "c344-ed05": "B",
+  "c344-ed06": "B",
+  "c344-sd01": "B",
+  "c344-sd02": "B",
+  "c344-sd03": "B",
+  "c344-sd04": "B"
+ },
+ "whyNot": {
+  "c344-sb01": [
+   "Resource holding potential is an animal's ability to defend a contested territory or resource; it is not what the chapter proposes for anorexia, which it links to postponing reproduction and maturation.",
+   "A fixed action pattern is a stereotyped, species-specific movement set off by a sign stimulus; the chapter does not describe anorexia this way, and instead offers delayed reproduction as a possible partial explanation.",
+   "Altruism means lowering one's own reproductive success to raise another's, and the chapter never classes anorexia as altruism; its sociobiologic angle is a strategy of delaying reproduction.",
+   "",
+   "The chapter does not claim any proven gene or cause; it says only that anorexia may be partially understood as an adaptive strategy, so a claim of proof overstates it."
+  ],
+  "c344-sb02": [
+   "The handicap principle concerns costly signals that make communication honest, such as a peacock's large tail; the chapter does not use it for erotomania, but offers compensation for reproductive failure.",
+   "A displacement activity is an irrelevant act when two drives such as fight and flight are balanced; the chapter's explanation for this delusion is the painful awareness of reproductive failure.",
+   "Imprinting is early learning during a critical period that shapes later behavior; it is not the chapter's account of erotomania in a postmenopausal woman, which points to reproductive failure.",
+   "",
+   "Gaining resources and social influence is the chapter's possible reason for risk takers, not for erotomania; here the chapter points to offsetting awareness of reproductive failure."
+  ],
+  "c344-sb03": [
+   "",
+   "A dominance hierarchy is a ranking of social relations among animals and does not account for sterile workers; the chapter explains this altruism as gene-level selfishness, which has a genetic basis.",
+   "Redirection activity means venting one of several clashing drives onto a third animal or object; it is not the chapter's explanation for workers laboring for the queen, which is gene-level selfishness.",
+   "Higher variance in reproductive success is described for men compared with women and drives male-male competition; it does not explain sterile workers, whose labor the chapter treats as gene-level selfishness.",
+   "Classic Darwinian theory predicts that altruism should not exist, since selection works against traits that reduce one's own reproduction; the chapter resolves the puzzle with gene-level selfishness instead."
+  ],
+  "c344-sb04": [
+   "Inside a single group, altruists fare badly next to selfish members, so this is the point the tutor must correct, not a true statement.",
+   "The chapter does not say group selection has been shown never to occur; it offers it as one explanation, with the catch that altruists lose out inside each group.",
+   "",
+   "Altruism is defined as lowering the actor's own reproductive success while raising the recipient's, so it does not lower the recipient's success.",
+   "The chapter says groups containing altruists may beat groups made only of selfish members, so selfish groups do not always win; the correction concerns what happens inside a group."
+  ],
+  "c344-sb05": [
+   "Sexual dimorphism means different behavior patterns in males and females that evolve to protect resources and reproduction; the trait that predicts who keeps a contested territory is resource holding potential.",
+   "An innate releasing mechanism is a sensory mechanism tuned to certain stimuli that triggers a stereotyped movement; it does not describe the ability to hold a contested territory.",
+   "Ritualization is the evolution of a behavior into a signal, often with exaggerated movements; it does not describe the ability of an animal to defend a territory.",
+   "",
+   "Action-specific energy is the energy tied to one behavior pattern that builds up while the releasing stimulus is absent; it is not the trait that predicts who holds a territory."
+  ],
+  "c344-tw01": [
+   "This ordering puts ordinary siblings highest, but the chapter reports siblings at 0.45 to 0.50, below identical twins reared apart at 0.75.",
+   "This puts fraternal twins reared apart highest, but the chapter gives them the lowest value, 0.38, of the three groups.",
+   "This places fraternal twins reared apart above ordinary siblings, but the chapter reports 0.38 for them and 0.45 to 0.50 for siblings.",
+   "This puts ordinary siblings above identical twins reared apart and puts the fraternal pairs in the middle, but the chapter has identical twins reared apart highest at 0.75 and fraternal pairs lowest at 0.38.",
+   ""
+  ],
+  "c344-tw02": [
+   "The chapter's summary of the twin data does not credit access to such materials with most of the IQ similarity; it estimates about two-thirds genetic influence.",
+   "The chapter does not name socioeconomic status as the main determinant; its conclusion is that tested intelligence is roughly two-thirds genetic.",
+   "The chapter does not find that parenting practices strongly shape IQ similarity in reared-apart twins; it puts about two-thirds of intelligence down to genes.",
+   "The chapter says roughly one-third of intelligence is environmental, so calling it entirely genetic goes beyond the chapter; its figure is about two-thirds genetic.",
+   ""
+  ],
+  "c344-tw03": [
+   "",
+   "The chapter reads this case as suggesting that the twin's own reading made up for little schooling, not that nurture dominates; the near-equal scores in sisters who were separated point to inherited potential.",
+   "Imprinting is a brief early learning in a critical period, as in goslings, and the chapter does not apply it to these twins; it explains them by a person building surroundings that fit inherited potential.",
+   "The stem and chapter describe the sisters as identical twins, and nothing in the chapter suggests otherwise; their similar IQs fit shared genes, not a different type of twinning.",
+   "The chapter does not claim schooling is unrelated to any outcome; it suggests this twin's avid reading may have made up for the schooling she lacked."
+  ],
+  "c344-tw04": [
+   "The chapter reports genetic influence on responses to sudden noises, voices and music, so limiting it to visual stimuli does not match the findings.",
+   "",
+   "The chapter lists psychophysiologic responses, shown on skin conductance and brain wave recordings, among traits with genetic influence in reared-apart identical twins, so physiologic reactions are not free of it.",
+   "The chapter's reared-apart twins are the ones showing this genetic influence, so restricting it to twins reared together misreads the design.",
+   "The twins were reared apart, so shared parenting cannot account for the findings; the chapter reads the similarities as genetic influence, not as shared upbringing."
+  ],
+  "c344-tw05": [
+   "The chapter reports these preferences in identical twins reared apart, so limiting them to twins reared together is wrong.",
+   "A fixed action pattern is a genetically set stereotyped movement set off by a specific stimulus; the chapter does not call vocational interests or work values that.",
+   "The chapter lists work values, job satisfaction and vocational interests among traits showing genetic influence in reared-apart identical twins, so they are not unrelated to any measurable factor.",
+   "The chapter includes religious interests among traits showing genetic influence in reared-apart twins, so family religion does not fully explain them.",
+   ""
+  ],
+  "c344-et01": [
+   "Redirection activity is venting one of several clashing drives onto a third animal or object; it does not describe a gosling following the first moving thing it sees.",
+   "",
+   "Appetitive behavior is the phase of actively seeking sign stimuli; it does not describe quick, unrewarded early learning that is hard to undo, which is imprinting.",
+   "Displacement activity is an irrelevant behavior when two drives are balanced or thwarted; following the first moving object is imprinting instead.",
+   "Ritualization is the evolution of a behavior into an exaggerated signal; it is not the early learning shown by goslings following a researcher."
+  ],
+  "c344-et02": [
+   "Lorenz described the urge to flee as strongest far from the territory, and the urge to fight as strongest at the center, so this reverses the observation.",
+   "",
+   "Lorenz described aggression as common within a species, for example in territorial defense in fish and birds, so it is not limited to different species.",
+   "Lorenz noted that aggression seldom kills or seriously injures under normal conditions, so this does not match his observation.",
+   "A consummatory response is the phase in which sign stimuli are perceived and the pattern is performed; it is not Lorenz's description of aggression, which he tied to territory and competition."
+  ],
+  "c344-et03": [
+   "A critical period is the early-life window in which imprinting must occur; it does not explain a drive that grows while a releasing stimulus is missing.",
+   "Ritualization is the evolution of a behavior into a signal, often exaggerated; it does not explain a growing urge in the absence of the stimulus.",
+   "Redirection activity is venting one of two clashing drives onto a third target; the stem describes a single urge building up, not two conflicting drives.",
+   "The chapter defines instinct as a developmental process yielding species-typical behavior; it does not explain energy that builds while the releasing stimulus is absent.",
+   ""
+  ],
+  "c344-et04": [
+   "Displacement activity was described by Tinbergen as an irrelevant act when drives such as fight and flight are balanced or thwarted; here the animal aims aggression at a bystander, which is redirection.",
+   "",
+   "Ritualization is the evolution of a behavior into a signal with exaggerated movements; it does not describe attacking a bystander when two drives clash.",
+   "A fixed action pattern is a stereotyped, species-specific movement set off by a particular stimulus; it does not name the venting of a clashing drive onto a third animal.",
+   "Imprinting is special early-life learning during a critical period; it does not describe aggression turned onto a smaller bystander."
+  ],
+  "c344-et05": [
+   "The chapter does not say Lorenz showed human aggression to be learned only from parents; he proposed a primary need for aggression, drawn from animals.",
+   "",
+   "The chapter says Lorenz argued the drive may once have helped small human groups defend themselves, so he did think it had a purpose.",
+   "The chapter presents the human aggression drive as Lorenz's postulate drawn from animals, not as an experimental proof, and it names no aggression gene.",
+   "The chapter says that in animals aggression seldom kills or seriously injures under normal conditions, so this is the opposite of Lorenz's account."
+  ],
+  "c344-tf01": [
+   "Darwin is tied to natural selection and fitness, and sexual dimorphism means different male and female behavior patterns; neither describes a gull picking grass between fight and flight.",
+   "Lorenz is known for imprinting, which is early learning in a critical period, not for the grass-picking behavior of a gull whose fight and flight urges balance.",
+   "Von Frisch is known for fish color learning and the bee dances, and ritualization is a behavior turning into a signal; neither fits the gull example.",
+   "Wilson coined sociobiology and altruism lowers one's own reproductive success to help another; neither describes an irrelevant act in a conflicted bird.",
+   ""
+  ],
+  "c344-tf02": [
+   "The handicap principle says honest signals are costly, like a peacock's tail; it does not explain caretaking responses to an infant's large eyes.",
+   "",
+   "Action-specific energy is the energy tied to one behavior pattern that builds while the stimulus is absent; it does not explain why large infant eyes draw attention.",
+   "Redirection activity is venting a clashing drive onto a third target; the stem describes a response to a feature of the baby, not conflicting drives.",
+   "Imprinting is early learning by a young animal during a critical period; the chapter's example here is a releaser in the infant triggering caretaking in adults, not imprinting of the adult."
+  ],
+  "c344-tf03": [
+   "Resource holding potential is an animal's ability to defend a contested territory or resource; the chapter's example of a costly signal of wealth is the handicap principle.",
+   "",
+   "Imprinting is early-life learning within a critical period; it does not explain a costly display of wealth to peers.",
+   "Group selection is the idea that groups with altruists may beat purely selfish groups; it does not describe a costly signal of success.",
+   "Displacement activity is an irrelevant act when two drives are balanced; conspicuous consumption instead illustrates the handicap principle."
+  ],
+  "c344-tf04": [
+   "",
+   "The peacock's oversized tail is the chapter's example of a costly signal that honestly shows fitness, which fits the selfish model, not shared interest in accurate information.",
+   "Territorial defense in fish is the chapter's example of aggression within a species, not of sender and receiver sharing an interest in accurate information.",
+   "Grass-picking by a gull is a displacement activity, an irrelevant act when drives are balanced, and not a communication in which both parties share a goal.",
+   "Goslings following Lorenz show imprinting, not a signal exchange in which sender and receiver want accurate information passed on."
+  ],
+  "c344-tf05": [
+   "Lorenz is linked to imprinting, and the chapter does not credit him with an autism study or an imprinting-failure theory of autism.",
+   "",
+   "Von Frisch is known for fish color learning and decoding the bee dances; the chapter does not link him to observing autistic children or to dance-like signals in them.",
+   "Wilson coined sociobiology and is not linked in the chapter to observing autistic children; the chapter does not treat autism as altruism.",
+   "Heinroth is credited with the modern use of the word ethology and was Lorenz's teacher; the chapter does not link him to autism or to a fixed action pattern account of it."
+  ],
+  "c344-pd01": [
+   "The chapter says the infants chose the cloth figure, so they did not avoid both.",
+   "The chapter reports a clear preference for the cloth figure, so saying there was none is incorrect.",
+   "The infants preferred the cloth figure that gave contact comfort over the wire figure that supplied food, so a preference for wire is the opposite of the finding.",
+   "The chapter attributes the choice to contact comfort, not to warmth only when hungry, and the cloth figure was preferred over the one that gave food.",
+   ""
+  ],
+  "c344-pd02": [
+   "Clinging to one another in a line is described for peer-only reared infants, not for partial isolation.",
+   "Refusing to leave the mother to explore is described for mother-only reared monkeys, not for partial isolation.",
+   "",
+   "Protest turning to despair by 48 hours is the picture of separation after a bond has formed, not of partial isolation.",
+   "The chapter lists vacant staring, self-mutilation and stereotyped behavior for partial isolation, so normal exploration and play do not fit."
+  ],
+  "c344-pd03": [
+   "The chapter says the separated monkey reattaches rapidly to the mother when she is returned, so attachment only to peers is not what happens.",
+   "The chapter reports rapid reattachment on return, so never reattaching is wrong; the lasting loss applies to total isolation past 6 months.",
+   "The chapter reports rapid reattachment after the protest and despair phases and does not describe aggression toward the mother.",
+   "",
+   "The 6-month figure in the chapter refers to isolation, after which no recovery was seen; after separation, reattachment is rapid."
+  ],
+  "c344-pd04": [
+   "",
+   "The chapter describes therapists that played gently and avoided aggression and overly complex play, so rough older peers do not match.",
+   "The chapter chose normal young monkeys that played gently, not dominant adult males.",
+   "The therapists were normal young monkeys that approached and clung to the isolates, so pairing isolates only with each other is not the approach described.",
+   "A wire surrogate is the figure that gave food without comfort in Harlow's experiment, and it is not a rehabilitation companion in Suomi's work."
+  ],
+  "c344-pd05": [
+   "Normal play and mating is not the chapter's picture; peer-only reared monkeys show very little play and are timid as adults.",
+   "The chapter describes peer-only reared monkeys as easily scared and timid, so fearlessness with strangers does not fit.",
+   "",
+   "The chapter describes slow exploration, so a bold and highly exploratory adult does not fit the peer-only picture.",
+   "The chapter describes clinging, fearfulness and timidity in peer-only rearing, not aggression and dominance."
+  ],
+  "c344-ed01": [
+   "",
+   "Gantt used the term behavior disorders for the reactions of dogs in similar conflicting learning tasks; the circle and ellipse experiment with the name experimental neurosis is credited to Pavlov.",
+   "Seligman developed learned helplessness using inescapable shocks, not the circle and ellipse discrimination task.",
+   "Liddell used experimental neurasthenia for the stress response in sheep, goats and dogs, sometimes from doubling daily trials, not for the circle and ellipse task.",
+   "Hebb studied sensory deprivation in volunteers, not conflicting discrimination in dogs."
+  ],
+  "c344-ed02": [
+   "",
+   "The chapter does not link learned helplessness to phobic anxiety; it was proposed, though controversial, as a model of human depression.",
+   "Sensory deprivation is a separate research area with its own symptoms; learned helplessness was proposed as a model of depression, not of sensory deprivation psychosis.",
+   "The chapter does not name opioid addiction as the human condition modeled; it does link expecting inescapable punishment to endogenous opiate release. Note too that the chapter's update says the original account had the direction backward.",
+   "Paranoid schizophrenia was an early target of the amphetamine model, not of learned helplessness, which was proposed as a model of depression."
+  ],
+  "c344-ed03": [
+   "The chapter does not suggest lowering expectations permanently; it says teaching helpless schoolchildren to persist may reverse the pattern.",
+   "More failure would deepen the belief that effort never works; the chapter says teaching persistence may reverse the helplessness.",
+   "Repeating the grade is not an approach the chapter describes; its suggestion for helpless schoolchildren is teaching them to persist.",
+   "Removing all schoolwork is not described in the chapter and does not address the belief that nothing helps; teaching persistence is the chapter's suggestion.",
+   ""
+  ],
+  "c344-ed04": [
+   "Brain self-stimulation is a separate paradigm linked to pleasure, not a treatment that reversed the effects of unpredictable stress in rats.",
+   "Amphetamine is linked in the chapter to stereotyped and paranoid-like behavior in animals, not to reversing the changes from unpredictable stress.",
+   "Reserpine produced depression-like behavior in animals, which antidepressants reversed, so it would not reverse the stress-induced changes.",
+   "",
+   "Sensory deprivation is a different paradigm and is not described as reversing these changes."
+  ],
+  "c344-ed05": [
+   "Temperament research used pointer dogs bred for fearfulness or friendliness and shows genetic influence on behavior, not the effect of losing status.",
+   "Brain stimulation research concerns self-stimulation and pleasure, not low mood after losing position.",
+   "",
+   "Imprinting is early-life learning in a critical period and does not link to depression after losing a job.",
+   "Sensory deprivation concerns reduced input and its symptoms, not loss of rank or status."
+  ],
+  "c344-ed06": [
+   "Reserpine depletes norepinephrine and produced depression-like behavior in animals, whereas the paranoid-like picture came from amphetamine.",
+   "An endogenous opiate is a brain chemical linked to learned helplessness research, not a drug used to create the paranoid-like model.",
+   "",
+   "Benzodiazepines reduced anxious responses in fearful dogs; they are not the drug that produced the paranoid-like picture.",
+   "Antidepressants such as tricyclics were used to reverse depression-like states, not to produce paranoid-like behavior."
+  ],
+  "c344-sd01": [
+   "The chapter lists trouble concentrating and organizing thoughts among the symptoms, so improved concentration is the opposite of the finding.",
+   "The main result was increased suggestibility, so lower suggestibility is the reverse.",
+   "",
+   "The chapter lists trouble organizing thoughts and confusion with deprivation, so better logical thinking does not match.",
+   "In the physiologic view, alertness falls when stimulation stops, so raised alertness is not the finding."
+  ],
+  "c344-sd02": [
+   "Learned helplessness is an animal model of depression based on inescapable shocks, not an account of hallucination-like experiences from reduced input.",
+   "The psychoanalytic theory stresses loss of ego functions such as reality contact and the dependence of the subject, rather than the reticular activating system and inner ear noise.",
+   "",
+   "The cognitive theory stresses lack of feedback preventing a cognitive map from forming, and does not invoke the reticular activating system.",
+   "Dominance concerns rank in an animal hierarchy and has nothing to do with reduced sensory input."
+  ],
+  "c344-sd03": [
+   "Sociobiologic thinking concerns why behaviors evolved, not why people project private themes when feedback is lacking.",
+   "The physiologic theory emphasizes alertness and the brainstem reticular system, not the lack of a cognitive map.",
+   "Ethology is the study of animal behavior and is not one of the chapter's three explanations of the sensory deprivation state.",
+   "The psychoanalytic theory emphasizes loss of ego functions and primary-process thought, not a missing cognitive map and information-processing feedback.",
+   ""
+  ],
+  "c344-sd04": [
+   "Contact comfort is the warmth and security that Harlow's infant monkeys sought from a cloth surrogate, and it does not describe the analytic setting.",
+   "Experimental neurosis was produced in dogs through conflicting discrimination tasks and does not describe the setting for free association.",
+   "The executive monkey study concerns stress from responsibility for shocks, and it does not describe the analytic room.",
+   "Learned helplessness is an animal depression model from inescapable shocks and does not describe the analytic room.",
+   ""
+  ]
+ },
+ "checks": {
+  "s344-socio": [
+   {
+    "q": "Who introduced the term sociobiology, and in what year?",
+    "a": "The American biologist **Edward Osborne Wilson** introduced it in **1975**."
+   },
+   {
+    "q": "In Darwin's usage, what does fitness mean, and which kind of question does sociobiology ask about a behavior?",
+    "a": "Fitness means **reproductive success**, not strength or health. Sociobiology asks the **ultimate (why)** question of why a behavior came about."
+   },
+   {
+    "q": "Why is altruism a puzzle for classic Darwinian theory, and what two explanations does the chapter offer?",
+    "a": "Selection should work against a trait that shrinks its own share of future generations. The explanations are **gene-level selfishness** and **group selection**, where altruists within a group stay at a severe disadvantage."
+   }
+  ],
+  "s344-twins": [
+   {
+    "q": "What are the IQ correlations for identical twins reared apart, fraternal twins reared apart, and sibling pairs in general?",
+    "a": "Identical twins apart **r = 0.75**, fraternal twins apart **0.38**, siblings in general **0.45 to 0.50**."
+   },
+   {
+    "q": "What did the less schooled twin in the case of sisters separated at 8 months suggest about genes and environment?",
+    "a": "Her avid reading may have offset limited schooling, showing a person can **build an environment that fits inherited potential**, so genes and environment are not fully separate."
+   },
+   {
+    "q": "What did MMPI testing show for twins raised apart?",
+    "a": "Across its scales, genetic influence was usually **as strong as in twins raised together**; two pairs raised on different continents matched on **13 MMPI scales** even more closely than average."
+   }
+  ],
+  "s344-ethol": [
+   {
+    "q": "Which three ethologists shared the 1973 Nobel Prize, and what category was it actually in?",
+    "a": "**Lorenz, Tinbergen and von Frisch**; the update corrects it to the Nobel Prize in **Physiology or Medicine**, not a psychiatry prize."
+   },
+   {
+    "q": "What is imprinting, and what features does the chapter give it?",
+    "a": "Early-life learning during a **critical (sensitive) period**; it can be **brief and unrewarded** and is **hard to undo**. Goslings followed Lorenz instead of a goose."
+   },
+   {
+    "q": "What did Lorenz propose about aggression, and how should that be regarded?",
+    "a": "He proposed a **primary human need for aggression** shaped by territorial competition, possibly now outliving its value given modern weapons. It is an **animal-derived theory**, not a proven human mechanism."
+   }
+  ],
+  "s344-tinb": [
+   {
+    "q": "What is a displacement activity, and what is the example given?",
+    "a": "Irrelevant behavior when fight and flight urges are about equal; a **herring gull defending territory picks grass**. Humans may show it under stress."
+   },
+   {
+    "q": "What did von Frisch study?",
+    "a": "He showed **fish can learn to tell colors apart**, and later decoded the **bee dances**."
+   },
+   {
+    "q": "What did the Tinbergens propose about autism, and how firm is it?",
+    "a": "In predisposed children **fear dominates over need for contact**. The chapter calls the conclusions on prevention and treatment **tentative**; the current term is autism spectrum disorder."
+   }
+  ],
+  "s344-primate": [
+   {
+    "q": "How do social isolation and separation differ in primate studies?",
+    "a": "In **isolation** the attachment bond is never formed; in **separation** a bond forms first and is then **broken**, modeling loss of an attachment figure."
+   },
+   {
+    "q": "What did Harlow's rhesus infants choose between wire and cloth surrogates, and what term did he coin?",
+    "a": "They chose the **cloth** surrogate, offering **contact comfort** (coined **1958**), over the wire one that supplied food."
+   },
+   {
+    "q": "How did Suomi's therapist monkeys help isolates?",
+    "a": "Gentle young therapists led isolates to return social contact **by 2 weeks**; by 6 months most self-directed behavior was gone, with **no regression over 2 years**."
+   }
+  ],
+  "s344-expdis": [
+   {
+    "q": "Match the researcher to the experimental disorder: Pavlov, Gantt, Liddell, Seligman.",
+    "a": "**Pavlov** experimental neurosis; **Gantt** behavior disorders; **Liddell** experimental neurasthenia; **Seligman** learned helplessness."
+   },
+   {
+    "q": "What was found in the learned helplessness model, and how does the chapter regard it?",
+    "a": "Dogs given **inescapable shocks** stopped trying to escape. It was proposed as a model of depression but is **controversial**; the update says Maier and Seligman in **2016** reversed the direction, with passivity as the default and control as what is learned."
+   },
+   {
+    "q": "What did the reserpine and amphetamine models imitate, and what is the chapter's verdict?",
+    "a": "**Reserpine** gave depression-like behavior; **amphetamine** gave paranoid-like behavior. Both are **too simplistic about cause** but are early paradigms."
+   }
+  ],
+  "s344-sensdep": [
+   {
+    "q": "What did D. O. Hebb's experiment involve and find?",
+    "a": "Volunteers had visual, auditory and tactile input cut off for **up to 7 days**; the main result was **increased suggestibility**."
+   },
+   {
+    "q": "What are the three explanations of the sensory deprivation state?",
+    "a": "**Psychological** (loss of ego functions), **cognitive** (no cognitive map or feedback, so idiosyncratic themes are projected), and **physiologic** (alertness depends on the brainstem **ascending reticular activating system**)."
+   },
+   {
+    "q": "Which symptoms were general and which appeared only in some subjects?",
+    "a": "**Increased suggestibility** was general; anxiety, body illusions and **hallucination-like imagery** appeared in some."
+   }
+  ]
+ },
+ "visuals": [
+  {
+   "sec": "s344-sensdep",
+   "block": {
+    "type": "chronology",
+    "title": "Visual summary: animal and twin research behind this section, then and now",
+    "events": [
+     {
+      "year": 1951,
+      "label": "Brainwashing fears after Korean War confessions; Hebb begins isolation studies at McGill"
+     },
+     {
+      "year": 1954,
+      "label": "Bexton, Heron and Scott publish the first sensory deprivation results"
+     },
+     {
+      "year": 1958,
+      "label": "Harlow names contact comfort; Brady reports the executive monkey study"
+     },
+     {
+      "year": 1971,
+      "label": "Weiss, with random assignment, finds that control protects against stress pathology"
+     },
+     {
+      "year": 1973,
+      "label": "Lorenz, Tinbergen and von Frisch share the Nobel Prize in Physiology or Medicine"
+     },
+     {
+      "year": 1975,
+      "label": "E. O. Wilson coins sociobiology"
+     },
+     {
+      "year": 2015,
+      "label": "Meta-analysis of fifty years of twin studies: average heritability 49 percent"
+     },
+     {
+      "year": 2016,
+      "label": "Maier and Seligman revise learned helplessness"
+     }
+    ],
+    "note": "Events from the chapter and the verified update boxes in this entry."
+   }
+  }
+ ]
+});

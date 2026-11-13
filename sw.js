@@ -4,7 +4,7 @@
    those old caches are cleared too (OLD_PREFIX), nothing else is touched. */
 const PREFIX = 'kaplan-study-';
 const OLD_PREFIX = 'ks-companion-';
-const VERSION = PREFIX + '85.0.0';
+const VERSION = PREFIX + '86.0.0';
 const CORE = [
   './',
   './index.html',
@@ -551,6 +551,20 @@ const CORE = [
   './data/ch34-3/guide.js',
   './data/ch34-3/highyield.js',
   './data/ch34-3/learning.js',
+  './data/ch34-4/cards-cases.js',
+  './data/ch34-4/cards-diagnosis.js',
+  './data/ch34-4/cards-foundations.js',
+  './data/ch34-4/cards-pharm.js',
+  './data/ch34-4/guide.js',
+  './data/ch34-4/highyield.js',
+  './data/ch34-4/learning.js',
+  './data/ch34-5/cards-cases.js',
+  './data/ch34-5/cards-diagnosis.js',
+  './data/ch34-5/cards-foundations.js',
+  './data/ch34-5/cards-pharm.js',
+  './data/ch34-5/guide.js',
+  './data/ch34-5/highyield.js',
+  './data/ch34-5/learning.js',
   './data/drugs/antidepressants.js',
   './data/drugs/antipsychotics.js',
   './data/drugs/anxiolytics.js',
