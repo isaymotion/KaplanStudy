@@ -4,6 +4,16 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 34.1, November 2026 */
+    { m: "Object permanence in young infants: further evidence and later occlusion studies", label: "Baillargeon and colleagues, occlusion events in 3- and 3.5-month-old infants, with a review of earlier violation-of-expectation studies (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4241364" },
+    { m: "Infant disorganized attachment: clarifying levels of analysis", label: "Duschinsky R, Solomon J, Infant disorganized attachment: clarifying levels of analysis, Clin Child Psychol Psychiatry 2017 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5641982" },
+    { m: "Hospitalism, International Dictionary of Psychoanalysis", label: "Hospitalism, International Dictionary of Psychoanalysis (Encyclopedia.com)", url: "https://encyclopedia.com/psychology/dictionaries-thesauruses-pictures-and-press-releases/hospitalism" },
+    { m: "Trauma Disorder Criteria Reflect Variability of Response to Events", label: "Psychiatric News 2013: trauma and stressor-related disorders in DSM-5, including the two attachment diagnoses", url: "https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2013.3a21" },
+    { m: "Maximizing exposure therapy: an inhibitory learning approach", label: "Craske MG et al., Maximizing exposure therapy: an inhibitory learning approach, Behav Res Ther 2014 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4114726" },
+    { m: "Learned helplessness at fifty: insights from neuroscience", label: "Maier SF, Seligman MEP, Learned helplessness at fifty: insights from neuroscience, Psychol Rev 2016 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4920136" },
+    { m: "Nobel Prize in Physiology or Medicine 2000, award ceremony speech", label: "Nobel Prize in Physiology or Medicine 2000 (Carlsson, Greengard and Kandel): award ceremony speech", url: "https://www.nobelprize.org/prizes/medicine/2000/ceremony-speech/" },
+    { m: "HM, the Man with No Memory", label: "Ogden J, HM, the Man with No Memory, Psychology Today 2012", url: "https://www.psychologytoday.com/us/blog/trouble-in-mind/201201/hm-the-man-no-memory" },
+    { m: "DSM-5 dissociative disorders changes, Psychiatric News 2013", label: "Psychiatric News 2013: DSM-5 self-exam on dissociative disorders (fugue as a specifier of dissociative amnesia)", url: "https://psychiatryonline.org/doi/10.1176/appi.pn.2013.12a29" },
     /* Sections 33.9 and 33.10, November 2026 */
     { m: "Assessment of digital EEG, quantitative EEG, and EEG brain mapping", label: "Nuwer M, Assessment of digital EEG, quantitative EEG, and EEG brain mapping (AAN and ACNS), Neurology 1997", url: "https://scilit.com/publications/78fe0978b62969440f5e13201801fecb" },
     { m: "How should child psychologists and psychiatrists interpret FDA device approval", label: "Arns M et al., Editorial perspective: how should child psychologists and psychiatrists interpret FDA device approval? Caveat emptor, J Child Psychol Psychiatry 2016 (eScholarship)", url: "https://escholarship.org/uc/item/8bp9v2q5" },

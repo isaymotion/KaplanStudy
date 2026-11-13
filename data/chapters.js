@@ -350,6 +350,14 @@ KS.manifest = [
   { id: 'ch33-10', number: '33.10', title: 'Chronobiology', short: 'Chronobiology',
     summary: 'Circadian rhythms and the suprachiasmatic nucleus; light and entrainment; how the clock and sleep pressure regulate sleep; advanced and delayed sleep phase disorders and their genetics; seasonality and melatonin; seasonality in humans; aging and the clock; circadian rhythms and drug treatment, with updates on the 2017 Nobel Prize and current names and genetics of the phase disorders.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-1', number: '34.1', title: 'Psychosocial Sciences I: Piaget, Attachment, and Learning Theory', short: 'Piaget, attachment and learning',
+    summary: 'The four stages of Piaget and their use in psychiatry and psychotherapy; attachment theory, the phases of attachment, the Strange Situation and the effects of separation; Pavlovian conditioning, extinction and relapse, operant learning, schedules and theories of reinforcement, avoidance learning, learned helplessness and habits, with updates on infant object permanence, disorganized attachment, the DSM-5 attachment disorders, the inhibitory learning approach to exposure and D-cycloserine.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-2', number: '34.1', title: 'Psychosocial Sciences II: Biology of Memory', short: 'Biology of memory',
+    summary: 'Synaptic plasticity and long-term potentiation; cortical organization of memory; amnesia and the patients HM and EP; Korsakoff syndrome and frontal damage; retrograde amnesia and consolidation; declarative and nondeclarative memory, priming, neuroimaging and sleep; memory assessment; psychogenic amnesia, memory distortion and infantile amnesia, with updates on the identity of HM and current terms.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

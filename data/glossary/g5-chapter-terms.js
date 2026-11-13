@@ -980,7 +980,28 @@ KS.glossary = (KS.glossary || []).concat([
   ["zeitgeber","A time cue that resets the internal clock; the main one is the daily change between light and dark.","Ch 33.10"],
   ["chronotype","A person's diurnal preference, from morning lark to night owl.","Ch 33.10"],
   ["advanced sleep-wake phase disorder","A circadian rhythm sleep-wake disorder with sleep and waking hours earlier than desired; the chapter's advanced sleep phase syndrome. A familial form is autosomal dominant.","Ch 33.10"],
-  ["delayed sleep-wake phase disorder","A circadian rhythm sleep-wake disorder with sleep and waking hours later than desired; the chapter's delayed sleep phase syndrome.","Ch 33.10"]
+  ["delayed sleep-wake phase disorder","A circadian rhythm sleep-wake disorder with sleep and waking hours later than desired; the chapter's delayed sleep phase syndrome.","Ch 33.10"],
+  ["genetic epistemology","Piaget's name for his own field: the study of how abstract thought develops from a biologic, inborn base.","Ch 34.1"],
+  ["conservation","In Piaget's theory, knowing that a quantity stays the same when its shape or arrangement changes; with reversibility, it marks concrete operations.","Ch 34.1"],
+  ["semiotic function","The ability, arising in Piaget's preoperational stage, to let a signifier such as a word, mental image or gesture stand for something else.","Ch 34.1"],
+  ["hypotheticodeductive thinking","The highest organization of cognition, reached in formal operations: forming a hypothesis and testing it against reality.","Ch 34.1"],
+  ["equilibration","Piaget's term for how a person makes up for an outside disturbance by building better cognitive structures.","Ch 34.1"],
+  ["monotropy","The tendency of an infant to attach mainly to one person, though attachment to several people is possible.","Ch 34.1"],
+  ["anaclitic depression","René Spitz's term for the depressed, withdrawn state of infants suddenly separated from the mother after normal attachment; it lifts when she returns or a substitute is given.","Ch 34.1"],
+  ["sign tracking","Approach to a conditional stimulus that signals a positive event, such as moving toward a cue for food.","Ch 34.1"],
+  ["law of effect","The rule that an operant behavior is strengthened or weakened by its consequences.","Ch 34.1"],
+  ["spontaneous recovery","Return of an extinguished response when time passes before the conditional stimulus is met again.","Ch 34.1"],
+  ["renewal effect","Return of an extinguished response when the conditional stimulus is met outside the context where extinction took place.","Ch 34.1"],
+  ["Premack principle","Access to a more preferred activity reinforces a less preferred one; named for David Premack.","Ch 34.1"],
+  ["two-factor theory","The account of avoidance learning in which Pavlovian cues come to arouse fear and the avoidance response is then reinforced by the drop in that fear.","Ch 34.1"],
+  ["occasion setter","A stimulus that does not trigger a response itself but signals which action will produce which outcome.","Ch 34.1"],
+  ["long-term potentiation","LTP; a lasting strengthening of a synaptic response after a high-frequency burst of input, induced through NMDA receptors; a leading candidate mechanism for long-term memory.","Ch 34.1"],
+  ["nondeclarative memory","Memory shown through performance and not open to conscious recall: skills and habits, priming, simple conditioning and nonassociative learning.","Ch 34.1"],
+  ["memory consolidation","The process by which some memories grow stronger over time; it needs the cortex together with medial temporal and diencephalic structures.","Ch 34.1"],
+  ["Ribot's law","In retrograde amnesia, recent memories are lost more than remote ones.","Ch 34.1"],
+  ["metamemory","The ability to judge one's own memory.","Ch 34.1"],
+  ["infantile amnesia","The lack of conscious recall for roughly the first 3 years of life.","Ch 34.1"],
+  ["psychogenic amnesia","The chapter's term for memory loss without a neurologic cause, typically severe retrograde loss with preserved new learning; now diagnosed as dissociative amnesia.","Ch 34.1"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

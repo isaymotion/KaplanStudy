@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "84.0.0",
+    "date": "2026-11-13",
+    "title": "Section 34.1: Contributions from the Psychosocial Sciences",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-1",
+        "text": "New entry, Psychosocial Sciences I: Piaget's stages and their use in psychiatry, attachment theory and the Strange Situation, and learning theory from Pavlovian conditioning and extinction to operant learning, avoidance and habits, with 116 cases.",
+        "href": "#/c/ch34-1/guide",
+        "link": "Open Psychosocial Sciences I"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch34-2",
+        "text": "New entry, Psychosocial Sciences II: the biology of memory, from synaptic plasticity and long-term potentiation to amnesia, the types of memory, memory assessment, psychogenic amnesia, memory distortion and infantile amnesia, with 72 cases.",
+        "href": "#/c/ch34-2/guide",
+        "link": "Open Psychosocial Sciences II"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-1",
+        "text": "Updates: infants and object permanence, who described disorganized attachment, Spitz's hospitalism and anaclitic depression, the DSM-5 attachment disorders, the inhibitory learning approach to exposure therapy, D-cycloserine, and the revised account of learned helplessness.",
+        "href": "#/c/ch34-1/guide/s341-extinct",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-2",
+        "text": "Updates: the 2000 Nobel Prize for the Aplysia work, the identity of patient HM, current sleep-stage names and the DSM-5 term for psychogenic amnesia.",
+        "href": "#/c/ch34-2/guide/s342-amnesia",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for working out why an extinguished fear or craving came back, and two look-alike tables: reinforcement versus punishment, and declarative versus nondeclarative memory.",
+        "href": "#/helpers/relapse341",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "83.0.0",
     "date": "2026-11-13",
     "title": "Sections 33.9 and 33.10: Applied Electrophysiology and Chronobiology",

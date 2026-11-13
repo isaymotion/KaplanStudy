@@ -1990,5 +1990,128 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., Chapter 33 (Chronobiology), with the update boxes in this entry"
+},
+{
+  "id": "operant-contingencies341",
+  "title": "Reinforcement, punishment and omission",
+  "summary": "The four operant outcomes of Figure 34-2 are easy to confuse, above all negative reinforcement and punishment. The table sorts them by what the action does and what happens to the action.",
+  "items": [
+    "Positive reinforcement",
+    "Negative reinforcement",
+    "Punishment",
+    "Omission"
+  ],
+  "rows": [
+    [
+      "Other name",
+      "Reward learning",
+      "Avoidance or escape",
+      "None given",
+      "Time-out from reinforcement"
+    ],
+    [
+      "What the action does",
+      "Produces a good event",
+      "Prevents or ends a bad event",
+      "Produces a bad event",
+      "Prevents or removes a good event"
+    ],
+    [
+      "Effect on the action",
+      "Strengthened",
+      "Strengthened",
+      "Weakened",
+      "Weakened"
+    ],
+    [
+      "Clinical note from the chapter",
+      "Overeating and drug taking: the food or the drug's effects reinforce the behavior",
+      "Using a drug again to end unpleasant cue-driven feelings; rituals and avoidance that lower anxiety",
+      "Can teach avoidance of the punisher instead of giving up the behavior",
+      "No clinical example given"
+    ]
+  ],
+  "keys": [
+    "**Reinforcement** always means the action gets **stronger**; positive and negative say whether a good event is **produced** or a bad event is **prevented or removed**.",
+    "**Negative reinforcement is not punishment**: punishment **weakens** an action.",
+    "Before treating a behavior, decide whether it is a **respondent** (change its antecedents) or an **operant** (change its consequences)."
+  ],
+  "links": [
+    {
+      "ch": "ch34-1",
+      "sec": "s341-learn2",
+      "label": "The law of effect"
+    },
+    {
+      "ch": "ch34-1",
+      "sec": "s341-operant",
+      "label": "Operant learning"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.1 (Learning Theory, Figure 34-2)"
+},
+{
+  "id": "memory-kinds342",
+  "title": "Declarative versus nondeclarative memory",
+  "summary": "Section 34.1 divides memory into a declarative system, lost in amnesia, and several nondeclarative systems that amnesia spares. The table sets them side by side.",
+  "items": [
+    "Declarative",
+    "Nondeclarative"
+  ],
+  "rows": [
+    [
+      "What it holds",
+      "Facts and events",
+      "Skills and habits, priming, simple classical conditioning, nonassociative learning"
+    ],
+    [
+      "Awareness",
+      "Open to conscious recollection",
+      "Not accessible to awareness; shown through performance"
+    ],
+    [
+      "Flexibility",
+      "Flexible: what is retrieved can guide many kinds of response",
+      "Tied to the processing system that holds it"
+    ],
+    [
+      "Brain basis",
+      "Medial temporal lobe and midline diencephalon, working with the neocortex",
+      "Several systems: neostriatum (habits), cerebellum (skeletal conditioning), amygdala (emotional learning), neocortex (priming)"
+    ],
+    [
+      "In amnesia",
+      "Impaired",
+      "Largely spared; priming that needs a new association tends to be impaired"
+    ],
+    [
+      "In infancy",
+      "Not fully available until about the third year",
+      "Present early in infancy"
+    ]
+  ],
+  "keys": [
+    "Amnesia removes **declarative** memory and spares **nondeclarative** memory.",
+    "An amnesic patient can show normal **priming** or slowly learn a **habit** without recalling the learning sessions.",
+    "**Infantile amnesia** is explained by late maturation of **declarative** memory."
+  ],
+  "links": [
+    {
+      "ch": "ch34-2",
+      "sec": "s342-systems",
+      "label": "Memory systems"
+    },
+    {
+      "ch": "ch34-2",
+      "sec": "s342-types",
+      "label": "Types of memory and priming"
+    },
+    {
+      "ch": "ch34-2",
+      "sec": "s342-infant",
+      "label": "Infantile amnesia"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.1 (Biology of Memory, Table 34-7)"
 }
 ];

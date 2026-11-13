@@ -8450,5 +8450,106 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "relapse341",
+  "chapter": "ch34-1",
+  "title": "Why did the extinguished response come back?",
+  "summary": "After exposure therapy or any extinction, a fear or craving can return. This helper matches what happened before the return to the relapse effect section 34.1 describes.",
+  "caution": "A teaching aid that simplifies. The four effects can act together, and a return of symptoms always needs a full clinical review, not only a learning-theory label.",
+  "start": "what",
+  "nodes": {
+    "what": {
+      "q": "What happened between the end of extinction and the return of the response?",
+      "options": [
+        {
+          "label": "Only time passed",
+          "to": "r:spont",
+          "note": "Nothing else changed; the cue was simply met again later."
+        },
+        {
+          "label": "The cue was met in a different place or setting",
+          "to": "r:renewal",
+          "note": "Extinction is tied to the context where it took place."
+        },
+        {
+          "label": "The original bad event (or the drug) was met again",
+          "to": "again",
+          "note": "Contact with the unconditional stimulus can undo extinction in two ways."
+        }
+      ]
+    },
+    "again": {
+      "q": "How was the event met again?",
+      "options": [
+        {
+          "label": "On its own, in the current setting, without the cue",
+          "to": "r:reinst",
+          "note": "The setting itself becomes linked with the event again."
+        },
+        {
+          "label": "Together with the cue: the two were paired once more",
+          "to": "r:reacq",
+          "note": "A new pairing of cue and event."
+        }
+      ]
+    }
+  },
+  "results": {
+    "spont": {
+      "label": "Spontaneous recovery",
+      "dx": "Spontaneous recovery",
+      "line": "The extinguished response returns when time passes before the cue is met again.",
+      "points": [
+        "Extinction lowered the response without destroying the original learning.",
+        "Tell patients that some return of fear with time is expected and can be treated with further exposure."
+      ],
+      "link": {
+        "ch": "ch34-1",
+        "sec": "s341-extinct",
+        "label": "Extinction and what follows it"
+      }
+    },
+    "renewal": {
+      "label": "Renewal",
+      "dx": "Renewal effect",
+      "line": "The response returns when the cue is met outside the extinction context: back in the original setting, or in any setting different from where extinction took place.",
+      "points": [
+        "Extinction is context dependent.",
+        "Exposure in the settings where relapse is likely, and retrieval cues, may protect gains (see the context section and the update on the inhibitory learning approach)."
+      ],
+      "link": {
+        "ch": "ch34-1",
+        "sec": "s341-extinct",
+        "label": "Extinction and what follows it"
+      }
+    },
+    "reinst": {
+      "label": "Reinstatement",
+      "dx": "Reinstatement",
+      "line": "The response returns after the current context is again linked with the unconditional stimulus.",
+      "points": [
+        "Renewed contact with the original event, even without the cue, can bring the response back."
+      ],
+      "link": {
+        "ch": "ch34-1",
+        "sec": "s341-extinct",
+        "label": "Extinction and what follows it"
+      }
+    },
+    "reacq": {
+      "label": "Rapid reacquisition",
+      "dx": "Rapid reacquisition",
+      "line": "The response comes back quickly when the cue and the unconditional stimulus are paired once more.",
+      "points": [
+        "The speed of relearning shows that the original learning was still stored."
+      ],
+      "link": {
+        "ch": "ch34-1",
+        "sec": "s341-extinct",
+        "label": "Extinction and what follows it"
+      }
+    }
+  }
 }
 ]);
