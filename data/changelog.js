@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "87.0.0",
+    "date": "2026-11-14",
+    "title": "Section 34.4, part 1: Freud (34.4a and 34.4b)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-6",
+        "text": "New entry 34.4a, Theories of Personality I: Freud, from Dreams to the Psychosexual Stages: Breuer and Anna O, dream theory and the dream work, the topographic model, drive theory, infantile sexuality and narcissism, and the oral to genital stages, with 48 cases.",
+        "href": "#/c/ch34-6/guide",
+        "link": "Open 34.4a"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch34-7",
+        "text": "New entry 34.4b, Theories of Personality II: Freud, Ego Psychology, Defenses and Transference: the structural model, ego functions and autonomy, signal anxiety, the four classes of defense mechanisms, the classic theory of neuroses and technique, and transference variants and mechanisms, with 51 cases.",
+        "href": "#/c/ch34-7/guide",
+        "link": "Open 34.4b"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-6",
+        "text": "Updates: Freud was born in Freiberg, Moravia (now Příbor), what the Bellevue sanatorium records showed about Anna O, and the removal of homosexuality from the DSM in 1973 with the American Psychoanalytic Association's 2019 apology.",
+        "href": "#/c/ch34-6/guide/s346-life",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-7",
+        "text": "Updates: Vaillant's defense hierarchy in DSM-IV's Defensive Functioning Scale and later research, and the removal of neurosis as a diagnosis in DSM-III.",
+        "href": "#/c/ch34-7/guide/s347-defnp",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for placing a behavior in one of the four classes of defense, and a look-alike table comparing Freud's models of the mind.",
+        "href": "#/helpers/defense347",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "86.0.0",
     "date": "2026-11-13",
     "title": "Section 34.3: Contributions from the Sociocultural Sciences (34.3a and 34.3b)",

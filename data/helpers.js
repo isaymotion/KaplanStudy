@@ -8780,5 +8780,122 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "defense347",
+  "chapter": "ch34-7",
+  "title": "Which class of defense does this behavior suggest?",
+  "summary": "Section 34.4b sorts defense mechanisms into four classes (Table 34-12). This helper places a described behavior in a class by how it handles reality and feeling.",
+  "caution": "A teaching aid for psychodynamic formulation, not a diagnosis. The same person uses defenses from several classes, and the class depends on level: projection, for example, appears as both a psychotic and an immature defense.",
+  "start": "reality",
+  "nodes": {
+    "reality": {
+      "q": "Is reality grossly denied, distorted or replaced by a delusion?",
+      "options": [
+        {
+          "label": "Yes: delusions, hallucinations or refusal to accept plain facts",
+          "to": "r:np",
+          "note": "Avoiding, negating or distorting reality marks the narcissistic-psychotic class."
+        },
+        {
+          "label": "No: reality testing is kept",
+          "to": "action",
+          "note": "Reality is kept, so look at how the impulse or feeling is handled."
+        }
+      ]
+    },
+    "action": {
+      "q": "Is the impulse discharged in action, bodily complaints, fantasy retreat or indirect hostility?",
+      "options": [
+        {
+          "label": "Yes: acting out, somatic complaints, passive hostility, regression or retreat into fantasy",
+          "to": "r:imm",
+          "note": "Discharge in action, the body or fantasy is typical of the immature class."
+        },
+        {
+          "label": "No: the impulse is contained inside the mind",
+          "to": "aware",
+          "note": "The impulse is held inside, so ask whether feeling and awareness are kept."
+        }
+      ]
+    },
+    "aware": {
+      "q": "Is the feeling or idea kept out of awareness, split off or turned into its opposite?",
+      "options": [
+        {
+          "label": "Yes: forgetting, feeling nothing about a remembered event, thinking instead of feeling, shifting the target or showing the opposite attitude",
+          "to": "r:neur",
+          "note": "Repression, isolation, intellectualization, displacement and reaction formation are neurotic defenses."
+        },
+        {
+          "label": "No: the person faces the feeling and handles it in a useful way",
+          "to": "r:mat",
+          "note": "Facing the feeling and channeling it well is the mark of the mature class."
+        }
+      ]
+    }
+  },
+  "results": {
+    "np": {
+      "label": "Narcissistic-psychotic",
+      "dx": "Narcissistic-psychotic defenses (projection, denial, distortion)",
+      "line": "Reality is avoided, negated or distorted; typical of a psychotic process, and also seen in young children and in adult dreams and fantasies.",
+      "points": [
+        "Psychotic projection gives frank, usually persecutory delusions.",
+        "Denial refuses what is seen or heard; distortion reshapes reality to fit inner needs, as in megalomanic beliefs.",
+        "Not all denial is psychotic; like projection, it can serve neurotic ends."
+      ],
+      "link": {
+        "ch": "ch34-7",
+        "sec": "s347-defnp",
+        "label": "Narcissistic-psychotic and immature defenses"
+      }
+    },
+    "imm": {
+      "label": "Immature",
+      "dx": "Immature defenses (acting out, blocking, hypochondriasis, introjection, passive-aggressive behavior, projection, regression, schizoid fantasy, somatization)",
+      "line": "Common before adolescence and in adults with character disorders; often set off by anxiety about intimacy or its loss.",
+      "points": [
+        "Acting out carries a wish into action so the feeling is not felt.",
+        "Hypochondriasis here is a defense: reproach turned into bodily complaints, not the old diagnosis.",
+        "These defenses often soften as relationships improve or the person matures."
+      ],
+      "link": {
+        "ch": "ch34-7",
+        "sec": "s347-defnp",
+        "label": "Narcissistic-psychotic and immature defenses"
+      }
+    },
+    "neur": {
+      "label": "Neurotic",
+      "dx": "Neurotic defenses (controlling, displacement, dissociation, externalization, inhibition, intellectualization, isolation, rationalization, reaction formation, repression, sexualization)",
+      "line": "Common in apparently normal people and in neurotic disorders; they relieve distressing affects and may be adaptive in some settings.",
+      "points": [
+        "Isolation splits feeling from content; intellectualization thinks instead of feels.",
+        "Displacement changes the object but keeps the impulse's aim.",
+        "Reaction formation can become a lasting obsessional character trait."
+      ],
+      "link": {
+        "ch": "ch34-7",
+        "sec": "s347-defnm",
+        "label": "Neurotic and mature defenses"
+      }
+    },
+    "mat": {
+      "label": "Mature",
+      "dx": "Mature defenses (altruism, anticipation, asceticism, humor, sublimation, suppression)",
+      "line": "Healthy and adaptive across the life cycle; they fit personal needs together with social demands and relationships.",
+      "points": [
+        "Sublimation keeps the goal but changes the aim or object to a socially valued one.",
+        "Humor stays with the feeling; wit moves away from it.",
+        "Here suppression is called conscious or semiconscious; other chapters call it conscious."
+      ],
+      "link": {
+        "ch": "ch34-7",
+        "sec": "s347-defnm",
+        "label": "Neurotic and mature defenses"
+      }
+    }
+  }
 }
 ]);

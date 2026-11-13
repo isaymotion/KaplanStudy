@@ -1028,7 +1028,27 @@ KS.glossary = (KS.glossary || []).concat([
   ["cultural concepts of distress","The DSM-5 term that replaced culture-bound syndromes: cultural syndromes, idioms of distress and cultural explanations of illness.","Ch 34.3b"],
   ["shenjing shuairuo","Weakness of the nervous system: the Chinese adaptation of neurasthenia, with fatigue, weakness, poor concentration, sleep problems, headaches and vexation.","Ch 34.3b"],
   ["neurasthenia","A syndrome of nervous exhaustion revived by George Beard from 1868; kept in ICD-10 (F48.0) but not in DSM since 1980 or in ICD-11.","Ch 34.3b"],
-  ["fan nao","Troubled vexation: irritability mixed with worry over unmet desires and clashing thoughts, a core feature of shenjing shuairuo.","Ch 34.3b"]
+  ["fan nao","Troubled vexation: irritability mixed with worry over unmet desires and clashing thoughts, a core feature of shenjing shuairuo.","Ch 34.3b"],
+  ["manifest content","In Freud's dream theory, the dream as the dreamer remembers it.","Ch 34.4a"],
+  ["latent content","In Freud's dream theory, the hidden unconscious wishes and thoughts behind a dream.","Ch 34.4a"],
+  ["dream work","Freud's term for the unconscious operations (condensation, displacement, symbolic representation, secondary revision) that turn latent content into the manifest dream.","Ch 34.4a"],
+  ["day residue","Thoughts and concerns from the dreamer's current waking life that appear in a dream.","Ch 34.4a"],
+  ["secondary revision","The dream-work step in which a more mature part of the ego shapes the dream into a more coherent form.","Ch 34.4a"],
+  ["topographic model","Freud's 1900 model of the mind as three systems: conscious, preconscious and unconscious.","Ch 34.4a"],
+  ["preconscious","In the topographic model, mental content that can become conscious when attention is turned to it.","Ch 34.4a"],
+  ["primary process","The illogical, timeless, wish-fulfilling mode of thought Freud placed in the unconscious, governed by the pleasure principle.","Ch 34.4a"],
+  ["pleasure principle","Freud's inborn tendency to avoid pain and seek pleasure by discharging tension.","Ch 34.4a"],
+  ["reality principle","Freud's learned function that tempers the pleasure principle by delaying gratification; tied to ego maturation.","Ch 34.4a"],
+  ["repetition compulsion","The urge to keep repeating past traumatic behavior; Freud inferred the death instinct from it.","Ch 34.4a"],
+  ["talking cure","Anna O's name for recalling, with feeling, the scenes in which her symptoms began; she also called it chimney sweeping.","Ch 34.4a"],
+  ["structural model","Freud's 1923 model of the mind as id, ego and superego, told apart by function rather than by consciousness.","Ch 34.4b"],
+  ["signal anxiety","Freud's later view of anxiety as an unconscious warning that mobilizes the ego's defenses against danger.","Ch 34.4b"],
+  ["synthetic function","The ego's capacity to integrate varied elements into one whole; described by Nunberg in 1931.","Ch 34.4b"],
+  ["average expectable environment","Hartmann's term for the rearing setting in which the primary autonomous ego functions develop normally.","Ch 34.4b"],
+  ["altruistic surrender","A masochistic giving up of one's own needs for others, satisfied only through introjection; contrasted with mature altruism.","Ch 34.4b"],
+  ["seduction hypothesis","Freud's early proposal that hysterical and obsessive-compulsive symptoms grew out of childhood sexual experiences.","Ch 34.4b"],
+  ["mirror transference","In Kohut's terms, a narcissistic transference in which the analyst stands for or answers the patient's grandiose self.","Ch 34.4b"],
+  ["idealizing transference","In Kohut's terms, a narcissistic transference in which all strength is placed in the idealized analyst.","Ch 34.4b"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

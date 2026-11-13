@@ -4,6 +4,12 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 34.4 (Freud), November 2026 */
+    { m: "Britannica: Sigmund Freud (born May 6, 1856", label: "Britannica: Sigmund Freud (born May 6, 1856, Freiberg, Moravia, now P\u0159\u00edbor; died September 23, 1939, London)", url: "https://www.britannica.com/biography/Sigmund-Freud" },
+    { m: "Britannica: Bertha Pappenheim (Anna O)", label: "Britannica: Bertha Pappenheim (Anna O), including her stay at the Bellevue Sanatorium, Kreuzlingen, July to October 1882", url: "https://www.britannica.com/biography/Anna-O" },
+    { m: "Stonewall's 50th anniversary and an overdue apology", label: "Drescher J, Stonewall's 50th anniversary and an overdue apology, Psychology Today, June 2019 (American Psychoanalytic Association apology; APA decision of December 1973)", url: "https://www.psychologytoday.com/us/blog/psychoanalysis-unplugged/201906/stonewall-s-50th-anniversary-and-overdue-apology" },
+    { m: "The hierarchy of defense mechanisms: assessing defensive functioning", label: "Di Giuseppe M, Perry JC, The hierarchy of defense mechanisms: assessing defensive functioning with the Defense Mechanisms Rating Scales Q-Sort, Front Psychol 2021;12:718440", url: "https://www.frontiersin.org/articles/10.3389/fpsyg.2021.718440/full" },
+    { m: "DSM-III: the 3d edition of the Diagnostic and Statistical Manual", label: "Pichot P, DSM-III: the 3d edition of the Diagnostic and Statistical Manual of Mental Disorders from the American Psychiatric Association, Rev Neurol (Paris) 1986;142:489-499", url: "https://pubmed.ncbi.nlm.nih.gov/3787052/" },
     /* Section 34.3, November 2026 */
     { m: "The Nobel Prize in Physiology or Medicine 1973", label: "NobelPrize.org: The Nobel Prize in Physiology or Medicine 1973 (von Frisch, Lorenz, Tinbergen)", url: "https://www.nobelprize.org/prizes/medicine/1973/summary/" },
     { m: "Meta-analysis of the heritability of human traits based on fifty years of twin studies", label: "Polderman TJC et al., Meta-analysis of the heritability of human traits based on fifty years of twin studies, Nat Genet 2015;47:702-709", url: "https://www.nature.com/articles/ng.3285" },

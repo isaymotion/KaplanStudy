@@ -1,0 +1,166 @@
+/* Section 34.4, part II (34.4b), high yield (bold text becomes a blank in "Hide key facts" mode). Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 34. */
+KS.add("ch34-7", "highYield", [
+  {
+    "id": "hy347-01",
+    "topic": "Structural theory and ego functions",
+    "items": [
+      "Ego psychology as known today dates from ***The Ego and the Id*** in **1923**.",
+      "That work moved Freud from the **topographical** model to the **structural** model.",
+      "The structural model has three agencies: **id, ego and superego**.",
+      "Freud changed models because parts of the **conscience** and **ego functions** are also unconscious.",
+      "The chapter calls the structural model the **cornerstone** of ego psychology.",
+      "The id is a reservoir of **unorganized instinctual drives** run by the **primary process**.",
+      "The id is **not synonymous** with the unconscious.",
+      "The ego is the **executive organ** of the psyche and spans **all three** topographical levels.",
+      "The ego's **defense mechanisms** sit in its **unconscious** part.",
+      "As the ego acts on the id, it puts the **reality principle** in place of the **pleasure principle**.",
+      "Conflict is first between id and **outside world**, later between id and **ego**.",
+      "For Freud the superego was **heir to the Oedipus complex**.",
+      "Children take in parental standards at about age **5 or 6**.",
+      "The ego-ideal **prescribes** what to do; the superego **proscribes** what not to do.",
+      "Judgment means foreseeing the **consequences** of actions.",
+      "The ego's relation to reality has three parts: **reality testing, the sense of reality and adaptation to reality**.",
+      "**Depersonalization** reflects impaired **sense of reality** (body boundaries).",
+      "**Reality testing** separates psychotic from nonpsychotic persons.",
+      "**Winnicott** described the **transitional object** (blanket, teddy bear, pacifier).",
+      "**Fairbairn** and **Balint** expanded on early ties to **need-satisfying objects**."
+    ]
+  },
+  {
+    "id": "hy347-02",
+    "topic": "Autonomy, defense and anxiety",
+    "items": [
+      "The synthetic function was first put forward by **Herman Nunberg** (**1931**).",
+      "The synthetic function **integrates diverse elements** into one lasting whole.",
+      "**Heinz Hartmann** described the **primary autonomous** ego functions.",
+      "Primary autonomous functions are present **at birth** and develop **free of conflict**.",
+      "Examples: **language, motility, perception, thinking, learning, intuition, comprehension and intelligence**.",
+      "They develop normally in an **average expectable environment**.",
+      "Secondary autonomous functions arise **in defense against drives**.",
+      "A defense that later serves adaptation is said to be **neutralized** or **deinstinctualized**.",
+      "The **anal phase** is linked to **reaction formation** (shame and disgust).",
+      "**Narcissistic** defenses are the most primitive class.",
+      "**Immature** defenses show up in **adolescents** and in some patients who are not psychotic.",
+      "**Neurotic** defenses appear in **obsessive-compulsive and hysterical** patients and stressed adults.",
+      "Freud's first anxiety theory: **dammed-up libido**, causing the **actual neuroses**.",
+      "Freud's later anxiety theory: **signal anxiety**, which mobilizes **defenses**.",
+      "In the later theory, neurotic symptoms mean the ego **partly fails** to cope.",
+      "In phobias, fear of an outer threat is an **externalization of internal danger**.",
+      "Earliest danger: fear of **disintegration or annihilation**.",
+      "Next: **separation anxiety**, fear of **losing the object**.",
+      "Oedipal boys fear **bodily injury or castration**.",
+      "After the oedipal conflict comes **superego anxiety**."
+    ]
+  },
+  {
+    "id": "hy347-03",
+    "topic": "Narcissistic and immature defenses",
+    "items": [
+      "Table 34-12 sorts defenses into **four classes**: narcissistic-psychotic, immature, neurotic and mature.",
+      "The classification is adapted chiefly from **Vaillant's Adaptation to Life (1977)**, with Semrad (1967) and Bibring and colleagues (1961).",
+      "Narcissistic-psychotic defenses share the feature of **avoiding, negating or distorting reality**.",
+      "Besides psychosis, narcissistic-psychotic defenses can appear in **young children** and in adult **dreams or fantasies**.",
+      "The three narcissistic-psychotic defenses are **projection, denial and distortion**.",
+      "Psychotic projection takes the form of frank, usually **persecutory** delusions.",
+      "Projected impulses from the superego can appear as **hallucinated recriminations**.",
+      "Unlike repression, psychotic denial bears more on **external** than on internal reality perception.",
+      "Distortion includes **megalomanic** beliefs and **wish-fulfilling delusions**.",
+      "Immature defenses are common in **preadolescence** and adult **character disorders**.",
+      "Immature defenses are often triggered by anxieties about **intimacy or its loss**.",
+      "Acting out lives an unconscious wish out in **action** to avoid feeling the affect.",
+      "Blocking resembles repression but carries **tension** from the inhibited impulse or affect.",
+      "As a defense, hypochondriasis turns reproach toward others into **self-reproach** as somatic complaints.",
+      "Introjecting a feared object's aggression is **identification with the aggressor**.",
+      "Introjecting an object's self-punitive qualities out of guilt is **identification with the victim**.",
+      "Nonpsychotic projection includes severe prejudice, suspiciousness and **injustice collecting**.",
+      "Return of body responses under conflict is **resomatization**; their replacement by thought and affect is **desomatization**."
+    ]
+  },
+  {
+    "id": "hy347-04",
+    "topic": "Neurotic and mature defenses",
+    "items": [
+      "Neurotic defenses are common in apparently **normal** people and in **neurotic disorders**.",
+      "In displacement the **object** changes but the impulse's nature and **aim** stay the same.",
+      "Dissociation covers hysterical **conversion reactions** and **fugue states**.",
+      "Externalization is a **broader** term than projection.",
+      "Intellectualization means **thinking about** affects instead of experiencing them.",
+      "Isolation separates **affect from content**.",
+      "Reaction formation expresses an impulse in its **opposite** form and can become part of **obsessional character**.",
+      "**Secondary repression** removes what was once conscious; **primary repression** acts before material reaches consciousness.",
+      "Sexualization gives an object or function **sexual significance** to ward off anxiety.",
+      "Mature defenses stay **healthy and adaptive** across the whole life cycle.",
+      "**Altruistic surrender** is masochistic, unlike altruism.",
+      "Humor stays with the feeling; **wit** distracts or displaces away from it.",
+      "In sublimation the **goal is kept** but the aim or object becomes socially valued.",
+      "Aggressive impulses are sublimated through **games and sports**.",
+      "Table 34-12 defines suppression as **conscious or semiconscious** postponement.",
+      "In **1913** Freud tied symptoms to the **failure** of repression and character traits to its **success**.",
+      "In **1923** Freud proposed the ego gives up objects only by **identifying with or introjecting** them.",
+      "Exaggerated single traits can lead to **personality disorders** or a vulnerability to **psychosis**."
+    ]
+  },
+  {
+    "id": "hy347-05",
+    "topic": "Neuroses and technique",
+    "items": [
+      "Classic theory: every neurosis rests on **conflict**, between drives and **external reality** or between inner agencies (**id versus superego**, **id versus ego**).",
+      "Unresolved wishes are expelled from awareness by **repression** or another defense but stay powerful and return as **disguised symptoms**.",
+      "The theory assumes a **rudimentary childhood neurosis** built on the same conflict.",
+      "Deprivation in the **first few months** of life from absent or impaired caretakers can harm **ego development** and identifications.",
+      "Poor constructive outlet for **aggression** can make a child turn it inward and become **self-destructive**.",
+      "**Inconsistent, harsh or overindulgent** parents can foster **disordered superego functioning**.",
+      "Trauma through a weakened ego draws **libido away from external objects**, leaving a **sense of inadequacy**.",
+      "Adult frustrations may revive **infantile longings**, met by **symptom formation** or **further regression**.",
+      "Freud's four classic childhood cases: **Dora** (conversion), **Hans** (phobic), **Rat Man** (obsessive-compulsive), **Wolf Man** (mixed); Table 34-13 is courtesy of **E. James Anthony**.",
+      "Typical onset: phobic about **4 or 5**, obsessional **6 to 7**, conversion **8 years**.",
+      "Background disturbance is most marked in **conversion** and **mixed** cases; trauma is essential in all but the **phobic** case.",
+      "Freud's **seduction hypothesis** traced hysterical and obsessive-compulsive symptoms to **sexual experiences, active and passive**.",
+      "**Free association** is the cornerstone of technique and induces the **regression** needed for the transference neurosis.",
+      "Systematically **analyzing transference and resistance** is the heart of psychoanalysis.",
+      "Freud saw **countertransference** as an obstacle and held that **all analysts should be analyzed**."
+    ]
+  },
+  {
+    "id": "hy347-06",
+    "topic": "Transference variants",
+    "items": [
+      "Mild **libidinal** transference is positive; intense forms are **erotic**; Freud advised interpreting it only when it acts as **resistance**.",
+      "**Aggressive** transferences are negative or **paranoid**; they can dominate in some **borderline** patients.",
+      "**Transferences of defense** carry the defense against an impulse, shifting focus to the **ego**.",
+      "The **transference neurosis** typically takes shape in the **middle phase** of an analysis.",
+      "Three traits govern it: the **pleasure principle**, **ambivalence** and **repetition compulsion**.",
+      "It may appear early in patients prone to transference regression, especially more **hysterical** patients.",
+      "It subsides only once the **original infantile conflict** is revealed; then **termination** comes to the fore.",
+      "Opinion is **divided** on whether the transference neurosis is necessary for successful analysis.",
+      "**Transference psychosis**: failed reality testing with loss of **self-object differentiation**.",
+      "**Kohut (1971)** described narcissistic transferences: **mirror** (grandiose self) and **idealizing** (idealized parental imago).",
+      "Mirror forms: **archaic merger**, **alter-ego or twinship**, and **mirror in the narrow sense** (most mature).",
+      "**Self-object** transferences: the object serves a function the self cannot, such as **self-cohesion** or **self-esteem regulation**.",
+      "Self-object configurations: **understimulated, overstimulated, overburdened and fragmenting** self.",
+      "**Transitional relatedness** builds on **Winnicott's** transitional object.",
+      "In the **relational or intersubjective** view, transference is **cocreated** and a two-person event."
+    ]
+  },
+  {
+    "id": "hy347-07",
+    "topic": "Transference mechanisms",
+    "items": [
+      "Table 34-15 names three mechanisms: **displacement**, **projection** and **projective identification**.",
+      "**Displacement** is the basic mechanism of **classic** transferences.",
+      "Displacement underlies **libidinal** (positive and erotic) and **aggressive**, especially **negative**, transferences.",
+      "Displacement dominates in **neurotic disorders** with **phallic-oedipal** dynamics.",
+      "**Projection** places qualities of the **self-as-object** in the analyst.",
+      "Projection is more prominent in **more primitive character disorders**.",
+      "Projecting a **victim** introject: the patient becomes the **aggressor** toward the therapist.",
+      "Projecting an **aggressor** introject: the patient becomes the **passive victim**.",
+      "In self-object transferences, what may be projected is a **wished-for infantile imago**, such as an **empathic idealized parent**.",
+      "**Transitional** transferences carry a **more explicit projective element** than self-object ones.",
+      "**Melanie Klein** first proposed **projective identification**, as a fantasy in the projector's mind.",
+      "Projective identification adds **diffused ego boundaries** and the object felt as **part of the self**.",
+      "Later use made it a **two-body** phenomenon: one projects, the other **internalizes**.",
+      "Kleinian transference stresses the **internal world** acting on the external **here and now**.",
+      "After Freud, **countertransference** became a **source of information** about the patient's object relations."
+    ]
+  }
+]);

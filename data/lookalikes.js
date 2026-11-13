@@ -2255,5 +2255,62 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 34.3 (Contributions from the Sociocultural Sciences)"
+},
+{
+  "id": "freud-models346",
+  "title": "Freud's models of the mind compared",
+  "summary": "Sections 34.4a and 34.4b trace how Freud's picture of the mind changed. The table sets the topographic model, drive theory and the structural model side by side.",
+  "items": [
+    "When",
+    "Main parts",
+    "How conflict or symptoms arise",
+    "What the chapter says happened to it"
+  ],
+  "rows": [
+    [
+      "Topographic model",
+      "1900, with The Interpretation of Dreams",
+      "Conscious, preconscious and unconscious",
+      "Unconscious wishes (mainly sexual) push for discharge; the censor lets them through only in disguise, as dreams and symptoms",
+      "Discarded: many defenses were not accessible to awareness, and patients showed an unconscious need for punishment; primary process, wish fulfillment, the dynamic unconscious and regression remain useful"
+    ],
+    [
+      "Drive theory",
+      "1905 to 1923",
+      "Instincts with source, impetus, aim and object; libido and ego instincts, then life and death instincts, then aggression as its own instinct",
+      "Drives seek discharge through the psychosexual stages; fixation or conflict leaves pathologic traits",
+      "The death instinct is usually set aside today; analysts mean libido and aggression by the dual instincts"
+    ],
+    [
+      "Structural model",
+      "1923, with The Ego and the Id",
+      "Id, ego and superego, told apart by function",
+      "Conflict moves inside, between id, ego and superego; the ego's defenses contain drive derivatives, and symptoms show them partly failing",
+      "The cornerstone of ego psychology, later extended by object relations and self-psychology"
+    ]
+  ],
+  "keys": [
+    "In the **topographic** model the regions differ by **consciousness**; in the **structural** model the agencies differ by **function**.",
+    "The **id** is not the same as the **unconscious**: ego defenses and most superego scrutiny are unconscious too.",
+    "Freud's anxiety theory changed with the models: **dammed-up libido** first, then **signal anxiety**."
+  ],
+  "links": [
+    {
+      "ch": "ch34-6",
+      "sec": "s346-topo",
+      "label": "The topographic model"
+    },
+    {
+      "ch": "ch34-6",
+      "sec": "s346-drive",
+      "label": "Instinct or drive theory"
+    },
+    {
+      "ch": "ch34-7",
+      "sec": "s347-ego",
+      "label": "The structural model"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.4 (Theories of Personality and Psychopathology)"
 }
 ];

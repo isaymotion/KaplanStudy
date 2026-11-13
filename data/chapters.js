@@ -370,6 +370,14 @@ KS.manifest = [
   { id: 'ch34-5', number: '34.3b', title: 'Sociocultural Sciences II: Transcultural Psychiatry and Culture-Bound Syndromes', short: 'Transcultural psychiatry',
     summary: 'Culture, race and ethnicity in psychiatry: the cultural formulation, migration and acculturative stress, assessing immigrants and refugees, US ethnic differences and disparities in care, cross-cultural research, and amok, ataque de nervios, possession syndrome and shenjing shuairuo, with updates on the Cultural Formulation Interview, cultural concepts of distress, ICD-11 possession trance disorder and neurasthenia.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-6', number: '34.4a', title: 'Theories of Personality I: Freud, from Dreams to the Psychosexual Stages', short: 'Freud I: dreams, drives, stages',
+    summary: 'Freud and the beginnings of psychoanalysis: Breuer and Anna O, the interpretation of dreams and the dream work, the topographic model, drive theory with libido, aggression and the life and death instincts, infantile sexuality and narcissism, and the oral to genital stages, with updates on Freud\'s birthplace, what the archives showed about Anna O and the removal of homosexuality from the DSM.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-7', number: '34.4b', title: 'Theories of Personality II: Freud, Ego Psychology, Defenses and Transference', short: 'Freud II: ego, defenses, transference',
+    summary: 'The structural model of id, ego and superego, ego functions and autonomy, signal anxiety, the four classes of defense mechanisms, the classic theory of neuroses and analytic technique, and transference variants and mechanisms, with updates on the DSM-IV defense hierarchy and the removal of neurosis from DSM-III.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 
