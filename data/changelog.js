@@ -13,6 +13,19 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "84.0.1",
+    "date": "2026-11-13",
+    "title": "Section 34.1 entries renumbered 34.1a and 34.1b",
+    "items": [
+      {
+        "type": "content",
+        "text": "The two parts of section 34.1 are now numbered 34.1a (Piaget, attachment and learning theory) and 34.1b (biology of memory). Chapter lists now sort 33.10 after 33.9.",
+        "href": "#/c/ch34-1/guide",
+        "link": "Open 34.1a"
+      }
+    ]
+  },
+  {
     "version": "84.0.0",
     "date": "2026-11-13",
     "title": "Section 34.1: Contributions from the Psychosocial Sciences",

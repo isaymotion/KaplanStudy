@@ -262,6 +262,11 @@
     else if (/(piaget|erikson|freud|attachment|developmental stage|stage of development|sensitivity|specificity|study design|\bbias\b|culture|cultural|defense mechanism|\bdefenses?\b|learning theory|conditioning)/.test(q)) d = 'B';
     return (c._dom = d);
   }
+  /* Order chapters by number: major, then minor as whole numbers (33.10 after 33.9), then a letter suffix (34.1a before 34.1b). */
+  function chNumCmp(x, y) {
+    var a = /^(\d+)(?:\.(\d+))?(.*)$/.exec(String(x)) || [], b = /^(\d+)(?:\.(\d+))?(.*)$/.exec(String(y)) || [];
+    return (+a[1] || 0) - (+b[1] || 0) || (+a[2] || 0) - (+b[2] || 0) || String(a[3] || '').localeCompare(String(b[3] || ''));
+  }
   function allChapters() { return KS.manifest.map(function (m) { return chapter(m.id); }); }
   function sectionCount(ch) { var n = 0; (ch.guide && ch.guide.parts || []).forEach(function (p) { n += p.sections.length; }); return n; }
   function hyCount(ch) { var n = 0; (ch.highYield || []).forEach(function (t) { n += t.items.length; }); return n; }
@@ -392,7 +397,7 @@
       var m = idx[ch.id] || (idx[ch.id] = sectionIndex(ch)), hit = m[k.slice(i + 1)];
       if (hit) out.push({ key: k, ch: ch, sec: hit.s, n: hit.n, part: hit.part, pi: hit.pi, t: BOOKMARKS[k].t });
     });
-    return out.sort(function (a, b) { return a.ch.number - b.ch.number || a.n - b.n; });
+    return out.sort(function (a, b) { return chNumCmp(a.ch.number, b.ch.number) || a.n - b.n; });
   }
   function ribbonBtn(chId, s) {
     var on = isBookmarked(chId, s.id);
@@ -568,7 +573,7 @@
     var newsStrip = unseen.length
       ? '<div class="wrap news-strip-wrap"><a class="news-strip" href="#/whats-new"><span class="news-strip__tag">New</span><span class="news-strip__text">' + esc(unseen[0].title) + (unseen.length > 1 ? ' and ' + plural(unseen.length - 1, 'more update') : '') + '</span><span class="news-strip__go">See what changed</span></a></div>'
       : '';
-    var rows = chs.slice().sort(function (a, b) { return a.number - b.number; }).map(function (ch) {
+    var rows = chs.slice().sort(function (a, b) { return chNumCmp(a.number, b.number); }).map(function (ch) {
       var keys = [];
       DECKS.forEach(function (d) { keys = keys.concat(deckKeys(ch, d.key)); });
       var t = tallyKeys(keys);
@@ -623,7 +628,7 @@
   /* Previous / next chapter and a chapter menu. Switching keeps the study mode you are in, so a resident
      reading study guides moves from guide to guide, and one drilling pharmacology cards stays in pharmacology. */
   function chapterNav(ch, active) {
-    var list = allChapters().slice().sort(function (a, b) { return a.number - b.number; });
+    var list = allChapters().slice().sort(function (a, b) { return chNumCmp(a.number, b.number); });
     if (list.length < 2) return '';
     var m = modeBy(active) || MODES[0], idx = 0;
     list.forEach(function (c, i) { if (c.id === ch.id) idx = i; });
@@ -943,7 +948,7 @@
   function renderCompareList(chFilter) {
     var all = (KS.lookalikes || []).slice().sort(function (a, b) { return a.title.localeCompare(b.title); });
     var pr = laPrefs();
-    var chs = allChapters().filter(function (ch) { return comparisonsInChapter(ch.id).length; }).sort(function (a, b) { return a.number - b.number; });
+    var chs = allChapters().filter(function (ch) { return comparisonsInChapter(ch.id).length; }).sort(function (a, b) { return chNumCmp(a.number, b.number); });
     if (chFilter && !chapter(chFilter)) chFilter = '';
     var html = '<div class="wrap page cmp-page">' +
       '<header class="page__head"><h1>Look-alikes</h1><p>Side-by-side comparisons of conditions that are easy to confuse, with the features that tell them apart and links to the chapters. Download any of them as a landscape PDF, as an answer key or a blank worksheet to fill in.</p></header>' +
@@ -1003,7 +1008,7 @@
   function chaptersIn(c) {
     var seen = {}, out = [];
     (c.links || []).forEach(function (l) { var ch = chapter(l.ch); if (ch && !seen[ch.id]) { seen[ch.id] = 1; out.push(ch); } });
-    return out.sort(function (a, b) { return a.number - b.number; });
+    return out.sort(function (a, b) { return chNumCmp(a.number, b.number); });
   }
   function renderCompare(id) {
     var c = lookalike(id);
@@ -2445,7 +2450,7 @@
      with running headers and page numbers. Unlike the per-chapter handout, this one flows across as many
      pages as a chapter needs, at a fixed comfortable size, rather than shrinking to fit one sheet. */
   function renderAllHighYield() {
-    var chs = allChapters().slice().sort(function (a, b) { return a.number - b.number; });
+    var chs = allChapters().slice().sort(function (a, b) { return chNumCmp(a.number, b.number); });
     var classes = DRUG ? DRUG.classesInfo() : [];
     var prefs = store.get('allHyPrefs', { paper: 'a4' });
     if (!PAPER[prefs.paper]) prefs.paper = 'a4';

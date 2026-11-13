@@ -1,4 +1,4 @@
-/* Chapter 34.1 learning layer: wrong-answer explanations (aligned with each case's choices; "" for the correct one), end-of-section checks, pre-test, board-domain overrides and visual summaries.
+/* Chapter 34.1b learning layer: wrong-answer explanations (aligned with each case's choices; "" for the correct one), end-of-section checks, pre-test, board-domain overrides and visual summaries.
    Source: Kaplan & Sadock's Synopsis of Psychiatry, 12th ed., Chapter 34.1, and the post-publication updates in this chapter. */
 KS.add("ch34-2", "learning", {
  "pretest": [

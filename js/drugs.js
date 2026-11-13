@@ -427,7 +427,7 @@
       return CLASSES.slice().sort(function (a, b) {
         var na = (a.chapter && A.chapter(a.chapter) && A.chapter(a.chapter).number) || 999;
         var nb = (b.chapter && A.chapter(b.chapter) && A.chapter(b.chapter).number) || 999;
-        return na - nb;
+        return parseFloat(na) - parseFloat(nb);
       });
     }
     function classesInfo() {
