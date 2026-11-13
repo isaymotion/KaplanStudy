@@ -10,6 +10,7 @@ mkdir -p "$H/tools" "$H/updwork"
 cp -r "$SRC/tools/." "$H/tools/"
 cp "$SRC/tools/fulltest.py" "$H/fulltest.py"
 cp "$SRC/tools/srcs-check.js" /tmp/srcs4.js
+[ -d "$SRC/tools/prompts" ] && cp "$SRC/tools/prompts/whynot-agent.md" /tmp/wn-prompt.md && cp "$SRC/tools/prompts/checks-agent.md" /tmp/ck-prompt.md
 cp -r "$SRC/updwork/." "$H/updwork/"
 for d in "$SRC"/work/*; do cp -r "$d" "$H/"; done
 echo "Restored: $H/tools, $H/fulltest.py, /tmp/srcs4.js, $H/updwork, $(ls "$SRC/work" | wc -l) work folders"
