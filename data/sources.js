@@ -4,6 +4,13 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Section 34.2, November 2026 */
+    { m: "Autistic Disturbances of Affective Contact (1943), by Leo Kanner", label: "Embryo Project Encyclopedia: Autistic Disturbances of Affective Contact (1943), by Leo Kanner", url: "https://embryo.asu.edu/pages/autistic-disturbances-affective-contact-1943-leo-kanner" },
+    { m: "Positive reinforcement produced by electrical stimulation of septal area", label: "Olds J, Milner P, Positive reinforcement produced by electrical stimulation of septal area and other regions of rat brain, J Comp Physiol Psychol 1954;47(6):419-27", url: "https://pubmed.ncbi.nlm.nih.gov/13233369/" },
+    { m: "Your Brain Is Not an Onion With a Tiny Reptile Inside", label: "Cesario J, Johnson DJ, Eisthen HL, Your brain is not an onion with a tiny reptile inside, Curr Dir Psychol Sci 2020;29(3):255-260", url: "https://journals.sagepub.com/doi/10.1177/0963721420917687" },
+    { m: "Von Economo Neurons in the Anterior Insula of the Macaque Monkey", label: "Max Planck Society 2012, on Evrard HC, Forro T, Logothetis NK, Von Economo neurons in the anterior insula of the macaque monkey, Neuron 2012;74(3):482-489", url: "https://www.mpg.de/5808445/von_economo_neurons" },
+    { m: "The mind's mirror", label: "APA Monitor on Psychology 2005: The mind's mirror (the discovery of mirror neurons and evidence in humans)", url: "https://www.apa.org/monitor/oct05/mirror" },
+    { m: "Genetics of Wellbeing and Its Components", label: "Bartels M, Genetics of wellbeing and its components satisfaction with life, happiness, and quality of life: a review and meta-analysis of heritability studies, Behav Genet 2015 (PMC)", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4346667/" },
     /* Section 34.1, November 2026 */
     { m: "Object permanence in young infants: further evidence and later occlusion studies", label: "Baillargeon and colleagues, occlusion events in 3- and 3.5-month-old infants, with a review of earlier violation-of-expectation studies (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4241364" },
     { m: "Infant disorganized attachment: clarifying levels of analysis", label: "Duschinsky R, Solomon J, Infant disorganized attachment: clarifying levels of analysis, Clin Child Psychol Psychiatry 2017 (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5641982" },

@@ -358,6 +358,10 @@ KS.manifest = [
   { id: 'ch34-2', number: '34.1b', title: 'Psychosocial Sciences II: Biology of Memory', short: 'Biology of memory',
     summary: 'Synaptic plasticity and long-term potentiation; cortical organization of memory; amnesia and the patients HM and EP; Korsakoff syndrome and frontal damage; retrograde amnesia and consolidation; declarative and nondeclarative memory, priming, neuroimaging and sleep; memory assessment; psychogenic amnesia, memory distortion and infantile amnesia, with updates on the identity of HM and current terms.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-3', number: '34.2', title: 'Normality and Mental Health', short: 'Normality and mental health',
+    summary: 'What mental health is and how it differs from the absence of illness, through six models: above normal, maturity and the adult development tasks after Erikson, positive emotions, socioemotional intelligence, subjective well-being, and resilience with the healthy involuntary coping mechanisms, with updates on the history of autism, brain reward research, the limbic system, von Economo and mirror neurons, and the heritability of well-being.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

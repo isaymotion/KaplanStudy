@@ -8551,5 +8551,137 @@ KS.helpers = (KS.helpers || []).concat([
       }
     }
   }
+},
+{
+  "id": "mature343",
+  "chapter": "ch34-3",
+  "title": "Which healthy involuntary mechanism is this?",
+  "summary": "Section 34.2 describes five mature, involuntary ways of coping with conflict. This helper sorts a coping style you observe into one of them.",
+  "caution": "A teaching aid. These mechanisms work largely outside awareness, so judge them over time and from behavior, not from one remark, and do not label a patient from a single episode.",
+  "start": "when",
+  "nodes": {
+    "when": {
+      "q": "Is the conflict about something happening now, or something still to come?",
+      "options": [
+        {
+          "label": "Something still to come",
+          "to": "r:anticipation",
+          "note": "The feeling is met ahead of time, in small doses."
+        },
+        {
+          "label": "Something happening now, or already past",
+          "to": "others",
+          "note": "The other four mechanisms deal with present conflict."
+        }
+      ]
+    },
+    "others": {
+      "q": "Does the person deal with the pain by giving to other people?",
+      "options": [
+        {
+          "label": "Yes: gives others what they themselves wished to receive",
+          "to": "r:altruism",
+          "note": "Pleasure comes from giving, not from denying the wish."
+        },
+        {
+          "label": "No",
+          "to": "expr",
+          "note": "The feeling is handled within the person."
+        }
+      ]
+    },
+    "expr": {
+      "q": "What happens to the painful feeling?",
+      "options": [
+        {
+          "label": "It is expressed with humor that faces the pain and harms no one",
+          "to": "r:humor",
+          "note": "Feeling much while acting little; timing is everything."
+        },
+        {
+          "label": "It is turned into a creative product of value",
+          "to": "r:sublimation",
+          "note": "The pain is transformed, not bargained away."
+        },
+        {
+          "label": "It is held, and gratification is reduced and delayed but not ignored",
+          "to": "r:suppression",
+          "note": "Stoic patience that keeps the feeling in view."
+        }
+      ]
+    }
+  },
+  "results": {
+    "anticipation": {
+      "label": "Anticipation",
+      "dx": "Anticipation",
+      "line": "Feeling the distress of an unbearable future event in manageable doses, beforehand.",
+      "points": [
+        "Examples in the chapter: moderate anxiety before surgery; anticipatory mourning by parents of a child with leukemia.",
+        "It helps only in manageable doses."
+      ],
+      "link": {
+        "ch": "ch34-3",
+        "sec": "s343-mechs",
+        "label": "Healthy involuntary mechanisms"
+      }
+    },
+    "altruism": {
+      "label": "Altruism",
+      "dx": "Altruism",
+      "line": "Getting pleasure from giving others what one wished to receive.",
+      "points": [
+        "Example: a former drinker becomes an Alcoholics Anonymous sponsor.",
+        "Its less adaptive look-alike is reaction formation: the same man campaigning to ban alcohol and irritating his friends.",
+        "The chapter calls it potentially lifesaving for giver and receiver."
+      ],
+      "link": {
+        "ch": "ch34-3",
+        "sec": "s343-mechs",
+        "label": "Healthy involuntary mechanisms"
+      }
+    },
+    "humor": {
+      "label": "Humor",
+      "dx": "Humor",
+      "line": "Discharging emotion with no discomfort to oneself and no harm to others, while still facing the pain.",
+      "points": [
+        "Dissociation and slapstick distract from pain; mature humor looks straight at it.",
+        "Like a house of cards, it depends on timing."
+      ],
+      "link": {
+        "ch": "ch34-3",
+        "sec": "s343-mechs",
+        "label": "Healthy involuntary mechanisms"
+      }
+    },
+    "sublimation": {
+      "label": "Sublimation",
+      "dx": "Sublimation",
+      "line": "Transforming suffering into something of value.",
+      "points": [
+        "The chapter's images: an oyster making a pearl from sand, and Beethoven setting Schiller's Ode to Joy in the Ninth Symphony."
+      ],
+      "link": {
+        "ch": "ch34-3",
+        "sec": "s343-mechs",
+        "label": "Healthy involuntary mechanisms"
+      }
+    },
+    "suppression": {
+      "label": "Suppression",
+      "dx": "Suppression",
+      "line": "Handling conflict with stoicism: gratification is reduced and delayed but not ignored.",
+      "points": [
+        "Empirically, the defense most highly associated with other facets of mental health.",
+        "The chapter argues it is more than a conscious strategy; other sources in this app define it as conscious control."
+      ],
+      "link": {
+        "ch": "ch34-3",
+        "sec": "s343-mechs",
+        "label": "Healthy involuntary mechanisms"
+      }
+    }
+  }
 }
 ]);

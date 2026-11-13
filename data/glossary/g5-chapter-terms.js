@@ -1001,7 +1001,17 @@ KS.glossary = (KS.glossary || []).concat([
   ["Ribot's law","In retrograde amnesia, recent memories are lost more than remote ones.","Ch 34.1"],
   ["metamemory","The ability to judge one's own memory.","Ch 34.1"],
   ["infantile amnesia","The lack of conscious recall for roughly the first 3 years of life.","Ch 34.1"],
-  ["psychogenic amnesia","The chapter's term for memory loss without a neurologic cause, typically severe retrograde loss with preserved new learning; now diagnosed as dissociative amnesia.","Ch 34.1"]
+  ["psychogenic amnesia","The chapter's term for memory loss without a neurologic cause, typically severe retrograde loss with preserved new learning; now diagnosed as dissociative amnesia.","Ch 34.1"],
+  ["career consolidation","The adult task of committing to a career valued as much as play once was, marked by contentment, compensation, competence and commitment; usually mastered with or after intimacy.","Ch 34.2"],
+  ["socioemotional intelligence","The ability to perceive, manage and use emotions in oneself and others; Model D treats a high level as a sign of above-average mental health.","Ch 34.2"],
+  ["subjective well-being","The chapter's term for happiness: the presence of positive contentment, not merely the absence of misery.","Ch 34.2"],
+  ["experience-sampling method","Rating well-being at random times of day over several days or weeks; described as the most valid way to measure subjective states.","Ch 34.2"],
+  ["von Economo neuron","A large spindle-shaped neuron found mainly in the anterior insula and anterior cingulate cortex; also called a spindle cell.","Ch 34.2"],
+  ["mirror neuron","A neuron that fires both when an animal performs an action and when it watches the same action; first recorded in macaque premotor cortex.","Ch 34.2"],
+  ["lodestars of conflict","The four sources whose sudden change can provoke anxiety or depression, buffered by involuntary coping: impulse, reality, people and conscience (social learning).","Ch 34.2"],
+  ["anticipation (defense)","A mature involuntary mechanism: feeling a coming painful event in manageable doses beforehand, such as moderate anxiety before surgery.","Ch 34.2"],
+  ["altruism (defense)","A mature involuntary mechanism: gaining pleasure from giving others what one wished to receive, such as a former drinker serving as an AA sponsor.","Ch 34.2"],
+  ["triune brain","Paul MacLean's model of a reptilian core, a mammalian limbic layer and a neocortex added in turn; rejected by comparative neurobiologists.","Ch 34.2"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {

@@ -2113,5 +2113,76 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 34.1 (Biology of Memory, Table 34-7)"
+},
+{
+  "id": "mh-models343",
+  "title": "Six models of mental health",
+  "summary": "Section 34.2 compares six ways of defining mental health. They overlap, and each comes with its own limits. The table sets them side by side.",
+  "items": [
+    "What counts as healthy",
+    "How it is seen or measured",
+    "A limit the chapter notes"
+  ],
+  "rows": [
+    [
+      "A. Above normal",
+      "An objectively desirable state, better than average; Freud's capacity to work and love",
+      "Optimal rather than merely reasonable functioning",
+      "The average already contains illness; payers favor the narrower medical model"
+    ],
+    [
+      "B. Maturity",
+      "Healthy adult development",
+      "Progress through identity, intimacy, career consolidation, generativity and integrity",
+      "Not a race or a ranking; after 50 it depends on a healthy brain"
+    ],
+    [
+      "C. Positive emotions",
+      "Positive emotions that connect us to others (faith, hope, love, joy, gratitude, awe, compassion, forgiveness)",
+      "The connecting emotions; brain research the chapter cites",
+      "Practical uses are many years away; some of its brain claims are outdated (see the updates)"
+    ],
+    [
+      "D. Socioemotional intelligence",
+      "Skill in perceiving, managing and using emotions in oneself and others",
+      "Five criteria; reading nonverbal cues",
+      "The number of primary emotions is arguable; the chapter names no measure"
+    ],
+    [
+      "E. Subjective well-being",
+      "Positive contentment, not just the absence of misery",
+      "PANAS, Satisfaction with Life Scale, SF-36, experience sampling",
+      "Happiness can be illusory or fleeting; happiness scales predicted little in the Study of Adult Development"
+    ],
+    [
+      "F. Resilience",
+      "Getting through stress by adaptive coping, especially mature involuntary mechanisms",
+      "Coping style over time, which patients can see on videotape",
+      "Involuntary mechanisms distort reality; mature ones are delicate and depend on timing"
+    ]
+  ],
+  "keys": [
+    "Model A defines health as **above average**, not as the absence of illness.",
+    "Model C counts only emotions that **connect** a person to others; Model D warns that calling negative emotions unhealthy is an **oversimplification**.",
+    "Model F rests on the **mature involuntary mechanisms**, with **suppression** most linked to the other facets of health."
+  ],
+  "links": [
+    {
+      "ch": "ch34-3",
+      "sec": "s343-models",
+      "label": "Models of mental health"
+    },
+    {
+      "ch": "ch34-3",
+      "sec": "s343-sei",
+      "label": "Comparing Models C and D"
+    },
+    {
+      "ch": "ch34-3",
+      "sec": "s343-resil",
+      "label": "Comparing Models E and F"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.2 (Normality and Mental Health)"
 }
 ];

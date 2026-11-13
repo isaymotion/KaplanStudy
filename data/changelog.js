@@ -13,6 +13,33 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "85.0.0",
+    "date": "2026-11-13",
+    "title": "Section 34.2: Normality and Mental Health",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-3",
+        "text": "New entry, Normality and Mental Health: what mental health is beyond the absence of illness, and six models of it, from above normal and maturity to positive emotions, socioemotional intelligence, subjective well-being and resilience, with 51 cases.",
+        "href": "#/c/ch34-3/guide",
+        "link": "Open Normality and Mental Health"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-3",
+        "text": "Updates: Kanner described autism in 11 children (not in his son), the first brain reward study was published in 1954, the triune brain idea is no longer accepted, von Economo neurons occur in macaques, where mirror neurons were found, and the heritability of well-being (about a third).",
+        "href": "#/c/ch34-3/guide/s343-posev",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper for telling the five healthy involuntary coping mechanisms apart, and a look-alike table of the six models of mental health.",
+        "href": "#/helpers/mature343",
+        "link": "Open the helper"
+      }
+    ]
+  },
+  {
     "version": "84.0.1",
     "date": "2026-11-13",
     "title": "Section 34.1 entries renumbered 34.1a and 34.1b",
