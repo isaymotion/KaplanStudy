@@ -1,0 +1,11 @@
+{
+ "intro": "Applied electrophysiology covers the recordings of the brain's electrical activity that psychiatrists use most: the electroencephalogram (EEG), its quantitative form (QEEG) and cerebral evoked potentials. This entry explains how the EEG is recorded and activated (Figure 33-33), the normal waking and sleep tracings and the four basic waveforms (Figure 33-34), the warning signs that suggest a hidden medical cause of a psychiatric presentation (Table 33-8), common EEG abnormalities (Table 33-9), the EEG effects of medications and drugs (Table 33-10) and the EEG changes seen in medical and psychiatric disorders (Tables 33-11 and 33-12). Update boxes add the current status of QEEG for diagnosis, what is now known about clozapine and the EEG, today's sleep-stage labels (N1 to N3 and R) and how to read the psychiatric EEG findings in Table 33-12.",
+ "objectives": [
+  "Describe how an EEG is recorded, including the 10-20 electrode system and the main activation procedures.",
+  "Name the four basic waking waveforms with their frequency ranges and describe the normal sleep EEG.",
+  "Recognize the warning signs that suggest a medical or organic cause behind a psychiatric presentation.",
+  "Identify common EEG abnormalities and the EEG effects of psychotropic medications and drugs of abuse.",
+  "Summarize EEG changes in medical and psychiatric disorders.",
+  "Explain what QEEG and evoked potentials measure, and why they are not diagnostic tests for psychiatric disorders."
+ ]
+}
