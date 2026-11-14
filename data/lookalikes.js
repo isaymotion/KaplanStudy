@@ -2409,5 +2409,105 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 34.4 (Theories of Personality and Psychopathology)"
+},
+{
+  "id": "objrel349",
+  "title": "Object relations and self-psychology theorists compared",
+  "summary": "Seven analysts who put the early relationship at the center, side by side as sections 34.4b and 34.4d describe them. They differ most on how much of Freud's drive theory they kept.",
+  "items": [
+    "Core idea about the infant",
+    "Drives",
+    "Key terms",
+    "Treatment idea"
+  ],
+  "rows": [
+    [
+      "Melanie Klein",
+      "The ego splits to cope with a terror of annihilation; projection and introjection are the first defenses",
+      "Kept: object relations tied closely to drives; the death instinct is central",
+      "Paranoid-schizoid and depressive positions, persecutory anxiety",
+      "Child analysis with a play technique"
+    ],
+    [
+      "Ronald Fairbairn",
+      "The infant is object seeking",
+      "Gave up libido and aggression as prime movers; dynamic structures replace energy, ego and id",
+      "Split-off ego, internal objects",
+      "Not stated"
+    ],
+    [
+      "Michael Balint",
+      "Longing for the primary love object; a basic fault from maternal failure",
+      "Kept in part: libido seeks pleasure and objects",
+      "Primary love, basic fault",
+      "The relationship itself is decisive for preverbal material"
+    ],
+    [
+      "Donald Winnicott",
+      "The true self grows in a holding environment given by a good-enough mother",
+      "Not stated",
+      "True and false self, transitional object",
+      "Not stated"
+    ],
+    [
+      "Edith Jacobson",
+      "Good and bad images form from pleasure and unpleasure",
+      "Structural model and object relations are compatible",
+      "Self-images and object images; fixation as modes of object relatedness",
+      "Not stated"
+    ],
+    [
+      "Otto Kernberg",
+      "Good and bad relational experience comes before the drives",
+      "Libido and aggression grow out of love and hate",
+      "Splitting, borderline personality organization",
+      "Psychotherapy with early transference interpretation (later TFP)"
+    ],
+    [
+      "Heinz Kohut",
+      "Self-esteem and self-cohesion come first",
+      "Sexuality and aggression are not central",
+      "Grandiose self, idealized parental image, self-object transferences",
+      "Empathic failures cause arrest; mirror, twinship and idealizing transferences in treatment"
+    ]
+  ],
+  "keys": [
+    "**Fairbairn** gave up drive theory; **Balint** kept it in part; **Klein** kept drives central with the **death instinct**.",
+    "**Kernberg** puts object relations **before** the drives; **Kohut** puts **self-cohesion** before them.",
+    "Projective identification is **Klein's**; its interpersonal version and **containment** are **Bion's**."
+  ],
+  "links": [
+    {
+      "ch": "ch34-9",
+      "sec": "s349-kl",
+      "label": "Kernberg, Klein, Kohut and Lacan"
+    },
+    {
+      "ch": "ch34-9",
+      "sec": "s349-bb",
+      "label": "Balint, Berne, Bion and Bowlby"
+    },
+    {
+      "ch": "ch34-9",
+      "sec": "s349-cf",
+      "label": "Cattell to Anna Freud (Fairbairn)"
+    },
+    {
+      "ch": "ch34-9",
+      "sec": "s349-fj",
+      "label": "Fromm to Jung (Jacobson)"
+    },
+    {
+      "ch": "ch34-9",
+      "sec": "s349-sw",
+      "label": "Sartre, Skinner, Sullivan and Winnicott"
+    },
+    {
+      "ch": "ch34-7",
+      "sec": "s347-ego",
+      "label": "Ego psychology and the British object relations analysts (34.4b)"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., section 34.4 (Theories of Personality and Psychopathology)"
 }
 ];

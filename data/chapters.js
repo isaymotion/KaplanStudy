@@ -382,6 +382,14 @@ KS.manifest = [
   { id: 'ch34-8', number: '34.4c', title: 'Theories of Personality III: Erik Erikson and the Life Cycle', short: 'Erikson: the life cycle',
     summary: 'Erik Erikson\'s life and psychohistories, the epigenetic principle, the eight psychosocial stages from trust versus mistrust to integrity versus despair with their virtues, the psychopathology tied to each stage and his approach to treatment, with updates on his later honors, Joan Erikson\'s ninth stage and current suicide rates by age.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-9', number: '34.4d', title: 'Theories of Personality IV: Other Psychodynamic Schools', short: 'Other psychodynamic schools',
+    summary: 'About 40 theorists from Abraham to Winnicott, in alphabetical order: individual psychology, object relations, self-psychology, analytic psychology, interpersonal, humanistic, existential, Gestalt, transactional and behavioral approaches, with comparison tables, the shared Mr. A case and updates on Kernberg\'s transference-focused psychotherapy and corrected dates for Rado and the Hampstead clinic.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch34-10', number: '34.4e', title: 'Theories of Personality V: Positive Psychology', short: 'Positive psychology',
+    summary: 'What positive psychology studies, its findings on happiness, relationships, work, religion and positive institutions, Figure 34-48\'s two dimensions of health, strengths assessment, brief exercises and positive psychotherapies, with updates on later meta-analyses, dimensional personality disorder classification and the WHO constitution date.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

@@ -13,6 +13,47 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "89.0.0",
+    "date": "2026-11-14",
+    "title": "Section 34.4 complete: other psychodynamic schools (34.4d) and positive psychology (34.4e)",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch34-9",
+        "text": "New entry 34.4d, Theories of Personality IV: Other Psychodynamic Schools: about 40 theorists from Abraham to Winnicott with their schools, key terms and treatment ideas, a comparison table for each group and the shared Mr. A case, with 61 cases.",
+        "href": "#/c/ch34-9/guide",
+        "link": "Open 34.4d"
+      },
+      {
+        "type": "chapter",
+        "ch": "ch34-10",
+        "text": "New entry 34.4e, Theories of Personality V: Positive Psychology: findings on happiness, relationships, work and positive institutions, Figure 34-48's two dimensions of health, strengths assessment, brief exercises and positive psychotherapies, with 28 cases. Section 34.4 is now complete.",
+        "href": "#/c/ch34-10/guide",
+        "link": "Open 34.4e"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-9",
+        "text": "Updates: trials of Kernberg's transference-focused psychotherapy, and corrected dates for Rado's arrival in the United States (1931) and the Hampstead clinic (1952).",
+        "href": "#/c/ch34-9/guide/s349-kl",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch34-10",
+        "text": "Updates: the WHO constitution date (adopted 1946, in force 1948), dimensional classification of personality disorder in ICD-11 and DSM-5-TR, and meta-analyses of positive psychology interventions.",
+        "href": "#/c/ch34-10/guide/s3410-tech",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New helper (which school does this idea come from?) and a look-alike table of object relations and self-psychology theorists.",
+        "href": "#/lookalikes/objrel349",
+        "link": "Open the look-alike"
+      }
+    ]
+  },
+  {
     "version": "88.0.0",
     "date": "2026-11-14",
     "title": "Section 34.4, part 2: Erikson (34.4c)",
