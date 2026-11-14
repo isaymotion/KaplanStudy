@@ -15,7 +15,7 @@ with sync_playwright() as p:
         pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' and 'fonts' not in m.text and 'ERR_TUNNEL' not in m.text else None)
         def over(): return pg.evaluate('document.documentElement.scrollWidth > window.innerWidth')
         pg.goto(B + '#/tools'); pg.wait_for_selector('.tools-hub')
-        check(f'{vw} hub: 6 scales + 4 calcs + 2 companions', pg.locator('.tools-hub a.tool').count() == 12, pg.locator('.tools-hub a.tool').count())
+        check(f'{vw} hub: 7 scales + 4 calcs + 2 companions', pg.locator('.tools-hub a.tool').count() == 13, pg.locator('.tools-hub a.tool').count())
         check(f'{vw} hub no overflow', not over())
         def pick(item, j): pg.locator(f'[data-item="{item}"] input[value="{j}"]').check()
         # PHQ-9: all "More than half the days" (2) = 18 -> moderately severe; item 9 positive flag with NCMH line
@@ -26,6 +26,14 @@ with sync_playwright() as p:
         check(f'{vw} PHQ-9 18/27 moderately severe + item 9 flag + 1553', '18' in r and 'Moderately severe' in r and 'Item 9 is positive' in r and '1553' in r, r)
         check(f'{vw} scale page no overflow', not over())
         pg.locator('#sc-reset').click(); check(f'{vw} PHQ-9 clear', pg.locator('#sc-form input:checked').count() == 0)
+        # GDS-15: depressive answer on items 1-6 (=6) -> suggestive; item 14 yes -> flag; reverse items keyed
+        pg.goto(B + '#/tools/gds15'); pg.wait_for_selector('#sc-form')
+        rev = {1, 5, 7, 11, 13}
+        for i in range(1, 16):
+            dep = i <= 6
+            pick(f'gd{i}', (1 if dep else 0) if i in rev else (0 if dep else 1))
+        r = pg.locator('#sc-result').inner_text(); check(f'{vw} GDS-15 6 suggestive', '6' in r and 'Suggestive of depression' in r and 'hopelessness' not in r, r)
+        pick('gd14', 0); r = pg.locator('#sc-result').inner_text(); check(f'{vw} GDS-15 7 + item 14 flag + 1553', '7' in r and 'Item 14' in r and '1553' in r, r)
         # GAD-7: 1 each = 7 -> mild
         pg.goto(B + '#/tools/gad7'); pg.wait_for_selector('#sc-form')
         for i in range(1, 8): pick(f'g{i}', 1)
