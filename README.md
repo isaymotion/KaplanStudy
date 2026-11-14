@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 90.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 90.1.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -24,7 +24,7 @@ Across all chapters:
 - **Mistakes**: every clinical case answered wrong, in a deck, the daily review or an exam, is collected automatically. Answer it correctly to clear it.
 - **Weak topics** (`#/weak`): exam and quiz answers (pre-tests left out), flashcard ratings (each Again is a miss) and open mistakes, pooled by chapter and card tag and ranked weakest first once a topic has 3 tries, with roll-ups by chapter and ABPN domain and a one-click drill of up to 20 of the topic's cases.
 - **Confidence ratings**: after picking an answer in an exam, quiz, drill or pre/post-test, rate it Guessed, Unsure or Sure (keys 1 to 3; optional, can be turned off on the exam page). Results show the score by confidence level and review lists for confident errors and lucky guesses; Weak topics lists topics with confident errors and counts a right answer marked Guessed as a miss.
-- **Clinical tools** (`#/tools`, `js/tools.js`, data in `data/tools/scales.js` and `data/tools/calcs.js`): PHQ-9, GAD-7, AIMS, CIWA-Ar, COWS and C-SSRS screener scored live (nothing is saved), and calculators for antipsychotic equivalents (WHO DDD method), benzodiazepine equivalents (Ashton), clozapine ANC monitoring (US label) and lithium levels (ISBD/IGSLi 2019). Each tool lists its sources and licence; guide pages link to the tools for their chapter.
+- **Clinical tools** (`#/tools`, `js/tools.js`, data in `data/tools/scales.js` and `data/tools/calcs.js`): PHQ-9, GDS-15, GAD-7, AIMS, CIWA-Ar, COWS and C-SSRS screener scored live (nothing is saved), and calculators for antipsychotic equivalents (WHO DDD method), benzodiazepine equivalents (Ashton), clozapine ANC monitoring (US label) and lithium levels (ISBD/IGSLi 2019). Each tool lists its sources and licence; guide pages link to the tools for their chapter.
 - **Report an error**: a link under every study-guide section opens a pre-filled email to isaymotion@gmail.com.
 - **Daily review card types**: residents choose which decks daily review draws from (all four by default).
 - **Bookmarks**: tap the ribbon beside any study-guide section title to save it. Bookmarked sections are marked in the chapter contents and collected on the Bookmarks page (`#/bookmarks`) in book order, with a preview of each section.

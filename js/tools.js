@@ -7,7 +7,9 @@
   var KS = window.KS = window.KS || {};
 
   KS.toolsModule = function (A) {
-    var esc = A.esc, fmt = A.fmt, plural = A.plural;
+    var esc = A.esc, plural = A.plural;
+    /* Tool texts may link to other app routes as [label](#/route); only internal hash links are turned into anchors. */
+    function fmt(t) { return A.fmt(t).replace(/\[([^\]]+)\]\((#\/[A-Za-z0-9\/_-]+)\)/g, '<a href="$2">$1</a>'); }
     var SCALES = KS.scales || [], CALCS = KS.calcs || [];
     var BY_ID = {};
     SCALES.forEach(function (s) { s.kind = 'scale'; BY_ID[s.id] = s; });

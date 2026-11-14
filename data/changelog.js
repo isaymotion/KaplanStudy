@@ -13,6 +13,25 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "90.1.0",
+    "date": "2026-11-14",
+    "title": "New clinical tool: Geriatric Depression Scale, short form (GDS-15)",
+    "items": [
+      {
+        "type": "feature",
+        "text": "The clinical tools hub now scores the 15-item Geriatric Depression Scale (public domain): yes or no answers, reverse-scored items handled, the author's bands (above 5 suggests depression, above 10 almost always depression), a prompt to ask about suicide when item 14 (hopelessness) is yes, and notes on other published cut points and on use in dementia. Linked from Chapter 25.2, which teaches the scale (Table 25-5).",
+        "href": "#/tools/gds15",
+        "link": "Open the GDS-15"
+      },
+      {
+        "type": "correction",
+        "text": "The PHQ-9 item 9 warning showed its link to the C-SSRS screener as raw code instead of a link. It is now a working link (the new GDS-15 warning uses the same fix).",
+        "href": "#/tools/phq9",
+        "link": "Open the PHQ-9"
+      }
+    ]
+  },
+  {
     "version": "90.0.0",
     "date": "2026-11-14",
     "title": "Chapter 35, A Brief History of Psychiatry: the book is complete",

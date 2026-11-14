@@ -14,6 +14,7 @@
   }
   var HALL = { 4: 'Moderately severe hallucinations', 5: 'Severe hallucinations', 6: 'Extremely severe hallucinations', 7: 'Continuous hallucinations' };
   function hall(o) { var x = {}; Object.keys(o).forEach(function (k) { x[k] = o[k]; }); Object.keys(HALL).forEach(function (k) { x[k] = HALL[k]; }); return x; }
+  var YES1 = [['Yes', 1], ['No', 0]], NO1 = [['Yes', 0], ['No', 1]];
   var AIMS_OPTS = [['None', 0], ['Minimal, may be extreme normal', 1], ['Mild', 2], ['Moderate', 3], ['Severe', 4]];
 
   KS.scales = [
@@ -43,7 +44,7 @@
         { lo: 15, hi: 19, label: 'Moderately severe (15 to 19)', tone: 'sev' },
         { lo: 20, hi: 27, label: 'Severe (20 to 27)', tone: 'sev' }
       ],
-      flags: [{ item: 'p9', 'in': [1, 2, 3], tone: 'sev', short: 'item 9 positive', text: '**Item 9 is positive.** Common practice is to ask directly about suicidal thoughts and assess risk now, before the patient leaves. The <a href="#/tools/cssrs">C-SSRS screener</a> is one way to structure it. In the Philippines, the NCMH Crisis Hotline is free and open 24/7: **1553** (landline, toll-free), **0919-057-1553** or **0917-899-8727**.' }],
+      flags: [{ item: 'p9', 'in': [1, 2, 3], tone: 'sev', short: 'item 9 positive', text: '**Item 9 is positive.** Common practice is to ask directly about suicidal thoughts and assess risk now, before the patient leaves. The [C-SSRS screener](#/tools/cssrs) is one way to structure it. In the Philippines, the NCMH Crisis Hotline is free and open 24/7: **1553** (landline, toll-free), **0919-057-1553** or **0917-899-8727**.' }],
       note: 'The total adds items 1 to 9. The last question (how difficult the problems have made things) is not scored; it describes impairment. Cut points of 5, 10, 15 and 20 mark mild, moderate, moderately severe and severe depression.',
       license: PHQ_CREDIT,
       cite: 'Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. *J Gen Intern Med.* 2001;16(9):606–613.',
@@ -51,6 +52,45 @@
         { label: 'PHQ-9 form (Indian Health Service copy of the Pfizer form)', url: 'https://www.ihs.gov/sites/crs/themes/responsive2017/display_objects/documents/phq_9.pdf' },
         { label: 'PHQ-9 form (NIDA Common Data Elements)', url: 'https://cde.nida.nih.gov/system/files/PatientHealthQuestionnaire-9_2014Mar19.pdf' },
         { label: 'PHQ screeners (instrument home page)', url: 'https://www.phqscreeners.com/' }
+      ]
+    },
+    {
+      id: 'gds15', short: 'GDS-15', name: 'GDS-15: Geriatric Depression Scale, short form',
+      blurb: 'Depression screen for older adults over the past week; 15 yes or no items, 0 to 15.',
+      summary: 'A yes or no screening questionnaire for depression in older adults, covering the past week. It leaves out sleep, appetite and other bodily symptoms that are common in late life for other reasons. It screens; it does not make a diagnosis.',
+      intro: 'Choose the best answer for how you have felt over the past week.',
+      chapters: ['ch25-2'],
+      max: 15,
+      items: [
+        { id: 'gd1', text: 'Are you basically satisfied with your life?', opts: NO1 },
+        { id: 'gd2', text: 'Have you dropped many of your activities and interests?', opts: YES1 },
+        { id: 'gd3', text: 'Do you feel that your life is empty?', opts: YES1 },
+        { id: 'gd4', text: 'Do you often get bored?', opts: YES1 },
+        { id: 'gd5', text: 'Are you in good spirits most of the time?', opts: NO1 },
+        { id: 'gd6', text: 'Are you afraid that something bad is going to happen to you?', opts: YES1 },
+        { id: 'gd7', text: 'Do you feel happy most of the time?', opts: NO1 },
+        { id: 'gd8', text: 'Do you often feel helpless?', opts: YES1 },
+        { id: 'gd9', text: 'Do you prefer to stay at home, rather than going out and doing new things?', opts: YES1 },
+        { id: 'gd10', text: 'Do you feel you have more problems with memory than most?', opts: YES1 },
+        { id: 'gd11', text: 'Do you think it is wonderful to be alive now?', opts: NO1 },
+        { id: 'gd12', text: 'Do you feel pretty worthless the way you are now?', opts: YES1 },
+        { id: 'gd13', text: 'Do you feel full of energy?', opts: NO1 },
+        { id: 'gd14', text: 'Do you feel that your situation is hopeless?', opts: YES1 },
+        { id: 'gd15', text: 'Do you think that most people are better off than you are?', opts: YES1 }
+      ],
+      bands: [
+        { lo: 0, hi: 5, label: 'Not suggestive of depression (0 to 5)', tone: 'ok' },
+        { lo: 6, hi: 10, label: 'Suggestive of depression (6 to 10)', tone: 'mod', text: 'The author\'s scoring page: a score **above 5** suggests depression and calls for a **follow-up interview**.' },
+        { lo: 11, hi: 15, label: 'Almost always depression (11 to 15)', tone: 'sev', text: 'The author\'s scoring page: scores **above 10** are almost always depression. Confirm with a clinical interview.' }
+      ],
+      flags: [{ item: 'gd14', 'in': [1], tone: 'sev', short: 'hopelessness', text: '**Item 14 (hopelessness) is yes.** The GDS-15 does not ask about suicide. Common practice is to ask directly about suicidal thoughts now. The [C-SSRS screener](#/tools/cssrs) is one way to structure it. In the Philippines, the NCMH Crisis Hotline is free and open 24/7: **1553** (landline, toll-free), **0919-057-1553** or **0917-899-8727**.' }],
+      note: 'One point for each answer that points to depression: **no** on items 1, 5, 7, 11 and 13, **yes** on the other ten. Bands follow the author\'s scoring page (above 5 suggestive, above 10 almost always depression), which matches Chapter 25.2. Other sources differ: the Hartford Institute uses 5 to 8 mild, 9 to 11 moderate and 12 to 15 severe, and many validation studies use 5 or more as the cut point. Sensitivity and specificity vary between studies. Validity falls as cognitive impairment worsens, so add collateral history in dementia. If a few items are missed, the author advises prorating the score and rounding up; this tool scores only a complete form.',
+      license: 'Public domain: the author\'s site states that the original scale is in the public domain because it was partly the result of federal support.',
+      cite: 'Sheikh JI, Yesavage JA. Geriatric Depression Scale (GDS): recent evidence and development of a shorter version. *Clin Gerontol.* 1986;5(1/2):165–173.',
+      sources: [
+        { label: 'Geriatric Depression Scale (author site, Stanford)', url: 'https://web.stanford.edu/~yesavage/GDS.html' },
+        { label: 'GDS short form scoring key (author site)', url: 'http://www.stanford.edu/~yesavage/GDS.english.short.score.html' },
+        { label: 'Hartford Institute for Geriatric Nursing, Try This: The Geriatric Depression Scale (revised 2023)', url: 'https://hign.org/sites/default/files/2022-11/GDS%20General%20Assessment.pdf' }
       ]
     },
     {
