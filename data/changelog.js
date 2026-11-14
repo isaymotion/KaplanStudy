@@ -13,6 +13,40 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "90.0.0",
+    "date": "2026-11-14",
+    "title": "Chapter 35, A Brief History of Psychiatry: the book is complete",
+    "items": [
+      {
+        "type": "chapter",
+        "ch": "ch35",
+        "text": "New Chapter 35, A Brief History of Psychiatry: from ancient India and Greece through asylums, moral treatment, Kraepelin, Bleuler and Freud, the first psychiatric drugs, deinstitutionalization and the road to DSM-III, plus the people and events of Table 35-1, with 77 cases. Every chapter of the book is now in the app.",
+        "href": "#/c/ch35/guide",
+        "link": "Open Chapter 35"
+      },
+      {
+        "type": "correction",
+        "ch": "ch35",
+        "text": "Corrections: Pussin removed the chains at the Bicêtre in 1797 (Pinel and Pussin at the Salpêtrière in 1800); the Utica asylum opened in 1843; folie circulaire was Jean-Pierre Falret's; Edinburgh phrenology was 19th-century; the unitary view of mental illness was Karl Menninger's.",
+        "href": "#/c/ch35/guide/s35-19a",
+        "link": "See the corrections"
+      },
+      {
+        "type": "update",
+        "ch": "ch35",
+        "text": "Updates: the 1963 community mental health centers law and NIMH, the questions raised since 2019 about the Rosenhan study, and ICD-11 and DSM-5-TR.",
+        "href": "#/c/ch35/guide/s35-class",
+        "link": "See the updates"
+      },
+      {
+        "type": "feature",
+        "text": "New look-alike: early names for psychosis and mood disorder, from démence précoce to schizophrenia.",
+        "href": "#/lookalikes/psychosis-terms35",
+        "link": "Open the look-alike"
+      }
+    ]
+  },
+  {
     "version": "89.0.0",
     "date": "2026-11-14",
     "title": "Section 34.4 complete: other psychodynamic schools (34.4d) and positive psychology (34.4e)",

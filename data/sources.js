@@ -4,6 +4,20 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Chapter 35 (history), November 2026 */
+    { m: "Victorian Web: George Combe", label: "Victorian Web: George Combe (1788-1858); the Edinburgh Phrenological Society was founded in February 1820", url: "https://victorianweb.org/science/phrenology/combe.html" },
+    { m: "Public Law 88-164", label: "Public Law 88-164 (October 31, 1963): Mental Retardation Facilities and Community Mental Health Centers Construction Act of 1963", url: "https://www.govinfo.gov/content/pkg/STATUTE-77/pdf/STATUTE-77-Pg282.pdf" },
+    { m: "NIH Almanac: National Institute of Mental Health", label: "NIH Almanac: National Institute of Mental Health (NIMH), important events (community mental health centers program)", url: "https://www.nih.gov/about-nih/nih-almanac/national-institute-mental-health-nimh" },
+    { m: "Menninger K, Mayman M, Pruyser P, The Vital Balance", label: "Menninger K, Mayman M, Pruyser P, The Vital Balance: The Life Process in Mental Health and Illness, New York: Viking, 1963 (review: New York Review of Books, June 25, 1964)", url: "https://www.nybooks.com/articles/1964/06/25/psychiatry-after-freud/" },
+    { m: "Pinel: a revolutionary psychiatrist", label: "Pinel: a revolutionary psychiatrist, Irish Journal of Psychological Medicine (Pussin removed the fetters at Bicêtre in May to June 1797; Pinel and Pussin at the Salpêtrière in 1800)", url: "https://www.cambridge.org/core/journals/irish-journal-of-psychological-medicine/article/pinel-a-revolutionary-psychiatrist/118F2509233D1757FED598CAABD20B87" },
+    { m: "Wellcome Collection: Pinel freeing the insane", label: "Wellcome Collection: the story of Robert-Fleury's painting of Pinel at the Salpêtrière (1876)", url: "https://wellcomecollection.org/stories/Xl44UhIAACEANhux" },
+    { m: "New York State Archives: State Lunatic Asylum at Utica", label: "New York State Archives: New York State Lunatic Asylum at Utica (act of 1836; opened January 16, 1843)", url: "https://www.archives.nysed.gov/node/361088" },
+    { m: "Behind the Legend of Dorothea Dix", label: "Psychiatric News 2019: Behind the legend of Dorothea Dix (1843 Massachusetts memorial; Trenton asylum opened 1848)", url: "https://psychnews.psychiatryonline.org/doi/10.1176/appi.pn.2019.4a13" },
+    { m: "Pichot P, Circular insanity, 150 years on", label: "Pichot P, Circular insanity, 150 years on, Bull Acad Natl Med 2004;188:275-284 (Académie nationale de médecine)", url: "https://www.academie-medecine.fr/150eme-anniversaire-de-la-folie-circulaire/?lang=en" },
+    { m: "Rosenhan DL, On being sane in insane places", label: "Rosenhan DL, On being sane in insane places, Science 1973;179:250-258", url: "https://doi.org/10.1126/science.179.4070.250" },
+    { m: "Abbott A, On the troubling trail of psychiatry's pseudopatients", label: "Abbott A, On the troubling trail of psychiatry's pseudopatients stunt (review of Cahalan, The Great Pretender, 2019), Nature 2019;574:622-623", url: "https://doi.org/10.1038/d41586-019-03268-y" },
+    { m: "Scull A, Rosenhan revisited", label: "Scull A, Rosenhan revisited: successful scientific fraud, History of Psychiatry 2023", url: "https://doi.org/10.1177/0957154X221150878" },
+    { m: "WHO: ICD-11 adoption resolution WHA72", label: "WHO: The 72nd World Health Assembly resolution for ICD-11 adoption (adopted 2019, in effect 1 January 2022)", url: "https://www.who.int/publications/m/item/eleventh-revision-of-the-international-classification-of-diseases-adoption-wha72" },
     /* Section 34.4 (other schools, positive psychology), November 2026 */
     { m: "Anna Freud Centre: Our history", label: "Anna Freud: Our history (course 1947, clinic 1952, renamed the Anna Freud Centre 1984)", url: "https://www.annafreud.org/about/our-history/" },
     { m: "Freud Museum London: Hampstead Child Therapy Courses", label: "Freud Museum London: Hampstead Child Therapy Courses (1947; clinic added five years later)", url: "https://www.freud.org.uk/?p=3257" },

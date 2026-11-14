@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 89.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 90.0.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
@@ -173,6 +173,7 @@ Also included: match-device, light and dark themes, keyboard shortcuts, offline 
 | 34.4c | Theories of Personality III: Erik Erikson and the Life Cycle | 6 | 108 | 147 |
 | 34.4d | Theories of Personality IV: Other Psychodynamic Schools | 8 | 158 | 202 |
 | 34.4e | Theories of Personality V: Positive Psychology | 5 | 86 | 83 |
+| 35 | A Brief History of Psychiatry | 12 | 219 | 272 |
 
 ## Upgrading from version 59 (October 2026)
 

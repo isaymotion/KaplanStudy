@@ -2509,5 +2509,83 @@ KS.lookalikes = [
     }
   ],
   "source": "Kaplan & Sadock 12th ed., section 34.4 (Theories of Personality and Psychopathology)"
+},
+{
+  "id": "psychosis-terms35",
+  "title": "Early names for psychosis and mood disorder",
+  "summary": "The 19th-century descriptions that led to schizophrenia and bipolar disorder, side by side, as Chapter 35 tells them, with the corrections in its update boxes.",
+  "items": [
+    "Who and when",
+    "What it described",
+    "What it became"
+  ],
+  "rows": [
+    [
+      "Démence précoce",
+      "Morel, 1852",
+      "Deteriorating illness starting in adolescence; probably the first formal case report of schizophrenic psychosis",
+      "Kraepelin's dementia praecox, then schizophrenia"
+    ],
+    [
+      "Folie circulaire",
+      "Jean-Pierre Falret (the chapter prints Jules Falret), presented in full 1854",
+      "Alternating mania and melancholia",
+      "Bipolar disorder"
+    ],
+    [
+      "Folie à double forme",
+      "Baillarger, 1854",
+      "Mania and depression in one illness; priority disputed with Falret",
+      "Bipolar disorder"
+    ],
+    [
+      "Catatonia",
+      "Kahlbaum, 1874",
+      "One of the earliest medical accounts of catatonia",
+      "Later grouped with dementia praecox"
+    ],
+    [
+      "Cyclothymia",
+      "Kahlbaum, 1882",
+      "Mania and depression as stages of one illness",
+      "Mood disorder concepts"
+    ],
+    [
+      "Dementia praecox",
+      "Kraepelin",
+      "Early onset, long deteriorating course, hallucinations and delusions",
+      "Renamed schizophrenia"
+    ],
+    [
+      "Manic-depressive psychosis",
+      "Kraepelin",
+      "Episodes with normal function between them",
+      "Bipolar and other mood disorders"
+    ],
+    [
+      "Schizophrenia",
+      "Bleuler",
+      "Splits between thought, emotion and behavior; the four As; deterioration not required",
+      "Today's term"
+    ]
+  ],
+  "keys": [
+    "**Morel** (1852) coined démence précoce; **Kraepelin** turned it into **dementia praecox**; **Bleuler** renamed it **schizophrenia**.",
+    "**Kraepelin** split the psychoses by **course**: deteriorating versus **episodic**.",
+    "Folie circulaire was **Jean-Pierre Falret's**; his son **Jules** is known for **folie à deux**."
+  ],
+  "links": [
+    {
+      "ch": "ch35",
+      "sec": "s35-19a",
+      "label": "Asylum laws, reformers and the first descriptions of psychosis"
+    },
+    {
+      "ch": "ch35",
+      "sec": "s35-19b",
+      "label": "Kraepelin, Bleuler and Freud"
+    }
+  ],
+  "source": "Kaplan & Sadock 12th ed., Chapter 35 (A Brief History of Psychiatry); Pichot 2004 for Falret"
 }
 ];

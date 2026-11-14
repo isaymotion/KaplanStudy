@@ -390,6 +390,10 @@ KS.manifest = [
   { id: 'ch34-10', number: '34.4e', title: 'Theories of Personality V: Positive Psychology', short: 'Positive psychology',
     summary: 'What positive psychology studies, its findings on happiness, relationships, work, religion and positive institutions, Figure 34-48\'s two dimensions of health, strengths assessment, brief exercises and positive psychotherapies, with updates on later meta-analyses, dimensional personality disorder classification and the WHO constitution date.',
     files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
+  },
+  { id: 'ch35', number: '35', title: 'A Brief History of Psychiatry', short: 'History of psychiatry',
+    summary: 'From ancient India and Greece through Bethlem, moral treatment, the first descriptions of psychosis, Kraepelin, Bleuler and Freud, chance drug discoveries, deinstitutionalization and the road to DSM-III, plus the people and events of Table 35-1, with corrections on Pinel and Pussin, Utica and Dix, Falret, phrenology and Menninger, and updates on the Rosenhan study and ICD-11.',
+    files: ['guide','highyield','cards-diagnosis','cards-cases','cards-pharm','cards-foundations', 'learning']
   }
 ];
 

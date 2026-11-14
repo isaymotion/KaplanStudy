@@ -1086,7 +1086,19 @@ KS.glossary = (KS.glossary || []).concat([
   ["eudaimonia","Aristotle's idea of living true to one's inner self by finding and acting on one's virtues; a stronger predictor of life satisfaction than hedonism.","Ch 34.4e"],
   ["active-constructive responding","Answering another person's good news with enthusiasm; the response style linked to good marriages.","Ch 34.4e"],
   ["signature strengths","A person's top character strengths, identified with the VIA Inventory of Strengths and used in new ways as a positive psychology exercise.","Ch 34.4e"],
-  ["positive psychotherapy","A newer treatment grounded in positive psychology that aims at happiness, satisfaction and fulfillment rather than symptom relief, within a therapeutic alliance.","Ch 34.4e"]
+  ["positive psychotherapy","A newer treatment grounded in positive psychology that aims at happiness, satisfaction and fulfillment rather than symptom relief, within a therapeutic alliance.","Ch 34.4e"],
+  ["moral treatment","Historical name for the humane, nonrestraining asylum care of the late 18th and 19th centuries, linked to Tuke's York Retreat and to Pussin and Pinel in Paris.","Ch 35"],
+  ["phrenology","A 19th-century pseudoscience that read character and mental faculties from the shape of the skull; useless as medicine but it placed mental illness in the brain.","Ch 35"],
+  ["démence précoce","Morel's 1852 term for a deteriorating illness starting in adolescence; Kraepelin's dementia praecox and Bleuler's schizophrenia grew from it.","Ch 35"],
+  ["dementia praecox","Kraepelin's name for a psychosis of early onset with a long deteriorating course, later renamed schizophrenia by Bleuler.","Ch 35"],
+  ["folie circulaire","Jean-Pierre Falret's 'circular insanity', alternating mania and melancholia; an early description of bipolar disorder.","Ch 35"],
+  ["folie à double forme","Jules Baillarger's 1854 'double-form insanity', mania and depression in one illness; disputed priority with Falret's folie circulaire.","Ch 35"],
+  ["Bedlam","Popular name for Bethlem, the London hospital founded in 1247; the word came to mean uproar and confusion.","Ch 35"],
+  ["psychobiology","Adolf Meyer's approach, which saw each mental disorder as a person's reaction to life stress.","Ch 35"],
+  ["Feighner criteria","Also called the St. Louis criteria: the first systematic research criteria for 15 major psychiatric categories, from Washington University; a basis for the RDC and DSM-III.","Ch 35"],
+  ["Research Diagnostic Criteria","The RDC of Spitzer, Endicott and colleagues, which expanded the Feighner criteria and led to DSM-III.","Ch 35"],
+  ["monoamine theory","The first biologic theory of depression, supported by reserpine causing depression by depleting monoamines.","Ch 35"],
+  ["deinstitutionalization","The move of psychiatric patients out of long-stay asylums into the community, spurred in the United States by the 1963 community mental health centers law.","Ch 35"]
 ]);
 /* Alternate forms used in chapter text that should link to a glossary entry. */
 KS.glossaryAliases = {
