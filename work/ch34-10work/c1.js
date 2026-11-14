@@ -1,0 +1,83 @@
+({
+hy: [
+  { id: "hy3410-01", topic: "Definition and scope of positive psychology", items: [
+    "Positive psychology is an **umbrella term** for the science of what makes a life **most worth living**.",
+    "Its findings aim at a more **complete and balanced** scientific picture of human experience.",
+    "It asks for equal focus on **strength** and on weakness.",
+    "It values **building the best** in life as much as repairing the worst.",
+    "It cares as much about fulfilling lives for **normal people** as about **healing pathology**.",
+    "It **does not replace** problem-focused psychology.",
+    "It aims to **complement and extend**, not displace, the problem-focused approach.",
+    "Its deliberate interventions are framed as **supplements** to existing therapies.",
+    "Its interventions aim to raise well-being in both **individuals** and **groups**.",
+    "It covers the whole life span, **birth through death**, looking at what goes right.",
+    "Its interest in **optimal experience** means people at their best, in being and in doing.",
+    "It **does not deny** life's low points (peaks and valleys).",
+    "Signature premise: the good in life is as **genuine** as the bad and deserves **equal attention**.",
+    "The field holds that explaining the good life takes more than **inverting** theories of distress and dysfunction.",
+    "The chapter describes it as a **new** and **young** field."
+  ] },
+  { id: "hy3410-02", topic: "Empirical findings", items: [
+    "The field is described as **bottom-up**, shaped mainly by its **empirical results**.",
+    "Four areas of findings: positive **experiences**, **traits**, **relationships** and **institutions**.",
+    "Self-rated happiness is studied as **subjective well-being** with **numerical rating scales**.",
+    "Most people in most circumstances score **above the scale midpoint**, from US multimillionaires to **pavement dwellers in Calcutta**.",
+    "Age, sex, ethnicity and education each have only a **small** link with happiness.",
+    "Robust correlates of happiness are **social**: friends, marriage, extroversion, gratitude, religion, leisure, **employment (not income)**.",
+    "Very happy people differed from happy people by **good relationships**; **all** very happy people had close ties.",
+    "Close social ties **may be necessary** for extreme happiness.",
+    "Happiness **foreshadows** later success at school, at work and in relationships (experimental and **longitudinal** research).",
+    "A **best friend at work** strongly predicts satisfaction and even **productivity**.",
+    "In a good relationship, **positive communication** clearly outweighs negative.",
+    "**Active-constructive** responding to good news is linked with **good marriages**; the other three styles, if dominant, with **marital dissatisfaction**.",
+    "Response-style research has been done **only in marriage**.",
+    "Religiousness is robustly linked with **longevity** and happiness; internalized beliefs **may** aid coping and help avoid **physical illness**.",
+    "Above **extreme poverty**, income has a **surprisingly small** tie to life satisfaction.",
+    "Engaged workers see their work as a **calling**, take **fewer sick days** and **postpone retirement**.",
+    "**Eudaimonia** (Aristotle) consistently outperforms **pleasure** in predicting life satisfaction.",
+    "**Hedonism** underlies **utilitarianism**, which the chapter says underpins psychoanalysis and most behaviorisms.",
+    "Flourishing institutions share **purpose, safety, fairness, humanity and dignity**.",
+    "Interventions aim to make people happier, more **hopeful**, **virtuous**, **accomplished** and **socially involved**.",
+    "Intervention research rarely follows people beyond **a few years** and uses **motivated volunteers**."
+  ] }
+],
+dx: [
+  { id: "d3410-df01", tag: "Definition and scope of positive psychology", q: "How does positive psychology relate to standard problem-focused treatment, as the chapter frames it?", a: "It **does not replace** it; it aims to **complement and extend** it, and its interventions are **supplements** to existing therapies." },
+  { id: "d3410-df02", tag: "Definition and scope of positive psychology", q: "Which groups do positive psychology interventions aim to help?", a: "Both **individuals** and **groups**, by promoting **well-being**." },
+  { id: "d3410-df03", tag: "Definition and scope of positive psychology", q: "Does positive psychology ask clinicians to overlook a patient's low points?", a: "No. The field **does not deny** life's valleys; it holds that the good deserves **equal attention**, not exclusive attention." },
+  { id: "d3410-ef01", tag: "Empirical findings", q: "A couple asks which way of reacting to each other's good news is linked with a good marriage. What does the chapter report?", a: "**Active-constructive** (enthusiastic) responding. The other three styles, when they **dominate**, are tied to **marital dissatisfaction**." },
+  { id: "d3410-ef02", tag: "Empirical findings", q: "What is the main limitation of the response-style research?", a: "It has been done **only in marriage**; it **may** generalize to other relationships, but that is not shown." },
+  { id: "d3410-ef03", tag: "Empirical findings", q: "Above extreme poverty, how much does extra income add to life satisfaction?", a: "A **surprisingly small** amount; **being employed** is much more strongly tied to happiness." },
+  { id: "d3410-ef04", tag: "Empirical findings", q: "What outcomes are linked with being happy and engaged at work?", a: "Seeing work as a **calling**, higher **productivity**, **fewer sick days** and **postponed retirement**." },
+  { id: "d3410-ef05", tag: "Empirical findings", q: "What two limits does the chapter name in positive psychology outcome research?", a: "Follow-up rarely extends beyond **a few years**, and participants are usually **motivated volunteers**; **generalization** across people and time is a high-priority question." },
+  { id: "d3410-ef06", tag: "Empirical findings", q: "Which health outcome is robustly associated with religiousness?", a: "**Longevity**, along with happiness; internalized beliefs **may** help coping and avoiding **physical illness**." },
+  { id: "d3410-ef07", tag: "Empirical findings", q: "Does success cause happiness, or can happiness come first?", a: "Successful people are happy, but **experimental and longitudinal** research shows happiness **foreshadows** academic, vocational and interpersonal **success**." },
+  { id: "d3410-ef08", tag: "Empirical findings", q: "Some positive psychology applications are in use before studies support them. How does the chapter describe this?", a: "Some applications are **running in front of the data**, while for others **outcome research** has been done." }
+],
+cs: [
+  { id: "c3410-df01", tag: "Definition and scope of positive psychology", q: "A 34-year-old woman in CBT for depression asks her psychiatrist whether she should stop CBT and switch entirely to a positive psychology program. Which statement best reflects the chapter's view of positive psychology?", choices: ["It is meant to replace problem-focused therapy", "It is meant to complement and extend existing therapy", "It applies only to people without any disorder", "It holds that distress is not genuine", "It studies only the end of the life span"], answer: 1, why: "The field means to complement and extend problem-focused work, and its interventions are supplements to existing therapies (Definition and scope)." },
+  { id: "c3410-df02", tag: "Definition and scope of positive psychology", q: "A resident tells a 58-year-old man with chronic pain that, alongside treating his symptoms, she wants to learn what is going well in his life, because that is just as real as his pain. Which idea from positive psychology is she applying?", choices: ["That the bad in life should be ignored", "That the good life is simply the absence of problems", "That psychoanalysis rests on eudaimonia", "That the good in life is as genuine as the bad and deserves equal attention", "That happiness is fixed by demographic factors"], answer: 3, why: "The field's core premise holds that life's good is just as real as its bad and merits the same attention (Definition and scope)." },
+  { id: "c3410-df03", tag: "Definition and scope of positive psychology", q: "A 26-year-old teacher with no psychiatric history joins a workshop to make her life more fulfilling. A colleague says psychology has nothing to offer people who are not ill. Which goal of positive psychology best answers the colleague?", choices: ["Helping normal people lead fulfilling lives", "Healing pathology only", "Replacing all existing therapies", "Studying only peak experiences of famous people", "Proving that income drives happiness"], answer: 0, why: "Positive psychology calls for as much concern with fulfilling the lives of normal people as with healing pathology (Definition and scope)." },
+  { id: "c3410-ef01", tag: "Empirical findings", q: "A 41-year-old man tells his wife he got a raise. She replies, ‘Will they expect you to work weekends now?’ Which response style is this?", choices: ["Active-constructive", "Passive-constructive", "Active-destructive", "Passive-destructive", "Eudaimonic"], answer: 2, why: "Pointing out a possible downside of good news is active-destructive responding (Empirical findings)." },
+  { id: "c3410-ef02", tag: "Empirical findings", q: "A 29-year-old woman shares that she passed her board exam. Her husband, looking at his phone, says only, ‘That is nice.’ Which response style is this?", choices: ["Active-destructive", "Active-constructive", "Passive-destructive", "Passive-constructive", "Hedonic"], answer: 3, why: "A muted, low-key reply to good news is passive-constructive responding (Empirical findings)." },
+  { id: "c3410-ef03", tag: "Empirical findings", q: "A 52-year-old man in couples therapy reacts to his wife's promotion by talking about the traffic on his way home. If this pattern dominates, which outcome does the chapter link it with?", choices: ["Marital dissatisfaction", "A good marriage", "Greater longevity", "Higher income", "Better work productivity"], answer: 0, why: "Changing the subject shows disinterest (passive-destructive); when any style other than active-constructive dominates, it is tied to marital dissatisfaction (Empirical findings)." },
+  { id: "c3410-ef04", tag: "Empirical findings", q: "A 45-year-old executive has spent years chasing pleasure through travel and luxury, while his sister has worked to identify her virtues and live by them. According to the research the chapter reports, which is the stronger predictor of life satisfaction?", choices: ["Hedonism", "Utilitarianism", "Income level", "Eudaimonia", "Educational attainment"], answer: 3, why: "Research shows eudaimonia reliably predicts life satisfaction better than pleasure does, and hedonism adds less to lasting happiness (Empirical findings)." },
+  { id: "c3410-ef05", tag: "Empirical findings", q: "A hospital director wants staff to flourish. She sets equitable rules for rewards and discipline and makes sure they are applied the same way for everyone. Which feature of positive institutions is she building?", choices: ["Purpose", "Safety", "Fairness", "Humanity", "Dignity"], answer: 2, why: "Fairness means equitable rules for reward and punishment with consistent enforcement (Empirical findings)." },
+  { id: "c3410-ef06", tag: "Empirical findings", q: "A 37-year-old nurse asks what most separates very happy people from merely happy ones. Which factor does the chapter report?", choices: ["Higher income", "Good relationships with other people", "Younger age", "More years of education", "Higher job status"], answer: 1, why: "In the comparison study, all very happy people had close relationships; good relationships may be needed for extreme happiness (Empirical findings)." }
+],
+ph: [],
+fd: [
+  { id: "f3410-df01", tag: "Definition and scope of positive psychology", q: "What is positive psychology, in the chapter's definition?", a: "An **umbrella term** for the **scientific study** of what makes a life most worth living." },
+  { id: "f3410-df02", tag: "Definition and scope of positive psychology", q: "What is the signature premise of positive psychology?", a: "A **nuanced** one: the good in life is as **genuine** as the bad, so it merits **equal attention** from psychologists." },
+  { id: "f3410-df03", tag: "Definition and scope of positive psychology", q: "What does optimal experience mean in this field?", a: "People at their **best**, both in who they are and in what they do." },
+  { id: "f3410-df04", tag: "Definition and scope of positive psychology", q: "Why can't an account of the good life simply reverse accounts of illness?", a: "Because the field assumes life involves **more than avoiding or undoing problems**." },
+  { id: "f3410-ef01", tag: "Empirical findings", q: "Why is positive psychology called a bottom-up field?", a: "It is defined mainly by its **empirical results**." },
+  { id: "f3410-ef02", tag: "Empirical findings", q: "Under what label do researchers usually study self-rated happiness and life satisfaction?", a: "**Subjective well-being**, measured with **numerical rating scales**." },
+  { id: "f3410-ef03", tag: "Empirical findings", q: "Who proposed eudaimonia, and what does it mean?", a: "**Aristotle**: staying **true** to one's **inner self** (the chapter's term is demon), by naming one's **virtues**, developing them and acting on them." },
+  { id: "f3410-ef04", tag: "Empirical findings", q: "What is hedonism, and what does the chapter say it underpins?", a: "Pursuing **pleasure** and avoiding **pain**; it founds **utilitarianism**, which in turn underpins **psychoanalysis** and nearly every **behaviorism** except the most radical." },
+  { id: "f3410-ef05", tag: "Empirical findings", q: "Name the four response styles to someone's good news.", a: "**Active-constructive**, **active-destructive**, **passive-constructive** and **passive-destructive**." },
+  { id: "f3410-ef06", tag: "Empirical findings", q: "Name the five shared features of institutions where people flourish.", a: "**Purpose**, **safety**, **fairness**, **humanity** and **dignity**." },
+  { id: "f3410-ef07", tag: "Empirical findings", q: "In positive institutions, what is purpose, and how is it reinforced?", a: "A **shared vision** of the institution's **moral goals**, reinforced by **remembrances and celebrations**." },
+  { id: "f3410-ef08", tag: "Empirical findings", q: "How have psychology and psychiatry historically treated religion?", a: "They mostly **ignored** it or viewed it with **suspicion**, though evidence of benefits has begun to accumulate." }
+]
+})
