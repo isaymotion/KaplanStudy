@@ -1,0 +1,120 @@
+({
+  title: "Persons and events, continued (Table 35-1)",
+  sections: [
+    {
+      id: "s35-t3",
+      title: "Persons and events III: DSM-III to the genetics era (1980s and 1990s)",
+      blocks: [
+        { type: "p", text: "This part of Table 35-1 (Persons and Events in Psychiatry) covers the late 20th century. The rows move from the **DSM-III** era of explicit classification, through personality, dream, love and psychotherapy research, to the first **atypical antipsychotic** trials and the discovery of **genetic variations** behind several brain disorders. Most rows are topics, not single people, and most are dated by the books and papers they cite. The publications column of the table is cut off at the page edge, so only the legible parts of titles are used here." },
+        { type: "table", wide: true, caption: "Persons and events, late 20th century, part 1 (see Table 35-1)", head: ["Person or event", "Years", "Country", "Known for (legible titles)"], rows: [
+          ["Classification of mental disorders", "1980, 1987", "United States", "**DSM-III** (1980) and its revision **DSM-III-R** (1987); a paper in the Am J Psychiatry on how DSM-III changed American psychiatry"],
+          ["**James Masterson** and **Otto Kernberg**", "Masterson 1926–; Kernberg 1928–", "United States", "Masterson: a **developmental approach** to psychotherapy (1976), an integrated developmental book on narcissistic and borderline patients (1981), and the Masterson approach (1988). Kernberg: work on **pathological narcissism** (1975) and on psychotherapeutic strategies, Severe Perso... (1984)"],
+          ["Psychology and neurophysiology of dreams", "1998, 2001", "United States", "**Hobson** and **McCarley**: the brain as a dream generator, the **activation-synthesis** model; McCarley asks whether dreams are disguised wishes or a transparent state (1998); a paper on the dream in modern psychiatry (2001)"],
+          ["Theories on the psychology of love", "1987, 1988", "United States", "**Bergmann**, The Anatomy of Lov... (Columbia, 1987); a triangle of love built on intimacy and passion (1987); an edited psychology of love (Yale, 1988); Passionate Attachments (1988); a book on love, fateful encounters and romantic passion"],
+          ["Evaluations of psychotherapy", "1989", "United States", "A Harvard volume comparing **psychotherapy and behavior** therapy (Bruce, Staples, Cristol and others); **Elkin** and colleagues on the **NIMH** depression collaborative research study and the general effectiveness of its treatments (1989)"],
+          ["**Eric Kandel**", "1929–", "Austria, then the US from 1939", "A 1979 NEJM paper on psychotherapy and the impact of **psychiatric neurobiology**; papers on the molecular biology of **anxiety** and on nerve cells and memory (1989); a paper revisiting a new intellectual framework for psychiatry; the book **In Search of Memory**"],
+          ["**Aaron Beck**", "1921–", "United States", "**Cognitive Therapy** and the ... Disorders (1976); **Cognitive Therapy of Depression** with Rush and others (1979); anxiety disorders and phobias; cognitive therapy (with Freeman); a 1993 profile by Weishaar; a randomized trial of cognitive therapy for **hypochondriasis** (Barsky and Ahern, JAMA)"],
+          ["**Karl Menninger** and **William Menninger**", "Karl 1893–1990; William 1900–1966", "United States", "An edited collection of **Karl Menninger's correspondence** (Yale, 1988); a 1990 Knopf book on the Menninger family"],
+          ["**Frederick K. Goodwin** and **Kay Redfield Jamison**", "Goodwin 1936–; Jamison 1946–", "United States", "Their joint textbook, Oxford University Press, **2007**"],
+          ["A memoir of depression", "1990", "United States", "**W. Styron**, **Darkness Visible** (Random House, 1990)"],
+          ["**SSRIs**", "1993", "United States", "**The Story of Prozac** (a manufacturers association publication, Washington, 1993); a textbook chapter on serotonin-specific inhibitors"],
+          ["**Jerome Frank** and **E. Fuller Torrey**", "Frank 1910–2005; Torrey 1937–", "United States", "Frank: **Persuasion and Healing** (Johns Hopkins, 1961; later revised with J. B. Frank). Torrey: **The Mind Game** (1972), on witchdoctors and psychiatrists, revised in 1986 as Witchdoctors and Psychiatrists"],
+          ["Psychiatric epidemiology", "1991", "United States", "**Robins** and **Regier** (editors): a 1991 Free Press volume whose legible title ends America: The Epidemiologic Cat... (cut off)"],
+          ["Forensic psychiatry", "1994, 1995", "United States", "Bursztajn and colleagues on forensic psychiatry and **criminal responsibility** (1994); Prentice on the history of **subspecialization** in forensic psychiatry (1995)"],
+          ["Epidemic of **AIDS** and HIV infection", "1981–", "Worldwide", "**Grmek**, a history of AIDS as a modern pandemic (Princeton, 1990); Berridge on AIDS and contemporary history; an edited history of the AIDS crisis; Bayer and Oppenheimer, Voices from the Epidemic (2000); **Treisman**, a guide to the psychiatry of AIDS (2004); an edited volume on the pandemic and science"],
+          ["Classification of mental disorders", "2000", "United States", "The APA text revision, **DSM-IV-TR** (2000)"],
+          ["**Clozapine, risperidone and olanzapine** in schizophrenia", "1988 to 2002", "Canada, England, Europe, South Africa, South America, United States", "**Kane** and the Clozaril Collaborative Study Group: clozapine in **treatment-resistant** schizophrenia compared with **chlorpromazine** (1988); clozapine benefits and risks (1994); Ayd and others on **risperidone** (1994); Beasley and colleagues: **olanzapine** against placebo and haloperidol; a 2002 comparison of the newer drugs; Grilly on how clozapine emerged"],
+          ["Publications in **psychohistory** and psychobiography", "1988 to 2005", "United States, England", "Lawton, a psychohistorian's handbook (1988); a periodical whose cut title ends in **Psyche**, on understanding the why of events, history and society (Franklin Lakes); a psychoanalysis and history journal first edited by **Sabbadini** (London, No. 1), issued twice a year, later under Forrester, with a university press since 2007; Szaluta on psychohistory theory and practice; a 2005 handbook of psychohistory"],
+          ["**Paul Wender**", "1934–", "United States", "A book on **attention-deficit hyperactivity disorder** (Oxford University Press)"],
+          ["Computers and the **Internet**", "1996 to 2001", "United States", "The APA published **two books** on computers in psychiatry (Lieff; Luo, Kennedy and a co-author); a chapter on **computer-based testing** in the Sadocks' 7th edition textbook (2000); two Internet papers (Am J Psychiatry 1996; JAMA 2001)"],
+          ["**Genetic variations** found to cause mental illness", "1992 to 2001", "Australia, Canada, England, Europe, United States", "**Fragile X**: an unstable 550-base pair DNA stretch, and **CGG repeat** variation resolving the **Sherman paradox**; linkage evidence for a disease locus (1992) and an early-onset **Alzheimer's disease** locus on **chromosome 14**, near the antichymotrypsin gene; the **Huntington's disease** gene with an unstable **trinucleotide** repeat (1993); a syndrome caused by **MECP2** mutations (1999); Hyman and Moldin on genetic science; Andreasen on schizophrenia (2001)"]
+        ], note: "Titles and authors are given only as far as they can be read; the right edge of the column is cut off, and three dots mark a title that breaks off. The genetics row names the gene MECP2 but the name of the syndrome is cut off." },
+        { type: "defs", title: "Named people in this part", items: [
+          ["James Masterson (1926–)", "United States. Wrote on a **developmental approach** to psychotherapy, including narcissistic and borderline patients."],
+          ["Otto Kernberg (1928–)", "United States. Wrote on **pathological narcissism** (1975) and on psychotherapeutic strategies (1984)."],
+          ["J. A. Hobson and R. W. McCarley", "United States. Proposed the **activation-synthesis** view of the brain as a dream generator."],
+          ["M. S. Bergmann", "United States. Wrote The Anatomy of Lov... (1987), listed under theories of love."],
+          ["I. Elkin and colleagues", "United States. Reported the **NIMH** collaborative study of depression treatments (1989)."],
+          ["Eric Kandel (1929–)", "Born in **Austria**, in the United States after **1939**. Linked psychotherapy, memory and anxiety to **neurobiology**; wrote In Search of Memory."],
+          ["Aaron Beck (1921–)", "United States. Founder of **cognitive therapy** for depression, anxiety and personality disorders."],
+          ["Karl Menninger (1893–1990) and William Menninger (1900–1966)", "United States. Listed together; Karl's **correspondence** (1988) and the Menninger family (1990) are the subject of books."],
+          ["Frederick K. Goodwin (1936–) and Kay Redfield Jamison (1946–)", "United States. Co-authors of a major text on **mood disorders** (2007)."],
+          ["W. Styron", "United States. Wrote **Darkness Visible**, a memoir of depression (1990)."],
+          ["Jerome Frank (1910–2005)", "United States. Wrote **Persuasion and Healing** (1961), a study of psychotherapy."],
+          ["E. Fuller Torrey (1937–)", "United States. Compared **witchdoctors and psychiatrists** in The Mind Game (1972, revised 1986)."],
+          ["L. N. Robins and D. A. Regier", "United States. Edited the 1991 volume on psychiatric epidemiology in America."],
+          ["M. Grmek", "Wrote a history of **AIDS** as a modern pandemic (1990)."],
+          ["J. Kane", "Led the Clozaril study of **clozapine** in treatment-resistant schizophrenia (1988)."],
+          ["Paul Wender (1934–)", "United States. Wrote on **ADHD**; also appears in earlier adoption studies of schizophrenia in Table 35-1."]
+        ] },
+        { type: "callout", kind: "exam", title: "Two key pairs", text: "The trial that set clozapine apart tested it in **treatment-resistant** schizophrenia against **chlorpromazine** (Kane, 1988). The dream model listed here is **activation-synthesis** (Hobson and McCarley)." },
+        { type: "callout", kind: "pearl", title: "Bridges between mind and brain", text: "Several rows show the late-century push to join psychological and biological thinking: **Kandel** tied psychotherapy and memory to synapses and molecules, while Hobson and McCarley asked whether dreams are disguised wishes or simply a brain state." },
+        { type: "callout", kind: "caution", title: "Cut-off titles", text: "Many titles in this part of the table end mid-word. Do not quote a full title from memory when the chapter shows only part of it. The author list for the psychotherapy versus behavior therapy row is printed as **Bruce R, Staples FR, Cristol AH**; check it before citing." },
+        { type: "p", text: "Taken together, these rows show a field that was formalizing diagnosis (DSM-III, DSM-IV-TR), testing its treatments (the NIMH study, cognitive therapy trials, the new antipsychotics), and starting to find **single-gene causes** for some brain disorders, while also writing about love, dreams, history and the AIDS epidemic." }
+      ]
+    },
+    {
+      id: "s35-t4",
+      title: "Persons and events IV: psychotherapy books to the Human Connectome Project (1999 to 2015)",
+      blocks: [
+        { type: "p", text: "The last rows of Table 35-1 run from the late 1990s to 2015. They cover reviews of psychotherapy and psychoanalysis, practice guidelines, trauma, the **September 11, 2001** attacks, college mental health, mental health policy and law, the **DSM-5** (2013), marijuana laws, a DEA-approved **MDMA** study, physician-assisted suicide and the **Human Connectome Project**. Most rows are topics rather than people; three people appear (George Mora, Albert Ellis, and Goodwin and Jamison again under mood disorders)." },
+        { type: "table", wide: true, caption: "Persons and events, late 1990s to 2015 (see Table 35-1)", head: ["Person or event", "Years", "Country", "Known for (legible titles)"], rows: [
+          ["Three books on psychotherapy", "1999 to 2002", "United States", "**Jackson**, Care of the Psyche, on psychological healing (1999); Sabo and a co-editor, The Real World Guide to Psycho... (Harvard); **Hersen and Sledge**, a two-volume psychotherapy reference (2002)"],
+          ["Education of psychiatrists", "Not given", "United States", "**Luhrmann**, Of Two Minds, on American psychiatry"],
+          ["Theory and treatment of depression", "1999", "United States, England, Switzerland", "Papers from a **March 1999** New York City meeting of the **American Psychopathological Association**, all printed in Weissman's Treatment of Depression: Bridging the 21st Century"],
+          ["Neuroimaging", "2001", "United States", "**Andreasen**, Mapping the mind, in her book on conquering mental illness; an APA volume on advances in brain imaging"],
+          ["Effects of traumatic events", "Not given", "United States, England, France, Germany, Italy", "**Micale and Lerner** (editors): a Cambridge book on trauma in the modern age"],
+          ["Borderline personality disorder", "2001, 2002", "United States", "**Gunderson**, a clinical guide (2001); the APA **practice guideline** for borderline personality disorder (2001); Oldham, a case of a 44-year-old woman (JAMA, 2002)"],
+          ["**September 11, 2001**, attacks on the Pentagon and the World Trade Center", "2001 to 2003", "United States", "A 2003 New York Times report of a poll showing widespread unease and **fear of terror**; a book on one town's passage to hope; an edited psychoanalytic book with international views from **Ground Zero** (2003)"],
+          ["Overviews of psychoanalysis", "Not given", "United States", "**Erwin** (editor), The Freud Encyclopedia; Secrets of the Soul, a social history of psychoanalysis (Knopf)"],
+          ["Psychosomatic medicine and **consultation-liaison** psychiatry", "Not given", "United States", "**Blumenfield and Strain** (editors), Lippincott Williams"],
+          ["**Asylum** confinement of the mentally ill", "Not given", "Argentina, Australia, Canada, England, France, Germany, India, Ireland, Japan, Mexico, Nigeria, South Africa, Switzerland, United States", "**Porter and Wright** (editors), international perspectives on confining the insane (Cambridge)"],
+          ["Treatment of schizophrenia", "2004", "United States", "The APA **practice guideline** for schizophrenia (2004)"],
+          ["College mental health", "Not given", "United States", "**Kadison** and Geronimo, on the **campus mental health crisis** and what to do about it"],
+          ["A suppressed psychiatric scandal", "2005", "United States", "**A. Scull**, **Madhouse**, a tragic tale in modern medicine (New Haven, 2005)"],
+          ["**Amphetamines** as antidepressants", "2006", "United States", "**Rasmussen**, on amphetamine as the first antidepressant in American medicine (2006)"],
+          ["Recollections of treating schizophrenia", "Not given", "United Sates (sic)", "**Seeman**, reflections on **45 years** of schizophrenia work"],
+          ["Mental health policy", "Not given", "United States", "**Frank and Glide**, **Better But Not We...** (cut off), on US mental health policy (Johns Hopkins)"],
+          ["**George Mora**", "1923–2006", "Italy; United States after 1953", "Works on the history of **Italian psychiatry**; work on **Johann Weyer's** De praestigiis; with Jeanne Brand, a book on methodological problems in research"],
+          ["Mood disorders", "2006, 2007", "United States", "**Two textbooks**: Stein, Kupfer and Schatzberg, the APP textbook of mood disorders (2006); **Goodwin and Jamison**, the 2nd edition of their text on depressive illness and bipolar disorders (2007; first edition **1990**, Oxford)"],
+          ["**Albert Ellis**", "1913–2007", "United States", "Published **75 books**, including A Guide to Ra... (cut off) and books on guilt-free living and on procrastination"],
+          ["Mental health policy", "2008", "United States", "The **Mental Health Parity and Addiction Equity Act** (MHPAEA) of **2008**; a Department of Labor fact sheet"],
+          ["Publication of **DSM-5**", "**2013**", "United States", "The APA's DSM-5 (2013)"],
+          ["Mental illness and **gun violence**", "2015", "United States", "**Metzl and MacLeish**, on mental illness and the politics of American firearms (2015)"],
+          ["Changes in **marijuana** laws", "Not given", "United States (**23 states**)", "Wilkinson and colleagues, on marijuana legalization and its impact for physicians and public health"],
+          ["Drug Enforcement Agency of the United States (name as printed)", "2015", "United States", "A March 18, 2015, news report that the DEA approved a study of the psychedelic **MDMA** in treating ill patients"],
+          ["**Physician-assisted suicide**", "2015", "United States", "Dyer and colleagues on law and practice around the **world**; Payne (2015); Kopelman, a book on assisted suicide (Kluwer)"],
+          ["The **Human Connectome Project**", "2005, 2007", "United States", "Hagmann and colleagues, mapping whole-brain **structural networks** (2007); **Sporns** and colleagues, the human connectome as a structural description of the brain (2005)"]
+        ], note: "Several titles break off at the page edge and are given only in part. The table closes with an abbreviation key (for example APA, NIMH, NAMI, NARSAD, NMHA, SSRI, MAOI, PET, MRI) and a credit line." },
+        { type: "steps", title: "Dated events in the final rows", items: [
+          ["1999: Depression meeting", "The American Psychopathological Association meets in New York City in March; the papers form a book on treating depression."],
+          ["2001: September 11 attacks", "Attacks on the Pentagon and the World Trade Center; a 2003 poll finds lasting fear of terror."],
+          ["2001: Borderline guideline", "APA practice guideline for borderline personality disorder; Gunderson's clinical guide."],
+          ["2004: Schizophrenia guideline", "APA practice guideline for treating schizophrenia."],
+          ["2005: Madhouse", "Scull's book on a suppressed psychiatric scandal."],
+          ["2006 to 2007: Mood texts", "Two textbooks on mood disorders, including Goodwin and Jamison's 2nd edition."],
+          ["2008: Parity law", "Mental Health Parity and Addiction Equity Act."],
+          ["2013: DSM-5", "The APA publishes DSM-5."],
+          ["2015: Guns, MDMA and dying", "Papers on mental illness and guns; DEA approval of an MDMA study; writing on physician-assisted suicide."]
+        ] },
+        { type: "defs", title: "Named people in this part", items: [
+          ["S. W. Jackson", "United States. Wrote Care of the Psyche, on **psychological healing** (1999)."],
+          ["T. M. Luhrmann", "United States. Wrote **Of Two Minds**, on the education of American psychiatrists."],
+          ["M. M. Weissman", "United States. Edited the 1999 volume on treating depression."],
+          ["N. C. Andreasen", "United States. Wrote on **mapping the mind** with neuroimaging; the chapter also credits her with the first MRI studies of schizophrenia."],
+          ["J. G. Gunderson", "United States. Wrote a clinical guide to **borderline personality disorder** (2001)."],
+          ["A. Scull", "United States. Wrote **Madhouse** (2005), on a suppressed psychiatric scandal."],
+          ["N. Rasmussen", "Wrote on **amphetamine** as the first antidepressant (2006)."],
+          ["George Mora (1923–2006)", "**Italy**, then the United States after **1953**. Historian of psychiatry; worked on Johann Weyer."],
+          ["Albert Ellis (1913–2007)", "United States. Published **75 books**."],
+          ["J. M. Metzl and K. T. MacLeish", "United States. Wrote on mental illness and **firearms** politics (2015)."],
+          ["O. Sporns and P. Hagmann", "Early papers on the **human connectome** (2005, 2007)."]
+        ] },
+        { type: "callout", kind: "exam", title: "Dates to hold", text: "**DSM-5** was published in **2013**; the parity law (**MHPAEA**) is from **2008**; the marijuana row lists **23 states**; George Mora moved from Italy to the United States in **1953**; Albert Ellis published **75 books**." },
+        { type: "callout", kind: "pearl", title: "Law and policy join the table", text: "The final rows shift from people and theories toward **policy and law**: parity, guns, marijuana, a DEA-approved psychedelic study and assisted suicide. These are listed as events; the table gives sources, not verdicts, so treat each as a topic still under discussion." },
+        { type: "callout", kind: "caution", title: "Printed errors to check", text: "The table prints **United Sates** in the schizophrenia recollections row and calls the DEA the Drug Enforcement **Agency**; it also prints the policy co-author as **Glide**. Keep these as printed when quoting the chapter, but verify before citing elsewhere." },
+        { type: "p", text: "The table ends with a key to its abbreviations and a note crediting the people who built and updated it. Its closing entries, on the connectome and on brain networks, point the same way as the chapter's look to the future: toward mapping the brain as a whole system." }
+      ]
+    }
+  ]
+})
