@@ -13,6 +13,27 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "90.1.1",
+    "date": "2026-11-16",
+    "title": "Recheck of fast-moving update boxes",
+    "items": [
+      {
+        "type": "update",
+        "ch": "ch17",
+        "text": "Chapter 17: the UK PATHWAYS puberty blocker trial began recruiting on August 1, 2026, after the High Court refused a challenge on July 31 (minimum ages 11 and 12 under the June 2026 protocol); the HHS evidence review now notes its final version of November 19, 2025. The Endocrine Society and AAP updates are still in progress.",
+        "href": "#/c/ch17/guide/s17-tx-young",
+        "link": "See the updates"
+      },
+      {
+        "type": "update",
+        "ch": "ch29-3",
+        "text": "Chapter 29.3: Canada's Bill C-41 (the MAID Safeguards Act) is still being debated as of mid-November 2026; advance requests would need provincial laws too. The US list is unchanged at 12 states and DC by statute plus Montana (Massachusetts' bill did not advance before its session ended on July 31, 2026).",
+        "href": "#/c/ch29-3/guide/s293-euth",
+        "link": "See the update"
+      }
+    ]
+  },
+  {
     "version": "90.1.0",
     "date": "2026-11-14",
     "title": "New clinical tool: Geriatric Depression Scale, short form (GDS-15)",

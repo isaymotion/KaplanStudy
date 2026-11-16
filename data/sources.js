@@ -4,6 +4,11 @@
 (function () {
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
+    /* Recheck of fast-moving boxes, November 16, 2026 */
+    { m: "Pharmaceutical Journal, Minimum age set for puberty blockers trial", label: "Pharmaceutical Journal: Minimum age set for puberty blockers trial (June 2026)", url: "https://pharmaceutical-journal.com/article/news/minimum-age-set-for-puberty-blockers-trial" },
+    { m: "Health Research Authority, response to the judicial review decision on PATHWAYS", label: "Health Research Authority: our response to the outcome of a legal challenge of the PATHWAYS Trial (July 31, 2026)", url: "https://www.hra.nhs.uk/about-us/news-updates/our-response-to-the-judicial-review-decision-on-pathways-trial/" },
+    { m: "HHS, Treatment for Pediatric Gender Dysphoria: Review of Evidence and Best Practices (November 19, 2025)", label: "HHS: Treatment for Pediatric Gender Dysphoria, Review of Evidence and Best Practices (final version, November 19, 2025)", url: "https://opa.hhs.gov/sites/default/files/2025-11/gender-dysphoria-report.pdf" },
+    { m: "Department of Justice Canada, Canada moves to allow advance requests for MAID", label: "Department of Justice Canada: Canada moves to allow advance requests for MAID with rigorous safeguards (October 2026)", url: "https://www.canada.ca/en/department-justice/news/2026/10/canada-moves-to-allow-advance-requests-for-maid-with-rigorous-safeguards.html" },
     /* Chapter 35 (history), November 2026 */
     { m: "Victorian Web: George Combe", label: "Victorian Web: George Combe (1788-1858); the Edinburgh Phrenological Society was founded in February 1820", url: "https://victorianweb.org/science/phrenology/combe.html" },
     { m: "Public Law 88-164", label: "Public Law 88-164 (October 31, 1963): Mental Retardation Facilities and Community Mental Health Centers Construction Act of 1963", url: "https://www.govinfo.gov/content/pkg/STATUTE-77/pdf/STATUTE-77-Pg282.pdf" },

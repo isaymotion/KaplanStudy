@@ -1,6 +1,6 @@
 # Kaplan Study (Kaplan & Sadock Study Companion)
 
-Version 90.1.0 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
+Version 90.1.1 (November 2026). Chapter-by-chapter study app for psychiatry residents, built from *Kaplan & Sadock's Synopsis of Psychiatry*, 12th edition.
 
 Each chapter has:
 
