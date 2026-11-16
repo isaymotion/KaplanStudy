@@ -5,6 +5,10 @@
   var DM = function (q) { return 'https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=' + encodeURIComponent(q); };
   KS.sourceLinks = [
     /* Recheck of fast-moving boxes, November 16, 2026 */
+    { m: "Alzheimer's Association ARIA workgroup update (2026)", label: "Amyloid-related imaging abnormalities (ARIA) in anti-amyloid therapies: an update from the Alzheimer's Association ARIA workgroup (2026, PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13099593/" },
+    { m: "NeurologyLive, FDA approves updated label for donanemab", label: "NeurologyLive: FDA approves updated label for donanemab to lower ARIA-E risk (July 2025)", url: "https://www.neurologylive.com/view/fda-approves-updated-label-alzheimer-therapy-donanemab-lower-aria-e-risk" },
+    { m: "Drugs.com, Leqembi FDA approval history", label: "Drugs.com: Leqembi (lecanemab-irmb) FDA approval history", url: "https://www.drugs.com/history/leqembi.html" },
+    { m: "HIPAA Journal, HIPAA updates and changes in 2026", label: "HIPAA Journal: HIPAA updates and HIPAA changes in 2026", url: "https://www.hipaajournal.com/hipaa-updates-hipaa-changes/" },
     { m: "Pharmaceutical Journal, Minimum age set for puberty blockers trial", label: "Pharmaceutical Journal: Minimum age set for puberty blockers trial (June 2026)", url: "https://pharmaceutical-journal.com/article/news/minimum-age-set-for-puberty-blockers-trial" },
     { m: "Health Research Authority, response to the judicial review decision on PATHWAYS", label: "Health Research Authority: our response to the outcome of a legal challenge of the PATHWAYS Trial (July 31, 2026)", url: "https://www.hra.nhs.uk/about-us/news-updates/our-response-to-the-judicial-review-decision-on-pathways-trial/" },
     { m: "HHS, Treatment for Pediatric Gender Dysphoria: Review of Evidence and Best Practices (November 19, 2025)", label: "HHS: Treatment for Pediatric Gender Dysphoria, Review of Evidence and Best Practices (final version, November 19, 2025)", url: "https://opa.hhs.gov/sites/default/files/2025-11/gender-dysphoria-report.pdf" },

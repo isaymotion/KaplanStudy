@@ -404,8 +404,8 @@ KS.add("ch25-2", "guide", {
               "type": "update",
               "year": 2024,
               "title": "Diagnosing and treating Alzheimer disease since the book",
-              "text": "In **2024** the Alzheimer's Association published revised criteria that define Alzheimer disease **biologically**, by **amyloid and tau biomarkers** (amyloid PET, cerebrospinal fluid or accurate **blood tests** such as plasma p-tau217), with a new staging system. Biomarkers are to be read in clinical context. Two **anti-amyloid antibodies** are approved in the US for **early** Alzheimer disease (mild cognitive impairment or mild dementia) with confirmed amyloid: **lecanemab** (full approval **2023**) and **donanemab** (**2024**). Both need **MRI monitoring** for brain swelling or bleeding (ARIA) and **APOE testing** before starting (see section 24.2). They slow decline modestly; they do not stop or reverse it.",
-              "source": "Alzheimer's Association, Revised criteria for diagnosis and staging of Alzheimer's disease (2024)"
+              "text": "In **2024** the Alzheimer's Association published revised criteria that define Alzheimer disease **biologically**, by **amyloid and tau biomarkers** (amyloid PET, cerebrospinal fluid or accurate **blood tests** such as plasma p-tau217), with a new staging system. Biomarkers are to be read in clinical context. Two **anti-amyloid antibodies** are approved in the US for **early** Alzheimer disease (mild cognitive impairment or mild dementia) with confirmed amyloid: **lecanemab** (full approval **2023**) and **donanemab** (**2024**). Both need **MRI monitoring** for brain swelling or bleeding (ARIA) and **APOE testing** before starting (see section 24.2). They slow decline modestly; they do not stop or reverse it. Lecanemab can now also be given as a **subcutaneous** injection, approved for maintenance in **August 2025** and as a starting dose in **July 2026**.",
+              "source": "Alzheimer's Association, Revised criteria for diagnosis and staging of Alzheimer's disease (2024); Drugs.com, Leqembi FDA approval history"
             }
           ]
         },

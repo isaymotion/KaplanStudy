@@ -13,6 +13,34 @@
        href: "#/c/ch05/guide/s-map", link: "See the corrected section" } */
 window.APP_CHANGELOG = [
   {
+    "version": "90.1.2",
+    "date": "2026-11-16",
+    "title": "Recheck of drug and legal update boxes",
+    "items": [
+      {
+        "type": "update",
+        "ch": "ch24-2",
+        "text": "Chapter 24.2: APOE testing before anti-amyloid treatment now notes that US labels do not exclude e4 homozygotes, that the European Medicines Agency authorized lecanemab and donanemab only for people with one or no e4 copy, and donanemab's slower titration (July 2025).",
+        "href": "#/c/ch24-2/guide/s242-testing",
+        "link": "See the update"
+      },
+      {
+        "type": "update",
+        "ch": "ch25-2",
+        "text": "Chapter 25.2: lecanemab can now be given under the skin (maintenance, August 2025; starting dose, July 2026).",
+        "href": "#/c/ch25-2/guide/s252-dementia",
+        "link": "See the update"
+      },
+      {
+        "type": "update",
+        "ch": "ch28",
+        "text": "Chapter 28: the HIPAA box notes that the proposed 15-day deadline for record access had not been finalized as of late 2026 (30 days still applies). Rechecked with no change: the Beers Criteria (still the 2023 edition), the 2025 PADIS update, DoD Instruction 6490.08 and 42 CFR 482.13.",
+        "href": "#/c/ch28/guide/s28-liab",
+        "link": "See the update"
+      }
+    ]
+  },
+  {
     "version": "90.1.1",
     "date": "2026-11-16",
     "title": "Recheck of fast-moving update boxes",
